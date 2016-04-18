@@ -1,0 +1,9 @@
+<ion-view title="Payment List">
+    <ion-content overflow-scroll="true" padding="true">
+        <ion-list overflow-scroll="true"
+                  ng-controller="paymentPickerCtrl">
+            <ion-item ng-repeat="payment in payments"
+                      ng-click="pickPayment(payment)">{{payment}}</ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

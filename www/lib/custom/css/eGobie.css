@@ -1,0 +1,354 @@
+@charset "UTF-8";
+
+.slider {
+  height: 100%;
+}
+.slider-slide {
+  padding-top: 80px;
+  text-align: center;
+}
+
+.popup-height {
+    height: 250px;
+}
+
+.margin-right-5 {
+    margin-right: 5px;
+}
+
+.margin-left-3 {
+    margin-left: 3px;
+}
+
+.margin-top-5 {
+    margin-top: 5px;
+}
+
+.margin-top-10 {
+    margin-top: 10px;
+}
+
+.margin-top-20 {
+    margin-top: 20px;
+}
+
+.margin-left-auto {
+    margin-left: auto;
+}
+
+.icon-size-25:before {
+    font-size: 25px;
+}
+
+.icon-size-15:before {
+    font-size: 15px;
+}
+
+.width-300 {
+    width: 300px;
+}
+
+.item-padding-top-bottom {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.item-egobie {
+    margin-top: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.button-block-300 {
+    display: block;
+    clear: both;
+    width: 300px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.i-add-payment-egobie {
+    width: 40px;
+    height: 30px;
+    font-size: 30px;
+    margin-right: 15px;
+    border-right: 1px solid graytext;
+}
+
+.input-egobie {
+    border: 1px solid red;
+}
+
+.i-signin-egobie {
+    width: 40px;
+    height: 30px;
+    font-size: 30px;
+    margin-right: 15px;
+    border-right: 1px solid graytext;
+}
+
+.img-signin {
+    width: 250px;
+    height: 250px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.img-signin-divide {
+    width: 300px;
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.item-signin {
+    padding: 0px;
+    border: none;
+}
+
+.a-left {
+    font-size: 13px;
+    float: left;
+    margin-left: 5px;
+}
+
+.a-right {
+    font-size: 13px;
+    float: right;
+    margin-right: 5px;
+}
+
+.toggle-signin {
+    height: 35px;
+    padding: 0px;
+    border: none;
+}
+
+
+.toggle-signin span {
+    float: left;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.toggle-signin .toggle {
+    float: left;
+    right: inherit;
+    margin-left: 5px;
+}
+
+.toggle-signin .track {
+    height: 20px;
+    width: 40px;
+    
+}
+
+.toggle-signin .handle {
+    height: 15px;
+    width: 15px;
+}
+
+.rating {
+    display: inline;
+    margin-right: 5px;
+}
+
+.rating li {
+    display: inline;
+    border: 0px;
+    background: none;
+    padding-right: 2px;
+}
+
+.rating li i {
+    font-size: 20px;
+}
+
+.popup-body .datetimepicker {
+  width: 100%;
+}
+
+.popup-body .datetimepicker table {
+  width: 100%;
+}
+
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: bold;
+    line-height: 1;
+    color: #FFF;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+
+.label-warning {
+    background-color: #F0AD4E;
+}
+
+.label-info {
+    background-color: #5BC0DE;
+}
+
+.label-success {
+    background-color: #5CB85C;
+}
+
+/*
+ * Use ionic icons instead of bootstrap's glyphicons 
+ * for arrows in the datetimepicker.
+ */
+.glyphicon {
+  vertical-align: top;
+  display: inline-block;
+  font-family: "Ionicons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.glyphicon:before {
+  vertical-align: top;
+  font-size: 32px;
+  line-height: 32px;
+  padding-right: 2px;
+  padding-left: 2px;
+  display: inline-block;
+  padding: 0 0 1px 0;
+}
+
+.glyphicon-arrow-right:before {
+  content: "\f10a";
+}
+
+.glyphicon-arrow-left:before{
+  content: "\f107";
+}
+
+.tooltip {
+    position: absolute;
+    z-index: 1070;
+    display: block;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: left;
+    text-align: start;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    letter-spacing: normal;
+    word-break: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+    white-space: normal;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    line-break: auto;
+}
+
+.tooltip-inner {
+    max-width: 200px;
+    padding: 3px 8px;
+    color: #fff;
+    text-align: center;
+    background-color: #000;
+    border-radius: 4px;
+}
+
+.tooltip.in {
+    filter: alpha(opacity=90);
+    opacity: .9;
+}
+
+.tooltip.bottom {
+    padding: 5px 0;
+    margin-top: 3px;
+}
+
+.tooltip.bottom .tooltip-arrow {
+    top: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 0 5px 5px;
+    border-bottom-color: #000;
+}
+
+.tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity .15s linear;
+    -o-transition: opacity .15s linear;
+    transition: opacity .15s linear;
+}
+
+.fade.in {
+    opacity: 1;
+}
+
+.spinner svg {
+    width: 28px;
+    height: 28px;
+    stroke: #FFFFFF;
+    fill: #FFFFFF;
+}
+
+.select-egobie {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 300px;
+    height: 35px;
+    border: none;
+    background: #fff;
+    color: #333;
+    text-overflow: '';
+    white-space: nowrap;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.tutorial-1 {
+    background-image: url('../../../img/tp1.svg');
+}
+
+.tutorial-2 {
+    background-image: url('../../../img/tp2.svg');
+}
+
+.tutorial-3 {
+    background-image: url('../../../img/tp3.svg');
+}
+
+.tutorial-4 {
+    background-image: url('../../../img/tp4.svg');
+}
+
+.tutorial-5 {
+    background-image: url('../../../img/tp5.svg');
+}

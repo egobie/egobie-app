@@ -1,0 +1,11 @@
+<ion-view title="Service List">
+    <ion-content overflow-scroll="true" padding="true" class="has-header"
+                 ng-controller="servicePickerCtrl">
+        <ion-list overflow-scroll="true">
+            <ion-checkbox ng-repeat="service in services"
+                          ng-checked="service.checked"
+                          ng-model="service.checked">{{service.service}}</ion-checkbox>
+        </ion-list>
+        <button class="button button-block button-dark" ng-click="pickService()">Save</button>
+    </ion-content>
+</ion-view>

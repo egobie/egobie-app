@@ -1,0 +1,108 @@
+<ion-view title="Shopping Malls"
+          ng-app="app.home.mall">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <!-- Filter -->
+        <ion-item class="item-divider item-padding-top-bottom">Panel</ion-item>
+
+        <ion-list>
+            <!-- Car -->
+            <ion-item class="item-icon-left item-egobie"
+                      ng-controller="carsCtrl">
+                <i class="icon ion-model-s icon-size-25"></i>
+                <button class="button button-small button-stable icon-right ion-android-cancel margin-right-5"
+                        ng-click="unselectService($event, service)"
+                        ng-repeat="service in services | filter: {checked: true}">{{service.name}}</button>
+                <span class="item-note">Add a car...</span>
+            </ion-item>
+
+            <!-- Service -->
+            <ion-item class="item-icon-left item-egobie"
+                      ng-controller="servicesCtrl">
+                <i class="icon ion-wrench icon-size-25"></i>
+                <button class="button button-small button-stable icon-right ion-android-cancel margin-right-5"
+                        ng-click="unselectService($event, service)"
+                        ng-repeat="service in services | filter: {checked: true}">{{service.name}}</button>
+                <span class="item-note"
+                      ng-click="openServicePopover($event)">Add a service...</span>
+            </ion-item>
+
+            <!-- Date -->
+            <ion-item class="item-icon-left item-egobie"
+                      ng-controller="dateCtrl"
+                      ng-click="openDatePickerPopup()">
+                <i class="icon ion-ios-calendar icon-size-25"></i>{{date}}
+                <span class="item-note">Choose Date...</span>
+            </ion-item>
+        </ion-list>
+        
+        <!-- Results -->
+        <ion-item class="item-divider margin-top-10">Locations</ion-item>
+
+        <ion-list ng-controller="locationsCtrl">
+            <ion-item class="card margin-top-10"
+                      ng-repeat="location in locations"
+                      ng-click="showActionsheet(location.name)">
+                <ion-list>
+                    <ion-item class="item-avatar">
+                        <img src="mcfly.jpg">
+                        <h2>{{location.name}}</h2>
+                        <p>
+                            <rating max="max" readonly="true"
+                                    ng-model=location.rating></rating>
+                            <span class="label"
+                                  ng-class="labelStyle(location.rating)">{{percent(location.rating)}}</span>
+                        </p>
+                    </ion-item>
+
+                    <ion-item class="item-body">
+                        <p>
+                            <a href="#" class="subdued">Car Wash {{location.service.carWash}}</a>
+                            <a href="#" class="subdued">Oil Change {{location.service.oilChange}}</a>
+                            <a href="#" class="subdued">Detail {{location.service.detail}}</a>
+                        </p>
+                    </ion-item>
+                </ion-list>
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
+
+    <script id="car-picker" type="text/ng-template">
+        <ion-popover-view class="platform-ios">
+            <ion-header-bar class="bar-stable">
+                <h1 class="title">Cars</h1>
+            </ion-header-bar>
+            <ion-content>
+                <ion-list>
+                    <ion-list overflow-scroll="true">
+                        <ion-checkbox ng-repeat="car in cars_test">{{car}}</ion-checkbox>
+                    </ion-list>
+                </ion-list>
+            </ion-content>
+        </ion-popover-view>
+    </script>
+
+    <script id="service-picker" type="text/ng-template">
+        <ion-popover-view class="platform-ios">
+            <ion-header-bar class="bar-stable">
+                <h1 class="title">Services</h1>
+            </ion-header-bar>
+            <ion-content overflow-scroll="true" padding="true" class="has-header">
+                <ion-list overflow-scroll="true">
+                    <ion-checkbox ng-repeat="service in services"
+                                  ng-checked="service.checked"
+                                  ng-model="service.checked"
+                                  ng-change="changeService(service)">{{service.name}}</ion-checkbox>
+                </ion-list>
+            </ion-content>
+        </<ion-popover-view>
+    </script>
+
+    <script id="date-picker" type="text/ng-template">
+        <datetimepicker data-datetimepicker-config="{startView: 'day', minView: 'day'}"
+                        data-on-set-time="onTimeSet(newDate, oldDate)"
+                        ng-model="date">
+        </datetimepicker>
+    </script>
+
+</ion-view>

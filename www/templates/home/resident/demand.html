@@ -1,0 +1,81 @@
+<ion-view title="Residential">
+    <ion-content padding="true" class="has-header">
+        <!-- Filter -->
+        <ion-item class="item-divider item-padding-top-bottom">Detail</ion-item>
+
+        <ion-list>
+            <!-- Car -->
+            <ion-item class="item-icon-left margin-top-5 item-padding-top-bottom"
+                      ng-controller="carSelectCtrl"
+                      ng-click="selectCar()">
+                <i class="icon ion-model-s icon-size-25"></i>{{selectedCar}}
+                <span class="item-note">Add a car...</span>
+            </ion-item>
+
+            <!-- Address -->
+            <ion-item class="item-icon-left margin-top-5 item-padding-top-bottom">
+                <i class="icon ion-home icon-size-25"></i>414 Hackensack Ave
+                <span class="item-note">Change address</span>
+            </ion-item>
+
+            <!-- Service -->
+            <ion-item class="item-icon-left margin-top-5 item-padding-top-bottom"
+                      ng-controller="serviceSelectCtrl"
+                      ng-click="selectService()">
+                <i class="icon ion-wrench icon-size-25"></i>
+                <button class="button button-small button-stable icon-right ion-android-cancel margin-right-5"
+                        ng-click="unselectService($event, service)"
+                        ng-repeat="service in services | filter: {checked: true}">{{service.service}}</button>
+                <span class="item-note">Add a service...</span>
+            </ion-item>
+
+            <!-- Payment -->
+            <ion-item class="item-icon-left margin-top-5 item-padding-top-bottom"
+                      ng-controller="paymentSelectCtrl"
+                      ng-click="selectPayment()">
+                <i class="icon ion-card icon-size-25"></i>{{selectedPayment}}
+                <span class="item-note">Change Payment...</span>
+            </ion-item>
+
+            <!-- Date -->
+            <!--
+            <ion-item class="item-icon-left margin-top-5 item-padding-top-bottom"
+                      ng-controller="dateCtrl"
+                      ng-click="openDatePickerPopup()">
+                <i class="icon ion-ios-calendar icon-size-25"></i>{{date}}
+                <span class="item-note">Choose Date...</span>
+            </ion-item>
+            -->
+        </ion-list>
+
+        <!-- Time -->
+        <ion-item class="item-divider item-padding-top-bottom margin-top-5">Estimated Time</ion-item>
+
+        <ion-item class="item-icon-left margin-top-5">
+            <i class="icon ion-ios-time icon-size-25"></i>1 h 20 m
+            <!--<span class="item-note">Arrive in 10 mins...</span>-->
+        </ion-item>
+
+        <!-- Price -->
+        <ion-item class="item-divider item-padding-top-bottom margin-top-5">Estimated Price</ion-item>
+
+        <ion-item class="item-icon-left item-icon-right margin-top-5">
+            <i class="icon ion-cash icon-size-25"></i> 99.98
+            <i class="icon ion-social-usd icon-size-15"></i>
+        </ion-item>
+
+        <button class="button button-block button-dark"
+                ng-controller="reservationCtrl"
+                ng-click="showReservationSheet()"> Make a reservation </button>
+
+    </ion-content>
+
+<!--
+    <script id="date-picker" type="text/ng-template">
+        <datetimepicker data-datetimepicker-config="{startView: 'day', minView: 'day'}"
+                        data-on-set-time="onTimeSet(newDate, oldDate)"
+                        ng-model="date">
+        </datetimepicker>
+    </script>
+-->
+</ion-view>
