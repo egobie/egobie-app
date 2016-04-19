@@ -25,9 +25,6 @@ angular.module("util.shared", ["util.url"])
             work_street: ""
         };
 
-        var cars = {};
-        var makers = [];
-
         var payments = {};
 
         var states = {
@@ -48,15 +45,11 @@ angular.module("util.shared", ["util.url"])
             'WHITE', 'BLACK', 'SILVER', 'GRAY', 'RED', 'BLUE', 'BROWN', 'YELLOW', 'GOLD', 'GREEN', 'PINK', 'OTHERS'
         ];
 
-        var userServices = [];
-
         // Email Reg
         var regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
         var years = [];
         var _current_year = new Date().getFullYear();
-
-        var openings = [];
 
         // 1999 - 2016
         for (var i = 1999; i <= _current_year; i++) {
@@ -154,69 +147,6 @@ angular.module("util.shared", ["util.url"])
                 return colors;
             },
 
-            getCars: function(scope) {
-                if (user.id) {
-                    var _hide = this.hideLoading;
-                    var _alert = this.alert;
-                    this.showLoading();
-
-                    setTimeout(function() {
-                    $http
-                        .post(url.cars, {
-                            user_id: user.id
-                        }, {
-                            headers: headers
-                        })
-                        .success(function(data, status, headers, config) {
-                            _hide();
-                            cars = {};
-                            for (var i = 0; data && i < data.length; i++) {
-                                cars[data[i].id] = data[i];
-                            }
-                            scope.cars = cars;
-                        })
-                        .error(function(data, status, headers, config) {
-                            _hide();
-                            _alert(data);
-                        });
-                    }, 1000);
-                }
-
-                return cars;
-            },
-
-            addCar: function(car) {
-                cars[car.id] = car;
-                refreshScope();
-            },
-
-            deleteCar: function(id) {
-                delete cars[id];
-                refreshScope();
-            },
-
-            getMakers: function(scope) {
-                if (makers.length === 0) {
-                    var _alert = this.alert;
-
-                    setTimeout(function() {
-                    $http
-                        .get(url.carMaker, {
-                            headers: headers
-                        })
-                        .success(function(data, status, headers, config) {
-                            makers = data;
-                            scope.makers = makers;
-                        })
-                        .error(function(data, status, headers, config) {
-                            _alert(data);
-                        });
-                    }, 1000);
-                }
-
-                return makers;
-            },
-
             getPayments: function(scope) {
                 if (user.id) {
                     var _hide = this.hideLoading;
@@ -256,45 +186,6 @@ angular.module("util.shared", ["util.url"])
             deletePayment: function(id) {
                 delete payments[id];
                 refreshScope();
-            },
-
-            getUserServices: function(scope) {
-                if (user.id) {
-                    var _hide = this.hideLoading;
-                    var _alert = this.alert;
-                    this.showLoading();
-
-                    setTimeout(function() {
-                    $http
-                        .post(url.userServices, {
-                            user_id: user.id,
-                            user_token: user.token
-                        }, {
-                            headers: headers
-                        })
-                        .success(function(data, status, headers, config) {
-                            _hide();
-                            userServices = data;
-                            scope.userServices = userServices;
-
-                            for (var i = 0; i < scope.userServices.length; i++) {
-                                if (scope.userServices[i].status === "DONE") {
-                                    scope.done.push(scope.userServices[i]);
-                                } else if (scope.userServices[i].status === "IN_PROGRESS") {
-                                    scope.inProgress.push(scope.userServices[i]);
-                                } else if (scope.userServices[i].status === "RESERVED") {
-                                    scope.reservation.push(scope.userServices[i]);
-                                }
-                            }
-                        })
-                        .error(function(data, status, headers, config) {
-                            _hide();
-                            _alert(data);
-                        });
-                    }, 1000);
-                }
-
-                return userServices;
             },
 
             testEmail: function(email) {

@@ -31,29 +31,11 @@ angular.module('app.menu', [])
                 }
             })
 
-            .state('menu.service', {
-                url: '/service',
-                views: {
-                    'side-menu': {
-                        templateUrl: 'templates/menu/service.html'
-                    }
-                }
-            })
-
             .state('menu.payment', {
                 url: '/payment',
                 views: {
                     'side-menu': {
                         templateUrl: 'templates/menu/payment.html'
-                    }
-                }
-            })
-
-            .state('menu.car', {
-                url: '/car',
-                views: {
-                    'side-menu': {
-                        templateUrl: 'templates/menu/car.html'
                     }
                 }
             })
