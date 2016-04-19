@@ -2,12 +2,14 @@
           ng-controller="futureCtrl">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
         <ion-list class="list-margin-top-10"
-                  ng-repeat="opening in openings">
-            <ion-item class="item-divider item-icon-right">
+                  ng-repeat="opening in openings"
+                  ng-init="index = $index">
+            <ion-item class="item-divider item-icon-right"
+                      ng-click="showOpening($index)">
                 <i class="icon ion-ios-arrow-down"></i>{{opening.day}}
             </ion-item>
             <ion-checkbox ng-repeat="r in opening.range"
-                          ng-show="showOpening(opening.day)">{{r.id}} - {{r.start}} : {{r.end}}</ion-checkbox>
+                          ng-show="index === showIndex">{{r.id}} - {{r.start}} : {{r.end}}</ion-checkbox>
         </ion-list>
     </ion-content>
 </ion-view>

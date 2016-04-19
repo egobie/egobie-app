@@ -16,7 +16,6 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
             .success(function(data, status, headers, config) {
                 shared.hideLoading();
                 openings = data;
-                console.log("get data - ", openings);
             })
             .error(function(data, status, headers, config) {
                 shared.hideLoading();
@@ -124,9 +123,14 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
 
     .controller('futureCtrl', function($scope, shared, url, getOpenings) {
         $scope.openings = getOpenings.getData();
+        $scope.showIndex = -1;
 
-        $scope.showOpening = function(day) {
-            return false;
+        $scope.showOpening = function(index) {
+            if (index === $scope.showIndex) {
+                $scope.showIndex = -1;
+            } else {
+                $scope.showIndex = index;
+            }
         };
     })
 
