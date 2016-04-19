@@ -69,18 +69,16 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
     })
 
     .controller('carCtrl', function($scope, $ionicModal, $ionicPopup, $ionicActionSheet, $http, getUserCars, getCarMakers, shared, url) {
-        var cars = getUserCars.getData();
-
-        $scope.cars = {};
         $scope.makers = getCarMakers.getData();
         $scope.years = shared.getYears();
         $scope.states = shared.getStates();
         $scope.colors = shared.getColors();
         $scope.models = [];
+        $scope.cars = {};
 
-        for (var i = 0; cars && i < cars.length; i++) {
-            $scope.cars[cars[i].id] = cars[i];
-        }
+        Array.prototype.forEach.call(getUserCars.getData(), function(car) {
+            $scope.cars[car.id] = car;
+        });
 
         $scope.selected = {
             id: 0,
