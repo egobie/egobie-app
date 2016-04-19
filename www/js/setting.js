@@ -115,7 +115,6 @@ angular.module('app.setting', ['ionic', 'util.shared', 'util.url'])
 
             shared.showLoading();
 
-            setTimeout(function() {
             $http
                 .post(url.updateUser, user, {
                     headers: shared.getHeaders()
@@ -129,7 +128,6 @@ angular.module('app.setting', ['ionic', 'util.shared', 'util.url'])
                     shared.hideLoading();
                     shared.alert(data);
                 });
-            }, 1000);
         };
 
         $scope.editPassword = function() {
@@ -178,7 +176,6 @@ angular.module('app.setting', ['ionic', 'util.shared', 'util.url'])
             console.log(address);
             shared.showLoading();
 
-            setTimeout(function() {
             $http
                 .post(url.updateHome, address, {
                     headers: shared.getHeaders()
@@ -192,7 +189,6 @@ angular.module('app.setting', ['ionic', 'util.shared', 'util.url'])
                     shared.hideLoading();
                     shared.alert(data);
                 });
-            }, 1000);
         };
 
         $scope.editWork = function() {
@@ -212,7 +208,6 @@ angular.module('app.setting', ['ionic', 'util.shared', 'util.url'])
             console.log(address);
             shared.showLoading();
 
-            setTimeout(function() {
             $http
                 .post(url.updateWork, address, {
                     headers: shared.getHeaders()
@@ -226,7 +221,6 @@ angular.module('app.setting', ['ionic', 'util.shared', 'util.url'])
                     shared.hideLoading();
                     shared.alert(data);
                 });
-            }, 1000);
         };
 
         function validateUser(user) {

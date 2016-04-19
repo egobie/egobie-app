@@ -103,7 +103,6 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
             console.log(newCar);
             shared.showLoading();
 
-            setTimeout(function() {
             $http
                 .post(url.newCar, newCar, {
                     headers: shared.getHeaders()
@@ -117,7 +116,6 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
                     shared.hideLoading();
                     shared.alert(data);
                 });
-            }, 1000);
         };
 
         $scope.showEditCar = function(car) {
@@ -163,7 +161,6 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
             console.log(car);
             shared.showLoading();
 
-            setTimeout(function() {
             $http
                 .post(url.editCar, car, {
                     headers: shared.getHeaders()
@@ -177,7 +174,6 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
                     shared.hideLoading();
                     shared.alert(data);
                 });
-            }, 1000);
         };
 
         $scope.hideEditCar = function() {

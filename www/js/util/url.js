@@ -25,7 +25,7 @@ angular.module('util.url', [])
             updatePassword: host + "/user/update/password",
 
             userServices: host + "/service/user",
-
+            openings: host + "/service/opening",
             placeOrder: host + ""
         };
     });

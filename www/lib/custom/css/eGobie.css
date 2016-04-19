@@ -333,6 +333,10 @@
     cursor: pointer;
 }
 
+.list-margin-top-10 div.list {
+    margin-top: 10px;
+}
+
 .tutorial-1 {
     background-image: url('../../../img/tp1.svg');
 }

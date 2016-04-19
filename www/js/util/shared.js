@@ -56,6 +56,8 @@ angular.module("util.shared", ["util.url"])
         var years = [];
         var _current_year = new Date().getFullYear();
 
+        var openings = [];
+
         // 1999 - 2016
         for (var i = 1999; i <= _current_year; i++) {
             years.push(i);
@@ -155,6 +157,7 @@ angular.module("util.shared", ["util.url"])
             getCars: function(scope) {
                 if (user.id) {
                     var _hide = this.hideLoading;
+                    var _alert = this.alert;
                     this.showLoading();
 
                     setTimeout(function() {
@@ -173,9 +176,8 @@ angular.module("util.shared", ["util.url"])
                             scope.cars = cars;
                         })
                         .error(function(data, status, headers, config) {
-                            $ionicPopup.alert({
-                                title: data
-                            });
+                            _hide();
+                            _alert(data);
                         });
                     }, 1000);
                 }
@@ -195,6 +197,8 @@ angular.module("util.shared", ["util.url"])
 
             getMakers: function(scope) {
                 if (makers.length === 0) {
+                    var _alert = this.alert;
+
                     setTimeout(function() {
                     $http
                         .get(url.carMaker, {
@@ -205,9 +209,7 @@ angular.module("util.shared", ["util.url"])
                             scope.makers = makers;
                         })
                         .error(function(data, status, headers, config) {
-                            $ionicPopup.alert({
-                                title: data
-                            });
+                            _alert(data);
                         });
                     }, 1000);
                 }
@@ -218,6 +220,7 @@ angular.module("util.shared", ["util.url"])
             getPayments: function(scope) {
                 if (user.id) {
                     var _hide = this.hideLoading;
+                    var _alert = this.alert;
                     this.showLoading();
 
                     setTimeout(function() {
@@ -236,9 +239,8 @@ angular.module("util.shared", ["util.url"])
                             scope.payments = payments;
                         })
                         .error(function(data, status, headers, config) {
-                            $ionicPopup.alert({
-                                title: data
-                            });
+                            _hide();
+                            _alert(data);
                         });
                     }, 1000);
                 }
@@ -259,6 +261,7 @@ angular.module("util.shared", ["util.url"])
             getUserServices: function(scope) {
                 if (user.id) {
                     var _hide = this.hideLoading;
+                    var _alert = this.alert;
                     this.showLoading();
 
                     setTimeout(function() {
@@ -285,9 +288,8 @@ angular.module("util.shared", ["util.url"])
                             }
                         })
                         .error(function(data, status, headers, config) {
-                            $ionicPopup.alert({
-                                title: data
-                            });
+                            _hide();
+                            _alert(data);
                         });
                     }, 1000);
                 }

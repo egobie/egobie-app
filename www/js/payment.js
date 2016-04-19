@@ -84,7 +84,6 @@ angular.module('app.payment', ['ionic', 'util.shared', 'util.url'])
             console.log(newPayment);
             shared.showLoading();
 
-            setTimeout(function() {
             $http
                 .post(url.newPayment, newPayment, {
                     headers: shared.getHeaders()
@@ -98,7 +97,6 @@ angular.module('app.payment', ['ionic', 'util.shared', 'util.url'])
                     shared.hideLoading();
                     shared.alert(data);
                 });
-            }, 1000);
         };
 
         $scope.showEditPayment = function(payment) {
@@ -131,7 +129,6 @@ angular.module('app.payment', ['ionic', 'util.shared', 'util.url'])
             console.log(payment);
             shared.showLoading();
 
-            setTimeout(function() {
             $http
                 .post(url.editPayment, payment, {
                     headers: shared.getHeaders()
@@ -145,7 +142,6 @@ angular.module('app.payment', ['ionic', 'util.shared', 'util.url'])
                     shared.hideLoading();
                     shared.alert(data);
                 });
-            }, 1000);
         };
 
         $scope.hideEditPayment = function() {

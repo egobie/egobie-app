@@ -62,7 +62,6 @@ angular.module('app.sign', ['ionic', 'util.shared', 'util.url'])
 
             shared.showLoading();
 
-            setTimeout(function() {
             $http
                 .post(url.signIn, body, {
                     headers: {
@@ -77,7 +76,6 @@ angular.module('app.sign', ['ionic', 'util.shared', 'util.url'])
                     shared.hideLoading();
                     shared.alert(data);
                 });
-            }, 1000);
 
             function validateUser(username, password) {
                 if (!username) {
@@ -132,7 +130,6 @@ angular.module('app.sign', ['ionic', 'util.shared', 'util.url'])
 
             shared.showLoading();
 
-            setTimeout(function () {
             $http
                 .post(url.signUp, body, {
                     headers: {
@@ -147,7 +144,6 @@ angular.module('app.sign', ['ionic', 'util.shared', 'util.url'])
                     shared.hideLoading();
                     shared.alert(data);
                 });
-            }, 1000);
 //            $state.go('tutorial');
 
             function validateUser(username, password1, password2, email) {

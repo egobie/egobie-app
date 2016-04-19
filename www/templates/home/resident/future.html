@@ -1,47 +1,13 @@
-<ion-view title="Make Reservation">
+<ion-view title="Residential" cache-view="false"
+          ng-controller="futureCtrl">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
-
-        <!-- Filter -->
-        <ion-item class="item-divider item-padding-top-bottom">Panel</ion-item>
-
-        <ion-list>
-            <!-- Car -->
-            <ion-item class="item-icon-left margin-top-5 item-padding-top-bottom">
-                <i class="icon ion-model-s icon-size-25"></i>12345
-                <span class="item-note">Add a car...</span>
+        <ion-list class="list-margin-top-10"
+                  ng-repeat="opening in openings">
+            <ion-item class="item-divider item-icon-right">
+                <i class="icon ion-ios-arrow-down"></i>{{opening.day}}
             </ion-item>
-
-            <!-- Address -->
-            <ion-item class="item-icon-left margin-top-5 item-padding-top-bottom">
-                <i class="icon ion-home icon-size-25"></i>414 Hackensack Ave
-                <span class="item-note">Change address</span>
-            </ion-item>
-
-            <!-- Service -->
-            <ion-item class="item-icon-left margin-top-5 item-padding-top-bottom">
-                <i class="icon ion-wrench icon-size-25"></i>
-                <span class="item-note">Add a service...</span>
-            </ion-item>
-
-            <!-- Price -->
-            <ion-item class="item-divider item-padding-top-bottom margin-top-5">Estimated Price</ion-item>
-
-            <ion-item class="item-icon-left item-icon-right margin-top-5">
-                <i class="icon ion-cash icon-size-25"></i> 99.98
-                <i class="icon ion-social-usd icon-size-15"></i>
-            </ion-item>
-
+            <ion-checkbox ng-repeat="r in opening.range"
+                          ng-show="showOpening(opening.day)">{{r.id}} - {{r.start}} : {{r.end}}</ion-checkbox>
         </ion-list>
-
-        <!-- Results -->
-        <ion-item class="item-divider margin-top-10">Dates</ion-item>
-
-        <ion-list class="row">
-            <ion-item class="col">.col</ion-item>
-            <ion-item class="col">.col</ion-item>
-            <ion-item class="col">.col</ion-item>
-            <ion-item class="col">.col</ion-item>
-        </ion-list>
-
     </ion-content>
 </ion-view>

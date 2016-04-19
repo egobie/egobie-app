@@ -3,7 +3,33 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-angular.module('app.home.resident', ['ionic', 'util.shared'])
+angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
+
+    .service('getOpenings', function($http, shared, url) {
+        shared.showLoading();
+
+        var openings = null;
+        var promise = $http
+            .get(url.openings, {
+                headers: shared.getHeaders()
+            })
+            .success(function(data, status, headers, config) {
+                shared.hideLoading();
+                openings = data;
+                console.log("get data - ", openings);
+            })
+            .error(function(data, status, headers, config) {
+                shared.hideLoading();
+                shared.alert(data);
+            });
+
+        return {
+            promise: promise,
+            getData: function() {
+                return openings;
+            }
+        };
+    })
 
     .config(function($stateProvider) {
 
@@ -23,6 +49,11 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
                 views: {
                     'resident-view': {
                         templateUrl: 'templates/home/resident/future.html'
+                    }
+                },
+                resolve: {
+                    'ResolveOpenings': function(getOpenings) {
+                        return getOpenings.promise;
                     }
                 }
             })
@@ -88,6 +119,14 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
                 8870,
                 5310
             ]
+        };
+    })
+
+    .controller('futureCtrl', function($scope, shared, url, getOpenings) {
+        $scope.openings = getOpenings.getData();
+
+        $scope.showOpening = function(day) {
+            return false;
         };
     })
 
