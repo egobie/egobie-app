@@ -10,12 +10,12 @@
     <ion-content padding="true" class="has-header">
         <ion-list can-swipe="true">
             <ion-item class="item-thumbnail-left margin-top-10"
-                      ng-repeat="payment in payments"
-                      ng-click="showPaymentActionSheet(payment)">
+                      ng-repeat="(id, p) in payments"
+                      ng-click="showPaymentActionSheet(p)">
                 <img src="cover.jpg">
-                <h2>**** {{payment.account_number}}</h2>
-                <p>{{payment.account_name}}</p>
-                <p>{{payment.account_type}}</p>
+                <h2>**** {{p.account_number}}</h2>
+                <p>{{p.account_name}}</p>
+                <p>{{p.account_type}}</p>
             </ion-item>
         </ion-list>
     </ion-content>

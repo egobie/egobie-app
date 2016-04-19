@@ -25,8 +25,6 @@ angular.module("util.shared", ["util.url"])
             work_street: ""
         };
 
-        var payments = {};
-
         var states = {
             "AL": "Alabama", "AK": "Alaska", "AS": "American Samoa", "AZ": "Arizona", "AR": "Arkansas",
             "CA": "California", "CO": "Colorado", "CT": "Connecticut", "DE": "Delaware", "DC": "District Of Columbia",
@@ -145,47 +143,6 @@ angular.module("util.shared", ["util.url"])
 
             getColors: function() {
                 return colors;
-            },
-
-            getPayments: function(scope) {
-                if (user.id) {
-                    var _hide = this.hideLoading;
-                    var _alert = this.alert;
-                    this.showLoading();
-
-                    setTimeout(function() {
-                    $http
-                        .post(url.payments, {
-                            user_id: user.id
-                        }, {
-                            headers: headers
-                        })
-                        .success(function(data, status, headers, config) {
-                            _hide();
-                            payments = {};
-                            for (var i = 0; data && i < data.length; i++) {
-                                payments[data[i].id] = data[i];
-                            }
-                            scope.payments = payments;
-                        })
-                        .error(function(data, status, headers, config) {
-                            _hide();
-                            _alert(data);
-                        });
-                    }, 1000);
-                }
-
-                return payments;
-            },
-
-            addPayment: function(payment) {
-                payments[payment.id] = payment;
-                refreshScope();
-            },
-
-            deletePayment: function(id) {
-                delete payments[id];
-                refreshScope();
             },
 
             testEmail: function(email) {

@@ -31,15 +31,6 @@ angular.module('app.menu', [])
                 }
             })
 
-            .state('menu.payment', {
-                url: '/payment',
-                views: {
-                    'side-menu': {
-                        templateUrl: 'templates/menu/payment.html'
-                    }
-                }
-            })
-
             .state('menu.history', {
                 url: '/history',
                 views: {

@@ -160,14 +160,6 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
             }
         };
 
-        $scope.addCar = function(car) {
-            $scope.cars[car.id] = car;
-        },
-
-        $scope.removeCar = function(id) {
-            delete $scope.cars[id];
-        },
-
         $scope.createCar = function() {
             var newCar = {
                 user_id: shared.getUser().id,
@@ -192,7 +184,7 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
                 })
                 .success(function(data, status, headers, config) {
                     shared.hideLoading();
-                    $scope.addCar(data);
+                    addCar(data);
                     $scope.hideAddCar();
                 })
                 .error(function(data, status, headers, config) {
@@ -250,7 +242,7 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
                 })
                 .success(function(data, status, headers, config) {
                     shared.hideLoading();
-                    $scope.addCar(data);
+                    addCar(data);
                     $scope.hideEditCar();
                 })
                 .error(function(data, status, headers, config) {
@@ -279,7 +271,7 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
                         })
                         .success(function(data, status, headers, config) {
                             shared.hideLoading();
-                            $scope.removeCar(id);
+                            removeCar(id);
                             $scope.hideCarActionSheet();
                         })
                         .error(function(data, status, headers, config) {
@@ -289,6 +281,15 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
                         });
                 }
             });
+        };
+
+        
+        function addCar(car) {
+            $scope.cars[car.id] = car;
+        };
+
+        function removeCar(id) {
+            delete $scope.cars[id];
         };
 
         function clearSelected() {
