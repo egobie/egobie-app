@@ -1,5 +1,9 @@
-<ion-view title="Residential" cache-view="false"
+<ion-view title="Openings" cache-view="false"
           ng-controller="futureCtrl">
+    <ion-nav-buttons side="right">
+      <button class="button button-icon icon ion-android-refresh"
+              ng-click="reloadOpening()"></button>
+    </ion-nav-buttons>
     <ion-content overflow-scroll="true" padding="true" class="has-header">
         <ion-list class="list-margin-top-10"
                   ng-repeat="opening in openings"

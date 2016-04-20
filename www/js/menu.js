@@ -61,6 +61,15 @@ angular.module('app.menu', ['util.request'])
                         templateUrl: 'templates/menu/setting.html'
                     }
                 }
+            })
+
+            .state('menu.about', {
+                url: '/about',
+                views: {
+                    'side-menu': {
+                        templateUrl: 'templates/menu/about.html'
+                    }
+                }
             });
 
 //        $urlRouterProvider.otherwise('/menu/home');

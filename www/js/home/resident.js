@@ -121,7 +121,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         };
     })
 
-    .controller('futureCtrl', function($scope, shared, url, getOpenings) {
+    .controller('futureCtrl', function($scope, $http, shared, url, getOpenings) {
         $scope.openings = getOpenings.getData();
         $scope.showIndex = -1;
 
@@ -131,6 +131,25 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
             } else {
                 $scope.showIndex = index;
             }
+        };
+        
+        $scope.reloadOpening = function() {
+            $scope.showIndex = -1;
+            $scope.openings = [];
+            shared.showLoading();
+
+            $http
+                .get(url.openings, {
+                    headers: shared.getHeaders()
+                })
+                .success(function(data, status, headers, config) {
+                    shared.hideLoading();
+                    $scope.openings = data;
+                })
+                .error(function(data, status, headers, config) {
+                    shared.hideLoading();
+                    shared.alert(data);
+                });
         };
     })
 
