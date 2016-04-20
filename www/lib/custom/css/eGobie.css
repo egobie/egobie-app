@@ -32,6 +32,19 @@
     margin-top: 20px;
 }
 
+.start-to-use {
+    display: block;
+    position: absolute;
+    margin: 10px auto 50px auto;
+    width: 300px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    border-color: #1B4A5E;
+    background: transparent;
+    color: #1B4A5E;
+}
+
 .margin-left-auto {
     margin-left: auto;
 }
@@ -338,21 +351,26 @@
 }
 
 .tutorial-1 {
-    background-image: url('../../../img/tp1.svg');
+    background: url('../../../img/tp1.svg') no-repeat center center fixed;
+    background-size: contain;
 }
 
 .tutorial-2 {
-    background-image: url('../../../img/tp2.svg');
+    background: url('../../../img/tp2.svg') no-repeat center center fixed;
+    background-size: contain;
 }
 
 .tutorial-3 {
-    background-image: url('../../../img/tp3.svg');
+    background: url('../../../img/tp3.svg') no-repeat center center fixed;
+    background-size: contain;
 }
 
 .tutorial-4 {
-    background-image: url('../../../img/tp4.svg');
+    background: url('../../../img/tp4.svg') no-repeat center center fixed;
+    background-size: contain;
 }
 
 .tutorial-5 {
-    background-image: url('../../../img/tp5.svg');
+    background: url('../../../img/tp5.svg') no-repeat center center fixed;
+    background-size: contain;
 }
