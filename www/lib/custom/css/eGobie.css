@@ -140,6 +140,11 @@ Light Grey Blue: #D1D2D4
     display: block;
 }
 
+.egobie-center {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
 .item-signin {
     padding: 0px;
     border: none;

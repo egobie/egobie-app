@@ -4,12 +4,12 @@
         <img class="img-signin" src="delorean.jpg" />
 
         <img class="img-signin-divide" src="delorean.jpg"/>
-        <ion-item class="item-input margin-top-10 width-300">
+        <ion-item class="item-input margin-top-10 width-300 egobie-center">
             <i class="icon ion-android-person placeholder-icon i-signin-egobie"></i>
             <input type="text" placeholder="Username"
                    id="{{signInForm.username}}">
         </ion-item>
-        <ion-item class="item-input margin-top-10 width-300">
+        <ion-item class="item-input margin-top-10 width-300 egobie-center">
             <i class="icon ion-locked placeholder-icon i-signin-egobie"></i>
             <input type="password" placeholder="Password"
                    id="{{signInForm.password}}">
@@ -20,7 +20,7 @@
         <button class="button button-dark button-block-300"
                 ng-controller="signInCtrl"
                 ng-click="signIn()">Sign In</button>
-        <ion-item class="item-signin width-300">
+        <ion-item class="item-signin width-300 egobie-center">
             <!--<a class="a-left" href="#">Forget Password?</a>-->
             <a class="a-right" ui-sref="sign.up">Sign Up</a>
         </ion-item>
