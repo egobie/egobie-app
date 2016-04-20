@@ -1,4 +1,4 @@
-angular.module('app.menu', [])
+angular.module('app.menu', ['util.request'])
 
     .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
         // Ionic uses AngularUI Router which uses the concept of states
@@ -19,7 +19,21 @@ angular.module('app.menu', [])
             .state('menu', {
                 url: '/menu',
                 templateUrl: 'templates/menu.html',
-                abstract: true
+                abstract: true,
+                resolve: {
+                    resolveUserCars: function(requestUserCars) {
+                        return requestUserCars.promise;
+                    },
+                    resolveCarMakers: function(requestCarMakers) {
+                        return requestCarMakers.promise;
+                    },
+                    resolveUserPayments: function(requestUserPayments) {
+                        return requestUserPayments.promise;
+                    },
+                    resolveUserServices: function(requestUserServices) {
+                        return requestUserServices.promise;
+                    }
+                }
             })
 
             .state('menu.home', {

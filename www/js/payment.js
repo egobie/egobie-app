@@ -1,32 +1,5 @@
 angular.module('app.payment', ['ionic', 'util.shared', 'util.url'])
 
-    .service('getUserPayments', function($http, shared, url) {
-        shared.showLoading();
-
-        var userPayments = null;
-        var promise = $http
-            .post(url.payments, {
-                user_id: shared.getUser().id
-            }, {
-                headers: shared.getHeaders()
-            })
-            .success(function(data, status, headers, config) {
-                shared.hideLoading();
-                userPayments = data;
-            })
-            .error(function(data, status, headers, config) {
-                shared.hideLoading();
-                shared.alert(data);
-            });
-
-        return {
-            promise: promise,
-            getData: function() {
-                return userPayments;
-            }
-        };
-    })
-
     .config(function($stateProvider) {
         $stateProvider
             .state('menu.payment', {
@@ -35,23 +8,14 @@ angular.module('app.payment', ['ionic', 'util.shared', 'util.url'])
                     'side-menu': {
                         templateUrl: 'templates/menu/payment.html'
                     }
-                },
-                resolve: {
-                    'ResolveUserPayments': function(getUserPayments) {
-                        return getUserPayments.promise;
-                    }
                 }
             });
     })
 
-    .controller('paymentCtrl', function($scope, $ionicModal, $ionicPopup, $ionicActionSheet, $http, getUserPayments, shared, url) {
-        $scope.payments = {};
+    .controller('paymentCtrl', function($scope, $ionicModal, $ionicPopup, $ionicActionSheet, $http, shared, url) {
+        $scope.payments = shared.getUserPayments();
         $scope.years = [];
         $scope.months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
-
-        Array.prototype.forEach.call(getUserPayments.getData(), function(payment) {
-            $scope.payments[payment.id] = payment;
-        });
 
         for (var _i = 0, _c = new Date().getFullYear(); _i <= 10; _i++) {
             $scope.years.push((_c + _i) + "");
@@ -138,7 +102,7 @@ angular.module('app.payment', ['ionic', 'util.shared', 'util.url'])
                 })
                 .success(function(data, status, headers, config) {
                     shared.hideLoading();
-                    addPayment(data);
+                    shared.addUserPayment(data);
                     $scope.hideAddPayment();
                 })
                 .error(function(data, status, headers, config) {
@@ -183,7 +147,7 @@ angular.module('app.payment', ['ionic', 'util.shared', 'util.url'])
                 })
                 .success(function(data, status, headers, config) {
                     shared.hideLoading();
-                    addPayment(data);
+                    shared.addUserPayment(data);
                     $scope.hideEditPayment();
                 })
                 .error(function(data, status, headers, config) {
@@ -210,7 +174,7 @@ angular.module('app.payment', ['ionic', 'util.shared', 'util.url'])
                             headers: shared.getHeaders()
                         })
                         .success(function(data, status, headers, config) {
-                            deletePayment(id);
+                            shared.deleteUserPayment(id);
                             $scope.hidePaymentActionSheet();
                         })
                         .error(function(data, status, headers, config) {
@@ -219,14 +183,6 @@ angular.module('app.payment', ['ionic', 'util.shared', 'util.url'])
                         });
                 }
             });
-        };
-
-        function addPayment(payment) {
-            $scope.payments[payment.id] = payment;
-        };
-
-        function deletePayment(id) {
-            delete $scope.payments[id];
         };
 
         function clearSelected() {

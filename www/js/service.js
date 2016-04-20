@@ -1,33 +1,5 @@
 angular.module('app.service', ['ionic', 'util.shared', 'util.url'])
 
-    .service('getUserServices', function($http, shared, url) {
-        shared.showLoading();
-
-        var userServices = null;
-        var promise = $http
-            .post(url.userServices, {
-                user_id: shared.getUser().id,
-                user_token: shared.getUser().token
-            }, {
-                headers: shared.getHeaders()
-            })
-            .success(function(data, status, headers, config) {
-                shared.hideLoading();
-                userServices = data;
-            })
-            .error(function(data, status, headers, config) {
-                shared.hideLoading();
-                shared.alert(data);
-            });
-
-        return {
-            promise: promise,
-            getData: function() {
-                return userServices;
-            }
-        };
-    })
-
     .config(function($stateProvider) {
         $stateProvider
             .state('menu.service', {
@@ -36,16 +8,11 @@ angular.module('app.service', ['ionic', 'util.shared', 'util.url'])
                     'side-menu': {
                         templateUrl: 'templates/menu/service.html'
                     }
-                },
-                resolve: {
-                    'ResolveUserServices': function(getUserServices) {
-                        return getUserServices.promise;
-                    }
                 }
             });
     })
 
-    .controller('serviceCtrl', function($scope, $ionicModal, $http, getUserServices, shared, url) {
+    .controller('serviceCtrl', function($scope, $ionicModal, $http, shared, url) {
         $ionicModal.fromTemplateUrl('service-detail', {
             scope: $scope
         }).then(function(modal) {
@@ -66,7 +33,7 @@ angular.module('app.service', ['ionic', 'util.shared', 'util.url'])
             "RESERVED": true
         };
 
-        $scope.userServices = getUserServices.getData();
+        $scope.userServices = shared.getUserServices();
         $scope.done = [];
         $scope.inProgress = [];
         $scope.reservation = [];

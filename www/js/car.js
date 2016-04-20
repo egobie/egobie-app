@@ -1,53 +1,5 @@
 angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
 
-    .service('getUserCars', function($http, shared, url) {
-        shared.showLoading();
-
-        var userCars = null;
-        var promise = $http
-            .post(url.cars, {
-                user_id: shared.getUser().id
-            }, {
-                headers: shared.getHeaders()
-            })
-            .success(function(data, status, headers, config) {
-                shared.hideLoading();
-                userCars = data;
-            })
-            .error(function(data, status, headers, config) {
-                shared.hideLoading();
-                shared.alert(data);
-            });
-
-        return {
-            promise: promise,
-            getData: function() {
-                return userCars;
-            }
-        };
-    })
-
-    .service('getCarMakers', function($http, shared, url) {
-        var carMakers = null;
-        var promise = $http
-            .get(url.carMaker, {
-                headers: shared.getHeaders()
-            })
-            .success(function(data, status, headers, config) {
-                carMakers = data;
-            })
-            .error(function(data, status, headers, config) {
-                shared.alert(data);
-            });
-
-        return {
-            promise: promise,
-            getData: function() {
-                return carMakers;
-            }
-        };
-    })
-
     .config(function($stateProvider) {
         $stateProvider
             .state('menu.car', {
@@ -56,29 +8,17 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
                     'side-menu': {
                         templateUrl: 'templates/menu/car.html'
                     }
-                },
-                resolve: {
-                    'ResolveUserCars': function(getUserCars) {
-                        return getUserCars.promise;
-                    },
-                    'ResolveCarMakers': function(getCarMakers) {
-                        return getCarMakers.promise;
-                    }
                 }
             });
     })
 
-    .controller('carCtrl', function($scope, $ionicModal, $ionicPopup, $ionicActionSheet, $http, getUserCars, getCarMakers, shared, url) {
-        $scope.makers = getCarMakers.getData();
+    .controller('carCtrl', function($scope, $ionicModal, $ionicPopup, $ionicActionSheet, $http, shared, url) {
+        $scope.cars = shared.getUserCars();
+        $scope.makers = shared.getCarMakers();
         $scope.years = shared.getYears();
         $scope.states = shared.getStates();
         $scope.colors = shared.getColors();
         $scope.models = [];
-        $scope.cars = {};
-
-        Array.prototype.forEach.call(getUserCars.getData(), function(car) {
-            $scope.cars[car.id] = car;
-        });
 
         $scope.selected = {
             id: 0,
@@ -184,7 +124,7 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
                 })
                 .success(function(data, status, headers, config) {
                     shared.hideLoading();
-                    addCar(data);
+                    shared.addUserCar(data);
                     $scope.hideAddCar();
                 })
                 .error(function(data, status, headers, config) {
@@ -242,7 +182,7 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
                 })
                 .success(function(data, status, headers, config) {
                     shared.hideLoading();
-                    addCar(data);
+                    shared.addUserCar(data);
                     $scope.hideEditCar();
                 })
                 .error(function(data, status, headers, config) {
@@ -271,7 +211,7 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
                         })
                         .success(function(data, status, headers, config) {
                             shared.hideLoading();
-                            removeCar(id);
+                            shared.deleteUserCar(id);
                             $scope.hideCarActionSheet();
                         })
                         .error(function(data, status, headers, config) {
@@ -281,15 +221,6 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
                         });
                 }
             });
-        };
-
-        
-        function addCar(car) {
-            $scope.cars[car.id] = car;
-        };
-
-        function removeCar(id) {
-            delete $scope.cars[id];
         };
 
         function clearSelected() {

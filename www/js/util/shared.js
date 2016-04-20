@@ -43,6 +43,11 @@ angular.module("util.shared", ["util.url"])
             'WHITE', 'BLACK', 'SILVER', 'GRAY', 'RED', 'BLUE', 'BROWN', 'YELLOW', 'GOLD', 'GREEN', 'PINK', 'OTHERS'
         ];
 
+        var userCars = {};
+        var userPayments = {};
+        var userServices = [];
+        var carMakers = [];
+
         // Email Reg
         var regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -143,6 +148,58 @@ angular.module("util.shared", ["util.url"])
 
             getColors: function() {
                 return colors;
+            },
+
+            getUserServices: function() {
+                return userServices;
+            },
+
+            addUserServices: function(services) {
+                userServices = services;
+            },
+
+            getCarMakers: function() {
+                return carMakers;
+            },
+
+            addCarMakers: function(makers) {
+                carMakers = makers;
+            },
+
+            getUserCars: function() {
+                return userCars;
+            },
+
+            addUserCars: function(cars) {
+                Array.prototype.forEach.call(cars, function(car) {
+                    userCars[car.id] = car;
+                });
+            },
+
+            addUserCar: function(car) {
+                userCars[car.id] = car;
+            },
+
+            deleteUserCar: function(id) {
+                delete userCars[id];
+            },
+
+            getUserPayments: function() {
+                return userPayments;
+            },
+
+            addUserPayments: function(payments) {
+                Array.prototype.forEach.call(payments, function(payment) {
+                    userPayments[payment.id] = payment;
+                });
+            },
+
+            addUserPayment: function(payment) {
+                userPayments[payment.id] = payment;
+            },
+
+            deleteUserPayment: function(id) {
+                delete userPayments[id];
             },
 
             testEmail: function(email) {
