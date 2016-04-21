@@ -124,27 +124,27 @@ angular.module('app.sign', ['ionic', 'util.shared', 'util.url'])
                 "phone_number": null
             };
 
-//            if (!validateUser(username, password1, password2, email)) {
-//                return;
-//            }
-//
-//            shared.showLoading();
-//
-//            $http
-//                .post(url.signUp, body, {
-//                    headers: {
-//                        "Content-Type": "application/json"
-//                    }
-//                })
-//                .success(function(data, status, headers, config) {
-//                    shared.refreshUser(data);
-//                    $state.go('tutorial');
-//                })
-//                .error(function(data, status, headers, config) {
-//                    shared.hideLoading();
-//                    shared.alert(data);
-//                });
-            $state.go('tutorial');
+            if (!validateUser(username, password1, password2, email)) {
+                return;
+            }
+
+            shared.showLoading();
+
+            $http
+                .post(url.signUp, body, {
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                })
+                .success(function(data, status, headers, config) {
+                    shared.refreshUser(data);
+                    $state.go('tutorial');
+                })
+                .error(function(data, status, headers, config) {
+                    shared.hideLoading();
+                    shared.alert(data);
+                });
+//            $state.go('tutorial');
 
             function validateUser(username, password1, password2, email) {
                 if (username.length < shared.minUsername) {
