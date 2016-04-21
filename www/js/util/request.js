@@ -25,6 +25,10 @@ angular.module('util.request', ['util.shared', 'util.url'])
         };
     })
 
+    .service('requestServices', function($http, shared, url) {
+        
+    })
+
     .service('requestCarMakers', function($http, shared, url) {
         var carMakers = null;
         var promise = $http

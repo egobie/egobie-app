@@ -12,7 +12,7 @@ angular.module('app.service', ['ionic', 'util.shared', 'util.url'])
             });
     })
 
-    .controller('serviceCtrl', function($scope, $ionicModal, $http, shared, url) {
+    .controller('serviceCtrl', function($scope, $ionicModal, shared, url) {
         $ionicModal.fromTemplateUrl('service-detail', {
             scope: $scope
         }).then(function(modal) {

@@ -1,17 +1,17 @@
 @charset "UTF-8";
 
 /*
-Dark Navy Blue: #404041
-Light Grey Blue: #D1D2D4
+Dark Navy Blue: #404041 rgb(40, 40, 41)
+Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
 */
-.menu-bg,
-.menu-bg h2,
-.menu-bg .list,
-.menu-bg .list .item-avatar,
-.menu-bg .list .item,
-.menu-bg .list .item a {
-    color: rgb(209, 210, 212);
-    background-color: rgb(40, 40, 41);
+.egobie-menu-bg,
+.egobie-menu-bg div,
+.egobie-menu-bg .list,
+.egobie-menu-bg .list .item-avatar,
+.egobie-menu-bg .list .item,
+.egobie-menu-bg .list .item a {
+    color: #D1D2D4;
+    background-color: #404041;
 }
 
 .slider {
@@ -373,95 +373,133 @@ Light Grey Blue: #D1D2D4
     margin-top: 10px;
 }
 
+.egobie-menu-item {
+    border: 1px solid rgb(73, 73, 74);
+}
+
+.egobie-menu-item-last {
+    border: 1px solid rgb(73, 73, 74);
+    border-bottom: 0px;
+}
+
+.egobie-profile-item {
+    border: 0px;
+}
+
+.egobie-profile-img {
+    position: absolute !important;
+    top: 0px !important;
+    bottom: 0px !important;
+    left: 10px !important;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+    max-width: 50px !important;
+    max-height: 50px !important;
+}
+
+.egobie-profile-name {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 35px;
+    width: 200px;
+    line-height: 32px;
+    font-size: 25px;
+}
+
 .egobie-home-on {
-    content: url('../../../img/icons/eGobie_Home_on.jpg');
+    content: url('../../../img/icons/eGobie_Home_on.png');
 }
 
 .egobie-home-off {
-    content: url('../../../img/icons/eGobie_Home_off.jpg');
+    content: url('../../../img/icons/eGobie_Home_off.png');
 }
 
 .egobie-notification-on {
-    content: url('../../../img/icons/eGobie_Notifications_on.jpg');
+    content: url('../../../img/icons/eGobie_Notifications_on.png');
 }
 
 .egobie-notification-off {
-    content: url('../../../img/icons/eGobie_Notifications_off.jpg');
+    content: url('../../../img/icons/eGobie_Notifications_off.png');
 }
 
 .egobie-service-on {
-    content: url('../../../img/icons/eGobie_Services_on.jpg');
+    content: url('../../../img/icons/eGobie_Services_on.png');
 }
 
 .egobie-service-off {
-    content: url('../../../img/icons/eGobie_Services_off.jpg');
+    content: url('../../../img/icons/eGobie_Services_off.png');
 }
 
 .egobie-history-on {
-    content: url('../../../img/icons/eGobie_History_on.jpg');
+    content: url('../../../img/icons/eGobie_History_on.png');
 }
 
 .egobie-history-off {
-    content: url('../../../img/icons/eGobie_History_off.jpg');
+    content: url('../../../img/icons/eGobie_History_off.png');
 }
 
 .egobie-car-on {
-    content: url('../../../img/icons/eGobie_Vehicles_on.jpg');
+    content: url('../../../img/icons/eGobie_Vehicles_on.png');
 }
 
 .egobie-car-off {
-    content: url('../../../img/icons/eGobie_Vehicles_off.jpg');
+    content: url('../../../img/icons/eGobie_Vehicles_off.png');
 }
 
 .egobie-payment-on {
-    content: url('../../../img/icons/eGobie_Payment_on.jpg');
+    content: url('../../../img/icons/eGobie_Payment_on.png');
 }
 
 .egobie-payment-off {
-    content: url('../../../img/icons/eGobie_Payment_off.jpg');
+    content: url('../../../img/icons/eGobie_Payment_off.png');
 }
 
 .egobie-setting-on {
-    content: url('../../../img/icons/eGobie_Settings_on.jpg');
+    content: url('../../../img/icons/eGobie_Settings_on.png');
 }
 
 .egobie-setting-off {
-    content: url('../../../img/icons/eGobie_Settings_off.jpg');
+    content: url('../../../img/icons/eGobie_Settings_off.png');
 }
 
 .egobie-about-on {
-    content: url('../../../img/icons/eGobie_About_on.jpg');
+    content: url('../../../img/icons/eGobie_About_on.png');
 }
 
 .egobie-about-off {
-    content: url('../../../img/icons/eGobie_About_off.jpg');
+    content: url('../../../img/icons/eGobie_About_off.png');
 }
 
 .egobie-icon-6 {
     transform: scale(.6);
 }
 
+
+
 .tutorial-1 {
     background: url('../../../img/tp1.svg') no-repeat center center fixed;
-    background-size: contain;
+    background-size: cover;
 }
 
 .tutorial-2 {
     background: url('../../../img/tp2.svg') no-repeat center center fixed;
-    background-size: contain;
+    background-size: cover;
 }
 
 .tutorial-3 {
     background: url('../../../img/tp3.svg') no-repeat center center fixed;
-    background-size: contain;
+    background-size: cover;
 }
 
 .tutorial-4 {
     background: url('../../../img/tp4.svg') no-repeat center center fixed;
-    background-size: contain;
+    background-size: cover;
 }
 
 .tutorial-5 {
     background: url('../../../img/tp5.svg') no-repeat center center fixed;
-    background-size: contain;
+    background-size: cover;
 }
