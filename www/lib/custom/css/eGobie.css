@@ -120,16 +120,6 @@ Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
     border-right: 1px solid graytext;
 }
 
-.img-signin {
-    width: 250px;
-    height: 250px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
-
 .img-signin-divide {
     width: 300px;
     height: 20px;
@@ -477,7 +467,37 @@ Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
     transform: scale(.6);
 }
 
+.sign-bg {
+    background-image: url('../../../img/sign_bg.svg');
+    background-size: cover;
+}
 
+.sign-img {
+    width: 250px;
+    height: 250px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.sign-in-logo {
+    background-image: url('../../../img/sign_in_logo.svg');
+    background-size: cover;
+}
+
+.sign-up-logo {
+    background-image: url('../../../img/sign_up_logo.svg');
+    background-size: cover;
+}
+
+.sign-a,
+.sign-a a {
+    color: #000000;
+    text-decoration: none;
+    background: transparent;
+}
 
 .tutorial-1 {
     background: url('../../../img/tp1.svg') no-repeat center center fixed;

@@ -1,9 +1,9 @@
-<ion-view padding="true" class="padding">
+<ion-view padding="true" class="padding sign-bg">
     <ion-list class="list-inset"
               ng-controller="signUpCtrl">
-        <img class="img-signin" src="delorean.jpg" />
+        <img class="sign-img sign-in-logo" />
 
-        <img class="img-signin-divide" src="delorean.jpg" />
+        <!--<img class="img-signin-divide" src="delorean.jpg" />-->
         <ion-item class="item-input margin-top-10 width-300 egobie-center">
             <i class="icon ion-android-person placeholder-icon i-signin-egobie"></i>
             <input type="text" placeholder="Username ({{signUpForm.minUsername}}-{{signUpForm.maxUsername}})"
@@ -31,10 +31,10 @@
                    id="{{signUpForm.email}}">
         </ion-item>
 
-        <img class="img-signin-divide" src="delorean.jpg" />
+        <!--<img class="img-signin-divide" src="delorean.jpg" />-->
         <button class="button button-dark button-block-300"
                 ng-click="signUp()">Sign Up</button>
-        <ion-item class="item-signin width-300 egobie-center">
+        <ion-item class="item-signin width-300 egobie-center sign-a">
             <a class="a-left" ui-sref="sign.in">Sign In</a>
         </ion-item>
     </ion-list>
