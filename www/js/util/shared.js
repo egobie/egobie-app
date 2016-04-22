@@ -46,7 +46,9 @@ angular.module("util.shared", ["util.url"])
         var userCars = {};
         var userPayments = {};
         var userServices = [];
+        var userHistories = {};
         var carMakers = [];
+        var services = {};
 
         // Email Reg
         var regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -148,6 +150,58 @@ angular.module("util.shared", ["util.url"])
 
             getColors: function() {
                 return colors;
+            },
+
+            addServices: function(data) {
+                Array.prototype.forEach.call(data, function(service) {
+                    services[service.id] = service;
+                });
+            },
+
+            getServices: function() {
+                return services;
+            },
+
+            getService: function(id) {
+                return services[id];
+            },
+
+            getUserHistory: function(id) {
+                var history = userHistories[id];
+
+                if (history) {
+                    var temp = {
+                        start: history.start_time,
+                        end: history.end_time,
+                        price: history.price,
+                        account_name: userPayments[history.user_payment_id]['account_name'],
+                        account_number: userPayments[history.user_payment_id]['account_number'],
+                        account_type: userPayments[history.user_payment_id]['account_type'],
+                        plate: userCars[history.user_car_id]['plate'],
+                        state: userCars[history.user_car_id]['state'],
+                        year: userCars[history.user_car_id]['year'],
+                        color: userCars[history.user_car_id]['color'],
+                        maker: userCars[history.user_car_id]['maker'],
+                        model: userCars[history.user_car_id]['model'],
+                        services: []
+                    };
+
+                    Array.prototype.forEach.call(history.services, function(id) {
+                        temp.services.push(services[id]);
+                    });
+
+                    return temp;
+                }
+            },
+
+            getUserHistories: function() {
+                return userHistories;
+            },
+
+            addUserHistories: function(histories) {
+                Array.prototype.forEach.call(histories, function(history) {
+                    userHistories[history.id] = history;
+                });
             },
 
             getUserServices: function() {

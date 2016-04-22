@@ -219,6 +219,10 @@ Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
     border-radius: .25em;
 }
 
+.label-bad {
+    background-color: #FF0E0E;
+}
+
 .label-warning {
     background-color: #F0AD4E;
 }
@@ -399,6 +403,14 @@ Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
     font-size: 25px;
 }
 
+.egobie-avatar {
+    content: url('../../../img/icons/eGobie_Profile_on.png');
+    border-radius: 0 !important;
+    transform: scale(1.5);
+    left: 10px !important;
+    top: 25px !important;
+}
+
 .egobie-home-on {
     content: url('../../../img/icons/eGobie_Home_on.png');
 }
@@ -467,7 +479,7 @@ Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
     transform: scale(.6);
 }
 
-.sign-bg {
+.sign-bga {
     background-image: url('../../../img/sign_bg.svg');
     background-size: cover;
 }
@@ -482,12 +494,12 @@ Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
     display: block;
 }
 
-.sign-in-logo {
+.sign-in-logoa {
     background-image: url('../../../img/sign_in_logo.svg');
     background-size: cover;
 }
 
-.sign-up-logo {
+.sign-up-logoa {
     background-image: url('../../../img/sign_up_logo.svg');
     background-size: cover;
 }
@@ -497,6 +509,31 @@ Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
     color: #000000;
     text-decoration: none;
     background: transparent;
+}
+
+.egobie-empty {
+    border: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+hr { 
+  border: 0; 
+  height: 1px; 
+  width: 300px;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+}
+
+hr.egobie-hr-start {
+    margin-bottom: 20px;
+}
+
+hr.egobie-hr-end {
+    margin-top: 20px;
 }
 
 .tutorial-1 {

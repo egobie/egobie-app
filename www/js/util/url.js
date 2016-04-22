@@ -24,8 +24,11 @@ angular.module('util.url', [])
             updateWork: host + "/user/update/work",
             updatePassword: host + "/user/update/password",
 
+            services: host + "/service",
             userServices: host + "/service/user",
             openings: host + "/service/opening",
-            placeOrder: host + ""
+            placeOrder: host + "service/order",
+
+            userHistories: host + "/history"
         };
     });

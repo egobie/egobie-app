@@ -4,69 +4,44 @@
  * and open the template in the editor.
  */
 
-angular.module('app.history', ['ionic'])
+angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
 
-    .factory('histories', function() {
-        return [
-            {
-                "license": "Y96EUV",
-                "maker": "Honda",
-                "model": "Accord",
-                "datetime": "Nov 05, 2015, 13:50:51",
-                "price": "$20.50",
-                "rating": 1.5
-            },
-            {
-                "license": "Y96EUV",
-                "maker": "Honda",
-                "model": "Accord",
-                "datetime": "Nov 05, 2015, 13:50:51",
-                "price": "$20.50",
-                "rating": 2.5
-            },
-            {
-                "license": "Y96EUV",
-                "maker": "Honda",
-                "model": "Accord",
-                "datetime": "Nov 05, 2015, 13:50:51",
-                "price": "$20.50",
-                "rating": 3.5
-            },
-            {
-                "license": "Y96EUV",
-                "maker": "Honda",
-                "model": "Accord",
-                "datetime": "Nov 05, 2015, 13:50:51",
-                "price": "$20.50",
-                "rating": 4.5
-            },
-            {
-                "license": "Y96EUV",
-                "maker": "Honda",
-                "model": "Accord",
-                "datetime": "Nov 05, 2015, 13:50:51",
-                "price": "$20.50",
-                "rating": 5
-            }
-        ];
-    })
-
-    .controller('historyDetailCtrl', function($scope, $ionicModal, histories) {
-        $scope.histories = histories;
+    .controller('historytrl', function($scope, $ionicModal, $http, shared, url) {
+        $scope.histories = shared.getUserHistories();
         $scope.max = 5;
+        $scope.selectedHistory = null;
+        $scope.historyModel = null;
 
         $ionicModal.fromTemplateUrl('history-detail', {
             scope: $scope
         }).then(function(modal) {
-            $scope.modal = modal;
+            $scope.historyModel = modal;
         });
 
+        $scope.showHistory = function(id) {
+            $scope.selectedHistory = shared.getUserHistory(id);
+            console.log($scope.selectedHistory);
+            $scope.historyModel.show();
+        };
+
+        $scope.hideHistory = function() {
+            $scope.selectedHistory = null;
+            $scope.historyModel.hide();
+        };
+
         $scope.historyLabelStyle = function(rating) {
-            if (rating < 2) {
+            // 0.0 - 1.0
+            if (rating <= 1) {
+                return {
+                    'label-bad': true
+                };
+            // 1.5 - 2.5
+            } else if (rating < 3) {
                 return {
                     'label-warning': true
                 };
-            } else if (rating < 4) {
+            // 3.0 - 4.0
+            } else if (rating <= 4) {
                 return {
                     'label-info': true
                 };
