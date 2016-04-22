@@ -1,4 +1,6 @@
-<ion-view title="About">
+<ion-view title="About"
+          ng-app="app.about"
+          ng-controller="aboutCtrl">
     <ion-content padding="true" class="has-header">
         <ion-list>
             <ion-item>
@@ -13,9 +15,36 @@
             <ion-item class="item-icon-right">
                 <i class="icon ion-ios-arrow-right"></i>eGobie.com
             </ion-item>
-            <ion-item class="item-icon-right">
+            <ion-item class="item-icon-right"
+                      ng-click="showFeedback()">
                 <i class="icon ion-ios-arrow-right"></i>Feedback
             </ion-item>
         </ion-list>
     </ion-content>
+
+    <script id="feedback" type="text/ng-template">
+        <ion-modal-view hide-nav-bar="true">
+            <ion-header-bar class="bar bar-header bar-stable">
+                <h1 class="title">FEEDBACK</h1>
+                <button class="button button-icon icon ion-android-close"
+                        ng-click="hideFeedback()"></button>
+            </ion-header-bar>
+            <ion-content padding="true" class="has-header padding">
+                <ion-list>
+                    <ion-item class="item-input item-stacked-label">
+                        <span class="input-label">Title</span>
+                        <input type="text" placeholder="Title"
+                                ng-model="feedback.title">
+                    </ion-item>
+                    <ion-item class="item-input item-stacked-label">
+                        <span class="input-label">Content</span>
+                        <input type="text" placeholder="Content"
+                                ng-model="feedback.feedback">
+                    </ion-item>
+                </ion-list>
+                <button class="button button-block button-dark"
+                        ng-click="sendFeedback()">Send</button>
+            </ion-content>
+        </ion-modal-view>
+    </script>
 </ion-view>

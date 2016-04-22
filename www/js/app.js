@@ -20,6 +20,7 @@ angular
         'app.history',
         'app.notification',
         'app.payment',
+        'app.about',
         'util.shared',
         'util.url',
         'util.request'

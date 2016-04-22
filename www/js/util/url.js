@@ -23,6 +23,7 @@ angular.module('util.url', [])
             updateHome: host + "/user/update/home",
             updateWork: host + "/user/update/work",
             updatePassword: host + "/user/update/password",
+            feedback: host + "/user/feedback",
 
             services: host + "/service",
             userServices: host + "/service/user",
