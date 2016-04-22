@@ -1,88 +1,70 @@
 <ion-view title="Services" cache-view="false"
           ng-app="app.service"
           ng-controller="serviceCtrl">
-    <ion-content overflow-scroll="true" padding="true" class="has-header">
+    <ion-content padding="true" class="has-header">
         <ion-list>
             <ion-item menu-close="" class="item-divider item-icon-right"
-                      ng-click="toggle('DONE')">
-                <i class="icon ion-ios-arrow-down"></i>Done
+                      ng-click="toggleShownService('CAR_WASH')">
+                <i class="icon ion-ios-arrow-down"></i>{{serviceNames["CAR_WASH"]}}
             </ion-item>
             <ion-item menu-close="" class="card"
-                      ng-repeat="service in done"
-                      ng-show="isShown('DONE')"
-                      ng-click="showDetail()">
+                      ng-repeat="service in carWash"
+                      ng-click="showService(service)"
+                      ng-show="isShownService('CAR_WASH')">
                 <ion-list>
                     <ion-item class="item-avatar">
                         <img src="mcfly.jpg">
-                        <h2>{{service.plate}}</h2>
-                        <p>Reserve Time : {{service.revserve_time}}</p>
-                        <p>Start Time : {{service.start_time}}</p>
-                        <p>End Time : {{service.end_time}}</p>
+                        <h2>{{service.name}}</h2>
+                        <p>Estimated Time : {{service.time}}</p>
+                        <p>Price : {{service.price}}</p>
                     </ion-item>
 
                     <ion-item class="item-body">
-                        <p>
-                            {{service.note}}
-                        </p>
-                        <p>
-                            <a href="#" class="subdued">{{service.time}} mins</a>
-                            <a href="#" class="subdued">{{service.price}}</a>
-                        </p>
+                        <p>{{service.description}}</p>
                     </ion-item>
                 </ion-list>
             </ion-item>
 
-            <ion-item menu-close="" class="item-divider item-icon-right margin-top-5"
-                      ng-click="toggle('IN_PROGRESS')">
-                <i class="icon ion-ios-arrow-down"></i>In Progress
+            <ion-item menu-close="" class="item-divider item-icon-right"
+                      ng-click="toggleShownService('OIL_CHANGE')">
+                <i class="icon ion-ios-arrow-down"></i>{{serviceNames["OIL_CHANGE"]}}
             </ion-item>
             <ion-item menu-close="" class="card"
-                      ng-repeat="service in inProgress"
-                      ng-show="isShown('IN_PROGRESS')"
-                      ng-click="showDetail()">
+                      ng-repeat="service in oilChange"
+                      ng-click="showService(service)"
+                      ng-show="isShownService('OIL_CHANGE')">
                 <ion-list>
                     <ion-item class="item-avatar">
                         <img src="mcfly.jpg">
-                        <h2>{{service.plate}}</h2>
-                        <p>Reserve Time : {{service.revserve_time}}</p>
-                        <p>Start Time : {{service.start_time}}</p>
+                        <h2>{{service.name}}</h2>
+                        <p>Estimated Time : {{service.time}}</p>
+                        <p>Price : {{service.price}}</p>
                     </ion-item>
 
                     <ion-item class="item-body">
-                        <p>
-                            {{service.note}}
-                        </p>
-                        <p>
-                            <a href="#" class="subdued">{{service.time}} mins</a>
-                            <a href="#" class="subdued">{{service.price}}</a>
-                        </p>
+                        <p>{{service.description}}</p>
                     </ion-item>
                 </ion-list>
             </ion-item>
 
-            <ion-item menu-close="" class="item-divider item-icon-right margin-top-5"
-                      ng-click="toggle('RESERVED')">
-                <i class="icon ion-ios-arrow-down"></i>Reservation
+            <ion-item menu-close="" class="item-divider item-icon-right"
+                      ng-click="toggleShownService('DETAILING')">
+                <i class="icon ion-ios-arrow-down"></i>{{serviceNames["DETAILING"]}}
             </ion-item>
             <ion-item menu-close="" class="card"
-                      ng-repeat="service in reservation"
-                      ng-show="isShown('RESERVED')"
-                      ng-click="showDetail()">
+                      ng-repeat="service in detailing"
+                      ng-click="showService(service)"
+                      ng-show="isShownService('DETAILING')">
                 <ion-list>
                     <ion-item class="item-avatar">
                         <img src="mcfly.jpg">
-                        <h2>{{service.plate}}</h2>
-                        <p>Reserve Time : {{service.revserve_time}}</p>
+                        <h2>{{service.name}}</h2>
+                        <p>Estimated Time : {{service.time}}</p>
+                        <p>Price : {{service.price}}</p>
                     </ion-item>
 
                     <ion-item class="item-body">
-                        <p>
-                            {{service.note}}
-                        </p>
-                        <p>
-                            <a href="#" class="subdued">{{service.time}} mins</a>
-                            <a href="#" class="subdued">{{service.price}}</a>
-                        </p>
+                        <p>{{service.description}}</p>
                     </ion-item>
                 </ion-list>
             </ion-item>
@@ -94,22 +76,20 @@
             <ion-header-bar class="bar bar-header bar-stable">
                 <h1 class="title">DETAIL</h1>
                 <button class="button button-icon icon ion-android-close"
-                        ng-click="hideDetail()"></button>
+                        ng-click="hideService()"></button>
             </ion-header-bar>
             <ion-content overflow-scroll="true" padding="true" class="has-header padding">
                 <ion-item menu-close="" class="card">
                     <ion-list class="card">
                         <ion-item class="item-avatar">
                             <img src="mcfly.jpg">
-                            <h2>{{service.license}}</h2>
-                            <p>
-                                <a href="#" class="subdued">{{service.datetime}}</a>
-                                <a href="#" class="subdued">{{service.status}}</a>
-                            </p>
+                            <h2>{{selectedService.name}}</h2>
+                            <p>Estimated Time : {{selectedService.time}}</p>
+                            <p>Price : {{selectedService.price}}</p>
                         </ion-item>
 
                         <ion-item class="item-body">
-                            <p>{{service.description}</p>
+                            <p ng-repeat="item in selectedService.items">{{item}}</p>
                         </ion-item>
                     </ion-list>
                 </ion-item>

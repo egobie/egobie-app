@@ -16,43 +16,52 @@ angular.module('app.service', ['ionic', 'util.shared', 'util.url'])
         $ionicModal.fromTemplateUrl('service-detail', {
             scope: $scope
         }).then(function(modal) {
-            $scope.showDetailModel = modal;
+            $scope.serviceModel = modal;
         });
 
-        $scope.showDetail = function() {
-            $scope.showDetailModel.show();
+        $scope.serviceShown = {
+            "CAR_WASH": true,
+            "OIL_CHANGE": true,
+            "DETAILING": true
         };
 
-        $scope.hideDetail = function() {
-            $scope.showDetailModel.hide();
+        $scope.serviceNames = {
+            "CAR_WASH": "Car Wash",
+            "OIL_CHANGE": "Oil Change",
+            "DETAILING": "Detailing"
         };
 
-        $scope.shown = {
-            "DONE": true,
-            "IN_PROGRESS": true,
-            "RESERVED": true
-        };
+        $scope.services = shared.getServices();
+        $scope.selectedService = null;
+        $scope.carWash = [];
+        $scope.oilChange = [];
+        $scope.detailing = [];
 
-        $scope.userServices = shared.getUserServices();
-        $scope.done = [];
-        $scope.inProgress = [];
-        $scope.reservation = [];
-
-        for (var i = 0; i < $scope.userServices.length; i++) {
-            if ($scope.userServices[i].status === "DONE") {
-                $scope.done.push($scope.userServices[i]);
-            } else if ($scope.userServices[i].status === "IN_PROGRESS") {
-                $scope.inProgress.push($scope.userServices[i]);
-            } else if ($scope.userServices[i].status === "RESERVED") {
-                $scope.reservation.push($scope.userServices[i]);
+        for (var i in $scope.services) {
+            if ($scope.services[i].type === "CAR_WASH") {
+                $scope.carWash.push($scope.services[i]);
+            } else if ($scope.services[i].type === "OIL_CHANGE") {
+                $scope.oilChange.push($scope.services[i]);
+            } else if ($scope.services[i].type === "DETAILING") {
+                $scope.detailing.push($scope.services[i]);
             }
         }
 
-        $scope.toggle = function(section) {
-            $scope.shown[section] = !$scope.shown[section];
+        $scope.showService = function(service) {
+            $scope.selectedService = service;
+            $scope.serviceModel.show();
         };
 
-        $scope.isShown = function(section) {
-            return $scope.shown[section];
+        $scope.hideService = function() {
+            $scope.selectedService = null;
+            $scope.serviceModel.hide();
+        };
+
+        $scope.isShownService = function(name) {
+            return $scope.serviceShown[name];
+        };
+
+        $scope.toggleShownService = function(name) {
+            $scope.serviceShown[name] = !$scope.serviceShown[name];
         };
     });
