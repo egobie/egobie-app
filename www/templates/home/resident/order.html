@@ -1,17 +1,22 @@
 <ion-view title="Reservation"
           ng-controller="futureOrderCtrl">
     <ion-content padding="true" class="has-header">
-        <!-- Filter -->
-        <ion-item class="item-divider item-padding-top-bottom">Detail</ion-item>
+        <!-- Date -->
+        <ion-item class="item-divider item-padding-top-bottom margin-top-5">Reserved Datetime</ion-item>
 
         <ion-list>
-            <!-- Date -->
-<!--            <ion-item class="item-icon-left margin-top-5 item-padding-top-bottom"
-                      ng-controller="carSelectCtrl"
-                      ng-click="selectCar()">
-                <i class="icon ion-model-s icon-size-25"></i>{{selectedCar.plate}}
-                <span class="item-note">Choose a vehicle...</span>
-            </ion-item>-->
+            <ion-item class="item-icon-left margin-top-5 item-padding-top-bottom">
+                <i class="icon ion-calendar icon-size-25"></i>{{opening.day}}
+            </ion-item>
+            <ion-item class="item-icon-left margin-top-5 item-padding-top-bottom">
+                <i class="icon ion-calendar icon-size-25"></i>{{opening.start}} to {{opening.end}}
+            </ion-item>
+        </ion-list>
+
+        <!-- Detail -->
+        <ion-item class="item-divider item-padding-top-bottom margin-top-5">Detail</ion-item>
+
+        <ion-list>
 
             <!-- Car -->
             <ion-item class="item-icon-left margin-top-5 item-padding-top-bottom"
@@ -51,7 +56,7 @@
         <ion-item class="item-divider item-padding-top-bottom margin-top-5">Estimated Time</ion-item>
 
         <ion-item class="item-icon-left margin-top-5">
-            <i class="icon ion-ios-time icon-size-25"></i>{{time}}
+            <i class="icon ion-ios-time icon-size-25"></i>{{order.time}} mins
             <!--<span class="item-note">Arrive in 10 mins...</span>-->
         </ion-item>
 
@@ -59,7 +64,7 @@
         <ion-item class="item-divider item-padding-top-bottom margin-top-5">Estimated Price</ion-item>
 
         <ion-item class="item-icon-left item-icon-right margin-top-5">
-            <i class="icon ion-cash icon-size-25"></i>{{price}}
+            <i class="icon ion-cash icon-size-25"></i>{{order.price}}
             <i class="icon ion-social-usd icon-size-15"></i>
         </ion-item>
 
