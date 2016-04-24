@@ -51,6 +51,15 @@ angular.module('app.menu', ['util.request'])
                 }
             })
 
+            .state('menu.notification', {
+                url: '/notification',
+                views: {
+                    'side-menu': {
+                        templateUrl: 'templates/menu/notification.html'
+                    }
+                }
+            })
+
             .state('menu.history', {
                 url: '/history',
                 views: {

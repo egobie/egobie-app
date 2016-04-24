@@ -1,9 +1,10 @@
-<ion-view title="Car List">
-    <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <ion-list overflow-scroll="true"
-                  ng-controller="carPickerCtrl">
-            <ion-item ng-repeat="(car, checked) in cars"
-                      ng-click="pickCar(car)">{{car}}</ion-item>
+<ion-view title="Car List"
+          ng-controller="carSelectCtrl">
+    <ion-content padding="true" class="has-header">
+        <ion-list>
+            <ion-checkbox ng-repeat="(id, car) in cars"
+                          ng-model="car.checked"
+                          ng-click="pickCar(car)">{{car.plate}}</ion-checkbox>
         </ion-list>
     </ion-content>
 </ion-view>

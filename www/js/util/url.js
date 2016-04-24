@@ -2,6 +2,7 @@ angular.module('util.url', [])
 
     .factory('url', function() {
         var host = "http://localhost:8000";
+//        var host = "http://ec2-52-91-137-51.compute-1.amazonaws.com:8000";
 
         return {
             signIn: host + "/signin",

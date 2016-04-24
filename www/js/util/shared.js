@@ -50,6 +50,16 @@ angular.module("util.shared", ["util.url"])
         var carMakers = [];
         var services = {};
 
+        var carWash = [];
+        var oilChange = [];
+        var detailing = [];
+
+        var serviceNames = {
+            "CAR_WASH": "Car Wash",
+            "OIL_CHANGE": "Oil Change",
+            "DETAILING": "Detailing"
+        };
+
         // Email Reg
         var regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -155,11 +165,37 @@ angular.module("util.shared", ["util.url"])
             addServices: function(data) {
                 Array.prototype.forEach.call(data, function(service) {
                     services[service.id] = service;
+                    // Used for selection
+                    services[service.id].checked = false;
+
+                    if (service.type === "CAR_WASH") {
+                        carWash.push(service);
+                    } else if (service.type === "OIL_CHANGE") {
+                        oilChange.push(service);
+                    } else if (service.type === "DETAILING") {
+                        detailing.push(service);
+                    }
                 });
+            },
+
+            getCarWashServices: function() {
+                return carWash;
+            },
+
+            getOilChangeServices: function() {
+                return oilChange;
+            },
+
+            getDetailingServices: function() {
+                return detailing;
             },
 
             getServices: function() {
                 return services;
+            },
+
+            getServiceNames: function() {
+                return serviceNames;
             },
 
             getService: function(id) {
@@ -232,6 +268,8 @@ angular.module("util.shared", ["util.url"])
 
             addUserCar: function(car) {
                 userCars[car.id] = car;
+                // For selection use
+                userCars[car.id].checked = false;
             },
 
             deleteUserCar: function(id) {
@@ -245,6 +283,8 @@ angular.module("util.shared", ["util.url"])
             addUserPayments: function(payments) {
                 Array.prototype.forEach.call(payments, function(payment) {
                     userPayments[payment.id] = payment;
+                    // For selection use
+                    userPayments[payment.id].checked = false;
                 });
             },
 

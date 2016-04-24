@@ -25,27 +25,12 @@ angular.module('app.service', ['ionic', 'util.shared', 'util.url'])
             "DETAILING": true
         };
 
-        $scope.serviceNames = {
-            "CAR_WASH": "Car Wash",
-            "OIL_CHANGE": "Oil Change",
-            "DETAILING": "Detailing"
-        };
-
         $scope.services = shared.getServices();
+        $scope.carWash = shared.getCarWashServices();
+        $scope.oilChange = shared.getOilChangeServices();
+        $scope.detailing = shared.getDetailingServices();
+        $scope.serviceNames = shared.getServiceNames();
         $scope.selectedService = null;
-        $scope.carWash = [];
-        $scope.oilChange = [];
-        $scope.detailing = [];
-
-        for (var i in $scope.services) {
-            if ($scope.services[i].type === "CAR_WASH") {
-                $scope.carWash.push($scope.services[i]);
-            } else if ($scope.services[i].type === "OIL_CHANGE") {
-                $scope.oilChange.push($scope.services[i]);
-            } else if ($scope.services[i].type === "DETAILING") {
-                $scope.detailing.push($scope.services[i]);
-            }
-        }
 
         $scope.showService = function(service) {
             $scope.selectedService = service;

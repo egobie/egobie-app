@@ -1,5 +1,5 @@
 angular.module('app.notification', ['ionic'])
 
-    .controller('test', function($scope) {
+    .controller('notificationCtrl', function($scope) {
         
     });

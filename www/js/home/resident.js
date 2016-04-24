@@ -30,6 +30,48 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         };
     })
 
+    .service('orderCar', function(shared) {
+        return {
+            cars: shared.getUserCars()
+        };
+    })
+
+    .service('orderService', function(shared) {
+        var _i = 0;
+        var _temp = shared.getServices();
+        var obj = {
+            index: {},
+            services: []
+        };
+
+        for (var _id in _temp) {
+            obj.index[_id] = _i;
+            obj.services.push(_temp[_id]);
+            _i++;
+        }
+
+        return obj;
+    })
+
+    .service('orderPayment', function(shared) {
+        return {
+            payments: shared.getUserPayments()
+        };
+    })
+
+    .service('previousState', function() {
+        return {
+            state: ""
+        };
+    })
+
+    .service('futureOrder', function() {
+        return {
+            price: 0,
+            time: 0
+        };
+    })
+
     .config(function($stateProvider) {
 
         $stateProvider
@@ -53,6 +95,15 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                 resolve: {
                     'ResolveOpenings': function(getOpenings) {
                         return getOpenings.promise;
+                    }
+                }
+            })
+
+            .state('menu.home.futureOrder', {
+                url: '/order',
+                views: {
+                    'resident-view': {
+                        templateUrl: 'templates/home/resident/order.html'
                     }
                 }
             })
@@ -85,45 +136,10 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
             });
     })
 
-    .factory('carService', function() {
-        return {
-            selectedCar: 'Y96EUV',
-            cars: {
-                'Y96EUV': false,
-                'N93HVN': false,
-                'XBBZKA': false
-            }
-        };
-    })
-
-    .factory('serviceService', function() {
-        return {
-            index: {
-                'Car Wash': 0,
-                'Oil Change': 1
-            },
-            services: [
-                { service: 'Car Wash', checked: false },
-                { service: 'Oil Change', checked: false }
-            ]
-        };
-    })
-
-    .factory('paymentService', function() {
-        return {
-            selectedPayment: 5690,
-            payments: [
-                5690,
-                1340,
-                8870,
-                5310
-            ]
-        };
-    })
-
-    .controller('futureCtrl', function($scope, $http, shared, url, getOpenings) {
+    .controller('futureCtrl', function($state, $scope, $http, $timeout, shared, url, getOpenings) {
         $scope.openings = getOpenings.getData();
         $scope.showIndex = -1;
+        $scope.selectedRange = null;
 
         $scope.showOpening = function(index) {
             if (index === $scope.showIndex) {
@@ -132,7 +148,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                 $scope.showIndex = index;
             }
         };
-        
+
         $scope.reloadOpening = function() {
             $scope.showIndex = -1;
             $scope.openings = [];
@@ -151,92 +167,142 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                     shared.alert(data);
                 });
         };
+
+        $scope.goToOrder = function(r) {
+            $timeout(function() {
+                $state.go('menu.home.futureOrder');
+            }, 50);
+        };
     })
 
-    .controller('carSelectCtrl', function($scope, $state, carService, shared) {
+    .controller('futureOrderCtrl', function($scope, futureOrder) {
+        $scope.price = futureOrder.price;
+        $scope.time = futureOrder.time;
+    })
 
-        console.log('carselect');
-        console.log(shared.getUser());
+    .controller('carSelectCtrl', function($scope, $state, orderCar, previousState) {
+        $scope.cars = orderCar.cars;
+        $scope.selectedCar = {
+            plate: ''
+        };
 
-        $scope.selectedCar = '';
+        if (Object.keys($scope.cars).length === 1) {
+            for (var _id in $scope.cars) {
+                $scope.selectedCar = $scope.cars[_id];
+                $scope.cars[_id].checked = true;
+                break;
+            }
+        }
 
         $scope.$watch(function() {
-            return carService.selectedCar;
+            return $scope.selectedCar;
         }, function (newValue, oldValue) {
             $scope.selectedCar = newValue;
         });
 
         $scope.selectCar = function() {
+            previousState.state = "menu.home.futureOrder";
             $state.go('menu.home.residentCar');
         };
-    })
-
-    .controller('carPickerCtrl', function($scope, $state, carService) {
-
-        $scope.cars = carService.cars;
-
-        if (carService.selectedCar in $scope.cars) {
-            $scope.cars[carService.selectedCar] = true;
-        }
 
         $scope.pickCar = function(selectedCar) {
-            carService.selectedCar = selectedCar;
-            $state.go('menu.home.demand');
+            $scope.selectedCar = selectedCar;
+            $state.go(previousState.state);
+        };
+
+        $scope.toggleCar = function(car) {
+            for (var _id in $scope.cars) {
+                $scope.cars[_id].checked = false;
+            }
+
+            car.checked = true;
         };
     })
 
-    .controller('serviceSelectCtrl', function($scope, $state, serviceService) {
-
-        $scope.services = serviceService.services;
+    .controller('serviceSelectCtl', function($scope, $state, shared, orderService, futureOrder, previousState) {
+        $scope.services = orderService.services;
+        $scope.serviceNames = shared.getServiceNames();
+        $scope.carWash = shared.getCarWashServices();
+        $scope.detailing = shared.getDetailingServices();
+        $scope.oilChange = shared.getOilChangeServices();
 
         $scope.$watch(function() {
-            return serviceService.services;
+            return orderService.services;
         }, function(newValue, oldValue) {
-            $scope.services = serviceService.services;
+            $scope.services = orderService.services;
         });
 
+        $scope.pickService = function() {
+            $state.go(previousState.state);
+        };
+
         $scope.selectService = function() {
+            previousState.state = "menu.home.futureOrder";
             $state.go('menu.home.residentService');
         };
 
-        $scope.unselectService = function($event, service) {
-            if (service.service in serviceService.index) {
-                serviceService.services[serviceService.index[service.service]].checked = false;
+        $scope.toggleService = function(service, list) {
+            for (var _i = 0; _i < list.length; _i++) {
+                if (list[_i].checked) {
+                    futureOrder.price -= list[_i].price;
+                    futureOrder.time -= list[_i].time;
+                }
+
+                list[_i].checked = false;
             }
+
+            service.checked = true;
+            futureOrder.price += service.price;
+            futureOrder.time += service.time;
+        };
+
+        $scope.unselectService = function($event, service) {
+            if (service.id in orderService.index) {
+                orderService.services[orderService.index[service.id]].checked = false;
+            }
+
+            futureOrder.price -= service.price;
+            futureOrder.time -= service.time;
 
             $event.stopPropagation();
         };
     })
 
-    .controller('servicePickerCtrl', function($scope, $state, serviceService) {
-        $scope.services = serviceService.services;
-
-        $scope.pickService = function() {
-            $state.go('menu.home.demand');
+    .controller('paymentSelectCtrl', function($scope, $state, orderPayment, previousState) {
+        $scope.payments = orderPayment.payments;
+        $scope.selectedPayment = {
+            account_number: ""
         };
-    })
 
-    .controller('paymentSelectCtrl', function($scope, $state, paymentService) {
-
-        $scope.selectedPayment = '';
+        if (Object.keys($scope.payments).length === 1) {
+            for (var _id in $scope.payments) {
+                $scope.selectedPayment = $scope.payments[_id];
+                $scope.payments[_id].checked = true;
+                break;
+            }
+        }
 
         $scope.$watch(function() {
-            return paymentService.selectedPayment;
+            return $scope.selectedPayment;
         }, function(newValue, oldValue) {
-            $scope.selectedPayment = '**** ' + paymentService.selectedPayment;
+            $scope.selectedPayment = newValue;
         });
 
         $scope.selectPayment = function() {
+            previousState.state = "menu.home.futureOrder";
             $state.go('menu.home.residentPayment');
         };
-    })
-
-    .controller('paymentPickerCtrl', function($scope, $state, paymentService) {
-
-        $scope.payments = paymentService.payments;
 
         $scope.pickPayment = function(selectedPayment) {
-            paymentService.selectedPayment = selectedPayment;
-            $state.go('menu.home.demand');
+            $scope.selectedPayment = selectedPayment;
+            $state.go(previousState.state);
+        };
+
+        $scope.togglePayment = function(payment) {
+            for (var _id in $scope.payments) {
+                $scope.payments[_id].checked = false;
+            }
+
+            payment.checked = true;
         };
     });

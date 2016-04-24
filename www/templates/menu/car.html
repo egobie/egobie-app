@@ -3,7 +3,7 @@
           ng-controller="carCtrl">
     <ion-header-bar class="bar-stable">
         <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
-        <h1 class="title">Cars</h1>
+        <h1 class="title">Vehicles</h1>
         <button class="button button-icon icon ion-android-add"
                 ng-click="showAddCar()"></button>
     </ion-header-bar>
@@ -22,10 +22,6 @@
 
                     <ion-item class="item-body">
                         <p>{{car.maker}} - {{car.model}}</p>
-                        <p>
-                            <a href="#" class="subdued">1 Like</a>
-                            <a href="#" class="subdued">5 Comments</a>
-                        </p>
                     </ion-item>
                 </ion-list>
             </ion-item>
