@@ -479,7 +479,7 @@ Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
     transform: scale(.6);
 }
 
-.sign-bga {
+.sign-bg {
     background-image: url('../../../img/sign_bg.svg');
     background-size: cover;
 }
@@ -494,12 +494,12 @@ Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
     display: block;
 }
 
-.sign-in-logoa {
+.sign-in-logo {
     background-image: url('../../../img/sign_in_logo.svg');
     background-size: cover;
 }
 
-.sign-up-logoa {
+.sign-up-logo {
     background-image: url('../../../img/sign_up_logo.svg');
     background-size: cover;
 }

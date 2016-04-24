@@ -1,15 +1,40 @@
 <ion-view title="Hisotry"
           ng-app="app.history"
           ng-controller="historytrl">
+    <ion-nav-buttons side="right">
+      <button class="button button-icon icon ion-android-refresh"
+              ng-click="loadReservations()"></button>
+    </ion-nav-buttons>
     <ion-content padding="true" class="has-header">
         <ion-list>
             <ion-item menu-close="" class="item-divider item-icon-right">
                 <i class="icon"></i>Reservation
             </ion-item>
-            <ion-item class="egobie-empty">
+            <ion-item class="egobie-empty"
+                      ng-show="reservations.length === 0">
                 <hr class="egobie-hr-start" align="center">
                 Your reservations will be listed here
                 <hr class="egobie-hr-end" align="center">
+            </ion-item>
+
+            <ion-item menu-close="" class="card"
+                      ng-repeat="reservation in reservations">
+                <ion-list class="card">
+                    <ion-item class="item-avatar">
+                        <img class="egobie-avatar"/>
+                        <h2>{{reservation.plate}}</h2>
+                        <p>
+                            <a href="#" class="subdued">{{reservation.time}}</a>
+                            <a href="#" class="subdued">{{reservation.price}} $</a>
+                        </p>
+                    </ion-item>
+
+                    <ion-item class="item-body">
+                        <p>
+                            This is Note
+                        </p>
+                    </ion-item>
+                </ion-list>
             </ion-item>
 
             <ion-item menu-close="" class="item-divider item-icon-right">

@@ -208,7 +208,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         };
     })
 
-    .controller('futureOrderCtrl', function($scope, $stateParams, $ionicActionSheet, $http,
+    .controller('futureOrderCtrl', function($scope, $state, $stateParams, $ionicActionSheet, $http,
             shared, url, orderCar, orderService, orderPayment, futureOrder) {
         $scope.order = futureOrder;
         $scope.opening = {
@@ -275,12 +275,15 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                 titleText: 'Make a Reservation',
                 destructiveText: 'Place Order',
                 destructiveButtonClicked: function() {
+                    shared.showLoading();
                     $http
                         .post(url.placeOrder, request, {
                             headers: shared.getHeaders()
                         })
                         .success(function(data, status, headers, config) {
-                            console.log(data);
+                            shared.hideLoading();
+                            $scope.hideReservationSheet();
+                            $state.go("menu.history");
                         })
                         .error(function(data, status, headers, config) {
                             
