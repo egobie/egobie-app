@@ -29,7 +29,7 @@ angular.module('util.url', [])
             services: host + "/service",
             userServices: host + "/service/user",
             openings: host + "/service/opening",
-            placeOrder: host + "service/order",
+            placeOrder: host + "/service/order",
 
             userHistories: host + "/history"
         };

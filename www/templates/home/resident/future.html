@@ -13,7 +13,7 @@
                 <i class="icon ion-ios-arrow-down"></i>{{opening.day}}
             </ion-item>
             <ion-radio ng-repeat="r in opening.range"
-                       ng-click="goToOrder(opening.day, r.start, r.end)"
+                       ng-click="goToOrder(r.id, opening.day, r.start, r.end)"
                        ng-model="selectedRange"
                        ng-value="r.id"
                        ng-show="index === showIndex">{{r.id}} - {{getTime(r.start)}} to {{getTime(r.end)}}</ion-radio>
