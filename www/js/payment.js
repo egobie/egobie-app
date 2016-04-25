@@ -57,13 +57,13 @@ angular.module('app.payment', ['ionic', 'util.shared', 'util.url'])
             });
         };
 
-        $ionicModal.fromTemplateUrl('add-payment', {
+        $ionicModal.fromTemplateUrl('templates/payment/add.html', {
             scope: $scope
         }).then(function(modal) {
             $scope.addPaymentModal = modal;
         });
 
-        $ionicModal.fromTemplateUrl('edit-payment', {
+        $ionicModal.fromTemplateUrl('templates/payment/edit.html', {
             scope: $scope
         }).then(function(modal) {
             $scope.editPaymentModal = modal;

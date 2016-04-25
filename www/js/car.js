@@ -57,13 +57,13 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
             });
         };
 
-        $ionicModal.fromTemplateUrl('add-car', {
+        $ionicModal.fromTemplateUrl('templates/car/add.html', {
             scope: $scope
         }).then(function(modal) {
             $scope.addCarModal = modal;
         });
 
-        $ionicModal.fromTemplateUrl('edit-car', {
+        $ionicModal.fromTemplateUrl('templates/car/edit.html', {
             scope: $scope
         }).then(function(modal) {
             $scope.editCarModal = modal;
