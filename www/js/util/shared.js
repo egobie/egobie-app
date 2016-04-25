@@ -304,6 +304,7 @@ angular.module("util.shared", ["util.url"])
 
             addUserPayment: function(payment) {
                 userPayments[payment.id] = payment;
+                userPayments[payment.id].account_number = payment.account_number.substr(-4, 4);
             },
 
             deleteUserPayment: function(id) {

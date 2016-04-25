@@ -42,12 +42,6 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         };
     })
 
-    .service('previousState', function() {
-        return {
-            state: ""
-        };
-    })
-
     .service('futureOrder', function() {
         return {
             price: 0,
@@ -274,7 +268,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         };
     })
 
-    .controller('carSelectCtrl', function($scope, $state, $timeout, $ionicModal, orderCar, previousState) {
+    .controller('carSelectCtrl', function($scope, $state, $timeout, $ionicModal, orderCar) {
         $scope.cars = orderCar.cars;
         $scope.selectedCar = orderCar.selected;
 
@@ -295,7 +289,6 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.selectCar = function() {
-            previousState.state = "menu.home.futureOrder";
             $state.go('menu.home.residentCar');
         };
 
@@ -308,12 +301,12 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
             orderCar.selected = car;
 
             $timeout(function() {
-                $state.go(previousState.state);
+                $state.go("menu.home.futureOrder");
             }, 100);
         };
     })
 
-    .controller('serviceSelectCtl', function($scope, $state, shared, orderService, futureOrder, previousState) {
+    .controller('serviceSelectCtl', function($scope, $state, shared, orderService, futureOrder) {
         $scope.services = orderService.services;
         $scope.serviceNames = shared.getServiceNames();
         $scope.carWash = shared.getCarWashServices();
@@ -327,11 +320,10 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         });
 
         $scope.pickService = function() {
-            $state.go(previousState.state);
+            $state.go("menu.home.futureOrder");
         };
 
         $scope.selectService = function() {
-            previousState.state = "menu.home.futureOrder";
             $state.go('menu.home.residentService');
         };
 
@@ -365,7 +357,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         };
     })
 
-    .controller('paymentSelectCtrl', function($scope, $state, $timeout, orderPayment, previousState) {
+    .controller('paymentSelectCtrl', function($scope, $state, $timeout, $ionicModal, orderPayment) {
         $scope.payments = orderPayment.payments;
         $scope.selectedPayment = orderPayment.selected;
 
@@ -375,8 +367,17 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
             $scope.selectedPayment = newValue;
         });
 
+        $ionicModal.fromTemplateUrl('templates/payment/add.html', {
+            scope: $scope
+        }).then(function(modal) {
+            $scope.addPaymentModal = modal;
+        });
+
+        $scope.showAddPayment = function() {
+            $scope.addPaymentModal.show();
+        };
+
         $scope.selectPayment = function() {
-            previousState.state = "menu.home.futureOrder";
             $state.go('menu.home.residentPayment');
         };
 
@@ -389,7 +390,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
             orderPayment.selected = selectedPayment;
 
             $timeout(function() {
-                $state.go(previousState.state);
+                $state.go("menu.home.futureOrder");
             }, 100);
         };
     });

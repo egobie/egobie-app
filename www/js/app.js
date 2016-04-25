@@ -25,7 +25,11 @@ angular
 
         'app.history',
         'app.notification',
+
         'app.payment',
+        'app.payment.add',
+        'app.payment.edit',
+
         'app.about',
         'util.shared',
         'util.url',
