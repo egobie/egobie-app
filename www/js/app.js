@@ -10,13 +10,19 @@ angular
         'app.sign',
         'app.tutorial',
         'app.menu',
+
         'app.home',
         'app.home.mall',
         'app.home.resident',
         'app.home.business',
+
         'app.service',
         'app.setting',
+
         'app.car',
+        'app.car.add',
+        'app.car.edit',
+
         'app.history',
         'app.notification',
         'app.payment',

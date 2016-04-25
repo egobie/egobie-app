@@ -5,31 +5,6 @@
  */
 angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
 
-    .service('getOpenings', function($http, shared, url) {
-        shared.showLoading();
-
-        var openings = null;
-        var promise = $http
-            .get(url.openings, {
-                headers: shared.getHeaders()
-            })
-            .success(function(data, status, headers, config) {
-                shared.hideLoading();
-                openings = data;
-            })
-            .error(function(data, status, headers, config) {
-                shared.hideLoading();
-                shared.alert(data);
-            });
-
-        return {
-            promise: promise,
-            getData: function() {
-                return openings;
-            }
-        };
-    })
-
     .service('orderCar', function(shared) {
         return {
             selected: {
@@ -152,8 +127,8 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
             });
     })
 
-    .controller('futureCtrl', function($state, $scope, $http, $timeout, shared, url, getOpenings) {
-        $scope.openings = getOpenings.getData();
+    .controller('futureCtrl', function($state, $scope, $http, $timeout, shared, url) {
+        $scope.openings = [];
         $scope.showIndex = -1;
         $scope.selectedRange = null;
 
@@ -221,9 +196,6 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
             start: $stateParams.opening.start,
             end: $stateParams.opening.end
         };
-
-        console.log($stateParams);
-        console.log($scope.opening);
 
         $scope.$watch(function() {
             return $scope.order;
@@ -302,7 +274,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         };
     })
 
-    .controller('carSelectCtrl', function($scope, $state, $timeout, orderCar, previousState) {
+    .controller('carSelectCtrl', function($scope, $state, $timeout, $ionicModal, orderCar, previousState) {
         $scope.cars = orderCar.cars;
         $scope.selectedCar = orderCar.selected;
 
@@ -311,6 +283,16 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         }, function (newValue, oldValue) {
             $scope.selectedCar = newValue;
         });
+
+        $ionicModal.fromTemplateUrl('templates/car/add.html', {
+            scope: $scope
+        }).then(function(modal) {
+            $scope.addCarModal = modal;
+        });
+
+        $scope.showAddCar = function() {
+            $scope.addCarModal.show();
+        };
 
         $scope.selectCar = function() {
             previousState.state = "menu.home.futureOrder";

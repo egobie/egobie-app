@@ -1,5 +1,9 @@
 <ion-view title="Car List"
           ng-controller="carSelectCtrl">
+    <ion-nav-buttons side="right">
+      <button class="button button-icon icon ion-android-add"
+              ng-click="showAddCar()"></button>
+    </ion-nav-buttons>
     <ion-content padding="true" class="has-header">
         <ion-list>
             <ion-checkbox ng-repeat="(id, car) in cars"
