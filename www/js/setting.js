@@ -39,7 +39,7 @@ angular.module('app.setting', ['ionic', 'util.shared', 'util.url'])
 
         $scope.states = shared.getStates();
 
-        $ionicModal.fromTemplateUrl('edit-user', {
+        $ionicModal.fromTemplateUrl('templates/setting/user.html', {
             scope: $scope
         }).then(function(modal) {
             $scope.editUserModal = modal;
@@ -53,7 +53,7 @@ angular.module('app.setting', ['ionic', 'util.shared', 'util.url'])
             $scope.editUserModal.hide();
         };
 
-        $ionicModal.fromTemplateUrl('edit-password', {
+        $ionicModal.fromTemplateUrl('templates/setting/password.html', {
             scope: $scope
         }).then(function(modal) {
             $scope.editPasswordModal = modal;
@@ -70,7 +70,7 @@ angular.module('app.setting', ['ionic', 'util.shared', 'util.url'])
             $scope.editPasswordModal.hide();
         };
 
-        $ionicModal.fromTemplateUrl('edit-home', {
+        $ionicModal.fromTemplateUrl('templates/setting/home.html', {
             scope: $scope
         }).then(function(modal) {
             $scope.editHomeModal = modal;
@@ -84,7 +84,7 @@ angular.module('app.setting', ['ionic', 'util.shared', 'util.url'])
             $scope.editHomeModal.hide();
         };
 
-        $ionicModal.fromTemplateUrl('edit-work', {
+        $ionicModal.fromTemplateUrl('templates/setting/work.html', {
             scope: $scope
         }).then(function(modal) {
             $scope.editWorkModal = modal;

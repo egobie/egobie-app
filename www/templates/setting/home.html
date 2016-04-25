@@ -1,0 +1,43 @@
+<ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-stable">
+        <h1 class="title">HOME ADDRESS</h1>
+        <button class="button button-icon icon ion-android-close"
+                ng-click="hideEditHome()"></button>
+    </ion-header-bar>
+    <ion-content padding="true" class="has-header">
+        <ion-list>
+            <!-- Street -->
+            <ion-item class="item-input margin-top-5 item-padding-top-bottom">
+                <i class="icon ion-person placeholder-icon icon-size-25 i-add-payment-egobie"></i>
+                <input type="text" placeholder="Street"
+                       ng-model="home.street"/>
+            </ion-item>
+
+            <!-- City -->
+            <ion-item class="item-input margin-top-5 item-padding-top-bottom">
+                <i class="icon ion-person placeholder-icon icon-size-25 i-add-payment-egobie"></i>
+                <input type="text" placeholder="City"
+                       ng-model="home.city"/>
+            </ion-item>
+
+            <!-- State -->
+            <ion-item class="item-input margin-top-5 item-padding-top-bottom">
+                <i class="icon ion-map placeholder-icon icon-size-25 i-add-payment-egobie"></i>
+                <select id="edithome-state" class="select-egobie"
+                        ng-model="home.state"
+                        ng-options="state as fullname for (state, fullname) in states">
+                    <option value="">Choose State</option>
+                </select>
+            </ion-item>
+
+            <!-- Zip -->
+            <ion-item class="item-input margin-top-5 item-padding-top-bottom">
+                <i class="icon ion-person placeholder-icon icon-size-25 i-add-payment-egobie"></i>
+                <input type="text" placeholder="Zip Code"
+                       ng-model="home.zip"/>
+            </ion-item>
+        </ion-list>
+        <button class="button button-block button-dark"
+                ng-click="editHome()">Save</button>
+    </ion-content>
+</ion-modal-view>
