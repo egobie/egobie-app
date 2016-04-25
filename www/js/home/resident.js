@@ -99,12 +99,12 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                     'resident-view': {
                         templateUrl: 'templates/home/resident/future.html'
                     }
-                },
-                resolve: {
-                    'ResolveOpenings': function(getOpenings) {
-                        return getOpenings.promise;
-                    }
                 }
+//                resolve: {
+//                    'ResolveOpenings': function(getOpenings) {
+//                        return getOpenings.promise;
+//                    }
+//                }
             })
 
             .state('menu.home.futureOrder', {
@@ -170,6 +170,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
             $scope.openings = [];
             shared.showLoading();
 
+            $timeout(function() {
             $http
                 .get(url.openings, {
                     headers: shared.getHeaders()
@@ -182,6 +183,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                     shared.hideLoading();
                     shared.alert(data);
                 });
+            }, 1000);
         };
 
         $scope.goToOrder = function(id, day, start, end) {
@@ -206,6 +208,8 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                 return t + " P.M";
             }
         };
+
+        $scope.reloadOpening();
     })
 
     .controller('futureOrderCtrl', function($scope, $state, $stateParams, $ionicActionSheet, $http,

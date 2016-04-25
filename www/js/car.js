@@ -79,25 +79,8 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.changeMaker = function() {
-            shared.showLoading();
             $scope.selected.model = 0;
-
-            if ($scope.selected.maker) {
-                $http
-                    .get(url.carModel + "/" + $scope.selected.maker, {
-                        headers: shared.getHeaders()
-                    })
-                    .success(function(data, status, headers, config) {
-                        shared.hideLoading();
-                        $scope.models = data;
-                    })
-                    .error(function(data, status, headers, config) {
-                        shared.hideLoading();
-                        shared.alert(data);
-                    });
-            } else {
-                $scope.models = [];
-            }
+            $scope.models = shared.getCarModels($scope.selected.maker);
         };
 
         $scope.createCar = function() {
@@ -134,27 +117,17 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.showEditCar = function(car) {
+            $scope.models = shared.getCarModels(car.maker_id);
+
             $scope.selected.id = car.id;
+            $scope.selected.plate = car.plate;
+            $scope.selected.state = car.state;
+            $scope.selected.year = car.year;
+            $scope.selected.maker = car.maker_id;
+            $scope.selected.model = car.model_id;
+            $scope.selected.color = car.color;
 
-            $http
-                .get(url.carModel + "/" + car.maker_id, {
-                    headers: shared.getHeaders()
-                })
-                .success(function(data, status, headers, config) {
-                    $scope.models = data;
-                    $scope.selected.plate = car.plate;
-                    $scope.selected.state = car.state;
-                    $scope.selected.year = car.year;
-                    $scope.selected.maker = car.maker_id;
-                    $scope.selected.model = car.model_id;
-                    $scope.selected.color = car.color;
-
-                    $scope.editCarModal.show();
-                    console.log($scope.selected);
-                })
-                .error(function(data, status, headers, config) {
-                    shared.alert(data);
-                });
+            $scope.editCarModal.show();
         };
 
         $scope.editCar = function() {

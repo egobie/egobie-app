@@ -27,15 +27,18 @@ angular.module('app.menu', ['util.request'])
                     resolveCarMakers: function(requestCarMakers) {
                         return requestCarMakers.promise;
                     },
+                    resolveCarModels: function(requestCarModels) {
+                        return requestCarModels.promise;
+                    },
                     resolveServices: function(requestServices) {
                         return requestServices.promise;
                     },
                     resolveUserPayments: function(requestUserPayments) {
                         return requestUserPayments.promise;
                     },
-                    resolveUserServices: function(requestUserServices) {
-                        return requestUserServices.promise;
-                    },
+//                    resolveUserServices: function(requestUserServices) {
+//                        return requestUserServices.promise;
+//                    },
                     resolveUserHistories: function(requestUserHistories) {
                         return requestUserHistories.promise;
                     }

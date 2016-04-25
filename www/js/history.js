@@ -30,6 +30,7 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.loadReservations = function() {
+            $scope.reservations = [];
             shared.showLoading();
             $http
                 .post(url.userServices, {
@@ -80,4 +81,6 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
         $scope.historyPercent = function(value) {
             return (100 * (value / $scope.max)) + '%';
         };
+
+        $scope.loadReservations();
     });

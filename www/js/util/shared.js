@@ -48,6 +48,7 @@ angular.module("util.shared", ["util.url"])
         var userServices = [];
         var userHistories = {};
         var carMakers = [];
+        var carModels = {};
         var services = {};
 
         var carWash = [];
@@ -254,6 +255,19 @@ angular.module("util.shared", ["util.url"])
 
             addCarMakers: function(makers) {
                 carMakers = makers;
+            },
+
+            addCarModels: function(models) {
+                Array.prototype.forEach.call(models, function(model) {
+                    if (!carModels.hasOwnProperty(model.maker_id)) {
+                        carModels[model.maker_id] = [];
+                    }
+                    carModels[model.maker_id].push(model);
+                });
+            },
+
+            getCarModels: function(makerId) {
+                return carModels[makerId] || [];
             },
 
             getUserCars: function() {
