@@ -1,6 +1,6 @@
 angular.module('app.setting.home', ['ionic', 'util.shared', 'util.url'])
 
-    .controller('homeEditCtrl', function($scope, $ionicModal, $ionicPopup, $http, shared, url) {
+    .controller('homeEditCtrl', function($scope, $http, shared, url) {
         $scope.states = shared.getStates();
         $scope.home = {
             state: shared.getUser().home_state,
@@ -13,6 +13,7 @@ angular.module('app.setting.home', ['ionic', 'util.shared', 'util.url'])
 
         $scope.hideEditHome = function() {
             $scope.editHomeModal.hide();
+            $scope.editHomeModal.remove();
         };
 
         $scope.editHome = function() {
@@ -38,7 +39,7 @@ angular.module('app.setting.home', ['ionic', 'util.shared', 'util.url'])
                     headers: shared.getHeaders()
                 })
                 .success(function(data, status, hearders, config) {
-                    shared.refreshHome(data);
+                    shared.refreshHome(address);
                     shared.hideLoading();
                     $scope.hideEditHome();
                 })

@@ -1,10 +1,23 @@
-<ion-view title="RESERVATION"
+<ion-view title="RESERVATION" cache-view="false"
           ng-controller="reservationOrderCtrl">
     <ion-content padding="true" class="has-header">
-        <!-- Date -->
-        <ion-item class="item-divider item-padding-top-bottom margin-top-5">Reserved Datetime</ion-item>
+        <!-- Services -->
+        <ion-list ng-controller="serviceSelectCtl">
+            <ion-item class="item-divider item-icon-right item-padding-top-bottom margin-top-5"
+                      ng-click="selectService()">
+                Choose Services<i class="icon ion-android-add icon-size-25"></i>
+            </ion-item>
+            <button class="button button-block icon-right ion-android-cancel margin-right-5"
+                    ng-click="unselectService($event, service)"
+                    ng-repeat="service in services | filter: {checked: true}">{{service.name}}</button>
+        </ion-list>
 
-        <ion-list>
+        <!-- Date -->
+        <ion-list ng-controller="openingSelectCtl">
+            <ion-item class="item-divider item-icon-right item-padding-top-bottom margin-top-5"
+                      ng-click="showOpeningModal()">
+                Choose Datetime<i class="icon ion-ios-arrow-right icon-size-25"></i>
+            </ion-item>
             <ion-item class="item-icon-left margin-top-5 item-padding-top-bottom">
                 <i class="icon ion-calendar icon-size-25"></i>{{opening.day}}
             </ion-item>
@@ -14,9 +27,8 @@
         </ion-list>
 
         <!-- Detail -->
-        <ion-item class="item-divider item-padding-top-bottom margin-top-5">Detail</ion-item>
-
         <ion-list>
+            <ion-item class="item-divider item-padding-top-bottom margin-top-5">Detail</ion-item>
 
             <!-- Car -->
             <ion-item class="item-icon-left margin-top-5 item-padding-top-bottom"
@@ -27,21 +39,13 @@
             </ion-item>
 
             <!-- Address -->
-            <ion-item class="item-icon-left margin-top-5 item-padding-top-bottom">
-                <i class="icon ion-home icon-size-25"></i>414 Hackensack Ave
+            <ion-item class="item-icon-left margin-top-5 item-padding-top-bottom"
+                      ng-controller="addressSelectCtrl"
+                      ng-click="showEditHome()">
+                <i class="icon ion-home icon-size-25"></i>{{address}}
+                <span class="item-note"
+                      ng-show="address === ''">Update Address...</span>
             </ion-item>
-
-            <!-- Service -->
-            <ion-list ng-controller="serviceSelectCtl">
-                <ion-item class="item-icon-right margin-top-5 item-padding-top-bottom"
-                          ng-click="selectService()">
-                    Choose Services<i class="icon ion-android-add icon-size-25"></i>
-                    
-                </ion-item>
-                <button class="button button-block icon-right ion-android-cancel margin-right-5"
-                        ng-click="unselectService($event, service)"
-                        ng-repeat="service in services | filter: {checked: true}">{{service.name}}</button>
-            </ion-list>
 
             <!-- Payment -->
             <ion-item class="item-icon-left margin-top-5 item-padding-top-bottom"
@@ -52,21 +56,19 @@
             </ion-item>
         </ion-list>
 
-        <!-- Time -->
-        <ion-item class="item-divider item-padding-top-bottom margin-top-5">Estimated Time</ion-item>
+        <!-- Estimation -->
+        <ion-list>
+            <ion-item class="item-divider margin-top-5 item-padding-top-bottom">Estimation</ion-item>
 
-        <ion-item class="item-icon-left margin-top-5">
-            <i class="icon ion-ios-time icon-size-25"></i>{{order.time}} mins
-            <!--<span class="item-note">Arrive in 10 mins...</span>-->
-        </ion-item>
+            <ion-item class="item-icon-left margin-top-5 item-padding-top-bottom">
+                <i class="icon ion-ios-time icon-size-25"></i>{{order.time}} mins
+            </ion-item>
 
-        <!-- Price -->
-        <ion-item class="item-divider item-padding-top-bottom margin-top-5">Estimated Price</ion-item>
-
-        <ion-item class="item-icon-left item-icon-right margin-top-5">
-            <i class="icon ion-cash icon-size-25"></i>{{order.price}}
-            <i class="icon ion-social-usd icon-size-15"></i>
-        </ion-item>
+            <ion-item class="item-icon-left item-icon-right margin-top-5 item-padding-top-bottom">
+                <i class="icon ion-cash icon-size-25"></i>{{order.price}}
+                <i class="icon ion-social-usd icon-size-15"></i>
+            </ion-item>
+        </ion-list>
 
         <button class="button button-block button-dark"
                 ng-click="placeOrderSheet()"> Make a reservation </button>

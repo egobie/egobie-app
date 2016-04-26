@@ -13,6 +13,7 @@ angular.module('app.setting.work', ['ionic', 'util.shared', 'util.url'])
 
         $scope.hideEditWork = function() {
             $scope.editWorkModal.hide();
+            $scope.editWorkModal.remove();
         };
 
         $scope.editWork = function() {
