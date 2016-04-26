@@ -17,7 +17,12 @@ angular
         'app.home.business',
 
         'app.service',
+
         'app.setting',
+        'app.setting.user',
+        'app.setting.password',
+        'app.setting.home',
+        'app.setting.work',
 
         'app.car',
         'app.car.add',
