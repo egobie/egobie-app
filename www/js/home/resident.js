@@ -1,8 +1,3 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
 
     .service('orderCar', function(shared) {
@@ -42,7 +37,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         };
     })
 
-    .service('futureOrder', function() {
+    .service('reservationOrder', function() {
         return {
             price: 0,
             time: 0
@@ -62,11 +57,11 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                 }
             })
 
-            .state('menu.home.future', {
-                url: '/resident/future',
+            .state('menu.home.reservation', {
+                url: '/resident/reservation',
                 views: {
                     'resident-view': {
-                        templateUrl: 'templates/home/resident/future.html'
+                        templateUrl: 'templates/home/resident/reservation.html'
                     }
                 }
 //                resolve: {
@@ -76,7 +71,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
 //                }
             })
 
-            .state('menu.home.futureOrder', {
+            .state('menu.home.reservationOrder', {
                 url: '/order',
                 params: {
                     opening: {
@@ -121,7 +116,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
             });
     })
 
-    .controller('futureCtrl', function($state, $scope, $http, $timeout, shared, url) {
+    .controller('reservationCtrl', function($state, $scope, $http, $timeout, shared, url) {
         $scope.openings = [];
         $scope.showIndex = -1;
         $scope.selectedRange = null;
@@ -157,7 +152,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
 
         $scope.goToOrder = function(id, day, start, end) {
             $timeout(function() {
-                $state.go('menu.home.futureOrder', {
+                $state.go('menu.home.reservationOrder', {
                     opening: {
                         id: id,
                         day: day,
@@ -181,9 +176,9 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         $scope.reloadOpening();
     })
 
-    .controller('futureOrderCtrl', function($scope, $state, $stateParams, $ionicActionSheet, $http,
-            shared, url, orderCar, orderService, orderPayment, futureOrder) {
-        $scope.order = futureOrder;
+    .controller('reservationOrderCtrl', function($scope, $state, $stateParams, $ionicActionSheet, $http,
+            shared, url, orderCar, orderService, orderPayment, reservationOrder) {
+        $scope.order = reservationOrder;
         $scope.opening = {
             id: $stateParams.opening.id,
             day: $stateParams.opening.day,
@@ -301,12 +296,12 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
             orderCar.selected = car;
 
             $timeout(function() {
-                $state.go("menu.home.futureOrder");
+                $state.go("menu.home.reservationOrder");
             }, 100);
         };
     })
 
-    .controller('serviceSelectCtl', function($scope, $state, shared, orderService, futureOrder) {
+    .controller('serviceSelectCtl', function($scope, $state, shared, orderService, reservationOrder) {
         $scope.services = orderService.services;
         $scope.serviceNames = shared.getServiceNames();
         $scope.carWash = shared.getCarWashServices();
@@ -320,7 +315,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         });
 
         $scope.pickService = function() {
-            $state.go("menu.home.futureOrder");
+            $state.go("menu.home.reservationOrder");
         };
 
         $scope.selectService = function() {
@@ -334,13 +329,13 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
 
             service.checked = true;
             
-            futureOrder.price = 0;
-            futureOrder.time = 0;
+            reservationOrder.price = 0;
+            reservationOrder.time = 0;
 
             for (var _i = 0; _i < $scope.services.length; _i++) {
                 if ($scope.services[_i].checked) {
-                    futureOrder.time += $scope.services[_i].time;
-                    futureOrder.price += $scope.services[_i].price;
+                    reservationOrder.time += $scope.services[_i].time;
+                    reservationOrder.price += $scope.services[_i].price;
                 }
             }
         };
@@ -350,8 +345,8 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                 orderService.services[orderService.index[service.id]].checked = false;
             }
 
-            futureOrder.price -= service.price;
-            futureOrder.time -= service.time;
+            reservationOrder.price -= service.price;
+            reservationOrder.time -= service.time;
 
             $event.stopPropagation();
         };
@@ -390,7 +385,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
             orderPayment.selected = selectedPayment;
 
             $timeout(function() {
-                $state.go("menu.home.futureOrder");
+                $state.go("menu.home.reservationOrder");
             }, 100);
         };
     });

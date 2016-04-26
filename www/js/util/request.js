@@ -116,31 +116,31 @@ angular.module('util.request', ['util.shared', 'util.url'])
         };
     })
 
-    .service('requestUserServices', function($http, shared, url) {
-        var userServices = null;
-        var promise = $http
-            .post(url.userServices, {
-                user_id: shared.getUser().id,
-                user_token: shared.getUser().token
-            }, {
-                headers: shared.getHeaders()
-            })
-            .success(function(data, status, headers, config) {
-                userServices = data;
-                shared.addUserServices(userServices);
-            })
-            .error(function(data, status, headers, config) {
-                shared.hideLoading();
-                shared.alert(data);
-            });
-
-        return {
-            promise: promise,
-            getData: function() {
-                return userServices;
-            }
-        };
-    })
+//    .service('requestUserServices', function($http, shared, url) {
+//        var userServices = null;
+//        var promise = $http
+//            .post(url.userServices, {
+//                user_id: shared.getUser().id,
+//                user_token: shared.getUser().token
+//            }, {
+//                headers: shared.getHeaders()
+//            })
+//            .success(function(data, status, headers, config) {
+//                userServices = data;
+//                shared.addUserServices(userServices);
+//            })
+//            .error(function(data, status, headers, config) {
+//                shared.hideLoading();
+//                shared.alert(data);
+//            });
+//
+//        return {
+//            promise: promise,
+//            getData: function() {
+//                return userServices;
+//            }
+//        };
+//    })
 
     .service('requestUserHistories', function($http, shared, url) {
         var userHistories = null;
