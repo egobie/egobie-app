@@ -1,40 +1,40 @@
-<ion-view padding="true" class="padding">
+<ion-view padding="true" class="padding sign-bg">
     <ion-list class="list-inset"
               ng-controller="signUpCtrl">
-        <img class="img-signin" src="delorean.jpg" />
+        <img class="sign-img sign-up-logo" />
 
-        <img class="img-signin-divide" src="delorean.jpg" />
-        <ion-item class="item-input margin-top-10 width-300">
+        <!--<img class="img-signin-divide" src="delorean.jpg" />-->
+        <ion-item class="item-input margin-top-10 width-300 egobie-center">
             <i class="icon ion-android-person placeholder-icon i-signin-egobie"></i>
             <input type="text" placeholder="Username ({{signUpForm.minUsername}}-{{signUpForm.maxUsername}})"
                    id="{{signUpForm.username}}"
                    minlength="{{signUpForm.minUsername}}"
                    maxlength="{{signUpForm.maxUsername}}">
         </ion-item>
-        <ion-item class="item-input margin-top-10 width-300">
+        <ion-item class="item-input margin-top-10 width-300 egobie-center">
             <i class="icon ion-locked placeholder-icon i-signin-egobie"></i>
             <input type="password" placeholder="Password ({{signUpForm.minPassword}}-{{signUpForm.maxPassword}})"
                    id="{{signUpForm.password1}}"
                    minlength="{{signUpForm.minPassword}}"
                    maxlength="{{signUpForm.maxPassword}}">
         </ion-item>
-        <ion-item class="item-input margin-top-10 width-300">
+        <ion-item class="item-input margin-top-10 width-300 egobie-center">
             <i class="icon placeholder-icon i-signin-egobie"></i>
             <input type="password" placeholder="Confirm Password"
                    id="{{signUpForm.password2}}"
                    minlength="{{signUpForm.minPassword}}"
                    maxlength="{{signUpForm.maxPassword}}">
         </ion-item>
-        <ion-item class="item-input margin-top-10 width-300">
+        <ion-item class="item-input margin-top-10 width-300 egobie-center">
             <i class="icon ion-email placeholder-icon i-signin-egobie"></i>
             <input type="email" placeholder="Email Address"
                    id="{{signUpForm.email}}">
         </ion-item>
 
-        <img class="img-signin-divide" src="delorean.jpg" />
+        <!--<img class="img-signin-divide" src="delorean.jpg" />-->
         <button class="button button-dark button-block-300"
                 ng-click="signUp()">Sign Up</button>
-        <ion-item class="item-signin width-300">
+        <ion-item class="item-signin width-300 egobie-center sign-a">
             <a class="a-left" ui-sref="sign.in">Sign In</a>
         </ion-item>
     </ion-list>

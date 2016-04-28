@@ -5,24 +5,41 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'app.directives',
-    'app.sign',
-    'app.tutorial',
-    'app.menu',
-    'app.home',
-    'app.home.mall',
-    'app.home.resident',
-    'app.home.business',
-    'app.service',
-    'app.setting',
-    'app.car',
-    'app.history',
-    'app.notification',
-    'app.payment',
-    'util.shared',
-    'util.url',
-    'util.request'
-])
+angular
+    .module('app', ['ionic', 'app.directives',
+        'app.sign',
+        'app.tutorial',
+        'app.menu',
+
+        'app.home',
+        'app.home.mall',
+        'app.home.resident',
+        'app.home.business',
+
+        'app.service',
+
+        'app.setting',
+        'app.setting.user',
+        'app.setting.password',
+        'app.setting.home',
+        'app.setting.work',
+
+        'app.car',
+        'app.car.add',
+        'app.car.edit',
+
+        'app.history',
+        'app.notification',
+
+        'app.payment',
+        'app.payment.add',
+        'app.payment.edit',
+
+        'app.about',
+        'util.shared',
+        'util.url',
+        'util.request'
+    ])
 
     .run(function($ionicPlatform) {
         $ionicPlatform.ready(function() {

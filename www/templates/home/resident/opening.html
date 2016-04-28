@@ -1,0 +1,26 @@
+<ion-modal-view cache-view="false"
+                ng-app="app.home.resident"
+                ng-controller="openingCtrl">
+    <ion-header-bar class="bar bar-header bar-stable">
+        <button class="button button-icon icon ion-android-close"
+                ng-click="hideOpeningModal()"></button>
+        <h1 class="title">OPENINGS</h1>
+        <button class="button button-icon icon ion-android-refresh"
+                ng-click="reloadOpening()"></button>
+    </ion-header-bar>
+    <ion-content padding="true" class="has-header padding">
+        <ion-list class="list-margin-top-10"
+                  ng-repeat="opening in openings"
+                  ng-init="index = $index">
+            <ion-item class="item-divider item-icon-right"
+                      ng-click="showOpening($index)">
+                <i class="icon ion-ios-arrow-down"></i>{{opening.day}}
+            </ion-item>
+            <ion-radio ng-repeat="r in opening.range"
+                       ng-click="goToOrder(r.id, opening.day, r.start, r.end)"
+                       ng-model="selectedRange"
+                       ng-value="r.id"
+                       ng-show="index === showIndex">{{r.id}} - {{getTime(r.start)}} to {{getTime(r.end)}}</ion-radio>
+        </ion-list>
+    </ion-content>
+</ion-modal-view>

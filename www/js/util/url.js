@@ -2,6 +2,7 @@ angular.module('util.url', [])
 
     .factory('url', function() {
         var host = "http://localhost:8000";
+//        var host = "http://ec2-52-91-137-51.compute-1.amazonaws.com:8000";
 
         return {
             signIn: host + "/signin",
@@ -23,9 +24,15 @@ angular.module('util.url', [])
             updateHome: host + "/user/update/home",
             updateWork: host + "/user/update/work",
             updatePassword: host + "/user/update/password",
+            feedback: host + "/user/feedback",
 
+            services: host + "/service",
             userServices: host + "/service/user",
+            openings: host + "/service/opening",
+            placeOrder: host + "/service/order",
+            serviceDemand: host + "/service/demand",
+            openingDemand: host + "/service/demand/opening/",
 
-            placeOrder: host + ""
+            userHistories: host + "/history"
         };
     });
