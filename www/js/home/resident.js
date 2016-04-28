@@ -184,15 +184,23 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         };
     })
 
-    .controller('openingCtrl', function($state, $scope, $http, $timeout, shared, url, orderOpening) {
+    .controller('openingCtrl', function($state, $scope, $http, $timeout, shared, url, orderOpening, orderService) {
         $scope.openings = [];
         $scope.showIndex = -1;
         $scope.selectedRange = null;
+
+        var services = [];
 
         $scope.hideOpeningModal = function() {
             $scope.openingModal.hide();
             $scope.openingModal.remove();
         };
+
+        for (var _i = 0; _i < orderService.services.length; _i++) {
+            if (orderService.services[_i].checked) {
+                services.push(orderService.services[_i].id);
+            }
+        }
 
         $scope.showOpening = function(index) {
             if (index === $scope.showIndex) {
@@ -209,16 +217,18 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
 
             $timeout(function() {
             $http
-                .get(url.openings, {
+                .post(url.openings, services, {
                     headers: shared.getHeaders()
                 })
                 .success(function(data, status, headers, config) {
                     shared.hideLoading();
                     $scope.openings = data;
+                    console.log(data);
                 })
                 .error(function(data, status, headers, config) {
                     shared.hideLoading();
                     shared.alert(data);
+                    $scope.hideOpeningModal();
                 });
             }, 1000);
         };
@@ -234,12 +244,21 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.getTime = function(t) {
-            if (t < 10) {
-                return "0" + t + " A.M";
-            } else if (t < 12) {
-                return t + " A.M";
+            var sufix = "";
+
+            if (t % 1 === 0) {
+                sufix = ":00";
             } else {
-                return t + " P.M";
+                t -= 0.5;
+                sufix = ":30";
+            }
+
+            if (t < 10) {
+                return "0" + t + sufix + " A.M";
+            } else if (t < 12) {
+                return t + sufix + " A.M";
+            } else {
+                return t + sufix + " P.M";
             }
         };
 
