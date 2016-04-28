@@ -480,6 +480,87 @@ Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
     transform: scale(.6);
 }
 
+.egobie-payment {
+    display: table;
+    padding: 0;
+    height: 200px;
+    width: 100%;
+    border: 0;
+}
+
+.egobie-payment .left {
+    display: table-cell;
+    width: 70%;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0px 1px 1px;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.egobie-payment .left p {
+    display: block;
+    position: relative;
+    width: 82%;
+    height: 25px;
+    line-height: 25px;
+    margin-left: 8%;
+}
+
+.egobie-payment .left .name {
+    margin-top: 10%;
+    font-size: xx-large;
+    height: 30px;
+    line-height: 30px;
+}
+
+.egobie-payment .left .number {
+    margin-top: 10%;
+    font-size: larger;
+}
+
+.egobie-payment .left .exp {
+    margin-top: 5%;
+    font-size: medium;
+}
+
+.egobie-payment .left .zip {
+    font-size: medium;
+    float: right;
+}
+
+.egobie-payment .left .type {
+    margin-top: 10%;
+    font-size: small;
+}
+
+.egobie-payment .right {
+    display: table-cell;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 1px 1px 0px;
+    border-radius: 0px 10px 10px 0px;
+    background-color: #404041;
+}
+
+.egobie-payment .right div {
+    width: 65%;
+    height: 35%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.egobie-payment .right .egobie-logo {
+    margin-top: 15%;
+    background: url('../../../img/icons/eGobie_Profile_off.png') no-repeat center center;
+    background-size: cover;
+}
+
+.egobie-payment .right .card-logo {
+    margin-top: 30%;
+    /*background: url('../../../img/icons/eGobie_Profile_off.png') no-repeat center center;*/
+    background-size: cover;
+}
+
 .sign-img {
     width: 250px;
     height: 250px;

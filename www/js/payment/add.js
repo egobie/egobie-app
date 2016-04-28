@@ -14,7 +14,8 @@ angular.module('app.payment.add', ['ionic', 'util.shared', 'util.url'])
             number: "",
             cvv: "",
             month: "",
-            year: ""
+            year: "",
+            zip: ""
         };
 
         $scope.hideAddPayment = function() {
@@ -28,6 +29,7 @@ angular.module('app.payment.add', ['ionic', 'util.shared', 'util.url'])
                 "account_name": $scope.payment.name.toUpperCase(),
                 "account_number": $scope.payment.number + "",
                 "account_type": "CREDIT",
+                "account_zip": $scope.payment.zip,
                 "code": $scope.payment.cvv + "",
                 "expire_month": $scope.payment.month,
                 "expire_year": $scope.payment.year
@@ -60,6 +62,7 @@ angular.module('app.payment.add', ['ionic', 'util.shared', 'util.url'])
             $scope.payment.cvv = "";
             $scope.payment.month = "";
             $scope.payment.year = "";
+            $scope.payment.zip = "";
         };
 
         function validatePayment(payment) {
@@ -70,6 +73,11 @@ angular.module('app.payment.add', ['ionic', 'util.shared', 'util.url'])
 
             if (!payment.account_number) {
                 shared.alert("Please input card number!");
+                return false;
+            }
+
+            if (!payment.account_zip) {
+                shared.alert("Please input zipcode!");
                 return false;
             }
 

@@ -21,7 +21,8 @@ angular.module('app.payment', ['ionic', 'util.shared', 'util.url'])
             number: "",
             cvv: "",
             month: "",
-            year: ""
+            year: "",
+            zip: ""
         };
 
         $scope.showPaymentActionSheet = function(payment) {
@@ -74,6 +75,7 @@ angular.module('app.payment', ['ionic', 'util.shared', 'util.url'])
             $scope.payment.cvv = "";
             $scope.payment.month = payment.expire_month;
             $scope.payment.year = payment.expire_year;
+            $scope.payment.zip = payment.account_zip;
 
             $scope.editPaymentModal.show();
         };
