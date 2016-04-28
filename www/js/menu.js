@@ -1,4 +1,4 @@
-angular.module('app.menu', [])
+angular.module('app.menu', ['util.request'])
 
     .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
         // Ionic uses AngularUI Router which uses the concept of states
@@ -19,7 +19,30 @@ angular.module('app.menu', [])
             .state('menu', {
                 url: '/menu',
                 templateUrl: 'templates/menu.html',
-                abstract: true
+                abstract: true,
+                resolve: {
+                    resolveUserCars: function(requestUserCars) {
+                        return requestUserCars.promise;
+                    },
+                    resolveCarMakers: function(requestCarMakers) {
+                        return requestCarMakers.promise;
+                    },
+                    resolveCarModels: function(requestCarModels) {
+                        return requestCarModels.promise;
+                    },
+                    resolveServices: function(requestServices) {
+                        return requestServices.promise;
+                    },
+                    resolveUserPayments: function(requestUserPayments) {
+                        return requestUserPayments.promise;
+                    },
+//                    resolveUserServices: function(requestUserServices) {
+//                        return requestUserServices.promise;
+//                    },
+                    resolveUserHistories: function(requestUserHistories) {
+                        return requestUserHistories.promise;
+                    }
+                }
             })
 
             .state('menu.home', {
@@ -31,29 +54,11 @@ angular.module('app.menu', [])
                 }
             })
 
-            .state('menu.service', {
-                url: '/service',
+            .state('menu.notification', {
+                url: '/notification',
                 views: {
                     'side-menu': {
-                        templateUrl: 'templates/menu/service.html'
-                    }
-                }
-            })
-
-            .state('menu.payment', {
-                url: '/payment',
-                views: {
-                    'side-menu': {
-                        templateUrl: 'templates/menu/payment.html'
-                    }
-                }
-            })
-
-            .state('menu.car', {
-                url: '/car',
-                views: {
-                    'side-menu': {
-                        templateUrl: 'templates/menu/car.html'
+                        templateUrl: 'templates/menu/notification.html'
                     }
                 }
             })
@@ -72,6 +77,15 @@ angular.module('app.menu', [])
                 views: {
                     'side-menu': {
                         templateUrl: 'templates/menu/setting.html'
+                    }
+                }
+            })
+
+            .state('menu.about', {
+                url: '/about',
+                views: {
+                    'side-menu': {
+                        templateUrl: 'templates/menu/about.html'
                     }
                 }
             });

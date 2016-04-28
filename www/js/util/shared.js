@@ -25,11 +25,6 @@ angular.module("util.shared", ["util.url"])
             work_street: ""
         };
 
-        var cars = {};
-        var makers = [];
-
-        var payments = {};
-
         var states = {
             "AL": "Alabama", "AK": "Alaska", "AS": "American Samoa", "AZ": "Arizona", "AR": "Arkansas",
             "CA": "California", "CO": "Colorado", "CT": "Connecticut", "DE": "Delaware", "DC": "District Of Columbia",
@@ -48,7 +43,23 @@ angular.module("util.shared", ["util.url"])
             'WHITE', 'BLACK', 'SILVER', 'GRAY', 'RED', 'BLUE', 'BROWN', 'YELLOW', 'GOLD', 'GREEN', 'PINK', 'OTHERS'
         ];
 
+        var userCars = {};
+        var userPayments = {};
         var userServices = [];
+        var userHistories = {};
+        var carMakers = [];
+        var carModels = {};
+        var services = {};
+
+        var carWash = [];
+        var oilChange = [];
+        var detailing = [];
+
+        var serviceNames = {
+            "CAR_WASH": "Car Wash",
+            "OIL_CHANGE": "Oil Change",
+            "DETAILING": "Detailing"
+        };
 
         // Email Reg
         var regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -152,147 +163,152 @@ angular.module("util.shared", ["util.url"])
                 return colors;
             },
 
-            getCars: function(scope) {
-                if (user.id) {
-                    var _hide = this.hideLoading;
-                    this.showLoading();
+            addServices: function(data) {
+                Array.prototype.forEach.call(data, function(service) {
+                    services[service.id] = service;
+                    // Used for selection
+                    services[service.id].checked = false;
 
-                    setTimeout(function() {
-                    $http
-                        .post(url.cars, {
-                            user_id: user.id
-                        }, {
-                            headers: headers
-                        })
-                        .success(function(data, status, headers, config) {
-                            _hide();
-                            cars = {};
-                            for (var i = 0; data && i < data.length; i++) {
-                                cars[data[i].id] = data[i];
-                            }
-                            scope.cars = cars;
-                        })
-                        .error(function(data, status, headers, config) {
-                            $ionicPopup.alert({
-                                title: data
-                            });
-                        });
-                    }, 1000);
+                    if (service.type === "CAR_WASH") {
+                        carWash.push(service);
+                    } else if (service.type === "OIL_CHANGE") {
+                        oilChange.push(service);
+                    } else if (service.type === "DETAILING") {
+                        detailing.push(service);
+                    }
+                });
+            },
+
+            getCarWashServices: function() {
+                return carWash;
+            },
+
+            getOilChangeServices: function() {
+                return oilChange;
+            },
+
+            getDetailingServices: function() {
+                return detailing;
+            },
+
+            getServices: function() {
+                return services;
+            },
+
+            getServiceNames: function() {
+                return serviceNames;
+            },
+
+            getService: function(id) {
+                return services[id];
+            },
+
+            getUserHistory: function(id) {
+                var history = userHistories[id];
+
+                if (history) {
+                    var temp = {
+                        start: history.start_time,
+                        end: history.end_time,
+                        price: history.price,
+                        account_name: userPayments[history.user_payment_id]['account_name'],
+                        account_number: userPayments[history.user_payment_id]['account_number'],
+                        account_type: userPayments[history.user_payment_id]['account_type'],
+                        plate: userCars[history.user_car_id]['plate'],
+                        state: userCars[history.user_car_id]['state'],
+                        year: userCars[history.user_car_id]['year'],
+                        color: userCars[history.user_car_id]['color'],
+                        maker: userCars[history.user_car_id]['maker'],
+                        model: userCars[history.user_car_id]['model'],
+                        services: []
+                    };
+
+                    Array.prototype.forEach.call(history.services, function(id) {
+                        temp.services.push(services[id]);
+                    });
+
+                    return temp;
                 }
-
-                return cars;
             },
 
-            addCar: function(car) {
-                cars[car.id] = car;
-                refreshScope();
+            getUserHistories: function() {
+                return userHistories;
             },
 
-            deleteCar: function(id) {
-                delete cars[id];
-                refreshScope();
+            addUserHistories: function(histories) {
+                Array.prototype.forEach.call(histories, function(history) {
+                    userHistories[history.id] = history;
+                });
             },
 
-            getMakers: function(scope) {
-                if (makers.length === 0) {
-                    setTimeout(function() {
-                    $http
-                        .get(url.carMaker, {
-                            headers: headers
-                        })
-                        .success(function(data, status, headers, config) {
-                            makers = data;
-                            scope.makers = makers;
-                        })
-                        .error(function(data, status, headers, config) {
-                            $ionicPopup.alert({
-                                title: data
-                            });
-                        });
-                    }, 1000);
-                }
-
-                return makers;
-            },
-
-            getPayments: function(scope) {
-                if (user.id) {
-                    var _hide = this.hideLoading;
-                    this.showLoading();
-
-                    setTimeout(function() {
-                    $http
-                        .post(url.payments, {
-                            user_id: user.id
-                        }, {
-                            headers: headers
-                        })
-                        .success(function(data, status, headers, config) {
-                            _hide();
-                            payments = {};
-                            for (var i = 0; data && i < data.length; i++) {
-                                payments[data[i].id] = data[i];
-                            }
-                            scope.payments = payments;
-                        })
-                        .error(function(data, status, headers, config) {
-                            $ionicPopup.alert({
-                                title: data
-                            });
-                        });
-                    }, 1000);
-                }
-
-                return payments;
-            },
-
-            addPayment: function(payment) {
-                payments[payment.id] = payment;
-                refreshScope();
-            },
-
-            deletePayment: function(id) {
-                delete payments[id];
-                refreshScope();
-            },
-
-            getUserServices: function(scope) {
-                if (user.id) {
-                    var _hide = this.hideLoading;
-                    this.showLoading();
-
-                    setTimeout(function() {
-                    $http
-                        .post(url.userServices, {
-                            user_id: user.id,
-                            user_token: user.token
-                        }, {
-                            headers: headers
-                        })
-                        .success(function(data, status, headers, config) {
-                            _hide();
-                            userServices = data;
-                            scope.userServices = userServices;
-
-                            for (var i = 0; i < scope.userServices.length; i++) {
-                                if (scope.userServices[i].status === "DONE") {
-                                    scope.done.push(scope.userServices[i]);
-                                } else if (scope.userServices[i].status === "IN_PROGRESS") {
-                                    scope.inProgress.push(scope.userServices[i]);
-                                } else if (scope.userServices[i].status === "RESERVED") {
-                                    scope.reservation.push(scope.userServices[i]);
-                                }
-                            }
-                        })
-                        .error(function(data, status, headers, config) {
-                            $ionicPopup.alert({
-                                title: data
-                            });
-                        });
-                    }, 1000);
-                }
-
+            getUserServices: function() {
                 return userServices;
+            },
+
+            addUserServices: function(services) {
+                userServices = services;
+            },
+
+            getCarMakers: function() {
+                return carMakers;
+            },
+
+            addCarMakers: function(makers) {
+                carMakers = makers;
+            },
+
+            addCarModels: function(models) {
+                Array.prototype.forEach.call(models, function(model) {
+                    if (!carModels.hasOwnProperty(model.maker_id)) {
+                        carModels[model.maker_id] = [];
+                    }
+                    carModels[model.maker_id].push(model);
+                });
+            },
+
+            getCarModels: function(makerId) {
+                return carModels[makerId] || [];
+            },
+
+            getUserCars: function() {
+                return userCars;
+            },
+
+            addUserCars: function(cars) {
+                Array.prototype.forEach.call(cars, function(car) {
+                    userCars[car.id] = car;
+                });
+            },
+
+            addUserCar: function(car) {
+                userCars[car.id] = car;
+                // For selection use
+                userCars[car.id].checked = false;
+            },
+
+            deleteUserCar: function(id) {
+                delete userCars[id];
+            },
+
+            getUserPayments: function() {
+                return userPayments;
+            },
+
+            addUserPayments: function(payments) {
+                Array.prototype.forEach.call(payments, function(payment) {
+                    userPayments[payment.id] = payment;
+                    // For selection use
+                    userPayments[payment.id].checked = false;
+                });
+            },
+
+            addUserPayment: function(payment) {
+                userPayments[payment.id] = payment;
+                userPayments[payment.id].account_number = payment.account_number.substr(-4, 4);
+            },
+
+            deleteUserPayment: function(id) {
+                delete userPayments[id];
             },
 
             testEmail: function(email) {

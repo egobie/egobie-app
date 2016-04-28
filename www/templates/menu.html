@@ -12,42 +12,48 @@
 <!--        <ion-header-bar class="bar-stable">
             <div class="title">Menu</div>
         </ion-header-bar>-->
-        <ion-content padding="false" class="side-menu-left">
+        <ion-content padding="false" class="side-menu-left egobie-menu-bg">
             <ion-list>
-                <ion-item class="item-avatar margin-top-20">
-                    <img src="venkman.jpg">
-                    <h2>Bo Huang</h2>
+                <ion-item class="item-avatar margin-top-20 egobie-profile-item">
+                    <img src="img/icons/eGobie_Profile_off.png" class="egobie-profile-img">
+                    <div class="egobie-profile-name">Bo Huang</div>
                 </ion-item>
 
-                <ion-item ui-sref="menu.home" menu-close="" class="item item-icon-left">
-                    <i class="icon ion-ionic"></i>HOME
+                <ion-item ui-sref="menu.home" menu-close="" class="item item-icon-left egobie-menu-item">
+                    <i class="icon egobie-home-off egobie-icon-6 margin-left--10"></i><span>HOME</span>
                 </ion-item>
 
-                <ion-item ui-sref="menu.service" menu-close="" class="item item-icon-left">
-                    <i class="icon ion-wrench"></i>SERVICES
+                <ion-item ui-sref="menu.notification" menu-close="" class="item item-icon-left egobie-menu-item">
+                    <i class="icon egobie-notification-off egobie-icon-6 margin-left--10"></i>NOTIFICATIONS
                     <span class="badge badge-assertive">111</span>
                 </ion-item>
 
-                <ion-item ui-sref="menu.payment" menu-close="" class="item item-icon-left">
-                    <i class="icon ion-cash"></i>PAYMENT
+                <ion-item ui-sref="menu.service" menu-close="" class="item item-icon-left egobie-menu-item">
+                    <i class="icon egobie-service-off egobie-icon-6 margin-left--10"></i>EGOBIE SERVICES
                 </ion-item>
 
-                <ion-item ui-sref="menu.history" menu-close="" class="item item-icon-left">
-                    <i class="icon ion-clipboard"></i>HISTORY
+                <ion-item ui-sref="menu.history" menu-close="" class="item item-icon-left egobie-menu-item">
+                    <i class="icon egobie-history-off egobie-icon-6 margin-left--10"></i>MY SERVICES
                     <!--<span class="badge badge-assertive">0</span>-->
                 </ion-item>
 
-                <ion-item ui-sref="menu.car" menu-close="" class="item item-icon-left">
-                    <i class="icon ion-model-s"></i>CARS
+                <ion-item ui-sref="menu.car" menu-close="" class="item item-icon-left egobie-menu-item">
+                    <i class="icon egobie-car-off egobie-icon-6 margin-left--10"></i>VEHICLES
                     <!--<span class="item-note">Grammy</span>-->
                 </ion-item>
 
-                <ion-item ui-sref="menu.setting" menu-close="" class="item item-icon-left">
-                    <i class="icon ion-settings"></i>SETTINGS
+                <ion-item ui-sref="menu.payment" menu-close="" class="item item-icon-left egobie-menu-item">
+                    <i class="icon egobie-payment-off egobie-icon-6 margin-left--10"></i>PAYMENT
+                </ion-item>
+
+                <ion-item ui-sref="menu.setting" menu-close="" class="item item-icon-left egobie-menu-item">
+                    <i class="icon egobie-setting-off egobie-icon-6 margin-left--10"></i>SETTINGS
+                </ion-item>
+
+                <ion-item ui-sref="menu.about" menu-close="" class="item item-icon-left egobie-menu-item-last">
+                    <i class="icon egobie-about-off egobie-icon-6 margin-left--10"></i>ABOUT
                 </ion-item>
             </ion-list>
-            <div class="list">
-            </div>
         </ion-content>
     </ion-side-menu>
 </ion-side-menus>

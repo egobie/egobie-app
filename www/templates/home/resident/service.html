@@ -1,11 +1,23 @@
-<ion-view title="Service List">
-    <ion-content overflow-scroll="true" padding="true" class="has-header"
-                 ng-controller="servicePickerCtrl">
+<ion-view title="SERVICES"
+          ng-controller="serviceSelectCtl">
+    <ion-content padding="true" class="has-header">
         <ion-list overflow-scroll="true">
-            <ion-checkbox ng-repeat="service in services"
-                          ng-checked="service.checked"
-                          ng-model="service.checked">{{service.service}}</ion-checkbox>
+            <ion-item class="item-divider">{{serviceNames["CAR_WASH"]}}</ion-item>
+            <ion-checkbox ng-repeat="service in carWash"
+                          ng-click="toggleService(service, carWash)"
+                          ng-model="service.checked">{{service.name}} - {{service.price}}$</ion-checkbox>
+
+            <ion-item class="item-divider">{{serviceNames["OIL_CHANGE"]}}</ion-item>
+            <ion-checkbox ng-repeat="service in oilChange"
+                          ng-click="toggleService(service, oilChange)"
+                          ng-model="service.checked">{{service.name}} - {{service.price}}$</ion-checkbox>
+
+            <ion-item class="item-divider">{{serviceNames["DETAILING"]}}</ion-item>
+            <ion-checkbox ng-repeat="service in detailing"
+                          ng-click="toggleService(service, detailing)"
+                          ng-model="service.checked">{{service.name}} - {{service.price}}$</ion-checkbox>
         </ion-list>
+        
         <button class="button button-block button-dark" ng-click="pickService()">Save</button>
     </ion-content>
 </ion-view>
