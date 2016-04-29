@@ -9,17 +9,7 @@
     </ion-header-bar>
     <ion-content padding="true" class="has-header">
         <ion-list can-swipe="true">
-            <!--
-            <ion-item class="item-thumbnail-left margin-top-10"
-                      ng-repeat="(id, p) in payments"
-                      ng-click="showPaymentActionSheet(p)">
-                <img src="cover.jpg">
-                <h2>**** {{p.account_number}}</h2>
-                <p>{{p.account_name}}</p>
-                <p>{{p.account_type}}</p>
-            </ion-item>
-            -->
-            <ion-item class="egobie-payment margin-top-10"
+            <ion-item class="egobie-payment"
                       ng-repeat="(id, p) in payments"
                       ng-click="showPaymentActionSheet(p)">
                 <div class="left">
@@ -32,8 +22,8 @@
                     <p class="type">{{p.account_type}}</p>
                 </div>
                 <div class="right">
-                    <i class="egobie-logo egobie-logo-white"></i>
-                    <i class="card-logo egobie-payment-visa"></i>
+                    <i class="egobie-logo"></i>
+                    <i class="visa-logo"></i>
                 </div>
             </ion-item>
         </ion-list>

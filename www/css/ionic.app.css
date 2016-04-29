@@ -9730,3 +9730,144 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+
+.egobie {
+  /* Menu Icons */ }
+  .egobie-menu-bg, .egobie-menu-bg * {
+    color: #D1D2D4 !important;
+    background-color: #404041 !important; }
+  .egobie-menu-item, .egobie-menu-item-last {
+    border: 1px solid #49494a; }
+  .egobie-menu-item-last {
+    border-bottom: 0px; }
+  .egobie-menu-profile-logo {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    max-width: 50px;
+    max-height: 50px;
+    content: url("../img/logo/light_grey_blue.png"); }
+  .egobie-menu-profile-name {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 35px;
+    width: 200px;
+    line-height: 32px;
+    font-size: 25px; }
+  .egobie-home-on {
+    content: url("../img/icon/home_on.png"); }
+  .egobie-home-off {
+    content: url("../img/icon/home_off.png"); }
+  .egobie-notification-on {
+    content: url("../img/icon/notifications_on.png"); }
+  .egobie-notification-off {
+    content: url("../img/icon/notifications_off.png"); }
+  .egobie-service-on {
+    content: url("../img/icon/services_on.png"); }
+  .egobie-service-off {
+    content: url("../img/icon/services_off.png"); }
+  .egobie-history-on {
+    content: url("../img/icon/history_on.png"); }
+  .egobie-history-off {
+    content: url("../img/icon/history_off.png"); }
+  .egobie-vehicle-on {
+    content: url("../img/icon/vehicles_on.png"); }
+  .egobie-vehicle-off {
+    content: url("../img/icon/vehicles_off.png"); }
+  .egobie-payment-on {
+    content: url("../img/icon/payment_on.png"); }
+  .egobie-payment-off {
+    content: url("../img/icon/payment_off.png"); }
+  .egobie-setting-on {
+    content: url("../img/icon/settings_on.png"); }
+  .egobie-setting-off {
+    content: url("../img/icon/settings_off.png"); }
+  .egobie-about-on {
+    content: url("../img/icon/about_on.png"); }
+  .egobie-about-off {
+    content: url("../img/icon/about_off.png"); }
+
+.egobie-payment {
+  display: table;
+  padding: 0;
+  height: 180px;
+  width: 100%;
+  margin-top: 15px;
+  border: 0; }
+  .egobie-payment .left {
+    display: table-cell;
+    width: 70%;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0px 1px 1px;
+    border-radius: 10px 0px 0px 10px; }
+    .egobie-payment .left p {
+      display: block;
+      position: relative;
+      width: 82%;
+      height: 25px;
+      line-height: 25px;
+      margin-left: 8%; }
+      .egobie-payment .left p.name {
+        margin-top: 10%;
+        font-size: x-large;
+        height: 30px;
+        line-height: 30px; }
+      .egobie-payment .left p.number {
+        margin-top: 10%;
+        font-size: large; }
+      .egobie-payment .left p span.exp {
+        margin-top: 5%;
+        font-size: medium; }
+      .egobie-payment .left p span.zip {
+        font-size: medium;
+        float: right; }
+      .egobie-payment .left p.type {
+        margin-top: 10%;
+        font-size: small; }
+  .egobie-payment .right {
+    display: table-cell;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 1px 1px 0px;
+    border-radius: 0px 10px 10px 0px;
+    background-color: #404041; }
+    .egobie-payment .right i {
+      display: block;
+      position: absolute;
+      height: 38%;
+      right: 5%; }
+      .egobie-payment .right i.egobie-logo {
+        top: 5%;
+        content: url("../img/logo/white.png"); }
+      .egobie-payment .right i.visa-logo {
+        bottom: 5%;
+        content: url("../img/icon/payment_visa.png"); }
+
+
+.egobie-tutorial-1 {
+  background: url("../img/tutorial/tp1.svg") no-repeat center center fixed;
+  background-size: cover; }
+
+.egobie-tutorial-2 {
+  background: url("../img/tutorial/tp2.svg") no-repeat center center fixed;
+  background-size: cover; }
+
+.egobie-tutorial-3 {
+  background: url("../img/tutorial/tp3.svg") no-repeat center center fixed;
+  background-size: cover; }
+
+.egobie-tutorial-4 {
+  background: url("../img/tutorial/tp4.svg") no-repeat center center fixed;
+  background-size: cover; }
+
+.egobie-tutorial-5 {
+  background: url("../img/tutorial/tp5.svg") no-repeat center center fixed;
+  background-size: cover; }

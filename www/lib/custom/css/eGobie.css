@@ -1,19 +1,5 @@
 @charset "UTF-8";
 
-/*
-Dark Navy Blue: #404041 rgb(40, 40, 41)
-Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
-*/
-.egobie-menu-bg,
-.egobie-menu-bg div,
-.egobie-menu-bg .list,
-.egobie-menu-bg .list .item-avatar,
-.egobie-menu-bg .list .item,
-.egobie-menu-bg .list .item a {
-    color: #D1D2D4;
-    background-color: #404041;
-}
-
 .slider {
   height: 100%;
 }
@@ -368,42 +354,6 @@ Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
     margin-top: 10px;
 }
 
-.egobie-menu-item {
-    border: 1px solid rgb(73, 73, 74);
-}
-
-.egobie-menu-item-last {
-    border: 1px solid rgb(73, 73, 74);
-    border-bottom: 0px;
-}
-
-.egobie-profile-item {
-    border: 0px;
-}
-
-.egobie-profile-img {
-    position: absolute !important;
-    top: 0px !important;
-    bottom: 0px !important;
-    left: 10px !important;
-    margin-top: auto !important;
-    margin-bottom: auto !important;
-    max-width: 50px !important;
-    max-height: 50px !important;
-}
-
-.egobie-profile-name {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    margin-top: auto;
-    margin-bottom: auto;
-    height: 35px;
-    width: 200px;
-    line-height: 32px;
-    font-size: 25px;
-}
-
 .egobie-avatar {
     content: url('../../../img/icons/eGobie_Profile_on.png');
     border-radius: 0 !important;
@@ -412,167 +362,8 @@ Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
     top: 25px !important;
 }
 
-.egobie-home-on {
-    content: url('../../../img/icons/eGobie_Home_on.png');
-}
-
-.egobie-home-off {
-    content: url('../../../img/icons/eGobie_Home_off.png');
-}
-
-.egobie-notification-on {
-    content: url('../../../img/icons/eGobie_Notifications_on.png');
-}
-
-.egobie-notification-off {
-    content: url('../../../img/icons/eGobie_Notifications_off.png');
-}
-
-.egobie-service-on {
-    content: url('../../../img/icons/eGobie_Services_on.png');
-}
-
-.egobie-service-off {
-    content: url('../../../img/icons/eGobie_Services_off.png');
-}
-
-.egobie-history-on {
-    content: url('../../../img/icons/eGobie_History_on.png');
-}
-
-.egobie-history-off {
-    content: url('../../../img/icons/eGobie_History_off.png');
-}
-
-.egobie-car-on {
-    content: url('../../../img/icons/eGobie_Vehicles_on.png');
-}
-
-.egobie-car-off {
-    content: url('../../../img/icons/eGobie_Vehicles_off.png');
-}
-
-.egobie-payment-on {
-    content: url('../../../img/icons/eGobie_Payment_on.png');
-}
-
-.egobie-payment-off {
-    content: url('../../../img/icons/eGobie_Payment_off.png');
-}
-
-.egobie-payment-amex {
-    content: url('../../../img/icons/eGobie_Payment_amex.png');
-}
-
-.egobie-payment-master {
-    content: url('../../../img/icons/eGobie_Payment_master.png');
-}
-
-.egobie-payment-visa {
-    content: url('../../../img/icons/eGobie_Payment_visa.png');
-}
-
-.egobie-setting-on {
-    content: url('../../../img/icons/eGobie_Settings_on.png');
-}
-
-.egobie-setting-off {
-    content: url('../../../img/icons/eGobie_Settings_off.png');
-}
-
-.egobie-about-on {
-    content: url('../../../img/icons/eGobie_About_on.png');
-}
-
-.egobie-about-off {
-    content: url('../../../img/icons/eGobie_About_off.png');
-}
-
-.egobie-logo-white {
-    content: url('../../../img/logo/white.png');
-}
-
-
-
 .egobie-icon-6 {
     transform: scale(.6);
-}
-
-.egobie-payment {
-    display: table;
-    padding: 0;
-    height: 180px;
-    width: 100%;
-    border: 0;
-}
-
-.egobie-payment .left {
-    display: table-cell;
-    width: 70%;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px 0px 1px 1px;
-    border-radius: 10px 0px 0px 10px;
-}
-
-.egobie-payment .left p {
-    display: block;
-    position: relative;
-    width: 82%;
-    height: 25px;
-    line-height: 25px;
-    margin-left: 8%;
-}
-
-.egobie-payment .left .name {
-    margin-top: 10%;
-    font-size: xx-large;
-    height: 30px;
-    line-height: 30px;
-}
-
-.egobie-payment .left .number {
-    margin-top: 10%;
-    font-size: larger;
-}
-
-.egobie-payment .left .exp {
-    margin-top: 5%;
-    font-size: medium;
-}
-
-.egobie-payment .left .zip {
-    font-size: medium;
-    float: right;
-}
-
-.egobie-payment .left .type {
-    margin-top: 10%;
-    font-size: small;
-}
-
-.egobie-payment .right {
-    display: table-cell;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px 1px 1px 0px;
-    border-radius: 0px 10px 10px 0px;
-    background-color: #404041;
-}
-
-.egobie-payment .right i {
-    display: block;
-    position: absolute;
-    height: 38%;
-    right: 5%;
-}
-
-.egobie-payment .right .egobie-logo {
-    top: 5%;
-}
-
-.egobie-payment .right .card-logo {
-    bottom: 5%;
 }
 
 .sign-img {
@@ -591,12 +382,12 @@ Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
 }
 
 .sign-in-logoa {
-    background-image: url('../../../img/sign_in_logo.svg');
+    background-image: url('../../../img/sign_in.svg');
     background-size: cover;
 }
 
 .sign-up-logoa {
-    background-image: url('../../../img/sign_up_logo.svg');
+    background-image: url('../../../img/sign_up.svg');
     background-size: cover;
 }
 
@@ -630,29 +421,4 @@ hr.egobie-hr-start {
 
 hr.egobie-hr-end {
     margin-top: 20px;
-}
-
-.tutorial-1 {
-    background: url('../../../img/tp1.svg') no-repeat center center fixed;
-    background-size: cover;
-}
-
-.tutorial-2 {
-    background: url('../../../img/tp2.svg') no-repeat center center fixed;
-    background-size: cover;
-}
-
-.tutorial-3 {
-    background: url('../../../img/tp3.svg') no-repeat center center fixed;
-    background-size: cover;
-}
-
-.tutorial-4 {
-    background: url('../../../img/tp4.svg') no-repeat center center fixed;
-    background-size: cover;
-}
-
-.tutorial-5 {
-    background: url('../../../img/tp5.svg') no-repeat center center fixed;
-    background-size: cover;
 }

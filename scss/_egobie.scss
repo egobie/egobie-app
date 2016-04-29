@@ -1,0 +1,59 @@
+$Tutorial-1: 'tp1.svg';
+$Tutorial-2: 'tp2.svg';
+$Tutorial-3: 'tp3.svg';
+$Tutorial-4: 'tp4.svg';
+$Tutorial-5: 'tp5.svg';
+
+$Menu-Home-On: 'home_on.png';
+$Menu-Home-Off: 'home_off.png';
+
+$Menu-Notification-On: 'notifications_on.png';
+$Menu-Notification-Off: 'notifications_off.png';
+
+$Menu-Service-On: 'services_on.png';
+$Menu-Service-Off: 'services_off.png';
+
+$Menu-History-On: 'history_on.png';
+$Menu-History-Off: 'history_off.png';
+
+$Menu-Vehicle-On: 'vehicles_on.png';
+$Menu-Vehicle-Off: 'vehicles_off.png';
+
+$Menu-Payment-On: 'payment_on.png';
+$Menu-Payment-Off: 'payment_off.png';
+
+$Menu-Setting-On: 'settings_on.png';
+$Menu-Setting-Off: 'settings_off.png';
+
+$Menu-About-On: 'about_on.png';
+$Menu-About-Off: 'about_off.png';
+
+$Logo-White: 'white.png';
+$Logo-Dark-Navy-Blue: 'dark_navy_blue.png';
+$Logo-Light-Grey-Blue: 'light_grey_blue.png';
+
+$Payment-Amex: 'payment_amex.png';
+$Payment-Visa: 'payment_visa.png';
+$Payment-Master: 'payment_master.png';
+
+//Dark Navy Blue: #404041 rgb(40, 40, 41)
+//Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
+$Dark-Navy-Blue: #404041;
+$Light-Grey-Blue: #D1D2D4;
+
+
+@function image($name) {
+    @return url('../img/#{$name}');
+}
+
+@function icon($name) {
+    @return url('../img/icon/#{$name}');
+}
+
+@function logo($name) {
+    @return url('../img/logo/#{$name}');
+}
+
+@function tutorial($name) {
+    @return url('../img/tutorial/#{$name}');
+}
