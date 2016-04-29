@@ -26,14 +26,14 @@
                     <p class="name">{{p.account_name}}</p>
                     <p class="number">XXXX XXXX XXXX {{p.account_number}}</p>
                     <p>
-                        <span class="exp">EXP: {{p.expire_month}}/{{p.expire_year.substr(-2, 2)}}</span>
-                        <span class="zip">ZIP: {{p.account_zip}}</span>
+                        <span class="exp">EXP {{p.expire_month}}/{{p.expire_year.substr(-2, 2)}}</span>
+                        <span class="zip">ZIP {{p.account_zip}}</span>
                     </p>
                     <p class="type">{{p.account_type}}</p>
                 </div>
                 <div class="right">
-                    <div class="egobie-logo"></div>
-                    <div class="card-logo"></div>
+                    <i class="egobie-logo egobie-logo-white"></i>
+                    <i class="card-logo egobie-payment-visa"></i>
                 </div>
             </ion-item>
         </ion-list>

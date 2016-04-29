@@ -460,6 +460,18 @@ Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
     content: url('../../../img/icons/eGobie_Payment_off.png');
 }
 
+.egobie-payment-amex {
+    content: url('../../../img/icons/eGobie_Payment_amex.png');
+}
+
+.egobie-payment-master {
+    content: url('../../../img/icons/eGobie_Payment_master.png');
+}
+
+.egobie-payment-visa {
+    content: url('../../../img/icons/eGobie_Payment_visa.png');
+}
+
 .egobie-setting-on {
     content: url('../../../img/icons/eGobie_Settings_on.png');
 }
@@ -476,6 +488,12 @@ Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
     content: url('../../../img/icons/eGobie_About_off.png');
 }
 
+.egobie-logo-white {
+    content: url('../../../img/logo/white.png');
+}
+
+
+
 .egobie-icon-6 {
     transform: scale(.6);
 }
@@ -483,7 +501,7 @@ Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
 .egobie-payment {
     display: table;
     padding: 0;
-    height: 200px;
+    height: 180px;
     width: 100%;
     border: 0;
 }
@@ -542,23 +560,19 @@ Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
     background-color: #404041;
 }
 
-.egobie-payment .right div {
-    width: 65%;
-    height: 35%;
-    margin-left: auto;
-    margin-right: auto;
+.egobie-payment .right i {
+    display: block;
+    position: absolute;
+    height: 38%;
+    right: 5%;
 }
 
 .egobie-payment .right .egobie-logo {
-    margin-top: 15%;
-    background: url('../../../img/icons/eGobie_Profile_off.png') no-repeat center center;
-    background-size: cover;
+    top: 5%;
 }
 
 .egobie-payment .right .card-logo {
-    margin-top: 30%;
-    /*background: url('../../../img/icons/eGobie_Profile_off.png') no-repeat center center;*/
-    background-size: cover;
+    bottom: 5%;
 }
 
 .sign-img {
