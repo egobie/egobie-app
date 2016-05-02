@@ -21,20 +21,6 @@
     margin-left: auto;
 }
 
-.icon-size-25:before {
-    font-size: 25px;
-}
-
-.icon-size-15:before {
-    font-size: 15px;
-}
-
-.item-padding-top-bottom {
-    padding-top: 8px;
-    padding-bottom: 8px;
-    height: 40px;
-}
-
 .item-egobie {
     margin-top: 5px;
     padding-top: 8px;

@@ -9731,6 +9731,54 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+.egobie-margin-left--10 {
+  margin-left: -10px; }
+
+.egobie-margin-left-3 {
+  margin-left: 3px; }
+
+.egobie-margin-top-5, .egobie-resident-order-item {
+  margin-top: 5px; }
+
+.egobie-margin-right-5 {
+  margin-right: 5px; }
+
+.egobie-margin-top-10 {
+  margin-top: 10px; }
+
+.egobie-margin-top-20 {
+  margin-top: 20px; }
+
+.egobie-width-200 {
+  width: 200px; }
+
+.egobie-width-300 {
+  width: 300px; }
+
+.egobie-height-200 {
+  height: 200px; }
+
+.egobie-height-300 {
+  height: 300px; }
+
+.egobie-left {
+  float: left; }
+
+.egobie-center {
+  left: 0;
+  right: 0;
+  margin-left: auto !important;
+  margin-right: auto !important; }
+
+.egobie-right {
+  float: right; }
+
+.egobie-resident-order-item {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 40px; }
+  .egobie-resident-order-item i:before {
+    font-size: 25px; }
 
 .egobie-margin-left--10 {
   margin-left: -10px; }
