@@ -55,7 +55,6 @@
     border: none;
 }
 
-
 .toggle-signin span {
     float: left;
     font-size: 13px;
@@ -270,10 +269,6 @@
     transform: scale(1.5);
     left: 10px !important;
     top: 25px !important;
-}
-
-.egobie-icon-6 {
-    transform: scale(.6);
 }
 
 .sign-bga {

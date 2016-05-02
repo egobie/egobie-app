@@ -9731,9 +9731,6 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-.egobie-margin-left--10 {
-  margin-left: -10px; }
-
 .egobie-margin-left-3 {
   margin-left: 3px; }
 
@@ -9780,9 +9777,6 @@ a.button {
   .egobie-resident-order-item i:before {
     font-size: 25px; }
 
-.egobie-margin-left--10 {
-  margin-left: -10px; }
-
 .egobie-margin-left-3 {
   margin-left: 3px; }
 
@@ -9827,8 +9821,13 @@ a.button {
   .egobie-menu-bg, .egobie-menu-bg * {
     color: #D1D2D4 !important;
     background-color: #404041 !important; }
+    .egobie-menu-bg .badge, .egobie-menu-bg * .badge {
+      background-color: #EF473A !important; }
   .egobie-menu-item, .egobie-menu-item-last {
     border: 1px solid #49494a; }
+    .egobie-menu-item i, .egobie-menu-item-last i {
+      transform: scale(0.6);
+      margin-left: -10px; }
   .egobie-menu-item-last {
     border-bottom: 0px; }
   .egobie-menu-profile-logo {
@@ -9883,9 +9882,6 @@ a.button {
     content: url("../img/icon/about_on.png"); }
   .egobie-about-off {
     content: url("../img/icon/about_off.png"); }
-
-.egobie-margin-left--10 {
-  margin-left: -10px; }
 
 .egobie-margin-left-3 {
   margin-left: 3px; }
@@ -9983,9 +9979,6 @@ a.button {
         bottom: 5%;
         content: url("../img/icon/payment_visa.png"); }
 
-.egobie-margin-left--10 {
-  margin-left: -10px; }
-
 .egobie-margin-left-3 {
   margin-left: 3px; }
 
@@ -10064,9 +10057,6 @@ a.button {
   clear: both;
   margin-top: 10px;
   margin-bottom: 10px; }
-
-.egobie-margin-left--10 {
-  margin-left: -10px; }
 
 .egobie-margin-left-3 {
   margin-left: 3px; }
