@@ -9732,6 +9732,48 @@ a.button {
   transition-duration: 0s; }
 
 
+.egobie-margin-left--10 {
+  margin-left: -10px; }
+
+.egobie-margin-left-3 {
+  margin-left: 3px; }
+
+.egobie-margin-top-5 {
+  margin-top: 5px; }
+
+.egobie-margin-right-5 {
+  margin-right: 5px; }
+
+.egobie-margin-top-10 {
+  margin-top: 10px; }
+
+.egobie-margin-top-20 {
+  margin-top: 20px; }
+
+.egobie-width-200 {
+  width: 200px; }
+
+.egobie-width-300 {
+  width: 300px; }
+
+.egobie-height-200 {
+  height: 200px; }
+
+.egobie-height-300 {
+  height: 300px; }
+
+.egobie-left {
+  float: left; }
+
+.egobie-center {
+  left: 0;
+  right: 0;
+  margin-left: auto !important;
+  margin-right: auto !important; }
+
+.egobie-right {
+  float: right; }
+
 .egobie {
   /* Menu Icons */ }
   .egobie-menu-bg, .egobie-menu-bg * {
@@ -9794,6 +9836,48 @@ a.button {
   .egobie-about-off {
     content: url("../img/icon/about_off.png"); }
 
+.egobie-margin-left--10 {
+  margin-left: -10px; }
+
+.egobie-margin-left-3 {
+  margin-left: 3px; }
+
+.egobie-margin-top-5 {
+  margin-top: 5px; }
+
+.egobie-margin-right-5 {
+  margin-right: 5px; }
+
+.egobie-margin-top-10 {
+  margin-top: 10px; }
+
+.egobie-margin-top-20 {
+  margin-top: 20px; }
+
+.egobie-width-200 {
+  width: 200px; }
+
+.egobie-width-300 {
+  width: 300px; }
+
+.egobie-height-200 {
+  height: 200px; }
+
+.egobie-height-300 {
+  height: 300px; }
+
+.egobie-left {
+  float: left; }
+
+.egobie-center {
+  left: 0;
+  right: 0;
+  margin-left: auto !important;
+  margin-right: auto !important; }
+
+.egobie-right {
+  float: right; }
+
 .egobie-payment {
   display: table;
   padding: 0;
@@ -9851,6 +9935,136 @@ a.button {
         bottom: 5%;
         content: url("../img/icon/payment_visa.png"); }
 
+.egobie-margin-left--10 {
+  margin-left: -10px; }
+
+.egobie-margin-left-3 {
+  margin-left: 3px; }
+
+.egobie-margin-top-5, .egobie-signup-item {
+  margin-top: 5px; }
+
+.egobie-margin-right-5 {
+  margin-right: 5px; }
+
+.egobie-margin-top-10, .egobie-signin-item {
+  margin-top: 10px; }
+
+.egobie-margin-top-20 {
+  margin-top: 20px; }
+
+.egobie-width-200 {
+  width: 200px; }
+
+.egobie-width-300, .egobie-sign-logo, .egobie-signin-logo, .egobie-signup-logo, .egobie-sign-item, .egobie-signin-item, .egobie-signup-item, .egobie-sign-button {
+  width: 300px; }
+
+.egobie-height-200, .egobie-sign-logo, .egobie-signin-logo, .egobie-signup-logo {
+  height: 200px; }
+
+.egobie-height-300 {
+  height: 300px; }
+
+.egobie-left {
+  float: left; }
+
+.egobie-center, .egobie-sign-logo, .egobie-signin-logo, .egobie-signup-logo, .egobie-sign-item, .egobie-signin-item, .egobie-signup-item, .egobie-sign-button {
+  left: 0;
+  right: 0;
+  margin-left: auto !important;
+  margin-right: auto !important; }
+
+.egobie-right {
+  float: right; }
+
+.egobie-sign-logo, .egobie-signin-logo, .egobie-signup-logo {
+  display: block; }
+
+.egobie-signin-logo {
+  background-image: url("../../../img/sign_in.svg");
+  background-size: cover; }
+
+.egobie-signup-logo {
+  background-image: url("../../../img/sign_up.svg");
+  background-size: cover; }
+
+.egobie-sign-item {
+  padding: 0px;
+  border: none; }
+  .egobie-sign-item a {
+    font-size: 13px;
+    color: #000000;
+    text-decoration: none;
+    background: transparent; }
+
+.egobie-signin-item i {
+  width: 40px;
+  height: 30px;
+  font-size: 30px;
+  margin-right: 15px;
+  border-right: 1px solid graytext; }
+
+.egobie-signup-item i {
+  width: 40px;
+  height: 30px;
+  font-size: 30px;
+  margin-right: 15px;
+  border-right: 1px solid graytext; }
+
+.egobie-sign-button {
+  display: block;
+  clear: both;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.egobie-margin-left--10 {
+  margin-left: -10px; }
+
+.egobie-margin-left-3 {
+  margin-left: 3px; }
+
+.egobie-margin-top-5 {
+  margin-top: 5px; }
+
+.egobie-margin-right-5 {
+  margin-right: 5px; }
+
+.egobie-margin-top-10 {
+  margin-top: 10px; }
+
+.egobie-margin-top-20 {
+  margin-top: 20px; }
+
+.egobie-width-200 {
+  width: 200px; }
+
+.egobie-width-300 {
+  width: 300px; }
+
+.egobie-height-200 {
+  height: 200px; }
+
+.egobie-height-300 {
+  height: 300px; }
+
+.egobie-left {
+  float: left; }
+
+.egobie-center {
+  left: 0;
+  right: 0;
+  margin-left: auto !important;
+  margin-right: auto !important; }
+
+.egobie-right {
+  float: right; }
+
+.egobie-tutorial {
+  height: 100%; }
+
+.egobie-tutorial-slide {
+  padding-top: 80px;
+  text-align: center; }
 
 .egobie-tutorial-1 {
   background: url("../img/tutorial/tp1.svg") no-repeat center center fixed;

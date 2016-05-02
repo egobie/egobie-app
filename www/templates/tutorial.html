@@ -1,10 +1,11 @@
-<ion-nav-view ng-app="app.tutorial">
-    <ion-slide-box on-slide-changed="slideChanged($index)">
-        <ion-slide class="egobie-tutorial-1"></ion-slide>
-        <ion-slide class="egobie-tutorial-2"></ion-slide>
-        <ion-slide class="egobie-tutorial-3"></ion-slide>
-        <ion-slide class="egobie-tutorial-4"></ion-slide>
-        <ion-slide class="egobie-tutorial-5">
+<ion-nav-view cassng-app="app.tutorial">
+    <ion-slide-box class="egobie-tutorial"
+                   on-slide-changed="slideChanged($index)">
+        <ion-slide class="egobie-tutorial-slide egobie-tutorial-1"></ion-slide>
+        <ion-slide class="egobie-tutorial-slide egobie-tutorial-2"></ion-slide>
+        <ion-slide class="egobie-tutorial-slide egobie-tutorial-3"></ion-slide>
+        <ion-slide class="egobie-tutorial-slide egobie-tutorial-4"></ion-slide>
+        <ion-slide class="egobie-tutorial-slide egobie-tutorial-5">
             <button class="button start-to-use"
                     ng-click="startToUse()">Start to Experience</button>
         </ion-slide>

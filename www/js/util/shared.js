@@ -164,19 +164,21 @@ angular.module("util.shared", ["util.url"])
             },
 
             addServices: function(data) {
-                Array.prototype.forEach.call(data, function(service) {
-                    services[service.id] = service;
-                    // Used for selection
-                    services[service.id].checked = false;
+                if (data) {
+                    Array.prototype.forEach.call(data, function(service) {
+                        services[service.id] = service;
+                        // Used for selection
+                        services[service.id].checked = false;
 
-                    if (service.type === "CAR_WASH") {
-                        carWash.push(service);
-                    } else if (service.type === "OIL_CHANGE") {
-                        oilChange.push(service);
-                    } else if (service.type === "DETAILING") {
-                        detailing.push(service);
-                    }
-                });
+                        if (service.type === "CAR_WASH") {
+                            carWash.push(service);
+                        } else if (service.type === "OIL_CHANGE") {
+                            oilChange.push(service);
+                        } else if (service.type === "DETAILING") {
+                            detailing.push(service);
+                        }
+                    });
+                }
             },
 
             getCarWashServices: function() {
@@ -258,12 +260,14 @@ angular.module("util.shared", ["util.url"])
             },
 
             addCarModels: function(models) {
-                Array.prototype.forEach.call(models, function(model) {
-                    if (!carModels.hasOwnProperty(model.maker_id)) {
-                        carModels[model.maker_id] = [];
-                    }
-                    carModels[model.maker_id].push(model);
-                });
+                if (models) {
+                    Array.prototype.forEach.call(models, function(model) {
+                        if (!carModels.hasOwnProperty(model.maker_id)) {
+                            carModels[model.maker_id] = [];
+                        }
+                        carModels[model.maker_id].push(model);
+                    });
+                }
             },
 
             getCarModels: function(makerId) {
@@ -275,9 +279,11 @@ angular.module("util.shared", ["util.url"])
             },
 
             addUserCars: function(cars) {
-                Array.prototype.forEach.call(cars, function(car) {
-                    userCars[car.id] = car;
-                });
+                if (cars) {
+                    Array.prototype.forEach.call(cars, function(car) {
+                        userCars[car.id] = car;
+                    });
+                }
             },
 
             addUserCar: function(car) {
@@ -295,11 +301,13 @@ angular.module("util.shared", ["util.url"])
             },
 
             addUserPayments: function(payments) {
-                Array.prototype.forEach.call(payments, function(payment) {
-                    userPayments[payment.id] = payment;
-                    // For selection use
-                    userPayments[payment.id].checked = false;
-                });
+                if (payments) {
+                    Array.prototype.forEach.call(payments, function(payment) {
+                        userPayments[payment.id] = payment;
+                        // For selection use
+                        userPayments[payment.id].checked = false;
+                    });
+                }
             },
 
             addUserPayment: function(payment) {
