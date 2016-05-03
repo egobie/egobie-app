@@ -198,10 +198,3 @@
 .list-margin-top-10 div.list {
     margin-top: 10px;
 }
-
-.sign-a,
-.sign-a a {
-    color: #000000;
-    text-decoration: none;
-    background: transparent;
-}
