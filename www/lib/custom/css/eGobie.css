@@ -199,11 +199,6 @@
     margin-top: 10px;
 }
 
-.sign-bga {
-    background-image: url('../../../img/sign_bg.svg');
-    background-size: cover;
-}
-
 .sign-a,
 .sign-a a {
     color: #000000;

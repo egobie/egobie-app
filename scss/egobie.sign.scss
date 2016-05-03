@@ -10,17 +10,22 @@
         display: block;
     }
 
+    &-sign-bg {
+        /*background-image: image($Sign-Bg);*/
+        background-size: cover;
+    }
+
     &-signin-logo {
         @extend .egobie-sign-logo;
 
-        background-image: url('../../../img/sign_in.svg');
+        /*background-image: logo($Sign-In-Logo);*/
         background-size: cover;
     }
 
     &-signup-logo {
         @extend .egobie-sign-logo;
 
-        background-image: url('../../../img/sign_up.svg');
+        /*background-image: logo($Sign-Up-Logo);*/
         background-size: cover;
     }
 
@@ -85,8 +90,8 @@
         left: 0px;
         right: 0px;
         bottom: 0px;
+        color: $Egobie-Blue;
         border-color: $Egobie-Blue;
         background: transparent;
-        color: $Egobie-Blue;
     }
 }

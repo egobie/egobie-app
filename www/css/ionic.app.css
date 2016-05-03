@@ -10339,12 +10339,16 @@ a.button {
 .egobie-sign-logo, .egobie-signin-logo, .egobie-signup-logo {
   display: block; }
 
+.egobie-sign-bg {
+  /*background-image: image($Sign-Bg);*/
+  background-size: cover; }
+
 .egobie-signin-logo {
-  background-image: url("../../../img/sign_in.svg");
+  /*background-image: logo($Sign-In-Logo);*/
   background-size: cover; }
 
 .egobie-signup-logo {
-  background-image: url("../../../img/sign_up.svg");
+  /*background-image: logo($Sign-Up-Logo);*/
   background-size: cover; }
 
 .egobie-sign-item {
@@ -10384,9 +10388,9 @@ a.button {
   left: 0px;
   right: 0px;
   bottom: 0px;
+  color: #1B4A5E;
   border-color: #1B4A5E;
-  background: transparent;
-  color: #1B4A5E; }
+  background: transparent; }
 
 .egobie-margin-left-3 {
   margin-left: 3px; }
