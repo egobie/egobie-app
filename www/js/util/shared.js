@@ -11,6 +11,7 @@ angular.module("util.shared", ["util.url"])
             token: "",
             username: "",
             email: "",
+            coupon: "",
             phone: "",
             first: "",
             last: "",
@@ -63,6 +64,7 @@ angular.module("util.shared", ["util.url"])
 
         // Email Reg
         var regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        var regCoupon = /^([A-Z0-9]{5})$/;
 
         var years = [];
         var _current_year = new Date().getFullYear();
@@ -102,6 +104,7 @@ angular.module("util.shared", ["util.url"])
                 user.middle = u.middle_name;
                 user.email = u.email;
                 user.phone = u.phone_number;
+                user.coupon = u.coupon;
 
                 user.home_state = u.home_address_state;
                 user.home_city = u.home_address_city;
@@ -164,19 +167,21 @@ angular.module("util.shared", ["util.url"])
             },
 
             addServices: function(data) {
-                Array.prototype.forEach.call(data, function(service) {
-                    services[service.id] = service;
-                    // Used for selection
-                    services[service.id].checked = false;
+                if (data) {
+                    Array.prototype.forEach.call(data, function(service) {
+                        services[service.id] = service;
+                        // Used for selection
+                        services[service.id].checked = false;
 
-                    if (service.type === "CAR_WASH") {
-                        carWash.push(service);
-                    } else if (service.type === "OIL_CHANGE") {
-                        oilChange.push(service);
-                    } else if (service.type === "DETAILING") {
-                        detailing.push(service);
-                    }
-                });
+                        if (service.type === "CAR_WASH") {
+                            carWash.push(service);
+                        } else if (service.type === "OIL_CHANGE") {
+                            oilChange.push(service);
+                        } else if (service.type === "DETAILING") {
+                            detailing.push(service);
+                        }
+                    });
+                }
             },
 
             getCarWashServices: function() {
@@ -236,9 +241,11 @@ angular.module("util.shared", ["util.url"])
             },
 
             addUserHistories: function(histories) {
-                Array.prototype.forEach.call(histories, function(history) {
-                    userHistories[history.id] = history;
-                });
+                if (histories) {
+                    Array.prototype.forEach.call(histories, function(history) {
+                        userHistories[history.id] = history;
+                    });
+                }
             },
 
             getUserServices: function() {
@@ -258,12 +265,14 @@ angular.module("util.shared", ["util.url"])
             },
 
             addCarModels: function(models) {
-                Array.prototype.forEach.call(models, function(model) {
-                    if (!carModels.hasOwnProperty(model.maker_id)) {
-                        carModels[model.maker_id] = [];
-                    }
-                    carModels[model.maker_id].push(model);
-                });
+                if (models) {
+                    Array.prototype.forEach.call(models, function(model) {
+                        if (!carModels.hasOwnProperty(model.maker_id)) {
+                            carModels[model.maker_id] = [];
+                        }
+                        carModels[model.maker_id].push(model);
+                    });
+                }
             },
 
             getCarModels: function(makerId) {
@@ -275,9 +284,11 @@ angular.module("util.shared", ["util.url"])
             },
 
             addUserCars: function(cars) {
-                Array.prototype.forEach.call(cars, function(car) {
-                    userCars[car.id] = car;
-                });
+                if (cars) {
+                    Array.prototype.forEach.call(cars, function(car) {
+                        userCars[car.id] = car;
+                    });
+                }
             },
 
             addUserCar: function(car) {
@@ -295,11 +306,13 @@ angular.module("util.shared", ["util.url"])
             },
 
             addUserPayments: function(payments) {
-                Array.prototype.forEach.call(payments, function(payment) {
-                    userPayments[payment.id] = payment;
-                    // For selection use
-                    userPayments[payment.id].checked = false;
-                });
+                if (payments) {
+                    Array.prototype.forEach.call(payments, function(payment) {
+                        userPayments[payment.id] = payment;
+                        // For selection use
+                        userPayments[payment.id].checked = false;
+                    });
+                }
             },
 
             addUserPayment: function(payment) {
@@ -313,6 +326,10 @@ angular.module("util.shared", ["util.url"])
 
             testEmail: function(email) {
                 return regEmail.test(email);
+            },
+
+            testCoupon: function(coupon) {
+                return regCoupon.test(coupon);
             },
 
             showLoading: function () {

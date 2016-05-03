@@ -59,21 +59,21 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
             // 0.0 - 1.0
             if (rating <= 1) {
                 return {
-                    'label-bad': true
+                    'egobie-history-rating-bad': true
                 };
             // 1.5 - 2.5
             } else if (rating < 3) {
                 return {
-                    'label-warning': true
+                    'egobie-history-rating-fine': true
                 };
             // 3.0 - 4.0
             } else if (rating <= 4) {
                 return {
-                    'label-info': true
+                    'egobie-history-rating-ok': true
                 };
             } else {
                 return {
-                    'label-success': true
+                    'egobie-history-rating-good': true
                 };
             }
         };

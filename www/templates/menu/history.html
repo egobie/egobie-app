@@ -10,11 +10,9 @@
             <ion-item menu-close="" class="item-divider item-icon-right">
                 <i class="icon"></i>Reservation
             </ion-item>
-            <ion-item class="egobie-empty"
+            <ion-item class="egobie-history-empty"
                       ng-show="reservations.length === 0">
-                <hr class="egobie-hr-start" align="center">
-                Your reservations will be listed here
-                <hr class="egobie-hr-end" align="center">
+                <hr align="center">Your reservations will be listed here<hr align="center">
             </ion-item>
 
             <ion-item menu-close="" class="card"
@@ -41,11 +39,9 @@
                 <i class="icon"></i>Done
             </ion-item>
 
-            <ion-item class="egobie-empty"
+            <ion-item class="egobie-history-empty"
                       ng-show="histories.length === 0">
-                <hr class="egobie-hr-start" align="center">
-                No History
-                <hr class="egobie-hr-end" align="center">
+                <hr align="center">No History<hr align="center">
             </ion-item>
 
             <ion-item menu-close="" class="card"
@@ -62,7 +58,7 @@
                         <p>
                             <rating max="max" readonly="true"
                                     ng-model="history.rating"></rating>
-                            <span class="label"
+                            <span class="egobie-history-rating"
                                   ng-class="historyLabelStyle(history.rating)">{{historyPercent(history.rating)}}</span>
                         </p>
                     </ion-item>
@@ -85,64 +81,64 @@
                 <button class="button button-icon icon ion-android-close"
                         ng-click="hideHistory()"></button>
             </ion-header-bar>
-            <ion-content padding="true" class="has-header">
+            <ion-content padding="true" class="has-header egobie-history-detail">
                 <ion-list>
                     <!-- Payment -->
-                    <ion-item class="item-divider item-padding-top-bottom">Time</ion-item>
+                    <ion-item class="item-divider">Time</ion-item>
 
                     <ion-list>
-                        <ion-item class="margin-top-5 item-padding-top-bottom">
+                        <ion-item>
                             Start Time<span class="item-note">{{selectedHistory.start}}</span>
                         </ion-item>
-                        <ion-item class="margin-top-5 item-padding-top-bottom">
+                        <ion-item>
                             Finish Time<span class="item-note">{{selectedHistory.end}}</span>
                         </ion-item>
                     </ion-list>
 
                     <!-- Car -->
-                    <ion-item class="item-divider item-padding-top-bottom">Car</ion-item>
+                    <ion-item class="item-divider">Car</ion-item>
 
                     <ion-list>
-                        <ion-item class="margin-top-5 item-padding-top-bottom">
+                        <ion-item>
                             Plate<span class="item-note">{{selectedHistory.plate}}</span>
                         </ion-item>
-                        <ion-item class="margin-top-5 item-padding-top-bottom">
+                        <ion-item>
                             Maker<span class="item-note">{{selectedHistory.maker}}</span>
                         </ion-item>
-                        <ion-item class="margin-top-5 item-padding-top-bottom">
+                        <ion-item>
                             Model<span class="item-note">{{selectedHistory.model}}</span>
                         </ion-item>
-                        <ion-item class="margin-top-5 item-padding-top-bottom">
+                        <ion-item>
                             Year<span class="item-note">{{selectedHistory.year}}</span>
                         </ion-item>
-                        <ion-item class="margin-top-5 item-padding-top-bottom">
+                        <ion-item>
                             State<span class="item-note">{{selectedHistory.state}}</span>
                         </ion-item>
-                        <ion-item class="margin-top-5 item-padding-top-bottom">
+                        <ion-item>
                             Color<span class="item-note">{{selectedHistory.color}}</span>
                         </ion-item>
                     </ion-list>
 
                     <!-- Payment -->
-                    <ion-item class="item-divider item-padding-top-bottom">Payment</ion-item>
+                    <ion-item class="item-divider">Payment</ion-item>
 
                     <ion-list>
-                        <ion-item class="margin-top-5 item-padding-top-bottom">
+                        <ion-item>
                             Amount<span class="item-note">{{selectedHistory.price}} $</span>
                         </ion-item>
-                        <ion-item class="margin-top-5 item-padding-top-bottom">
+                        <ion-item>
                             Holder Name<span class="item-note">{{selectedHistory.account_name}}</span>
                         </ion-item>
-                        <ion-item class="margin-top-5 item-padding-top-bottom">
+                        <ion-item>
                             Account Number<span class="item-note">**** {{selectedHistory.account_number}}</span>
                         </ion-item>
-                        <ion-item class="margin-top-5 item-padding-top-bottom">
+                        <ion-item>
                             Payment Type<span class="item-note">{{selectedHistory.account_type}}</span>
                         </ion-item>
                     </ion-list>
 
                     <!-- Services -->
-                    <ion-item class="item-divider item-padding-top-bottom">Services</ion-item>
+                    <ion-item class="item-divider">Services</ion-item>
 
                     <ion-list ng-repeat="service in selectedHistory.services">
                         <ion-item>{{service.name}}</ion-item>

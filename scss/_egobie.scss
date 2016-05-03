@@ -1,0 +1,147 @@
+$Tutorial-1: 'tp1.svg';
+$Tutorial-2: 'tp2.svg';
+$Tutorial-3: 'tp3.svg';
+$Tutorial-4: 'tp4.svg';
+$Tutorial-5: 'tp5.svg';
+
+$Sign-In-Logo: 'sign_in.svg';
+$Sign-Up-Logo: 'sign_up.svg';
+$Sign-Bg: 'sign_bg.svg';
+
+$Menu-Home-On: 'home_on.png';
+$Menu-Home-Off: 'home_off.png';
+
+$Menu-Notification-On: 'notifications_on.png';
+$Menu-Notification-Off: 'notifications_off.png';
+
+$Menu-Service-On: 'services_on.png';
+$Menu-Service-Off: 'services_off.png';
+
+$Menu-History-On: 'history_on.png';
+$Menu-History-Off: 'history_off.png';
+
+$Menu-Vehicle-On: 'vehicles_on.png';
+$Menu-Vehicle-Off: 'vehicles_off.png';
+
+$Menu-Payment-On: 'payment_on.png';
+$Menu-Payment-Off: 'payment_off.png';
+
+$Menu-Setting-On: 'settings_on.png';
+$Menu-Setting-Off: 'settings_off.png';
+
+$Menu-About-On: 'about_on.png';
+$Menu-About-Off: 'about_off.png';
+
+$Logo-White: 'white.png';
+$Logo-Dark-Navy-Blue: 'dark_navy_blue.png';
+$Logo-Light-Grey-Blue: 'light_grey_blue.png';
+
+$Payment-Amex: 'payment_amex.png';
+$Payment-Visa: 'payment_visa.png';
+$Payment-Master: 'payment_master.png';
+
+//Dark Navy Blue: #404041 rgb(40, 40, 41)
+//Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
+$Dark-Navy-Blue: #404041;
+$Light-Grey-Blue: #D1D2D4;
+$Egobie-Blue: #1B4A5E;
+
+
+@function image($name) {
+    @return url('../img/#{$name}');
+}
+
+@function icon($name) {
+    @return url('../img/icon/#{$name}');
+}
+
+@function logo($name) {
+    @return url('../img/logo/#{$name}');
+}
+
+@function tutorial($name) {
+    @return url('../img/tutorial/#{$name}');
+}
+
+@mixin linear-gradient($c1, $c2, $c3, $c4) {
+    background-image: -webkit-linear-gradient($c1, $c2, $c3, $c4);
+    background-image: -moz-linear-gradient($c1, $c2, $c3, $c4);
+    background-image: -ms-linear-gradient($c1, $c2, $c3, $c4);
+    background-image: -o-linear-gradient($c1, $c2, $c3, $c4);
+}
+
+@mixin appearance($content) {
+    -webkit-appearance: $content;
+    -moz-appearance: $content;
+    appearance: $content;
+}
+
+.egobie {
+
+    &-margin-left-3 {
+        margin-left: 3px;
+    }
+
+    &-margin-top-5 {
+        margin-top: 5px;
+    }
+
+    &-margin-right-5 {
+        margin-right: 5px;
+    }
+
+    &-margin-top-10 {
+        margin-top: 10px;
+    }
+
+    &-margin-top-20 {
+        margin-top: 20px;
+    }
+
+    &-width-200 {
+        width: 200px;
+    }
+
+    &-width-300 {
+        width: 300px;
+    }
+
+    &-height-200 {
+        height: 200px;
+    }
+
+    &-height-300 {
+        height: 300px;
+    }
+
+    &-left {
+        float: left;
+    }
+
+    &-center {
+        left: 0;
+        right: 0;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    &-right {
+        float: right;
+    }
+
+    &-avatar {
+        left: 10px !important;
+        top: 25px !important;
+        transform: scale(1.5);
+        border-radius: 0 !important;
+        content: url('../../../img/icons/eGobie_Profile_on.png');
+    }
+
+    &-header-bar {
+        background-color: $Dark-Navy-Blue !important;
+
+        h1, .button {
+            color: $Light-Grey-Blue !important;
+        }
+    }
+}

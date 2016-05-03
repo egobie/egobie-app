@@ -1,0 +1,15 @@
+@import 'egobie';
+
+.egobie {
+    &-resident-order-item {
+        @extend .egobie-margin-top-5;
+
+        padding-top: 8px;
+        padding-bottom: 8px;
+        height: 40px;
+
+        i:before {
+            font-size: 25px;
+        }
+    }
+}
