@@ -1,28 +1,28 @@
-<ion-view padding="true" class="padding sign-bg">
-    <ion-list class="list-inset"
-              ng-controller="signInCtrl">
-        <img class="sign-img sign-in-logo"/>
+<ion-view padding="true" class="padding egobie-sign-bg"
+          ng-app="app.sign.in"
+          ng-controller="signInCtrl">
+    <ion-content padding="true" class="has-header">
+        <ion-list class="list-inset">
+            <img class="egobie-signin-logo"/>
 
-        <!--<img class="img-signin-divide" src="delorean.jpg"/>-->
-        <ion-item class="item-input margin-top-10 width-300 egobie-center">
-            <i class="icon ion-android-person placeholder-icon i-signin-egobie"></i>
-            <input type="text" placeholder="Username"
-                   id="{{signInForm.username}}">
-        </ion-item>
-        <ion-item class="item-input margin-top-10 width-300 egobie-center">
-            <i class="icon ion-locked placeholder-icon i-signin-egobie"></i>
-            <input type="password" placeholder="Password"
-                   id="{{signInForm.password}}">
-        </ion-item>
-        <!--<ion-toggle toggle-class="toggle-calm" class="margin-top-5 width-300 toggle-signin">Keep me sign in</ion-toggle>-->
+            <!--<img class="img-signin-divide" src="delorean.jpg"/>-->
+            <ion-item class="item-input egobie-signin-item">
+                <i class="icon ion-android-person placeholder-icon"></i>
+                <input id="sign-in-username" type="text" placeholder="Username"/>
+            </ion-item>
+            <ion-item class="item-input egobie-signin-item">
+                <i class="icon ion-locked placeholder-icon"></i>
+                <input id="sign-in-password" type="password" placeholder="Password"/>
+            </ion-item>
+            <!--<ion-toggle toggle-class="toggle-calm" class="margin-top-5 width-300 toggle-signin">Keep me sign in</ion-toggle>-->
 
-        <!--<img class="img-signin-divide" src="delorean.jpg" />-->
-        <button class="button button-dark button-block-300"
-                ng-controller="signInCtrl"
-                ng-click="signIn()">Sign In</button>
-        <ion-item class="item-signin width-300 egobie-center sign-a">
-            <!--<a class="a-left" href="#">Forget Password?</a>-->
-            <a class="a-right" ui-sref="sign.up">Sign Up</a>
-        </ion-item>
-    </ion-list>
+            <button class="button button-dark egobie-sign-button"
+                    ng-controller="signInCtrl"
+                    ng-click="signIn()">Sign In</button>
+            <ion-item class="egobie-sign-item">
+                <!--<a class="a-left" href="#">Forget Password?</a>-->
+                <a class="egobie-right" ui-sref="sign.up">Sign Up</a>
+            </ion-item>
+        </ion-list>
+    </ion-content>
 </ion-view>

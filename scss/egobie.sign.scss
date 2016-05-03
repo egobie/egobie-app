@@ -1,0 +1,97 @@
+@import 'egobie';
+
+.egobie {
+
+    &-sign-logo {
+        @extend .egobie-center;
+        @extend .egobie-width-300;
+        @extend .egobie-height-200;
+
+        display: block;
+    }
+
+    &-sign-bg {
+        /*background-image: image($Sign-Bg);*/
+        background-size: cover;
+    }
+
+    &-signin-logo {
+        @extend .egobie-sign-logo;
+
+        /*background-image: logo($Sign-In-Logo);*/
+        background-size: cover;
+    }
+
+    &-signup-logo {
+        @extend .egobie-sign-logo;
+
+        /*background-image: logo($Sign-Up-Logo);*/
+        background-size: cover;
+    }
+
+    &-sign-item {
+        @extend .egobie-center;
+        @extend .egobie-width-300;
+
+        padding: 0px;
+        border: none;
+
+        a {
+            font-size: 13px;
+            color: #000000;
+            text-decoration: none;
+            background: transparent;
+        }
+    }
+
+    &-signin-item {
+        @extend .egobie-margin-top-10;
+        @extend .egobie-width-300;
+        @extend .egobie-center;
+
+        i {
+            width: 40px;
+            height: 30px;
+            font-size: 30px;
+            margin-right: 15px;
+            border-right: 1px solid graytext;
+        }
+    }
+
+    &-signup-item {
+        @extend .egobie-margin-top-5;
+        @extend .egobie-width-300;
+        @extend .egobie-center;
+
+        i {
+            width: 40px;
+            height: 30px;
+            font-size: 30px;
+            margin-right: 15px;
+            border-right: 1px solid graytext;
+        }
+    }
+
+    &-sign-button {
+        @extend .egobie-center;
+        @extend .egobie-width-300;
+
+        display: block;
+        clear: both;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    &-start-to-use {
+        display: block;
+        position: absolute;
+        margin: 10px auto 50px auto;
+        width: 300px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        color: $Egobie-Blue;
+        border-color: $Egobie-Blue;
+        background: transparent;
+    }
+}

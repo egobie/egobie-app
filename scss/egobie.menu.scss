@@ -1,0 +1,118 @@
+@import 'egobie';
+
+.egobie {
+
+    &-menu-bg, &-menu-bg * {
+        color: $Light-Grey-Blue !important;
+        background-color: $Dark-Navy-Blue !important;
+
+        .badge {
+            background-color: #EF473A !important;
+        }
+    }
+
+    &-menu-item {
+        border: 1px solid rgb(73, 73, 74);
+
+        i {
+            transform: scale(.6);
+            margin-left: -10px;
+        }
+    }
+
+    &-menu-item-last {
+        @extend .egobie-menu-item;
+        border-bottom: 0px;
+    }
+
+    &-menu-profile {
+        &-logo {
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 10px;
+            margin-top: auto;
+            margin-bottom: auto;
+            max-width: 50px;
+            max-height: 50px;
+            content: logo($Logo-Light-Grey-Blue);
+        }
+
+        &-name {
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            margin-top: auto;
+            margin-bottom: auto;
+            height: 35px;
+            width: 200px;
+            line-height: 32px;
+            font-size: 25px;
+        }
+    }
+
+    /* Menu Icons */
+    &-home-on {
+        content: icon($Menu-Home-On);
+    }
+
+    &-home-off {
+        content: icon($Menu-Home-Off);
+    }
+
+    &-notification-on {
+        content: icon($Menu-Notification-On);
+    }
+
+    &-notification-off {
+        content: icon($Menu-Notification-Off);
+    }
+
+    &-service-on {
+        content: icon($Menu-Service-On);
+    }
+
+    &-service-off {
+        content: icon($Menu-Service-Off);
+    }
+
+    &-history-on {
+        content: icon($Menu-History-On);
+    }
+
+    &-history-off {
+        content: icon($Menu-History-Off);
+    }
+
+    &-vehicle-on {
+        content: icon($Menu-Vehicle-On);
+    }
+
+    &-vehicle-off {
+        content: icon($Menu-Vehicle-Off);
+    }
+
+    &-payment-on {
+        content: icon($Menu-Payment-On);
+    }
+
+    &-payment-off {
+        content: icon($Menu-Payment-Off);
+    }
+
+    &-setting-on {
+        content: icon($Menu-Setting-On);
+    }
+
+    &-setting-off {
+        content: icon($Menu-Setting-Off);
+    }
+
+    &-about-on {
+        content: icon($Menu-About-On);
+    }
+
+    &-about-off {
+        content: icon($Menu-About-Off);
+    }
+}

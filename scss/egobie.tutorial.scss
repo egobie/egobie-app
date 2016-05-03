@@ -1,0 +1,38 @@
+@import 'egobie';
+
+.egobie {
+
+    &-tutorial {
+        height: 100%;
+    }
+
+    &-tutorial-slide {
+        padding-top: 80px;
+        text-align: center;
+    }
+
+    &-tutorial-1 {
+        background: tutorial($Tutorial-1) no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    &-tutorial-2 {
+        background: tutorial($Tutorial-2) no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    &-tutorial-3 {
+        background: tutorial($Tutorial-3) no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    &-tutorial-4 {
+        background: tutorial($Tutorial-4) no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    &-tutorial-5 {
+        background: tutorial($Tutorial-5) no-repeat center center fixed;
+        background-size: cover;
+    }
+}

@@ -14,8 +14,9 @@ var paths = {
 gulp.task('default', ['sass']);
 
 gulp.task('sass', function(done) {
-  gulp.src('./scss/ionic.app.scss')
+  gulp.src(['./scss/ionic.app.scss', './scss/egobie.*.scss'])
     .pipe(sass())
+    .pipe(concat('ionic.app.css'))
     .on('error', sass.logError)
     .pipe(gulp.dest('./www/css/'))
     .pipe(minifyCss({

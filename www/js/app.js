@@ -8,6 +8,9 @@
 angular
     .module('app', ['ionic', 'app.directives',
         'app.sign',
+        'app.sign.in',
+        'app.sign.up',
+
         'app.tutorial',
         'app.menu',
 

@@ -1,7 +1,7 @@
 <ion-view hide-nav-bar="true"
           ng-app="app.payment"
           ng-controller="paymentCtrl">
-    <ion-header-bar class="bar-stable">
+    <ion-header-bar class="bar-stable egobie-payment-header-bar">
         <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
         <h1 class="title">PAYMENTS</h1>
         <button class="button button-icon icon ion-android-add"
@@ -9,31 +9,21 @@
     </ion-header-bar>
     <ion-content padding="true" class="has-header">
         <ion-list can-swipe="true">
-            <!--
-            <ion-item class="item-thumbnail-left margin-top-10"
-                      ng-repeat="(id, p) in payments"
-                      ng-click="showPaymentActionSheet(p)">
-                <img src="cover.jpg">
-                <h2>**** {{p.account_number}}</h2>
-                <p>{{p.account_name}}</p>
-                <p>{{p.account_type}}</p>
-            </ion-item>
-            -->
-            <ion-item class="egobie-payment margin-top-10"
+            <ion-item class="egobie-payment"
                       ng-repeat="(id, p) in payments"
                       ng-click="showPaymentActionSheet(p)">
                 <div class="left">
                     <p class="name">{{p.account_name}}</p>
                     <p class="number">XXXX XXXX XXXX {{p.account_number}}</p>
                     <p>
-                        <span class="exp">EXP: {{p.expire_month}}/{{p.expire_year.substr(-2, 2)}}</span>
-                        <span class="zip">ZIP: {{p.account_zip}}</span>
+                        <span class="exp">EXP {{p.expire_month}}/{{p.expire_year.substr(-2, 2)}}</span>
+                        <span class="zip">ZIP {{p.account_zip}}</span>
                     </p>
                     <p class="type">{{p.account_type}}</p>
                 </div>
                 <div class="right">
-                    <div class="egobie-logo"></div>
-                    <div class="card-logo"></div>
+                    <i class="egobie-logo"></i>
+                    <i class="visa-logo"></i>
                 </div>
             </ion-item>
         </ion-list>
