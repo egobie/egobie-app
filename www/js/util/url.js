@@ -5,6 +5,8 @@ angular.module('util.url', [])
 //        var host = "http://ec2-52-91-137-51.compute-1.amazonaws.com:8000";
 
         return {
+            website: "http://www.egobie.com/",
+
             signIn: host + "/signin",
             signUp: host + "/signup",
 

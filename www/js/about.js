@@ -1,6 +1,10 @@
 angular.module('app.about', ['ionic', 'util.url', 'util.shared'])
 
     .controller('aboutCtrl', function($scope, $ionicModal, $ionicPopup, $http, shared, url) {
+        $scope.openWebsite = function() {
+            window.open(url.website, "_system");
+        };
+
         $ionicModal.fromTemplateUrl('feedback', {
             scope: $scope
         }).then(function(modal) {
