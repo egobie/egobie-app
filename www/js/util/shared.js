@@ -11,6 +11,7 @@ angular.module("util.shared", ["util.url"])
             token: "",
             username: "",
             email: "",
+            coupon: "",
             phone: "",
             first: "",
             last: "",
@@ -63,6 +64,7 @@ angular.module("util.shared", ["util.url"])
 
         // Email Reg
         var regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        var regCoupon = /^([A-Z0-9]{5})$/;
 
         var years = [];
         var _current_year = new Date().getFullYear();
@@ -102,6 +104,7 @@ angular.module("util.shared", ["util.url"])
                 user.middle = u.middle_name;
                 user.email = u.email;
                 user.phone = u.phone_number;
+                user.coupon = u.coupon;
 
                 user.home_state = u.home_address_state;
                 user.home_city = u.home_address_city;
@@ -238,9 +241,11 @@ angular.module("util.shared", ["util.url"])
             },
 
             addUserHistories: function(histories) {
-                Array.prototype.forEach.call(histories, function(history) {
-                    userHistories[history.id] = history;
-                });
+                if (histories) {
+                    Array.prototype.forEach.call(histories, function(history) {
+                        userHistories[history.id] = history;
+                    });
+                }
             },
 
             getUserServices: function() {
@@ -321,6 +326,10 @@ angular.module("util.shared", ["util.url"])
 
             testEmail: function(email) {
                 return regEmail.test(email);
+            },
+
+            testCoupon: function(coupon) {
+                return regCoupon.test(coupon);
             },
 
             showLoading: function () {

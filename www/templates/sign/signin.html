@@ -1,17 +1,18 @@
-<ion-view padding="true" class="padding egobie-sign-bg">
+<ion-view padding="true" class="padding egobie-sign-bg"
+          ng-app="app.sign.in"
+          ng-controller="signInCtrl">
     <ion-content padding="true" class="has-header">
-        <ion-list class="list-inset"
-              ng-controller="signInCtrl">
+        <ion-list class="list-inset">
             <img class="egobie-signin-logo"/>
 
             <!--<img class="img-signin-divide" src="delorean.jpg"/>-->
             <ion-item class="item-input egobie-signin-item">
                 <i class="icon ion-android-person placeholder-icon"></i>
-                <input type="text" placeholder="Username" id="{{signInForm.username}}">
+                <input id="sign-in-username" type="text" placeholder="Username"/>
             </ion-item>
             <ion-item class="item-input egobie-signin-item">
                 <i class="icon ion-locked placeholder-icon"></i>
-                <input type="password" placeholder="Password" id="{{signInForm.password}}">
+                <input id="sign-in-password" type="password" placeholder="Password"/>
             </ion-item>
             <!--<ion-toggle toggle-class="toggle-calm" class="margin-top-5 width-300 toggle-signin">Keep me sign in</ion-toggle>-->
 

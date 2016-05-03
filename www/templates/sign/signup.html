@@ -1,35 +1,30 @@
-<ion-view padding="true" class="padding egobie-sign-bg">
+<ion-view padding="true" class="padding egobie-sign-bg"
+          ng-app="app.sign.up"
+          ng-controller="signUpCtrl">
     <ion-content padding="true" class="has-header">
-        <ion-list class="list-inset"
-                  ng-controller="signUpCtrl">
+        <ion-list class="list-inset">
             <img class="egobie-signup-logo" />
 
             <!--<img class="img-signin-divide" src="delorean.jpg" />-->
             <ion-item class="item-input egobie-signup-item">
                 <i class="icon ion-android-person placeholder-icon"></i>
-                <input type="text" placeholder="Username ({{signUpForm.minUsername}}-{{signUpForm.maxUsername}})"
-                       id="{{signUpForm.username}}"
-                       minlength="{{signUpForm.minUsername}}"
-                       maxlength="{{signUpForm.maxUsername}}">
+                <input id="sign-up-username" type="text" placeholder="Username (6-12)" minlength="6" maxlength="12"/>
             </ion-item>
             <ion-item class="item-input egobie-signup-item">
                 <i class="icon ion-locked placeholder-icon"></i>
-                <input type="password" placeholder="Password ({{signUpForm.minPassword}}-{{signUpForm.maxPassword}})"
-                       id="{{signUpForm.password1}}"
-                       minlength="{{signUpForm.minPassword}}"
-                       maxlength="{{signUpForm.maxPassword}}">
+                <input id="sign-up-password1" type="password" placeholder="Password (8-16)" minlength="8" maxlength="16"/>
             </ion-item>
             <ion-item class="item-input egobie-signup-item">
                 <i class="icon placeholder-icon"></i>
-                <input type="password" placeholder="Confirm Password"
-                       id="{{signUpForm.password2}}"
-                       minlength="{{signUpForm.minPassword}}"
-                       maxlength="{{signUpForm.maxPassword}}">
+                <input id="sign-up-password2" type="password" placeholder="Confirm Password" minlength="8" maxlength="16"/>
             </ion-item>
             <ion-item class="item-input egobie-signup-item">
                 <i class="icon ion-email placeholder-icon"></i>
-                <input type="email" placeholder="Email Address"
-                       id="{{signUpForm.email}}">
+                <input id="sign-up-email" type="email" placeholder="Email Address"/>
+            </ion-item>
+            <ion-item class="item-input egobie-signup-item">
+                <i class="icon ion-email placeholder-icon"></i>
+                <input id="sign-up-coupon" type="text" placeholder="Invitation Code (Optional)" maxlength="5"/>
             </ion-item>
 
             <!--<img class="img-signin-divide" src="delorean.jpg" />-->
