@@ -10376,6 +10376,18 @@ a.button {
   margin-top: 10px;
   margin-bottom: 10px; }
 
+.egobie-start-to-use {
+  display: block;
+  position: absolute;
+  margin: 10px auto 50px auto;
+  width: 300px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  border-color: #1B4A5E;
+  background: transparent;
+  color: #1B4A5E; }
+
 .egobie-margin-left-3 {
   margin-left: 3px; }
 
