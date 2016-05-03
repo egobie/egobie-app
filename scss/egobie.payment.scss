@@ -2,6 +2,10 @@
 
 .egobie {
 
+    &-payment-header-bar {
+        @extend .egobie-header-bar;
+    }
+
     &-payment {
         display: table;
         padding: 0;
