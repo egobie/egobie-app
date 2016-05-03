@@ -65,6 +65,12 @@ $Light-Grey-Blue: #D1D2D4;
     background-image: -o-linear-gradient($c1, $c2, $c3, $c4);
 }
 
+@mixin appearance($content) {
+    -webkit-appearance: $content;
+    -moz-appearance: $content;
+    appearance: $content;
+}
+
 .egobie {
 
     &-margin-left-3 {
@@ -127,10 +133,10 @@ $Light-Grey-Blue: #D1D2D4;
     }
 
     &-header-bar {
-        background-color: #404041 !important;
+        background-color: $Dark-Navy-Blue !important;
 
         h1, .button {
-            color: #D1D2D4 !important;
+            color: $Light-Grey-Blue !important;
         }
     }
 }

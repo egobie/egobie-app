@@ -10077,7 +10077,7 @@ a.button {
 .egobie-margin-left-3 {
   margin-left: 3px; }
 
-.egobie-margin-top-5 {
+.egobie-margin-top-5, .egobie-payment-add .item, .egobie-payment-edit .item {
   margin-top: 5px; }
 
 .egobie-margin-right-5 {
@@ -10181,6 +10181,32 @@ a.button {
       .egobie-payment .right i.visa-logo {
         bottom: 5%;
         content: url("../img/icon/payment_visa.png"); }
+
+.egobie-payment-add .item, .egobie-payment-edit .item {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 40px; }
+  .egobie-payment-add .item i, .egobie-payment-edit .item i {
+    width: 40px;
+    height: 30px;
+    font-size: 30px;
+    margin-right: 15px;
+    border-right: 1px solid graytext; }
+    .egobie-payment-add .item i:before, .egobie-payment-edit .item i:before {
+      font-size: 25px; }
+  .egobie-payment-add .item select, .egobie-payment-edit .item select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 300px;
+    height: 35px;
+    border: none;
+    background: #fff;
+    color: #333;
+    text-overflow: '';
+    white-space: nowrap;
+    font-size: 14px;
+    cursor: pointer; }
 
 .egobie-margin-left-3 {
   margin-left: 3px; }

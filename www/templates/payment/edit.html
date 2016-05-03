@@ -6,39 +6,39 @@
                 ng-click="hideEditPayment()"></button>
     </ion-header-bar>
     <ion-content padding="true" class="has-header padding">
-        <ion-list>
+        <ion-list class="egobie-payment-edit">
             <!-- Card Holder -->
-            <ion-item class="item-input margin-top-5 item-padding-top-bottom">
-                <i class="icon ion-person placeholder-icon icon-size-25 i-add-payment-egobie"></i>
+            <ion-item class="item-input">
+                <i class="icon ion-person placeholder-icon"></i>
                 <input id="editpayment-name" type="text" placeholder="Holder Name"
                        ng-model="payment.name">
             </ion-item>
 
             <!-- Card Number -->
-            <ion-item class="item-input margin-top-5 item-padding-top-bottom">
-                <i class="icon ion-card placeholder-icon icon-size-25 i-add-payment-egobie"></i>
+            <ion-item class="item-input">
+                <i class="icon ion-card placeholder-icon"></i>
                 <input id="editpayment-number" type="number" placeholder="0000 0000 0000 0000"
                        ng-model="payment.number">
             </ion-item>
 
             <!-- CCV -->
-            <ion-item class="item-input margin-top-5 item-padding-top-bottom">
-                <i class="icon ion-locked placeholder-icon icon-size-25 i-add-payment-egobie"></i>
+            <ion-item class="item-input">
+                <i class="icon ion-locked placeholder-icon"></i>
                 <input id="editpayment-cvv" type="password" placeholder="CVV"
                        ng-model="payment.cvv">
             </ion-item>
 
             <!-- Zip -->
-            <ion-item class="item-input margin-top-5 item-padding-top-bottom">
-                <i class="icon ion-card placeholder-icon icon-size-25 i-add-payment-egobie"></i>
+            <ion-item class="item-input">
+                <i class="icon ion-card placeholder-icon"></i>
                 <input id="editpayment-zip" type="text" placeholder="Zip Code"
                        ng-model="payment.zip">
             </ion-item>
 
             <!-- Expiration Month -->
-            <ion-item class="item-input margin-top-5 item-padding-top-bottom">
-                <i class="icon ion-calendar placeholder-icon icon-size-25 i-add-payment-egobie"></i>
-                <select id="editpayment-month" class="select-egobie"
+            <ion-item class="item-input">
+                <i class="icon ion-calendar placeholder-icon"></i>
+                <select id="editpayment-month"
                         ng-model="payment.month"
                         ng-options="month as month for month in months">
                     <option value="">Choose Month</option>
@@ -46,8 +46,8 @@
             </ion-item>
 
             <!-- Expiration Year -->
-            <ion-item class="item-input margin-top-5 item-padding-top-bottom">
-                <i class="icon ion-calendar placeholder-icon icon-size-25 i-add-payment-egobie"></i>
+            <ion-item class="item-input">
+                <i class="icon ion-calendar placeholder-icon"></i>
                 <select id="editpayment-year" class="select-egobie"
                         ng-model="payment.year"
                         ng-options="year as year for year in years">
