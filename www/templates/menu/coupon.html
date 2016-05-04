@@ -1,0 +1,27 @@
+<ion-view title="GIFT"
+          ng-app="app.coupon"
+          ng-controller="couponCtrl">
+    <ion-content padding="true" class="has-header egobie-coupon">
+        <ion-list>
+            <ion-item>{{coupon}}</ion-item>
+            <ion-item>Share with friends and they will get 10% discount credit. We will also apply 10% discount to your next reservation after their first booking</ion-item>
+            <ion-item>Shared It</ion-item>
+        </ion-list>
+
+        <ion-list class="egobie-coupon-share">
+            <ion-item ng-click="shareByMessage()">
+                <i class="icon ion-chatbox placeholder-icon message"></i>
+            </ion-item>
+            <ion-item ng-click="shareByEmail()">
+                <i class="icon ion-email placeholder-icon email"></i>
+            </ion-item>
+            <ion-item ng-click="shareByFacebook()">
+                <i class="icon ion-social-facebook placeholder-icon facebook"></i>
+            </ion-item>
+            <ion-item ng-click="shareByTwitter()">
+                <i class="icon ion-social-twitter placeholder-icon twitter"></i>
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
+</ion-view>

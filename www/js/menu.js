@@ -72,6 +72,15 @@ angular.module('app.menu', ['util.request'])
                 }
             })
 
+            .state('menu.coupon', {
+                url: '/coupon',
+                views: {
+                    'side-menu': {
+                        templateUrl: 'templates/menu/coupon.html'
+                    }
+                }
+            })
+
             .state('menu.setting', {
                 url: '/setting',
                 views: {
