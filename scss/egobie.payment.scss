@@ -7,10 +7,12 @@
     }
 
     &-payment {
+        @extend .egobie-center;
+
         display: table;
         padding: 0;
         height: 180px;
-        width: 100%;
+        width: 95%;
         margin-top: 15px;
         border: 0;
 

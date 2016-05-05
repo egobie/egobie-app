@@ -1,98 +1,139 @@
-<ion-view title="SERVICES" cache-view="false"
+<ion-view hide-nav-bar="true" cache-view="false"
           ng-app="app.service"
           ng-controller="serviceCtrl">
-    <ion-content padding="true" class="has-header">
+    <ion-header-bar class="bar-stable egobie-service-header-bar">
+        <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+        <h1 class="title">SERVICE</h1>
+    </ion-header-bar>
+    <ion-content padding="true" class="has-header egobie-service-list">
         <ion-list>
-            <ion-item menu-close="" class="item-divider item-icon-right"
+            <ion-item menu-close="" class="item-divider item-icon-right egobie-service-title egobie-margin-top-15"
                       ng-click="toggleShownService('CAR_WASH')">
-                <i class="icon ion-ios-arrow-down"></i>{{serviceNames["CAR_WASH"]}}
+                <i class="icon ion-ios-arrow-down"></i>{{serviceNames["CAR_WASH"].toUpperCase()}}
             </ion-item>
-            <ion-item menu-close="" class="card"
+            <ion-item menu-close="" class="egobie-service-item"
                       ng-repeat="service in carWash"
                       ng-click="showService(service)"
                       ng-show="isShownService('CAR_WASH')">
-                <ion-list>
-                    <ion-item class="item-avatar">
-                        <img src="mcfly.jpg">
-                        <h2>{{service.name}}</h2>
-                        <p>Estimated Time : {{service.time}}</p>
-                        <p>Price : {{service.price}}</p>
-                    </ion-item>
-
-                    <ion-item class="item-body">
-                        <p>{{service.description}}</p>
-                    </ion-item>
-                </ion-list>
+                <div class="left"></div>
+                <div class="middle">
+                    <p class="price">{{service.price}}</p>
+                    <p class="name">{{service.name}}</p>
+                    <p class="time">Estimated Time : {{service.time}}</p>
+                </div>
+                <div class="icon ion-ios-arrow-right right"></div>
             </ion-item>
 
-            <ion-item menu-close="" class="item-divider item-icon-right"
+            <ion-item menu-close="" class="item-divider item-icon-right egobie-service-title"
                       ng-click="toggleShownService('OIL_CHANGE')">
-                <i class="icon ion-ios-arrow-down"></i>{{serviceNames["OIL_CHANGE"]}}
+                <i class="icon ion-ios-arrow-down"></i>{{serviceNames["OIL_CHANGE"].toUpperCase()}}
             </ion-item>
-            <ion-item menu-close="" class="card"
+            <ion-item menu-close="" class="egobie-service-item"
                       ng-repeat="service in oilChange"
                       ng-click="showService(service)"
                       ng-show="isShownService('OIL_CHANGE')">
-                <ion-list>
-                    <ion-item class="item-avatar">
-                        <img src="mcfly.jpg">
-                        <h2>{{service.name}}</h2>
-                        <p>Estimated Time : {{service.time}}</p>
-                        <p>Price : {{service.price}}</p>
-                    </ion-item>
-
-                    <ion-item class="item-body">
-                        <p>{{service.description}}</p>
-                    </ion-item>
-                </ion-list>
+                <div class="left"></div>
+                <div class="middle">
+                    <p class="price">{{service.price}}</p>
+                    <p class="name">{{service.name}}</p>
+                    <p class="time">Estimated Time : {{service.time}}</p>
+                </div>
+                <div class="icon ion-ios-arrow-right right"></div>
             </ion-item>
 
-            <ion-item menu-close="" class="item-divider item-icon-right"
+            <ion-item menu-close="" class="item-divider item-icon-right egobie-service-title"
                       ng-click="toggleShownService('DETAILING')">
-                <i class="icon ion-ios-arrow-down"></i>{{serviceNames["DETAILING"]}}
+                <i class="icon ion-ios-arrow-down"></i>{{serviceNames["DETAILING"].toUpperCase()}}
             </ion-item>
-            <ion-item menu-close="" class="card"
+            <ion-item menu-close="" class="egobie-service-item"
                       ng-repeat="service in detailing"
                       ng-click="showService(service)"
                       ng-show="isShownService('DETAILING')">
-                <ion-list>
-                    <ion-item class="item-avatar">
-                        <img src="mcfly.jpg">
-                        <h2>{{service.name}}</h2>
-                        <p>Estimated Time : {{service.time}}</p>
-                        <p>Price : {{service.price}}</p>
-                    </ion-item>
-
-                    <ion-item class="item-body">
-                        <p>{{service.description}}</p>
-                    </ion-item>
-                </ion-list>
+                <div class="left"></div>
+                <div class="middle">
+                    <p class="price">{{service.price}}</p>
+                    <p class="name">{{service.name}}</p>
+                    <p class="time">Estimated Time : {{service.time}}</p>
+                </div>
+                <div class="icon ion-ios-arrow-right right"></div>
             </ion-item>
         </ion-list>
     </ion-content>
 
     <script id="service-detail" type="text/ng-template">
-        <ion-modal-view title="History" hide-nav-bar="true">
+        <ion-modal-view hide-nav-bar="true">
             <ion-header-bar class="bar bar-header bar-stable">
                 <h1 class="title">DETAIL</h1>
                 <button class="button button-icon icon ion-android-close"
                         ng-click="hideService()"></button>
             </ion-header-bar>
             <ion-content overflow-scroll="true" padding="true" class="has-header padding">
-                <ion-item menu-close="" class="card">
-                    <ion-list class="card">
-                        <ion-item class="item-avatar">
-                            <img src="mcfly.jpg">
-                            <h2>{{selectedService.name}}</h2>
-                            <p>Estimated Time : {{selectedService.time}}</p>
-                            <p>Price : {{selectedService.price}}</p>
-                        </ion-item>
-
-                        <ion-item class="item-body">
-                            <p ng-repeat="item in selectedService.items">{{item}}</p>
-                        </ion-item>
-                    </ion-list>
+                <ion-item class="egobie-service-detail-title">
+                    <div class="left">
+                        <p class="price">{{selectedService.price}}</p>
+                        <p class="time">{{selectedService.time}}</p>
+                    </div>
+                    <div class="right">
+                        <p class="name">{{selectedService.name}}</p>
+                        <p class="note">{{selectedService.note}}</p>
+                    </div>
                 </ion-item>
+
+                <ion-list class="egobie-service-detail-list egobie-service-basic"
+                          ng-show="selectedService.basic.length > 0">
+                    <ion-item class="detail-section">
+                        <i class="dot"/>
+                        <i class="line"/>
+                        <p>WE PERFORM FOR YOU</p>
+                    </ion-item>
+                    <ion-item class="detail-item"
+                              ng-repeat="item in selectedService.basic">
+                        <i class="line"/>
+                        <p>{{item}}</p>
+                    </ion-item>
+                </ion-list>
+
+                <ion-list class="egobie-service-detail-list egobie-service-free"
+                          ng-show="selectedService.free.length > 0">
+                    <ion-item class="detail-section">
+                        <i class="dot"/>
+                        <i class="line"/>
+                        <p>NO EXTRA CHARGE</p>
+                    </ion-item>
+                    <ion-item class="detail-item"
+                              ng-repeat="item in selectedService.free">
+                        <i class="line"/>
+                        <p>{{item}}</p>
+                    </ion-item>
+                </ion-list>
+
+                <ion-list class="egobie-service-detail-list egobie-service-extra"
+                          ng-show="selectedService.extra.length > 0">
+                    <ion-item class="detail-section">
+                        <i class="dot"/>
+                        <i class="line"/>
+                        <p>EXTRA CHARGE IF YOU NEED IT</p>
+                    </ion-item>
+                    <ion-item class="detail-item"
+                              ng-repeat="item in selectedService.extra">
+                        <i class="line"/>
+                        <p>{{item}}</p>
+                    </ion-item>
+                </ion-list>
+
+                <ion-list class="egobie-service-detail-list egobie-service-advance"
+                          ng-show="selectedService.advance.length > 0">
+                    <ion-item class="detail-section">
+                        <i class="dot"/>
+                        <i class="line"/>
+                        <p>WE GIVE YOU SUGGESTIONS</p>
+                    </ion-item>
+                    <ion-item class="detail-item"
+                              ng-repeat="item in selectedService.advance">
+                        <i class="line"/>
+                        <p>{{item}}</p>
+                    </ion-item>
+                </ion-list>
             </ion-content>
         </ion-modal-view>
     </script>

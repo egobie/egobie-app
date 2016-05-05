@@ -58,7 +58,7 @@ angular.module("util.shared", ["util.url"])
 
         var serviceNames = {
             "CAR_WASH": "Car Wash",
-            "OIL_CHANGE": "Oil Change",
+            "OIL_CHANGE": "Lube Service",
             "DETAILING": "Detailing"
         };
 
@@ -76,7 +76,7 @@ angular.module("util.shared", ["util.url"])
 
         $window.rootScopes = $window.rootScopes || [];
         $window.rootScopes.push($rootScope);
-        
+
         if (!!$window.shared) {
             return $window.shared;
         }
@@ -169,6 +169,25 @@ angular.module("util.shared", ["util.url"])
             addServices: function(data) {
                 if (data) {
                     Array.prototype.forEach.call(data, function(service) {
+                        service.basic = [];
+                        service.free = [];
+                        service.extra = [];
+                        service.advance = [];
+
+                        if (service.items) {
+                            Array.prototype.forEach.call(service.items, function(item) {
+                                if (item.startsWith("+++")) {
+                                    service.advance.push(item.substring(3));
+                                } else if (item.startsWith("++")) {
+                                    service.extra.push(item.substring(2));
+                                } else if (item.startsWith("+")){
+                                    service.free.push(item.substring(1));
+                                } else {
+                                    service.basic.push(item);
+                                }
+                            });
+                        }
+
                         services[service.id] = service;
                         // Used for selection
                         services[service.id].checked = false;
@@ -181,6 +200,8 @@ angular.module("util.shared", ["util.url"])
                             detailing.push(service);
                         }
                     });
+
+                    console.log(services);
                 }
             },
 

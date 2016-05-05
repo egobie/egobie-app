@@ -23,6 +23,9 @@ $Menu-History-Off: 'history_off.png';
 $Menu-Vehicle-On: 'vehicles_on.png';
 $Menu-Vehicle-Off: 'vehicles_off.png';
 
+$Menu-Coupon-On: 'coupon_on.png';
+$Menu-Coupon-Off: 'coupon_off.png';
+
 $Menu-Payment-On: 'payment_on.png';
 $Menu-Payment-Off: 'payment_off.png';
 
@@ -84,6 +87,10 @@ $Egobie-Blue: #1B4A5E;
 
     &-margin-top-5 {
         margin-top: 5px;
+    }
+
+    &-margin-top-15 {
+        margin-top: 15px;
     }
 
     &-margin-right-5 {
