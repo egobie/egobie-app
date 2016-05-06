@@ -25,16 +25,6 @@
         }
     }
 
-    &-history-detail {
-        .item {
-            @extend .egobie-margin-top-5;
-
-            padding-top: 8px;
-            padding-bottom: 8px;
-            height: 40px;
-        }
-    }
-
     &-history-rating {
         display: inline;
         padding: .2em .6em .3em;
@@ -62,5 +52,274 @@
 
     &-history-rating-bad {
         background-color: #FF0E0E;
+    }
+
+    &-history-detail {
+
+        .card {
+            @extend .egobie-center;
+            width: 95%;
+            padding: 0;
+            border: 1px solid #404041;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .section {
+            font-size: 18px;
+            font-weight: 500;
+            border: 0px;
+            padding: 9px;
+            color: #FF9900;
+        }
+
+        .egobie-history-time {
+            @extend .card;
+
+            .left {
+                display: inline-block;
+                width: 70%;
+
+                .start, .middle, .end {
+                    display: flex;
+                    padding: 10px;
+
+                    .title {
+                        display: inline-block;
+                        width: 40px;
+                        font-weight: 600;
+                    }
+
+                    i {
+                        display: inline-block;
+                        width: 15px;
+                        height: 15px;
+                        margin-right: 10px;
+                    }
+
+                    .time {
+                        display: inline-block;
+                        font-weight: 600;
+                    }
+                }
+
+                .middle {
+                    height: 15px;
+                    overflow: visible;
+
+                    i {
+                        background-color: #404041;
+                        margin-left: 5px;
+                        margin-top: -20px;
+                        width: 3px;
+                        height: 40px;
+                    }
+                }
+            }
+
+            .right {
+                display: inline-block;
+                position: absolute;
+                padding: 10px;
+                width: 30%;
+
+                i {
+                    display: inline;
+                    margin-right: 3px;
+                    color: green;
+                }
+
+                p {
+                    display: inline;
+                    position: relative;
+                    margin-top: 0;
+                    font-size: 18px;
+                    color: green;
+                }
+            }
+
+            .bottom {
+                border-top: 1px solid #404041;
+
+                p {
+                    display: inline-block;
+                    margin-right: 10px;
+                    line-height: 40px;
+                    font-size: 20px;
+                    float: right;
+
+                    &:before {
+                        content: "Reservation ID: #";
+                        margin-right: 5px;
+                    }
+                }
+            }
+
+        }
+
+        .egobie-history-car {
+            @extend .card;
+            border: 0px;
+            border-top: 1px solid #404041;
+            border-radius: 0px;
+
+            .plate-state, .maker-model, .year-color {
+                height: 65px;
+                padding: 10px;
+                border: 0px;
+                overflow: visible;
+
+                .title {
+                    margin-bottom: 5px;
+                    font-size: 13px;
+                }
+
+                .content {
+                    font-size: 15px;
+                    font-weight: 500;
+                    color: #404041;
+                    padding-bottom: 5px;
+                    border-bottom: 1px solid #404041;
+                }
+                
+                .plate, .maker, .year {
+                    display: inline-block;
+                    margin-bottom: 5px;
+                    font-size: 13px;
+                    width: 100px;
+                }
+
+                .state, .model, .color {
+                    display: inline-block;
+                    margin-bottom: 5px;
+                    font-size: 13px;
+                    width: 100px;
+                    margin-left: 50px;
+                }
+            }
+        }
+
+        .egobie-history-payment {
+            @extend .card;
+            border: 0px;
+            border-top: 1px solid #404041;
+            border-radius: 0px;
+
+            .name, .number, .price-type {
+                height: 65px;
+                padding: 10px;
+                border: 0px;
+                overflow: visible;
+
+                .title {
+                    margin-bottom: 5px;
+                    font-size: 13px;
+                }
+
+                .content {
+                    font-size: 15px;
+                    font-weight: 500;
+                    color: #404041;
+                    padding-bottom: 5px;
+                    border-bottom: 1px solid #404041;
+                }
+            }
+
+            .price-type {
+                .price {
+                    display: inline-block;
+                    margin-bottom: 5px;
+                    font-size: 13px;
+                    width: 90px;
+
+                    .content:before {
+                        content: "$";
+                        font-size: 12px;
+                        margin-right: 3px;
+                        position: relative;
+                        bottom: 5px;
+                    }
+                }
+
+                .type {
+                    display: inline-block;
+                    margin-bottom: 5px;
+                    font-size: 13px;
+                    margin-left: 150px;
+                }
+            }
+        }
+
+        .egobie-history-service {
+            @extend .card;
+            border: 0px;
+            border-top: 1px solid #404041;
+            border-radius: 0px;
+
+            .service {
+                position: relative;
+                margin-top: 10px;
+
+                .dot {
+                    display: block;
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 100%;
+                    left: 10px;
+                    top: 5px;
+                    background-color: #404041;
+                }
+
+                .line {
+                    display: block;
+                    position: absolute;
+                    width: 2px;
+                    height: 30px;
+                    left: 14px;
+                    top: 10px;
+                    background-color: #404041;
+                }
+
+                p {
+                    position: relative;
+                    font-size: 13px;
+                    width: 85%;
+                    left: 30px;
+                    height: 20px;
+                }
+
+                div {
+                    position: relative;
+                    margin-bottom: 10px;
+                    overflow: visible;
+
+                    i {
+                        position: absolute;
+                        background-color: #404041;
+                        width: 2px;
+                        left: 14px;
+                        height: 150%;
+                    }
+
+                    p {
+                        position: relative;
+                        padding-left: 30px;
+                        width: 95%;
+                        left: 0px;
+                        font-size: 15px;
+                        font-weight: 600;
+                        height: 30px;
+                        line-height: 30px;
+                        border: 1px solid #404041;
+                        border-radius: 8px;
+                    }
+
+                    &:last-child {
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
     }
 }

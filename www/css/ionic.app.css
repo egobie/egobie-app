@@ -9896,7 +9896,7 @@ a.button {
 .egobie-margin-left-3 {
   margin-left: 3px; }
 
-.egobie-margin-top-5, .egobie-history-detail .item {
+.egobie-margin-top-5 {
   margin-top: 5px; }
 
 .egobie-margin-top-15 {
@@ -9926,7 +9926,7 @@ a.button {
 .egobie-left {
   float: left; }
 
-.egobie-center {
+.egobie-center, .egobie-history-detail .card, .egobie-history-detail .egobie-history-time, .egobie-history-detail .egobie-history-car, .egobie-history-detail .egobie-history-payment, .egobie-history-detail .egobie-history-service {
   left: 0;
   right: 0;
   margin-left: auto !important;
@@ -9965,11 +9965,6 @@ a.button {
   .egobie-history-empty hr:last-child {
     margin-top: 20px; }
 
-.egobie-history-detail .item {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  height: 40px; }
-
 .egobie-history-rating {
   display: inline;
   padding: .2em .6em .3em;
@@ -9993,6 +9988,195 @@ a.button {
 
 .egobie-history-rating-bad {
   background-color: #FF0E0E; }
+
+.egobie-history-detail .card, .egobie-history-detail .egobie-history-time, .egobie-history-detail .egobie-history-car, .egobie-history-detail .egobie-history-payment, .egobie-history-detail .egobie-history-service {
+  width: 95%;
+  padding: 0;
+  border: 1px solid #404041;
+  border-radius: 10px;
+  margin-top: 15px; }
+
+.egobie-history-detail .section {
+  font-size: 18px;
+  font-weight: 500;
+  border: 0px;
+  padding: 9px;
+  color: #FF9900; }
+
+.egobie-history-detail .egobie-history-time .left {
+  display: inline-block;
+  width: 70%; }
+  .egobie-history-detail .egobie-history-time .left .start, .egobie-history-detail .egobie-history-time .left .middle, .egobie-history-detail .egobie-history-time .left .end {
+    display: flex;
+    padding: 10px; }
+    .egobie-history-detail .egobie-history-time .left .start .title, .egobie-history-detail .egobie-history-time .left .middle .title, .egobie-history-detail .egobie-history-time .left .end .title {
+      display: inline-block;
+      width: 40px;
+      font-weight: 600; }
+    .egobie-history-detail .egobie-history-time .left .start i, .egobie-history-detail .egobie-history-time .left .middle i, .egobie-history-detail .egobie-history-time .left .end i {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      margin-right: 10px; }
+    .egobie-history-detail .egobie-history-time .left .start .time, .egobie-history-detail .egobie-history-time .left .middle .time, .egobie-history-detail .egobie-history-time .left .end .time {
+      display: inline-block;
+      font-weight: 600; }
+  .egobie-history-detail .egobie-history-time .left .middle {
+    height: 15px;
+    overflow: visible; }
+    .egobie-history-detail .egobie-history-time .left .middle i {
+      background-color: #404041;
+      margin-left: 5px;
+      margin-top: -20px;
+      width: 3px;
+      height: 40px; }
+
+.egobie-history-detail .egobie-history-time .right {
+  display: inline-block;
+  position: absolute;
+  padding: 10px;
+  width: 30%; }
+  .egobie-history-detail .egobie-history-time .right i {
+    display: inline;
+    margin-right: 3px;
+    color: green; }
+  .egobie-history-detail .egobie-history-time .right p {
+    display: inline;
+    position: relative;
+    margin-top: 0;
+    font-size: 18px;
+    color: green; }
+
+.egobie-history-detail .egobie-history-time .bottom {
+  border-top: 1px solid #404041; }
+  .egobie-history-detail .egobie-history-time .bottom p {
+    display: inline-block;
+    margin-right: 10px;
+    line-height: 40px;
+    font-size: 20px;
+    float: right; }
+    .egobie-history-detail .egobie-history-time .bottom p:before {
+      content: "Reservation ID: #";
+      margin-right: 5px; }
+
+.egobie-history-detail .egobie-history-car {
+  border: 0px;
+  border-top: 1px solid #404041;
+  border-radius: 0px; }
+  .egobie-history-detail .egobie-history-car .plate-state, .egobie-history-detail .egobie-history-car .maker-model, .egobie-history-detail .egobie-history-car .year-color {
+    height: 65px;
+    padding: 10px;
+    border: 0px;
+    overflow: visible; }
+    .egobie-history-detail .egobie-history-car .plate-state .title, .egobie-history-detail .egobie-history-car .maker-model .title, .egobie-history-detail .egobie-history-car .year-color .title {
+      margin-bottom: 5px;
+      font-size: 13px; }
+    .egobie-history-detail .egobie-history-car .plate-state .content, .egobie-history-detail .egobie-history-car .maker-model .content, .egobie-history-detail .egobie-history-car .year-color .content {
+      font-size: 15px;
+      font-weight: 500;
+      color: #404041;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #404041; }
+    .egobie-history-detail .egobie-history-car .plate-state .plate, .egobie-history-detail .egobie-history-car .plate-state .maker, .egobie-history-detail .egobie-history-car .plate-state .year, .egobie-history-detail .egobie-history-car .maker-model .plate, .egobie-history-detail .egobie-history-car .maker-model .maker, .egobie-history-detail .egobie-history-car .maker-model .year, .egobie-history-detail .egobie-history-car .year-color .plate, .egobie-history-detail .egobie-history-car .year-color .maker, .egobie-history-detail .egobie-history-car .year-color .year {
+      display: inline-block;
+      margin-bottom: 5px;
+      font-size: 13px;
+      width: 100px; }
+    .egobie-history-detail .egobie-history-car .plate-state .state, .egobie-history-detail .egobie-history-car .plate-state .model, .egobie-history-detail .egobie-history-car .plate-state .color, .egobie-history-detail .egobie-history-car .maker-model .state, .egobie-history-detail .egobie-history-car .maker-model .model, .egobie-history-detail .egobie-history-car .maker-model .color, .egobie-history-detail .egobie-history-car .year-color .state, .egobie-history-detail .egobie-history-car .year-color .model, .egobie-history-detail .egobie-history-car .year-color .color {
+      display: inline-block;
+      margin-bottom: 5px;
+      font-size: 13px;
+      width: 100px;
+      margin-left: 50px; }
+
+.egobie-history-detail .egobie-history-payment {
+  border: 0px;
+  border-top: 1px solid #404041;
+  border-radius: 0px; }
+  .egobie-history-detail .egobie-history-payment .name, .egobie-history-detail .egobie-history-payment .number, .egobie-history-detail .egobie-history-payment .price-type {
+    height: 65px;
+    padding: 10px;
+    border: 0px;
+    overflow: visible; }
+    .egobie-history-detail .egobie-history-payment .name .title, .egobie-history-detail .egobie-history-payment .number .title, .egobie-history-detail .egobie-history-payment .price-type .title {
+      margin-bottom: 5px;
+      font-size: 13px; }
+    .egobie-history-detail .egobie-history-payment .name .content, .egobie-history-detail .egobie-history-payment .number .content, .egobie-history-detail .egobie-history-payment .price-type .content {
+      font-size: 15px;
+      font-weight: 500;
+      color: #404041;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #404041; }
+  .egobie-history-detail .egobie-history-payment .price-type .price {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 13px;
+    width: 90px; }
+    .egobie-history-detail .egobie-history-payment .price-type .price .content:before {
+      content: "$";
+      font-size: 12px;
+      margin-right: 3px;
+      position: relative;
+      bottom: 5px; }
+  .egobie-history-detail .egobie-history-payment .price-type .type {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 13px;
+    margin-left: 150px; }
+
+.egobie-history-detail .egobie-history-service {
+  border: 0px;
+  border-top: 1px solid #404041;
+  border-radius: 0px; }
+  .egobie-history-detail .egobie-history-service .service {
+    position: relative;
+    margin-top: 10px; }
+    .egobie-history-detail .egobie-history-service .service .dot {
+      display: block;
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;
+      left: 10px;
+      top: 5px;
+      background-color: #404041; }
+    .egobie-history-detail .egobie-history-service .service .line {
+      display: block;
+      position: absolute;
+      width: 2px;
+      height: 30px;
+      left: 14px;
+      top: 10px;
+      background-color: #404041; }
+    .egobie-history-detail .egobie-history-service .service p {
+      position: relative;
+      font-size: 13px;
+      width: 85%;
+      left: 30px;
+      height: 20px; }
+    .egobie-history-detail .egobie-history-service .service div {
+      position: relative;
+      margin-bottom: 10px;
+      overflow: visible; }
+      .egobie-history-detail .egobie-history-service .service div i {
+        position: absolute;
+        background-color: #404041;
+        width: 2px;
+        left: 14px;
+        height: 150%; }
+      .egobie-history-detail .egobie-history-service .service div p {
+        position: relative;
+        padding-left: 30px;
+        width: 95%;
+        left: 0px;
+        font-size: 15px;
+        font-weight: 600;
+        height: 30px;
+        line-height: 30px;
+        border: 1px solid #404041;
+        border-radius: 8px; }
+      .egobie-history-detail .egobie-history-service .service div:last-child {
+        overflow: hidden; }
 
 .egobie-margin-left-3 {
   margin-left: 3px; }
