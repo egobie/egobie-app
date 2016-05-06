@@ -9865,33 +9865,66 @@ a.button {
   .egobie-header-bar h1, .egobie-header-bar .button {
     color: #D1D2D4 !important; }
 
-.egobie-coupon-share .item {
-  width: 40px;
-  height: 40px;
-  display: inline-block;
-  font-size: 30px;
-  border: 1px solid #AAAAAA;
-  border-radius: 100%;
-  margin-top: 20px;
-  margin-left: 3%;
-  padding: 0px; }
-  .egobie-coupon-share .item:first-child {
-    margin-left: 22%; }
-  .egobie-coupon-share .item i {
-    display: block;
-    padding: 0px; }
-  .egobie-coupon-share .item .message {
-    margin-left: 7px;
-    margin-top: 5px; }
-  .egobie-coupon-share .item .email {
-    margin-left: 7px;
-    margin-top: 4px; }
-  .egobie-coupon-share .item .facebook {
-    margin-left: 13px;
-    margin-top: 4px; }
-  .egobie-coupon-share .item .twitter {
-    margin-left: 6px;
-    margin-top: 4px; }
+.egobie-coupon .coupon {
+  height: 350px; }
+  .egobie-coupon .coupon .content {
+    font-size: 35px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center; }
+  .egobie-coupon .coupon .code {
+    height: 50px;
+    width: 250px;
+    font-size: 35px;
+    line-height: 50px;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #404041;
+    border-radius: 10px; }
+
+.egobie-coupon .share {
+  height: 200px;
+  overflow: visible; }
+  .egobie-coupon .share .social {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    border: 1px solid #AAAAAA;
+    border-radius: 100%;
+    top: -40px;
+    margin-left: 3%;
+    padding: 0px;
+    background-color: #F8F8FA; }
+    .egobie-coupon .share .social:first-child {
+      margin-left: 20%; }
+    .egobie-coupon .share .social i {
+      display: block;
+      padding: 0px; }
+      .egobie-coupon .share .social i.message {
+        margin-left: 7px;
+        margin-top: 5px; }
+      .egobie-coupon .share .social i.email {
+        margin-left: 7px;
+        margin-top: 4px; }
+      .egobie-coupon .share .social i.facebook {
+        margin-left: 13px;
+        margin-top: 4px; }
+      .egobie-coupon .share .social i.twitter {
+        margin-left: 6px;
+        margin-top: 4px; }
+  .egobie-coupon .share p {
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    text-align: center;
+    margin-top: -10px; }
+  .egobie-coupon .share .share-des {
+    font-size: 14px;
+    text-align: center; }
 
 .egobie-margin-left-3 {
   margin-left: 3px; }
@@ -9965,12 +9998,96 @@ a.button {
   .egobie-history-empty hr:last-child {
     margin-top: 20px; }
 
+.egobie-history-list {
+  display: flex;
+  padding: 10px;
+  height: 180px;
+  border: 1px solid #404041;
+  border-left: 5px solid red;
+  border-radius: 8px; }
+  .egobie-history-list .left {
+    display: inline-block;
+    width: 35%;
+    border-right: 1px solid #404041; }
+    .egobie-history-list .left .price {
+      font-size: 30px;
+      padding-left: 10px;
+      margin-top: 10px; }
+      .egobie-history-list .left .price:before {
+        content: "$";
+        position: absolute;
+        font-size: 15px;
+        left: 10px;
+        top: 10px; }
+    .egobie-history-list .left .ontime {
+      display: flex;
+      margin-top: 90px;
+      height: 40px;
+      line-height: 40px; }
+      .egobie-history-list .left .ontime i {
+        display: inline-block;
+        font-size: 20px;
+        padding-right: 5px; }
+      .egobie-history-list .left .ontime p {
+        display: inline-block;
+        font-size: 20px; }
+  .egobie-history-list .right {
+    display: inline-block;
+    width: 65%; }
+    .egobie-history-list .right .egobie-range .start, .egobie-history-list .right .egobie-range .end {
+      position: relative; }
+      .egobie-history-list .right .egobie-range .start .dot, .egobie-history-list .right .egobie-range .end .dot {
+        width: 10px;
+        height: 10px;
+        border: 3px solid #404041;
+        border-radius: 100%;
+        display: inline-block;
+        position: absolute;
+        top: 5px;
+        left: 15px; }
+      .egobie-history-list .right .egobie-range .start .line, .egobie-history-list .right .egobie-range .end .line {
+        position: absolute;
+        display: inline-block;
+        border: 1px dashed #404041;
+        height: 23px;
+        left: 19px;
+        top: 20px; }
+      .egobie-history-list .right .egobie-range .start p, .egobie-history-list .right .egobie-range .end p {
+        margin-left: 40px;
+        font-size: 16px;
+        font-weight: 500; }
+    .egobie-history-list .right .egobie-range .end {
+      margin-top: 10px; }
+      .egobie-history-list .right .egobie-range .end .dot {
+        top: 16px; }
+      .egobie-history-list .right .egobie-range .end p {
+        border-top: 1px solid #404041;
+        padding-top: 10px; }
+    .egobie-history-list .right .egobie-rating {
+      display: flex;
+      margin: 15px 5px 0px 30px; }
+    .egobie-history-list .right .egobie-other .plate, .egobie-history-list .right .egobie-other .maker, .egobie-history-list .right .egobie-other .model {
+      display: inline-block;
+      height: 65px;
+      padding: 10px;
+      border: 0px;
+      overflow: visible; }
+      .egobie-history-list .right .egobie-other .plate .title, .egobie-history-list .right .egobie-other .maker .title, .egobie-history-list .right .egobie-other .model .title {
+        margin-bottom: 5px;
+        font-size: 13px; }
+      .egobie-history-list .right .egobie-other .plate .content, .egobie-history-list .right .egobie-other .maker .content, .egobie-history-list .right .egobie-other .model .content {
+        font-size: 15px;
+        font-weight: 500;
+        color: #404041;
+        padding-bottom: 5px; }
+
 .egobie-history-rating {
   display: inline;
-  padding: .2em .6em .3em;
+  padding: .0em .6em .3em;
   font-size: 75%;
   font-weight: bold;
-  line-height: 1;
+  line-height: 20px;
+  height: 20px;
   color: #FFF;
   text-align: center;
   white-space: nowrap;
@@ -10107,6 +10224,8 @@ a.button {
       color: #404041;
       padding-bottom: 5px;
       border-bottom: 1px solid #404041; }
+  .egobie-history-detail .egobie-history-payment .name .content, .egobie-history-detail .egobie-history-payment .number .content {
+    width: 200px; }
   .egobie-history-detail .egobie-history-payment .price-type .price {
     display: inline-block;
     margin-bottom: 5px;

@@ -25,12 +25,139 @@
         }
     }
 
+    &-history-list {
+        display: flex;
+        padding: 10px;
+        height: 180px;
+        border: 1px solid #404041;
+        border-left: 5px solid red;
+        border-radius: 8px;
+
+        .left {
+            display: inline-block;
+            width: 35%;
+            border-right: 1px solid #404041;
+
+            .price {
+                font-size: 30px;
+                padding-left: 10px;
+                margin-top: 10px;
+
+                &:before {
+                    content: "$";
+                    position: absolute;
+                    font-size: 15px;
+                    left: 10px;
+                    top: 10px;
+                }
+            }
+
+            .ontime {
+                display: flex;
+                margin-top: 90px;
+                height: 40px;
+                line-height: 40px;
+
+                i {
+                    display: inline-block;
+                    font-size: 20px;
+                    padding-right: 5px;
+                }
+
+                p {
+                    display: inline-block;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .right {
+            display: inline-block;
+            width: 65%;
+
+            .egobie-range {
+
+                .start, .end {
+                    position: relative;
+
+                    .dot {
+                        width: 10px;
+                        height: 10px;
+                        border: 3px solid #404041;
+                        border-radius: 100%;
+                        display: inline-block;
+                        position: absolute;
+                        top: 5px;
+                        left: 15px;
+                    }
+
+                    .line {
+                        position: absolute;
+                        display: inline-block;
+                        border: 1px dashed #404041;
+                        height: 23px;
+                        left: 19px;
+                        top: 20px;
+                    }
+
+                    p {
+                        margin-left: 40px;
+                        font-size: 16px;
+                        font-weight: 500;
+
+                    }
+                }
+
+                .end {
+                    margin-top: 10px;
+
+                    .dot {
+                        top: 16px;
+                    }
+
+                    p {
+                        border-top: 1px solid #404041;
+                        padding-top: 10px;
+                    }
+                }
+            }
+
+            .egobie-rating {
+                display: flex;
+                margin: 15px 5px 0px 30px;
+            }
+
+            .egobie-other {
+                .plate, .maker, .model {
+                    display: inline-block;
+                    height: 65px;
+                    padding: 10px;
+                    border: 0px;
+                    overflow: visible;
+
+                    .title {
+                        margin-bottom: 5px;
+                        font-size: 13px;
+                    }
+
+                    .content {
+                        font-size: 15px;
+                        font-weight: 500;
+                        color: #404041;
+                        padding-bottom: 5px;
+                    }
+                }
+            }
+        }
+    }
+
     &-history-rating {
         display: inline;
-        padding: .2em .6em .3em;
+        padding: .0em .6em .3em;
         font-size: 75%;
         font-weight: bold;
-        line-height: 1;
+        line-height: 20px;
+        height: 20px;
         color: #FFF;
         text-align: center;
         white-space: nowrap;
@@ -223,6 +350,10 @@
                     padding-bottom: 5px;
                     border-bottom: 1px solid #404041;
                 }
+            }
+
+            .name .content, .number .content {
+                width: 200px;
             }
 
             .price-type {

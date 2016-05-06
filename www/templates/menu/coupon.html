@@ -1,25 +1,32 @@
 <ion-view title="GIFT"
           ng-app="app.coupon"
           ng-controller="couponCtrl">
-    <ion-content padding="true" class="has-header egobie-coupon">
-        <ion-list>
-            <ion-item>{{coupon}}</ion-item>
-            <ion-item>Share with friends and they will get 10% discount credit. We will also apply 10% discount to your next reservation after their first booking</ion-item>
-            <ion-item>Shared It</ion-item>
-        </ion-list>
-
-        <ion-list class="egobie-coupon-share">
-            <ion-item ng-click="shareByMessage()">
-                <i class="icon ion-chatbox placeholder-icon message"></i>
+    <ion-content padding="true" class="has-header">
+        <ion-list class="egobie-coupon">
+            <ion-item class="coupon">
+                <p class="content">GIVE AND GET</p>
+                <p class="content">10% OFF</p>
+                <p class="code">{{coupon}}</p>
             </ion-item>
-            <ion-item ng-click="shareByEmail()">
-                <i class="icon ion-email placeholder-icon email"></i>
-            </ion-item>
-            <ion-item ng-click="shareByFacebook()">
-                <i class="icon ion-social-facebook placeholder-icon facebook"></i>
-            </ion-item>
-            <ion-item ng-click="shareByTwitter()">
-                <i class="icon ion-social-twitter placeholder-icon twitter"></i>
+            <ion-item class="share">
+                <div class="social" ng-click="shareByMessage()">
+                    <i class="icon ion-chatbox placeholder-icon message"></i>
+                </div>
+                <div class="social" ng-click="shareByEmail()">
+                    <i class="icon ion-email placeholder-icon email"></i>
+                </div>
+                <div class="social" ng-click="shareByFacebook()">
+                    <i class="icon ion-social-facebook placeholder-icon facebook"></i>
+                </div>
+                <div class="social" ng-click="shareByTwitter()">
+                    <i class="icon ion-social-twitter placeholder-icon twitter"></i>
+                </div>
+                <p>Share It!</p>
+                <div class="share-des">
+                    Share with friends and they will get 10% discount<br/>
+                    credit. We will also apply 10% discount to your next<br/>
+                    reservation
+                </div>
             </ion-item>
         </ion-list>
 

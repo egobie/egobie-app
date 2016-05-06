@@ -44,32 +44,49 @@
                 <hr align="center">No History<hr align="center">
             </ion-item>
 
-            <ion-item menu-close="" class="card"
+            <ion-item class="egobie-history-list"
                       ng-repeat="(id, history) in histories"
                       ng-click="showHistory(id)">
-                <ion-list class="card">
-                    <ion-item class="item-avatar">
-                        <img class="egobie-avatar"/>
-                        <h2>{{history.plate}}</h2>
-                        <p>
-                            <a href="#" class="subdued">{{history.end_time}}</a>
-                            <a href="#" class="subdued">{{history.price}} $</a>
-                        </p>
-                        <p>
-                            <rating max="max" readonly="true"
-                                    ng-model="history.rating"></rating>
-                            <span class="egobie-history-rating"
-                                  ng-class="historyLabelStyle(history.rating)">{{historyPercent(history.rating)}}</span>
-                        </p>
-                    </ion-item>
-
-                    <ion-item class="item-body">
-                        <p>
-                            <a href="#" class="subdued">{{history.maker}}</a>
-                            <a href="#" class="subdued">{{history.model}}</a>
-                        </p>
-                    </ion-item>
-                </ion-list>
+                <div class="left">
+                    <div class="price">{{history.price}}</div>
+                    <div class="ontime">
+                        <i class="icon ion-clock"></i>
+                        <p>On time</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="egobie-range">
+                        <div class="start">
+                            <i class="dot"></i>
+                            <i class="line"></i>
+                            <p>{{history.start_time}}</p>
+                        </div>
+                        <div class="end">
+                            <i class="dot"></i>
+                            <p>{{history.end_time}}</p>
+                        </div>
+                    </div>
+                    <div class="egobie-rating">
+                        <rating max="max" readonly="true"
+                                ng-model="history.rating"></rating>
+                        <span class="egobie-history-rating"
+                              ng-class="historyLabelStyle(history.rating)">{{historyPercent(history.rating)}}</span>
+                    </div>
+                    <div class="egobie-other">
+                        <div class="plate">
+                            <p class="title">PLATE</p>
+                            <p class="content">{{history.plate}}</p>
+                        </div>
+                        <div class="maker">
+                            <p class="title">MAKER</p>
+                            <p class="content">{{history.maker}}</p>
+                        </div>
+                        <div class="model">
+                            <p class="title">MODEL</p>
+                            <p class="content">{{history.model}}</p>
+                        </div>
+                    </div>
+                </div>
             </ion-item>
         </ion-list>
     </ion-content>
@@ -106,7 +123,7 @@
                                 </div>
                                 <div class="right">
                                     <i class="icon ion-clock"></i>
-                                    <p>On time</p>
+                                    <p>On Time</p>
                                 </div>
                             </div>
                             <div class="bottom">
