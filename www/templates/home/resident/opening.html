@@ -9,9 +9,30 @@
                 ng-click="reloadOpening()"></button>
     </ion-header-bar>
     <ion-content padding="true" class="has-header padding">
-        <ion-list class="list-margin-top-10"
-                  ng-repeat="opening in openings"
-                  ng-init="index = $index">
+        <ion-list class="egobie-opening-list-left"></ion-list>
+        <ion-list class="list-margin-top-10 egobie-opening-list-right">
+            <ion-item class="egobie-opening-list"
+                      ng-repeat="opening in openings"
+                      ng-init="index = $index">
+                <div class="opening-day"
+                     ng-click="showOpening($index)">
+                    <i class="dot"/>
+                    <p>{{opening.day}}</p>
+                </div>
+                <div class="opening-time-list"
+                     ng-show="index === showIndex">
+                    <div class="opening-time"
+                         ng-repeat="r in opening.range"
+                         ng-click="goToOrder(r.id, opening.day, r.start, r.end)"
+                         ng-model="selectedRange"
+                         ng-value="r.id">
+                        <i class="start">{{getTime(r.start)}}</i>
+                        <i class="end">{{getTime(r.end)}}</i>
+                    </div>
+                </div>
+            </ion-item>
+
+            <!--
             <ion-item class="item-divider item-icon-right"
                       ng-click="showOpening($index)">
                 <i class="icon ion-ios-arrow-down"></i>{{opening.day}}
@@ -21,6 +42,24 @@
                        ng-model="selectedRange"
                        ng-value="r.id"
                        ng-show="index === showIndex">{{r.id}} - {{getTime(r.start)}} to {{getTime(r.end)}}</ion-radio>
+            -->
+            <!--
+            <ion-item class="opening-day"
+                      ng-click="showOpening($index)">
+                <i class="dot"/>
+                <i class="line"/>
+                <p>{{opening.day}}</p>
+            </ion-item>
+            <ion-item class="opening-time"
+                      ng-repeat="r in opening.range"
+                      ng-click="goToOrder(r.id, opening.day, r.start, r.end)"
+                      ng-model="selectedRange"
+                      ng-value="r.id"
+                      ng-show="index === showIndex">
+                <i class="line"/>
+                <p>{{r.id}} - {{getTime(r.start)}} to {{getTime(r.end)}}</p>
+            </ion-item>
+            -->
         </ion-list>
     </ion-content>
 </ion-modal-view>
