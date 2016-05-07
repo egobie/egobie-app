@@ -24,7 +24,7 @@ angular.module('app.tutorial', ['ionic'])
         };
 
         $scope.startToUse = function() {
-            $state.go('menu.home');
+            $state.go('menu.home.resident');
         };
         
         $scope.slideChanged = function($index) {
