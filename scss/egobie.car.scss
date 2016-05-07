@@ -1,6 +1,11 @@
 @import 'egobie';
+@import 'plate';
 
 .egobie {
+    &-car {
+        @extend .egobie-plate;
+    }
+
     &-car-add,
     &-car-edit {
         .item {

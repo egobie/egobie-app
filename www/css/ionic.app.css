@@ -9791,6 +9791,167 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+.egobie-header-bar {
+  background-color: #FFFFFF !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #000000 !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
+.egobie-padding-0 {
+  padding: 0px; }
+
+.egobie-margin-left-3 {
+  margin-left: 3px; }
+
+.egobie-margin-top-5, .egobie-car-add .item, .egobie-car-edit .item {
+  margin-top: 5px; }
+
+.egobie-margin-top-15 {
+  margin-top: 15px; }
+
+.egobie-margin-right-5 {
+  margin-right: 5px; }
+
+.egobie-margin-top-10 {
+  margin-top: 10px; }
+
+.egobie-margin-top-20 {
+  margin-top: 20px; }
+
+.egobie-width-200 {
+  width: 200px; }
+
+.egobie-width-300 {
+  width: 300px; }
+
+.egobie-height-200 {
+  height: 200px; }
+
+.egobie-height-300 {
+  height: 300px; }
+
+.egobie-left {
+  float: left; }
+
+.egobie-center {
+  left: 0;
+  right: 0;
+  margin-left: auto !important;
+  margin-right: auto !important; }
+
+.egobie-right {
+  float: right; }
+
+.egobie-avatar {
+  left: 10px !important;
+  top: 25px !important;
+  transform: scale(1.5);
+  border-radius: 0 !important;
+  content: url("../../../img/icons/eGobie_Profile_on.png"); }
+
+.egobie-plate, .egobie-car {
+  border: 0px;
+  padding: 0px;
+  border-radius: 10px;
+  background: rgba(255, 165, 0, 0.91); }
+  .egobie-plate .bar, .egobie-car .bar {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #000000;
+    z-index: -1; }
+  .egobie-plate .panel, .egobie-car .panel {
+    border: 1px solid #F8F8FA;
+    border-radius: 10px;
+    height: 150px;
+    position: relative;
+    padding: 3px; }
+    .egobie-plate .panel .bg, .egobie-car .panel .bg {
+      border: 1px solid #F8F8FA;
+      border-radius: 10px;
+      width: 100%;
+      height: 100%; }
+      .egobie-plate .panel .bg i, .egobie-car .panel .bg i {
+        display: block;
+        position: absolute;
+        border-radius: 10px;
+        height: 5px;
+        width: 15px;
+        background-color: #FFFFFF; }
+        .egobie-plate .panel .bg i.i1, .egobie-car .panel .bg i.i1 {
+          top: 20px;
+          left: 70px; }
+        .egobie-plate .panel .bg i.i2, .egobie-car .panel .bg i.i2 {
+          top: 20px;
+          right: 70px; }
+        .egobie-plate .panel .bg i.i3, .egobie-car .panel .bg i.i3 {
+          bottom: 20px;
+          left: 70px; }
+        .egobie-plate .panel .bg i.i4, .egobie-car .panel .bg i.i4 {
+          bottom: 20px;
+          right: 70px; }
+    .egobie-plate .panel .plate, .egobie-car .panel .plate {
+      position: absolute;
+      display: flex;
+      width: 100%;
+      text-align: center;
+      top: 60px; }
+      .egobie-plate .panel .plate img, .egobie-car .panel .plate img {
+        height: 25px;
+        margin: auto;
+        content: url("../img/icon/state/NJ.png"); }
+      .egobie-plate .panel .plate p, .egobie-car .panel .plate p {
+        display: inline-block;
+        font-size: 45px;
+        width: 45%;
+        height: 40px;
+        line-height: 40px;
+        color: #FFFFFF;
+        margin: auto; }
+        .egobie-plate .panel .plate p:first-child, .egobie-car .panel .plate p:first-child {
+          text-align: right; }
+        .egobie-plate .panel .plate p:last-child, .egobie-car .panel .plate p:last-child {
+          text-align: left; }
+    .egobie-plate .panel .state, .egobie-car .panel .state {
+      position: absolute;
+      top: 12px;
+      width: 100%;
+      text-align: center;
+      font-weight: 900;
+      color: #FF9900; }
+    .egobie-plate .panel .year, .egobie-car .panel .year {
+      position: absolute;
+      font-weight: 900;
+      color: #FFFFFF;
+      padding: 3px;
+      background-color: #FF6A00;
+      border-radius: 5px;
+      top: 25px;
+      left: 12px; }
+    .egobie-plate .panel .maker-model, .egobie-car .panel .maker-model {
+      position: absolute;
+      display: flex;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      width: 50%;
+      bottom: 13px; }
+      .egobie-plate .panel .maker-model p, .egobie-car .panel .maker-model p {
+        display: inline-block;
+        color: #FFFFFF;
+        margin: auto;
+        width: 45%;
+        font-weight: 800; }
+        .egobie-plate .panel .maker-model p:first-child, .egobie-car .panel .maker-model p:first-child {
+          text-align: right; }
+        .egobie-plate .panel .maker-model p:last-child, .egobie-car .panel .maker-model p:last-child {
+          text-align: left; }
+
 .egobie-car-add .item, .egobie-car-edit .item {
   padding-top: 8px;
   padding-bottom: 8px;

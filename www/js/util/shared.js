@@ -162,6 +162,10 @@ angular.module("util.shared", ["util.url"])
                 return states;
             },
 
+            getStateName: function(state) {
+                return states[state];
+            },
+
             getColors: function() {
                 return colors;
             },

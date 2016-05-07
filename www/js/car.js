@@ -109,4 +109,7 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
             });
         };
 
+        $scope.getStateName = function(state) {
+            return shared.getStateName(state).toUpperCase();
+        };
     });
