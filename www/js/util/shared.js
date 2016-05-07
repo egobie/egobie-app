@@ -204,8 +204,6 @@ angular.module("util.shared", ["util.url"])
                             detailing.push(service);
                         }
                     });
-
-                    console.log(services);
                 }
             },
 
@@ -347,6 +345,7 @@ angular.module("util.shared", ["util.url"])
 
             deleteUserPayment: function(id) {
                 delete userPayments[id];
+                refreshScope();
             },
 
             testEmail: function(email) {

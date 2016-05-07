@@ -1,0 +1,107 @@
+@import 'egobie';
+
+.egobie-no-payment {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+    text-align: center;
+    border: 0px;
+
+    .sample-card {
+        border: 1px solid #404041;
+        border-radius: 20px;
+        height: 150px;
+        width: 250px;
+        margin: auto;
+        margin-top: 50px;
+
+        .top {
+            position: relative;
+            height: 30%;
+            border-bottom: 1px solid #404041;
+
+            .line {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                height: 4px;
+                width: 150px;
+                border-radius: 10px;
+                background-color: #404041;
+            }
+        }
+
+        .bottom {
+            position: relative;
+            height: 70%;
+
+            .line-1, .line-2, .line-3, .line-4, i {
+                position: absolute;
+            }
+
+            .line-1, .line-2, .line-3, .line-4 {
+                height: 4px;
+                border-radius: 10px;
+            }
+
+            .line-1, .line-2, .line-3 {
+                left: 20px;
+            }
+
+            .line-1, .line-4 {
+                top: 20px;
+            }
+
+            .line-1 {
+                width: 100px;
+                background-color: #404041;
+            }
+
+            .line-2 {
+                width: 100px;
+                top: 40px;
+                background-color: #FF9900;
+            }
+
+            .line-3 {
+                width: 50px;
+                top: 60px;
+                background-color: #404041;
+            }
+
+            .line-4 {
+                width: 50px;
+                right: 20px;
+                background-color: #404041;
+            }
+
+            i {
+                height: 30px;
+                width: 30px;
+                border: 1px solid #62CBE1;
+                border-radius: 100%;
+                bottom: 10px;
+
+                &.circle-1 {
+                    right: 20px;
+                }
+
+                &.circle-2 {
+                    right: 40px;
+                }
+            }
+        }
+    }
+
+    p.no {
+        font-size: 20px;
+        font-weight: 600;
+        height: 30px;
+        line-height: 30px;
+        margin-top: 50px;
+    }
+    
+    p.add .icon-2 {
+        font-size: 30px;
+    }
+}

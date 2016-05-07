@@ -1,9 +1,14 @@
 @import 'egobie';
+@import 'payment';
 
 .egobie {
 
     &-payment-header-bar {
         @extend .egobie-header-bar;
+    }
+
+    &-empty-payment {
+        @extend .egobie-no-payment;
     }
 
     &-payment {

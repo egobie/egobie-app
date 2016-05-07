@@ -11028,6 +11028,137 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+.egobie-header-bar, .egobie-payment-header-bar {
+  background-color: #FFFFFF !important; }
+  .egobie-header-bar h1, .egobie-payment-header-bar h1, .egobie-header-bar .button, .egobie-payment-header-bar .button {
+    color: #000000 !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
+.egobie-padding-0 {
+  padding: 0px; }
+
+.egobie-margin-left-3 {
+  margin-left: 3px; }
+
+.egobie-margin-top-5, .egobie-payment-add .item, .egobie-payment-edit .item {
+  margin-top: 5px; }
+
+.egobie-margin-top-15 {
+  margin-top: 15px; }
+
+.egobie-margin-right-5 {
+  margin-right: 5px; }
+
+.egobie-margin-top-10 {
+  margin-top: 10px; }
+
+.egobie-margin-top-20 {
+  margin-top: 20px; }
+
+.egobie-width-200 {
+  width: 200px; }
+
+.egobie-width-300 {
+  width: 300px; }
+
+.egobie-height-200 {
+  height: 200px; }
+
+.egobie-height-300 {
+  height: 300px; }
+
+.egobie-left {
+  float: left; }
+
+.egobie-center, .egobie-payment {
+  left: 0;
+  right: 0;
+  margin-left: auto !important;
+  margin-right: auto !important; }
+
+.egobie-right {
+  float: right; }
+
+.egobie-avatar {
+  left: 10px !important;
+  top: 25px !important;
+  transform: scale(1.5);
+  border-radius: 0 !important;
+  content: url("../../../img/icons/eGobie_Profile_on.png"); }
+
+.egobie-no-payment, .egobie-empty-payment {
+  width: 100%;
+  height: 400px;
+  margin-top: 20px;
+  text-align: center;
+  border: 0px; }
+  .egobie-no-payment .sample-card, .egobie-empty-payment .sample-card {
+    border: 1px solid #404041;
+    border-radius: 20px;
+    height: 150px;
+    width: 250px;
+    margin: auto;
+    margin-top: 50px; }
+    .egobie-no-payment .sample-card .top, .egobie-empty-payment .sample-card .top {
+      position: relative;
+      height: 30%;
+      border-bottom: 1px solid #404041; }
+      .egobie-no-payment .sample-card .top .line, .egobie-empty-payment .sample-card .top .line {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        height: 4px;
+        width: 150px;
+        border-radius: 10px;
+        background-color: #404041; }
+    .egobie-no-payment .sample-card .bottom, .egobie-empty-payment .sample-card .bottom {
+      position: relative;
+      height: 70%; }
+      .egobie-no-payment .sample-card .bottom .line-1, .egobie-empty-payment .sample-card .bottom .line-1, .egobie-no-payment .sample-card .bottom .line-2, .egobie-empty-payment .sample-card .bottom .line-2, .egobie-no-payment .sample-card .bottom .line-3, .egobie-empty-payment .sample-card .bottom .line-3, .egobie-no-payment .sample-card .bottom .line-4, .egobie-empty-payment .sample-card .bottom .line-4, .egobie-no-payment .sample-card .bottom i, .egobie-empty-payment .sample-card .bottom i {
+        position: absolute; }
+      .egobie-no-payment .sample-card .bottom .line-1, .egobie-empty-payment .sample-card .bottom .line-1, .egobie-no-payment .sample-card .bottom .line-2, .egobie-empty-payment .sample-card .bottom .line-2, .egobie-no-payment .sample-card .bottom .line-3, .egobie-empty-payment .sample-card .bottom .line-3, .egobie-no-payment .sample-card .bottom .line-4, .egobie-empty-payment .sample-card .bottom .line-4 {
+        height: 4px;
+        border-radius: 10px; }
+      .egobie-no-payment .sample-card .bottom .line-1, .egobie-empty-payment .sample-card .bottom .line-1, .egobie-no-payment .sample-card .bottom .line-2, .egobie-empty-payment .sample-card .bottom .line-2, .egobie-no-payment .sample-card .bottom .line-3, .egobie-empty-payment .sample-card .bottom .line-3 {
+        left: 20px; }
+      .egobie-no-payment .sample-card .bottom .line-1, .egobie-empty-payment .sample-card .bottom .line-1, .egobie-no-payment .sample-card .bottom .line-4, .egobie-empty-payment .sample-card .bottom .line-4 {
+        top: 20px; }
+      .egobie-no-payment .sample-card .bottom .line-1, .egobie-empty-payment .sample-card .bottom .line-1 {
+        width: 100px;
+        background-color: #404041; }
+      .egobie-no-payment .sample-card .bottom .line-2, .egobie-empty-payment .sample-card .bottom .line-2 {
+        width: 100px;
+        top: 40px;
+        background-color: #FF9900; }
+      .egobie-no-payment .sample-card .bottom .line-3, .egobie-empty-payment .sample-card .bottom .line-3 {
+        width: 50px;
+        top: 60px;
+        background-color: #404041; }
+      .egobie-no-payment .sample-card .bottom .line-4, .egobie-empty-payment .sample-card .bottom .line-4 {
+        width: 50px;
+        right: 20px;
+        background-color: #404041; }
+      .egobie-no-payment .sample-card .bottom i, .egobie-empty-payment .sample-card .bottom i {
+        height: 30px;
+        width: 30px;
+        border: 1px solid #62CBE1;
+        border-radius: 100%;
+        bottom: 10px; }
+        .egobie-no-payment .sample-card .bottom i.circle-1, .egobie-empty-payment .sample-card .bottom i.circle-1 {
+          right: 20px; }
+        .egobie-no-payment .sample-card .bottom i.circle-2, .egobie-empty-payment .sample-card .bottom i.circle-2 {
+          right: 40px; }
+  .egobie-no-payment p.no, .egobie-empty-payment p.no {
+    font-size: 20px;
+    font-weight: 600;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 50px; }
+  .egobie-no-payment p.add .icon-2, .egobie-empty-payment p.add .icon-2 {
+    font-size: 30px; }
+
 .egobie-payment {
   display: table;
   padding: 0;

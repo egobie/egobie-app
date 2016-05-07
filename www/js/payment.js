@@ -103,4 +103,8 @@ angular.module('app.payment', ['ionic', 'util.shared', 'util.url'])
                 }
             });
         };
+
+        $scope.noPayment = function() {
+            return Object.keys($scope.payments).length === 0;
+        };
     });
