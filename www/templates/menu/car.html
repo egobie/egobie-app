@@ -9,6 +9,13 @@
     </ion-header-bar>
     <ion-content padding="true" class="has-header">
         <ion-list>
+            <ion-item class="egobie-empty-car"
+                      ng-show="noCar()">
+                <i class="icon ion-model-s icon-1"></i>
+                <p class="no">No vehicle added yet</p>
+                <p class="add">Click <i class="icon ion-android-add icon-2"></i> to add a new one</p>
+            </ion-item>
+
             <ion-item class="egobie-car"
                       ng-repeat="(id, car) in cars"
                       ng-click="showCarActionSheet(car)">

@@ -9851,6 +9851,28 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+.egobie-no-car, .egobie-empty-car {
+  width: 100%;
+  height: 400px;
+  margin-top: 20px;
+  text-align: center;
+  border: 0px; }
+  .egobie-no-car .icon-1, .egobie-empty-car .icon-1 {
+    display: block;
+    height: 150px;
+    width: 250px;
+    margin: auto;
+    margin-top: 50px;
+    font-size: 200px; }
+  .egobie-no-car p.no, .egobie-empty-car p.no {
+    font-size: 20px;
+    font-weight: 600;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 50px; }
+  .egobie-no-car p.add .icon-2, .egobie-empty-car p.add .icon-2 {
+    font-size: 30px; }
+
 .egobie-plate, .egobie-car {
   border: 0px;
   padding: 0px;

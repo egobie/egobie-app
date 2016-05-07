@@ -322,6 +322,7 @@ angular.module("util.shared", ["util.url"])
 
             deleteUserCar: function(id) {
                 delete userCars[id];
+                refreshScope();
             },
 
             getUserPayments: function() {
