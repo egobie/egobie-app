@@ -83,4 +83,12 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.loadReservations();
+
+        $scope.noReservation = function() {
+            return $scope.reservations.length === 0;
+        };
+
+        $scope.noHistory = function() {
+            return Object.keys($scope.histories).length === 0;
+        };
     });

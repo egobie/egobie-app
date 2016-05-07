@@ -7,18 +7,13 @@
         <button class="button button-icon icon ion-android-refresh"
               ng-click="loadReservations()"></button>
     </ion-header-bar>
-    <!--
-    <ion-nav-buttons side="right">
-      <button class="button button-icon icon ion-android-refresh"
-              ng-click="loadReservations()"></button>
-    </ion-nav-buttons>
-    -->
     <ion-content padding="true" class="has-header">
         <ion-list>
             <ion-item class="item-divider item-icon-right egobie-history-title">RESERVATION</ion-item>
-            <ion-item class="egobie-history-empty"
-                      ng-show="reservations.length === 0">
-                <hr align="center">Your reservations will be listed here<hr align="center">
+            <ion-item class="egobie-empty-reservation"
+                      ng-show="noReservation()">
+                <i class="icon ion-android-checkmark-circle icon-1"></i>
+                <p class="no">No reservation</p>
             </ion-item>
 
             <ion-item menu-close="" class="card"
@@ -40,11 +35,14 @@
                     </ion-item>
                 </ion-list>
             </ion-item>
+        </ion-list>
 
+        <ion-list>
             <ion-item class="item-divider item-icon-right egobie-history-title">HISTORY</ion-item>
-            <ion-item class="egobie-history-empty"
-                      ng-show="histories.length === 0">
-                <hr align="center">No History<hr align="center">
+            <ion-item class="egobie-empty-history"
+                      ng-show="noHistory()">
+                <i class="icon ion-clipboard icon-1"></i>
+                <p class="no">No history</p>
             </ion-item>
 
             <ion-item class="egobie-history-list"

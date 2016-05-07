@@ -1,28 +1,14 @@
 @import 'egobie';
+@import 'history';
 
 .egobie {
 
-    &-history-empty {
-        border: 0px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        text-align: center;
+    &-empty-reservation {
+        @extend .egobie-no-reservation;
+    }
 
-        hr {
-            @include linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-
-            border: 0;
-            height: 1px;
-            width: 300px;
-        }
-
-        hr:first-child {
-            margin-bottom: 20px;
-        }
-
-        hr:last-child {
-            margin-top: 20px;
-        }
+    &-empty-history {
+        @extend .egobie-no-history;
     }
 
     &-history-title {
