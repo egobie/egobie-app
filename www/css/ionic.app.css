@@ -9731,6 +9731,17 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+.egobie-header-bar {
+  background-color: #FFFFFF !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #000000 !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
+.egobie-padding-0 {
+  padding: 0px; }
+
 .egobie-margin-left-3 {
   margin-left: 3px; }
 
@@ -9780,11 +9791,6 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
-.egobie-header-bar {
-  background-color: #404041 !important; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #D1D2D4 !important; }
-
 .egobie-car-add .item, .egobie-car-edit .item {
   padding-top: 8px;
   padding-bottom: 8px;
@@ -9810,6 +9816,17 @@ a.button {
     white-space: nowrap;
     font-size: 14px;
     cursor: pointer; }
+
+.egobie-header-bar {
+  background-color: #FFFFFF !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #000000 !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
+.egobie-padding-0 {
+  padding: 0px; }
 
 .egobie-margin-left-3 {
   margin-left: 3px; }
@@ -9859,11 +9876,6 @@ a.button {
   transform: scale(1.5);
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
-
-.egobie-header-bar {
-  background-color: #404041 !important; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #D1D2D4 !important; }
 
 .egobie-coupon .coupon {
   height: 350px; }
@@ -9926,6 +9938,17 @@ a.button {
     font-size: 14px;
     text-align: center; }
 
+.egobie-header-bar {
+  background-color: #FFFFFF !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #000000 !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
+.egobie-padding-0 {
+  padding: 0px; }
+
 .egobie-margin-left-3 {
   margin-left: 3px; }
 
@@ -9974,11 +9997,6 @@ a.button {
   transform: scale(1.5);
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
-
-.egobie-header-bar {
-  background-color: #404041 !important; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #D1D2D4 !important; }
 
 .egobie-history-empty {
   border: 0px;
@@ -10308,6 +10326,17 @@ a.button {
       .egobie-history-detail .egobie-history-service .service div:last-child {
         overflow: hidden; }
 
+.egobie-header-bar {
+  background-color: #FFFFFF !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #000000 !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
+.egobie-padding-0 {
+  padding: 0px; }
+
 .egobie-margin-left-3 {
   margin-left: 3px; }
 
@@ -10357,10 +10386,52 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
-.egobie-header-bar {
-  background-color: #404041 !important; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #D1D2D4 !important; }
+.egobie-on-demand, .egobie-reservation {
+  padding: 0px;
+  position: relative;
+  height: 50%; }
+  .egobie-on-demand .mask, .egobie-reservation .mask {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.25); }
+  .egobie-on-demand .panel, .egobie-reservation .panel {
+    position: absolute;
+    display: flex;
+    height: 40%;
+    bottom: 0px;
+    width: 100%;
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, 0.3); }
+    .egobie-on-demand .panel .left, .egobie-reservation .panel .left {
+      display: inline-block;
+      width: 70%; }
+      .egobie-on-demand .panel .left .title, .egobie-reservation .panel .left .title {
+        height: 40px;
+        line-height: 40px;
+        font-size: 25px;
+        font-weight: 500;
+        padding-left: 10px;
+        color: #FFFFFF; }
+      .egobie-on-demand .panel .left .content, .egobie-reservation .panel .left .content {
+        color: #FFFFFF; }
+    .egobie-on-demand .panel .right, .egobie-reservation .panel .right {
+      display: inline-block;
+      position: relative;
+      width: 25%; }
+      .egobie-on-demand .panel .right .navigation, .egobie-reservation .panel .right .navigation {
+        position: absolute;
+        font-size: 35px;
+        right: 10px;
+        bottom: 10px; }
+
+.egobie-on-demand {
+  background: url("../img/ondemand.jpg") no-repeat center center fixed;
+  background-size: cover; }
+
+.egobie-reservation {
+  background: url("../img/reserve.jpg") no-repeat center center fixed;
+  background-size: cover; }
 
 .egobie-resident-order-item {
   padding-top: 8px;
@@ -10368,6 +10439,17 @@ a.button {
   height: 40px; }
   .egobie-resident-order-item i:before {
     font-size: 25px; }
+
+.egobie-header-bar {
+  background-color: #FFFFFF !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #000000 !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
+.egobie-padding-0 {
+  padding: 0px; }
 
 .egobie-margin-left-3 {
   margin-left: 3px; }
@@ -10417,11 +10499,6 @@ a.button {
   transform: scale(1.5);
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
-
-.egobie-header-bar {
-  background-color: #404041 !important; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #D1D2D4 !important; }
 
 .egobie {
   /* Menu Icons */ }
@@ -10494,6 +10571,17 @@ a.button {
   .egobie-about-off {
     content: url("../img/icon/about_off.png"); }
 
+.egobie-header-bar {
+  background-color: #FFFFFF !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #000000 !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
+.egobie-padding-0 {
+  padding: 0px; }
+
 .egobie-margin-left-3 {
   margin-left: 3px; }
 
@@ -10542,11 +10630,6 @@ a.button {
   transform: scale(1.5);
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
-
-.egobie-header-bar {
-  background-color: #404041 !important; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #D1D2D4 !important; }
 
 .egobie-notification-empty {
   border: 0px;
@@ -10566,6 +10649,17 @@ a.button {
   .egobie-notification-empty hr:last-child {
     margin-top: 20px; }
 
+.egobie-header-bar {
+  background-color: #FFFFFF !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #000000 !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
+.egobie-padding-0 {
+  padding: 0px; }
+
 .egobie-margin-left-3 {
   margin-left: 3px; }
 
@@ -10614,11 +10708,6 @@ a.button {
   transform: scale(1.5);
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
-
-.egobie-header-bar {
-  background-color: #404041 !important; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #D1D2D4 !important; }
 
 .egobie-opening-list-left {
   position: absolute;
@@ -10683,6 +10772,17 @@ a.button {
         height: 105%;
         top: -1px; }
 
+.egobie-header-bar, .egobie-payment-header-bar {
+  background-color: #FFFFFF !important; }
+  .egobie-header-bar h1, .egobie-payment-header-bar h1, .egobie-header-bar .button, .egobie-payment-header-bar .button {
+    color: #000000 !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
+.egobie-padding-0 {
+  padding: 0px; }
+
 .egobie-margin-left-3 {
   margin-left: 3px; }
 
@@ -10731,11 +10831,6 @@ a.button {
   transform: scale(1.5);
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
-
-.egobie-header-bar, .egobie-payment-header-bar {
-  background-color: #404041 !important; }
-  .egobie-header-bar h1, .egobie-payment-header-bar h1, .egobie-header-bar .button, .egobie-payment-header-bar .button {
-    color: #D1D2D4 !important; }
 
 .egobie-payment {
   display: table;
@@ -10820,6 +10915,17 @@ a.button {
     font-size: 14px;
     cursor: pointer; }
 
+.egobie-header-bar, .egobie-service-header-bar {
+  background-color: #FFFFFF !important; }
+  .egobie-header-bar h1, .egobie-service-header-bar h1, .egobie-header-bar .button, .egobie-service-header-bar .button {
+    color: #000000 !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
+.egobie-padding-0 {
+  padding: 0px; }
+
 .egobie-margin-left-3 {
   margin-left: 3px; }
 
@@ -10868,11 +10974,6 @@ a.button {
   transform: scale(1.5);
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
-
-.egobie-header-bar, .egobie-service-header-bar {
-  background-color: #404041 !important; }
-  .egobie-header-bar h1, .egobie-service-header-bar h1, .egobie-header-bar .button, .egobie-service-header-bar .button {
-    color: #D1D2D4 !important; }
 
 .egobie-price-before, .egobie-service-item div.middle p.price:before, .egobie-service-detail-title div.left .price:before {
   content: "$";
@@ -11045,6 +11146,17 @@ a.button {
 .egobie-service-advance * .detail-section p {
   color: #567CC0 !important; }
 
+.egobie-header-bar {
+  background-color: #FFFFFF !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #000000 !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
+.egobie-padding-0 {
+  padding: 0px; }
+
 .egobie-margin-left-3 {
   margin-left: 3px; }
 
@@ -11093,11 +11205,6 @@ a.button {
   transform: scale(1.5);
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
-
-.egobie-header-bar {
-  background-color: #404041 !important; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #D1D2D4 !important; }
 
 .egobie-sign-logo, .egobie-signin-logo, .egobie-signup-logo {
   display: block; }
@@ -11155,6 +11262,17 @@ a.button {
   border-color: #1B4A5E;
   background: transparent; }
 
+.egobie-header-bar {
+  background-color: #FFFFFF !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #000000 !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
+.egobie-padding-0 {
+  padding: 0px; }
+
 .egobie-margin-left-3 {
   margin-left: 3px; }
 
@@ -11203,11 +11321,6 @@ a.button {
   transform: scale(1.5);
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
-
-.egobie-header-bar {
-  background-color: #404041 !important; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #D1D2D4 !important; }
 
 .egobie-tutorial {
   height: 100%; }

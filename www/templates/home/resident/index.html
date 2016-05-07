@@ -1,11 +1,41 @@
-<ion-view title="Home"
-          ng-app="app.home.resident">
-    <ion-header-bar class="bar-stable egobie-service-header-bar">
+<ion-view hide-nav-bar="true"
+          ng-app="app.home.resident"
+          ng-controller="navigationCtrl">
+    <ion-header-bar class="bar-stable egobie-header-bar">
         <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
         <h1 class="title">HOME</h1>
     </ion-header-bar>
-    <ion-content class="padding">
-        <ion-list>
+    <ion-content overflow-scroll="true" class="egobie-whole-page">
+        <ion-list class="egobie-whole-page">
+            <ion-item class="egobie-on-demand"
+                      ng-click="gotoOnDemand()">
+                <div class="mask"></div>
+                <div class="panel">
+                    <div class="left">
+                        <p class="title">On Demand</p>
+                        <p class="content">This is on-demand service.This is on-demand service.This is on-demand service</p>
+                    </div>
+                    <div class="right">
+                        <i class="icon ion-arrow-right-c navigation"></i>
+                    </div>
+                </div>
+            </ion-item>
+
+            <ion-item class="egobie-reservation"
+                      ng-click="gotoReservation()">
+                <div class="mask"></div>
+                <div class="panel">
+                    <div class="left">
+                        <p class="title">Reservation</p>
+                        <p class="content">This is reservation service.This is reservation service.This is reservation service</p>
+                    </div>
+                    <div class="right">
+                        <i class="icon ion-arrow-right-c navigation"></i>
+                    </div>
+                </div>
+            </ion-item>
+
+            <!--
             <ion-item class="card" ui-sref="menu.home.demand">
                 <ion-list>
                     <ion-item class="item-body">
@@ -21,6 +51,7 @@
                     </ion-item>
                 </ion-list>
             </ion-item>
+            -->
         </ion-list>
     </ion-content>
 </ion-view>

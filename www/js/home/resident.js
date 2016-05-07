@@ -103,6 +103,16 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
             });
     })
 
+    .controller('navigationCtrl', function($scope, $state) {
+        $scope.gotoOnDemand = function() {
+            $state.go("menu.home.demand");
+        };
+
+        $scope.gotoReservation = function() {
+            $state.go("menu.home.reservation");
+        };
+    })
+
     .controller('reservationOrderCtrl', function($scope, $state, $stateParams, $ionicActionSheet, $http,
             shared, url, orderOpening, orderCar, orderService, orderPayment, order) {
         $scope.order = order;

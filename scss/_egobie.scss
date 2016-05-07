@@ -43,6 +43,10 @@ $Payment-Amex: 'payment_amex.png';
 $Payment-Visa: 'payment_visa.png';
 $Payment-Master: 'payment_master.png';
 
+$Home-On-Demand: 'ondemand.jpg';
+$Home-Reserve: 'reserve.jpg';
+
+
 //Dark Navy Blue: #404041 rgb(40, 40, 41)
 //Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
 $Dark-Navy-Blue: #404041;
@@ -80,6 +84,24 @@ $Egobie-Blue: #1B4A5E;
 }
 
 .egobie {
+
+    &-header-bar {
+        background-color: #FFFFFF !important;
+
+        h1, .button {
+            color: #000000 !important; 
+        }
+    }
+
+    &-whole-page {
+        .list, .scroll {
+            height: 100%;
+        }
+    }
+
+    &-padding-0 {
+        padding: 0px;
+    }
 
     &-margin-left-3 {
         margin-left: 3px;
@@ -142,13 +164,5 @@ $Egobie-Blue: #1B4A5E;
         transform: scale(1.5);
         border-radius: 0 !important;
         content: url('../../../img/icons/eGobie_Profile_on.png');
-    }
-
-    &-header-bar {
-        background-color: $Dark-Navy-Blue !important;
-
-        h1, .button {
-            color: $Light-Grey-Blue !important;
-        }
     }
 }
