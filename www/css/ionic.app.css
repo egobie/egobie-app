@@ -9902,6 +9902,7 @@ a.button {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 10px;
     height: 130px;
     width: 250px; }
     .egobie-coupon .coupon .code img {
@@ -9960,7 +9961,7 @@ a.button {
     line-height: 50px;
     font-size: 30px;
     text-align: center;
-    margin-top: -10px; }
+    margin-top: -30px; }
   .egobie-coupon .share .share-des {
     font-size: 14px;
     text-align: center; }

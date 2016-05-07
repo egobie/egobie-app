@@ -1,5 +1,10 @@
-<ion-view title="RESERVATION" cache-view="false"
+<ion-view hide-nav-bar="true" cache-view="false"
           ng-controller="reservationOrderCtrl">
+    <ion-header-bar class="bar-stable egobie-header-bar">
+        <button class="button button-icon icon ion-ios-arrow-back"
+                ng-click="$ionicGoBack()"></button>
+        <h1 class="title">RESERVATION</h1>
+    </ion-header-bar>
     <ion-content padding="true" class="has-header">
         <!-- Services -->
         <ion-list ng-controller="serviceSelectCtl">
