@@ -17,8 +17,14 @@
                           ng-click="toggleService(service, detailing)"
                           ng-model="service.checked">{{service.name}} - {{service.price}}$</ion-checkbox>
         </ion-list>
-        
+
+        <!--
         <button class="button button-block button-dark"
                 ng-click="pickService()">Save</button>
+        -->
     </ion-content>
+    <ion-footer-bar class="bar-dark"
+                    ng-click="pickService()">
+        <h1 class="title">Save</h1>
+    </ion-footer-bar>
 </ion-view>
