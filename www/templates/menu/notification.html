@@ -6,8 +6,10 @@
         <h1 class="title">NOTIFICATIONS</h1>
     </ion-header-bar>
     <ion-content padding="true" class="has-header">
-        <ion-item class="egobie-notification-empty">
-            <hr align="center">No Notification<hr align="center">
+        <ion-item class="egobie-empty-notification"
+                      ng-show="noNotification()">
+            <i class="icon ion-android-notifications icon-1"></i>
+            <p class="no">No notification</p>
         </ion-item>
     </ion-content>
 </ion-view>
