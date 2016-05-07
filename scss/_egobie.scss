@@ -46,6 +46,9 @@ $Payment-Master: 'payment_master.png';
 $Home-On-Demand: 'ondemand.jpg';
 $Home-Reserve: 'reserve.jpg';
 
+$Coupon-Gift: 'gift.jpg';
+$Coupon-Tag: 'tag.jpg';
+
 
 //Dark Navy Blue: #404041 rgb(40, 40, 41)
 //Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
@@ -53,6 +56,8 @@ $Dark-Navy-Blue: #404041;
 $Light-Grey-Blue: #D1D2D4;
 $Egobie-Blue: #1B4A5E;
 
+$Egobie-BG-Color: #FFFFFF;
+$Egobie-Color: #000000;
 
 @function image($name) {
     @return url('../img/#{$name}');
@@ -86,10 +91,10 @@ $Egobie-Blue: #1B4A5E;
 .egobie {
 
     &-header-bar {
-        background-color: #FFFFFF !important;
+        background-color: $Egobie-BG-Color !important;
 
         h1, .button {
-            color: #000000 !important; 
+            color: $Egobie-Color !important; 
         }
     }
 

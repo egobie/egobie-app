@@ -9878,26 +9878,53 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-coupon .coupon {
-  height: 350px; }
-  .egobie-coupon .coupon .content {
-    font-size: 35px;
-    height: 60px;
-    line-height: 60px;
-    text-align: center; }
-  .egobie-coupon .coupon .code {
-    height: 50px;
-    width: 250px;
-    font-size: 35px;
-    line-height: 50px;
-    text-align: center;
-    margin-top: 50px;
+  height: 350px;
+  border: 0px; }
+  .egobie-coupon .coupon .gift {
+    position: relative;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid #404041;
-    border-radius: 10px; }
+    overflow: hidden;
+    width: 200px;
+    height: 100px;
+    text-align: center; }
+    .egobie-coupon .coupon .gift .image {
+      max-width: 100%;
+      max-height: 100%;
+      content: url("../img/gift.jpg"); }
+  .egobie-coupon .coupon .content {
+    font-size: 20px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center; }
+  .egobie-coupon .coupon .code {
+    position: relative;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 130px;
+    width: 250px; }
+    .egobie-coupon .coupon .code img {
+      display: block;
+      position: absolute;
+      max-width: 100%;
+      max-height: 100%;
+      width: 250px;
+      content: url("../img/tag.jpg"); }
+    .egobie-coupon .coupon .code p {
+      position: absolute;
+      font-size: 35px;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      bottom: 0px;
+      line-height: 125px; }
 
 .egobie-coupon .share {
   height: 200px;
+  border: 0px;
+  border-top: 1px solid #AAAAAA;
+  border-bottom: 1px solid #AAAAAA;
   overflow: visible; }
   .egobie-coupon .share .social {
     width: 40px;
@@ -10386,6 +10413,11 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+.egobie-home-tab .tab-nav, .egobie-home-tab .tab-nav * {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border-color: #000000 !important; }
+
 .egobie-on-demand, .egobie-reservation {
   padding: 0px;
   position: relative;
@@ -10508,12 +10540,14 @@ a.button {
     .egobie-menu-bg .badge, .egobie-menu-bg * .badge {
       background-color: #EF473A !important; }
   .egobie-menu-item, .egobie-menu-item-last {
-    border: 1px solid #49494a; }
+    /*border: 1px solid rgb(73, 73, 74);*/
+    border: 0px;
+    margin-top: 3px; }
     .egobie-menu-item i, .egobie-menu-item-last i {
       transform: scale(0.6);
       margin-left: -10px; }
   .egobie-menu-item-last {
-    border-bottom: 0px; }
+    /*border-bottom: 0px;*/ }
   .egobie-menu-profile-logo {
     position: absolute;
     top: 0px;

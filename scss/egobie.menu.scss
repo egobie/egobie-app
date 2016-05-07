@@ -12,7 +12,9 @@
     }
 
     &-menu-item {
-        border: 1px solid rgb(73, 73, 74);
+        /*border: 1px solid rgb(73, 73, 74);*/
+        border: 0px;
+        margin-top: 3px;
 
         i {
             transform: scale(.6);
@@ -22,7 +24,7 @@
 
     &-menu-item-last {
         @extend .egobie-menu-item;
-        border-bottom: 0px;
+        /*border-bottom: 0px;*/
     }
 
     &-menu-profile {

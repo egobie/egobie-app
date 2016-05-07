@@ -1,6 +1,14 @@
 @import 'egobie';
 
 .egobie {
+    &-home-tab {
+        .tab-nav, .tab-nav * {
+            background-color: #FFFFFF !important;
+            color: #000000 !important;
+            border-color: #000000 !important;
+        }
+    }
+
     &-on-demand, &-reservation {
         padding: 0px;
         position: relative;
