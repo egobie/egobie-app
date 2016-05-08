@@ -11766,6 +11766,7 @@ a.button {
   background: transparent; }
   .egobie-sign-item a {
     font-size: 13px;
+    font-weight: 900;
     color: #FFFFFF;
     text-decoration: none; }
 
@@ -11820,7 +11821,8 @@ a.button {
   clear: both;
   margin-top: 20px;
   margin-bottom: 10px;
-  color: #FFFFFF !important; }
+  color: #FFFFFF !important;
+  border-color: #FFFFFF !important; }
 
 .egobie-start-to-use {
   display: block;
