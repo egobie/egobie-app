@@ -2,6 +2,22 @@
 
 .egobie {
 
+    &-menu-bg {
+        background-image: image($Sign-Bg);
+
+        .menu-mask {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: rgba(31, 55, 76, 0.70);
+        }
+    }
+
+    &-menu-bg * {
+        color: #FFFFFF;
+    }
+
+    /*
     &-menu-bg, &-menu-bg * {
         color: $Light-Grey-Blue !important;
         background-color: $Dark-Navy-Blue !important;
@@ -10,29 +26,42 @@
             background-color: #EF473A !important;
         }
     }
+    */
 
     &-menu-item {
-        /*border: 1px solid rgb(73, 73, 74);*/
         border: 0px;
         margin-top: 3px;
+        background: transparent;
+
+        .item-content {
+            background: transparent;
+        }
 
         i {
             transform: scale(.6);
-            margin-left: -10px;
+        }
+
+        span {
+            margin-left: 10px;
         }
     }
 
     &-menu-item-last {
-        @extend .egobie-menu-item;
+       @extend .egobie-menu-item;
         /*border-bottom: 0px;*/
     }
 
     &-menu-profile {
+        background: transparent;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        border: 0;
+
         &-logo {
             position: absolute;
-            top: 0px;
+            top: 15px;
             bottom: 0px;
-            left: 10px;
+            left: 20px;
             margin-top: auto;
             margin-bottom: auto;
             max-width: 50px;
@@ -42,8 +71,9 @@
 
         &-name {
             position: absolute;
-            top: 0px;
+            top: 15px;
             bottom: 0px;
+            margin-left: 15px;
             margin-top: auto;
             margin-bottom: auto;
             height: 35px;

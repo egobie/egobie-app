@@ -6,7 +6,39 @@
                 ng-click="hideEditUser()"></button>
     </ion-header-bar>
     <ion-content padding="true" class="has-header padding">
-        <ion-list>
+        <ion-list class="egobie-user-form">
+            <ion-item>
+                <i class="icon-mask"></i>
+                <i class="icon ion-person"></i>
+                <input type="text" placeholder="First Name"
+                       ng-model="user.first"/>
+            </ion-item>
+            <ion-item>
+                <i class="icon-mask"></i>
+                <i class="icon"></i>
+                <input type="text" placeholder="Middle Name"
+                       ng-model="user.middle"/>
+            </ion-item>
+            <ion-item>
+                <i class="icon-mask"></i>
+                <i class="icon"></i>
+                <input type="text" placeholder="Last Name"
+                       ng-model="user.last"/>
+            </ion-item>
+            <ion-item>
+                <i class="icon-mask"></i>
+                <i class="icon ion-email"></i>
+                <input type="text" placeholder="Email Address"
+                       ng-model="user.email"/>
+            </ion-item>
+            <ion-item>
+                <i class="icon-mask"></i>
+                <i class="icon ion-ios-telephone"></i>
+                <input type="text" placeholder="Phone Number"
+                       ng-model="user.phone"/>
+            </ion-item>
+
+            <!--
             <ion-item class="item-input item-stacked-label">
                 <span class="input-label">First Name</span>
                 <input type="text"
@@ -32,6 +64,7 @@
                 <input type="text"
                        ng-model="user.phone">
             </ion-item>
+            -->
         </ion-list>
         <button class="button button-block button-dark"
                 ng-click="editUser()">Save</button>

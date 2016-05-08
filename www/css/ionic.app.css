@@ -10804,41 +10804,64 @@ a.button {
   font-family: eGobieFont !important; }
 
 .egobie {
+  /*
+    &-menu-bg, &-menu-bg * {
+        color: $Light-Grey-Blue !important;
+        background-color: $Dark-Navy-Blue !important;
+
+        .badge {
+            background-color: #EF473A !important;
+        }
+    }
+    */
   /* Menu Icons */ }
-  .egobie-menu-bg, .egobie-menu-bg * {
-    color: #D1D2D4 !important;
-    background-color: #404041 !important; }
-    .egobie-menu-bg .badge, .egobie-menu-bg * .badge {
-      background-color: #EF473A !important; }
+  .egobie-menu-bg {
+    background-image: url("../img/bg.jpg"); }
+    .egobie-menu-bg .menu-mask {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: rgba(31, 55, 76, 0.7); }
+  .egobie-menu-bg * {
+    color: #FFFFFF; }
   .egobie-menu-item, .egobie-menu-item-last {
-    /*border: 1px solid rgb(73, 73, 74);*/
     border: 0px;
-    margin-top: 3px; }
+    margin-top: 3px;
+    background: transparent; }
+    .egobie-menu-item .item-content, .egobie-menu-item-last .item-content {
+      background: transparent; }
     .egobie-menu-item i, .egobie-menu-item-last i {
-      transform: scale(0.6);
-      margin-left: -10px; }
+      transform: scale(0.6); }
+    .egobie-menu-item span, .egobie-menu-item-last span {
+      margin-left: 10px; }
   .egobie-menu-item-last {
     /*border-bottom: 0px;*/ }
-  .egobie-menu-profile-logo {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 10px;
-    margin-top: auto;
-    margin-bottom: auto;
-    max-width: 50px;
-    max-height: 50px;
-    content: url("../img/logo/light_grey_blue.png"); }
-  .egobie-menu-profile-name {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    margin-top: auto;
-    margin-bottom: auto;
-    height: 35px;
-    width: 200px;
-    line-height: 32px;
-    font-size: 25px; }
+  .egobie-menu-profile {
+    background: transparent;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border: 0; }
+    .egobie-menu-profile-logo {
+      position: absolute;
+      top: 15px;
+      bottom: 0px;
+      left: 20px;
+      margin-top: auto;
+      margin-bottom: auto;
+      max-width: 50px;
+      max-height: 50px;
+      content: url("../img/logo/light_grey_blue.png"); }
+    .egobie-menu-profile-name {
+      position: absolute;
+      top: 15px;
+      bottom: 0px;
+      margin-left: 15px;
+      margin-top: auto;
+      margin-bottom: auto;
+      height: 35px;
+      width: 200px;
+      line-height: 32px;
+      font-size: 25px; }
   .egobie-home-on {
     content: url("../img/icon/home_on.png"); }
   .egobie-home-off {
@@ -11661,6 +11684,176 @@ a.button {
 
 .egobie-service-advance * .detail-section p {
   color: #567CC0 !important; }
+
+.egobie-header-bar {
+  background-color: #FFFFFF !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #000000 !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
+.egobie-padding-0 {
+  padding: 0px; }
+
+.egobie-margin-left-3 {
+  margin-left: 3px; }
+
+.egobie-margin-top-5 {
+  margin-top: 5px; }
+
+.egobie-margin-top-15 {
+  margin-top: 15px; }
+
+.egobie-margin-right-5 {
+  margin-right: 5px; }
+
+.egobie-margin-top-10 {
+  margin-top: 10px; }
+
+.egobie-margin-top-20 {
+  margin-top: 20px; }
+
+.egobie-width-200 {
+  width: 200px; }
+
+.egobie-width-300 {
+  width: 300px; }
+
+.egobie-height-200 {
+  height: 200px; }
+
+.egobie-height-300 {
+  height: 300px; }
+
+.egobie-left {
+  float: left; }
+
+.egobie-center {
+  left: 0;
+  right: 0;
+  margin-left: auto !important;
+  margin-right: auto !important; }
+
+.egobie-right {
+  float: right; }
+
+.egobie-avatar {
+  left: 10px !important;
+  top: 25px !important;
+  transform: scale(1.5);
+  border-radius: 0 !important;
+  content: url("../../../img/icons/eGobie_Profile_on.png"); }
+
+* {
+  font-family: eGobieFont !important; }
+
+.egobie-header-bar {
+  background-color: #FFFFFF !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #000000 !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
+.egobie-padding-0 {
+  padding: 0px; }
+
+.egobie-margin-left-3 {
+  margin-left: 3px; }
+
+.egobie-margin-top-5 {
+  margin-top: 5px; }
+
+.egobie-margin-top-15 {
+  margin-top: 15px; }
+
+.egobie-margin-right-5 {
+  margin-right: 5px; }
+
+.egobie-margin-top-10 {
+  margin-top: 10px; }
+
+.egobie-margin-top-20 {
+  margin-top: 20px; }
+
+.egobie-width-200 {
+  width: 200px; }
+
+.egobie-width-300 {
+  width: 300px; }
+
+.egobie-height-200 {
+  height: 200px; }
+
+.egobie-height-300 {
+  height: 300px; }
+
+.egobie-left {
+  float: left; }
+
+.egobie-center {
+  left: 0;
+  right: 0;
+  margin-left: auto !important;
+  margin-right: auto !important; }
+
+.egobie-right {
+  float: right; }
+
+.egobie-avatar {
+  left: 10px !important;
+  top: 25px !important;
+  transform: scale(1.5);
+  border-radius: 0 !important;
+  content: url("../../../img/icons/eGobie_Profile_on.png"); }
+
+* {
+  font-family: eGobieFont !important; }
+
+.egobie-user-form .list {
+  background-color: #5F696D; }
+
+.egobie-user-form .item {
+  display: flex;
+  height: 50px;
+  width: 300px;
+  padding: 0px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background: transparent;
+  border: 0px; }
+  .egobie-user-form .item i.icon-mask {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(50, 55, 61, 0.85);
+    z-index: -1; }
+  .egobie-user-form .item i.icon {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    color: #FFFFFF;
+    display: inline-block;
+    padding: 10px 0px 8px 12px; }
+  .egobie-user-form .item input {
+    display: inline-block;
+    color: #FFFFFF;
+    background-color: rgba(123, 135, 138, 0.8);
+    height: 50px;
+    width: 100%;
+    padding-left: 14px;
+    font-size: 16px;
+    margin-left: 5px; }
+    .egobie-user-form .item input::-webkit-input-placeholder {
+      color: #FFFFFF; }
+    .egobie-user-form .item input::-moz-placeholder {
+      color: #FFFFFF; }
+    .egobie-user-form .item input:-moz-placeholder {
+      color: #FFFFFF; }
+    .egobie-user-form .item input:-ms-input-placeholder {
+      color: #FFFFFF; }
 
 .egobie-header-bar {
   background-color: #FFFFFF !important; }
