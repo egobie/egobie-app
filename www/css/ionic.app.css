@@ -11811,10 +11811,16 @@ a.button {
 * {
   font-family: eGobieFont !important; }
 
-.egobie-user-form .list {
+.egobie-form-bg, .egobie-user-form-bg {
+  width: 100% !important;
+  height: 100% !important;
   background-color: #5F696D; }
 
-.egobie-user-form .item {
+.egobie-form .list, .egobie-user-form .list {
+  background-color: #5F696D;
+  padding-top: 20px; }
+
+.egobie-form .item, .egobie-user-form .item {
   display: flex;
   height: 50px;
   width: 300px;
@@ -11824,20 +11830,21 @@ a.button {
   margin-right: auto;
   background: transparent;
   border: 0px; }
-  .egobie-user-form .item i.icon-mask {
+  .egobie-form .item i.icon-mask, .egobie-user-form .item i.icon-mask {
     position: absolute;
     width: 50px;
     height: 50px;
     background-color: rgba(50, 55, 61, 0.85);
     z-index: -1; }
-  .egobie-user-form .item i.icon {
+  .egobie-form .item i.icon, .egobie-user-form .item i.icon {
     width: 50px;
     height: 50px;
     font-size: 30px;
     color: #FFFFFF;
     display: inline-block;
-    padding: 10px 0px 8px 12px; }
-  .egobie-user-form .item input {
+    padding-left: 13px;
+    padding-top: 10px; }
+  .egobie-form .item input, .egobie-user-form .item input {
     display: inline-block;
     color: #FFFFFF;
     background-color: rgba(123, 135, 138, 0.8);
@@ -11846,14 +11853,21 @@ a.button {
     padding-left: 14px;
     font-size: 16px;
     margin-left: 5px; }
-    .egobie-user-form .item input::-webkit-input-placeholder {
+    .egobie-form .item input::-webkit-input-placeholder, .egobie-user-form .item input::-webkit-input-placeholder {
       color: #FFFFFF; }
-    .egobie-user-form .item input::-moz-placeholder {
+    .egobie-form .item input::-moz-placeholder, .egobie-user-form .item input::-moz-placeholder {
       color: #FFFFFF; }
-    .egobie-user-form .item input:-moz-placeholder {
+    .egobie-form .item input:-moz-placeholder, .egobie-user-form .item input:-moz-placeholder {
       color: #FFFFFF; }
-    .egobie-user-form .item input:-ms-input-placeholder {
+    .egobie-form .item input:-ms-input-placeholder, .egobie-user-form .item input:-ms-input-placeholder {
       color: #FFFFFF; }
+
+.egobie-form-button, .egobie-user-form-button {
+  width: 300px !important;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(123, 135, 138, 0.8);
+  color: #FFFFFF; }
 
 .egobie-header-bar {
   background-color: #FFFFFF !important; }

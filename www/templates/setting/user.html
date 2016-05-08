@@ -5,7 +5,7 @@
         <button class="button button-icon icon ion-android-close"
                 ng-click="hideEditUser()"></button>
     </ion-header-bar>
-    <ion-content padding="true" class="has-header padding">
+    <ion-content padding="true" class="has-header padding egobie-form-bg">
         <ion-list class="egobie-user-form">
             <ion-item>
                 <i class="icon-mask"></i>
@@ -37,36 +37,8 @@
                 <input type="text" placeholder="Phone Number"
                        ng-model="user.phone"/>
             </ion-item>
-
-            <!--
-            <ion-item class="item-input item-stacked-label">
-                <span class="input-label">First Name</span>
-                <input type="text"
-                       ng-model="user.first">
-            </ion-item>
-            <ion-item class="item-input item-stacked-label">
-                <span class="input-label">Middle Name</span>
-                <input type="text"
-                       ng-model="user.middle">
-            </ion-item>
-            <ion-item class="item-input item-stacked-label">
-                <span class="input-label">Last Name</span>
-                <input type="text"
-                       ng-model="user.last">
-            </ion-item>
-            <ion-item class="item-input item-stacked-label">
-                <span class="input-label">Email</span>
-                <input type="email"
-                       ng-model="user.email">
-            </ion-item>
-            <ion-item class="item-input item-stacked-label">
-                <span class="input-label">Phone Number</span>
-                <input type="text"
-                       ng-model="user.phone">
-            </ion-item>
-            -->
         </ion-list>
-        <button class="button button-block button-dark"
+        <button class="button button-block egobie-form-button"
                 ng-click="editUser()">Save</button>
     </ion-content>
 </ion-modal-view>

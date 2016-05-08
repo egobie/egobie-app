@@ -1,2 +1,70 @@
 @import 'egobie';
 
+.egobie {
+
+    &-form-bg {
+        width: 100% !important;
+        height: 100% !important;
+        background-color: #5F696D;
+    }
+
+    &-form {
+
+        .list {
+            background-color: #5F696D;
+            padding-top: 20px;
+        }
+
+        .item {
+            display: flex;
+            height: 50px;
+            width: 300px;
+            padding: 0px;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            background: transparent;
+            border: 0px;
+
+            i.icon-mask {
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                background-color: rgba(50, 55, 61, 0.85);
+                z-index: -1;
+            }
+
+            i.icon {
+                width: 50px;
+                height: 50px;
+                font-size: 30px;
+                color: #FFFFFF;
+                display: inline-block;
+                padding-left: 13px;
+                padding-top: 10px;
+            }
+
+            input {
+                @include placehoder-color(#FFFFFF);
+
+                display: inline-block;
+                color: #FFFFFF;
+                //background: transparent;
+                background-color: rgba(123, 135, 138, 0.8);
+                height: 50px;
+                width: 100%;
+                padding-left: 14px;
+                font-size: 16px;
+                margin-left: 5px;
+            }
+        }
+    }
+
+    &-form-button {
+        width: 300px !important;
+        margin-left: auto;
+        margin-right: auto;
+        background: rgba(123, 135, 138, 0.8);
+        color: #FFFFFF;
+    }
+}
