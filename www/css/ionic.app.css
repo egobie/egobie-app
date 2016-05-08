@@ -15,6 +15,11 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
+@font-face {
+  font-family: "eGobieFont";
+  src: url("../lib/custom/fonts/Century_Gothic/Century_Gothic.eot");
+  src: url("../lib/custom/fonts/Century_Gothic/Century_Gothic.eot?#iefix") format("embedded-opentype"), url("../lib/custom/fonts/Century_Gothic/Century_Gothic.woff2") format("woff2"), url("../lib/custom/fonts/Century_Gothic/Century_Gothic.woff") format("woff"), url("../lib/custom/fonts/Century_Gothic/Century_Gothic.ttf") format("truetype"), url("../lib/custom/fonts/Century_Gothic/Century_Gothic.svg#eGobieFont") format("svg"); }
+
 /*!
   Ionicons, v2.0.1
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
@@ -9791,6 +9796,9 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+* {
+  font-family: eGobieFont !important; }
+
 .egobie-header-bar {
   background-color: #FFFFFF !important; }
   .egobie-header-bar h1, .egobie-header-bar .button {
@@ -9850,6 +9858,9 @@ a.button {
   transform: scale(1.5);
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
+
+* {
+  font-family: eGobieFont !important; }
 
 .egobie-no-car, .egobie-empty-car {
   width: 100%;
@@ -10060,6 +10071,9 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+* {
+  font-family: eGobieFont !important; }
+
 .egobie-coupon .coupon {
   height: 350px;
   border: 0px; }
@@ -10209,6 +10223,9 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+* {
+  font-family: eGobieFont !important; }
+
 .egobie-header-bar {
   background-color: #FFFFFF !important; }
   .egobie-header-bar h1, .egobie-header-bar .button {
@@ -10268,6 +10285,9 @@ a.button {
   transform: scale(1.5);
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
+
+* {
+  font-family: eGobieFont !important; }
 
 .egobie-no-reservation, .egobie-empty-reservation, .egobie-no-history, .egobie-empty-history {
   width: 100%;
@@ -10656,6 +10676,9 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+* {
+  font-family: eGobieFont !important; }
+
 .egobie-home-tab .tab-nav, .egobie-home-tab .tab-nav * {
   background-color: #FFFFFF !important;
   color: #000000 !important;
@@ -10774,6 +10797,9 @@ a.button {
   transform: scale(1.5);
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
+
+* {
+  font-family: eGobieFont !important; }
 
 .egobie {
   /* Menu Icons */ }
@@ -10908,6 +10934,9 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+* {
+  font-family: eGobieFont !important; }
+
 .egobie-header-bar {
   background-color: #FFFFFF !important; }
   .egobie-header-bar h1, .egobie-header-bar .button {
@@ -10967,6 +10996,9 @@ a.button {
   transform: scale(1.5);
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
+
+* {
+  font-family: eGobieFont !important; }
 
 .egobie-no-notification, .egobie-empty-notification {
   width: 100%;
@@ -11047,6 +11079,9 @@ a.button {
   transform: scale(1.5);
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
+
+* {
+  font-family: eGobieFont !important; }
 
 .egobie-opening-list-left {
   position: absolute;
@@ -11171,6 +11206,9 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+* {
+  font-family: eGobieFont !important; }
+
 .egobie-header-bar, .egobie-payment-header-bar {
   background-color: #FFFFFF !important; }
   .egobie-header-bar h1, .egobie-payment-header-bar h1, .egobie-header-bar .button, .egobie-payment-header-bar .button {
@@ -11230,6 +11268,9 @@ a.button {
   transform: scale(1.5);
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
+
+* {
+  font-family: eGobieFont !important; }
 
 .egobie-no-payment, .egobie-empty-payment {
   width: 100%;
@@ -11444,6 +11485,9 @@ a.button {
   transform: scale(1.5);
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
+
+* {
+  font-family: eGobieFont !important; }
 
 .egobie-price-before, .egobie-service-item div.middle p.price:before, .egobie-service-detail-title div.left .price:before {
   content: "$";
@@ -11676,6 +11720,9 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+* {
+  font-family: eGobieFont !important; }
+
 .egobie-sign-logo, .egobie-signin-logo, .egobie-signup-logo {
   display: block;
   width: 133px;
@@ -11829,6 +11876,9 @@ a.button {
   transform: scale(1.5);
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
+
+* {
+  font-family: eGobieFont !important; }
 
 .egobie-tutorial {
   height: 100%; }
