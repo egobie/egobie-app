@@ -4,22 +4,38 @@
 
     &-sign-logo {
         @extend .egobie-center;
-        @extend .egobie-width-300;
-        @extend .egobie-height-200;
 
         display: block;
+        width: 133px;
+        height: 133px;
+        border: 0px;
     }
 
     &-sign-bg {
-        /*background-image: image($Sign-Bg);*/
+        background-image: image($Sign-Bg);
         background-size: cover;
+        padding: 0px;
+
+        .mask {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: rgba(118, 67, 134, 0.60);
+        }
+        
+        .list {
+            position: relative;
+
+            .mask {
+                background: rgba(12, 10, 12, 0.4);
+            }
+        }
     }
 
     &-signin-logo {
         @extend .egobie-sign-logo;
 
-        /*background-image: logo($Sign-In-Logo);*/
-        background-size: cover;
+        content: logo($Logo-White);
     }
 
     &-signup-logo {
@@ -29,18 +45,29 @@
         background-size: cover;
     }
 
+    &-company {
+        @extend .egobie-center;
+        text-align: center;
+        height: 40px;
+        width: 100%;
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        color: #FFFFFF;
+    }
+
     &-sign-item {
         @extend .egobie-center;
         @extend .egobie-width-300;
 
         padding: 0px;
         border: none;
+        background: transparent;
 
         a {
             font-size: 13px;
-            color: #000000;
+            color: #FFFFFF;
             text-decoration: none;
-            background: transparent;
         }
     }
 
@@ -49,12 +76,23 @@
         @extend .egobie-width-300;
         @extend .egobie-center;
 
+        background: transparent;
+        border-color: #FFFFFF;
+        border: 0px;
+        border-bottom: 1px solid #FFFFFF;
+
+        input {
+            color: #FFFFFF;
+            @include placehoder-color(#FFFFFF);
+        }
+
         i {
             width: 40px;
             height: 30px;
             font-size: 30px;
             margin-right: 15px;
-            border-right: 1px solid graytext;
+            border-right: 1px solid #FFFFFF;
+            color: #FFFFFF;
         }
     }
 
@@ -78,8 +116,9 @@
 
         display: block;
         clear: both;
-        margin-top: 10px;
+        margin-top: 20px;
         margin-bottom: 10px;
+        color: #FFFFFF !important;
     }
 
     &-start-to-use {

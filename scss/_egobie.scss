@@ -6,7 +6,7 @@ $Tutorial-5: 'tp5.svg';
 
 $Sign-In-Logo: 'sign_in.svg';
 $Sign-Up-Logo: 'sign_up.svg';
-$Sign-Bg: 'sign_bg.svg';
+$Sign-Bg: 'bg.jpg';//'sign_bg.svg';
 
 $Menu-Home-On: 'home_on.png';
 $Menu-Home-Off: 'home_off.png';
@@ -88,6 +88,21 @@ $Egobie-Color: #000000;
     -webkit-appearance: $content;
     -moz-appearance: $content;
     appearance: $content;
+}
+
+@mixin placehoder-color($color) {
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+    &::-moz-placeholder {
+        color: $color;
+    }
+    &:-moz-placeholder {
+        color: $color;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+    }
 }
 
 .egobie {

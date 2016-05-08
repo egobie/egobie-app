@@ -11648,10 +11648,10 @@ a.button {
 .egobie-width-200 {
   width: 200px; }
 
-.egobie-width-300, .egobie-sign-logo, .egobie-signin-logo, .egobie-signup-logo, .egobie-sign-item, .egobie-signin-item, .egobie-signup-item, .egobie-sign-button {
+.egobie-width-300, .egobie-sign-item, .egobie-signin-item, .egobie-signup-item, .egobie-sign-button {
   width: 300px; }
 
-.egobie-height-200, .egobie-sign-logo, .egobie-signin-logo, .egobie-signup-logo {
+.egobie-height-200 {
   height: 200px; }
 
 .egobie-height-300 {
@@ -11660,7 +11660,7 @@ a.button {
 .egobie-left {
   float: left; }
 
-.egobie-center, .egobie-sign-logo, .egobie-signin-logo, .egobie-signup-logo, .egobie-sign-item, .egobie-signin-item, .egobie-signup-item, .egobie-sign-button {
+.egobie-center, .egobie-sign-logo, .egobie-signin-logo, .egobie-signup-logo, .egobie-company, .egobie-sign-item, .egobie-signin-item, .egobie-signup-item, .egobie-sign-button {
   left: 0;
   right: 0;
   margin-left: auto !important;
@@ -11677,35 +11677,72 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-sign-logo, .egobie-signin-logo, .egobie-signup-logo {
-  display: block; }
+  display: block;
+  width: 133px;
+  height: 133px;
+  border: 0px; }
 
 .egobie-sign-bg {
-  /*background-image: image($Sign-Bg);*/
-  background-size: cover; }
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+  padding: 0px; }
+  .egobie-sign-bg .mask {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(118, 67, 134, 0.6); }
+  .egobie-sign-bg .list {
+    position: relative; }
+    .egobie-sign-bg .list .mask {
+      background: rgba(12, 10, 12, 0.4); }
 
 .egobie-signin-logo {
-  /*background-image: logo($Sign-In-Logo);*/
-  background-size: cover; }
+  content: url("../img/logo/white.png"); }
 
 .egobie-signup-logo {
   /*background-image: logo($Sign-Up-Logo);*/
   background-size: cover; }
 
+.egobie-company {
+  text-align: center;
+  height: 40px;
+  width: 100%;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  color: #FFFFFF; }
+
 .egobie-sign-item {
   padding: 0px;
-  border: none; }
+  border: none;
+  background: transparent; }
   .egobie-sign-item a {
     font-size: 13px;
-    color: #000000;
-    text-decoration: none;
-    background: transparent; }
+    color: #FFFFFF;
+    text-decoration: none; }
 
-.egobie-signin-item i {
-  width: 40px;
-  height: 30px;
-  font-size: 30px;
-  margin-right: 15px;
-  border-right: 1px solid graytext; }
+.egobie-signin-item {
+  background: transparent;
+  border-color: #FFFFFF;
+  border: 0px;
+  border-bottom: 1px solid #FFFFFF; }
+  .egobie-signin-item input {
+    color: #FFFFFF; }
+    .egobie-signin-item input::-webkit-input-placeholder {
+      color: #FFFFFF; }
+    .egobie-signin-item input::-moz-placeholder {
+      color: #FFFFFF; }
+    .egobie-signin-item input:-moz-placeholder {
+      color: #FFFFFF; }
+    .egobie-signin-item input:-ms-input-placeholder {
+      color: #FFFFFF; }
+  .egobie-signin-item i {
+    width: 40px;
+    height: 30px;
+    font-size: 30px;
+    margin-right: 15px;
+    border-right: 1px solid #FFFFFF;
+    color: #FFFFFF; }
 
 .egobie-signup-item i {
   width: 40px;
@@ -11717,8 +11754,9 @@ a.button {
 .egobie-sign-button {
   display: block;
   clear: both;
-  margin-top: 10px;
-  margin-bottom: 10px; }
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #FFFFFF !important; }
 
 .egobie-start-to-use {
   display: block;
