@@ -10346,10 +10346,12 @@ a.button {
       .egobie-history-list .left .ontime i {
         display: inline-block;
         font-size: 20px;
-        padding-right: 5px; }
+        padding-right: 5px;
+        color: green; }
       .egobie-history-list .left .ontime p {
         display: inline-block;
-        font-size: 20px; }
+        font-size: 20px;
+        color: green; }
   .egobie-history-list .right {
     display: inline-block;
     width: 65%; }
@@ -11747,8 +11749,7 @@ a.button {
   content: url("../img/logo/white.png"); }
 
 .egobie-signup-logo {
-  /*background-image: logo($Sign-Up-Logo);*/
-  background-size: cover; }
+  content: url("../img/logo/white.png"); }
 
 .egobie-company {
   text-align: center;
@@ -11791,12 +11792,28 @@ a.button {
     border-right: 1px solid #FFFFFF;
     color: #FFFFFF; }
 
-.egobie-signup-item i {
-  width: 40px;
-  height: 30px;
-  font-size: 30px;
-  margin-right: 15px;
-  border-right: 1px solid graytext; }
+.egobie-signup-item {
+  background: transparent;
+  border-color: #FFFFFF;
+  border: 0px;
+  border-bottom: 1px solid #FFFFFF; }
+  .egobie-signup-item input {
+    color: #FFFFFF; }
+    .egobie-signup-item input::-webkit-input-placeholder {
+      color: #FFFFFF; }
+    .egobie-signup-item input::-moz-placeholder {
+      color: #FFFFFF; }
+    .egobie-signup-item input:-moz-placeholder {
+      color: #FFFFFF; }
+    .egobie-signup-item input:-ms-input-placeholder {
+      color: #FFFFFF; }
+  .egobie-signup-item i {
+    width: 40px;
+    height: 30px;
+    font-size: 30px;
+    margin-right: 15px;
+    border-right: 1px solid #FFFFFF;
+    color: #FFFFFF; }
 
 .egobie-sign-button {
   display: block;
