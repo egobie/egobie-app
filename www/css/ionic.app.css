@@ -11726,12 +11726,15 @@ a.button {
   height: 180px;
   width: 95%;
   margin-top: 15px;
-  border: 0; }
+  border: 0;
+  background: transparent; }
+  .egobie-payment * {
+    color: #FFFFFF; }
   .egobie-payment .left {
     display: table-cell;
     width: 70%;
     border-style: solid;
-    border-color: black;
+    border-color: #FFFFFF;
     border-width: 1px 0px 1px 1px;
     border-radius: 10px 0px 0px 10px; }
     .egobie-payment .left p {
@@ -11740,7 +11743,8 @@ a.button {
       width: 82%;
       height: 25px;
       line-height: 25px;
-      margin-left: 8%; }
+      margin-left: 8%;
+      color: #FFFFFF; }
       .egobie-payment .left p.name {
         margin-top: 10%;
         font-size: x-large;
@@ -11761,10 +11765,10 @@ a.button {
   .egobie-payment .right {
     display: table-cell;
     border-style: solid;
-    border-color: black;
+    border-color: #FFFFFF;
     border-width: 1px 1px 1px 0px;
     border-radius: 0px 10px 10px 0px;
-    background-color: #404041; }
+    background-color: #364351; }
     .egobie-payment .right i {
       display: block;
       position: absolute;

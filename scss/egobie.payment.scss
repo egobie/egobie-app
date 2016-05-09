@@ -20,12 +20,17 @@
         width: 95%;
         margin-top: 15px;
         border: 0;
+        background: transparent;
+
+        * {
+            color: #FFFFFF;
+        }
 
         .left {
             display: table-cell;
             width: 70%;
             border-style: solid;
-            border-color: black;
+            border-color: #FFFFFF;
             border-width: 1px 0px 1px 1px;
             border-radius: 10px 0px 0px 10px;
 
@@ -36,6 +41,7 @@
                 height: 25px;
                 line-height: 25px;
                 margin-left: 8%;
+                color: #FFFFFF;
 
                 &.name {
                     margin-top: 10%;
@@ -69,10 +75,10 @@
         .right {
             display: table-cell;
             border-style: solid;
-            border-color: black;
+            border-color: #FFFFFF;
             border-width: 1px 1px 1px 0px;
             border-radius: 0px 10px 10px 0px;
-            background-color: #404041;
+            background-color: #364351;
 
             i {
                 display: block;
