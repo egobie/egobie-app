@@ -5,40 +5,37 @@
         <button class="button button-icon icon ion-android-close"
                 ng-click="hideEditWork()"></button>
     </ion-header-bar>
-    <ion-content padding="true" class="has-header">
-        <ion-list>
-            <!-- Street -->
-            <ion-item class="item-input margin-top-5 item-padding-top-bottom">
-                <i class="icon ion-person placeholder-icon icon-size-25 i-add-payment-egobie"></i>
+    <ion-content padding="true" class="padding egobie-work-form-bg">
+        <ion-list class="egobie-work-form">
+            <ion-item>
+                <i class="icon-mask"></i>
+                <i class="icon ion-briefcase"></i>
                 <input type="text" placeholder="Street"
                        ng-model="work.street"/>
             </ion-item>
-
-            <!-- City -->
-            <ion-item class="item-input margin-top-5 item-padding-top-bottom">
-                <i class="icon ion-person placeholder-icon icon-size-25 i-add-payment-egobie"></i>
+            <ion-item>
+                <i class="icon-mask"></i>
+                <i class="icon"></i>
                 <input type="text" placeholder="City"
                        ng-model="work.city"/>
             </ion-item>
-
-            <!-- State -->
-            <ion-item class="item-input margin-top-5 item-padding-top-bottom">
-                <i class="icon ion-map placeholder-icon icon-size-25 i-add-payment-egobie"></i>
-                <select class="select-egobie"
+            <ion-item>
+                <i class="icon-mask"></i>
+                <i class="icon"></i>
+                <select id="edithome-state" class="select-egobie"
                         ng-model="work.state"
                         ng-options="state as fullname for (state, fullname) in states">
                     <option value="">Choose State</option>
                 </select>
             </ion-item>
-
-            <!-- Zip -->
-            <ion-item class="item-input margin-top-5 item-padding-top-bottom">
-                <i class="icon ion-person placeholder-icon icon-size-25 i-add-payment-egobie"></i>
+            <ion-item>
+                <i class="icon-mask"></i>
+                <i class="icon"></i>
                 <input type="text" placeholder="Zip Code"
                        ng-model="work.zip"/>
             </ion-item>
         </ion-list>
-        <button class="button button-block button-dark"
+        <button class="button button-block egobie-work-form-button"
                 ng-click="editWork()">Save</button>
     </ion-content>
 </ion-modal-view>

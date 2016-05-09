@@ -11811,16 +11811,16 @@ a.button {
 * {
   font-family: eGobieFont !important; }
 
-.egobie-form-bg, .egobie-user-form-bg {
+.egobie-form-bg, .egobie-user-form-bg, .egobie-password-form-bg, .egobie-home-form-bg, .egobie-work-form-bg {
   width: 100% !important;
   height: 100% !important;
   background-color: #5F696D; }
 
-.egobie-form .list, .egobie-user-form .list {
+.egobie-form .list, .egobie-user-form .list, .egobie-password-form .list, .egobie-home-form .list, .egobie-work-form .list {
   background-color: #5F696D;
   padding-top: 20px; }
 
-.egobie-form .item, .egobie-user-form .item {
+.egobie-form .item, .egobie-user-form .item, .egobie-password-form .item, .egobie-home-form .item, .egobie-work-form .item {
   display: flex;
   height: 50px;
   width: 300px;
@@ -11830,13 +11830,13 @@ a.button {
   margin-right: auto;
   background: transparent;
   border: 0px; }
-  .egobie-form .item i.icon-mask, .egobie-user-form .item i.icon-mask {
+  .egobie-form .item i.icon-mask, .egobie-user-form .item i.icon-mask, .egobie-password-form .item i.icon-mask, .egobie-home-form .item i.icon-mask, .egobie-work-form .item i.icon-mask {
     position: absolute;
     width: 50px;
     height: 50px;
     background-color: rgba(50, 55, 61, 0.85);
     z-index: -1; }
-  .egobie-form .item i.icon, .egobie-user-form .item i.icon {
+  .egobie-form .item i.icon, .egobie-user-form .item i.icon, .egobie-password-form .item i.icon, .egobie-home-form .item i.icon, .egobie-work-form .item i.icon {
     width: 50px;
     height: 50px;
     font-size: 30px;
@@ -11844,25 +11844,29 @@ a.button {
     display: inline-block;
     padding-left: 13px;
     padding-top: 10px; }
-  .egobie-form .item input, .egobie-user-form .item input {
+  .egobie-form .item input, .egobie-user-form .item input, .egobie-password-form .item input, .egobie-home-form .item input, .egobie-work-form .item input, .egobie-form .item select, .egobie-user-form .item select, .egobie-password-form .item select, .egobie-home-form .item select, .egobie-work-form .item select {
     display: inline-block;
     color: #FFFFFF;
     background-color: rgba(123, 135, 138, 0.8);
     height: 50px;
     width: 100%;
     padding-left: 14px;
-    font-size: 16px;
-    margin-left: 5px; }
-    .egobie-form .item input::-webkit-input-placeholder, .egobie-user-form .item input::-webkit-input-placeholder {
-      color: #FFFFFF; }
-    .egobie-form .item input::-moz-placeholder, .egobie-user-form .item input::-moz-placeholder {
-      color: #FFFFFF; }
-    .egobie-form .item input:-moz-placeholder, .egobie-user-form .item input:-moz-placeholder {
-      color: #FFFFFF; }
-    .egobie-form .item input:-ms-input-placeholder, .egobie-user-form .item input:-ms-input-placeholder {
-      color: #FFFFFF; }
+    font-size: 13px;
+    margin-left: 5px;
+    border: 0px;
+    border-radius: 0px; }
+    .egobie-form .item input::-webkit-input-placeholder, .egobie-user-form .item input::-webkit-input-placeholder, .egobie-password-form .item input::-webkit-input-placeholder, .egobie-home-form .item input::-webkit-input-placeholder, .egobie-work-form .item input::-webkit-input-placeholder, .egobie-form .item select::-webkit-input-placeholder, .egobie-user-form .item select::-webkit-input-placeholder, .egobie-password-form .item select::-webkit-input-placeholder, .egobie-home-form .item select::-webkit-input-placeholder, .egobie-work-form .item select::-webkit-input-placeholder {
+      color: #AAAAAA; }
+    .egobie-form .item input::-moz-placeholder, .egobie-user-form .item input::-moz-placeholder, .egobie-password-form .item input::-moz-placeholder, .egobie-home-form .item input::-moz-placeholder, .egobie-work-form .item input::-moz-placeholder, .egobie-form .item select::-moz-placeholder, .egobie-user-form .item select::-moz-placeholder, .egobie-password-form .item select::-moz-placeholder, .egobie-home-form .item select::-moz-placeholder, .egobie-work-form .item select::-moz-placeholder {
+      color: #AAAAAA; }
+    .egobie-form .item input:-moz-placeholder, .egobie-user-form .item input:-moz-placeholder, .egobie-password-form .item input:-moz-placeholder, .egobie-home-form .item input:-moz-placeholder, .egobie-work-form .item input:-moz-placeholder, .egobie-form .item select:-moz-placeholder, .egobie-user-form .item select:-moz-placeholder, .egobie-password-form .item select:-moz-placeholder, .egobie-home-form .item select:-moz-placeholder, .egobie-work-form .item select:-moz-placeholder {
+      color: #AAAAAA; }
+    .egobie-form .item input:-ms-input-placeholder, .egobie-user-form .item input:-ms-input-placeholder, .egobie-password-form .item input:-ms-input-placeholder, .egobie-home-form .item input:-ms-input-placeholder, .egobie-work-form .item input:-ms-input-placeholder, .egobie-form .item select:-ms-input-placeholder, .egobie-user-form .item select:-ms-input-placeholder, .egobie-password-form .item select:-ms-input-placeholder, .egobie-home-form .item select:-ms-input-placeholder, .egobie-work-form .item select:-ms-input-placeholder {
+      color: #AAAAAA; }
+  .egobie-form .item input, .egobie-user-form .item input, .egobie-password-form .item input, .egobie-home-form .item input, .egobie-work-form .item input {
+    padding-left: 17px; }
 
-.egobie-form-button, .egobie-user-form-button {
+.egobie-form-button, .egobie-user-form-button, .egobie-password-form-button, .egobie-home-form-button, .egobie-work-form-button {
   width: 300px !important;
   margin-left: auto;
   margin-right: auto;

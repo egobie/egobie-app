@@ -44,8 +44,8 @@
                 padding-top: 10px;
             }
 
-            input {
-                @include placehoder-color(#FFFFFF);
+            input, select {
+                @include placehoder-color(#AAAAAA);
 
                 display: inline-block;
                 color: #FFFFFF;
@@ -54,8 +54,14 @@
                 height: 50px;
                 width: 100%;
                 padding-left: 14px;
-                font-size: 16px;
+                font-size: 13px;
                 margin-left: 5px;
+                border: 0px;
+                border-radius: 0px;
+            }
+
+            input {
+                padding-left: 17px;
             }
         }
     }
