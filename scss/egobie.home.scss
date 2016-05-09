@@ -73,15 +73,42 @@
         background-size: cover;
     }
 
-    &-resident-order-item {
-        @extend .egobie-margin-top-5;
+    &-resident-order {
+        .item {
+            @extend .egobie-margin-top-5;
 
-        padding-top: 8px;
-        padding-bottom: 8px;
-        height: 40px;
+            width: 95% !important;
+            margin-left: auto;
+            margin-right: auto;
 
-        i:before {
-            font-size: 25px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            height: 40px;
+            background: transparent;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+
+            i:before {
+                font-size: 25px;
+            }
+        }
+
+        .item-divider {
+            border: 0px;
+            border-radius: 0px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.60);
+            padding-left: 0px;
+        }
+
+        .button {
+            width: 95% !important;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid rgba(0, 0, 0, 0.35);
+
+            &:before {
+                color: #FF1919;
+            }
         }
     }
 }

@@ -10996,7 +10996,7 @@ a.button {
 .egobie-margin-left-3 {
   margin-left: 3px; }
 
-.egobie-margin-top-5, .egobie-resident-order-item {
+.egobie-margin-top-5, .egobie-resident-order .item {
   margin-top: 5px; }
 
 .egobie-margin-top-15 {
@@ -11123,12 +11123,32 @@ a.button {
 .egobie-reservation {
   background-size: cover; }
 
-.egobie-resident-order-item {
+.egobie-resident-order .item {
+  width: 95% !important;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 8px;
   padding-bottom: 8px;
-  height: 40px; }
-  .egobie-resident-order-item i:before {
+  height: 40px;
+  background: transparent;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.5); }
+  .egobie-resident-order .item i:before {
     font-size: 25px; }
+
+.egobie-resident-order .item-divider {
+  border: 0px;
+  border-radius: 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+  padding-left: 0px; }
+
+.egobie-resident-order .button {
+  width: 95% !important;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgba(0, 0, 0, 0.35); }
+  .egobie-resident-order .button:before {
+    color: #FF1919; }
 
 .egobie-padding-0 {
   padding: 0px; }

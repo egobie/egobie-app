@@ -1,14 +1,18 @@
 <ion-view hide-nav-bar="true" cache-view="false"
           ng-controller="reservationOrderCtrl">
-    <ion-header-bar class="bar-stable egobie-header-bar">
+    <ion-header-bar class="egobie-header-bar">
         <button class="button button-icon icon ion-ios-arrow-back"
                 ng-click="$ionicGoBack()"></button>
         <h1 class="title">RESERVATION</h1>
     </ion-header-bar>
-    <ion-content padding="true" class="has-header">
-        <!-- Services -->
-        <ion-list ng-controller="serviceSelectCtl">
-            <ion-item class="item-divider item-icon-right egobie-resident-order-item"
+    <div class="egobie-bg-mask">
+        <div class="egobie-bg-mask-1"></div>
+        <div class="egobie-bg-mask-2"></div>
+    </div>
+    <ion-content padding="true">
+        <ion-list class="egobie-resident-order"
+                  ng-controller="serviceSelectCtl">
+            <ion-item class="item-divider item-icon-right"
                       ng-click="selectService()">
                 Choose Services<i class="icon ion-android-add"></i>
             </ion-item>
@@ -17,34 +21,31 @@
                     ng-repeat="service in services | filter: {checked: true}">{{service.name}}</button>
         </ion-list>
 
-        <!-- Date -->
-        <ion-list ng-controller="openingSelectCtl">
-            <ion-item class="item-divider item-icon-right egobie-resident-order-item"
+        <ion-list class="egobie-resident-order"
+                  ng-controller="openingSelectCtl">
+            <ion-item class="item-divider item-icon-right"
                       ng-click="showOpeningModal()">
                 Choose Datetime<i class="icon ion-ios-arrow-right"></i>
             </ion-item>
-            <ion-item class="item-icon-left egobie-resident-order-item">
+            <ion-item class="item-icon-left">
                 <i class="icon ion-calendar"></i>{{opening.day}}
             </ion-item>
-            <ion-item class="item-icon-left egobie-resident-order-item">
+            <ion-item class="item-icon-left">
                 <i class="icon ion-calendar"></i>{{opening.start}} to {{opening.end}}
             </ion-item>
         </ion-list>
 
-        <!-- Detail -->
-        <ion-list>
-            <ion-item class="item-divider egobie-resident-order-item">Detail</ion-item>
+        <ion-list class="egobie-resident-order">
+            <ion-item class="item-divider">Vehicle & Payment Method</ion-item>
 
-            <!-- Car -->
-            <ion-item class="item-icon-left egobie-resident-order-item"
+            <ion-item class="item-icon-left"
                       ng-controller="carSelectCtrl"
                       ng-click="selectCar()">
                 <i class="icon ion-model-s"></i>{{selectedCar.plate}}
                 <span class="item-note">Choose a vehicle...</span>
             </ion-item>
 
-            <!-- Address -->
-            <ion-item class="item-icon-left egobie-resident-order-item"
+            <ion-item class="item-icon-left"
                       ng-controller="addressSelectCtrl"
                       ng-click="showEditHome()">
                 <i class="icon ion-home"></i>{{address}}
@@ -52,8 +53,7 @@
                       ng-show="address === ''">Update Address...</span>
             </ion-item>
 
-            <!-- Payment -->
-            <ion-item class="item-icon-left egobie-resident-order-item"
+            <ion-item class="item-icon-left"
                       ng-controller="paymentSelectCtrl"
                       ng-click="selectPayment()">
                 <i class="icon ion-card"></i>{{selectedPayment.account_number}}
@@ -61,23 +61,17 @@
             </ion-item>
         </ion-list>
 
-        <!-- Estimation -->
-        <ion-list>
-            <ion-item class="item-divider egobie-resident-order-item">Estimation</ion-item>
+        <ion-list class="egobie-resident-order">
+            <ion-item class="item-divider">Estimation</ion-item>
 
-            <ion-item class="item-icon-left egobie-resident-order-item">
+            <ion-item class="item-icon-left">
                 <i class="icon ion-ios-time"></i>{{order.time}} mins
             </ion-item>
 
-            <ion-item class="item-icon-left egobie-resident-order-item">
-                <i class="icon ion-cash"></i>{{order.price}}
+            <ion-item class="item-icon-left">
+                <i class="icon ion-cash"></i>{{order.price}} $
             </ion-item>
         </ion-list>
-
-        <!--
-        <button class="button button-block button-dark"
-                ng-click="placeOrderSheet()"> Make a reservation </button>
-        -->
     </ion-content>
     <ion-footer-bar class="bar-dark"
                     ng-click="placeOrderSheet()">
