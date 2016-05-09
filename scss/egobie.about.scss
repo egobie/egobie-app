@@ -1,0 +1,21 @@
+@import 'egobie';
+
+.egobie {
+
+    &-about-page {
+        border: 0px;
+
+        .item {
+            border: 0px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+
+            &:first-child, &:last-child {
+                padding-bottom: 15px;
+                margin-bottom: 5px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            }
+        }
+    }
+}

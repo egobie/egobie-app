@@ -9752,6 +9752,102 @@ a.button {
 .egobie-margin-left-3 {
   margin-left: 3px; }
 
+.egobie-margin-top-5 {
+  margin-top: 5px; }
+
+.egobie-margin-top-15 {
+  margin-top: 15px; }
+
+.egobie-margin-right-5 {
+  margin-right: 5px; }
+
+.egobie-margin-top-10 {
+  margin-top: 10px; }
+
+.egobie-margin-top-20 {
+  margin-top: 20px; }
+
+.egobie-width-200 {
+  width: 200px; }
+
+.egobie-width-300 {
+  width: 300px; }
+
+.egobie-height-200 {
+  height: 200px; }
+
+.egobie-height-300 {
+  height: 300px; }
+
+.egobie-left {
+  float: left; }
+
+.egobie-center {
+  left: 0;
+  right: 0;
+  margin-left: auto !important;
+  margin-right: auto !important; }
+
+.egobie-right {
+  float: right; }
+
+.egobie-avatar {
+  left: 10px !important;
+  top: 25px !important;
+  transform: scale(1.5);
+  border-radius: 0 !important;
+  content: url("../../../img/icons/eGobie_Profile_on.png"); }
+
+.egobie-transparent, .egobie-transparent * {
+  background: transparent;
+  color: #FFFFFF; }
+
+.egobie-bg-mask {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+  .egobie-bg-mask-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #1c5996; }
+  .egobie-bg-mask-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(54, 67, 81, 0.85); }
+
+* {
+  font-family: eGobieFont !important; }
+
+.egobie-about-page {
+  border: 0px; }
+  .egobie-about-page .item {
+    border: 0px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto; }
+    .egobie-about-page .item:first-child, .egobie-about-page .item:last-child {
+      padding-bottom: 15px;
+      margin-bottom: 5px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+
+.egobie-header-bar {
+  background-color: #364351 !important;
+  border: 0px !important;
+  background: transparent; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #6FCBFF !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
+.egobie-padding-0 {
+  padding: 0px; }
+
+.egobie-margin-left-3 {
+  margin-left: 3px; }
+
 .egobie-margin-top-5, .egobie-car-add .item, .egobie-car-edit .item {
   margin-top: 5px; }
 
@@ -12188,11 +12284,11 @@ a.button {
   background: rgba(123, 135, 138, 0.8);
   color: #FFFFFF; }
 
-.egobie-setting-form {
+.egobie-setting-page {
   border: 0px; }
-  .egobie-setting-form .item {
+  .egobie-setting-page .item {
     border: 0px; }
-  .egobie-setting-form .item-divider {
+  .egobie-setting-page .item-divider {
     border: 0px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     font-size: 20px;
