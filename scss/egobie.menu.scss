@@ -32,6 +32,7 @@
         border: 0px;
         margin-top: 3px;
         background: transparent;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 
         .item-content {
             background: transparent;
@@ -43,6 +44,10 @@
 
         span {
             margin-left: 10px;
+        }
+
+        &:last-child {
+            border-bottom: 0px;
         }
     }
 
@@ -56,11 +61,11 @@
         margin-top: 20px;
         margin-bottom: 10px;
         border: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 
         &-logo {
             position: absolute;
-            top: 15px;
-            bottom: 0px;
+            bottom: 20px;
             left: 20px;
             margin-top: auto;
             margin-bottom: auto;
@@ -71,8 +76,7 @@
 
         &-name {
             position: absolute;
-            top: 15px;
-            bottom: 0px;
+            bottom: 27px;
             margin-left: 15px;
             margin-top: auto;
             margin-bottom: auto;

@@ -11070,24 +11070,27 @@ a.button {
   .egobie-menu-item, .egobie-menu-item-last {
     border: 0px;
     margin-top: 3px;
-    background: transparent; }
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
     .egobie-menu-item .item-content, .egobie-menu-item-last .item-content {
       background: transparent; }
     .egobie-menu-item i, .egobie-menu-item-last i {
       transform: scale(0.6); }
     .egobie-menu-item span, .egobie-menu-item-last span {
       margin-left: 10px; }
+    .egobie-menu-item:last-child, .egobie-menu-item-last:last-child {
+      border-bottom: 0px; }
   .egobie-menu-item-last {
     /*border-bottom: 0px;*/ }
   .egobie-menu-profile {
     background: transparent;
     margin-top: 20px;
     margin-bottom: 10px;
-    border: 0; }
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
     .egobie-menu-profile-logo {
       position: absolute;
-      top: 15px;
-      bottom: 0px;
+      bottom: 20px;
       left: 20px;
       margin-top: auto;
       margin-bottom: auto;
@@ -11096,8 +11099,7 @@ a.button {
       content: url("../img/logo/light_grey_blue.png"); }
     .egobie-menu-profile-name {
       position: absolute;
-      top: 15px;
-      bottom: 0px;
+      bottom: 27px;
       margin-left: 15px;
       margin-top: auto;
       margin-bottom: auto;
@@ -12393,7 +12395,7 @@ a.button {
     position: absolute;
     height: 100%;
     width: 100%;
-    background: rgba(118, 67, 134, 0.6); }
+    background: rgba(56, 126, 245, 0.44); }
   .egobie-sign-bg .list {
     position: relative; }
     .egobie-sign-bg .list .mask {
