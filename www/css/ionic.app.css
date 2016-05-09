@@ -9824,10 +9824,9 @@ a.button {
   border: 0px; }
   .egobie-about-page .item {
     border: 0px;
-    width: 90%;
     margin-left: auto;
     margin-right: auto; }
-    .egobie-about-page .item:first-child, .egobie-about-page .item:last-child {
+    .egobie-about-page .item:first-child {
       padding-bottom: 15px;
       margin-bottom: 5px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
@@ -12229,11 +12228,9 @@ a.button {
 
 .egobie-form-bg, .egobie-user-form-bg, .egobie-password-form-bg, .egobie-home-form-bg, .egobie-work-form-bg {
   width: 100% !important;
-  height: 100% !important;
-  background-color: #5F696D; }
+  height: 100% !important; }
 
 .egobie-form .list, .egobie-user-form .list, .egobie-password-form .list, .egobie-home-form .list, .egobie-work-form .list {
-  background-color: #5F696D;
   padding-top: 20px; }
 
 .egobie-form .item, .egobie-user-form .item, .egobie-password-form .item, .egobie-home-form .item, .egobie-work-form .item {
@@ -12250,7 +12247,7 @@ a.button {
     position: absolute;
     width: 50px;
     height: 50px;
-    background-color: rgba(50, 55, 61, 0.85);
+    background-color: rgba(50, 55, 61, 0.35);
     z-index: -1; }
   .egobie-form .item i.icon, .egobie-user-form .item i.icon, .egobie-password-form .item i.icon, .egobie-home-form .item i.icon, .egobie-work-form .item i.icon {
     width: 50px;
@@ -12263,7 +12260,7 @@ a.button {
   .egobie-form .item input, .egobie-user-form .item input, .egobie-password-form .item input, .egobie-home-form .item input, .egobie-work-form .item input, .egobie-form .item select, .egobie-user-form .item select, .egobie-password-form .item select, .egobie-home-form .item select, .egobie-work-form .item select {
     display: inline-block;
     color: #FFFFFF;
-    background-color: rgba(123, 135, 138, 0.8);
+    background-color: rgba(123, 135, 138, 0.3);
     height: 50px;
     width: 100%;
     padding-left: 14px;
@@ -12286,7 +12283,7 @@ a.button {
   width: 300px !important;
   margin-left: auto;
   margin-right: auto;
-  background: rgba(123, 135, 138, 0.8);
+  background: rgba(123, 135, 138, 0.3);
   color: #FFFFFF; }
 
 .egobie-setting-page {

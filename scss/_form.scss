@@ -5,13 +5,13 @@
     &-form-bg {
         width: 100% !important;
         height: 100% !important;
-        background-color: #5F696D;
+        //background-color: #5F696D;
     }
 
     &-form {
 
         .list {
-            background-color: #5F696D;
+            //background-color: #5F696D;
             padding-top: 20px;
         }
 
@@ -30,7 +30,7 @@
                 position: absolute;
                 width: 50px;
                 height: 50px;
-                background-color: rgba(50, 55, 61, 0.85);
+                background-color: rgba(50, 55, 61, 0.35);
                 z-index: -1;
             }
 
@@ -50,7 +50,7 @@
                 display: inline-block;
                 color: #FFFFFF;
                 //background: transparent;
-                background-color: rgba(123, 135, 138, 0.8);
+                background-color: rgba(123, 135, 138, 0.30);
                 height: 50px;
                 width: 100%;
                 padding-left: 14px;
@@ -70,7 +70,7 @@
         width: 300px !important;
         margin-left: auto;
         margin-right: auto;
-        background: rgba(123, 135, 138, 0.8);
+        background: rgba(123, 135, 138, 0.30);
         color: #FFFFFF;
     }
 }
