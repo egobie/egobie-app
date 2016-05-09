@@ -45,7 +45,7 @@
                 <select id="addpayment-month"
                         ng-model="payment.month"
                         ng-options="month as month for month in months">
-                    <option value="">Choose Month</option>
+                    <option class="init" value="">Choose Month</option>
                 </select>
             </ion-item>
 
@@ -55,7 +55,7 @@
                 <select id="addpayment-year"
                         ng-model="payment.year"
                         ng-options="year as year for year in years">
-                    <option value="">Choose Year</option>
+                    <option class="init" value="">Choose Year</option>
                 </select>
             </ion-item>
         </ion-list>
