@@ -1,5 +1,6 @@
 @import 'egobie';
 @import 'payment';
+@import 'form';
 
 .egobie {
 
@@ -15,39 +16,16 @@
         @extend .egobie-payment-visa;
     }
 
-    &-payment-add,
-    &-payment-edit {
+    &-payment-add, &-payment-edit {
+        @extend .egobie-form;
+
         .item {
-            @extend .egobie-margin-top-5;
-
-            padding-top: 8px;
-            padding-bottom: 8px;
-            height: 40px;
-
-            i {
-                width: 40px;
-                height: 30px;
-                font-size: 30px;
-                margin-right: 15px;
-                border-right: 1px solid graytext;
-
-                &:before {
-                    font-size: 25px;
-                }
+            input, select {
+                margin-left: 0px;
             }
 
-            select {
-                @include appearance(none);
-
-                width: 300px;
-                height: 35px;
-                border: none;
-                background: #fff;
-                color: #333;
-                text-overflow: '';
-                white-space: nowrap;
-                font-size: 14px;
-                cursor: pointer;
+            input {
+                padding-left: 14px;
             }
         }
     }

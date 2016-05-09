@@ -11476,7 +11476,7 @@ a.button {
 .egobie-margin-left-3 {
   margin-left: 3px; }
 
-.egobie-margin-top-5, .egobie-payment-add .item, .egobie-payment-edit .item {
+.egobie-margin-top-5 {
   margin-top: 5px; }
 
 .egobie-margin-top-15 {
@@ -11559,7 +11559,7 @@ a.button {
 .egobie-margin-left-3 {
   margin-left: 3px; }
 
-.egobie-margin-top-5, .egobie-payment-add .item, .egobie-payment-edit .item {
+.egobie-margin-top-5 {
   margin-top: 5px; }
 
 .egobie-margin-top-15 {
@@ -11773,33 +11773,156 @@ a.button {
   background: linear-gradient(100deg, #1391CF 20%, #117ECA 50%, #1075B3 85%); }
 
 .egobie-payment-discover {
-  background: linear-gradient(100deg, #F9B495 20%, #F69971 50%, #F26223 85%); }
+  background: linear-gradient(100deg, #FD8854 20%, #FD6929 50%, #F26223 85%); }
 
-.egobie-payment-add .item, .egobie-payment-edit .item {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  height: 40px; }
-  .egobie-payment-add .item i, .egobie-payment-edit .item i {
-    width: 40px;
-    height: 30px;
+.egobie-padding-0 {
+  padding: 0px; }
+
+.egobie-margin-left-3 {
+  margin-left: 3px; }
+
+.egobie-margin-top-5 {
+  margin-top: 5px; }
+
+.egobie-margin-top-15 {
+  margin-top: 15px; }
+
+.egobie-margin-right-5 {
+  margin-right: 5px; }
+
+.egobie-margin-top-10 {
+  margin-top: 10px; }
+
+.egobie-margin-top-20 {
+  margin-top: 20px; }
+
+.egobie-width-200 {
+  width: 200px; }
+
+.egobie-width-300 {
+  width: 300px; }
+
+.egobie-height-200 {
+  height: 200px; }
+
+.egobie-height-300 {
+  height: 300px; }
+
+.egobie-left {
+  float: left; }
+
+.egobie-center, .egobie-payment-template, .egobie-payment-visa, .egobie-payment, .egobie-payment-discover {
+  left: 0;
+  right: 0;
+  margin-left: auto !important;
+  margin-right: auto !important; }
+
+.egobie-right {
+  float: right; }
+
+.egobie-avatar {
+  left: 10px !important;
+  top: 25px !important;
+  transform: scale(1.5);
+  border-radius: 0 !important;
+  content: url("../../../img/icons/eGobie_Profile_on.png"); }
+
+.egobie-header-bar, .egobie-payment-header-bar {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0px !important; }
+  .egobie-header-bar h1, .egobie-payment-header-bar h1, .egobie-header-bar .button, .egobie-payment-header-bar .button {
+    color: #FFFFFF !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
+.egobie-transparent, .egobie-transparent * {
+  background: transparent;
+  color: #000000; }
+
+.egobie-bg-mask {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+  .egobie-bg-mask-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF; }
+  .egobie-bg-mask-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(147, 153, 156, 0.1); }
+
+* {
+  font-family: eGobieFont !important; }
+
+.egobie-form-bg {
+  width: 100% !important;
+  height: 100% !important; }
+
+.egobie-form .list, .egobie-payment-add .list, .egobie-payment-edit .list {
+  padding-top: 20px; }
+
+.egobie-form .item, .egobie-payment-add .item, .egobie-payment-edit .item {
+  display: flex;
+  height: 50px;
+  width: 300px;
+  padding: 0px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background: transparent;
+  border: 0px; }
+  .egobie-form .item i.icon-mask, .egobie-payment-add .item i.icon-mask, .egobie-payment-edit .item i.icon-mask {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(5, 10, 16, 0.85);
+    z-index: -1; }
+  .egobie-form .item i.icon, .egobie-payment-add .item i.icon, .egobie-payment-edit .item i.icon {
+    width: 50px;
+    height: 50px;
     font-size: 30px;
-    margin-right: 15px;
-    border-right: 1px solid graytext; }
-    .egobie-payment-add .item i:before, .egobie-payment-edit .item i:before {
-      font-size: 25px; }
-  .egobie-payment-add .item select, .egobie-payment-edit .item select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 300px;
-    height: 35px;
-    border: none;
-    background: #fff;
-    color: #333;
-    text-overflow: '';
-    white-space: nowrap;
-    font-size: 14px;
-    cursor: pointer; }
+    color: #FFFFFF;
+    display: inline-block;
+    padding-left: 13px;
+    padding-top: 10px; }
+  .egobie-form .item input, .egobie-payment-add .item input, .egobie-payment-edit .item input, .egobie-form .item select, .egobie-payment-add .item select, .egobie-payment-edit .item select {
+    display: inline-block;
+    color: #FFFFFF;
+    background-color: rgba(12, 21, 23, 0.6);
+    height: 50px;
+    width: 100%;
+    padding-left: 14px;
+    font-size: 13px;
+    margin-left: 5px;
+    border: 0px;
+    border-radius: 0px; }
+    .egobie-form .item input::-webkit-input-placeholder, .egobie-payment-add .item input::-webkit-input-placeholder, .egobie-payment-edit .item input::-webkit-input-placeholder, .egobie-form .item select::-webkit-input-placeholder, .egobie-payment-add .item select::-webkit-input-placeholder, .egobie-payment-edit .item select::-webkit-input-placeholder {
+      color: #93999C; }
+    .egobie-form .item input::-moz-placeholder, .egobie-payment-add .item input::-moz-placeholder, .egobie-payment-edit .item input::-moz-placeholder, .egobie-form .item select::-moz-placeholder, .egobie-payment-add .item select::-moz-placeholder, .egobie-payment-edit .item select::-moz-placeholder {
+      color: #93999C; }
+    .egobie-form .item input:-moz-placeholder, .egobie-payment-add .item input:-moz-placeholder, .egobie-payment-edit .item input:-moz-placeholder, .egobie-form .item select:-moz-placeholder, .egobie-payment-add .item select:-moz-placeholder, .egobie-payment-edit .item select:-moz-placeholder {
+      color: #93999C; }
+    .egobie-form .item input:-ms-input-placeholder, .egobie-payment-add .item input:-ms-input-placeholder, .egobie-payment-edit .item input:-ms-input-placeholder, .egobie-form .item select:-ms-input-placeholder, .egobie-payment-add .item select:-ms-input-placeholder, .egobie-payment-edit .item select:-ms-input-placeholder {
+      color: #93999C; }
+  .egobie-form .item input, .egobie-payment-add .item input, .egobie-payment-edit .item input {
+    padding-left: 17px; }
+
+.egobie-form-button {
+  width: 300px !important;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(17, 18, 19, 0.66);
+  color: #FFFFFF; }
+
+.egobie-payment-add .item input, .egobie-payment-add .item select, .egobie-payment-edit .item input, .egobie-payment-edit .item select {
+  margin-left: 0px; }
+
+.egobie-payment-add .item input, .egobie-payment-edit .item input {
+  padding-left: 14px; }
 
 .egobie-padding-0 {
   padding: 0px; }

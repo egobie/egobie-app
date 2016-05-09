@@ -1,43 +1,47 @@
 <ion-modal-view ng-app="app.payment.add"
                 ng-controller="paymentAddCtrl">
-    <ion-header-bar class="bar bar-header bar-stable">
+    <ion-header-bar class="egobie-header-bar">
         <h1 class="title">NEW PAYMENT</h1>
         <button class="button button-icon icon ion-android-close"
                 ng-click="hideAddPayment()"></button>
     </ion-header-bar>
-    <ion-content padding="true" class="has-header padding">
+    <div class="egobie-bg-mask">
+        <div class="egobie-bg-mask-1"></div>
+        <div class="egobie-bg-mask-2"></div>
+    </div>
+    <ion-content padding="true">
         <ion-list class="egobie-payment-add">
-            <!-- Card Holder -->
             <ion-item class="item-input">
-                <i class="icon ion-person placeholder-icon"></i>
+                <i class="icon-mask"></i>
+                <i class="icon ion-person"></i>
                 <input id="addpayment-name" type="text" placeholder="Holder Name"
                        ng-model="payment.name">
             </ion-item>
 
-            <!-- Card Number -->
             <ion-item class="item-input">
-                <i class="icon ion-card placeholder-icon"></i>
+                <i class="icon-mask"></i>
+                <i class="icon ion-card"></i>
                 <input id="addpayment-number" type="number" placeholder="0000 0000 0000 0000"
                        ng-model="payment.number">
             </ion-item>
 
-            <!-- CCV -->
             <ion-item class="item-input">
-                <i class="icon ion-locked placeholder-icon"></i>
+                <i class="icon-mask"></i>
+                <i class="icon ion-locked"></i>
                 <input id="addpayment-cvv" type="password" placeholder="CVV"
                        ng-model="payment.cvv">
             </ion-item>
 
-            <!-- Zip -->
             <ion-item class="item-input">
-                <i class="icon ion-card placeholder-icon"></i>
-                <input id="addpayment-zip" type="text" placeholder="00000"
+                <i class="icon-mask"></i>
+                <i class="icon ion-card"></i>
+                <input id="addpayment-zip" type="text" placeholder="Zip Code"
                        ng-model="payment.zip">
             </ion-item>
 
-            <!-- Expiration Month -->
             <ion-item class="item-input">
-                <i class="icon ion-calendar placeholder-icon"></i>
+                <i class="icon-mask"></i>
+                <i class="icon ion-calendar"></i>
                 <select id="addpayment-month"
                         ng-model="payment.month"
                         ng-options="month as month for month in months">
@@ -45,9 +49,9 @@
                 </select>
             </ion-item>
 
-            <!-- Expiration Year -->
             <ion-item class="item-input">
-                <i class="icon ion-calendar placeholder-icon"></i>
+                <i class="icon-mask"></i>
+                <i class="icon ion-calendar"></i>
                 <select id="addpayment-year"
                         ng-model="payment.year"
                         ng-options="year as year for year in years">
@@ -55,7 +59,7 @@
                 </select>
             </ion-item>
         </ion-list>
-        <button class="button button-block button-dark"
+        <button class="button button-block egobie-form-button"
                 ng-click="createPayment()">Save</button>
     </ion-content>
 </ion-modal-view>
