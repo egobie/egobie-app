@@ -36,14 +36,16 @@
     border: 0px;
     padding: 0px;
     border-radius: 10px;
-    background: rgba(255,255,255,0.1); //rgba(255, 165, 0, 0.91);
+    //background: rgba(255,255,255,0.1); //rgba(255, 165, 0, 0.91);
+    background: rgba(255, 165, 0, 0.91);
 
     .bar {
         position: absolute;
         width: 100%;
         height: 40px;
         border-radius: 10px 10px 0px 0px;
-        background-color: #364351;
+        background-color: rgba(0, 0, 0, 0.80);
+        //background-color: #364351;
         z-index: -1;
     }
 
@@ -110,7 +112,7 @@
                 width: 45%;
                 height: 40px;
                 line-height: 40px;
-                color: #FFFFFF;
+                color: #000000;
                 margin: auto;
 
                 &:first-child {
@@ -129,15 +131,15 @@
             width: 100%;
             text-align: center;
             font-weight: 900;
-            color: #FFFFFF; //#FF9900
+            color: #FF9900;
         }
 
         .year {
             position: absolute;
             font-weight: 900;
-            color: #000000;
+            color: #FFFFFF;
             padding: 3px;
-            background-color: #FFFFFF;
+            background-color: #FF6A00;
             border-radius: 5px;
             top: 25px;
             left: 12px;
@@ -156,7 +158,7 @@
 
             p {
                 display: inline-block;
-                color: #FFFFFF;
+                color: #000000;
                 margin: auto;
                 width: 45%;
                 font-weight: 800;

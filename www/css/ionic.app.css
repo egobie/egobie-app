@@ -9736,16 +9736,6 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-.egobie-header-bar {
-  background-color: #364351 !important;
-  border: 0px !important;
-  background: transparent; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #6FCBFF !important; }
-
-.egobie-whole-page .list, .egobie-whole-page .scroll {
-  height: 100%; }
-
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -9798,9 +9788,18 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+.egobie-header-bar {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0px !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #FFFFFF !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
 .egobie-transparent, .egobie-transparent * {
   background: transparent;
-  color: #FFFFFF; }
+  color: #000000; }
 
 .egobie-bg-mask {
   position: absolute;
@@ -9810,12 +9809,12 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #1c5996; }
+    background-color: #FFFFFF; }
   .egobie-bg-mask-2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(54, 67, 81, 0.85); }
+    background-color: rgba(147, 153, 156, 0.13); }
 
 * {
   font-family: eGobieFont !important; }
@@ -9829,17 +9828,7 @@ a.button {
     .egobie-about-page .item:first-child {
       padding-bottom: 15px;
       margin-bottom: 5px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
-
-.egobie-header-bar {
-  background-color: #364351 !important;
-  border: 0px !important;
-  background: transparent; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #6FCBFF !important; }
-
-.egobie-whole-page .list, .egobie-whole-page .scroll {
-  height: 100%; }
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3); }
 
 .egobie-padding-0 {
   padding: 0px; }
@@ -9893,9 +9882,18 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+.egobie-header-bar {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0px !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #FFFFFF !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
 .egobie-transparent, .egobie-transparent * {
   background: transparent;
-  color: #FFFFFF; }
+  color: #000000; }
 
 .egobie-bg-mask {
   position: absolute;
@@ -9905,26 +9903,16 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #1c5996; }
+    background-color: #FFFFFF; }
   .egobie-bg-mask-2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(54, 67, 81, 0.85); }
+    background-color: rgba(147, 153, 156, 0.13); }
 
 * {
   font-family: eGobieFont !important; }
 
-.egobie-header-bar {
-  background-color: #364351 !important;
-  border: 0px !important;
-  background: transparent; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #6FCBFF !important; }
-
-.egobie-whole-page .list, .egobie-whole-page .scroll {
-  height: 100%; }
-
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -9977,9 +9965,18 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+.egobie-header-bar {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0px !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #FFFFFF !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
 .egobie-transparent, .egobie-transparent * {
   background: transparent;
-  color: #FFFFFF; }
+  color: #000000; }
 
 .egobie-bg-mask {
   position: absolute;
@@ -9989,12 +9986,12 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #1c5996; }
+    background-color: #FFFFFF; }
   .egobie-bg-mask-2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(54, 67, 81, 0.85); }
+    background-color: rgba(147, 153, 156, 0.13); }
 
 * {
   font-family: eGobieFont !important; }
@@ -10028,13 +10025,13 @@ a.button {
   border: 0px;
   padding: 0px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.1); }
+  background: rgba(255, 165, 0, 0.91); }
   .egobie-plate .bar, .egobie-car .bar {
     position: absolute;
     width: 100%;
     height: 40px;
     border-radius: 10px 10px 0px 0px;
-    background-color: #364351;
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: -1; }
   .egobie-plate .panel, .egobie-car .panel {
     border: 1px solid #F8F8FA;
@@ -10082,7 +10079,7 @@ a.button {
         width: 45%;
         height: 40px;
         line-height: 40px;
-        color: #FFFFFF;
+        color: #000000;
         margin: auto; }
         .egobie-plate .panel .plate p:first-child, .egobie-car .panel .plate p:first-child {
           text-align: right; }
@@ -10094,13 +10091,13 @@ a.button {
       width: 100%;
       text-align: center;
       font-weight: 900;
-      color: #FFFFFF; }
+      color: #FF9900; }
     .egobie-plate .panel .year, .egobie-car .panel .year {
       position: absolute;
       font-weight: 900;
-      color: #000000;
+      color: #FFFFFF;
       padding: 3px;
-      background-color: #FFFFFF;
+      background-color: #FF6A00;
       border-radius: 5px;
       top: 25px;
       left: 12px; }
@@ -10116,7 +10113,7 @@ a.button {
       bottom: 13px; }
       .egobie-plate .panel .maker-model p, .egobie-car .panel .maker-model p {
         display: inline-block;
-        color: #FFFFFF;
+        color: #000000;
         margin: auto;
         width: 45%;
         font-weight: 800; }
@@ -10150,16 +10147,6 @@ a.button {
     white-space: nowrap;
     font-size: 14px;
     cursor: pointer; }
-
-.egobie-header-bar {
-  background-color: #364351 !important;
-  border: 0px !important;
-  background: transparent; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #6FCBFF !important; }
-
-.egobie-whole-page .list, .egobie-whole-page .scroll {
-  height: 100%; }
 
 .egobie-padding-0 {
   padding: 0px; }
@@ -10213,9 +10200,18 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+.egobie-header-bar {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0px !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #FFFFFF !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
 .egobie-transparent, .egobie-transparent * {
   background: transparent;
-  color: #FFFFFF; }
+  color: #000000; }
 
 .egobie-bg-mask {
   position: absolute;
@@ -10225,12 +10221,12 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #1c5996; }
+    background-color: #FFFFFF; }
   .egobie-bg-mask-2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(54, 67, 81, 0.85); }
+    background-color: rgba(147, 153, 156, 0.13); }
 
 * {
   font-family: eGobieFont !important; }
@@ -10324,16 +10320,6 @@ a.button {
     font-size: 14px;
     text-align: center; }
 
-.egobie-header-bar {
-  background-color: #364351 !important;
-  border: 0px !important;
-  background: transparent; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #6FCBFF !important; }
-
-.egobie-whole-page .list, .egobie-whole-page .scroll {
-  height: 100%; }
-
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -10386,9 +10372,18 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+.egobie-header-bar {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0px !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #FFFFFF !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
 .egobie-transparent, .egobie-transparent * {
   background: transparent;
-  color: #FFFFFF; }
+  color: #000000; }
 
 .egobie-bg-mask {
   position: absolute;
@@ -10398,26 +10393,16 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #1c5996; }
+    background-color: #FFFFFF; }
   .egobie-bg-mask-2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(54, 67, 81, 0.85); }
+    background-color: rgba(147, 153, 156, 0.13); }
 
 * {
   font-family: eGobieFont !important; }
 
-.egobie-header-bar {
-  background-color: #364351 !important;
-  border: 0px !important;
-  background: transparent; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #6FCBFF !important; }
-
-.egobie-whole-page .list, .egobie-whole-page .scroll {
-  height: 100%; }
-
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -10470,9 +10455,18 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+.egobie-header-bar {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0px !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #FFFFFF !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
 .egobie-transparent, .egobie-transparent * {
   background: transparent;
-  color: #FFFFFF; }
+  color: #000000; }
 
 .egobie-bg-mask {
   position: absolute;
@@ -10482,12 +10476,12 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #1c5996; }
+    background-color: #FFFFFF; }
   .egobie-bg-mask-2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(54, 67, 81, 0.85); }
+    background-color: rgba(147, 153, 156, 0.13); }
 
 * {
   font-family: eGobieFont !important; }
@@ -10821,16 +10815,6 @@ a.button {
       .egobie-history-detail .egobie-history-service .service div:last-child {
         overflow: hidden; }
 
-.egobie-header-bar {
-  background-color: #364351 !important;
-  border: 0px !important;
-  background: transparent; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #6FCBFF !important; }
-
-.egobie-whole-page .list, .egobie-whole-page .scroll {
-  height: 100%; }
-
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -10883,9 +10867,18 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+.egobie-header-bar {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0px !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #FFFFFF !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
 .egobie-transparent, .egobie-transparent * {
   background: transparent;
-  color: #FFFFFF; }
+  color: #000000; }
 
 .egobie-bg-mask {
   position: absolute;
@@ -10895,12 +10888,12 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #1c5996; }
+    background-color: #FFFFFF; }
   .egobie-bg-mask-2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(54, 67, 81, 0.85); }
+    background-color: rgba(147, 153, 156, 0.13); }
 
 * {
   font-family: eGobieFont !important; }
@@ -10950,11 +10943,9 @@ a.button {
         bottom: 10px; }
 
 .egobie-on-demand {
-  background: url("../img/ondemand.jpg") no-repeat center center fixed;
   background-size: cover; }
 
 .egobie-reservation {
-  background: url("../img/reserve.jpg") no-repeat center center fixed;
   background-size: cover; }
 
 .egobie-resident-order-item {
@@ -10963,16 +10954,6 @@ a.button {
   height: 40px; }
   .egobie-resident-order-item i:before {
     font-size: 25px; }
-
-.egobie-header-bar {
-  background-color: #364351 !important;
-  border: 0px !important;
-  background: transparent; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #6FCBFF !important; }
-
-.egobie-whole-page .list, .egobie-whole-page .scroll {
-  height: 100%; }
 
 .egobie-padding-0 {
   padding: 0px; }
@@ -11026,9 +11007,18 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+.egobie-header-bar {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0px !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #FFFFFF !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
 .egobie-transparent, .egobie-transparent * {
   background: transparent;
-  color: #FFFFFF; }
+  color: #000000; }
 
 .egobie-bg-mask {
   position: absolute;
@@ -11038,12 +11028,12 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #1c5996; }
+    background-color: #FFFFFF; }
   .egobie-bg-mask-2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(54, 67, 81, 0.85); }
+    background-color: rgba(147, 153, 156, 0.13); }
 
 * {
   font-family: eGobieFont !important; }
@@ -11072,8 +11062,7 @@ a.button {
   .egobie-menu-item, .egobie-menu-item-last {
     border: 0px;
     margin-top: 3px;
-    background: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+    background: transparent; }
     .egobie-menu-item .item-content, .egobie-menu-item-last .item-content {
       background: transparent; }
     .egobie-menu-item i, .egobie-menu-item-last i {
@@ -11146,16 +11135,6 @@ a.button {
   .egobie-about-off {
     content: url("../img/icon/about_off.png"); }
 
-.egobie-header-bar {
-  background-color: #364351 !important;
-  border: 0px !important;
-  background: transparent; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #6FCBFF !important; }
-
-.egobie-whole-page .list, .egobie-whole-page .scroll {
-  height: 100%; }
-
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -11208,9 +11187,18 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+.egobie-header-bar {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0px !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #FFFFFF !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
 .egobie-transparent, .egobie-transparent * {
   background: transparent;
-  color: #FFFFFF; }
+  color: #000000; }
 
 .egobie-bg-mask {
   position: absolute;
@@ -11220,26 +11208,16 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #1c5996; }
+    background-color: #FFFFFF; }
   .egobie-bg-mask-2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(54, 67, 81, 0.85); }
+    background-color: rgba(147, 153, 156, 0.13); }
 
 * {
   font-family: eGobieFont !important; }
 
-.egobie-header-bar {
-  background-color: #364351 !important;
-  border: 0px !important;
-  background: transparent; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #6FCBFF !important; }
-
-.egobie-whole-page .list, .egobie-whole-page .scroll {
-  height: 100%; }
-
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -11292,9 +11270,18 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+.egobie-header-bar {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0px !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #FFFFFF !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
 .egobie-transparent, .egobie-transparent * {
   background: transparent;
-  color: #FFFFFF; }
+  color: #000000; }
 
 .egobie-bg-mask {
   position: absolute;
@@ -11304,12 +11291,12 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #1c5996; }
+    background-color: #FFFFFF; }
   .egobie-bg-mask-2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(54, 67, 81, 0.85); }
+    background-color: rgba(147, 153, 156, 0.13); }
 
 * {
   font-family: eGobieFont !important; }
@@ -11334,16 +11321,6 @@ a.button {
     line-height: 30px;
     margin-top: 50px; }
 
-.egobie-header-bar {
-  background-color: #364351 !important;
-  border: 0px !important;
-  background: transparent; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #6FCBFF !important; }
-
-.egobie-whole-page .list, .egobie-whole-page .scroll {
-  height: 100%; }
-
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -11396,9 +11373,18 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+.egobie-header-bar {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0px !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #FFFFFF !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
 .egobie-transparent, .egobie-transparent * {
   background: transparent;
-  color: #FFFFFF; }
+  color: #000000; }
 
 .egobie-bg-mask {
   position: absolute;
@@ -11408,12 +11394,12 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #1c5996; }
+    background-color: #FFFFFF; }
   .egobie-bg-mask-2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(54, 67, 81, 0.85); }
+    background-color: rgba(147, 153, 156, 0.13); }
 
 * {
   font-family: eGobieFont !important; }
@@ -11481,16 +11467,6 @@ a.button {
         height: 105%;
         top: -1px; }
 
-.egobie-header-bar, .egobie-payment-header-bar {
-  background-color: #364351 !important;
-  border: 0px !important;
-  background: transparent; }
-  .egobie-header-bar h1, .egobie-payment-header-bar h1, .egobie-header-bar .button, .egobie-payment-header-bar .button {
-    color: #6FCBFF !important; }
-
-.egobie-whole-page .list, .egobie-whole-page .scroll {
-  height: 100%; }
-
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -11543,9 +11519,18 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+.egobie-header-bar, .egobie-payment-header-bar {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0px !important; }
+  .egobie-header-bar h1, .egobie-payment-header-bar h1, .egobie-header-bar .button, .egobie-payment-header-bar .button {
+    color: #FFFFFF !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
 .egobie-transparent, .egobie-transparent * {
   background: transparent;
-  color: #FFFFFF; }
+  color: #000000; }
 
 .egobie-bg-mask {
   position: absolute;
@@ -11555,26 +11540,16 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #1c5996; }
+    background-color: #FFFFFF; }
   .egobie-bg-mask-2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(54, 67, 81, 0.85); }
+    background-color: rgba(147, 153, 156, 0.13); }
 
 * {
   font-family: eGobieFont !important; }
 
-.egobie-header-bar, .egobie-payment-header-bar {
-  background-color: #364351 !important;
-  border: 0px !important;
-  background: transparent; }
-  .egobie-header-bar h1, .egobie-payment-header-bar h1, .egobie-header-bar .button, .egobie-payment-header-bar .button {
-    color: #6FCBFF !important; }
-
-.egobie-whole-page .list, .egobie-whole-page .scroll {
-  height: 100%; }
-
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -11627,9 +11602,18 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+.egobie-header-bar, .egobie-payment-header-bar {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0px !important; }
+  .egobie-header-bar h1, .egobie-payment-header-bar h1, .egobie-header-bar .button, .egobie-payment-header-bar .button {
+    color: #FFFFFF !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
 .egobie-transparent, .egobie-transparent * {
   background: transparent;
-  color: #FFFFFF; }
+  color: #000000; }
 
 .egobie-bg-mask {
   position: absolute;
@@ -11639,12 +11623,12 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #1c5996; }
+    background-color: #FFFFFF; }
   .egobie-bg-mask-2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(54, 67, 81, 0.85); }
+    background-color: rgba(147, 153, 156, 0.13); }
 
 * {
   font-family: eGobieFont !important; }
@@ -11807,16 +11791,6 @@ a.button {
     font-size: 14px;
     cursor: pointer; }
 
-.egobie-header-bar, .egobie-service-header-bar {
-  background-color: #364351 !important;
-  border: 0px !important;
-  background: transparent; }
-  .egobie-header-bar h1, .egobie-service-header-bar h1, .egobie-header-bar .button, .egobie-service-header-bar .button {
-    color: #6FCBFF !important; }
-
-.egobie-whole-page .list, .egobie-whole-page .scroll {
-  height: 100%; }
-
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -11869,9 +11843,18 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+.egobie-header-bar, .egobie-service-header-bar {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0px !important; }
+  .egobie-header-bar h1, .egobie-service-header-bar h1, .egobie-header-bar .button, .egobie-service-header-bar .button {
+    color: #FFFFFF !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
 .egobie-transparent, .egobie-transparent * {
   background: transparent;
-  color: #FFFFFF; }
+  color: #000000; }
 
 .egobie-bg-mask {
   position: absolute;
@@ -11881,12 +11864,12 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #1c5996; }
+    background-color: #FFFFFF; }
   .egobie-bg-mask-2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(54, 67, 81, 0.85); }
+    background-color: rgba(147, 153, 156, 0.13); }
 
 * {
   font-family: eGobieFont !important; }
@@ -12062,16 +12045,6 @@ a.button {
 .egobie-service-advance * .detail-section p {
   color: #567CC0 !important; }
 
-.egobie-header-bar {
-  background-color: #364351 !important;
-  border: 0px !important;
-  background: transparent; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #6FCBFF !important; }
-
-.egobie-whole-page .list, .egobie-whole-page .scroll {
-  height: 100%; }
-
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -12124,9 +12097,18 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+.egobie-header-bar {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0px !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #FFFFFF !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
 .egobie-transparent, .egobie-transparent * {
   background: transparent;
-  color: #FFFFFF; }
+  color: #000000; }
 
 .egobie-bg-mask {
   position: absolute;
@@ -12136,26 +12118,16 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #1c5996; }
+    background-color: #FFFFFF; }
   .egobie-bg-mask-2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(54, 67, 81, 0.85); }
+    background-color: rgba(147, 153, 156, 0.13); }
 
 * {
   font-family: eGobieFont !important; }
 
-.egobie-header-bar {
-  background-color: #364351 !important;
-  border: 0px !important;
-  background: transparent; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #6FCBFF !important; }
-
-.egobie-whole-page .list, .egobie-whole-page .scroll {
-  height: 100%; }
-
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -12208,9 +12180,18 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+.egobie-header-bar {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0px !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #FFFFFF !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
 .egobie-transparent, .egobie-transparent * {
   background: transparent;
-  color: #FFFFFF; }
+  color: #000000; }
 
 .egobie-bg-mask {
   position: absolute;
@@ -12220,12 +12201,12 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #1c5996; }
+    background-color: #FFFFFF; }
   .egobie-bg-mask-2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(54, 67, 81, 0.85); }
+    background-color: rgba(147, 153, 156, 0.13); }
 
 * {
   font-family: eGobieFont !important; }
@@ -12251,7 +12232,7 @@ a.button {
     position: absolute;
     width: 50px;
     height: 50px;
-    background-color: rgba(50, 55, 61, 0.35);
+    background-color: rgba(5, 10, 16, 0.85);
     z-index: -1; }
   .egobie-form .item i.icon, .egobie-user-form .item i.icon, .egobie-password-form .item i.icon, .egobie-home-form .item i.icon, .egobie-work-form .item i.icon {
     width: 50px;
@@ -12264,7 +12245,7 @@ a.button {
   .egobie-form .item input, .egobie-user-form .item input, .egobie-password-form .item input, .egobie-home-form .item input, .egobie-work-form .item input, .egobie-form .item select, .egobie-user-form .item select, .egobie-password-form .item select, .egobie-home-form .item select, .egobie-work-form .item select {
     display: inline-block;
     color: #FFFFFF;
-    background-color: rgba(123, 135, 138, 0.3);
+    background-color: rgba(12, 21, 23, 0.6);
     height: 50px;
     width: 100%;
     padding-left: 14px;
@@ -12273,13 +12254,13 @@ a.button {
     border: 0px;
     border-radius: 0px; }
     .egobie-form .item input::-webkit-input-placeholder, .egobie-user-form .item input::-webkit-input-placeholder, .egobie-password-form .item input::-webkit-input-placeholder, .egobie-home-form .item input::-webkit-input-placeholder, .egobie-work-form .item input::-webkit-input-placeholder, .egobie-form .item select::-webkit-input-placeholder, .egobie-user-form .item select::-webkit-input-placeholder, .egobie-password-form .item select::-webkit-input-placeholder, .egobie-home-form .item select::-webkit-input-placeholder, .egobie-work-form .item select::-webkit-input-placeholder {
-      color: #AAAAAA; }
+      color: #93999C; }
     .egobie-form .item input::-moz-placeholder, .egobie-user-form .item input::-moz-placeholder, .egobie-password-form .item input::-moz-placeholder, .egobie-home-form .item input::-moz-placeholder, .egobie-work-form .item input::-moz-placeholder, .egobie-form .item select::-moz-placeholder, .egobie-user-form .item select::-moz-placeholder, .egobie-password-form .item select::-moz-placeholder, .egobie-home-form .item select::-moz-placeholder, .egobie-work-form .item select::-moz-placeholder {
-      color: #AAAAAA; }
+      color: #93999C; }
     .egobie-form .item input:-moz-placeholder, .egobie-user-form .item input:-moz-placeholder, .egobie-password-form .item input:-moz-placeholder, .egobie-home-form .item input:-moz-placeholder, .egobie-work-form .item input:-moz-placeholder, .egobie-form .item select:-moz-placeholder, .egobie-user-form .item select:-moz-placeholder, .egobie-password-form .item select:-moz-placeholder, .egobie-home-form .item select:-moz-placeholder, .egobie-work-form .item select:-moz-placeholder {
-      color: #AAAAAA; }
+      color: #93999C; }
     .egobie-form .item input:-ms-input-placeholder, .egobie-user-form .item input:-ms-input-placeholder, .egobie-password-form .item input:-ms-input-placeholder, .egobie-home-form .item input:-ms-input-placeholder, .egobie-work-form .item input:-ms-input-placeholder, .egobie-form .item select:-ms-input-placeholder, .egobie-user-form .item select:-ms-input-placeholder, .egobie-password-form .item select:-ms-input-placeholder, .egobie-home-form .item select:-ms-input-placeholder, .egobie-work-form .item select:-ms-input-placeholder {
-      color: #AAAAAA; }
+      color: #93999C; }
   .egobie-form .item input, .egobie-user-form .item input, .egobie-password-form .item input, .egobie-home-form .item input, .egobie-work-form .item input {
     padding-left: 17px; }
 
@@ -12287,7 +12268,7 @@ a.button {
   width: 300px !important;
   margin-left: auto;
   margin-right: auto;
-  background: rgba(123, 135, 138, 0.3);
+  background: rgba(17, 18, 19, 0.66);
   color: #FFFFFF; }
 
 .egobie-setting-page {
@@ -12296,20 +12277,10 @@ a.button {
     border: 0px; }
   .egobie-setting-page .item-divider {
     border: 0px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     font-size: 20px;
     margin-top: 15px;
     padding-bottom: 15px; }
-
-.egobie-header-bar {
-  background-color: #364351 !important;
-  border: 0px !important;
-  background: transparent; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #6FCBFF !important; }
-
-.egobie-whole-page .list, .egobie-whole-page .scroll {
-  height: 100%; }
 
 .egobie-padding-0 {
   padding: 0px; }
@@ -12363,9 +12334,18 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+.egobie-header-bar {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0px !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #FFFFFF !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
 .egobie-transparent, .egobie-transparent * {
   background: transparent;
-  color: #FFFFFF; }
+  color: #000000; }
 
 .egobie-bg-mask {
   position: absolute;
@@ -12375,12 +12355,12 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #1c5996; }
+    background-color: #FFFFFF; }
   .egobie-bg-mask-2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(54, 67, 81, 0.85); }
+    background-color: rgba(147, 153, 156, 0.13); }
 
 * {
   font-family: eGobieFont !important; }
@@ -12392,24 +12372,17 @@ a.button {
   border: 0px; }
 
 .egobie-sign-bg {
-  background-image: url("../img/bg.jpg");
   background-size: cover;
   padding: 0px; }
   .egobie-sign-bg .mask {
     position: absolute;
     height: 100%;
     width: 100%;
-    background: rgba(56, 126, 245, 0.44); }
+    background: rgba(118, 67, 134, 0.6); }
   .egobie-sign-bg .list {
     position: relative; }
     .egobie-sign-bg .list .mask {
       background: rgba(12, 10, 12, 0.4); }
-
-.egobie-signin-logo {
-  content: url("../img/logo/white.png"); }
-
-.egobie-signup-logo {
-  content: url("../img/logo/white.png"); }
 
 .egobie-company {
   text-align: center;
@@ -12496,16 +12469,6 @@ a.button {
   border-color: #1B4A5E;
   background: transparent; }
 
-.egobie-header-bar {
-  background-color: #364351 !important;
-  border: 0px !important;
-  background: transparent; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #6FCBFF !important; }
-
-.egobie-whole-page .list, .egobie-whole-page .scroll {
-  height: 100%; }
-
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -12558,9 +12521,18 @@ a.button {
   border-radius: 0 !important;
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
+.egobie-header-bar {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0px !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #FFFFFF !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
 .egobie-transparent, .egobie-transparent * {
   background: transparent;
-  color: #FFFFFF; }
+  color: #000000; }
 
 .egobie-bg-mask {
   position: absolute;
@@ -12570,12 +12542,12 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #1c5996; }
+    background-color: #FFFFFF; }
   .egobie-bg-mask-2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(54, 67, 81, 0.85); }
+    background-color: rgba(147, 153, 156, 0.13); }
 
 * {
   font-family: eGobieFont !important; }
