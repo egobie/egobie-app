@@ -1,15 +1,19 @@
 <ion-view hide-nav-bar="true" cache-view="false"
           ng-app="app.service"
           ng-controller="serviceCtrl">
-    <ion-header-bar class="egobie-service-header-bar">
+    <ion-header-bar class="egobie-header-bar">
         <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
         <h1 class="title">EGOBIE SERVICES</h1>
     </ion-header-bar>
-    <ion-content padding="true" class="has-header egobie-service-list">
+    <div class="egobie-bg-mask">
+        <div class="egobie-bg-mask-1"></div>
+        <div class="egobie-bg-mask-2"></div>
+    </div>
+    <ion-content padding="true" class="egobie-service-list">
         <ion-list>
             <ion-item menu-close="" class="item-divider item-icon-right egobie-service-title egobie-margin-top-15"
                       ng-click="toggleShownService('CAR_WASH')">
-                <i class="icon ion-ios-arrow-down"></i>{{serviceNames["CAR_WASH"].toUpperCase()}}
+                <!-- <i class="icon ion-ios-arrow-down"></i> -->{{serviceNames["CAR_WASH"].toUpperCase()}}
             </ion-item>
             <ion-item menu-close="" class="egobie-service-item"
                       ng-repeat="service in carWash"
@@ -26,7 +30,7 @@
 
             <ion-item menu-close="" class="item-divider item-icon-right egobie-service-title"
                       ng-click="toggleShownService('OIL_CHANGE')">
-                <i class="icon ion-ios-arrow-down"></i>{{serviceNames["OIL_CHANGE"].toUpperCase()}}
+                <!-- <i class="icon ion-ios-arrow-down"></i> -->{{serviceNames["OIL_CHANGE"].toUpperCase()}}
             </ion-item>
             <ion-item menu-close="" class="egobie-service-item"
                       ng-repeat="service in oilChange"
@@ -43,7 +47,7 @@
 
             <ion-item menu-close="" class="item-divider item-icon-right egobie-service-title"
                       ng-click="toggleShownService('DETAILING')">
-                <i class="icon ion-ios-arrow-down"></i>{{serviceNames["DETAILING"].toUpperCase()}}
+                <!-- <i class="icon ion-ios-arrow-down"></i> -->{{serviceNames["DETAILING"].toUpperCase()}}
             </ion-item>
             <ion-item menu-close="" class="egobie-service-item"
                       ng-repeat="service in detailing"
@@ -62,12 +66,16 @@
 
     <script id="service-detail" type="text/ng-template">
         <ion-modal-view hide-nav-bar="true">
-            <ion-header-bar class="bar bar-header bar-stable">
+            <ion-header-bar class="egobie-header-bar">
                 <h1 class="title">DETAIL</h1>
                 <button class="button button-icon icon ion-android-close"
                         ng-click="hideService()"></button>
             </ion-header-bar>
-            <ion-content overflow-scroll="true" padding="true" class="has-header padding">
+            <div class="egobie-bg-mask">
+                <div class="egobie-bg-mask-1"></div>
+                <div class="egobie-bg-mask-2"></div>
+            </div>
+            <ion-content overflow-scroll="true" padding="true" class="padding">
                 <ion-item class="egobie-service-detail-title">
                     <div class="left">
                         <p class="price">{{selectedService.price}}</p>

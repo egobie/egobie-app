@@ -55,6 +55,7 @@ $Advance: #567CC0;
         margin-top: 35px;
         margin-bottom: 30px;
         border-bottom: 1px solid $Title-Border-Bottom;
+        background: transparent;
     }
 
     &-service-item {
@@ -129,6 +130,7 @@ $Advance: #567CC0;
     &-service-detail-title {
         display: flex;
         padding: 10px;
+        border-radius: 10px;
 
         div {
             display: inline-block;
@@ -186,6 +188,7 @@ $Advance: #567CC0;
             border: 0px;
             position: relative;
             margin-bottom: -5px;
+            background: transparent;
 
             .dot {
                 position: absolute;

@@ -10258,8 +10258,6 @@ a.button {
       color: #93999C; }
   .egobie-form .item input, .egobie-car-add .item input, .egobie-car-edit .item input {
     padding-left: 17px; }
-  .egobie-form .item select option.init, .egobie-car-add .item select option.init, .egobie-car-edit .item select option.init {
-    color: #93999C; }
 
 .egobie-form-button {
   width: 300px !important;
@@ -12035,8 +12033,6 @@ a.button {
       color: #93999C; }
   .egobie-form .item input, .egobie-payment-add .item input, .egobie-payment-edit .item input {
     padding-left: 17px; }
-  .egobie-form .item select option.init, .egobie-payment-add .item select option.init, .egobie-payment-edit .item select option.init {
-    color: #93999C; }
 
 .egobie-form-button {
   width: 300px !important;
@@ -12161,7 +12157,8 @@ a.button {
   border: 0;
   margin-top: 35px;
   margin-bottom: 30px;
-  border-bottom: 1px solid #1BB3EC; }
+  border-bottom: 1px solid #1BB3EC;
+  background: transparent; }
 
 .egobie-service-item {
   width: 95%;
@@ -12235,7 +12232,8 @@ a.button {
   margin: 0px;
   border: 0px;
   position: relative;
-  margin-bottom: -5px; }
+  margin-bottom: -5px;
+  background: transparent; }
   .egobie-service-detail-list .detail-section .dot {
     position: absolute;
     display: block;
@@ -12523,8 +12521,6 @@ a.button {
       color: #93999C; }
   .egobie-form .item input, .egobie-user-form .item input, .egobie-password-form .item input, .egobie-home-form .item input, .egobie-work-form .item input {
     padding-left: 17px; }
-  .egobie-form .item select option.init, .egobie-user-form .item select option.init, .egobie-password-form .item select option.init, .egobie-home-form .item select option.init, .egobie-work-form .item select option.init {
-    color: #93999C; }
 
 .egobie-form-button, .egobie-user-form-button, .egobie-password-form-button, .egobie-home-form-button, .egobie-work-form-button {
   width: 300px !important;
