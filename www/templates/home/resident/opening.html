@@ -1,13 +1,17 @@
-<ion-modal-view cache-view="false"
+<ion-modal-view hide-nav-bar="true" cache-view="false"
                 ng-app="app.home.resident"
                 ng-controller="openingCtrl">
-    <ion-header-bar class="bar bar-header bar-stable">
+    <ion-header-bar class="egobie-header-bar">
         <button class="button button-icon icon ion-android-close"
                 ng-click="hideOpeningModal()"></button>
         <h1 class="title">OPENINGS</h1>
         <button class="button button-icon icon ion-android-refresh"
                 ng-click="reloadOpening()"></button>
     </ion-header-bar>
+    <div class="egobie-bg-mask">
+        <div class="egobie-bg-mask-1"></div>
+        <div class="egobie-bg-mask-2"></div>
+    </div>
     <ion-content padding="true" class="has-header padding">
         <ion-list class="egobie-opening-list-left"></ion-list>
         <ion-list class="list-margin-top-10 egobie-opening-list-right">

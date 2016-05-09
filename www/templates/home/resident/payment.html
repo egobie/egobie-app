@@ -1,17 +1,56 @@
 <ion-view hide-nav-bar="true"
           ng-controller="paymentSelectCtrl">
-    <ion-header-bar class="bar-stable egobie-header-bar">
+    <ion-header-bar class="egobie-payment-header-bar">
         <button class="button button-icon icon ion-ios-arrow-back"
                 ng-click="$ionicGoBack()"></button>
         <h1 class="title">PAYMENTS</h1>
         <button class="button button-icon icon ion-android-add"
               ng-click="showAddPayment()"></button>
     </ion-header-bar>
+    <div class="egobie-bg-mask">
+        <div class="egobie-bg-mask-1"></div>
+        <div class="egobie-bg-mask-2"></div>
+    </div>
     <ion-content padding="true">
         <ion-list>
-            <ion-checkbox ng-repeat="(id, payment) in payments"
-                          ng-model="payment.checked"
-                          ng-click="pickPayment(payment)">{{payment.account_number}}</ion-checkbox>
+            <ion-item class="egobie-empty-payment"
+                      ng-show="noPayment()">
+                <div class="sample-card">
+                    <div class="top">
+                        <div class="line"></div>
+                    </div>
+                    <div class="bottom">
+                        <div class="line-1"></div>
+                        <div class="line-2"></div>
+                        <div class="line-3"></div>
+                        <div class="line-4"></div>
+                        <i class="circle-1"></i>
+                        <i class="circle-2"></i>
+                    </div>
+                </div>
+                <p class="no">No payment added yet</p>
+                <p class="add">Click <i class="icon ion-android-add icon-2"></i> to add a new one</p>
+            </ion-item>
+
+            <ion-item class="egobie-payment"
+                      ng-repeat="(id, p) in payments"
+                      ng-class="isPaymentSelected(p.checked)"
+                      ng-model="p.checked"
+                      ng-click="pickPayment(p)">
+                <div class="left">
+                    <p class="name">{{p.account_name}}</p>
+                    <p class="number">XXXX XXXX XXXX {{p.account_number}}</p>
+                    <p>
+                        <span class="exp"><i>EXP</i> {{p.expire_month}}/{{p.expire_year.substr(-2, 2)}}</span>
+                        <span class="zip"><i>ZIP</i> {{p.account_zip}}</span>
+                    </p>
+                    <p class="type">{{p.account_type}}</p>
+                </div>
+                <div class="right">
+                    <i class="egobie-logo"></i>
+                    <i class="visa-logo"></i>
+                </div>
+            </ion-item>
         </ion-list>
     </ion-content>
 </ion-view>

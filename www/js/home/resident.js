@@ -355,6 +355,12 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                 $state.go("menu.home.reservation");
             }, 100);
         };
+
+        $scope.isCarSelected = function(selected) {
+            return {
+                "egobie-plate-disabled": !selected
+            };
+        };
     })
 
     .controller('serviceSelectCtl', function($scope, $state, shared, orderService, order) {
@@ -442,5 +448,11 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
             $timeout(function() {
                 $state.go("menu.home.reservation");
             }, 100);
+        };
+
+        $scope.isPaymentSelected = function(selected) {
+            return {
+                "egobie-payment-disabled": !selected
+            };
         };
     });

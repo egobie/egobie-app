@@ -10019,6 +10019,12 @@ a.button {
   .egobie-no-car p.add .icon-2, .egobie-empty-car p.add .icon-2 {
     font-size: 30px; }
 
+.egobie-plate-disabled {
+  background: rgba(0, 0, 0, 0.2) !important; }
+
+.egobie-plate-disabled * {
+  background: transparent; }
+
 .egobie-plate, .egobie-car {
   width: 90%;
   margin-left: auto;
@@ -11900,6 +11906,12 @@ a.button {
     margin-top: 50px; }
   .egobie-no-payment p.add .icon-2, .egobie-empty-payment p.add .icon-2 {
     font-size: 30px; }
+
+.egobie-payment-disabled {
+  background: rgba(0, 0, 0, 0.2) !important; }
+
+.egobie-payment-disabled * {
+  background: transparent; }
 
 .egobie-payment-template, .egobie-payment-visa, .egobie-payment, .egobie-payment-discover {
   display: table;

@@ -107,6 +107,14 @@
     }
 }
 
+.egobie-payment-disabled {
+    background: rgba(0, 0, 0, 0.20) !important;
+}
+
+.egobie-payment-disabled * {
+    background: transparent;
+}
+
 .egobie-payment-template {
     @extend .egobie-center;
 

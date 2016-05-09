@@ -1,5 +1,14 @@
-<ion-view title="SERVICES"
+<ion-view hide-nav-bar="true"
           ng-controller="serviceSelectCtl">
+    <ion-header-bar class="egobie-header-bar">
+        <button class="button button-icon icon ion-ios-arrow-back"
+                ng-click="$ionicGoBack()"></button>
+        <h1 class="title">SERVICES</h1>
+    </ion-header-bar>
+    <div class="egobie-bg-mask">
+        <div class="egobie-bg-mask-1"></div>
+        <div class="egobie-bg-mask-2"></div>
+    </div>
     <ion-content padding="true" class="has-header">
         <ion-list overflow-scroll="true">
             <ion-item class="item-divider">{{serviceNames["CAR_WASH"]}}</ion-item>
@@ -17,11 +26,6 @@
                           ng-click="toggleService(service, detailing)"
                           ng-model="service.checked">{{service.name}} - {{service.price}}$</ion-checkbox>
         </ion-list>
-
-        <!--
-        <button class="button button-block button-dark"
-                ng-click="pickService()">Save</button>
-        -->
     </ion-content>
     <ion-footer-bar class="bar-dark"
                     ng-click="pickService()">
