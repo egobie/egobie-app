@@ -11,7 +11,6 @@
     </div>
     <ion-content padding="true">
         <ion-list class="egobie-car-add">
-            <!-- Plate -->
             <ion-item class="item-input">
                 <i class="icon-mask"></i>
                 <i class="icon ion-person"></i>
@@ -19,25 +18,23 @@
                        ng-model="selected.plate"/>
             </ion-item>
 
-            <!-- Year -->
             <ion-item class="item-input">
                 <i class="icon-mask"></i>
                 <i class="icon ion-calendar"></i>
                 <select id="addcar-year"
                         ng-model="selected.year"
                         ng-options="year as year for year in years">
-                    <option class="init" value="">Choose Year</option>
+                    <option value="">Choose Year</option>
                 </select>
             </ion-item>
 
-            <!-- State -->
             <ion-item class="item-input">
                 <i class="icon-mask"></i>
                 <i class="icon ion-map"></i>
                 <select id="addcar-state"
                         ng-model="selected.state"
                         ng-options="state as fullname for (state, fullname) in states">
-                    <option class="init" value="">Choose State</option>
+                    <option value="">Choose State</option>
                 </select>
             </ion-item>
 
@@ -48,7 +45,7 @@
                         ng-model="selected.maker"
                         ng-options="maker.id as maker.title for maker in makers"
                         ng-change="changeMaker()">
-                    <option class="init" value="">Choose Maker</option>
+                    <option value="">Choose Maker</option>
                 </select>
             </ion-item>
 
@@ -58,7 +55,7 @@
                 <select id="addcar-model"
                         ng-model="selected.model"
                         ng-options="model.id as model.title for model in models">
-                    <option class="init" value="">Choose Model</option>
+                    <option value="">Choose Model</option>
                 </select>
             </ion-item>
 
@@ -68,7 +65,7 @@
                 <select id="addcar-color"
                         ng-model="selected.color"
                         ng-options="color as color for color in colors">
-                    <option class="init" value="">Choose Color</option>
+                    <option value="">Choose Color</option>
                 </select>
             </ion-item>
         </ion-list>
