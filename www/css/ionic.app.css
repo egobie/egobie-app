@@ -9814,7 +9814,7 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(147, 153, 156, 0.13); }
+    background-color: rgba(147, 153, 156, 0.1); }
 
 * {
   font-family: eGobieFont !important; }
@@ -9908,7 +9908,7 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(147, 153, 156, 0.13); }
+    background-color: rgba(147, 153, 156, 0.1); }
 
 * {
   font-family: eGobieFont !important; }
@@ -9991,7 +9991,7 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(147, 153, 156, 0.13); }
+    background-color: rgba(147, 153, 156, 0.1); }
 
 * {
   font-family: eGobieFont !important; }
@@ -10001,7 +10001,8 @@ a.button {
   height: 400px;
   margin-top: 20px;
   text-align: center;
-  border: 0px; }
+  border: 0px;
+  background: transparent; }
   .egobie-no-car .icon-1, .egobie-empty-car .icon-1 {
     display: block;
     height: 150px;
@@ -10226,7 +10227,7 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(147, 153, 156, 0.13); }
+    background-color: rgba(147, 153, 156, 0.1); }
 
 * {
   font-family: eGobieFont !important; }
@@ -10398,7 +10399,7 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(147, 153, 156, 0.13); }
+    background-color: rgba(147, 153, 156, 0.1); }
 
 * {
   font-family: eGobieFont !important; }
@@ -10481,7 +10482,7 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(147, 153, 156, 0.13); }
+    background-color: rgba(147, 153, 156, 0.1); }
 
 * {
   font-family: eGobieFont !important; }
@@ -10490,7 +10491,8 @@ a.button {
   width: 100%;
   margin-bottom: 10px;
   text-align: center;
-  border: 0px; }
+  border: 0px;
+  background: transparent; }
   .egobie-no-reservation .icon-1, .egobie-empty-reservation .icon-1, .egobie-no-history .icon-1, .egobie-empty-history .icon-1 {
     display: block;
     height: 100px;
@@ -10893,7 +10895,7 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(147, 153, 156, 0.13); }
+    background-color: rgba(147, 153, 156, 0.1); }
 
 * {
   font-family: eGobieFont !important; }
@@ -11033,7 +11035,7 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(147, 153, 156, 0.13); }
+    background-color: rgba(147, 153, 156, 0.1); }
 
 * {
   font-family: eGobieFont !important; }
@@ -11213,7 +11215,7 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(147, 153, 156, 0.13); }
+    background-color: rgba(147, 153, 156, 0.1); }
 
 * {
   font-family: eGobieFont !important; }
@@ -11296,7 +11298,7 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(147, 153, 156, 0.13); }
+    background-color: rgba(147, 153, 156, 0.1); }
 
 * {
   font-family: eGobieFont !important; }
@@ -11306,7 +11308,8 @@ a.button {
   height: 400px;
   margin-top: 20px;
   text-align: center;
-  border: 0px; }
+  border: 0px;
+  background: transparent; }
   .egobie-no-notification .icon-1, .egobie-empty-notification .icon-1 {
     display: block;
     height: 150px;
@@ -11399,7 +11402,7 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(147, 153, 156, 0.13); }
+    background-color: rgba(147, 153, 156, 0.1); }
 
 * {
   font-family: eGobieFont !important; }
@@ -11503,7 +11506,7 @@ a.button {
 .egobie-left {
   float: left; }
 
-.egobie-center, .egobie-payment {
+.egobie-center, .egobie-payment-template, .egobie-payment-visa, .egobie-payment, .egobie-payment-discover {
   left: 0;
   right: 0;
   margin-left: auto !important;
@@ -11545,7 +11548,7 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(147, 153, 156, 0.13); }
+    background-color: rgba(147, 153, 156, 0.1); }
 
 * {
   font-family: eGobieFont !important; }
@@ -11586,7 +11589,7 @@ a.button {
 .egobie-left {
   float: left; }
 
-.egobie-center, .egobie-payment {
+.egobie-center, .egobie-payment-template, .egobie-payment-visa, .egobie-payment, .egobie-payment-discover {
   left: 0;
   right: 0;
   margin-left: auto !important;
@@ -11628,7 +11631,7 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(147, 153, 156, 0.13); }
+    background-color: rgba(147, 153, 156, 0.1); }
 
 * {
   font-family: eGobieFont !important; }
@@ -11638,7 +11641,8 @@ a.button {
   height: 400px;
   margin-top: 20px;
   text-align: center;
-  border: 0px; }
+  border: 0px;
+  background: transparent; }
   .egobie-no-payment .sample-card, .egobie-empty-payment .sample-card {
     border: 1px solid #404041;
     border-radius: 20px;
@@ -11704,66 +11708,72 @@ a.button {
   .egobie-no-payment p.add .icon-2, .egobie-empty-payment p.add .icon-2 {
     font-size: 30px; }
 
-.egobie-payment {
+.egobie-payment-template, .egobie-payment-visa, .egobie-payment, .egobie-payment-discover {
   display: table;
   padding: 0;
   height: 180px;
-  width: 95%;
+  width: 85%;
   margin-top: 15px;
   border: 0;
+  border-radius: 10px;
   background: transparent; }
-  .egobie-payment * {
+  .egobie-payment-template *, .egobie-payment-visa *, .egobie-payment *, .egobie-payment-discover * {
     color: #FFFFFF; }
-  .egobie-payment .left {
+  .egobie-payment-template .left, .egobie-payment-visa .left, .egobie-payment .left, .egobie-payment-discover .left {
     display: table-cell;
     width: 70%;
     border-style: solid;
-    border-color: #FFFFFF;
-    border-width: 1px 0px 1px 1px;
-    border-radius: 10px 0px 0px 10px; }
-    .egobie-payment .left p {
+    border-color: #FFFFFF; }
+    .egobie-payment-template .left p, .egobie-payment-visa .left p, .egobie-payment .left p, .egobie-payment-discover .left p {
       display: block;
       position: relative;
-      width: 82%;
+      width: 90%;
       height: 25px;
       line-height: 25px;
       margin-left: 8%;
       color: #FFFFFF; }
-      .egobie-payment .left p.name {
+      .egobie-payment-template .left p.name, .egobie-payment-visa .left p.name, .egobie-payment .left p.name, .egobie-payment-discover .left p.name {
         margin-top: 10%;
         font-size: x-large;
         height: 30px;
         line-height: 30px; }
-      .egobie-payment .left p.number {
+      .egobie-payment-template .left p.number, .egobie-payment-visa .left p.number, .egobie-payment .left p.number, .egobie-payment-discover .left p.number {
         margin-top: 10%;
         font-size: large; }
-      .egobie-payment .left p span.exp {
+      .egobie-payment-template .left p span.exp, .egobie-payment-visa .left p span.exp, .egobie-payment .left p span.exp, .egobie-payment-discover .left p span.exp {
         margin-top: 5%;
         font-size: medium; }
-      .egobie-payment .left p span.zip {
+        .egobie-payment-template .left p span.exp i, .egobie-payment-visa .left p span.exp i, .egobie-payment .left p span.exp i, .egobie-payment-discover .left p span.exp i {
+          color: rgba(255, 255, 255, 0.5); }
+      .egobie-payment-template .left p span.zip, .egobie-payment-visa .left p span.zip, .egobie-payment .left p span.zip, .egobie-payment-discover .left p span.zip {
         font-size: medium;
         float: right; }
-      .egobie-payment .left p.type {
-        margin-top: 10%;
+        .egobie-payment-template .left p span.zip i, .egobie-payment-visa .left p span.zip i, .egobie-payment .left p span.zip i, .egobie-payment-discover .left p span.zip i {
+          color: rgba(255, 255, 255, 0.5); }
+      .egobie-payment-template .left p.type, .egobie-payment-visa .left p.type, .egobie-payment .left p.type, .egobie-payment-discover .left p.type {
+        margin-top: 15px;
         font-size: small; }
-  .egobie-payment .right {
+  .egobie-payment-template .right, .egobie-payment-visa .right, .egobie-payment .right, .egobie-payment-discover .right {
     display: table-cell;
     border-style: solid;
-    border-color: #FFFFFF;
-    border-width: 1px 1px 1px 0px;
-    border-radius: 0px 10px 10px 0px;
-    background-color: #364351; }
-    .egobie-payment .right i {
+    border-color: #FFFFFF; }
+    .egobie-payment-template .right i, .egobie-payment-visa .right i, .egobie-payment .right i, .egobie-payment-discover .right i {
       display: block;
       position: absolute;
       height: 38%;
       right: 5%; }
-      .egobie-payment .right i.egobie-logo {
+      .egobie-payment-template .right i.egobie-logo, .egobie-payment-visa .right i.egobie-logo, .egobie-payment .right i.egobie-logo, .egobie-payment-discover .right i.egobie-logo {
         top: 5%;
         content: url("../img/logo/white.png"); }
-      .egobie-payment .right i.visa-logo {
-        bottom: 5%;
+      .egobie-payment-template .right i.visa-logo, .egobie-payment-visa .right i.visa-logo, .egobie-payment .right i.visa-logo, .egobie-payment-discover .right i.visa-logo {
+        bottom: 0px;
         content: url("../img/icon/payment_visa.png"); }
+
+.egobie-payment-visa, .egobie-payment {
+  background: linear-gradient(100deg, #1391CF 20%, #117ECA 50%, #1075B3 85%); }
+
+.egobie-payment-discover {
+  background: linear-gradient(100deg, #F9B495 20%, #F69971 50%, #F26223 85%); }
 
 .egobie-payment-add .item, .egobie-payment-edit .item {
   padding-top: 8px;
@@ -11869,7 +11879,7 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(147, 153, 156, 0.13); }
+    background-color: rgba(147, 153, 156, 0.1); }
 
 * {
   font-family: eGobieFont !important; }
@@ -12123,7 +12133,7 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(147, 153, 156, 0.13); }
+    background-color: rgba(147, 153, 156, 0.1); }
 
 * {
   font-family: eGobieFont !important; }
@@ -12206,7 +12216,7 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(147, 153, 156, 0.13); }
+    background-color: rgba(147, 153, 156, 0.1); }
 
 * {
   font-family: eGobieFont !important; }
@@ -12360,7 +12370,7 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(147, 153, 156, 0.13); }
+    background-color: rgba(147, 153, 156, 0.1); }
 
 * {
   font-family: eGobieFont !important; }
@@ -12547,7 +12557,7 @@ a.button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(147, 153, 156, 0.13); }
+    background-color: rgba(147, 153, 156, 0.1); }
 
 * {
   font-family: eGobieFont !important; }

@@ -6,6 +6,7 @@
     margin-top: 20px;
     text-align: center;
     border: 0px;
+    background: transparent;
 
     .sample-card {
         border: 1px solid #404041;
@@ -104,4 +105,113 @@
     p.add .icon-2 {
         font-size: 30px;
     }
+}
+
+.egobie-payment-template {
+    @extend .egobie-center;
+
+    display: table;
+    padding: 0;
+    height: 180px;
+    width: 85%;
+    margin-top: 15px;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+
+    * {
+        color: #FFFFFF;
+    }
+
+    .left {
+        display: table-cell;
+        width: 70%;
+        border-style: solid;
+        border-color: #FFFFFF;
+        //border-width: 1px 0px 1px 1px;
+        //border-radius: 10px 0px 0px 10px;
+
+        p {
+            display: block;
+            position: relative;
+            width: 90%;
+            height: 25px;
+            line-height: 25px;
+            margin-left: 8%;
+            color: #FFFFFF;
+
+            &.name {
+                margin-top: 10%;
+                font-size: x-large;
+                height: 30px;
+                line-height: 30px;
+            }
+
+            &.number {
+                margin-top: 10%;
+                font-size: large;
+            }
+
+            span.exp {
+                margin-top: 5%;
+                font-size: medium;
+
+                i {
+                    color: rgba(255, 255, 255, 0.5);
+                }
+            }
+
+            span.zip {
+                font-size: medium;
+                float: right;
+
+                i {
+                    color: rgba(255, 255, 255, 0.5);
+                }
+            }
+
+            &.type {
+                margin-top: 15px;
+                font-size: small;
+            }
+        }
+    }
+
+    .right {
+        display: table-cell;
+        border-style: solid;
+        border-color: #FFFFFF;
+        //border-width: 1px 1px 1px 0px;
+        //border-radius: 0px 10px 10px 0px;
+        //background-color: #364351;
+
+        i {
+            display: block;
+            position: absolute;
+            height: 38%;
+            right: 5%;
+
+            &.egobie-logo {
+                top: 5%;
+                content: logo($Logo-White);
+            }
+
+            &.visa-logo {
+                bottom: 0px;
+                content: icon($Payment-Visa);
+            }
+        }
+    }
+}
+
+.egobie-payment-visa {
+    @extend .egobie-payment-template;
+
+    background: linear-gradient(100deg, #1391CF 20%, #117ECA 50%, #1075B3 85%);
+}
+
+.egobie-payment-discover {
+    @extend .egobie-payment-template;
+
+    background: linear-gradient(100deg, #F9B495 20%, #F69971 50%, #F26223 85%);
 }
