@@ -3,6 +3,22 @@
 
 .egobie {
 
+    &-setting-form {
+        border: 0px;
+
+        .item {
+            border: 0px;
+        }
+
+        .item-divider {
+            border: 0px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 20px;
+            margin-top: 15px;
+            padding-bottom: 15px;
+        }
+    }
+
     &-user-form-bg {
         @extend .egobie-form-bg;
     }

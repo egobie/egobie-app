@@ -1,12 +1,16 @@
 <ion-view hide-nav-bar="true"
           ng-app="app.setting"
           ng-controller="settingCtrl">
-    <ion-header-bar class="bar-stable egobie-header-bar">
+    <ion-header-bar class="egobie-header-bar">
         <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
         <h1 class="title">SETTINGS</h1>
     </ion-header-bar>
-    <ion-content>
-        <ion-list>
+    <div class="egobie-bg-mask">
+        <div class="egobie-bg-mask-1"></div>
+        <div class="egobie-bg-mask-2"></div>
+    </div>
+    <ion-content padding="true" class="egobie-transparent">
+        <ion-list class="egobie-setting-form">
             <ion-item class="item-divider">User Settings</ion-item>
             <ion-item menu-close="" class="item-icon-left item-icon-right"
                       ng-click="showEditUser()">
