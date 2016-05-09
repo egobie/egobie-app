@@ -6,7 +6,7 @@
 
 angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
 
-    .controller('historytrl', function($scope, $ionicModal, $http, shared, url) {
+    .controller('historyCtrl', function($scope, $ionicModal, $http, shared, url) {
         $scope.histories = shared.getUserHistories();
         $scope.reservations = [];
         $scope.max = 5;
@@ -44,7 +44,7 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
                     $scope.reservations = [];
 
                     Array.prototype.forEach.call(data, function(service) {
-                        if (service.status === "IN_PROGRESS") {
+                        if (service.status === "RESERVED") {
                             $scope.reservations.push(service);
                         }
                     });

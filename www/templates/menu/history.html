@@ -1,6 +1,6 @@
 <ion-view hide-nav-bar="true" cache-view="false"
           ng-app="app.history"
-          ng-controller="historytrl">
+          ng-controller="historyCtrl">
     <ion-header-bar class="egobie-header-bar">
         <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
         <h1 class="title">MY SERVICES</h1>
@@ -13,31 +13,42 @@
     </div>
     <ion-content padding="true">
         <ion-list>
-            <ion-item class="item-divider item-icon-right egobie-history-title">RESERVATION</ion-item>
+            <ion-item class="item-divider item-icon-right egobie-reservation-title">RESERVATION</ion-item>
             <ion-item class="egobie-empty-reservation"
                       ng-show="noReservation()">
                 <i class="icon ion-android-checkmark-circle icon-1"></i>
                 <p class="no">No reservation</p>
             </ion-item>
 
-            <ion-item menu-close="" class="card"
+            <ion-item class="egobie-reservation-list"
                       ng-repeat="reservation in reservations">
-                <ion-list class="card">
-                    <ion-item class="item-avatar">
-                        <img class="egobie-avatar"/>
-                        <h2>{{reservation.plate}}</h2>
-                        <p>
-                            <a href="#" class="subdued">{{reservation.time}}</a>
-                            <a href="#" class="subdued">{{reservation.price}} $</a>
-                        </p>
-                    </ion-item>
+                <div class="left">
+                    <p class="price">{{reservation.price}}</p>
+                </div>
+                <div class="right">
+                    <div class="time-services">
+                        <div class="time">
+                            <p class="title">Estimated Start:</p>
+                            <p class="value">{{reservation.reserve_start_time}}</p>
+                        </div>
+                        <div class="services">
+                            <p class="title">Services</p>
+                            <p class="value"
+                               ng-repeat="service in reservation.services">{{service.name}}</p>
+                        </div>
+                    </div>
 
-                    <ion-item class="item-body">
-                        <p>
-                            This is Note
-                        </p>
-                    </ion-item>
-                </ion-list>
+                    <div class="plate-reserve">
+                        <div class="plate">
+                            <p class="title">Plate No.</p>
+                            <p class="value">{{reservation.plate}}</p>
+                        </div>
+                        <div class="reserve">
+                            <p class="title">Reservation ID #</p>
+                            <p class="value">{{reservation.reservation_id}}</p>
+                        </div>
+                    </div>
+                </div>
             </ion-item>
         </ion-list>
 
@@ -98,12 +109,16 @@
 
     <script id="history-detail" type="text/ng-template">
         <ion-modal-view hide-nav-bar="true">
-            <ion-header-bar class="bar bar-header bar-stable">
+            <ion-header-bar class="egobie-header-bar">
                 <h1 class="title">HISTORY</h1>
                 <button class="button button-icon icon ion-android-close"
                         ng-click="hideHistory()"></button>
             </ion-header-bar>
-            <ion-content padding="true" class="has-header egobie-history-detail">
+            <div class="egobie-bg-mask">
+                <div class="egobie-bg-mask-1"></div>
+                <div class="egobie-bg-mask-2"></div>
+            </div>
+            <ion-content padding="true" class="egobie-history-detail">
                 <ion-list>
                     <ion-list>
                         <ion-item class="egobie-history-time">

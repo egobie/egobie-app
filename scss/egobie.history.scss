@@ -11,7 +11,7 @@
         @extend .egobie-no-history;
     }
 
-    &-history-title {
+    &-reservation-title, &-history-title {
         padding-left: 0px;
         font-size: 25px;
         color: #404041;
@@ -20,14 +20,96 @@
         margin-top: 5px;
         margin-bottom: 30px;
         border-bottom: 1px solid #404041;
-        background-color: #FFFFFF;
+        //background-color: #FFFFFF;
+    }
+
+    &-history-title {
+        margin-top: 20px;
+    }
+
+    &-reservation-list {
+        display: flex;
+        padding: 0px;
+        border-radius: 10px;
+
+        .left {
+            display: inline-block;
+            width: 28%;
+            height: 100px;
+            margin: 15px 10px 0px 5px;
+            border-right: 1px solid #000000;
+
+            .price {
+                font-size: 25px;
+                height: 30px;
+                line-height: 30px;
+                padding-left: 12px;
+
+                &:before {
+                    content: "$";
+                    position: absolute;
+                    font-size: 15px;
+                    top: 8px;
+                    left: 8px;
+                }
+            }
+        }
+
+        .right {
+            display: flex;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            .time-services {
+                display: inline-block;
+
+                .time, .services {
+                    .title {
+                        font-size: 10px;
+                    }
+
+                    .value {
+                        color: #000000
+                    }
+                }
+
+                .time .value {
+                    margin-bottom: 5px;
+                }
+
+                .services .value:before {
+                    content: "- ";
+                }
+            }
+
+            .plate-reserve {
+                display: inline-block;
+                margin-left: 10px;
+
+                .plate, .reserve {
+                    padding-left: 11px;
+
+                    .title {
+                        display: block;
+                        font-size: 10px;
+                    }
+
+                    .value {
+                        color: #000000;
+                    }
+                }
+
+                .plate .value {
+                    margin-bottom: 5px;
+                }
+            }
+        }
     }
 
     &-history-list {
         display: flex;
         padding: 10px;
-        height: 180px;
-        border: 1px solid #404041;
+        height: 165px;
         border-left: 5px solid red;
         border-radius: 8px;
 
@@ -37,8 +119,8 @@
             border-right: 1px solid #404041;
 
             .price {
-                font-size: 30px;
-                padding-left: 10px;
+                font-size: 25px;
+                padding-left: 8px;
                 margin-top: 10px;
 
                 &:before {
@@ -52,20 +134,20 @@
 
             .ontime {
                 display: flex;
-                margin-top: 90px;
+                margin-top: 82px;
                 height: 40px;
                 line-height: 40px;
 
                 i {
                     display: inline-block;
-                    font-size: 20px;
+                    font-size: 15px;
                     padding-right: 5px;
                     color: green;
                 }
 
                 p {
                     display: inline-block;
-                    font-size: 20px;
+                    font-size: 15px;
                     color: green;
                 }
             }
@@ -83,7 +165,7 @@
                     .dot {
                         width: 10px;
                         height: 10px;
-                        border: 3px solid #404041;
+                        border: 3px solid #000000;
                         border-radius: 100%;
                         display: inline-block;
                         position: absolute;
@@ -94,30 +176,30 @@
                     .line {
                         position: absolute;
                         display: inline-block;
-                        border: 1px dashed #404041;
-                        height: 23px;
+                        border: 1px dashed #000000;
+                        height: 18px;
                         left: 19px;
-                        top: 20px;
+                        top: 16px;
                     }
 
                     p {
                         margin-left: 40px;
-                        font-size: 16px;
+                        font-size: 14px;
                         font-weight: 500;
 
                     }
                 }
 
                 .end {
-                    margin-top: 10px;
+                    margin-top: 5px;
 
                     .dot {
-                        top: 16px;
+                        top: 11px;
                     }
 
                     p {
-                        border-top: 1px solid #404041;
-                        padding-top: 10px;
+                        border-top: 1px solid #000000;
+                        padding-top: 5px;
                     }
                 }
             }
@@ -137,13 +219,13 @@
 
                     .title {
                         margin-bottom: 5px;
-                        font-size: 13px;
+                        font-size: 10px;
                     }
 
                     .content {
-                        font-size: 15px;
+                        font-size: 14px;
                         font-weight: 500;
-                        color: #404041;
+                        color: #000000;
                         padding-bottom: 5px;
                     }
                 }
@@ -185,11 +267,13 @@
 
         .card {
             @extend .egobie-center;
+
             width: 95%;
             padding: 0;
             border: 1px solid #404041;
             border-radius: 10px;
             margin-top: 15px;
+            background: transparent;
         }
 
         .section {
@@ -286,6 +370,7 @@
 
         .egobie-history-car {
             @extend .card;
+
             border: 0px;
             border-top: 1px solid #404041;
             border-radius: 0px;
@@ -328,6 +413,7 @@
 
         .egobie-history-payment {
             @extend .card;
+
             border: 0px;
             border-top: 1px solid #404041;
             border-radius: 0px;
@@ -383,6 +469,7 @@
 
         .egobie-history-service {
             @extend .card;
+
             border: 0px;
             border-top: 1px solid #404041;
             border-radius: 0px;

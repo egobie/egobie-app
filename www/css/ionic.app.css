@@ -10628,7 +10628,7 @@ a.button {
     height: 30px;
     line-height: 30px; }
 
-.egobie-history-title {
+.egobie-reservation-title, .egobie-history-title {
   padding-left: 0px;
   font-size: 25px;
   color: #404041;
@@ -10636,14 +10636,63 @@ a.button {
   border: 0;
   margin-top: 5px;
   margin-bottom: 30px;
-  border-bottom: 1px solid #404041;
-  background-color: #FFFFFF; }
+  border-bottom: 1px solid #404041; }
+
+.egobie-history-title {
+  margin-top: 20px; }
+
+.egobie-reservation-list {
+  display: flex;
+  padding: 0px;
+  border-radius: 10px; }
+  .egobie-reservation-list .left {
+    display: inline-block;
+    width: 28%;
+    height: 100px;
+    margin: 15px 10px 0px 5px;
+    border-right: 1px solid #000000; }
+    .egobie-reservation-list .left .price {
+      font-size: 25px;
+      height: 30px;
+      line-height: 30px;
+      padding-left: 12px; }
+      .egobie-reservation-list .left .price:before {
+        content: "$";
+        position: absolute;
+        font-size: 15px;
+        top: 8px;
+        left: 8px; }
+  .egobie-reservation-list .right {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+    .egobie-reservation-list .right .time-services {
+      display: inline-block; }
+      .egobie-reservation-list .right .time-services .time .title, .egobie-reservation-list .right .time-services .services .title {
+        font-size: 10px; }
+      .egobie-reservation-list .right .time-services .time .value, .egobie-reservation-list .right .time-services .services .value {
+        color: #000000; }
+      .egobie-reservation-list .right .time-services .time .value {
+        margin-bottom: 5px; }
+      .egobie-reservation-list .right .time-services .services .value:before {
+        content: "- "; }
+    .egobie-reservation-list .right .plate-reserve {
+      display: inline-block;
+      margin-left: 10px; }
+      .egobie-reservation-list .right .plate-reserve .plate, .egobie-reservation-list .right .plate-reserve .reserve {
+        padding-left: 11px; }
+        .egobie-reservation-list .right .plate-reserve .plate .title, .egobie-reservation-list .right .plate-reserve .reserve .title {
+          display: block;
+          font-size: 10px; }
+        .egobie-reservation-list .right .plate-reserve .plate .value, .egobie-reservation-list .right .plate-reserve .reserve .value {
+          color: #000000; }
+      .egobie-reservation-list .right .plate-reserve .plate .value {
+        margin-bottom: 5px; }
 
 .egobie-history-list {
   display: flex;
   padding: 10px;
-  height: 180px;
-  border: 1px solid #404041;
+  height: 165px;
   border-left: 5px solid red;
   border-radius: 8px; }
   .egobie-history-list .left {
@@ -10651,8 +10700,8 @@ a.button {
     width: 35%;
     border-right: 1px solid #404041; }
     .egobie-history-list .left .price {
-      font-size: 30px;
-      padding-left: 10px;
+      font-size: 25px;
+      padding-left: 8px;
       margin-top: 10px; }
       .egobie-history-list .left .price:before {
         content: "$";
@@ -10662,17 +10711,17 @@ a.button {
         top: 10px; }
     .egobie-history-list .left .ontime {
       display: flex;
-      margin-top: 90px;
+      margin-top: 82px;
       height: 40px;
       line-height: 40px; }
       .egobie-history-list .left .ontime i {
         display: inline-block;
-        font-size: 20px;
+        font-size: 15px;
         padding-right: 5px;
         color: green; }
       .egobie-history-list .left .ontime p {
         display: inline-block;
-        font-size: 20px;
+        font-size: 15px;
         color: green; }
   .egobie-history-list .right {
     display: inline-block;
@@ -10682,7 +10731,7 @@ a.button {
       .egobie-history-list .right .egobie-range .start .dot, .egobie-history-list .right .egobie-range .end .dot {
         width: 10px;
         height: 10px;
-        border: 3px solid #404041;
+        border: 3px solid #000000;
         border-radius: 100%;
         display: inline-block;
         position: absolute;
@@ -10691,21 +10740,21 @@ a.button {
       .egobie-history-list .right .egobie-range .start .line, .egobie-history-list .right .egobie-range .end .line {
         position: absolute;
         display: inline-block;
-        border: 1px dashed #404041;
-        height: 23px;
+        border: 1px dashed #000000;
+        height: 18px;
         left: 19px;
-        top: 20px; }
+        top: 16px; }
       .egobie-history-list .right .egobie-range .start p, .egobie-history-list .right .egobie-range .end p {
         margin-left: 40px;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 500; }
     .egobie-history-list .right .egobie-range .end {
-      margin-top: 10px; }
+      margin-top: 5px; }
       .egobie-history-list .right .egobie-range .end .dot {
-        top: 16px; }
+        top: 11px; }
       .egobie-history-list .right .egobie-range .end p {
-        border-top: 1px solid #404041;
-        padding-top: 10px; }
+        border-top: 1px solid #000000;
+        padding-top: 5px; }
     .egobie-history-list .right .egobie-rating {
       display: flex;
       margin: 15px 5px 0px 30px; }
@@ -10717,11 +10766,11 @@ a.button {
       overflow: visible; }
       .egobie-history-list .right .egobie-other .plate .title, .egobie-history-list .right .egobie-other .maker .title, .egobie-history-list .right .egobie-other .model .title {
         margin-bottom: 5px;
-        font-size: 13px; }
+        font-size: 10px; }
       .egobie-history-list .right .egobie-other .plate .content, .egobie-history-list .right .egobie-other .maker .content, .egobie-history-list .right .egobie-other .model .content {
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 500;
-        color: #404041;
+        color: #000000;
         padding-bottom: 5px; }
 
 .egobie-history-rating {
@@ -10754,7 +10803,8 @@ a.button {
   padding: 0;
   border: 1px solid #404041;
   border-radius: 10px;
-  margin-top: 15px; }
+  margin-top: 15px;
+  background: transparent; }
 
 .egobie-history-detail .section {
   font-size: 18px;
@@ -12202,7 +12252,8 @@ a.button {
 
 .egobie-service-detail-title {
   display: flex;
-  padding: 10px; }
+  padding: 10px;
+  border-radius: 10px; }
   .egobie-service-detail-title div {
     display: inline-block; }
     .egobie-service-detail-title div.left {
