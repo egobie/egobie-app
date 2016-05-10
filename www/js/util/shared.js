@@ -371,6 +371,19 @@ angular.module("util.shared", ["util.url"])
                 refreshScope();
             },
 
+            demandOpening: function(id) {
+                $http
+                    .get(url.demandOpening + id, {
+                        headers: this.getHeaders()
+                    })
+                    .success(function(data, status, headers, config) {
+                        
+                    })
+                    .error(function(data, status, headers, config) {
+                        
+                    });
+            },
+
             testEmail: function(email) {
                 return regEmail.test(email);
             },

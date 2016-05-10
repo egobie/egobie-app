@@ -244,6 +244,8 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.goToOrder = function(id, day, start, end) {
+            shared.demandOpening(id);
+
             $timeout(function() {
                 orderOpening.id = id;
                 orderOpening.day = day;
