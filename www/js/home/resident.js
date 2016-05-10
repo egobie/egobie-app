@@ -363,12 +363,13 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         };
     })
 
-    .controller('serviceSelectCtl', function($scope, $state, shared, orderService, order) {
+    .controller('serviceSelectCtl', function($scope, $state, $ionicModal, shared, orderService, order) {
         $scope.services = orderService.services;
         $scope.serviceNames = shared.getServiceNames();
         $scope.carWash = shared.getCarWashServices();
         $scope.detailing = shared.getDetailingServices();
         $scope.oilChange = shared.getOilChangeServices();
+        $scope.selectedService = null;
 
         $scope.$watch(function() {
             return orderService.services;
@@ -410,6 +411,23 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
             order.time -= service.time;
 
             $event.stopPropagation();
+        };
+
+        $ionicModal.fromTemplateUrl('templates/service/detail.html', {
+            scope: $scope
+        }).then(function(modal) {
+            $scope.serviceModel = modal;
+        });
+
+        $scope.showService = function(service) {
+            $scope.selectedService = service;
+            $scope.serviceModel.show();
+        };
+
+        $scope.isServiceSelected = function(checked) {
+            return {
+                "egobie-service-disabled": !checked
+            };
         };
     })
 
