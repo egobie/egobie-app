@@ -236,7 +236,7 @@ angular.module("util.shared", ["util.url"])
                         
                     })
                     .error(function(data, status, headers, config) {
-                        
+                        this.alert("send read for service - " + data);
                     });
             },
 
@@ -249,7 +249,7 @@ angular.module("util.shared", ["util.url"])
                         
                     })
                     .error(function(data, status, headers, config) {
-                        
+                        this.alert("send demand for service - " + data);
                     });
             },
 
@@ -380,7 +380,7 @@ angular.module("util.shared", ["util.url"])
                         
                     })
                     .error(function(data, status, headers, config) {
-                        
+                        this.alert("send demand for opening - " + data);
                     });
             },
 
