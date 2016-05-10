@@ -31,11 +31,7 @@
 }
 
 .egobie-plate-disabled {
-    background: rgba(0, 0, 0, 0.20) !important;
-}
-
-.egobie-plate-disabled * {
-    background: transparent;
+    opacity: 0.5;
 }
 
 .egobie-plate {

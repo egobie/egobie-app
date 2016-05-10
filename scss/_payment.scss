@@ -108,11 +108,7 @@
 }
 
 .egobie-payment-disabled {
-    background: rgba(0, 0, 0, 0.20) !important;
-}
-
-.egobie-payment-disabled * {
-    background: transparent;
+    opacity: 0.5;
 }
 
 .egobie-payment-template {
