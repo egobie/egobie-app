@@ -45,15 +45,12 @@
         span {
             margin-left: 10px;
         }
-
-        &:last-child {
-            border-bottom: 0px;
-        }
     }
 
     &-menu-item-last {
        @extend .egobie-menu-item;
-        /*border-bottom: 0px;*/
+       padding-bottom: 10px;
+       border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     }
 
     &-menu-profile {
