@@ -10521,7 +10521,8 @@ a.button {
 .egobie-reservation-list {
   display: flex;
   padding: 0px;
-  border-radius: 10px; }
+  border-radius: 10px;
+  margin-bottom: 10px; }
   .egobie-reservation-list .left {
     display: inline-block;
     width: 28%;
