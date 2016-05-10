@@ -90,10 +90,6 @@ angular.module("util.shared", ["util.url"])
         }
 
         $window.shared = {
-            minUsername: 5,
-            maxUsername: 16,
-            minPassword: 8,
-            maxPassword: 20,
 
             refreshUser: function(u) {
                 user.id = u.id;

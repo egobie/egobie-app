@@ -36,6 +36,10 @@ angular.module('app.sign.up', ['ionic', 'util.shared', 'util.url'])
             };
         };
 
+        $scope.onchange = function() {
+            console.log($scope.signUpForm);
+        };
+
         $scope.signUp = function() {
             if ($scope.nameInUse) {
                 shared.alert("Username is in use");
@@ -45,21 +49,15 @@ angular.module('app.sign.up', ['ionic', 'util.shared', 'util.url'])
                 return;
             }
 
-            var username = document.getElementById("sign-up-username").value;
-            var password1 = document.getElementById("sign-up-password1").value;
-            var password2 = document.getElementById("sign-up-password2").value;
-            var email = document.getElementById("sign-up-email").value;
-            var coupon = document.getElementById("sign-up-coupon").value;
-
             var body = {
-                "username": username,
-                "password": password1,
-                "email": email,
+                "username": $scope.signUpForm.username,
+                "password": $scope.signUpForm.password1,
+                "email": $scope.signUpForm.email,
                 "phone_number": null,
-                "coupon": coupon
+                "coupon": $scope.signUpForm.coupon
             };
 
-            if (!validateUser(username, password1, password2, email, coupon)) {
+            if (!validateUser(body.username, body.password, $scope.signUpForm.password2, body.email, body.coupon)) {
                 return;
             }
 
@@ -86,14 +84,12 @@ angular.module('app.sign.up', ['ionic', 'util.shared', 'util.url'])
             console.log($scope.signUpForm.username);
 
             if ($scope.signUpForm.username &&
-                    $scope.signUpForm.username.length >= 6 &&
-                        $scope.signUpForm.username.length <= 12) {
+                    $scope.signUpForm.username.length >= 6 && $scope.signUpForm.username.length <= 12) {
                 $http
                     .post(url.checkUsername, {
                         "value": $scope.signUpForm.username
                     })
                     .success(function(data, status, headers, config) {
-                        console.log(status);
                         $scope.nameInUse = (status !== 200);
                     })
                     .error(function(data, status, headers, config) {
@@ -102,7 +98,6 @@ angular.module('app.sign.up', ['ionic', 'util.shared', 'util.url'])
                     });
             } else {
                 $scope.nameInUse = false;
-                console.log("name - ", $scope.nameInUse);
             }
         };
 
@@ -115,7 +110,6 @@ angular.module('app.sign.up', ['ionic', 'util.shared', 'util.url'])
                         "value": $scope.signUpForm.email
                     })
                     .success(function(data, status, headers, config) {
-                        console.log(status);
                         $scope.emailInUse = (status !== 200);
                     })
                     .error(function(data, status, headers, config) {
@@ -124,37 +118,36 @@ angular.module('app.sign.up', ['ionic', 'util.shared', 'util.url'])
                     });
             } else {
                 $scope.emailInUse = false;
-                console.log("email - ", $scope.emailInUse);
             }
         };
 
         function validateUser(username, password1, password2, email, coupon) {
-            if (username.length < shared.minUsername) {
+            if (!username || username.length < 6) {
                 shared.alert("Username must be at least 6 characters!");
                 return false;
             }
 
-            if (username.length > shared.maxUsername) {
+            if (!username || username.length > 12) {
                 shared.alert("Username must be at most 12 characters!");
                 return false;
             }
 
-            if (password1 !== password2) {
-                shared.alert("Password is not equal!");
-                return false;
-            }
-
-            if (password1.length < shared.minPassword) {
+            if (!password1 || password1.length < 8) {
                 shared.alert("Password must be at least 8 characters!");
                 return false;
             }
 
-            if (password1.length > shared.maxPassword) {
+            if (!password1 || password1.length > 16) {
                 shared.alert("Password must be at most 16 characters!");
                 return false;
             }
 
-            if (!shared.testEmail(email)) {
+            if (!password1 || !password2 || password1 !== password2) {
+                shared.alert("Password is not equal!");
+                return false;
+            }
+
+            if (!email || !shared.testEmail(email)) {
                 shared.alert("Invalid Email Address!");
                 return false;
             }
