@@ -20,6 +20,7 @@ angular
         'app.home.business',
 
         'app.service',
+        'app.service.detail',
 
         'app.setting',
         'app.setting.user',

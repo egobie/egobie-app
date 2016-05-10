@@ -13,7 +13,7 @@ angular.module('app.service', ['ionic', 'util.shared', 'util.url'])
     })
 
     .controller('serviceCtrl', function($scope, $ionicModal, shared, url) {
-        $ionicModal.fromTemplateUrl('service-detail', {
+        $ionicModal.fromTemplateUrl('templates/service/detail.html', {
             scope: $scope
         }).then(function(modal) {
             $scope.serviceModel = modal;
@@ -35,11 +35,6 @@ angular.module('app.service', ['ionic', 'util.shared', 'util.url'])
         $scope.showService = function(service) {
             $scope.selectedService = service;
             $scope.serviceModel.show();
-        };
-
-        $scope.hideService = function() {
-            $scope.selectedService = null;
-            $scope.serviceModel.hide();
         };
 
         $scope.isShownService = function(name) {

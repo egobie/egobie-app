@@ -1,6 +1,6 @@
 angular.module('app.car.edit', ['ionic', 'util.shared', 'util.url'])
 
-    .controller('carEditCtrl', function($scope, $ionicPopup, $http, shared, url) {
+    .controller('carEditCtrl', function($scope, $http, shared, url) {
         $scope.makers = shared.getCarMakers();
         $scope.years = shared.getYears();
         $scope.states = shared.getStates();

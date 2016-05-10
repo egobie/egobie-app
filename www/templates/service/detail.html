@@ -1,0 +1,81 @@
+<ion-modal-view hide-nav-bar="true" cache-view="false"
+                ng-app="app.service.detail"
+                ng-controller="serviceDetailCtrl">
+    <ion-header-bar class="egobie-header-bar">
+        <h1 class="title">DETAIL</h1>
+        <button class="button button-icon icon ion-android-close"
+                ng-click="hideService()"></button>
+    </ion-header-bar>
+    <div class="egobie-bg-mask">
+        <div class="egobie-bg-mask-1"></div>
+        <div class="egobie-bg-mask-2"></div>
+    </div>
+    <ion-content overflow-scroll="true" padding="true" class="padding">
+        <ion-item class="egobie-service-detail-title">
+            <div class="left">
+                <p class="price">{{selectedService.price}}</p>
+                <p class="time">{{selectedService.time}}</p>
+            </div>
+            <div class="right">
+                <p class="name">{{selectedService.name}}</p>
+                <p class="note">{{selectedService.note}}</p>
+            </div>
+        </ion-item>
+
+        <ion-list class="egobie-service-detail-list egobie-service-basic"
+                  ng-show="selectedService.basic.length > 0">
+            <ion-item class="detail-section">
+                <i class="dot"/>
+                <i class="line"/>
+                <p>WE PERFORM FOR YOU</p>
+            </ion-item>
+            <ion-item class="detail-item"
+                      ng-repeat="item in selectedService.basic">
+                <i class="line"/>
+                <p>{{item}}</p>
+            </ion-item>
+        </ion-list>
+
+        <ion-list class="egobie-service-detail-list egobie-service-free"
+                  ng-show="selectedService.free.length > 0">
+            <ion-item class="detail-section">
+                <i class="dot"/>
+                <i class="line"/>
+                <p>NO EXTRA CHARGE</p>
+            </ion-item>
+            <ion-item class="detail-item"
+                      ng-repeat="item in selectedService.free">
+                <i class="line"/>
+                <p>{{item}}</p>
+            </ion-item>
+        </ion-list>
+
+        <ion-list class="egobie-service-detail-list egobie-service-extra"
+                  ng-show="selectedService.extra.length > 0">
+            <ion-item class="detail-section">
+                <i class="dot"/>
+                <i class="line"/>
+                <p>EXTRA CHARGE IF YOU NEED IT</p>
+            </ion-item>
+            <ion-item class="detail-item"
+                      ng-repeat="item in selectedService.extra">
+                <i class="line"/>
+                <p>{{item}}</p>
+            </ion-item>
+        </ion-list>
+
+        <ion-list class="egobie-service-detail-list egobie-service-advance"
+                  ng-show="selectedService.advance.length > 0">
+            <ion-item class="detail-section">
+                <i class="dot"/>
+                <i class="line"/>
+                <p>WE GIVE YOU SUGGESTIONS</p>
+            </ion-item>
+            <ion-item class="detail-item"
+                      ng-repeat="item in selectedService.advance">
+                <i class="line"/>
+                <p>{{item}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-modal-view>
