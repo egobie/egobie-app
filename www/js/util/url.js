@@ -7,6 +7,9 @@ angular.module('util.url', [])
         return {
             website: "http://www.egobie.com/",
 
+            checkEmail: host + "/check/email",
+            checkUsername: host + "/check/name",
+
             signIn: host + "/signin",
             signUp: host + "/signup",
 

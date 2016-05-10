@@ -111,6 +111,10 @@ $Egobie-Color: #6FCBFF; //#5C8CA7;
 
 .egobie {
 
+    &-display-none {
+        display: none !important;
+    }
+
     &-padding-0 {
         padding: 0px;
     }

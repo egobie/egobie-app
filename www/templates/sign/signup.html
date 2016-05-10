@@ -5,10 +5,19 @@
     <ion-content padding="true" class="has-header">
         <ion-list class="list-inset">
             <img class="egobie-signup-logo" />
-            <div class="egobie-company">eGobie Car Services</div>
+            <div class="egobie-company">Test</div>
+
+            <div class="egobie-notation">
+                <i ng-class="displayNameInUse()">Username is in use</i>
+                <i ng-class="displayEmailInUse()">Email address is in use</i>
+            </div>
+
             <ion-item class="item-input egobie-signup-item">
                 <i class="icon ion-android-person placeholder-icon"></i>
-                <input id="sign-up-username" type="text" placeholder="Username (6-12)" minlength="6" maxlength="12"/>
+                <input id="sign-up-username" type="text" placeholder="Username (6-12)" minlength="6" maxlength="12"
+                       ng-class="inputNameInUse()"
+                       ng-model="signUpForm.username"
+                       ng-change="checkUsername()"/>
             </ion-item>
             <ion-item class="item-input egobie-signup-item">
                 <i class="icon ion-locked placeholder-icon"></i>
@@ -20,14 +29,16 @@
             </ion-item>
             <ion-item class="item-input egobie-signup-item">
                 <i class="icon ion-email placeholder-icon"></i>
-                <input id="sign-up-email" type="email" placeholder="Email Address"/>
+                <input id="sign-up-email" type="email" placeholder="Email Address"
+                       ng-class="inputEmailInUse()"
+                       ng-model="signUpForm.email"
+                       ng-change="checkEmail()"/>
             </ion-item>
             <ion-item class="item-input egobie-signup-item">
                 <i class="icon ion-email placeholder-icon"></i>
                 <input id="sign-up-coupon" type="text" placeholder="Invitation Code (Optional)" maxlength="5"/>
             </ion-item>
 
-            <!--<img class="img-signin-divide" src="delorean.jpg" />-->
             <button class="button button-outline egobie-sign-button"
                     ng-click="signUp()">Sign Up</button>
             <ion-item class="egobie-sign-item">
