@@ -9617,6 +9617,9 @@ a.button {
 .egobie-display-none {
   display: none !important; }
 
+.egobie-display-inherit {
+  display: inherit !important; }
+
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -9714,6 +9717,9 @@ a.button {
 .egobie-display-none {
   display: none !important; }
 
+.egobie-display-inherit {
+  display: inherit !important; }
+
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -9799,6 +9805,9 @@ a.button {
 
 .egobie-display-none {
   display: none !important; }
+
+.egobie-display-inherit {
+  display: inherit !important; }
 
 .egobie-padding-0 {
   padding: 0px; }
@@ -10012,6 +10021,9 @@ a.button {
 .egobie-display-none {
   display: none !important; }
 
+.egobie-display-inherit {
+  display: inherit !important; }
+
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -10163,6 +10175,9 @@ a.button {
 
 .egobie-display-none {
   display: none !important; }
+
+.egobie-display-inherit {
+  display: inherit !important; }
 
 .egobie-padding-0 {
   padding: 0px; }
@@ -10339,6 +10354,9 @@ a.button {
 .egobie-display-none {
   display: none !important; }
 
+.egobie-display-inherit {
+  display: inherit !important; }
+
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -10424,6 +10442,9 @@ a.button {
 
 .egobie-display-none {
   display: none !important; }
+
+.egobie-display-inherit {
+  display: inherit !important; }
 
 .egobie-padding-0 {
   padding: 0px; }
@@ -10543,7 +10564,8 @@ a.button {
   display: flex;
   padding: 0px;
   border-radius: 10px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  padding-bottom: 10px; }
   .egobie-reservation-list .left {
     display: inline-block;
     width: 28%;
@@ -10892,6 +10914,9 @@ a.button {
 .egobie-display-none {
   display: none !important; }
 
+.egobie-display-inherit {
+  display: inherit !important; }
+
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -11054,6 +11079,9 @@ a.button {
 
 .egobie-display-none {
   display: none !important; }
+
+.egobie-display-inherit {
+  display: inherit !important; }
 
 .egobie-padding-0 {
   padding: 0px; }
@@ -11237,6 +11265,9 @@ a.button {
 .egobie-display-none {
   display: none !important; }
 
+.egobie-display-inherit {
+  display: inherit !important; }
+
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -11322,6 +11353,9 @@ a.button {
 
 .egobie-display-none {
   display: none !important; }
+
+.egobie-display-inherit {
+  display: inherit !important; }
 
 .egobie-padding-0 {
   padding: 0px; }
@@ -11429,6 +11463,9 @@ a.button {
 
 .egobie-display-none {
   display: none !important; }
+
+.egobie-display-inherit {
+  display: inherit !important; }
 
 .egobie-padding-0 {
   padding: 0px; }
@@ -11585,6 +11622,9 @@ a.button {
 .egobie-display-none {
   display: none !important; }
 
+.egobie-display-inherit {
+  display: inherit !important; }
+
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -11670,6 +11710,9 @@ a.button {
 
 .egobie-display-none {
   display: none !important; }
+
+.egobie-display-inherit {
+  display: inherit !important; }
 
 .egobie-padding-0 {
   padding: 0px; }
@@ -11899,6 +11942,9 @@ a.button {
 .egobie-display-none {
   display: none !important; }
 
+.egobie-display-inherit {
+  display: inherit !important; }
+
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -12051,6 +12097,9 @@ a.button {
 .egobie-display-none {
   display: none !important; }
 
+.egobie-display-inherit {
+  display: inherit !important; }
+
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -12136,6 +12185,9 @@ a.button {
 
 .egobie-display-none {
   display: none !important; }
+
+.egobie-display-inherit {
+  display: inherit !important; }
 
 .egobie-padding-0 {
   padding: 0px; }
@@ -12400,6 +12452,9 @@ a.button {
 .egobie-display-none {
   display: none !important; }
 
+.egobie-display-inherit {
+  display: inherit !important; }
+
 .egobie-padding-0 {
   padding: 0px; }
 
@@ -12485,6 +12540,9 @@ a.button {
 
 .egobie-display-none {
   display: none !important; }
+
+.egobie-display-inherit {
+  display: inherit !important; }
 
 .egobie-padding-0 {
   padding: 0px; }
@@ -12642,6 +12700,9 @@ a.button {
 
 .egobie-display-none {
   display: none !important; }
+
+.egobie-display-inherit {
+  display: inherit !important; }
 
 .egobie-padding-0 {
   padding: 0px; }
@@ -12849,6 +12910,9 @@ a.button {
 
 .egobie-display-none {
   display: none !important; }
+
+.egobie-display-inherit {
+  display: inherit !important; }
 
 .egobie-padding-0 {
   padding: 0px; }
