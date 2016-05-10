@@ -35,8 +35,10 @@ angular.module('util.url', [])
             userServices: host + "/service/user",
             openings: host + "/service/opening",
             placeOrder: host + "/service/order",
-            serviceDemand: host + "/service/demand",
-            openingDemand: host + "/service/demand/opening/",
+            cancelOrder: host + "/service/cancel",
+            demandService: host + "/service/demand",
+            readService: host + "/service/read/",
+            demandOpening: host + "/service/demand/opening/",
 
             userHistories: host + "/history"
         };

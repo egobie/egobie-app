@@ -420,6 +420,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         });
 
         $scope.showService = function(service) {
+            shared.readService(service.id);
             $scope.selectedService = service;
             $scope.serviceModel.show();
         };

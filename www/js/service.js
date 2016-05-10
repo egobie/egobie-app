@@ -33,6 +33,7 @@ angular.module('app.service', ['ionic', 'util.shared', 'util.url'])
         $scope.selectedService = null;
 
         $scope.showService = function(service) {
+            shared.readService(service.id);
             $scope.selectedService = service;
             $scope.serviceModel.show();
         };

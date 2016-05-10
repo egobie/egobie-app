@@ -227,6 +227,19 @@ angular.module("util.shared", ["util.url"])
                 return services[id];
             },
 
+            readService: function(id) {
+                $http
+                    .get(url.readService + id, {
+                        headers: this.getHeaders()
+                    })
+                    .success(function(data, status, headers, config) {
+                        
+                    })
+                    .error(function(data, status, headers, config) {
+                        
+                    });
+            },
+
             getUserHistory: function(id) {
                 var history = userHistories[id];
 
