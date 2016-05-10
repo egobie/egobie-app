@@ -2,6 +2,7 @@
 
 .egobie {
 
+    /*
     &-opening-list-left {
         position: absolute;
         display: inline-block;
@@ -11,10 +12,15 @@
         background-color: #404041;
         z-index: 3;
     }
+    */
 
     &-opening-list-right {
 
         .egobie-opening-list {
+            width: 90%;
+            margin-left: auto !important;
+            margin-right: auto !important;
+
             border-radius: 10px;
             margin-bottom: 10px;
             padding: 5px;
@@ -25,6 +31,7 @@
                 border: 0px;
                 position: relative;
 
+                /*
                 .dot {
                     position: absolute;
                     display: block;
@@ -35,15 +42,14 @@
                     border-radius: 100%;
                     background-color: #404041;
                 }
+                */
 
                 p {
                     font-size: 15px;
                     font-weight: bold;
-                    height: 40px;
-                    line-height: 40px;
-                    margin-left: 50px;
+                    height: 30px;
+                    line-height: 30px;
                     padding-left: 15px;
-                    border: 1px solid #404041;
                     border-radius: 5px;
                 }
             }
@@ -51,7 +57,6 @@
             .opening-time-list {
                 border-radius: 5px;
                 margin-top: 10px;
-                margin-left: 50px;
 
                 .opening-time {
                     margin: 0px;

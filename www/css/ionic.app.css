@@ -11481,68 +11481,74 @@ a.button {
 * {
   font-family: eGobieFont !important; }
 
-.egobie-opening-list-left {
-  position: absolute;
-  display: inline-block;
-  width: 3px;
-  height: 100%;
-  left: 30px;
-  background-color: #404041;
-  z-index: 3; }
-
-.egobie-opening-list-right .egobie-opening-list {
-  border-radius: 10px;
-  margin-bottom: 10px;
-  padding: 5px;
-  border: 0px; }
-  .egobie-opening-list-right .egobie-opening-list .opening-day {
-    margin: 0px;
-    border: 0px;
-    position: relative; }
-    .egobie-opening-list-right .egobie-opening-list .opening-day .dot {
-      position: absolute;
-      display: block;
-      width: 16px;
-      height: 16px;
-      left: 19px;
-      top: 10px;
-      border-radius: 100%;
-      background-color: #404041; }
-    .egobie-opening-list-right .egobie-opening-list .opening-day p {
-      font-size: 15px;
-      font-weight: bold;
-      height: 40px;
-      line-height: 40px;
-      margin-left: 50px;
-      padding-left: 15px;
-      border: 1px solid #404041;
-      border-radius: 5px; }
-  .egobie-opening-list-right .egobie-opening-list .opening-time-list {
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-left: 50px; }
-    .egobie-opening-list-right .egobie-opening-list .opening-time-list .opening-time {
+.egobie {
+  /*
+    &-opening-list-left {
+        position: absolute;
+        display: inline-block;
+        width: 3px;
+        height: 100%;
+        left: 30px;
+        background-color: #404041;
+        z-index: 3;
+    }
+    */ }
+  .egobie-opening-list-right .egobie-opening-list {
+    width: 90%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 0px; }
+    .egobie-opening-list-right .egobie-opening-list .opening-day {
       margin: 0px;
-      margin-bottom: 5px;
+      border: 0px;
       position: relative;
-      overflow: visible;
-      padding: 10px;
+      /*
+                .dot {
+                    position: absolute;
+                    display: block;
+                    width: 16px;
+                    height: 16px;
+                    left: 19px;
+                    top: 10px;
+                    border-radius: 100%;
+                    background-color: #404041;
+                }
+                */ }
+      .egobie-opening-list-right .egobie-opening-list .opening-day p {
+        font-size: 15px;
+        font-weight: bold;
+        height: 30px;
+        line-height: 30px;
+        padding-left: 15px;
+        border-radius: 5px; }
+    .egobie-opening-list-right .egobie-opening-list .opening-time-list {
       border-radius: 5px;
-      border-right: 4px solid #404041;
-      border-top: 1px solid #404041;
-      border-bottom: 1px solid #404041;
-      border-left: 1px solid #404041; }
-      .egobie-opening-list-right .egobie-opening-list .opening-time-list .opening-time i {
-        font-size: 13px;
-        height: 16px;
-        line-height: 16px;
-        width: 90%;
-        margin-left: 10px; }
-        .egobie-opening-list-right .egobie-opening-list .opening-time-list .opening-time i.start {
-          font-weight: bold; }
-      .egobie-opening-list-right .egobie-opening-list .opening-time-list .opening-time:last-child .line {
-        height: 105%;
-        top: -1px; }
+      margin-top: 10px; }
+      .egobie-opening-list-right .egobie-opening-list .opening-time-list .opening-time {
+        margin: 0px;
+        margin-bottom: 5px;
+        position: relative;
+        overflow: visible;
+        padding: 10px;
+        border-radius: 5px;
+        border-right: 4px solid #404041;
+        border-top: 1px solid #404041;
+        border-bottom: 1px solid #404041;
+        border-left: 1px solid #404041; }
+        .egobie-opening-list-right .egobie-opening-list .opening-time-list .opening-time i {
+          font-size: 13px;
+          height: 16px;
+          line-height: 16px;
+          width: 90%;
+          margin-left: 10px; }
+          .egobie-opening-list-right .egobie-opening-list .opening-time-list .opening-time i.start {
+            font-weight: bold; }
+        .egobie-opening-list-right .egobie-opening-list .opening-time-list .opening-time:last-child .line {
+          height: 105%;
+          top: -1px; }
 
 .egobie-padding-0 {
   padding: 0px; }
