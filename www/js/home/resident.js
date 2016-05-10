@@ -378,6 +378,15 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         });
 
         $scope.pickService = function() {
+            var ids = [];
+
+            for (var _i = 0; _i < $scope.services.length; _i++) {
+                if ($scope.services[_i].checked) {
+                    ids.push($scope.services[_i].id);
+                }
+            }
+
+            shared.demandService(ids);
             $state.go("menu.home.reservation");
         };
 

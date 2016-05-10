@@ -240,6 +240,19 @@ angular.module("util.shared", ["util.url"])
                     });
             },
 
+            demandService: function(ids) {
+                $http
+                    .post(url.demandService, ids, {
+                        headers: this.getHeaders()
+                    })
+                    .success(function(data, status, headers, config) {
+                        
+                    })
+                    .error(function(data, status, headers, config) {
+                        
+                    });
+            },
+
             getUserHistory: function(id) {
                 var history = userHistories[id];
 
