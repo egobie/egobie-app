@@ -42,7 +42,6 @@ angular.module('app.car.add', ['ionic', 'util.shared', 'util.url'])
                 return;
             }
 
-            console.log(newCar);
             shared.showLoading();
 
             $http

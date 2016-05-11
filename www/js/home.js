@@ -157,7 +157,7 @@ angular.module('app.home', ['ionic', 'ionic.rating',
                 },
                 cancelText: 'Close',
                 cancel: function() {
-                    console.log('Cancel');
+                    
                 }
             });
         };
@@ -171,12 +171,11 @@ angular.module('app.home', ['ionic', 'ionic.rating',
                 titleText: 'Make a Reservation',
                 destructiveText: 'Place Order',
                 destructiveButtonClicked: function() {
-                    console.log("Reserve......");
                     $scope.hideReservationSheet();
                 },
                 cancelText: 'Cancel',
                 cancel: function() {
-                    console.log('Cancel');
+                    
                 }
             });
         };

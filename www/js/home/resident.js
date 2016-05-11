@@ -218,9 +218,13 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                             headers: shared.getHeaders()
                         })
                         .success(function(data, status, headers, config) {
-                            $scope.hideReservationSheet();
+                            shared.lockUserCar(request.car_id);
+                            shared.lockUserPayment(request.payment_id);
                             shared.hideLoading();
+
+                            $scope.hideReservationSheet();
                             $scope.clearReservation();
+
                             $state.go("menu.history");
                         })
                         .error(function(data, status, headers, config) {
@@ -232,7 +236,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                 },
                 cancelText: 'Cancel',
                 cancel: function() {
-                    console.log('Cancel');
+                    
                 }
             });
         };

@@ -25,7 +25,6 @@ angular.module('app.payment.edit', ['ionic', 'util.shared', 'util.url'])
                 return;
             }
 
-            console.log(payment);
             shared.showLoading();
 
             $http

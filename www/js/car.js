@@ -13,6 +13,7 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
     })
 
     .controller('carCtrl', function($scope, $ionicModal, $ionicPopup, $ionicActionSheet, $http, shared, url) {
+        console.log($scope.payments);
         $scope.cars = shared.getUserCars();
 
         $scope.selected = {
@@ -27,7 +28,7 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
 
         $scope.showCarActionSheet = function(car) {
             $scope.hideCarActionSheet = $ionicActionSheet.show({
-                titleText: 'Actions',
+                titleText: 'Manage Vehicle',
 
                 buttons: [
                     { text: 'Edit' }
@@ -42,12 +43,16 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
 
                 destructiveText: 'Delete',
                 destructiveButtonClicked: function() {
-                    $scope.deleteCar(car.id);
+                    if (car.reserved <= 0) {
+                        $scope.deleteCar(car.id);
+                    } else {
+                        shared.alert("Cannot delete since it's used by one of your reservation");
+                    }
                 },
 
                 cancelText: 'Cancel',
                 cancel: function() {
-                    console.log('Cancel');
+                    
                 }
             });
         };

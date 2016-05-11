@@ -9,8 +9,6 @@ angular.module('app.setting.home', ['ionic', 'util.shared', 'util.url'])
             street: shared.getUser().home_street
         };
 
-        console.log("Home - ", $scope.home);
-
         $scope.hideEditHome = function() {
             $scope.editHomeModal.hide();
             $scope.editHomeModal.remove();
@@ -29,8 +27,6 @@ angular.module('app.setting.home', ['ionic', 'util.shared', 'util.url'])
             if (!validateAddress(address)) {
                 return;
             }
-
-            console.log(address);
 
             shared.showLoading();
 

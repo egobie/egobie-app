@@ -9,8 +9,6 @@ angular.module('app.setting.work', ['ionic', 'util.shared', 'util.url'])
             street: shared.getUser().work_street
         };
 
-        console.log("Work - ", $scope.work);
-
         $scope.hideEditWork = function() {
             $scope.editWorkModal.hide();
             $scope.editWorkModal.remove();
@@ -30,7 +28,6 @@ angular.module('app.setting.work', ['ionic', 'util.shared', 'util.url'])
                 return;
             }
 
-            console.log(address);
             shared.showLoading();
 
             $http

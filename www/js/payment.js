@@ -14,6 +14,7 @@ angular.module('app.payment', ['ionic', 'util.shared', 'util.url'])
 
     .controller('paymentCtrl', function($scope, $ionicModal, $ionicPopup, $ionicActionSheet, $http, shared, url) {
         $scope.payments = shared.getUserPayments();
+        console.log($scope.payments);
 
         $scope.payment = {
             id: 0,
@@ -27,7 +28,7 @@ angular.module('app.payment', ['ionic', 'util.shared', 'util.url'])
 
         $scope.showPaymentActionSheet = function(payment) {
             $scope.hidePaymentActionSheet = $ionicActionSheet.show({
-                titleText: 'Actions',
+                titleText: 'Manage Payment',
 
                 buttons: [
                     { text: 'Edit' }
@@ -42,12 +43,16 @@ angular.module('app.payment', ['ionic', 'util.shared', 'util.url'])
 
                 destructiveText: 'Delete',
                 destructiveButtonClicked: function() {
-                    $scope.deletePayment(payment.id);
+                    if (payment.reserved <= 0) {
+                        $scope.deletePayment(payment.id);
+                    } else {
+                        shared.alert("Cannot delete since it's used by one of your reservation");
+                    }
                 },
 
                 cancelText: 'Cancel',
                 cancel: function() {
-                    console.log('Cancel');
+                    
                 }
             });
         };

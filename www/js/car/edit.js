@@ -27,7 +27,6 @@ angular.module('app.car.edit', ['ionic', 'util.shared', 'util.url'])
                 return;
             }
 
-            console.log(car);
             shared.showLoading();
 
             $http

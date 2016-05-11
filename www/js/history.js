@@ -57,7 +57,7 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
                 });
         };
 
-        $scope.showCancelSheet = function(id) {
+        $scope.showCancelSheet = function(reservation) {
             $scope.hideCancelSheet = $ionicActionSheet.show({
                 titleText: 'Cancel Order',
                 destructiveText: 'Cancel Reservation',
@@ -69,14 +69,17 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
                             shared.showLoading();
                             $http
                                 .post(url.cancelOrder, {
-                                    id: id,
+                                    id: reservation.id,
                                     user_id: shared.getUser().id
                                 }, {
                                     headers: shared.getHeaders()
                                 })
                                 .success(function(data, status, headers, config) {
-                                    $scope.hideCancelSheet();
+                                    shared.unlockUserCar(reservation.car_id);
+                                    shared.unlockUserPayment(reservation.payment_id);
                                     shared.hideLoading();
+
+                                    $scope.hideCancelSheet();
                                     $scope.loadReservations();
                                 })
                                 .error(function(data, status, headers, config) {
@@ -89,7 +92,7 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
                 },
                 cancelText: 'Close',
                 cancel: function() {
-                    console.log('close');
+                    
                 }
             });
         };
