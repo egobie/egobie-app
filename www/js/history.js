@@ -7,7 +7,7 @@
 angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
 
     .controller('historyCtrl', function($scope, $ionicModal, $ionicPopup, $ionicActionSheet, $http, shared, url) {
-        $scope.histories = shared.getUserHistories();
+        $scope.histories = {};
         $scope.reservations = [];
         $scope.max = 5;
         $scope.selectedHistory = null;
@@ -57,6 +57,27 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
                 });
         };
 
+        $scope.loadHistories = function() {
+            $scope.histories = {};
+            $http
+                .post(url.userHistories, {
+                    user_id: shared.getUser().id,
+                    page: 0
+                }, {
+                    headers: shared.getHeaders()
+                })
+                .success(function(data, status, headers, config) {
+                    if (data) {
+                        Array.prototype.forEach.call(data, function(history) {
+                            $scope.histories[history.id] = history;
+                        });
+                    }
+                })
+                .error(function(data, status, headers, config) {
+                    shared.alert(data);
+                });
+        };
+
         $scope.showCancelSheet = function(reservation) {
             $scope.hideCancelSheet = $ionicActionSheet.show({
                 titleText: 'Cancel Order',
@@ -97,7 +118,30 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
             });
         };
 
-        $scope.historyLabelStyle = function(rating) {
+        $scope.borderStyle = function(rating) {
+            // 0.0 - 1.0
+            if (rating <= 1) {
+                return {
+                    'egobie-history-border-bad': true
+                };
+            // 1.5 - 2.5
+            } else if (rating < 3) {
+                return {
+                    'egobie-history-border-fine': true
+                };
+            // 3.0 - 4.0
+            } else if (rating <= 4) {
+                return {
+                    'egobie-history-border-ok': true
+                };
+            } else {
+                return {
+                    'egobie-history-border-good': true
+                };
+            }
+        };
+
+        $scope.ratingStyle = function(rating) {
             // 0.0 - 1.0
             if (rating <= 1) {
                 return {
@@ -124,8 +168,6 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
             return (100 * (value / $scope.max)) + '%';
         };
 
-        $scope.loadReservations();
-
         $scope.noReservation = function() {
             return $scope.reservations.length === 0;
         };
@@ -133,4 +175,7 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
         $scope.noHistory = function() {
             return Object.keys($scope.histories).length === 0;
         };
+
+        $scope.loadReservations();
+        $scope.loadHistories();
     });

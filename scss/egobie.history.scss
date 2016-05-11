@@ -112,7 +112,6 @@
         display: flex;
         padding: 10px;
         height: 165px;
-        border-left: 5px solid red;
         border-radius: 8px;
 
         .left {
@@ -235,6 +234,22 @@
         }
     }
 
+    &-history-border-good {
+        border-left: 5px solid $History-Good;
+    }
+
+    &-history-border-ok {
+        border-left: 5px solid $History-OK;
+    }
+
+    &-history-border-fine {
+        border-left: 5px solid $History-Fine;
+    }
+
+    &-history-border-bad {
+        border-left: 5px solid $History-Bad;
+    }
+
     &-history-rating {
         display: inline;
         padding: .0em .6em .3em;
@@ -250,19 +265,43 @@
     }
 
     &-history-rating-good {
-        background-color: #5CB85C;
+        li i {
+            color: $History-Good;
+        }
+
+        span {
+            background-color: $History-Good;
+        }
     }
 
     &-history-rating-ok {
-        background-color: #5BC0DE;
+        li i {
+            color: $History-OK;
+        }
+
+        span {
+            background-color: $History-OK;
+        }
     }
 
     &-history-rating-fine {
-        background-color: #F0AD4E;
+        li i {
+            color: $History-Fine;
+        }
+
+        span {
+            background-color: $History-Fine;
+        }
     }
 
     &-history-rating-bad {
-        background-color: #FF0E0E;
+        li i {
+            color: $History-Bad;
+        }
+
+        span {
+            background-color: $History-Bad;
+        }
     }
 
     &-history-detail {

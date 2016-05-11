@@ -114,7 +114,7 @@ angular.module('util.request', ['util.shared', 'util.url'])
                 return userPayments;
             }
         };
-    })
+    });
 
 //    .service('requestUserServices', function($http, shared, url) {
 //        var userServices = null;
@@ -142,28 +142,28 @@ angular.module('util.request', ['util.shared', 'util.url'])
 //        };
 //    })
 
-    .service('requestUserHistories', function($http, shared, url) {
-        var userHistories = null;
-        var promise = $http
-            .post(url.userHistories, {
-                user_id: shared.getUser().id,
-                user_token: shared.getUser().token,
-                page: 0
-            }, {
-                headers: shared.getHeaders()
-            })
-            .success(function(data, status, headers, config) {
-                userHistories = data;
-                shared.addUserHistories(userHistories);
-            })
-            .error(function(data, status, headers, config) {
-                shared.alert(data);
-            });
-
-        return {
-            promise: promise,
-            getData: function() {
-                return userHistories;
-            }
-        };
-    });
+//    .service('requestUserHistories', function($http, shared, url) {
+//        var userHistories = null;
+//        var promise = $http
+//            .post(url.userHistories, {
+//                user_id: shared.getUser().id,
+//                user_token: shared.getUser().token,
+//                page: 0
+//            }, {
+//                headers: shared.getHeaders()
+//            })
+//            .success(function(data, status, headers, config) {
+//                userHistories = data;
+//                shared.addUserHistories(userHistories);
+//            })
+//            .error(function(data, status, headers, config) {
+//                shared.alert(data);
+//            });
+//
+//        return {
+//            promise: promise,
+//            getData: function() {
+//                return userHistories;
+//            }
+//        };
+//    });

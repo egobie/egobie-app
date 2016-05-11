@@ -4,8 +4,6 @@
     <ion-header-bar class="egobie-header-bar">
         <button class="button button-icon icon ion-navicon egobie-display-inherit" menu-toggle="left"></button>
         <h1 class="title">MY SERVICES</h1>
-        <button class="button button-icon icon ion-android-refresh"
-              ng-click="loadReservations()"></button>
     </ion-header-bar>
     <div class="egobie-bg-mask">
         <div class="egobie-bg-mask-1"></div>
@@ -13,7 +11,10 @@
     </div>
     <ion-content padding="true">
         <ion-list>
-            <ion-item class="item-divider item-icon-right egobie-reservation-title">RESERVATION</ion-item>
+            <ion-item class="item-divider item-icon-right egobie-reservation-title">
+                <i class="icon ion-android-refresh"
+                   ng-click="loadReservations()"></i>RESERVATION
+            </ion-item>
             <ion-item class="egobie-empty-reservation"
                       ng-show="noReservation()">
                 <i class="icon ion-android-checkmark-circle icon-1"></i>
@@ -54,7 +55,10 @@
         </ion-list>
 
         <ion-list>
-            <ion-item class="item-divider item-icon-right egobie-history-title">HISTORY</ion-item>
+            <ion-item class="item-divider item-icon-right egobie-history-title">
+                <i class="icon ion-android-refresh"
+                   ng-click="loadHistories()"></i>HISTORY
+            </ion-item>
             <ion-item class="egobie-empty-history"
                       ng-show="noHistory()">
                 <i class="icon ion-clipboard icon-1"></i>
@@ -63,6 +67,7 @@
 
             <ion-item class="egobie-history-list"
                       ng-repeat="(id, history) in histories"
+                      ng-class="borderStyle(history.rating)"
                       ng-click="showHistory(id)">
                 <div class="left">
                     <div class="price">{{history.price}}</div>
@@ -83,11 +88,11 @@
                             <p>{{history.end_time}}</p>
                         </div>
                     </div>
-                    <div class="egobie-rating">
+                    <div class="egobie-rating"
+                         ng-class="ratingStyle(history.rating)">
                         <rating max="max" readonly="true"
                                 ng-model="history.rating"></rating>
-                        <span class="egobie-history-rating"
-                              ng-class="historyLabelStyle(history.rating)">{{historyPercent(history.rating)}}</span>
+                        <span class="egobie-history-rating">{{historyPercent(history.rating)}}</span>
                     </div>
                     <div class="egobie-other">
                         <div class="plate">

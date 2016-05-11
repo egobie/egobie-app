@@ -10614,7 +10614,6 @@ a.button {
   display: flex;
   padding: 10px;
   height: 165px;
-  border-left: 5px solid red;
   border-radius: 8px; }
   .egobie-history-list .left {
     display: inline-block;
@@ -10694,6 +10693,18 @@ a.button {
         color: #000000;
         padding-bottom: 5px; }
 
+.egobie-history-border-good {
+  border-left: 5px solid #5CB85C; }
+
+.egobie-history-border-ok {
+  border-left: 5px solid #5BC0DE; }
+
+.egobie-history-border-fine {
+  border-left: 5px solid #F0AD4E; }
+
+.egobie-history-border-bad {
+  border-left: 5px solid #FF0E0E; }
+
 .egobie-history-rating {
   display: inline;
   padding: .0em .6em .3em;
@@ -10707,16 +10718,28 @@ a.button {
   vertical-align: baseline;
   border-radius: .25em; }
 
-.egobie-history-rating-good {
+.egobie-history-rating-good li i {
+  color: #5CB85C; }
+
+.egobie-history-rating-good span {
   background-color: #5CB85C; }
 
-.egobie-history-rating-ok {
+.egobie-history-rating-ok li i {
+  color: #5BC0DE; }
+
+.egobie-history-rating-ok span {
   background-color: #5BC0DE; }
 
-.egobie-history-rating-fine {
+.egobie-history-rating-fine li i {
+  color: #F0AD4E; }
+
+.egobie-history-rating-fine span {
   background-color: #F0AD4E; }
 
-.egobie-history-rating-bad {
+.egobie-history-rating-bad li i {
+  color: #FF0E0E; }
+
+.egobie-history-rating-bad span {
   background-color: #FF0E0E; }
 
 .egobie-history-detail .card, .egobie-history-detail .egobie-history-time, .egobie-history-detail .egobie-history-car, .egobie-history-detail .egobie-history-payment, .egobie-history-detail .egobie-history-service {

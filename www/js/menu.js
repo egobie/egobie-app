@@ -35,13 +35,13 @@ angular.module('app.menu', ['util.request'])
                     },
                     resolveUserPayments: function(requestUserPayments) {
                         return requestUserPayments.promise;
-                    },
+                    }
 //                    resolveUserServices: function(requestUserServices) {
 //                        return requestUserServices.promise;
 //                    },
-                    resolveUserHistories: function(requestUserHistories) {
-                        return requestUserHistories.promise;
-                    }
+//                    resolveUserHistories: function(requestUserHistories) {
+//                        return requestUserHistories.promise;
+//                    }
                 }
             })
 
