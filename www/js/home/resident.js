@@ -5,17 +5,34 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
             id: -1,
             day: "",
             start: "",
-            end: ""
+            end: "",
+
+            clear: function() {
+                this.id = -1;
+                this.day = "";
+                this.start = "";
+                this.end = "";
+            }
         };
     })
 
     .service('orderCar', function(shared) {
         return {
+            cars: shared.getUserCars(),
             selected: {
                 id: -1,
                 plate: ''
             },
-            cars: shared.getUserCars()
+            clear: function() {
+                for (var _id in this.cars) {
+                    this.cars[_id].checked = false;
+                }
+
+                this.selected = {
+                    id: -1,
+                    plate: ''
+                };
+            }
         };
     })
 
@@ -24,7 +41,12 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         var _temp = shared.getServices();
         var obj = {
             index: {},
-            services: []
+            services: [],
+            clear: function() {
+                for (var _j = 0; _j < this.services.length; _j++) {
+                    this.services[_j].checked = false;
+                }
+            }
         };
 
         for (var _id in _temp) {
@@ -42,14 +64,28 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                 id: -1,
                 account_number: ''
             },
-            payments: shared.getUserPayments()
+            payments: shared.getUserPayments(),
+            clear: function() {
+                for (var _id in this.payments) {
+                    this.payments[_id].checked = false;
+                }
+
+                this.selected = {
+                    id: -1,
+                    account_number: ''
+                };
+            }
         };
     })
 
     .service('order', function() {
         return {
             price: 0,
-            time: 0
+            time: 0,
+            clear: function() {
+                this.price = 0;
+                this.time = 0;
+            }
         };
     })
 
@@ -184,13 +220,13 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                         .success(function(data, status, headers, config) {
                             $scope.hideReservationSheet();
                             shared.hideLoading();
-                            $scope.clearOrder();
+                            $scope.clearReservation();
                             $state.go("menu.history");
                         })
                         .error(function(data, status, headers, config) {
                             $scope.hideReservationSheet();
                             shared.hideLoading();
-                            $scope.clearOrder();
+                            $scope.clearReservation();
                             shared.alert(data);
                         });
                 },
@@ -201,33 +237,12 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
             });
         };
 
-        $scope.clearOrder = function() {
-            for (var _i = 0; _i < orderService.services.length; _i++) {
-                orderService.services[_i].checked = false;
-            }
-
-            for (var _id in $scope.payments) {
-                orderPayment.payments[_id].checked = false;
-            }
-
-            for (var _id in $scope.cars) {
-                orderCar.cars[_id].checked = false;
-            }
-
-            console.log('orderCar - ', orderCar);
-            console.log('orderPayment - ', orderPayment);
-            console.log('orderOpening - ', orderOpening);
-            console.log('order - ', order);
-
-            order.price = 0;
-            order.time = 0;
-            orderCar.selected.checked = false;
-            orderPayment.selected.checked = false;
-
-//            orderOpening.id = -1;
-//            orderOpening.day = "";
-//            orderOpening.start =  "";
-//            orderOpening.end = "";
+        $scope.clearReservation = function() {
+            orderOpening.clear();
+            orderCar.clear();
+            orderService.clear();
+            orderPayment.clear();
+            order.clear();
         };
     })
 
