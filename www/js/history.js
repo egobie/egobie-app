@@ -31,6 +31,8 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
 
         $scope.loadReservations = function() {
             $scope.reservations = [];
+            shared.clearUserServices();
+
             shared.showLoading();
             $http
                 .post(url.userServices, {
@@ -41,7 +43,7 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
                 })
                 .success(function(data, status, headers, config) {
                     shared.hideLoading();
-                    $scope.reservations = [];
+                    shared.addUserServices(data);
 
                     if (data) {
                         Array.prototype.forEach.call(data, function(service) {
@@ -59,6 +61,8 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
 
         $scope.loadHistories = function() {
             $scope.histories = {};
+            shared.clearUserHistories();
+
             $http
                 .post(url.userHistories, {
                     user_id: shared.getUser().id,
@@ -67,11 +71,8 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
                     headers: shared.getHeaders()
                 })
                 .success(function(data, status, headers, config) {
-                    if (data) {
-                        Array.prototype.forEach.call(data, function(history) {
-                            $scope.histories[history.id] = history;
-                        });
-                    }
+                    shared.addUserHistories(data);
+                    $scope.histories = shared.getUserHistories();
                 })
                 .error(function(data, status, headers, config) {
                     shared.alert(data);

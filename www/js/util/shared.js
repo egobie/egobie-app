@@ -258,6 +258,7 @@ angular.module("util.shared", ["util.url"])
 
                 if (history) {
                     var temp = {
+                        reservation_id: history.reservation_id,
                         start: history.start_time,
                         end: history.end_time,
                         price: history.price,
@@ -293,12 +294,20 @@ angular.module("util.shared", ["util.url"])
                 }
             },
 
+            clearUserHistories: function() {
+                userHistories = {};
+            },
+
             getUserServices: function() {
                 return userServices;
             },
 
             addUserServices: function(services) {
                 userServices = services;
+            },
+
+            clearUserServices: function() {
+                userServices = [];
             },
 
             getCarMakers: function() {
