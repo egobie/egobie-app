@@ -40,7 +40,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         return {
             selected: {
                 id: -1,
-                plate: ''
+                account_number: ''
             },
             payments: shared.getUserPayments()
         };
@@ -113,7 +113,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         };
     })
 
-    .controller('reservationOrderCtrl', function($scope, $state, $timeout, $ionicActionSheet, $http,
+    .controller('reservationOrderCtrl', function($scope, $state, $ionicActionSheet, $http,
             shared, url, orderOpening, orderCar, orderService, orderPayment, order) {
         $scope.order = order;
 
@@ -184,15 +184,13 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                         .success(function(data, status, headers, config) {
                             $scope.hideReservationSheet();
                             shared.hideLoading();
-
-                            var t = $timeout(function() {
-                                $state.go("menu.history");
-                                $timeout.cancel(t);
-                            }, 200);
+                            $scope.clearOrder();
+                            $state.go("menu.history");
                         })
                         .error(function(data, status, headers, config) {
                             $scope.hideReservationSheet();
                             shared.hideLoading();
+                            $scope.clearOrder();
                             shared.alert(data);
                         });
                 },
@@ -201,6 +199,35 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                     console.log('Cancel');
                 }
             });
+        };
+
+        $scope.clearOrder = function() {
+            for (var _i = 0; _i < orderService.services.length; _i++) {
+                orderService.services[_i].checked = false;
+            }
+
+            for (var _id in $scope.payments) {
+                orderPayment.payments[_id].checked = false;
+            }
+
+            for (var _id in $scope.cars) {
+                orderCar.cars[_id].checked = false;
+            }
+
+            console.log('orderCar - ', orderCar);
+            console.log('orderPayment - ', orderPayment);
+            console.log('orderOpening - ', orderOpening);
+            console.log('order - ', order);
+
+            order.price = 0;
+            order.time = 0;
+            orderCar.selected.checked = false;
+            orderPayment.selected.checked = false;
+
+//            orderOpening.id = -1;
+//            orderOpening.day = "";
+//            orderOpening.start =  "";
+//            orderOpening.end = "";
         };
     })
 
