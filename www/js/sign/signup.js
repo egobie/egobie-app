@@ -36,10 +36,6 @@ angular.module('app.sign.up', ['ionic', 'util.shared', 'util.url'])
             };
         };
 
-        $scope.onchange = function() {
-            console.log($scope.signUpForm);
-        };
-
         $scope.signUp = function() {
             if ($scope.nameInUse) {
                 shared.alert("Username is in use");
@@ -81,8 +77,6 @@ angular.module('app.sign.up', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.checkUsername = function() {
-            console.log($scope.signUpForm.username);
-
             if ($scope.signUpForm.username &&
                     $scope.signUpForm.username.length >= 6 && $scope.signUpForm.username.length <= 12) {
                 $http
@@ -102,8 +96,6 @@ angular.module('app.sign.up', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.checkEmail = function() {
-            console.log($scope.signUpForm.email);
-
             if ($scope.signUpForm.email && shared.testEmail($scope.signUpForm.email)) {
                 $http
                     .post(url.checkEmail, {

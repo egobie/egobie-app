@@ -21,7 +21,8 @@
             </ion-item>
 
             <ion-item class="egobie-reservation-list"
-                      ng-repeat="reservation in reservations">
+                      ng-repeat="reservation in reservations"
+                      ng-click="showCancelSheet(reservation.id)">
                 <div class="left">
                     <p class="price">{{reservation.price}}</p>
                 </div>

@@ -6,7 +6,7 @@
 
 angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
 
-    .controller('historyCtrl', function($scope, $ionicModal, $http, shared, url) {
+    .controller('historyCtrl', function($scope, $ionicModal, $ionicPopup, $ionicActionSheet, $http, shared, url) {
         $scope.histories = shared.getUserHistories();
         $scope.reservations = [];
         $scope.max = 5;
@@ -43,16 +43,55 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
                     shared.hideLoading();
                     $scope.reservations = [];
 
-                    Array.prototype.forEach.call(data, function(service) {
-                        if (service.status === "RESERVED") {
-                            $scope.reservations.push(service);
-                        }
-                    });
+                    if (data) {
+                        Array.prototype.forEach.call(data, function(service) {
+                            if (service.status === "RESERVED") {
+                                $scope.reservations.push(service);
+                            }
+                        });
+                    }
                 })
                 .error(function(data, status, headers, config) {
                     shared.hideLoading();
                     shared.alert(data);
                 });
+        };
+
+        $scope.showCancelSheet = function(id) {
+            $scope.hideCancelSheet = $ionicActionSheet.show({
+                titleText: 'Cancel Order',
+                destructiveText: 'Cancel Reservation',
+                destructiveButtonClicked: function() {
+                    $ionicPopup.confirm({
+                        title: "Are you sure to cancel this reservation?"
+                    }).then(function(sure) {
+                        if (sure) {
+                            shared.showLoading();
+                            $http
+                                .post(url.cancelOrder, {
+                                    id: id,
+                                    user_id: shared.getUser().id
+                                }, {
+                                    headers: shared.getHeaders()
+                                })
+                                .success(function(data, status, headers, config) {
+                                    $scope.hideCancelSheet();
+                                    shared.hideLoading();
+                                    $scope.loadReservations();
+                                })
+                                .error(function(data, status, headers, config) {
+                                    $scope.hideCancelSheet();
+                                    shared.hideLoading();
+                                    shared.alert(data);
+                                });
+                        }
+                    });
+                },
+                cancelText: 'Close',
+                cancel: function() {
+                    console.log('close');
+                }
+            });
         };
 
         $scope.historyLabelStyle = function(rating) {

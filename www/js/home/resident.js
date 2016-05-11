@@ -148,9 +148,6 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.placeOrderSheet = function() {
-            $state.go("menu.history");
-            return;
-
             var request = {
                 user_id: shared.getUser().id,
                 car_id: orderCar.selected.id,
@@ -185,8 +182,8 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                             headers: shared.getHeaders()
                         })
                         .success(function(data, status, headers, config) {
-                            shared.hideLoading();
                             $scope.hideReservationSheet();
+                            shared.hideLoading();
 
                             var t = $timeout(function() {
                                 $state.go("menu.history");
@@ -194,9 +191,10 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                             }, 200);
                         })
                         .error(function(data, status, headers, config) {
-                            
+                            $scope.hideReservationSheet();
+                            shared.hideLoading();
+                            shared.alert(data);
                         });
-                    $scope.hideReservationSheet();
                 },
                 cancelText: 'Cancel',
                 cancel: function() {
@@ -375,6 +373,10 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                 "egobie-plate-disabled": !selected
             };
         };
+
+        $scope.noCar = function() {
+            return Object.keys($scope.cars).length === 0;
+        };
     })
 
     .controller('serviceSelectCtl', function($scope, $state, $ionicModal, shared, orderService, order) {
@@ -497,5 +499,9 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
             return {
                 "egobie-payment-disabled": !selected
             };
+        };
+
+        $scope.noPayment = function() {
+            return Object.keys($scope.payments).length === 0;
         };
     });
