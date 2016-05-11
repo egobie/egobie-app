@@ -40,6 +40,7 @@ angular.module('util.url', [])
             readService: host + "/service/read/",
             demandOpening: host + "/service/demand/opening/",
 
-            userHistories: host + "/history"
+            userHistories: host + "/history",
+            ratingHistory: host + "/history/rating"
         };
     });
