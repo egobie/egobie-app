@@ -6,14 +6,66 @@
 
 angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
 
-    .controller('historyCtrl', function($scope, $ionicModal, $ionicPopup, $ionicActionSheet, $http, shared, url) {
+    .controller('historyCtrl', function($scope, $ionicModal, $ionicPopup, $ionicActionSheet, $http, $timeout, shared, url) {
         $scope.histories = {};
         $scope.reservations = [];
+        $scope.dones = [];
         $scope.max = 5;
         $scope.selectedHistory = null;
         $scope.historyModel = null;
+        $scope.rating = {
+            score: 0
+        };
 
-        $ionicModal.fromTemplateUrl('history-detail', {
+        $ionicModal.fromTemplateUrl('templates/history/rating.html', {
+            scope: $scope
+        }).then(function(modal) {
+            $scope.ratingModel = modal;
+        });
+
+        $scope.showRating = function() {
+            $scope.ratingModel.show();
+        };
+
+        $scope.hideRating = function() {
+            $scope.ratingModel.hide();
+            if ($scope.selectedHistory.rating > 0) {
+                $timeout(function() {
+                    $scope.historyModel.show();
+                }, 500);
+            }
+        };
+
+        $scope.submitRating = function() {
+            if ($scope.selectedHistory.rating <= 0) {
+                shared.alert("Please rate our service.");
+            } else {
+                var request = {
+                    "user_id": shared.getUser().id,
+                    "service_id": $scope.selectedHistory.service_id,
+                    "rating": $scope.selectedHistory.rating,
+                    "note": $scope.selectedHistory.note
+                };
+
+                shared.showLoading();
+
+                $http
+                    .post(url.ratingHistory, request, {
+                        headers: shared.getHeaders()
+                    })
+                    .success(function(data, status, headers, config) {
+                        shared.hideLoading();
+                        shared.refreshUserHistory($scope.selectedHistory);
+                        $scope.hideRating();
+                    })
+                    .error(function(data, status, headers, config) {
+                        shared.hideLoading();
+                        shared.alert(data);
+                    });
+            }
+        };
+
+        $ionicModal.fromTemplateUrl('templates/history/detail.html', {
             scope: $scope
         }).then(function(modal) {
             $scope.historyModel = modal;
@@ -21,7 +73,15 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
 
         $scope.showHistory = function(id) {
             $scope.selectedHistory = shared.getUserHistory(id);
-            $scope.historyModel.show();
+
+            if ($scope.selectedHistory.rating <= 0) {
+                // If history is not rated yet, force user to rate and open history
+                // detail after closing rating page
+                $scope.selectedHistory.rating = 0;
+                $scope.showRating();
+            } else {
+                $scope.historyModel.show();
+            }
         };
 
         $scope.hideHistory = function() {
@@ -31,11 +91,11 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
 
         $scope.loadReservations = function() {
             $scope.reservations = [];
-            shared.clearUserServices();
+            shared.clearUserReservations();
 
             shared.showLoading();
             $http
-                .post(url.userServices, {
+                .post(url.userReservations, {
                     user_id: shared.getUser().id,
                     user_token: shared.getUser().token
                 }, {
@@ -43,13 +103,11 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
                 })
                 .success(function(data, status, headers, config) {
                     shared.hideLoading();
-                    shared.addUserServices(data);
+                    shared.addUserReservations(data);
 
                     if (data) {
                         Array.prototype.forEach.call(data, function(service) {
-                            if (service.status === "RESERVED") {
-                                $scope.reservations.push(service);
-                            }
+                            $scope.reservations.push(service);
                         });
                     }
                 })
@@ -121,6 +179,10 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
 
         $scope.borderStyle = function(rating) {
             // 0.0 - 1.0
+            if (rating <= 0) {
+                return;
+            }
+
             if (rating <= 1) {
                 return {
                     'egobie-history-border-bad': true
@@ -143,6 +205,10 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.ratingStyle = function(rating) {
+            if (rating <= 0) {
+                return;
+            }
+
             // 0.0 - 1.0
             if (rating <= 1) {
                 return {

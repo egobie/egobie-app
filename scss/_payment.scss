@@ -109,6 +109,7 @@
 
 .egobie-payment-disabled {
     opacity: 0.25;
+    box-shadow: none !important;
 }
 
 .egobie-payment-template {
@@ -122,6 +123,7 @@
     border: 0;
     border-radius: 10px;
     background: transparent;
+    box-shadow: 3px 5px 9px 0px rgba(0, 0, 0, 0.26);
 
     * {
         color: #FFFFFF;

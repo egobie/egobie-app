@@ -15,7 +15,7 @@
                       ng-click="toggleShownService('CAR_WASH')">
                 {{serviceNames["CAR_WASH"].toUpperCase()}}
             </ion-item>
-            <ion-item menu-close="" class="egobie-service-item"
+            <ion-item menu-close="" class="egobie-service-item-select"
                       ng-repeat="service in carWash"
                       ng-class="isServiceSelected(service.checked)">
                 <div class="left"></div>
@@ -33,7 +33,7 @@
                       ng-click="toggleShownService('OIL_CHANGE')">
                 {{serviceNames["OIL_CHANGE"].toUpperCase()}}
             </ion-item>
-            <ion-item menu-close="" class="egobie-service-item"
+            <ion-item menu-close="" class="egobie-service-item-select"
                       ng-repeat="service in oilChange"
                       ng-class="isServiceSelected(service.checked)">
                 <div class="left"></div>
@@ -51,7 +51,7 @@
                       ng-click="toggleShownService('DETAILING')">
                 {{serviceNames["DETAILING"].toUpperCase()}}
             </ion-item>
-            <ion-item menu-close="" class="egobie-service-item"
+            <ion-item menu-close="" class="egobie-service-item-select"
                       ng-repeat="service in detailing"
                       ng-class="isServiceSelected(service.checked)">
                 <div class="left"></div>

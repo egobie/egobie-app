@@ -33,6 +33,7 @@
         border-radius: 10px;
         margin-bottom: 10px;
         padding-bottom: 10px;
+        box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.26);
 
         .left {
             display: inline-block;
@@ -113,6 +114,7 @@
         padding: 10px;
         height: 165px;
         border-radius: 8px;
+        box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.26);
 
         .left {
             display: inline-block;
@@ -579,6 +581,123 @@
                     }
                 }
             }
+        }
+    }
+
+    &-service-rating {
+        .top {
+            height: 200px;
+            padding: 0px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            box-shadow: 0px 3px 9px 0px rgba(0,0,0,.26);
+
+            div.price {
+                position: relative;
+                font-size: 35px;
+                height: 40px;
+                line-height: 40px;
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 30px;
+                text-align: center;
+
+                &:before {
+                    content: "$";
+                    position: absolute;
+                    font-size: 25px;
+                    left: 65px;
+                    top: -10px;
+                }
+            }
+
+            div.date {
+                text-align: center;
+                margin-top: 5px;
+                font-size: 13px;
+            }
+
+            div.services {
+                margin-top: 20px;
+
+                p {
+                    position: relative;
+                    overflow: visible;
+                    font-size: 20px;
+                    height: 25px;
+                    line-height: 25px;
+                    width: 80%;
+                    margin-left: 65px;
+
+                    i {
+                        font-size: 15px;
+                        left: -5px;
+                        display: inline-block;
+                        position: relative;
+                    }
+                }
+            }
+        }
+        
+        .bottom {
+            padding: 0px;
+            height: 300px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            box-shadow: 0px 3px 9px 0px rgba(0,0,0,.26);
+
+            p {
+                font-size: 25px;
+                text-align: center;
+                height: 30px;
+                line-height: 30px;
+                margin-top: 10px;
+            }
+
+            div.rating {
+
+                ul {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    text-align: center;
+                }
+
+                i {
+                    font-size: 35px;
+                }
+            }
+
+            div.advice {
+                text-align: left;
+                padding-left: 10px;
+                margin-top: 5px;
+            }
+
+            .feedback {
+                resize: none;
+                border: 1px solid rgba(0, 0, 0, 0.7);
+                height: 100px;
+                width: 95%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 10px;
+                resize: none;
+            }
+        }
+
+        button {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            color: #FFFFFF;
+            background-color: rgba(0, 0, 0, 0.7);
         }
     }
 }

@@ -46,7 +46,8 @@ angular.module("util.shared", ["util.url"])
 
         var userCars = {};
         var userPayments = {};
-        var userServices = [];
+        var userReservations = [];
+        var userDones = [];
         var userHistories = {};
         var carMakers = [];
         var carModels = {};
@@ -253,12 +254,21 @@ angular.module("util.shared", ["util.url"])
                     });
             },
 
+            refreshUserHistory: function(history) {
+                userHistories[history.id].note = history.note;
+                userHistories[history.id].rating = history.rating;
+            },
+
             getUserHistory: function(id) {
                 var history = userHistories[id];
 
                 if (history) {
                     var temp = {
+                        id: history.id,
                         reservation_id: history.reservation_id,
+                        rating: history.rating,
+                        note: history.note,
+                        service_id: history.user_service_id,
                         start: history.start_time,
                         end: history.end_time,
                         price: history.price,
@@ -298,16 +308,28 @@ angular.module("util.shared", ["util.url"])
                 userHistories = {};
             },
 
-            getUserServices: function() {
-                return userServices;
+            getUserReservations: function() {
+                return userReservations;
             },
 
-            addUserServices: function(services) {
-                userServices = services;
+            addUserReservations: function(Reservations) {
+                userReservations = Reservations;
             },
 
-            clearUserServices: function() {
-                userServices = [];
+            clearUserReservations: function() {
+                userReservations = [];
+            },
+
+            getUserDones: function() {
+                return userDones;
+            },
+
+            addUserDones: function(dones) {
+                userDones = dones;
+            },
+
+            clearUserdones: function() {
+                userDones = [];
             },
 
             getCarMakers: function() {

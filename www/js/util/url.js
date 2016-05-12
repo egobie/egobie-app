@@ -32,7 +32,8 @@ angular.module('util.url', [])
             feedback: host + "/user/feedback",
 
             services: host + "/service",
-            userServices: host + "/service/user",
+            userReservations: host + "/service/reservation",
+
             openings: host + "/service/opening",
             placeOrder: host + "/service/order",
             cancelOrder: host + "/service/cancel",

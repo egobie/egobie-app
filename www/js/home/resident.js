@@ -425,7 +425,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         };
     })
 
-    .controller('serviceSelectCtl', function($scope, $state, $ionicModal, shared, orderService, order) {
+    .controller('serviceSelectCtl', function($scope, $state, $ionicModal, shared, orderService, order, orderOpening) {
         $scope.services = orderService.services;
         $scope.serviceNames = shared.getServiceNames();
         $scope.carWash = shared.getCarWashServices();
@@ -480,6 +480,10 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
 
             order.price -= service.price;
             order.time -= service.time;
+
+            if (order.price <= 0 || order.time <= 0) {
+                orderOpening.clear();
+            }
 
             $event.stopPropagation();
         };

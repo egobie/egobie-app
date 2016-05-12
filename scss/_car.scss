@@ -32,6 +32,7 @@
 
 .egobie-plate-disabled {
     opacity: 0.25;
+    box-shadow: none !important;
 }
 
 .egobie-plate {
@@ -44,6 +45,7 @@
     border-radius: 10px;
     //background: rgba(255,255,255,0.1); //rgba(255, 165, 0, 0.91);
     background: rgba(255, 165, 0, 0.91);
+    box-shadow: 3px 5px 9px 0px rgba(0, 0, 0, 0.26);
 
     .bar {
         position: absolute;

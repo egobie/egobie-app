@@ -9916,7 +9916,8 @@ a.button {
     font-size: 30px; }
 
 .egobie-plate-disabled {
-  opacity: 0.25; }
+  opacity: 0.25;
+  box-shadow: none !important; }
 
 .egobie-plate, .egobie-car {
   width: 90%;
@@ -9926,7 +9927,8 @@ a.button {
   border: 0px;
   padding: 0px;
   border-radius: 10px;
-  background: rgba(255, 165, 0, 0.91); }
+  background: rgba(255, 165, 0, 0.91);
+  box-shadow: 3px 5px 9px 0px rgba(0, 0, 0, 0.26); }
   .egobie-plate .bar, .egobie-car .bar {
     position: absolute;
     width: 100%;
@@ -10565,7 +10567,8 @@ a.button {
   padding: 0px;
   border-radius: 10px;
   margin-bottom: 10px;
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+  box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.26); }
   .egobie-reservation-list .left {
     display: inline-block;
     width: 28%;
@@ -10614,7 +10617,8 @@ a.button {
   display: flex;
   padding: 10px;
   height: 165px;
-  border-radius: 8px; }
+  border-radius: 8px;
+  box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.26); }
   .egobie-history-list .left {
     display: inline-block;
     width: 35%;
@@ -10933,6 +10937,93 @@ a.button {
         border-radius: 8px; }
       .egobie-history-detail .egobie-history-service .service div:last-child {
         overflow: hidden; }
+
+.egobie-service-rating .top {
+  height: 200px;
+  padding: 0px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.26); }
+  .egobie-service-rating .top div.price {
+    position: relative;
+    font-size: 35px;
+    height: 40px;
+    line-height: 40px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    text-align: center; }
+    .egobie-service-rating .top div.price:before {
+      content: "$";
+      position: absolute;
+      font-size: 25px;
+      left: 65px;
+      top: -10px; }
+  .egobie-service-rating .top div.date {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 13px; }
+  .egobie-service-rating .top div.services {
+    margin-top: 20px; }
+    .egobie-service-rating .top div.services p {
+      position: relative;
+      overflow: visible;
+      font-size: 20px;
+      height: 25px;
+      line-height: 25px;
+      width: 80%;
+      margin-left: 65px; }
+      .egobie-service-rating .top div.services p i {
+        font-size: 15px;
+        left: -5px;
+        display: inline-block;
+        position: relative; }
+
+.egobie-service-rating .bottom {
+  padding: 0px;
+  height: 300px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.26); }
+  .egobie-service-rating .bottom p {
+    font-size: 25px;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px; }
+  .egobie-service-rating .bottom div.rating ul {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; }
+  .egobie-service-rating .bottom div.rating i {
+    font-size: 35px; }
+  .egobie-service-rating .bottom div.advice {
+    text-align: left;
+    padding-left: 10px;
+    margin-top: 5px; }
+  .egobie-service-rating .bottom .feedback {
+    resize: none;
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    height: 100px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    resize: none; }
+
+.egobie-service-rating button {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  color: #FFFFFF;
+  background-color: rgba(0, 0, 0, 0.7); }
 
 .egobie-display-none {
   display: none !important; }
@@ -11893,7 +11984,8 @@ a.button {
     font-size: 30px; }
 
 .egobie-payment-disabled {
-  opacity: 0.25; }
+  opacity: 0.25;
+  box-shadow: none !important; }
 
 .egobie-payment-template, .egobie-payment-visa, .egobie-payment, .egobie-payment-discover {
   display: table;
@@ -11903,7 +11995,8 @@ a.button {
   margin-top: 15px;
   border: 0;
   border-radius: 10px;
-  background: transparent; }
+  background: transparent;
+  box-shadow: 3px 5px 9px 0px rgba(0, 0, 0, 0.26); }
   .egobie-payment-template *, .egobie-payment-visa *, .egobie-payment *, .egobie-payment-discover * {
     color: #FFFFFF; }
   .egobie-payment-template .left, .egobie-payment-visa .left, .egobie-payment .left, .egobie-payment-discover .left {
@@ -12159,7 +12252,7 @@ a.button {
 .egobie-left {
   float: left; }
 
-.egobie-center, .egobie-service-title, .egobie-service-item {
+.egobie-center, .egobie-service-title, .egobie-service-item, .egobie-service-item-select {
   left: 0;
   right: 0;
   margin-left: auto !important;
@@ -12248,7 +12341,7 @@ a.button {
 .egobie-left {
   float: left; }
 
-.egobie-center, .egobie-service-title, .egobie-service-item {
+.egobie-center, .egobie-service-title, .egobie-service-item, .egobie-service-item-select {
   left: 0;
   right: 0;
   margin-left: auto !important;
@@ -12296,9 +12389,15 @@ a.button {
   font-family: eGobieFont !important; }
 
 .egobie-service-disabled {
-  opacity: 0.25; }
+  opacity: 0.25;
+  box-shadow: none !important; }
 
-.egobie-price-before, .egobie-service-item div.middle p.price:before, .egobie-service-detail-title div.left .price:before {
+.egobie-service-item-select {
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.26);
+  padding-left: 5px !important;
+  padding-top: 5px !important; }
+
+.egobie-price-before, .egobie-service-item div.middle p.price:before, .egobie-service-item-select div.middle p.price:before, .egobie-service-detail-title div.left .price:before {
   content: "$";
   font-size: 15px;
   position: relative;
@@ -12307,7 +12406,7 @@ a.button {
   bottom: 17px;
   left: 1px; }
 
-.egobie-price-after, .egobie-service-item div.middle p.price:after, .egobie-service-detail-title div.left .price:after {
+.egobie-price-after, .egobie-service-item div.middle p.price:after, .egobie-service-item-select div.middle p.price:after, .egobie-service-detail-title div.left .price:after {
   content: ".00";
   font-size: 15px; }
 
@@ -12328,7 +12427,7 @@ a.button {
   border-bottom: 1px solid #1BB3EC;
   background: transparent; }
 
-.egobie-service-item {
+.egobie-service-item, .egobie-service-item-select {
   width: 95%;
   display: flex;
   border-spacing: 0px;
@@ -12336,22 +12435,22 @@ a.button {
   margin-top: 15px;
   border: 0px;
   border-bottom: 1px solid #9F9F9F; }
-  .egobie-service-item div {
+  .egobie-service-item div, .egobie-service-item-select div {
     display: inline-block; }
-    .egobie-service-item div.left {
+    .egobie-service-item div.left, .egobie-service-item-select div.left {
       background-color: #1BB3EC !important;
       width: 3px;
       height: 40px; }
-    .egobie-service-item div.middle {
+    .egobie-service-item div.middle, .egobie-service-item-select div.middle {
       width: 90%; }
-      .egobie-service-item div.middle p.name {
+      .egobie-service-item div.middle p.name, .egobie-service-item-select div.middle p.name {
         height: 25px;
         line-height: 25px;
         font-size: 20px;
         display: block; }
-      .egobie-service-item div.middle p.time {
+      .egobie-service-item div.middle p.time, .egobie-service-item-select div.middle p.time {
         display: block; }
-      .egobie-service-item div.middle p.price {
+      .egobie-service-item div.middle p.price, .egobie-service-item-select div.middle p.price {
         padding: 0px;
         height: 50px;
         font-size: 25px;
@@ -12359,9 +12458,9 @@ a.button {
         margin-left: 10px;
         margin-right: 15px;
         float: left; }
-    .egobie-service-item div.right {
+    .egobie-service-item div.right, .egobie-service-item-select div.right {
       width: 10px; }
-      .egobie-service-item div.right:before {
+      .egobie-service-item div.right:before, .egobie-service-item-select div.right:before {
         position: relative;
         font-size: 30px;
         font-weight: bolder;
@@ -12371,7 +12470,8 @@ a.button {
 .egobie-service-detail-title {
   display: flex;
   padding: 10px;
-  border-radius: 10px; }
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.26); }
   .egobie-service-detail-title div {
     display: inline-block; }
     .egobie-service-detail-title div.left {

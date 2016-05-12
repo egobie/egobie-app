@@ -1,0 +1,36 @@
+<ion-modal-view hide-nav-bar="true" cache-view="false">
+    <ion-header-bar class="egobie-header-bar">
+        <h1 class="title">THANKS FOR USING eGobie</h1>
+        <button class="button button-icon icon ion-android-close"
+                ng-click="hideRating()"></button>
+    </ion-header-bar>
+    <div class="egobie-bg-mask">
+        <div class="egobie-bg-mask-1"></div>
+        <div class="egobie-bg-mask-2"></div>
+    </div>
+    <ion-content padding="true">
+        <ion-list class="egobie-service-rating">
+            <ion-item class="top">
+                <div class="price">{{selectedHistory.price}}</div>
+                <div class="date">{{selectedHistory.start}}</div>
+                <div class="services">
+                    <p ng-repeat="service in selectedHistory.services">
+                        <i class="icon ion-wrench"></i>{{service.name}}
+                    </p>
+                </div>
+            </ion-item>
+            <ion-item class="bottom">
+                <p>Rate This Service</p>
+                <div class="rating">
+                    <rating max="5"
+                            ng-model="selectedHistory.rating"></rating>
+                </div>
+                <div class="advice">Any suggestions?</div>
+                <textarea class="feedback"
+                          ng-model="selectedHistory.note"></textarea>
+            </ion-item>
+            <button class="button button-block"
+                    ng-click="submitRating()">SUBMIT</button>
+        </ion-list>
+    </ion-content>
+</ion-modal-view>
