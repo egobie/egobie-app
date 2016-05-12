@@ -28,84 +28,128 @@
     }
 
     &-reservation-list {
-        display: flex;
         padding: 0px;
         border-radius: 10px;
         margin-bottom: 10px;
-        padding-bottom: 10px;
+        padding-bottom: 5px;
         box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.26);
 
-        .left {
-            display: inline-block;
-            width: 28%;
-            height: 100px;
-            margin: 15px 10px 0px 5px;
-            border-right: 1px solid #000000;
+        .top {
+            display: flex;
 
-            .price {
-                font-size: 25px;
-                height: 30px;
-                line-height: 30px;
-                padding-left: 12px;
+            .left {
+                display: inline-block;
+                width: 28%;
+                height: 100px;
+                margin: 15px 10px 0px 5px;
+                border-right: 1px solid #000000;
 
-                &:before {
-                    content: "$";
-                    position: absolute;
-                    font-size: 15px;
-                    top: 8px;
-                    left: 8px;
+                .price {
+                    font-size: 25px;
+                    height: 30px;
+                    line-height: 30px;
+                    padding-left: 12px;
+
+                    &:before {
+                        content: "$";
+                        position: absolute;
+                        font-size: 15px;
+                        top: 8px;
+                        left: 8px;
+                    }
+                }
+            }
+
+            .right {
+                display: flex;
+                padding-top: 10px;
+                padding-bottom: 10px;
+
+                .time-services {
+                    display: inline-block;
+
+                    .time, .services {
+                        .title {
+                            font-size: 10px;
+                        }
+
+                        .value {
+                            color: #000000
+                        }
+                    }
+
+                    .time .value {
+                        margin-bottom: 5px;
+                    }
+
+                    .services .value:before {
+                        content: "- ";
+                    }
+                }
+
+                .plate-reserve {
+                    display: inline-block;
+                    margin-left: 10px;
+
+                    .plate, .reserve {
+                        padding-left: 11px;
+
+                        .title {
+                            display: block;
+                            font-size: 10px;
+                        }
+
+                        .value {
+                            color: #000000;
+                        }
+                    }
+
+                    .plate .value {
+                        margin-bottom: 5px;
+                    }
                 }
             }
         }
 
-        .right {
-            display: flex;
-            padding-top: 10px;
-            padding-bottom: 10px;
+        .bottom {
+            width: 95%;
+            height: 30px;
+            line-height: 30px;
+            font-size: 25px;
+            font-weight: 900;
+            text-align: right;
+            margin-left: auto;
+            margin-right: auto;
+            padding-right: 30px;
+            border-top: 1px solid rgba(0, 0, 0, 0.31);
+        }
 
-            .time-services {
-                display: inline-block;
+        .bottom:before, .min:after, .hour:after, .day:after {
+            font-size: 15px;
+            height: 30px;
+            line-height: 30px;
+            font-weight: normal;
+        }
 
-                .time, .services {
-                    .title {
-                        font-size: 10px;
-                    }
+        .bottom:before {
+            content: "Will start in:";
+            padding-right: 5px;
+        }
 
-                    .value {
-                        color: #000000
-                    }
-                }
+        .min:after, .hour:after, .day:after {
+            padding-left: 5px;
+        }
 
-                .time .value {
-                    margin-bottom: 5px;
-                }
+        .min:after {
+            content: "mins";
+        }
 
-                .services .value:before {
-                    content: "- ";
-                }
-            }
+        .hour:after {
+            content: "hours";
+        }
 
-            .plate-reserve {
-                display: inline-block;
-                margin-left: 10px;
-
-                .plate, .reserve {
-                    padding-left: 11px;
-
-                    .title {
-                        display: block;
-                        font-size: 10px;
-                    }
-
-                    .value {
-                        color: #000000;
-                    }
-                }
-
-                .plate .value {
-                    margin-bottom: 5px;
-                }
-            }
+        .day:after {
+            content: "days";
         }
     }
 

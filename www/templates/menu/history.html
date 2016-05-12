@@ -24,33 +24,37 @@
             <ion-item class="egobie-reservation-list"
                       ng-repeat="reservation in reservations"
                       ng-click="showCancelSheet(reservation)">
-                <div class="left">
-                    <p class="price">{{reservation.price}}</p>
-                </div>
-                <div class="right">
-                    <div class="time-services">
-                        <div class="time">
-                            <p class="title">Estimated Start:</p>
-                            <p class="value">{{reservation.reserve_start_time}}</p>
-                        </div>
-                        <div class="services">
-                            <p class="title">Services</p>
-                            <p class="value"
-                               ng-repeat="service in reservation.services">{{service.name}}</p>
-                        </div>
+                <div class="top">
+                    <div class="left">
+                        <p class="price">{{reservation.price}}</p>
                     </div>
+                    <div class="right">
+                        <div class="time-services">
+                            <div class="time">
+                                <p class="title">Estimated Start:</p>
+                                <p class="value">{{reservation.reserve_start_time}}</p>
+                            </div>
+                            <div class="services">
+                                <p class="title">Services</p>
+                                <p class="value"
+                                   ng-repeat="service in reservation.services">{{service.name}}</p>
+                            </div>
+                        </div>
 
-                    <div class="plate-reserve">
-                        <div class="plate">
-                            <p class="title">Plate No.</p>
-                            <p class="value">{{reservation.plate}}</p>
-                        </div>
-                        <div class="reserve">
-                            <p class="title">Reservation ID #</p>
-                            <p class="value">{{reservation.reservation_id}}</p>
+                        <div class="plate-reserve">
+                            <div class="plate">
+                                <p class="title">Plate No.</p>
+                                <p class="value">{{reservation.plate}}</p>
+                            </div>
+                            <div class="reserve">
+                                <p class="title">Reservation ID #</p>
+                                <p class="value">{{reservation.reservation_id}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <p class="bottom"
+                   ng-class="unitStyle(reservation.unit)">{{reservation.how_long}}</p>
             </ion-item>
         </ion-list>
 

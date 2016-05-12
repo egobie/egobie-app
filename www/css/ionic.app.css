@@ -10563,55 +10563,83 @@ a.button {
   margin-top: 20px; }
 
 .egobie-reservation-list {
-  display: flex;
   padding: 0px;
   border-radius: 10px;
   margin-bottom: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.26); }
-  .egobie-reservation-list .left {
-    display: inline-block;
-    width: 28%;
-    height: 100px;
-    margin: 15px 10px 0px 5px;
-    border-right: 1px solid #000000; }
-    .egobie-reservation-list .left .price {
-      font-size: 25px;
-      height: 30px;
-      line-height: 30px;
-      padding-left: 12px; }
-      .egobie-reservation-list .left .price:before {
-        content: "$";
-        position: absolute;
-        font-size: 15px;
-        top: 8px;
-        left: 8px; }
-  .egobie-reservation-list .right {
-    display: flex;
-    padding-top: 10px;
-    padding-bottom: 10px; }
-    .egobie-reservation-list .right .time-services {
-      display: inline-block; }
-      .egobie-reservation-list .right .time-services .time .title, .egobie-reservation-list .right .time-services .services .title {
-        font-size: 10px; }
-      .egobie-reservation-list .right .time-services .time .value, .egobie-reservation-list .right .time-services .services .value {
-        color: #000000; }
-      .egobie-reservation-list .right .time-services .time .value {
-        margin-bottom: 5px; }
-      .egobie-reservation-list .right .time-services .services .value:before {
-        content: "- "; }
-    .egobie-reservation-list .right .plate-reserve {
+  .egobie-reservation-list .top {
+    display: flex; }
+    .egobie-reservation-list .top .left {
       display: inline-block;
-      margin-left: 10px; }
-      .egobie-reservation-list .right .plate-reserve .plate, .egobie-reservation-list .right .plate-reserve .reserve {
-        padding-left: 11px; }
-        .egobie-reservation-list .right .plate-reserve .plate .title, .egobie-reservation-list .right .plate-reserve .reserve .title {
-          display: block;
+      width: 28%;
+      height: 100px;
+      margin: 15px 10px 0px 5px;
+      border-right: 1px solid #000000; }
+      .egobie-reservation-list .top .left .price {
+        font-size: 25px;
+        height: 30px;
+        line-height: 30px;
+        padding-left: 12px; }
+        .egobie-reservation-list .top .left .price:before {
+          content: "$";
+          position: absolute;
+          font-size: 15px;
+          top: 8px;
+          left: 8px; }
+    .egobie-reservation-list .top .right {
+      display: flex;
+      padding-top: 10px;
+      padding-bottom: 10px; }
+      .egobie-reservation-list .top .right .time-services {
+        display: inline-block; }
+        .egobie-reservation-list .top .right .time-services .time .title, .egobie-reservation-list .top .right .time-services .services .title {
           font-size: 10px; }
-        .egobie-reservation-list .right .plate-reserve .plate .value, .egobie-reservation-list .right .plate-reserve .reserve .value {
+        .egobie-reservation-list .top .right .time-services .time .value, .egobie-reservation-list .top .right .time-services .services .value {
           color: #000000; }
-      .egobie-reservation-list .right .plate-reserve .plate .value {
-        margin-bottom: 5px; }
+        .egobie-reservation-list .top .right .time-services .time .value {
+          margin-bottom: 5px; }
+        .egobie-reservation-list .top .right .time-services .services .value:before {
+          content: "- "; }
+      .egobie-reservation-list .top .right .plate-reserve {
+        display: inline-block;
+        margin-left: 10px; }
+        .egobie-reservation-list .top .right .plate-reserve .plate, .egobie-reservation-list .top .right .plate-reserve .reserve {
+          padding-left: 11px; }
+          .egobie-reservation-list .top .right .plate-reserve .plate .title, .egobie-reservation-list .top .right .plate-reserve .reserve .title {
+            display: block;
+            font-size: 10px; }
+          .egobie-reservation-list .top .right .plate-reserve .plate .value, .egobie-reservation-list .top .right .plate-reserve .reserve .value {
+            color: #000000; }
+        .egobie-reservation-list .top .right .plate-reserve .plate .value {
+          margin-bottom: 5px; }
+  .egobie-reservation-list .bottom {
+    width: 95%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 25px;
+    font-weight: 900;
+    text-align: right;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 30px;
+    border-top: 1px solid rgba(0, 0, 0, 0.31); }
+  .egobie-reservation-list .bottom:before, .egobie-reservation-list .min:after, .egobie-reservation-list .hour:after, .egobie-reservation-list .day:after {
+    font-size: 15px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: normal; }
+  .egobie-reservation-list .bottom:before {
+    content: "Will start in:";
+    padding-right: 5px; }
+  .egobie-reservation-list .min:after, .egobie-reservation-list .hour:after, .egobie-reservation-list .day:after {
+    padding-left: 5px; }
+  .egobie-reservation-list .min:after {
+    content: "mins"; }
+  .egobie-reservation-list .hour:after {
+    content: "hours"; }
+  .egobie-reservation-list .day:after {
+    content: "days"; }
 
 .egobie-history-list {
   display: flex;

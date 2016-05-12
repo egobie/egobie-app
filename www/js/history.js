@@ -231,6 +231,22 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
             }
         };
 
+        $scope.unitStyle = function(unit) {
+            if (unit === "DAY") {
+                return {
+                    'day': true
+                };
+            } else if (unit === "HOUR") {
+                return {
+                    'hour': true
+                };
+            } else if (unit === "MINUTE") {
+                return {
+                    'min': true
+                };
+            }
+        };
+
         $scope.historyPercent = function(value) {
             return (100 * (value / $scope.max)) + '%';
         };
