@@ -257,6 +257,7 @@ angular.module("util.shared", ["util.url"])
             refreshUserHistory: function(history) {
                 userHistories[history.id].note = history.note;
                 userHistories[history.id].rating = history.rating;
+                userHistories[history.id].available = history.available;
             },
 
             getUserHistory: function(id) {
@@ -268,6 +269,7 @@ angular.module("util.shared", ["util.url"])
                         reservation_id: history.reservation_id,
                         rating: history.rating,
                         note: history.note,
+                        available: history.available,
                         service_id: history.user_service_id,
                         start: history.start_time,
                         end: history.end_time,
@@ -299,6 +301,7 @@ angular.module("util.shared", ["util.url"])
             addUserHistories: function(histories) {
                 if (histories) {
                     Array.prototype.forEach.call(histories, function(history) {
+                        history.available = history.rating > 0;
                         userHistories[history.id] = history;
                     });
                 }

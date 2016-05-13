@@ -29,7 +29,7 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
 
         $scope.hideRating = function() {
             $scope.ratingModel.hide();
-            if ($scope.selectedHistory.rating > 0) {
+            if ($scope.selectedHistory.available) {
                 $timeout(function() {
                     $scope.historyModel.show();
                 }, 500);
@@ -41,6 +41,7 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
                 shared.alert("Please rate our service.");
             } else {
                 var request = {
+                    "id": $scope.selectedHistory.id,
                     "user_id": shared.getUser().id,
                     "service_id": $scope.selectedHistory.service_id,
                     "rating": $scope.selectedHistory.rating,
@@ -54,6 +55,7 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
                         headers: shared.getHeaders()
                     })
                     .success(function(data, status, headers, config) {
+                        $scope.selectedHistory.available = true;
                         shared.hideLoading();
                         shared.refreshUserHistory($scope.selectedHistory);
                         $scope.hideRating();
@@ -74,7 +76,7 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
         $scope.showHistory = function(id) {
             $scope.selectedHistory = shared.getUserHistory(id);
 
-            if ($scope.selectedHistory.rating <= 0) {
+            if (!$scope.selectedHistory.available) {
                 // If history is not rated yet, force user to rate and open history
                 // detail after closing rating page
                 $scope.selectedHistory.rating = 0;

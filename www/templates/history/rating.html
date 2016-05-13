@@ -1,6 +1,6 @@
 <ion-modal-view hide-nav-bar="true" cache-view="false">
     <ion-header-bar class="egobie-header-bar">
-        <h1 class="title">THANKS FOR USING eGobie</h1>
+        <h1 class="title">THANKS FOR USING US</h1>
         <button class="button button-icon icon ion-android-close"
                 ng-click="hideRating()"></button>
     </ion-header-bar>
@@ -21,7 +21,8 @@
             </ion-item>
             <ion-item class="bottom">
                 <p>Rate This Service</p>
-                <div class="rating">
+                <div class="rating"
+                     ng-class="ratingStyle(selectedHistory.rating)">
                     <rating max="5"
                             ng-model="selectedHistory.rating"></rating>
                 </div>
