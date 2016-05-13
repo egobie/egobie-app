@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "ngCordova": "^0.1.26-alpha",
-    "ionic-rating": "^0.3.0"
+    "ionic-rating": "^0.3.0",
+    "angular-credit-cards": "^3.1.0"
   }
 }

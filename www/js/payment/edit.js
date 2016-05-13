@@ -1,4 +1,4 @@
-angular.module('app.payment.edit', ['ionic', 'util.shared', 'util.url'])
+angular.module('app.payment.edit', ['ionic', 'credit-cards', 'util.shared', 'util.url'])
 
     .controller('paymentEditCtrl', function($scope, $http, shared, url) {
         $scope.years = [];
@@ -62,13 +62,14 @@ angular.module('app.payment.edit', ['ionic', 'util.shared', 'util.url'])
                 return false;
             }
 
-            if (!payment.account_number) {
-                shared.alert("Please input card number!");
+            if (shared.testCreditCard(payment.account_number) === "invalid") {
+                shared.alert("Card number is not valid (we only accept American Express" + 
+                    ", Visa, Visa Electron, MasterCard and Discover)");
                 return false;
             }
 
             if (!payment.account_zip) {
-                shared.alert("Please input zipcode!");
+                shared.alert("Please input valid zipcode!");
                 return false;
             }
 
