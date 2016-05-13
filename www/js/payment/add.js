@@ -18,6 +18,10 @@ angular.module('app.payment.add', ['ionic', 'util.shared', 'util.url'])
             zip: ""
         };
 
+        $scope.changePayment = function() {
+            shared.testCreditCard($scope.payment.number);
+        };
+
         $scope.hideAddPayment = function() {
             clearSelected();
             $scope.addPaymentModal.hide();

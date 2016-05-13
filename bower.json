@@ -6,7 +6,6 @@
   },
   "dependencies": {
     "ngCordova": "^0.1.26-alpha",
-    "ionic-rating": "^0.3.0",
-    "jquery-creditcardvalidator": "^1.0.0"
+    "ionic-rating": "^0.3.0"
   }
 }

@@ -23,7 +23,8 @@
                 <i class="icon-mask"></i>
                 <i class="icon ion-card"></i>
                 <input id="addpayment-number" type="number" placeholder="0000 0000 0000 0000 000" maxlength="19"
-                       ng-model="payment.number">
+                       ng-model="payment.number"
+                       ng-change="changePayment()">
             </ion-item>
 
             <ion-item class="item-input">

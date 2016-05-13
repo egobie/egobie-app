@@ -44,6 +44,32 @@ angular.module("util.shared", ["util.url"])
             'WHITE', 'BLACK', 'SILVER', 'GRAY', 'RED', 'BLUE', 'BROWN', 'YELLOW', 'GOLD', 'GREEN', 'PINK', 'OTHERS'
         ];
 
+        var cardTypes = [{
+            name: 'amex',
+            pattern: /^3[47]/,
+            valid_length: [15]
+        }, {
+            name: 'visa_electron',
+            pattern: /^(4026|417500|4508|4844|491(3|7))/,
+            valid_length: [16]
+        }, {
+            name: 'visa',
+            pattern: /^4/,
+            valid_length: [16]
+        }, {
+            name: 'mastercard',
+            pattern: /^5[1-5]/,
+            valid_length: [16]
+        }, {
+            name: 'maestro',
+            pattern: /^(5018|5020|5038|6304|6759|676[1-3])/,
+            valid_length: [12, 13, 14, 15, 16, 17, 18, 19]
+        }, {
+            name: 'discover',
+            pattern: /^(6011|622(12[6-9]|1[3-9][0-9]|[2-8][0-9]{2}|9[0-1][0-9]|92[0-5]|64[4-9])|65)/,
+            valid_length: [16]
+        }];
+
         var userCars = {};
         var userPayments = {};
         var userReservations = [];
@@ -444,6 +470,21 @@ angular.module("util.shared", ["util.url"])
 
             testCoupon: function(coupon) {
                 return regCoupon.test(coupon);
+            },
+
+            testCreditCard: function(accountNumber) {
+                if (accountNumber) {
+                    var len = ("" + accountNumber).length;
+
+                    for (var i in cardTypes) {
+                        if (cardTypes[i].pattern.test(accountNumber) && cardTypes[i].valid_length.indexOf(len) >= 0) {
+                            console.log(cardTypes[i]);
+                            return;
+                        }
+                    }
+
+                    console.log("Not valid");
+                }
             },
 
             showLoading: function () {
