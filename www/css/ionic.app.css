@@ -9714,6 +9714,30 @@ a.button {
       margin-bottom: 5px;
       border-bottom: 1px solid rgba(0, 0, 0, 0.3); }
 
+.egobie-feedback {
+  background: transparent;
+  border: 0px; }
+  .egobie-feedback input, .egobie-feedback textarea, .egobie-feedback button {
+    width: 90%;
+    margin: auto auto 15px auto;
+    border: 1px solid rgba(0, 0, 0, 0.3); }
+  .egobie-feedback input, .egobie-feedback textarea {
+    background: transparent; }
+  .egobie-feedback input:focus, .egobie-feedback textarea:focus {
+    border: 1px solid #000000; }
+  .egobie-feedback input {
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    padding-left: 10px; }
+  .egobie-feedback textarea {
+    height: 200px;
+    font-size: 15px;
+    padding: 10px;
+    resize: none; }
+  .egobie-feedback button {
+    border-radius: 5px; }
+
 .egobie-display-none {
   display: none !important; }
 
