@@ -30,6 +30,7 @@ angular.module('app.payment.add', ['ionic', 'credit-cards', 'util.shared', 'util
                 "account_number": $scope.payment.number + "",
                 "account_type": "CREDIT",
                 "account_zip": $scope.payment.zip,
+                "card_type": "",
                 "code": $scope.payment.cvv + "",
                 "expire_month": $scope.payment.month,
                 "expire_year": $scope.payment.year
@@ -66,14 +67,17 @@ angular.module('app.payment.add', ['ionic', 'credit-cards', 'util.shared', 'util
         };
 
         function validatePayment(payment) {
+            payment.card_type = shared.testCreditCard(payment.account_number);
+
             if (!payment.account_name) {
                 shared.alert("Please input the card's holder name!");
                 return false;
             }
 
-            if (shared.testCreditCard(payment.account_number) === "invalid") {
+            if (payment.card_type === "invalid") {
                 shared.alert("Card number is not valid (we only accept American Express" + 
                     ", Visa, Visa Electron, MasterCard and Discover)");
+                payment.card_type = "";
                 return false;
             }
 
