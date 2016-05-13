@@ -22,14 +22,14 @@
             <ion-item class="item-input">
                 <i class="icon-mask"></i>
                 <i class="icon ion-card"></i>
-                <input id="editpayment-number" type="number" placeholder="0000 0000 0000 0000"
+                <input id="editpayment-number" type="number" placeholder="0000 0000 0000 0000 000"  maxlength="19"
                        ng-model="payment.number">
             </ion-item>
 
             <ion-item class="item-input">
                 <i class="icon-mask"></i>
                 <i class="icon ion-locked"></i>
-                <input id="editpayment-cvv" type="password" placeholder="CVV"
+                <input id="editpayment-cvv" type="password" placeholder="CVV/CVC" maxlength="4"
                        ng-model="payment.cvv">
             </ion-item>
 
