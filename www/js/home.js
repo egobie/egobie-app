@@ -3,8 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-angular.module('app.home', ['ionic', 'ionic.rating',
-    'ngAnimate', 'ui.bootstrap', 'ui.bootstrap.datetimepicker'])
+angular.module('app.home', ['ionic', 'ionic.rating'])
 
     .config(function($stateProvider) {
 
@@ -68,55 +67,6 @@ angular.module('app.home', ['ionic', 'ionic.rating',
                 }
             }
         ];
-    })
-
-    .controller('dateCtrl', function($scope, $filter, $ionicPopup) {
-
-        $scope.dates = [];
-        $scope.date = null;
-
-        $scope.openDatePickerPopup = function() {
-
-            $ionicPopup.show({
-                templateUrl: 'date-picker',
-                title: "Date",
-                scope: $scope,
-                buttons: [
-                    {
-                        text: 'Close'
-                    },
-                    {
-                        text: '<b>Choose</b>',
-                        type: 'button-positive',
-                        onTap: function(e) {
-                            if ($scope.date !== null) {
-                                $scope.dates.push($scope.date);
-                            }
-                        }
-                    }
-                ]
-            });
-        };
-
-        $scope.onTimeSet = function (newDate, oldDate) {
-            $scope.date = $scope.formateDate(newDate);
-        };
-
-        $scope.formateDate = function(date) {
-            return $filter('date')(date, 'yyyy-MM-dd');
-        };
-
-        $scope.removeDate = function(date) {
-            var index = $scope.dates.indexOf(date);
-
-            if (index > -1) {
-                $scope.dates.splice(index, 1);
-            }
-        };
-
-        $scope.isShown = function() {
-            return $scope.dates.length !== 0;
-        };
     })
 
     .controller('locationsCtrl', function($scope, $state, $ionicActionSheet, locations) {
