@@ -42,8 +42,7 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
             } else {
                 var request = {
                     "id": $scope.selectedHistory.id,
-                    "user_id": shared.getUser().id,
-                    "service_id": $scope.selectedHistory.service_id,
+                    "service_id": $scope.selectedHistory.user_service_id,
                     "rating": $scope.selectedHistory.rating,
                     "note": $scope.selectedHistory.note
                 };
@@ -51,9 +50,7 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
                 shared.showLoading();
 
                 $http
-                    .post(url.ratingHistory, request, {
-                        headers: shared.getHeaders()
-                    })
+                    .post(url.ratingHistory, shared.getRequestBody(request))
                     .success(function(data, status, headers, config) {
                         $scope.selectedHistory.available = true;
                         shared.hideLoading();
@@ -97,12 +94,7 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
 
             shared.showLoading();
             $http
-                .post(url.userReservations, {
-                    user_id: shared.getUser().id,
-                    user_token: shared.getUser().token
-                }, {
-                    headers: shared.getHeaders()
-                })
+                .post(url.userReservations, shared.getRequestBody({}))
                 .success(function(data, status, headers, config) {
                     shared.hideLoading();
                     shared.addUserReservations(data);
@@ -124,12 +116,9 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
             shared.clearUserHistories();
 
             $http
-                .post(url.userHistories, {
-                    user_id: shared.getUser().id,
+                .post(url.userHistories, shared.getRequestBody({
                     page: 0
-                }, {
-                    headers: shared.getHeaders()
-                })
+                }))
                 .success(function(data, status, headers, config) {
                     shared.addUserHistories(data);
                     $scope.histories = shared.getUserHistories();
@@ -150,12 +139,9 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
                         if (sure) {
                             shared.showLoading();
                             $http
-                                .post(url.cancelOrder, {
-                                    id: reservation.id,
-                                    user_id: shared.getUser().id
-                                }, {
-                                    headers: shared.getHeaders()
-                                })
+                                .post(url.cancelOrder, shared.getRequestBody({
+                                    id: reservation.id
+                                }))
                                 .success(function(data, status, headers, config) {
                                     shared.unlockUserCar(reservation.car_id);
                                     shared.unlockUserPayment(reservation.payment_id);

@@ -1,10 +1,6 @@
 angular.module("util.shared", ["util.url"])
 
     .service("shared", function($rootScope, $window, $ionicPopup, $ionicLoading, $http, $q, url) {
-        var headers = {
-            "Egobie-Id": "",
-            "Egobie-Token": ""
-        };
 
         var user = {
             id: "",
@@ -135,16 +131,17 @@ angular.module("util.shared", ["util.url"])
                 user.work_zip = u.work_address_zip;
                 user.work_street = u.work_address_street;
 
-                headers["Egobie-Id"] = user.id;
-                headers["Egobie-Token"] = user.token;
-
                 refreshScope();
             },
 
             refreshUserToken: function(token) {
                 user.token = token;
-                headers["Egobie-Token"] = user.token;
+
                 refreshScope();
+            },
+
+            getUser: function() {
+                return user;
             },
 
             refreshHome: function(address) {
@@ -165,12 +162,11 @@ angular.module("util.shared", ["util.url"])
                 refreshScope();
             },
 
-            getUser: function() {
-                return user;
-            },
+            getRequestBody: function(body) {
+                body.user_id = user.id;
+                body.user_token = user.token;
 
-            getHeaders: function() {
-                return headers;
+                return body;
             },
 
             getYears: function() {
@@ -179,10 +175,6 @@ angular.module("util.shared", ["util.url"])
 
             getStates: function() {
                 return states;
-            },
-
-            getStateName: function(state) {
-                return states[state];
             },
 
             getColors: function() {
@@ -252,9 +244,7 @@ angular.module("util.shared", ["util.url"])
 
             readService: function(id) {
                 $http
-                    .get(url.readService + id, {
-                        headers: this.getHeaders()
-                    })
+                    .post(url.readService + id, this.getRequestBody({}))
                     .success(function(data, status, headers, config) {
                         
                     })
@@ -265,9 +255,9 @@ angular.module("util.shared", ["util.url"])
 
             demandService: function(ids) {
                 $http
-                    .post(url.demandService, ids, {
-                        headers: this.getHeaders()
-                    })
+                    .post(url.demandService, this.getRequestBody({
+                        services: ids
+                    }))
                     .success(function(data, status, headers, config) {
                         
                     })
@@ -283,37 +273,7 @@ angular.module("util.shared", ["util.url"])
             },
 
             getUserHistory: function(id) {
-                var history = userHistories[id];
-
-                if (history) {
-                    var temp = {
-                        id: history.id,
-                        reservation_id: history.reservation_id,
-                        rating: history.rating,
-                        note: history.note,
-                        available: history.available,
-                        service_id: history.user_service_id,
-                        start: history.start_time,
-                        end: history.end_time,
-                        price: history.price,
-                        account_name: userPayments[history.user_payment_id]['account_name'],
-                        account_number: userPayments[history.user_payment_id]['account_number'],
-                        account_type: userPayments[history.user_payment_id]['account_type'],
-                        plate: userCars[history.user_car_id]['plate'],
-                        state: userCars[history.user_car_id]['state'],
-                        year: userCars[history.user_car_id]['year'],
-                        color: userCars[history.user_car_id]['color'],
-                        maker: userCars[history.user_car_id]['maker'],
-                        model: userCars[history.user_car_id]['model'],
-                        services: []
-                    };
-
-                    Array.prototype.forEach.call(history.services, function(id) {
-                        temp.services.push(services[id]);
-                    });
-
-                    return temp;
-                }
+                return userHistories[id];
             },
 
             getUserHistories: function() {
@@ -324,8 +284,15 @@ angular.module("util.shared", ["util.url"])
                 if (histories) {
                     Array.prototype.forEach.call(histories, function(history) {
                         history.available = history.rating > 0;
+                        history.services = [];
                         userHistories[history.id] = history;
+
+                        Array.prototype.forEach.call(history.service_ids, function(id) {
+                            history.services.push(services[id]);
+                        });
                     });
+
+                    console.log(histories);
                 }
             },
 
@@ -387,6 +354,7 @@ angular.module("util.shared", ["util.url"])
             addUserCars: function(cars) {
                 if (cars) {
                     Array.prototype.forEach.call(cars, function(car) {
+                        car.full_state = states[car.state].toUpperCase();
                         userCars[car.id] = car;
                     });
                 }
@@ -449,9 +417,7 @@ angular.module("util.shared", ["util.url"])
 
             demandOpening: function(id) {
                 $http
-                    .get(url.demandOpening + id, {
-                        headers: this.getHeaders()
-                    })
+                    .post(url.demandOpening + id, this.getRequestBody({}))
                     .success(function(data, status, headers, config) {
                         
                     })

@@ -185,7 +185,6 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
 
         $scope.placeOrderSheet = function() {
             var request = {
-                user_id: shared.getUser().id,
                 car_id: orderCar.selected.id,
                 payment_id: orderPayment.selected.id,
                 note: "test",
@@ -214,9 +213,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                 destructiveButtonClicked: function() {
                     shared.showLoading();
                     $http
-                        .post(url.placeOrder, request, {
-                            headers: shared.getHeaders()
-                        })
+                        .post(url.placeOrder, shared.getRequestBody(request))
                         .success(function(data, status, headers, config) {
                             shared.lockUserCar(request.car_id);
                             shared.lockUserPayment(request.payment_id);
@@ -282,9 +279,9 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
             shared.showLoading();
 
             $http
-                .post(url.openings, services, {
-                    headers: shared.getHeaders()
-                })
+                .post(url.openings, shared.getRequestBody({
+                    services: services
+                }))
                 .success(function(data, status, headers, config) {
                     shared.hideLoading();
                     $scope.openings = data;

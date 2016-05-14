@@ -3,11 +3,7 @@ angular.module('util.request', ['util.shared', 'util.url'])
     .service('requestUserCars', function($http, shared, url) {
         var userCars = null;
         var promise = $http
-            .post(url.cars, {
-                user_id: shared.getUser().id
-            }, {
-                headers: shared.getHeaders()
-            })
+            .post(url.cars, shared.getRequestBody({}))
             .success(function(data, status, headers, config) {
                 userCars = data;
                 shared.addUserCars(userCars);
@@ -28,9 +24,7 @@ angular.module('util.request', ['util.shared', 'util.url'])
     .service('requestServices', function($http, shared, url) {
         var services = null;
         var promise = $http
-            .get(url.services, {
-                headers: shared.getHeaders()
-            })
+            .post(url.services, shared.getRequestBody({}))
             .success(function(data, status, headers, config) {
                 services = data;
                 shared.addServices(data);
@@ -50,9 +44,7 @@ angular.module('util.request', ['util.shared', 'util.url'])
     .service('requestCarMakers', function($http, shared, url) {
         var carMakers = null;
         var promise = $http
-            .get(url.carMaker, {
-                headers: shared.getHeaders()
-            })
+            .post(url.carMaker, shared.getRequestBody({}))
             .success(function(data, status, headers, config) {
                 carMakers = data;
                 shared.addCarMakers(carMakers);
@@ -72,9 +64,7 @@ angular.module('util.request', ['util.shared', 'util.url'])
     .service('requestCarModels', function($http, shared, url) {
         var carModels = null;
         var promise = $http
-            .get(url.carModel, {
-                headers: shared.getHeaders()
-            })
+            .post(url.carModel, shared.getRequestBody({}))
             .success(function(data, status, headers, config) {
                 carModels = data;
                 shared.addCarModels(carModels);
@@ -94,11 +84,7 @@ angular.module('util.request', ['util.shared', 'util.url'])
     .service('requestUserPayments', function($http, shared, url) {
         var userPayments = null;
         var promise = $http
-            .post(url.payments, {
-                user_id: shared.getUser().id
-            }, {
-                headers: shared.getHeaders()
-            })
+            .post(url.payments, shared.getRequestBody({}))
             .success(function(data, status, headers, config) {
                 userPayments = data;
                 shared.addUserPayments(userPayments);

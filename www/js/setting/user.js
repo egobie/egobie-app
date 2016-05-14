@@ -16,8 +16,6 @@ angular.module('app.setting.user', ['ionic', 'util.shared', 'util.url'])
 
         $scope.editUser = function() {
             var user = {
-                user_id: shared.getUser().id,
-                user_token: shared.getUser().token,
                 first_name: $scope.user.first,
                 last_name: $scope.user.last,
                 middle_name: $scope.user.middle,
@@ -32,9 +30,7 @@ angular.module('app.setting.user', ['ionic', 'util.shared', 'util.url'])
             shared.showLoading();
 
             $http
-                .post(url.updateUser, user, {
-                    headers: shared.getHeaders()
-                })
+                .post(url.updateUser, shared.getRequestBody(user))
                 .success(function(data, status, hearders, config) {
                     shared.refreshUser(data);
                     shared.hideLoading();

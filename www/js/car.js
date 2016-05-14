@@ -94,12 +94,9 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
                 shared.showLoading();
                 if (sure) {
                     $http
-                        .post(url.deleteCar, {
-                            id: id,
-                            user_id: shared.getUser().id
-                        }, {
-                            headers: shared.getHeaders()
-                        })
+                        .post(url.deleteCar, shared.getRequestBody({
+                            id: id
+                        }))
                         .success(function(data, status, headers, config) {
                             shared.hideLoading();
                             shared.deleteUserCar(id);
@@ -112,10 +109,6 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
                         });
                 }
             });
-        };
-
-        $scope.getStateName = function(state) {
-            return shared.getStateName(state).toUpperCase();
         };
 
         $scope.noCar = function() {

@@ -16,8 +16,6 @@ angular.module('app.setting.work', ['ionic', 'util.shared', 'util.url'])
 
         $scope.editWork = function() {
             var address = {
-                user_id: shared.getUser().id,
-                user_token: shared.getUser().token,
                 state: $scope.work.state,
                 city: $scope.work.city,
                 zip: $scope.work.zip,
@@ -31,9 +29,7 @@ angular.module('app.setting.work', ['ionic', 'util.shared', 'util.url'])
             shared.showLoading();
 
             $http
-                .post(url.updateWork, address, {
-                    headers: shared.getHeaders()
-                })
+                .post(url.updateWork, shared.getRequestBody(address))
                 .success(function(data, status, hearders, config) {
                     shared.refreshWork(address);
                     shared.hideLoading();

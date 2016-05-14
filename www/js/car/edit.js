@@ -14,7 +14,6 @@ angular.module('app.car.edit', ['ionic', 'util.shared', 'util.url'])
         $scope.editCar = function() {
             var car = {
                 id:  $scope.selected.id,
-                user_id: shared.getUser().id,
                 plate: $scope.selected.plate.toUpperCase(),
                 state: $scope.selected.state,
                 year: $scope.selected.year,
@@ -30,9 +29,7 @@ angular.module('app.car.edit', ['ionic', 'util.shared', 'util.url'])
             shared.showLoading();
 
             $http
-                .post(url.editCar, car, {
-                    headers: shared.getHeaders()
-                })
+                .post(url.editCar, shared.getRequestBody(car))
                 .success(function(data, status, headers, config) {
                     shared.hideLoading();
                     shared.addUserCar(data);

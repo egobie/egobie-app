@@ -91,12 +91,9 @@ angular.module('app.payment', ['ionic', 'util.shared', 'util.url'])
             }).then(function(sure) {
                 if (sure) {
                     $http
-                        .post(url.deletePayment, {
-                            id: id,
-                            user_id: shared.getUser().id
-                        }, {
-                            headers: shared.getHeaders()
-                        })
+                        .post(url.deletePayment, shared.getRequestBody({
+                            id: id
+                        }))
                         .success(function(data, status, headers, config) {
                             shared.deleteUserPayment(id);
                             $scope.hidePaymentActionSheet();

@@ -38,13 +38,10 @@ angular.module('app.about', ['ionic', 'util.url', 'util.shared'])
             shared.showLoading();
 
             $http
-                .post(url.feedback, {
-                    user_id: shared.getUser().id,
+                .post(url.feedback, shared.getRequestBody({
                     title: $scope.feedback.title,
                     feedback: $scope.feedback.feedback
-                }, {
-                    headers: shared.getHeaders()
-                })
+                }))
                 .success(function(data, status, headers, config) {
                     shared.hideLoading();
                     $ionicPopup.show({

@@ -11,7 +11,6 @@ angular.module('app.payment.edit', ['ionic', 'credit-cards', 'util.shared', 'uti
         $scope.editPayment = function() {
             var payment = {
                 "id":  $scope.payment.id,
-                "user_id": shared.getUser().id,
                 "account_name": $scope.payment.name.toUpperCase(),
                 "account_number": $scope.payment.number + "",
                 "account_type": "CREDIT",
@@ -29,9 +28,7 @@ angular.module('app.payment.edit', ['ionic', 'credit-cards', 'util.shared', 'uti
             shared.showLoading();
 
             $http
-                .post(url.editPayment, payment, {
-                    headers: shared.getHeaders()
-                })
+                .post(url.editPayment,  shared.getRequestBody(payment))
                 .success(function(data, status, headers, config) {
                     shared.hideLoading();
                     shared.addUserPayment(data);
