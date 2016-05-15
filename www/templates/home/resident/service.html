@@ -2,7 +2,7 @@
           ng-controller="serviceSelectCtl">
     <ion-header-bar class="egobie-header-bar">
         <button class="button button-icon icon ion-ios-arrow-back"
-                ng-click="$ionicGoBack()"></button>
+                ng-click="pickService()"></button>
         <h1 class="title">SERVICES</h1>
     </ion-header-bar>
     <div class="egobie-bg-mask">
@@ -25,7 +25,7 @@
                     <p class="time">Estimated Time : {{service.time}}</p>
                 </div>
                 <div class="icon ion-ios-arrow-right right"
-                     ng-click="showService(service)"></div>
+                     ng-click="showService(service); $event.stopPropagation();"></div>
             </ion-item>
 
             <ion-item menu-close="" class="item-divider item-icon-right egobie-service-title">
@@ -42,9 +42,10 @@
                     <p class="time">Estimated Time : {{service.time}}</p>
                 </div>
                 <div class="icon ion-ios-arrow-right right"
-                     ng-click="showService(service)"></div>
+                     ng-click="showService(service); $event.stopPropagation();"></div>
             </ion-item>
 
+            <!--
             <ion-item menu-close="" class="item-divider item-icon-right egobie-service-title">
                 {{serviceNames["DETAILING"].toUpperCase()}}
             </ion-item>
@@ -59,13 +60,16 @@
                     <p class="time">Estimated Time : {{service.time}}</p>
                 </div>
                 <div class="icon ion-ios-arrow-right right"
-                     ng-click="showService(service)"></div>
+                     ng-click="showService(service); $event.stopPropagation();"></div>
             </ion-item>
+            -->
         </ion-list>
     </ion-content>
 
+    <!--
     <ion-footer-bar class="bar-dark"
                     ng-click="pickService()">
         <h1 class="title">Save</h1>
     </ion-footer-bar>
+    -->
 </ion-view>

@@ -16,9 +16,12 @@
                       ng-click="selectService()">
                 Choose Services<i class="icon ion-android-add"></i>
             </ion-item>
-            <button class="button button-block icon-right ion-android-cancel margin-right-5"
-                    ng-click="unselectService($event, service)"
-                    ng-repeat="service in services | filter: {checked: true}">{{service.name}}</button>
+            <div class="service"
+                      ng-repeat="service in services | filter: {checked: true}">
+                <div class="name">{{service.name}} (${{service.price}})</div>
+                <i class="icon ion-ios-close-empty"
+                   ng-click="unselectService($event, service)"></i>
+            </div>
         </ion-list>
 
         <ion-list class="egobie-resident-order"
@@ -27,10 +30,22 @@
                       ng-click="selectAddon()">
                 Extra Services<i class="icon ion-android-add"></i>
             </ion-item>
-            <button class="button button-block icon-right ion-android-cancel margin-right-5"
-                    ng-click="unselectAddon($event, addon)"
-                    ng-repeat="(name, addon) in addons"
-                    ng-show="addon.checked">{{addon.addon.name}}</button>
+            <div class="service"
+                      ng-repeat="(name, addon) in addons"
+                      ng-show="addon.checked">
+                <div class="name">
+                    <p>
+                        {{addon.addon.name}} (${{addon.addon.price}}<span ng-show="addon.addon.max > 1">/{{addon.addon.unit}}</span>)
+                    </p>
+                    <input type="number" maxlength="2"
+                           ng-show="addon.addon.max > 1"
+                           ng-model="addon.addon.amount"
+                           ng-blur="loseFocus(addon)"
+                           ng-change="changeAddonAmount('{{addon.addon.amount}}', addon)"/>
+                </div>
+                <i class="icon ion-ios-close-empty"
+                   ng-click="unselectAddon($event, addon)"></i>
+            </div>
         </ion-list>
 
         <ion-list class="egobie-resident-order"
@@ -73,6 +88,7 @@
             </ion-item>
         </ion-list>
 
+        <!--
         <ion-list class="egobie-resident-order">
             <ion-item class="item-divider">Estimation</ion-item>
 
@@ -84,9 +100,14 @@
                 <i class="icon ion-cash"></i>{{order.price}} $
             </ion-item>
         </ion-list>
+        -->
     </ion-content>
-    <ion-footer-bar class="bar-dark"
+    <ion-footer-bar class="bar-dark egobie-resident-footer"
                     ng-click="placeOrderSheet()">
-        <h1 class="title">Make a reservation</h1>
+        <h1 class="title">
+            Make Reservation
+            <span ng-show="order.price > 0"> ${{order.price}}</span>
+            <span ng-show="order.time > 0"> ({{order.time}} mins)</span>
+        </h1>
     </ion-footer-bar>
 </ion-view>

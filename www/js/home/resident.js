@@ -113,8 +113,6 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                         this.addons[addons[i].name].count -= 1;
 
                         if (this.addons[addons[i].name].count <= 0) {
-                            this.addons[addons[i].name].count = 0;
-
                             if (this.addons[addons[i].name].checked) {
                                 order.price -= this.addons[addons[i].name].addon.price;
                                 order.time -= this.addons[addons[i].name].addon.time;
@@ -490,14 +488,8 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         $scope.pickService = function() {
             var ids = [];
 
-            orderAddon.clear();
-
             for (var _i = 0; _i < $scope.services.length; _i++) {
                 if ($scope.services[_i].checked) {
-
-                    orderAddon.add($scope.services[_i].charge);
-                    orderAddon.add($scope.services[_i].addons);
-
                     ids.push($scope.services[_i].id);
                 }
             }
@@ -511,19 +503,28 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.toggleService = function(service, list) {
+            var pre = service.checked;
+
             for (var _i = 0; _i < list.length; _i++) {
+                if (list[_i].checked) {
+                    order.price -= list[_i].price;
+                    order.time -= list[_i].time;
+
+                    orderAddon.remove(list[_i].charge);
+                    orderAddon.remove(list[_i].addons);
+                }
+
                 list[_i].checked = false;
             }
 
-            service.checked = true;
-            order.price = 0;
-            order.time = 0;
+            service.checked = !pre;
 
-            for (var _i = 0; _i < $scope.services.length; _i++) {
-                if ($scope.services[_i].checked) {
-                    order.time += $scope.services[_i].time;
-                    order.price += $scope.services[_i].price;
-                }
+            if (service.checked) {
+                order.price += service.price;
+                order.time += service.time;
+
+                orderAddon.add(service.charge);
+                orderAddon.add(service.addons);
             }
         };
 
@@ -564,9 +565,8 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         };
     })
 
-    .controller('addonSelectCtl', function($scope, $state, shared, orderAddon, order) {
+    .controller('addonSelectCtl', function($scope, $state, orderAddon, order) {
         $scope.addons = orderAddon.addons;
-        console.log($scope.addons);
 
         $scope.selectAddon = function() {
             $state.go('menu.home.residentAddon');
@@ -574,8 +574,9 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
 
         $scope.unselectAddon = function($event, addon) {
             addon.checked = false;
-            order.price -= addon.addon.price;
+            order.price -= (addon.addon.price * addon.addon.amount);
             order.time -= addon.addon.time;
+            addon.addon.amount = 1;
         };
 
         $scope.isAddonSelected = function(checked) {
@@ -592,8 +593,36 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                 order.price += addon.addon.price;
             } else {
                 order.time -= addon.addon.time;
-                order.price -= addon.addon.price;
+                order.price -= (addon.addon.price * addon.addon.amount);
+                addon.addon.amount = 1;
             }
+        };
+
+        $scope.loseFocus = function(addon) {
+            if (!addon.addon.amount || addon.addon.amount < addon.addon.min) {
+                addon.addon.amount = 1;
+                order.price += addon.addon.price;
+            }
+        };
+
+        $scope.changeAddonAmount = function(oldValue, newValue) {
+            var isNanOld = isNaN(oldValue);
+            var isNanNew = isNaN(newValue.addon.amount);
+
+            if (isNanOld && isNanNew) {
+                return;
+            } else if (isNanOld) {
+                oldValue = 1;
+            } else if (isNanNew){
+                newValue.addon.amount = 1;
+            }
+
+            if (newValue.addon.amount > newValue.addon.max) {
+                newValue.addon.amount = newValue.addon.max;
+            }
+
+            order.price -= oldValue * newValue.addon.price;
+            order.price += newValue.addon.amount * newValue.addon.price;
         };
 
         $scope.pickAddon = function() {
