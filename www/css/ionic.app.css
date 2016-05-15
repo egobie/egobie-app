@@ -12500,6 +12500,11 @@ a.button {
         line-height: 25px;
         font-size: 20px;
         display: block; }
+        .egobie-service-item div.middle p.name span, .egobie-service-item-select div.middle p.name span {
+          font-size: 12px;
+          font-weight: 900;
+          padding-left: 5px;
+          color: #1BB3EC !important; }
       .egobie-service-item div.middle p.time, .egobie-service-item-select div.middle p.time {
         display: block; }
       .egobie-service-item div.middle p.price, .egobie-service-item-select div.middle p.price {
@@ -12541,7 +12546,8 @@ a.button {
         .egobie-service-detail-title div.left .time:after {
           content: " mins"; }
     .egobie-service-detail-title div.right {
-      width: 70%; }
+      width: 70%;
+      padding-left: 20px; }
       .egobie-service-detail-title div.right .name {
         font-size: 20px;
         height: 30px;
@@ -12596,6 +12602,14 @@ a.button {
     line-height: 16px;
     width: 90%;
     margin-left: 20px; }
+    .egobie-service-detail-list .detail-item p.addon {
+      display: flex;
+      margin-top: 5px;
+      font-size: 11px; }
+      .egobie-service-detail-list .detail-item p.addon span {
+        display: inline-block;
+        margin-right: 20px;
+        color: rgba(0, 0, 0, 0.5); }
   .egobie-service-detail-list .detail-item:last-child .line {
     height: 105%;
     top: -1px; }

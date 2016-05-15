@@ -89,6 +89,48 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         };
     })
 
+    .service('orderAddon', function(order) {
+        return {
+            addons: {},
+            add: function(addons) {
+                for (var i = 0; i < addons.length; i++) {
+                    if (addons[i].name in this.addons) {
+                        this.addons[addons[i].name].count += 1;
+                    } else {
+                        this.addons[addons[i].name] = {
+                            count: 0,
+                            addon: null
+                        };
+                        this.addons[addons[i].name].count = 1;
+                        this.addons[addons[i].name].checked = false;
+                        this.addons[addons[i].name].addon = addons[i];
+                    }
+                }
+            },
+            remove: function(addons) {
+                for (var i = 0; i < addons.length; i++) {
+                    if (addons[i].name in this.addons) {
+                        this.addons[addons[i].name].count -= 1;
+
+                        if (this.addons[addons[i].name].count <= 0) {
+                            this.addons[addons[i].name].count = 0;
+
+                            if (this.addons[addons[i].name].checked) {
+                                order.price -= this.addons[addons[i].name].addon.price;
+                                order.time -= this.addons[addons[i].name].addon.time;
+                            }
+
+                            delete this.addons[addons[i].name];
+                        }
+                    }
+                }
+            },
+            clear: function() {
+                this.addons = {};
+            }
+        };
+    })
+
     .config(function($stateProvider) {
 
         $stateProvider
@@ -125,6 +167,15 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                 views: {
                     'resident-view': {
                         templateUrl: 'templates/home/resident/service.html'
+                    }
+                }
+            })
+
+            .state('menu.home.residentAddon', {
+                url: '/resident/reservation/addon',
+                views: {
+                    'resident-view': {
+                        templateUrl: 'templates/home/resident/addon.html'
                     }
                 }
             })
@@ -422,7 +473,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         };
     })
 
-    .controller('serviceSelectCtl', function($scope, $state, $ionicModal, shared, orderService, order, orderOpening) {
+    .controller('serviceSelectCtl', function($scope, $state, $ionicModal, shared, orderService, orderAddon, order, orderOpening) {
         $scope.services = orderService.services;
         $scope.serviceNames = shared.getServiceNames();
         $scope.carWash = shared.getCarWashServices();
@@ -439,8 +490,14 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         $scope.pickService = function() {
             var ids = [];
 
+            orderAddon.clear();
+
             for (var _i = 0; _i < $scope.services.length; _i++) {
                 if ($scope.services[_i].checked) {
+
+                    orderAddon.add($scope.services[_i].charge);
+                    orderAddon.add($scope.services[_i].addons);
+
                     ids.push($scope.services[_i].id);
                 }
             }
@@ -473,6 +530,9 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         $scope.unselectService = function($event, service) {
             if (service.id in orderService.index) {
                 orderService.services[orderService.index[service.id]].checked = false;
+
+                orderAddon.remove(orderService.services[orderService.index[service.id]].charge);
+                orderAddon.remove(orderService.services[orderService.index[service.id]].addons);
             }
 
             order.price -= service.price;
@@ -501,6 +561,43 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
             return {
                 "egobie-service-disabled": !checked
             };
+        };
+    })
+
+    .controller('addonSelectCtl', function($scope, $state, shared, orderAddon, order) {
+        $scope.addons = orderAddon.addons;
+        console.log($scope.addons);
+
+        $scope.selectAddon = function() {
+            $state.go('menu.home.residentAddon');
+        };
+
+        $scope.unselectAddon = function($event, addon) {
+            addon.checked = false;
+            order.price -= addon.addon.price;
+            order.time -= addon.addon.time;
+        };
+
+        $scope.isAddonSelected = function(checked) {
+            return {
+                "egobie-service-disabled": !checked
+            };
+        };
+
+        $scope.toggleAddon = function(addon) {
+            addon.checked = !addon.checked;
+
+            if (addon.checked) {
+                order.time += addon.addon.time;
+                order.price += addon.addon.price;
+            } else {
+                order.time -= addon.addon.time;
+                order.price -= addon.addon.price;
+            }
+        };
+
+        $scope.pickAddon = function() {
+            $state.go("menu.home.reservation");
         };
     })
 

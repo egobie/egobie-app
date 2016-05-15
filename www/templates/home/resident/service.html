@@ -11,16 +11,15 @@
     </div>
     <ion-content padding="true" class="egobie-service-list">
         <ion-list>
-            <ion-item menu-close="" class="item-divider item-icon-right egobie-service-title egobie-margin-top-15"
-                      ng-click="toggleShownService('CAR_WASH')">
+            <ion-item menu-close="" class="item-divider item-icon-right egobie-service-title egobie-margin-top-15">
                 {{serviceNames["CAR_WASH"].toUpperCase()}}
             </ion-item>
             <ion-item menu-close="" class="egobie-service-item-select"
                       ng-repeat="service in carWash"
-                      ng-class="isServiceSelected(service.checked)">
+                      ng-class="isServiceSelected(service.checked)"
+                      ng-click="toggleService(service, carWash)">
                 <div class="left"></div>
-                <div class="middle"
-                     ng-click="toggleService(service, carWash)">
+                <div class="middle">
                     <p class="price">{{service.price}}</p>
                     <p class="name">{{service.name}}</p>
                     <p class="time">Estimated Time : {{service.time}}</p>
@@ -29,16 +28,15 @@
                      ng-click="showService(service)"></div>
             </ion-item>
 
-            <ion-item menu-close="" class="item-divider item-icon-right egobie-service-title"
-                      ng-click="toggleShownService('OIL_CHANGE')">
+            <ion-item menu-close="" class="item-divider item-icon-right egobie-service-title">
                 {{serviceNames["OIL_CHANGE"].toUpperCase()}}
             </ion-item>
             <ion-item menu-close="" class="egobie-service-item-select"
                       ng-repeat="service in oilChange"
-                      ng-class="isServiceSelected(service.checked)">
+                      ng-class="isServiceSelected(service.checked)"
+                      ng-click="toggleService(service, oilChange)">
                 <div class="left"></div>
-                <div class="middle"
-                     ng-click="toggleService(service, oilChange)">
+                <div class="middle">
                     <p class="price">{{service.price}}</p>
                     <p class="name">{{service.name}}</p>
                     <p class="time">Estimated Time : {{service.time}}</p>
@@ -47,16 +45,15 @@
                      ng-click="showService(service)"></div>
             </ion-item>
 
-            <ion-item menu-close="" class="item-divider item-icon-right egobie-service-title"
-                      ng-click="toggleShownService('DETAILING')">
+            <ion-item menu-close="" class="item-divider item-icon-right egobie-service-title">
                 {{serviceNames["DETAILING"].toUpperCase()}}
             </ion-item>
             <ion-item menu-close="" class="egobie-service-item-select"
                       ng-repeat="service in detailing"
-                      ng-class="isServiceSelected(service.checked)">
+                      ng-class="isServiceSelected(service.checked)"
+                      ng-click="toggleService(service, detailing)">
                 <div class="left"></div>
-                <div class="middle"
-                     ng-click="toggleService(service, detailing)">
+                <div class="middle">
                     <p class="price">{{service.price}}</p>
                     <p class="name">{{service.name}}</p>
                     <p class="time">Estimated Time : {{service.time}}</p>

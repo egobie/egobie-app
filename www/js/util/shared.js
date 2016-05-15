@@ -184,25 +184,9 @@ angular.module("util.shared", ["util.url"])
             addServices: function(data) {
                 if (data) {
                     Array.prototype.forEach.call(data, function(service) {
-                        service.basic = [];
-                        service.free = [];
-                        service.extra = [];
-                        service.advance = [];
-
-                        if (service.items) {
-                            Array.prototype.forEach.call(service.items, function(item) {
-                                if (item.startsWith("+++")) {
-                                    service.advance.push(item.substring(3));
-                                } else if (item.startsWith("++")) {
-                                    service.extra.push(item.substring(2));
-                                } else if (item.startsWith("+")){
-                                    service.free.push(item.substring(1));
-                                } else {
-                                    service.basic.push(item);
-                                }
-                            });
-                        }
-
+                        service.free = service.free || [];
+                        service.charge = service.charge || [];
+                        service.addons = service.addons || [];
                         services[service.id] = service;
                         // Used for selection
                         services[service.id].checked = false;

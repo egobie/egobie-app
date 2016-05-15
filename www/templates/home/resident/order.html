@@ -22,6 +22,18 @@
         </ion-list>
 
         <ion-list class="egobie-resident-order"
+                  ng-controller="addonSelectCtl">
+            <ion-item class="item-divider item-icon-right"
+                      ng-click="selectAddon()">
+                Extra Services<i class="icon ion-android-add"></i>
+            </ion-item>
+            <button class="button button-block icon-right ion-android-cancel margin-right-5"
+                    ng-click="unselectAddon($event, addon)"
+                    ng-repeat="(name, addon) in addons"
+                    ng-show="addon.checked">{{addon.addon.name}}</button>
+        </ion-list>
+
+        <ion-list class="egobie-resident-order"
                   ng-controller="openingSelectCtl">
             <ion-item class="item-divider item-icon-right"
                       ng-click="showOpeningModal()">

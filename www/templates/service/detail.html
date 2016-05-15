@@ -23,14 +23,14 @@
         </ion-item>
 
         <ion-list class="egobie-service-detail-list egobie-service-basic"
-                  ng-show="selectedService.basic.length > 0">
+                  ng-show="selectedService.items.length > 0">
             <ion-item class="detail-section">
                 <i class="dot"/>
                 <i class="line"/>
                 <p>WE PERFORM FOR YOU</p>
             </ion-item>
             <ion-item class="detail-item"
-                      ng-repeat="item in selectedService.basic">
+                      ng-repeat="item in selectedService.items">
                 <i class="line"/>
                 <p>{{item}}</p>
             </ion-item>
@@ -46,35 +46,42 @@
             <ion-item class="detail-item"
                       ng-repeat="item in selectedService.free">
                 <i class="line"/>
-                <p>{{item}}</p>
+                <p>{{item.name}}</p>
             </ion-item>
         </ion-list>
 
         <ion-list class="egobie-service-detail-list egobie-service-extra"
-                  ng-show="selectedService.extra.length > 0">
+                  ng-show="selectedService.charge.length > 0">
             <ion-item class="detail-section">
                 <i class="dot"/>
                 <i class="line"/>
                 <p>EXTRA CHARGE IF YOU NEED IT</p>
             </ion-item>
             <ion-item class="detail-item"
-                      ng-repeat="item in selectedService.extra">
+                      ng-repeat="item in selectedService.charge">
                 <i class="line"/>
-                <p>{{item}}</p>
+                <p>{{item.name}}</p>
+                <p class="addon">
+                    <span>Price: {{item.price}}$<span ng-show="item.unit !== ''">/{{item.unit}}</span></span>
+                </p>
             </ion-item>
         </ion-list>
 
         <ion-list class="egobie-service-detail-list egobie-service-advance"
-                  ng-show="selectedService.advance.length > 0">
+                  ng-show="selectedService.addons.length > 0">
             <ion-item class="detail-section">
                 <i class="dot"/>
                 <i class="line"/>
-                <p>WE GIVE YOU SUGGESTIONS</p>
+                <p>ADDITIONAL SERVICES PROVIDED</p>
             </ion-item>
             <ion-item class="detail-item"
-                      ng-repeat="item in selectedService.advance">
+                      ng-repeat="item in selectedService.addons">
                 <i class="line"/>
-                <p>{{item}}</p>
+                <p>{{item.name}}</p>
+                <p class="addon">
+                    <span>Price: ${{item.price}}<span ng-show="item.unit !== ''">/{{item.unit}}</span></span>
+                    <span>Extra Time: {{item.time}} mins</span>
+                </p>
             </ion-item>
         </ion-list>
     </ion-content>

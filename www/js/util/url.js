@@ -24,6 +24,7 @@ angular.module('util.url', [])
             newPayment: host + "/payment/new",
             editPayment: host + "/payment/update",
             deletePayment: host + "/payment/delete",
+            pay: host + "/payment/pay",
 
             updateUser: host + "/user/update/user",
             updateHome: host + "/user/update/home",
