@@ -151,6 +151,15 @@ angular.module('app.home.resident', ['ionic'])
                 }
             })
 
+            .state('menu.home.demandOrder', {
+                url: '/resident/demand/order',
+                views: {
+                    'resident-view': {
+                        templateUrl: 'templates/home/resident/demand/order.html'
+                    }
+                }
+            })
+
             .state('menu.home.reservation', {
                 url: '/resident/reservation',
                 views: {

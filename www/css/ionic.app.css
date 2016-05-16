@@ -11231,8 +11231,7 @@ a.button {
     line-height: 40px;
     height: 40px;
     width: 85%;
-    padding-left: 18px;
-    border-right: 1px solid rgba(0, 0, 0, 0.5); }
+    padding-left: 18px; }
     .egobie-resident-order div.service .name p {
       padding: 0px;
       font-size: 13px;
@@ -11251,7 +11250,8 @@ a.button {
     text-align: center;
     line-height: 40px;
     font-size: 40px;
-    color: red; }
+    color: red;
+    border-left: 1px solid rgba(0, 0, 0, 0.5); }
 
 .egobie-resident-order .item {
   width: 95% !important;
@@ -11289,6 +11289,7 @@ a.button {
 .egobie-resident-demand-opening {
   display: flex;
   height: 60px !important;
+  margin-top: 10px;
   background: 0 0;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.5); }
@@ -11304,7 +11305,7 @@ a.button {
     .egobie-resident-demand-opening div.right p.note {
       font-size: 13px; }
       .egobie-resident-demand-opening div.right p.note span {
-        font-weight: 700px; }
+        font-weight: 700; }
 
 .egobie-display-none {
   display: none !important; }
