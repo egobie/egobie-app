@@ -70,16 +70,18 @@
 
                     .time, .services {
                         .title {
-                            font-size: 10px;
+                            font-size: 12px;
                         }
 
                         .value {
+                            font-size: 11px;
                             color: #000000
                         }
                     }
 
                     .time .value {
-                        margin-bottom: 5px;
+                        font-size: 11px;
+                        margin-bottom: 2px;
                     }
 
                     .services .value:before {
@@ -96,11 +98,12 @@
 
                         .title {
                             display: block;
-                            font-size: 10px;
+                            font-size: 12px;
                         }
 
                         .value {
                             color: #000000;
+                            font-size: 11px;
                         }
                     }
 
@@ -118,6 +121,7 @@
             font-size: 25px;
             font-weight: 900;
             text-align: right;
+            padding-right: 10px;
             margin: 10px auto 30px auto;
             border-top: 1px solid rgba(0, 0, 0, 0.31);
         }
@@ -668,11 +672,11 @@
                 p {
                     position: relative;
                     overflow: visible;
-                    font-size: 20px;
-                    height: 25px;
-                    line-height: 25px;
+                    font-size: 15px;
+                    height: 20px;
+                    line-height: 20px;
                     width: 80%;
-                    margin-left: 65px;
+                    margin-left: 90px;
 
                     i {
                         font-size: 15px;

@@ -10618,11 +10618,13 @@ a.button {
       .egobie-reservation-list .top .right .time-services {
         display: inline-block; }
         .egobie-reservation-list .top .right .time-services .time .title, .egobie-reservation-list .top .right .time-services .services .title {
-          font-size: 10px; }
+          font-size: 12px; }
         .egobie-reservation-list .top .right .time-services .time .value, .egobie-reservation-list .top .right .time-services .services .value {
+          font-size: 11px;
           color: #000000; }
         .egobie-reservation-list .top .right .time-services .time .value {
-          margin-bottom: 5px; }
+          font-size: 11px;
+          margin-bottom: 2px; }
         .egobie-reservation-list .top .right .time-services .services .value:before {
           content: "- "; }
       .egobie-reservation-list .top .right .plate-reserve {
@@ -10632,9 +10634,10 @@ a.button {
           padding-left: 11px; }
           .egobie-reservation-list .top .right .plate-reserve .plate .title, .egobie-reservation-list .top .right .plate-reserve .reserve .title {
             display: block;
-            font-size: 10px; }
+            font-size: 12px; }
           .egobie-reservation-list .top .right .plate-reserve .plate .value, .egobie-reservation-list .top .right .plate-reserve .reserve .value {
-            color: #000000; }
+            color: #000000;
+            font-size: 11px; }
         .egobie-reservation-list .top .right .plate-reserve .plate .value {
           margin-bottom: 5px; }
   .egobie-reservation-list .bottom {
@@ -10644,6 +10647,7 @@ a.button {
     font-size: 25px;
     font-weight: 900;
     text-align: right;
+    padding-right: 10px;
     margin: 10px auto 30px auto;
     border-top: 1px solid rgba(0, 0, 0, 0.31); }
   .egobie-reservation-list .bottom:before, .egobie-reservation-list .min:after, .egobie-reservation-list .hour:after, .egobie-reservation-list .day:after {
@@ -11021,11 +11025,11 @@ a.button {
     .egobie-service-rating .top div.services p {
       position: relative;
       overflow: visible;
-      font-size: 20px;
-      height: 25px;
-      line-height: 25px;
+      font-size: 15px;
+      height: 20px;
+      line-height: 20px;
       width: 80%;
-      margin-left: 65px; }
+      margin-left: 90px; }
       .egobie-service-rating .top div.services p i {
         font-size: 15px;
         left: -5px;

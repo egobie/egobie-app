@@ -98,12 +98,7 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
                 .success(function(data, status, headers, config) {
                     shared.hideLoading();
                     shared.addUserReservations(data);
-
-                    if (data) {
-                        Array.prototype.forEach.call(data, function(service) {
-                            $scope.reservations.push(service);
-                        });
-                    }
+                    $scope.reservations = shared.getUserReservations();
                 })
                 .error(function(data, status, headers, config) {
                     shared.hideLoading();

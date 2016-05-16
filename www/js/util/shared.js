@@ -182,6 +182,8 @@ angular.module("util.shared", ["util.url"])
             },
 
             addServices: function(data) {
+                var self = this;
+
                 if (data) {
                     Array.prototype.forEach.call(data, function(service) {
                         service.free = service.free || [];
@@ -190,6 +192,7 @@ angular.module("util.shared", ["util.url"])
                         services[service.id] = service;
                         // Used for selection
                         services[service.id].checked = false;
+                        services[service.id].full_type = self.getServiceType(services[service.id].type);
 
                         if (service.type === "CAR_WASH") {
                             carWash.push(service);
@@ -200,6 +203,18 @@ angular.module("util.shared", ["util.url"])
                         }
                     });
                 }
+            },
+
+            getServiceType: function(type) {
+                if (type === "CAR_WASH") {
+                    return "Car Wash";
+                } else if (type === "OIL_CHANGE") {
+                    return "Oil & Filter";
+                } else if (type === "DETAILING") {
+                    return "Detailing";
+                }
+
+                return "";
             },
 
             getCarWashServices: function() {
@@ -301,8 +316,20 @@ angular.module("util.shared", ["util.url"])
                 return userReservations;
             },
 
-            addUserReservations: function(Reservations) {
-                userReservations = Reservations;
+            addUserReservations: function(reservations) {
+                var self = this;
+
+                if (reservations) {
+                    Array.prototype.forEach.call(reservations, function(reservation) {
+                        if (reservation.services) {
+                            Array.prototype.forEach.call(reservation.services, function(service) {
+                                service.full_type = self.getServiceType(service.type);
+                            });
+                        }
+
+                        userReservations.push(reservation);                        
+                    });
+                }
             },
 
             clearUserReservations: function() {

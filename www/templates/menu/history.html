@@ -37,7 +37,9 @@
                             <div class="services">
                                 <p class="title">Services</p>
                                 <p class="value"
-                                   ng-repeat="service in reservation.services">{{service.name}}</p>
+                                   ng-repeat="service in reservation.services">
+                                    {{service.name}} ({{service.full_type}})
+                                </p>
                             </div>
                             <div class="services"
                                  ng-show="reservation.addons && reservation.addons.length > 0">
@@ -53,7 +55,7 @@
                                 <p class="value">{{reservation.plate}}</p>
                             </div>
                             <div class="reserve">
-                                <p class="title">Reservation ID #</p>
+                                <p class="title">Reservation ID</p>
                                 <p class="value">{{reservation.reservation_id}}</p>
                             </div>
                         </div>
