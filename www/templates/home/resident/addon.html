@@ -19,7 +19,9 @@
                 <div class="middle">
                     <p class="price">{{addon.addon.price}}</p>
                     <p class="name">{{addon.addon.name}}</p>
-                    <p class="time">Estimated Time : {{addon.addon.time}}</p>
+                    <p class="note">{{addon.addon.note}}</p>
+                    <p class="time"
+                       ng-show="addon.addon.time > 0">Estimated Time : {{addon.addon.time}}</p>
                 </div>
             </ion-item>
         </ion-list>

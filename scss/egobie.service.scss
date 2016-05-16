@@ -84,9 +84,9 @@ $Advance: #567CC0;
 
                 p {
                     &.name {
-                        height: 25px;
-                        line-height: 25px;
-                        font-size: 20px;
+                        height: 18px;
+                        line-height: 18px;
+                        font-size: 15px;
                         display: block;
 
                         span {
@@ -97,7 +97,13 @@ $Advance: #567CC0;
                         }
                     }
 
+                    &.note {
+                        font-size: 13px;
+                        color: #1BB3EC !important;
+                    }
+
                     &.time {
+                        font-size: 11px;
                         display: block;
                     }
 
