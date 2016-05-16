@@ -232,35 +232,45 @@ $Advance: #567CC0;
             position: relative;
             border-radius: 8px;
             overflow: visible;
-            padding: 10px;
+            padding: 5px;
             background-color: $Item;
 
             .line {
                 position: absolute;
                 width: 3px;
-                height: 200%;
+                height: 250%;
                 top: -20px;
                 left: 16px;
             }
 
-            p {
+            p.name {
                 font-size: 13px;
                 font-weight: bold;
                 height: 16px;
                 line-height: 16px;
                 width: 90%;
-                margin-left: 20px;
+                margin-left: 25px;
+            }
 
-                &.addon {
-                    display: flex;
-                    margin-top: 5px;
-                    font-size: 11px;
+            p.note {
+                height: 13px;
+                line-height: 13px;
+                font-size: 12px;
+                font-weight: normal;
+                margin-bottom: 5px;
+                margin-left: 25px;
+            }
 
-                    span {
-                        display: inline-block;
-                        margin-right: 20px;
-                        color: rgba(0, 0, 0, 0.5);
-                    }
+            p.addon {
+                display: flex;
+                margin-top: 5px;
+                font-size: 11px;
+                margin-left: 25px;
+
+                span {
+                    display: inline-block;
+                    margin-right: 20px;
+                    color: rgba(0, 0, 0, 0.5);
                 }
             }
             

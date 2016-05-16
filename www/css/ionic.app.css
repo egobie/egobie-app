@@ -12626,29 +12626,37 @@ a.button {
   position: relative;
   border-radius: 8px;
   overflow: visible;
-  padding: 10px;
+  padding: 5px;
   background-color: #F8F8FA; }
   .egobie-service-detail-list .detail-item .line {
     position: absolute;
     width: 3px;
-    height: 200%;
+    height: 250%;
     top: -20px;
     left: 16px; }
-  .egobie-service-detail-list .detail-item p {
+  .egobie-service-detail-list .detail-item p.name {
     font-size: 13px;
     font-weight: bold;
     height: 16px;
     line-height: 16px;
     width: 90%;
-    margin-left: 20px; }
-    .egobie-service-detail-list .detail-item p.addon {
-      display: flex;
-      margin-top: 5px;
-      font-size: 11px; }
-      .egobie-service-detail-list .detail-item p.addon span {
-        display: inline-block;
-        margin-right: 20px;
-        color: rgba(0, 0, 0, 0.5); }
+    margin-left: 25px; }
+  .egobie-service-detail-list .detail-item p.note {
+    height: 13px;
+    line-height: 13px;
+    font-size: 12px;
+    font-weight: normal;
+    margin-bottom: 5px;
+    margin-left: 25px; }
+  .egobie-service-detail-list .detail-item p.addon {
+    display: flex;
+    margin-top: 5px;
+    font-size: 11px;
+    margin-left: 25px; }
+    .egobie-service-detail-list .detail-item p.addon span {
+      display: inline-block;
+      margin-right: 20px;
+      color: rgba(0, 0, 0, 0.5); }
   .egobie-service-detail-list .detail-item:last-child .line {
     height: 105%;
     top: -1px; }

@@ -32,7 +32,7 @@
             <ion-item class="detail-item"
                       ng-repeat="item in selectedService.items">
                 <i class="line"/>
-                <p>{{item}}</p>
+                <p class="name">{{item}}</p>
             </ion-item>
         </ion-list>
 
@@ -46,7 +46,9 @@
             <ion-item class="detail-item"
                       ng-repeat="item in selectedService.free">
                 <i class="line"/>
-                <p>{{item.name}}</p>
+                <p class="name">{{item.name}}</p>
+                <p class="note"
+                   ng-show="item.note && item.note.length > 0">{{item.note}}</p>
             </ion-item>
         </ion-list>
 
@@ -60,7 +62,9 @@
             <ion-item class="detail-item"
                       ng-repeat="item in selectedService.charge">
                 <i class="line"/>
-                <p>{{item.name}}</p>
+                <p class="name">{{item.name}}</p>
+                <p class="note"
+                   ng-show="item.note && item.note.length > 0">{{item.note}}</p>
                 <p class="addon">
                     <span>Price: {{item.price}}$<span ng-show="item.unit !== ''">/{{item.unit}}</span></span>
                 </p>
@@ -72,12 +76,14 @@
             <ion-item class="detail-section">
                 <i class="dot"/>
                 <i class="line"/>
-                <p>ADDITIONAL SERVICES PROVIDED</p>
+                <p>OPTIONAL SERVICES PROVIDED</p>
             </ion-item>
             <ion-item class="detail-item"
                       ng-repeat="item in selectedService.addons">
                 <i class="line"/>
-                <p>{{item.name}}</p>
+                <p class="name">{{item.name}}</p>
+                <p class="note"
+                   ng-show="item.note && item.note.length > 0">{{item.note}}</p>
                 <p class="addon">
                     <span>Price: ${{item.price}}<span ng-show="item.unit !== ''">/{{item.unit}}</span></span>
                     <span>Extra Time: {{item.time}} mins</span>
