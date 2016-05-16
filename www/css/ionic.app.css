@@ -11286,6 +11286,26 @@ a.button {
   color: #33CDFF;
   font-size: 13px; }
 
+.egobie-resident-demand-opening {
+  display: flex;
+  height: 60px !important;
+  background: 0 0;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.5); }
+  .egobie-resident-demand-opening i.left {
+    display: block;
+    width: 20%; }
+    .egobie-resident-demand-opening i.left:before {
+      font-size: 40px; }
+  .egobie-resident-demand-opening div.right {
+    width: 80%; }
+    .egobie-resident-demand-opening div.right p.time {
+      font-size: 18px; }
+    .egobie-resident-demand-opening div.right p.note {
+      font-size: 13px; }
+      .egobie-resident-demand-opening div.right p.note span {
+        font-weight: 700px; }
+
 .egobie-display-none {
   display: none !important; }
 
@@ -13055,7 +13075,7 @@ a.button {
   border: 0px; }
 
 .egobie-sign-bg {
-  background-image: url("../img/bg.jpg");
+  /*background-image: image($Sign-Bg);*/
   background-size: cover;
   padding: 0px; }
   .egobie-sign-bg .mask {

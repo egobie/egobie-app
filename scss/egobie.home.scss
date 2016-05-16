@@ -164,4 +164,38 @@
         color: #33CDFF;
         font-size: 13px;
     }
+
+    &-resident-demand-opening {
+        display: flex;
+        height: 60px !important;
+        margin-top: 10px;
+        background: 0 0;
+        border-radius: 5px;
+        border: 1px solid rgba(0,0,0,.5);
+
+        i.left {
+            display: block;
+            width: 20%;
+            
+            &:before {
+                font-size: 40px;
+            }
+        }
+
+        div.right {
+            width: 80%;
+
+            p.time {
+                font-size: 18px;
+            }
+
+            p.note {
+                font-size: 13px;
+
+                span {
+                    font-weight: 700;
+                }
+            }
+        }
+    }
 }

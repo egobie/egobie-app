@@ -11,24 +11,21 @@
         <div class="egobie-bg-mask-2"></div>
     </div>
     <ion-content padding="true">
-        <!--
-        <ion-list class="egobie-resident-order"
-                  ng-controller="serviceSelectCtl">
+        <ion-list class="egobie-resident-order">
             <ion-item class="item-divider item-icon-right"
                       ng-click="selectService()">
                 Choose Services<i class="icon ion-android-add"></i>
             </ion-item>
             <div class="service"
                       ng-repeat="service in services | filter: {checked: true}">
-                <div class="name">{{service.name}} (${{service.price}})</div>
+                <div class="name">{{service.name}} ({{service.full_type}} ${{service.price}})</div>
                 <i class="icon ion-ios-close-empty"
                    ng-click="unselectService($event, service)"></i>
             </div>
         </ion-list>
-        -->
     </ion-content>
     <ion-footer-bar class="bar-dark egobie-resident-footer"
-                    ng-click="placeOrderSheet()">
+                    ng-click="showDemandOrder()">
         <h1 class="title">SEARCH FOR AVAILABILITY</h1>
     </ion-footer-bar>
 </ion-view>

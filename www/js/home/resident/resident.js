@@ -1,5 +1,143 @@
 angular.module('app.home.resident', ['ionic'])
 
+    .service('orderOpening', function() {
+        return {
+            id: -1,
+            day: "",
+            start: "",
+            end: "",
+
+            clear: function() {
+                this.id = -1;
+                this.day = "";
+                this.start = "";
+                this.end = "";
+            }
+        };
+    })
+
+    .service('orderCar', function(shared) {
+        return {
+            cars: shared.getUserCars(),
+            selected: {
+                id: -1,
+                plate: ''
+            },
+            clear: function() {
+                for (var _id in this.cars) {
+                    this.cars[_id].checked = false;
+                }
+
+                this.selected = {
+                    id: -1,
+                    plate: ''
+                };
+            }
+        };
+    })
+
+    .service('orderService', function(shared) {
+        var _i = 0;
+        var _temp = shared.getServices();
+        var obj = {
+            index: {},
+            services: [],
+            clear: function() {
+                for (var _j = 0; _j < this.services.length; _j++) {
+                    this.services[_j].checked = false;
+                }
+            }
+        };
+
+        for (var _id in _temp) {
+            obj.index[_id] = _i;
+            obj.services.push(_temp[_id]);
+            _i++;
+        }
+
+        return obj;
+    })
+
+    .service('orderPayment', function(shared) {
+        return {
+            selected: {
+                id: -1,
+                account_number: ''
+            },
+            payments: shared.getUserPayments(),
+            clear: function() {
+                for (var _id in this.payments) {
+                    this.payments[_id].checked = false;
+                }
+
+                this.selected = {
+                    id: -1,
+                    account_number: ''
+                };
+            }
+        };
+    })
+
+    .service('order', function() {
+        return {
+            price: 0,
+            time: 0,
+            clear: function() {
+                this.price = 0;
+                this.time = 0;
+            }
+        };
+    })
+
+    .service('orderAddon', function(order) {
+        return {
+            addons: {},
+            add: function(addons) {
+                for (var i = 0; i < addons.length; i++) {
+                    if (addons[i].name in this.addons) {
+                        this.addons[addons[i].name].count += 1;
+                    } else {
+                        this.addons[addons[i].name] = {
+                            count: 0,
+                            addon: null
+                        };
+                        this.addons[addons[i].name].count = 1;
+                        this.addons[addons[i].name].checked = false;
+                        this.addons[addons[i].name].addon = addons[i];
+                    }
+                }
+            },
+            remove: function(addons) {
+                for (var i = 0; i < addons.length; i++) {
+                    if (addons[i].name in this.addons) {
+                        this.addons[addons[i].name].count -= 1;
+
+                        if (this.addons[addons[i].name].count <= 0) {
+                            if (this.addons[addons[i].name].checked) {
+                                order.price -= this.addons[addons[i].name].addon.price;
+                                order.time -= this.addons[addons[i].name].addon.time;
+                            }
+
+                            delete this.addons[addons[i].name];
+                        }
+                    }
+                }
+            },
+            clear: function() {
+                this.addons = {};
+            }
+        };
+    })
+
+    .service('demandOrder', function() {
+        return {
+            services: [],
+            clear: function() {
+                this.services = [];
+            }
+        };
+    })
+
     .config(function($stateProvider) {
 
         $stateProvider

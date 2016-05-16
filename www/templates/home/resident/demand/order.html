@@ -1,0 +1,47 @@
+<ion-modal-view hide-nav-bar="true" cache-view="false">
+    <ion-header-bar class="egobie-header-bar">
+        <h1 class="title">AVAILABILITY</h1>
+        <button class="button button-icon icon ion-android-close"
+                ng-click="hideDemandOrder()"></button>
+    </ion-header-bar>
+    <div class="egobie-bg-mask">
+        <div class="egobie-bg-mask-1"></div>
+        <div class="egobie-bg-mask-2"></div>
+    </div>
+    <ion-content padding="true"
+                 ng-show="opening.available">
+        <ion-list class="egobie-resident-order">
+            <ion-item class="egobie-resident-demand-opening">
+                <i class="ion-clock left"></i>
+                <div class="right">
+                    <p class="time">Available during 16:30 - 17:00</p>
+                    <p class="note">Arrive in <span>30 mins</span></p>
+                </div>
+            </ion-item>
+
+            <ion-item class="item-divider item-icon-right">Services</ion-item>
+
+            <div class="service"
+                 ng-repeat="service in services | filter: {checked: true}">
+                <div class="name">{{service.name}} ({{service.full_type}} ${{service.price}})</div>
+            </div>
+
+            <ion-item class="item-divider">Vehicle & Payment Method</ion-item>
+
+            <ion-item class="item-icon-left">
+                <i class="icon ion-model-s"></i>Y96EUV
+                <span class="item-note">Choose a vehicle...</span>
+            </ion-item>
+
+            <ion-item class="item-icon-left">
+                <i class="icon ion-home"></i>
+                <span class="item-note">Update Address...</span>
+            </ion-item>
+
+            <ion-item class="item-icon-left">
+                <i class="icon ion-card"></i>1234
+                <span class="item-note">Change Payment...</span>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-modal-view>
