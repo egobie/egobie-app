@@ -1,4 +1,4 @@
-angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
+angular.module('app.home.resident.reservation', ['ionic', 'util.shared', 'util.url'])
 
     .service('orderOpening', function() {
         return {
@@ -126,75 +126,6 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
             clear: function() {
                 this.addons = {};
             }
-        };
-    })
-
-    .config(function($stateProvider) {
-
-        $stateProvider
-
-            .state('menu.home.demand', {
-                url: '/resident/demand',
-                views: {
-                    'resident-view': {
-                        templateUrl: 'templates/home/resident/demand.html'
-                    }
-                }
-            })
-
-            .state('menu.home.reservation', {
-                url: '/resident/reservation',
-                views: {
-                    'resident-view': {
-                        templateUrl: 'templates/home/resident/order.html'
-                    }
-                }
-            })
-
-            .state('menu.home.residentCar', {
-                url: '/resident/reservation/car',
-                views: {
-                    'resident-view': {
-                        templateUrl: 'templates/home/resident/car.html'
-                    }
-                }
-            })
-
-            .state('menu.home.residentService', {
-                url: '/resident/reservation/service',
-                views: {
-                    'resident-view': {
-                        templateUrl: 'templates/home/resident/service.html'
-                    }
-                }
-            })
-
-            .state('menu.home.residentAddon', {
-                url: '/resident/reservation/addon',
-                views: {
-                    'resident-view': {
-                        templateUrl: 'templates/home/resident/addon.html'
-                    }
-                }
-            })
-
-            .state('menu.home.residentPayment', {
-                url: '/resident/reservation/payment',
-                views: {
-                    'resident-view': {
-                        templateUrl: 'templates/home/resident/payment.html'
-                    }
-                }
-            });
-    })
-
-    .controller('navigationCtrl', function($scope, $state) {
-        $scope.gotoOnDemand = function() {
-            $state.go("menu.home.demand");
-        };
-
-        $scope.gotoReservation = function() {
-            $state.go("menu.home.reservation");
         };
     })
 

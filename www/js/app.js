@@ -15,8 +15,11 @@ angular
         'app.menu',
 
         'app.home',
-        'app.home.mall',
         'app.home.resident',
+        'app.home.resident.demand',
+        'app.home.resident.reservation',
+
+        'app.home.mall',
         'app.home.business',
 
         'app.service',
