@@ -10597,7 +10597,7 @@ a.button {
     .egobie-reservation-list .top .left {
       display: inline-block;
       width: 28%;
-      height: 100px;
+      height: inherit;
       margin: 15px 10px 0px 5px;
       border-right: 1px solid #000000; }
       .egobie-reservation-list .top .left .price {
@@ -10644,9 +10644,7 @@ a.button {
     font-size: 25px;
     font-weight: 900;
     text-align: right;
-    margin-left: auto;
-    margin-right: auto;
-    padding-right: 30px;
+    margin: 10px auto 30px auto;
     border-top: 1px solid rgba(0, 0, 0, 0.31); }
   .egobie-reservation-list .bottom:before, .egobie-reservation-list .min:after, .egobie-reservation-list .hour:after, .egobie-reservation-list .day:after {
     font-size: 15px;
@@ -13041,6 +13039,7 @@ a.button {
   border: 0px; }
 
 .egobie-sign-bg {
+  background-image: url("../img/bg.jpg");
   background-size: cover;
   padding: 0px; }
   .egobie-sign-bg .mask {
@@ -13052,6 +13051,12 @@ a.button {
     position: relative; }
     .egobie-sign-bg .list .mask {
       background: rgba(12, 10, 12, 0.4); }
+
+.egobie-signin-logo {
+  content: url("../img/logo/white.png"); }
+
+.egobie-signup-logo {
+  content: url("../img/logo/white.png"); }
 
 .egobie-company {
   text-align: center;

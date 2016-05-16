@@ -40,6 +40,7 @@ angular.module('util.url', [])
             cancelOrder: host + "/service/cancel",
             demandService: host + "/service/demand",
             readService: host + "/service/read/",
+            demandAddon: host + "/service/demand/addon",
             demandOpening: host + "/service/demand/opening/",
 
             userHistories: host + "/history",

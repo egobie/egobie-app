@@ -199,7 +199,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
     })
 
     .controller('reservationOrderCtrl', function($scope, $state, $ionicActionSheet, $http,
-            shared, url, orderOpening, orderCar, orderService, orderPayment, order) {
+            shared, url, orderOpening, orderCar, orderService, orderAddon, orderPayment, order) {
         $scope.order = order;
 
         $scope.$watch(function() {
@@ -238,7 +238,8 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
                 payment_id: orderPayment.selected.id,
                 note: "test",
                 opening: orderOpening.id,
-                services: []
+                services: [],
+                addons: []
             };
 
             if (!(shared.getUser().home_street || "")) {
@@ -249,6 +250,12 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
             for (var _i = 0; _i < orderService.services.length; _i++) {
                 if (orderService.services[_i].checked) {
                     request.services.push(orderService.services[_i].id);
+                }
+            }
+
+            for (var key in orderAddon.addons) {
+                if (orderAddon.addons[key].checked) {
+                    request.addons.push(orderAddon.addons[key].addon.id);
                 }
             }
 
@@ -296,12 +303,13 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         };
     })
 
-    .controller('openingCtrl', function($scope, $http, $timeout, shared, url, orderOpening, orderService) {
+    .controller('openingCtrl', function($scope, $http, $timeout, shared, url, orderOpening, orderService, orderAddon) {
         $scope.openings = [];
         $scope.showIndex = -1;
         $scope.selectedRange = null;
 
         var services = [];
+        var addons = [];
 
         $scope.hideOpeningModal = function() {
             $scope.openingModal.hide();
@@ -311,6 +319,12 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         for (var _i = 0; _i < orderService.services.length; _i++) {
             if (orderService.services[_i].checked) {
                 services.push(orderService.services[_i].id);
+            }
+        }
+        
+        for (var key in orderAddon.addons) {
+            if (orderAddon.addons[key].checked) {
+                addons.push(orderAddon.addons[key].addon.id);
             }
         }
 
@@ -329,7 +343,8 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
 
             $http
                 .post(url.openings, shared.getRequestBody({
-                    services: services
+                    services: services,
+                    addons: addons
                 }))
                 .success(function(data, status, headers, config) {
                     shared.hideLoading();
@@ -565,7 +580,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         };
     })
 
-    .controller('addonSelectCtl', function($scope, $state, orderAddon, order) {
+    .controller('addonSelectCtl', function($scope, $state, shared, orderAddon, order) {
         $scope.addons = orderAddon.addons;
 
         $scope.selectAddon = function() {
@@ -626,6 +641,17 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.pickAddon = function() {
+            var ids = [];
+
+            for (var key in $scope.addons) {
+                if ($scope.addons[key].checked) {
+                    console.log($scope.addons[key]);
+                    ids.push($scope.addons[key].addon.id);
+                }
+            }
+
+            shared.demandAddons(ids);
+
             $state.go("menu.home.reservation");
         };
     })

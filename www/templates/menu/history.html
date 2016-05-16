@@ -39,6 +39,12 @@
                                 <p class="value"
                                    ng-repeat="service in reservation.services">{{service.name}}</p>
                             </div>
+                            <div class="services"
+                                 ng-show="reservation.addons && reservation.addons.length > 0">
+                                <p class="title">Extra Services</p>
+                                <p class="value"
+                                   ng-repeat="addon in reservation.addons">{{addon.name}}</p>
+                            </div>
                         </div>
 
                         <div class="plate-reserve">

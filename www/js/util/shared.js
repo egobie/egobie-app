@@ -250,6 +250,19 @@ angular.module("util.shared", ["util.url"])
                     });
             },
 
+            demandAddons: function(ids) {
+                $http
+                    .post(url.demandAddon, this.getRequestBody({
+                        addons: ids
+                    }))
+                    .success(function(data, status, headers, config) {
+                        
+                    })
+                    .error(function(data, status, headers, config) {
+                        this.alert("send demand for Addons - " + data);
+                    });
+            },
+
             refreshUserHistory: function(history) {
                 userHistories[history.id].note = history.note;
                 userHistories[history.id].rating = history.rating;
