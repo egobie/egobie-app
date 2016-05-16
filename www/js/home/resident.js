@@ -255,7 +255,10 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
 
             for (var key in orderAddon.addons) {
                 if (orderAddon.addons[key].checked) {
-                    request.addons.push(orderAddon.addons[key].addon.id);
+                    request.addons.push({
+                        id: orderAddon.addons[key].addon.id,
+                        amount: orderAddon.addons[key].addon.amount
+                    });
                 }
             }
 
@@ -298,6 +301,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared', 'util.url'])
             orderOpening.clear();
             orderCar.clear();
             orderService.clear();
+            orderAddon.clear();
             orderPayment.clear();
             order.clear();
         };
