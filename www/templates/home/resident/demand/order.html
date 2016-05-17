@@ -16,7 +16,7 @@
                 <i class="ion-clock left"></i>
                 <div class="right">
                     <p class="time">Available between <span>{{opening.start}} - {{opening.end}}</span></p>
-                    <p class="note">Arrive in <span>{{opening.diff}} to {{opening.diff + 30}} mins</span></p>
+                    <p class="note">Arrive in <span>{{opening.diff + 10}} to {{opening.diff + 20}} mins</span></p>
                 </div>
             </ion-item>
         </ion-list>
@@ -55,8 +55,23 @@
                 <span class="item-note">Change Payment...</span>
             </ion-item>
         </ion-list>
+
+        <ion-list class="egobie-resident-order"
+                  ng-controller="demandOrderCtrl">
+            <ion-item class="item-divider">Price & Time <span>(tax and discount included)</span></ion-item>
+
+            <ion-item class="item-icon-left item-icon-right">
+                <i class="icon ion-cash"></i>
+                {{order.getRealPrice()}}
+                <i class="icon ion-social-usd"></i>
+            </ion-item>
+            <ion-item class="item-icon-left">
+                <i class="icon ion-ios-time"></i>{{order.getRealTime()}}
+            </ion-item>
+        </ion-list>
     </ion-content>
     <ion-footer-bar class="bar-dark egobie-resident-footer"
+                    ng-controller="orderCtrl"
                     ng-click="placeOrderSheet()">
         <h1 class="title">
             REQUEST

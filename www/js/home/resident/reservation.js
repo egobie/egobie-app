@@ -1,7 +1,6 @@
 angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', 'util.shared', 'util.url'])
 
-    .controller('reservationOrderCtrl', function($scope, $state, $ionicActionSheet, $http,
-            shared, url, orderOpening, orderCar, orderService, orderAddon, orderPayment, order) {
+    .controller('reservationOrderCtrl', function($scope, order) {
         $scope.order = order;
 
         $scope.$watch(function() {
@@ -9,7 +8,10 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
         }, function (newValue, oldValue) {
             $scope.order = newValue;
         });
+    })
 
+    .controller('orderCtrl', function($scope, $state, $ionicActionSheet, $http,
+            shared, url, orderOpening, orderCar, orderService, orderAddon, orderPayment, order) {
         $scope.validateRequest = function(request) {
             if (request.car_id <= 0) {
                 shared.alert("Please choose a vehicle");

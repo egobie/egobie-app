@@ -39,21 +39,21 @@
 
             .left {
                 display: inline-block;
-                width: 28%;
+                width: 23%;
                 height: inherit;
                 margin: 15px 10px 0px 5px;
                 border-right: 1px solid #000000;
 
                 .price {
-                    font-size: 25px;
-                    height: 30px;
-                    line-height: 30px;
-                    padding-left: 12px;
+                    font-size: 20px;
+                    height: 28px;
+                    line-height: 28px;
+                    padding-left: 10px;
 
                     &:before {
                         content: "$";
                         position: absolute;
-                        font-size: 15px;
+                        font-size: 12px;
                         top: 8px;
                         left: 8px;
                     }
