@@ -1,4 +1,4 @@
-angular.module('app.home.resident', ['ionic'])
+angular.module('app.home.resident', ['ionic', 'util.shared'])
 
     .service('orderOpening', function() {
         return {
@@ -80,10 +80,37 @@ angular.module('app.home.resident', ['ionic'])
         };
     })
 
-    .service('order', function() {
+    .service('order', function(shared) {
         return {
             price: 0,
             time: 0,
+            getRealPrice: function() {
+                if (this.price <= 0) {
+                    return "";
+                }
+
+                var discount = shared.getUser().discount;
+
+                if (discount > 0) {
+                    return ((this.price + this.price * 0.075) * 0.9).toFixed(2);
+                } else {
+                    return (this.price + this.price * 0.075).toFixed(2);
+                }
+            },
+            getRealTime: function() {
+                var hour = Math.floor(this.time / 60);
+                var mins = this.time % 60;
+
+                if (this.time <= 0) {
+                    return "";
+                } else if (hour < 1) {
+                    return mins + " mins";
+                } else if (hour < 2) {
+                    return (hour + " hour ") + (mins === 0 ? "" : mins + " mins");
+                } else {
+                    return hour + " hours " + (mins === 0 ? "" : mins + " mins");
+                }
+            },
             clear: function() {
                 this.price = 0;
                 this.time = 0;

@@ -11,10 +11,10 @@
     <ion-side-menu side="left">
         <ion-content overflow-scroll="true" padding="false" class="side-menu-left egobie-menu-bg">
             <div class="menu-mask"></div>
-            <ion-list>
+            <ion-list ng-controller="menuCtrl">
                 <ion-item class="item-avatar egobie-menu-profile">
                     <div class="egobie-menu-profile-logo"></div>
-                    <div class="egobie-menu-profile-name">Bo Huang</div>
+                    <div class="egobie-menu-profile-name">{{user.name}}</div>
                 </ion-item>
 
                 <ion-item ui-sref="menu.home.resident" menu-close="" class="item item-icon-left egobie-menu-item">

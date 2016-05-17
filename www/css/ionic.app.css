@@ -11271,6 +11271,8 @@ a.button {
   border-radius: 0px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.6);
   padding-left: 0px; }
+  .egobie-resident-order .item-divider span {
+    font-size: 12px; }
 
 .egobie-resident-order .button {
   width: 95% !important;
@@ -11446,6 +11448,7 @@ a.button {
       content: url("../img/logo/light_grey_blue.png"); }
     .egobie-menu-profile-name {
       position: absolute;
+      text-transform: capitalize;
       bottom: 27px;
       margin-left: 15px;
       margin-top: auto;

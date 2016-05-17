@@ -89,26 +89,24 @@
             </ion-item>
         </ion-list>
 
-        <!--
         <ion-list class="egobie-resident-order">
-            <ion-item class="item-divider">Estimation</ion-item>
+            <ion-item class="item-divider">Price & Time <span>(tax and discount included)</span></ion-item>
 
-            <ion-item class="item-icon-left">
-                <i class="icon ion-ios-time"></i>{{order.time}} mins
+            <ion-item class="item-icon-left item-icon-right">
+                <i class="icon ion-cash"></i>
+                {{order.getRealPrice()}}
+                <i class="icon ion-social-usd"></i>
             </ion-item>
-
             <ion-item class="item-icon-left">
-                <i class="icon ion-cash"></i>{{order.price}} $
+                <i class="icon ion-ios-time"></i>{{order.getRealTime()}}
             </ion-item>
         </ion-list>
-        -->
     </ion-content>
     <ion-footer-bar class="bar-dark egobie-resident-footer"
                     ng-click="placeOrderSheet()">
         <h1 class="title">
             Make Reservation
-            <span ng-show="order.price > 0"> ${{order.price}}</span>
-            <span ng-show="order.time > 0"> ({{order.time}} mins)</span>
+            <span ng-show="order.price > 0"> ${{order.getRealPrice()}}</span>
         </h1>
     </ion-footer-bar>
 </ion-view>

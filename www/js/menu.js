@@ -1,4 +1,4 @@
-angular.module('app.menu', ['util.request'])
+angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
 
     .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
         // Ionic uses AngularUI Router which uses the concept of states
@@ -100,5 +100,12 @@ angular.module('app.menu', ['util.request'])
             });
 
 //        $urlRouterProvider.otherwise('/menu/home');
-    }
-);
+    })
+
+    .controller('menuCtrl', function($scope, shared) {
+        $scope.user = {
+            name: shared.getUser().first || "Welcome"
+        };
+
+        shared.setMenuScope($scope);
+    });

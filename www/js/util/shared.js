@@ -2,12 +2,15 @@ angular.module("util.shared", ["util.url"])
 
     .service("shared", function($rootScope, $window, $ionicPopup, $ionicLoading, $http, $q, url) {
 
+        var menu = null;
+
         var user = {
             id: "",
             token: "",
             username: "",
             email: "",
             coupon: "",
+            discount: 0,
             phone: "",
             first: "",
             last: "",
@@ -120,6 +123,7 @@ angular.module("util.shared", ["util.url"])
                 user.email = u.email;
                 user.phone = u.phone_number;
                 user.coupon = u.coupon;
+                user.discount = u.discount;
 
                 user.home_state = u.home_address_state;
                 user.home_city = u.home_address_city;
@@ -130,6 +134,10 @@ angular.module("util.shared", ["util.url"])
                 user.work_city = u.work_address_city;
                 user.work_zip = u.work_address_zip;
                 user.work_street = u.work_address_street;
+
+                if (menu) {
+                    menu.user.name = user.first;
+                }
 
                 refreshScope();
             },
@@ -508,6 +516,10 @@ angular.module("util.shared", ["util.url"])
                     title: data
                 });
                 console.log(data);
+            },
+
+            setMenuScope: function(menuScope) {
+                menu = menuScope;
             }
         };
 
