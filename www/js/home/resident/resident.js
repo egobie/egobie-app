@@ -241,12 +241,33 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
             });
     })
 
-    .controller('navigationCtrl', function($scope, $state) {
+    .controller('navigationCtrl', function($scope, $state, $ionicModal, shared) {
+        var user = shared.getUser();
+
+        $scope.showEditUser = function() {
+            $ionicModal.fromTemplateUrl('templates/setting/user.html', {
+                scope: $scope
+            }).then(function(modal) {
+                $scope.editUserModal = modal;
+                $scope.editUserModal.show();
+            });
+        };
+
         $scope.gotoOnDemand = function() {
-            $state.go("menu.home.demand");
+            if (!user.first || !user.phone) {
+                $scope._egobie = "menu.home.demand";
+                $scope.showEditUser();
+            } else {
+                $state.go("menu.home.demand");
+            }
         };
 
         $scope.gotoReservation = function() {
-            $state.go("menu.home.reservation");
+            if (!user.first || !user.phone) {
+                $scope._egobie = "menu.home.reservation";
+                $scope.showEditUser();
+            } else {
+                $state.go("menu.home.reservation");
+            }
         };
     });

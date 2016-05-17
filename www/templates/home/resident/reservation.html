@@ -10,7 +10,7 @@
         <div class="egobie-bg-mask-1"></div>
         <div class="egobie-bg-mask-2"></div>
     </div>
-    <ion-content padding="true">
+    <ion-content overflow-scroll="true" padding="true" class="has-footer">
         <ion-list class="egobie-resident-order"
                   ng-controller="serviceSelectCtl">
             <ion-item class="item-divider item-icon-right"
@@ -97,7 +97,7 @@
                 {{order.getRealPrice()}}
                 <i class="icon ion-social-usd"></i>
             </ion-item>
-            <ion-item class="item-icon-left">
+            <ion-item class="item-icon-left egobie-margin-bottom-10">
                 <i class="icon ion-ios-time"></i>{{order.getRealTime()}}
             </ion-item>
         </ion-list>

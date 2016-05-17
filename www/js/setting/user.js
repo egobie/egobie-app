@@ -1,6 +1,14 @@
 angular.module('app.setting.user', ['ionic', 'util.shared', 'util.url'])
 
-    .controller('userEditCtrl', function($scope, $http, shared, url) {
+    .controller('userEditCtrl', function($scope, $state, $http, $timeout, shared, url) {
+        $scope.title = "USER ACCOUNT";
+
+        console.log($scope._egobie);
+
+        if ($scope._egobie) {
+            $scope.title = "SETUP PROFILE";
+        }
+
         $scope.user = {
             first: shared.getUser().first,
             last : shared.getUser().last,
@@ -35,6 +43,14 @@ angular.module('app.setting.user', ['ionic', 'util.shared', 'util.url'])
                     shared.refreshUser(data);
                     shared.hideLoading();
                     $scope.hideEditUser();
+
+                    if ($scope._egobie) {
+                        $timeout(function() {
+                            var temp = $scope._egobie;
+                            delete $scope._egobie;
+                            $state.go(temp);
+                        }, 500);
+                    }
                 })
                 .error(function(data, status, headers, config) {
                     shared.hideLoading();
