@@ -57,8 +57,8 @@ angular.module('app.payment.edit', ['ionic', 'credit-cards', 'util.shared', 'uti
         function validatePayment(payment) {
             payment.card_type = shared.testCreditCard(payment.account_number);
 
-            if (!payment.account_name) {
-                shared.alert("Please input the card's holder name!");
+            if (!payment.account_name || payment.account_name.indexOf(" ") < 0) {
+                shared.alert("Please input invalid card's holder name!");
                 return false;
             }
 

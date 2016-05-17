@@ -47,7 +47,7 @@ angular.module('app.setting.user', ['ionic', 'util.shared', 'util.url'])
                             var temp = $scope._egobie;
                             delete $scope._egobie;
                             $state.go(temp);
-                        }, 500);
+                        }, 300);
                     }
                 })
                 .error(function(data, status, headers, config) {
