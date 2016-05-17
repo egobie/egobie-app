@@ -1,8 +1,9 @@
 angular.module('app.home.resident.demand', ['ionic', 'app.home.resident', 'util.shared', 'util.url'])
 
-    .controller('demandCtrl', function($scope, $state, $ionicModal, $http, $timeout, shared, url,
-            orderService, orderCar, orderPayment, demandOrder) {
+    .controller('demandCtrl', function($scope, $state, $http, shared, url,
+            orderService, orderCar, orderPayment, orderOpening, demandOrder) {
         $scope.services = orderService.services;
+        $scope.getTime = shared.getTime;
 
         $scope.selectService = function() {
             $state.go('menu.home.residentService');
@@ -21,16 +22,37 @@ angular.module('app.home.resident.demand', ['ionic', 'app.home.resident', 'util.
                 }
             }
 
-            shared.showLoading();
+            if (demandOrder.services.length === 0) {
+                shared.alert("Please choose services");
+                return;
+            }
 
-            $timeout(function() {
-                if (demandOrder.services.length === 0) {
-                    shared.hideLoading();
-                    shared.alert("No Available");
-                } else {
+            shared.showLoading();
+            $http
+                .post(url.ondemand, shared.getRequestBody({
+                    services: demandOrder.services
+                }))
+                .success(function(data, status, headers, config) {
+                    orderOpening.id = data["id"];
+                    orderOpening.day = data["day"];
+                    orderOpening.start = shared.getTime(data["start"]);
+                    orderOpening.end = shared.getTime(data["end"]);
+                    orderOpening.diff = data["diff"];
+
                     $state.go("menu.home.demandOrder");
-                }
-            }, 1000);
+                })
+                .error(function(data, status, headers, config) {
+                    if (data === "NO") {
+                        shared.hideLoading();
+                        shared.alert("Not Available");
+                    }
+                });
+        };
+
+        $scope.gotoDemand = function() {
+            demandOrder.clear();
+            orderOpening.clear();
+            $scope.$ionicGoBack();
         };
 
         $scope.goHome = function() {
@@ -38,6 +60,34 @@ angular.module('app.home.resident.demand', ['ionic', 'app.home.resident', 'util.
             orderService.clear();
             orderCar.clear();
             orderPayment.clear();
-            $scope.opening.available = false;
+            orderOpening.clear();
+            $scope.$ionicGoBack();
         };
+    })
+
+    .controller('demandOpeningCtrl', function($scope, $http, $interval, shared, url,
+            orderOpening, demandOrder) {
+        $scope.opening = orderOpening;
+
+        demandOrder.interval = $interval(function() {
+            $http
+                .post(url.ondemand, shared.getRequestBody({
+                    services: demandOrder.services
+                }))
+                .success(function(data, status, headers, config) {
+                    orderOpening.id = data["id"];
+                    orderOpening.day = data["day"];
+                    orderOpening.start = shared.getTime(data["start"]);
+                    orderOpening.end = shared.getTime(data["end"]);
+                    orderOpening.diff = data["diff"];
+
+                    $scope.opening = orderOpening;
+                })
+                .error(function(data, status, headers, config) {
+                    if (data === "NO") {
+                        $scope.gotoDemand();
+                        shared.alert("Not Available");
+                    }
+                });
+        }, 30000);
     });

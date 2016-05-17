@@ -11295,17 +11295,16 @@ a.button {
   border: 1px solid rgba(0, 0, 0, 0.5); }
   .egobie-resident-demand-opening i.left {
     display: block;
-    width: 20%; }
+    width: 15%; }
     .egobie-resident-demand-opening i.left:before {
       font-size: 40px; }
   .egobie-resident-demand-opening div.right {
-    width: 80%; }
-    .egobie-resident-demand-opening div.right p.time {
-      font-size: 18px; }
-    .egobie-resident-demand-opening div.right p.note {
-      font-size: 13px; }
-      .egobie-resident-demand-opening div.right p.note span {
-        font-weight: 700; }
+    width: 85%; }
+    .egobie-resident-demand-opening div.right p.time, .egobie-resident-demand-opening div.right p.note {
+      font-size: 11px; }
+      .egobie-resident-demand-opening div.right p.time span, .egobie-resident-demand-opening div.right p.note span {
+        font-weight: 700;
+        font-size: 14px; }
 
 .egobie-display-none {
   display: none !important; }

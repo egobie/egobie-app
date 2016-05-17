@@ -113,6 +113,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
         $scope.openings = [];
         $scope.showIndex = -1;
         $scope.selectedRange = null;
+        $scope.getTime = shared.getTime;
 
         var services = [];
         var addons = [];
@@ -175,25 +176,6 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
                 $scope.hideOpeningModal();
                 $timeout.cancel(t);
             }, 200);
-        };
-
-        $scope.getTime = function(t) {
-            var sufix = "";
-
-            if (t % 1 === 0) {
-                sufix = ":00";
-            } else {
-                t -= 0.5;
-                sufix = ":30";
-            }
-
-            if (t < 10) {
-                return "0" + t + sufix + " A.M";
-            } else if (t < 12) {
-                return t + sufix + " A.M";
-            } else {
-                return t + sufix + " P.M";
-            }
         };
 
         $scope.reloadOpening();

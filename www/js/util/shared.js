@@ -472,6 +472,25 @@ angular.module("util.shared", ["util.url"])
                 return "invalid";
             },
 
+            getTime: function(t) {
+                var sufix = "";
+
+                if (t % 1 === 0) {
+                    sufix = ":00";
+                } else {
+                    t -= 0.5;
+                    sufix = ":30";
+                }
+
+                if (t < 10) {
+                    return "0" + t + sufix + " A.M";
+                } else if (t < 12) {
+                    return t + sufix + " A.M";
+                } else {
+                    return t + sufix + " P.M";
+                }
+            },
+
             showLoading: function () {
                 $ionicLoading.show({
                     template: '<ion-spinner icon="bubbles"></ion-spinner>',

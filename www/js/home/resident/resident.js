@@ -6,12 +6,14 @@ angular.module('app.home.resident', ['ionic'])
             day: "",
             start: "",
             end: "",
+            diff: -1,
 
             clear: function() {
                 this.id = -1;
                 this.day = "";
                 this.start = "";
                 this.end = "";
+                this.diff = -1;
             }
         };
     })
@@ -129,11 +131,17 @@ angular.module('app.home.resident', ['ionic'])
         };
     })
 
-    .service('demandOrder', function() {
+    .service('demandOrder', function($interval) {
         return {
             services: [],
+            interval: null,
             clear: function() {
+                if (this.interval) {
+                    $interval.cancel(this.interval);
+                }
+
                 this.services = [];
+                this.interval = null;
             }
         };
     })

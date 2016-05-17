@@ -2,7 +2,7 @@
           ng-controller="demandCtrl">
     <ion-header-bar class="egobie-header-bar">
         <button class="button button-icon icon ion-ios-arrow-back"
-                ng-click="$ionicGoBack()"></button>
+                ng-click="gotoDemand()"></button>
         <h1 class="title">AVAILABILITY</h1>
     </ion-header-bar>
     <div class="egobie-bg-mask">
@@ -11,11 +11,12 @@
     </div>
     <ion-content padding="true">
         <ion-list class="egobie-resident-order">
-            <ion-item class="egobie-resident-demand-opening">
+            <ion-item class="egobie-resident-demand-opening"
+                      ng-controller="demandOpeningCtrl">
                 <i class="ion-clock left"></i>
                 <div class="right">
-                    <p class="time">Available during 16:30 - 17:00</p>
-                    <p class="note">Arrive in <span>30 mins</span></p>
+                    <p class="time">Available between <span>{{opening.start}} - {{opening.end}}</span></p>
+                    <p class="note">Arrive in <span>{{opening.diff}} to {{opening.diff + 30}} mins</span></p>
                 </div>
             </ion-item>
         </ion-list>
