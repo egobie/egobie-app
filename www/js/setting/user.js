@@ -3,8 +3,6 @@ angular.module('app.setting.user', ['ionic', 'util.shared', 'util.url'])
     .controller('userEditCtrl', function($scope, $state, $http, $timeout, shared, url) {
         $scope.title = "USER ACCOUNT";
 
-        console.log($scope._egobie);
-
         if ($scope._egobie) {
             $scope.title = "SETUP PROFILE";
         }
@@ -69,13 +67,13 @@ angular.module('app.setting.user', ['ionic', 'util.shared', 'util.url'])
                 return false;
             }
 
-            if (!user.email) {
-                shared.alert("Please input email!");
+            if (!user.email || !shared.testEmail(user.email)) {
+                shared.alert("Please input valid Email!");
                 return false;
             }
 
-            if (!user.phone_number) {
-                shared.alert("Please input Phone Number!");
+            if (!user.phone_number || !shared.testPhone(user.phone_number)) {
+                shared.alert("Please input valid Phone Number!");
                 return false;
             }
 

@@ -84,9 +84,9 @@ angular.module("util.shared", ["util.url"])
             "DETAILING": "Detailing"
         };
 
-        // Email Reg
         var regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         var regCoupon = /^([A-Z0-9]{5})$/;
+        var regPhone = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
 
         var years = [];
         var _current_year = new Date().getFullYear();
@@ -464,6 +464,11 @@ angular.module("util.shared", ["util.url"])
 
             testCoupon: function(coupon) {
                 return regCoupon.test(coupon);
+            },
+
+            testPhone: function(phone) {
+                console.log(phone);
+                return regPhone.test(phone);
             },
 
             testCreditCard: function(accountNumber) {
