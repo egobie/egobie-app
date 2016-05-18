@@ -45,6 +45,8 @@ angular.module('util.url', [])
             demandOpening: host + "/service/demand/opening/",
 
             userHistories: host + "/history",
-            ratingHistory: host + "/history/rating"
+            ratingHistory: host + "/history/rating",
+
+            tasks: host + "/egobie/service/task"
         };
     });

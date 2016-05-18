@@ -13336,6 +13336,147 @@ a.button {
 * {
   font-family: eGobieFont !important; }
 
+.egobie-task-list {
+  padding: 0px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.26); }
+  .egobie-task-list .top {
+    display: flex;
+    padding: 10px; }
+    .egobie-task-list .top .time-services {
+      display: inline-block;
+      width: 50%; }
+      .egobie-task-list .top .time-services .time .title, .egobie-task-list .top .time-services .services .title {
+        font-size: 12px; }
+      .egobie-task-list .top .time-services .time .value, .egobie-task-list .top .time-services .services .value {
+        font-size: 11px;
+        color: #000000; }
+        .egobie-task-list .top .time-services .time .value span, .egobie-task-list .top .time-services .services .value span {
+          display: block;
+          padding-left: 10px;
+          color: #1BB3EC; }
+      .egobie-task-list .top .time-services .time .value {
+        font-size: 11px;
+        margin-bottom: 2px; }
+      .egobie-task-list .top .time-services .services .value:before {
+        content: "- "; }
+    .egobie-task-list .top .customer-phone-plate-reserve {
+      display: inline-block;
+      margin-left: 10px; }
+      .egobie-task-list .top .customer-phone-plate-reserve .customer, .egobie-task-list .top .customer-phone-plate-reserve .phone, .egobie-task-list .top .customer-phone-plate-reserve .plate, .egobie-task-list .top .customer-phone-plate-reserve .reserve {
+        padding-left: 11px; }
+        .egobie-task-list .top .customer-phone-plate-reserve .customer .title, .egobie-task-list .top .customer-phone-plate-reserve .phone .title, .egobie-task-list .top .customer-phone-plate-reserve .plate .title, .egobie-task-list .top .customer-phone-plate-reserve .reserve .title {
+          display: block;
+          font-size: 12px; }
+        .egobie-task-list .top .customer-phone-plate-reserve .customer .value, .egobie-task-list .top .customer-phone-plate-reserve .phone .value, .egobie-task-list .top .customer-phone-plate-reserve .plate .value, .egobie-task-list .top .customer-phone-plate-reserve .reserve .value {
+          color: #000000;
+          font-size: 11px; }
+      .egobie-task-list .top .customer-phone-plate-reserve .plate .value {
+        margin-bottom: 5px; }
+  .egobie-task-list .bottom {
+    width: 95%;
+    font-size: 13px;
+    text-align: right;
+    padding-right: 10px;
+    margin: 10px auto 30px auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.31); }
+    .egobie-task-list .bottom span {
+      display: block; }
+
+.egobie-display-none {
+  display: none !important; }
+
+.egobie-display-inherit {
+  display: inherit !important; }
+
+.egobie-padding-0 {
+  padding: 0px; }
+
+.egobie-margin-left-3 {
+  margin-left: 3px; }
+
+.egobie-margin-top-5 {
+  margin-top: 5px; }
+
+.egobie-margin-top-15 {
+  margin-top: 15px; }
+
+.egobie-margin-right-5 {
+  margin-right: 5px; }
+
+.egobie-margin-top-10 {
+  margin-top: 10px; }
+
+.egobie-margin-top-20 {
+  margin-top: 20px; }
+
+.egobie-margin-bottom-10 {
+  margin-bottom: 10px; }
+
+.egobie-width-200 {
+  width: 200px; }
+
+.egobie-width-300 {
+  width: 300px; }
+
+.egobie-height-200 {
+  height: 200px; }
+
+.egobie-height-300 {
+  height: 300px; }
+
+.egobie-left {
+  float: left; }
+
+.egobie-center {
+  left: 0;
+  right: 0;
+  margin-left: auto !important;
+  margin-right: auto !important; }
+
+.egobie-right {
+  float: right; }
+
+.egobie-avatar {
+  left: 10px !important;
+  top: 25px !important;
+  transform: scale(1.5);
+  border-radius: 0 !important;
+  content: url("../../../img/icons/eGobie_Profile_on.png"); }
+
+.egobie-header-bar {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0px !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #FFFFFF !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
+.egobie-transparent, .egobie-transparent * {
+  background: transparent;
+  color: #000000; }
+
+.egobie-bg-mask {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+  .egobie-bg-mask-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF; }
+  .egobie-bg-mask-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(147, 153, 156, 0.1); }
+
+* {
+  font-family: eGobieFont !important; }
+
 .egobie-tutorial {
   height: 100%; }
 

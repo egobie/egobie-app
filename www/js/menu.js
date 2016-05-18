@@ -97,6 +97,15 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
                         templateUrl: 'templates/menu/about.html'
                     }
                 }
+            })
+
+            .state('menu.task', {
+                url: '/task',
+                views: {
+                    'side-menu': {
+                        templateUrl: 'templates/menu/task.html'
+                    }
+                }
             });
 
 //        $urlRouterProvider.otherwise('/menu/home');
@@ -104,7 +113,8 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
 
     .controller('menuCtrl', function($scope, shared) {
         $scope.user = {
-            name: shared.getUser().first || "Welcome"
+            name: shared.getUser().first || "Welcome",
+            isResidential: shared.isResidential()
         };
 
         shared.setMenuScope($scope);

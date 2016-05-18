@@ -115,6 +115,7 @@ angular.module("util.shared", ["util.url"])
 
             refreshUser: function(u) {
                 user.id = u.id;
+                user.type = u.type;
                 user.token = u.password;
                 user.username = u.username;
                 user.first = u.first_name;
@@ -150,6 +151,10 @@ angular.module("util.shared", ["util.url"])
 
             getUser: function() {
                 return user;
+            },
+
+            isResidential: function() {
+                return user.type === "RESIDENTIAL";
             },
 
             refreshHome: function(address) {
