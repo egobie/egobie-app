@@ -92,9 +92,9 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
                 var discount = shared.getUser().discount;
 
                 if (discount > 0) {
-                    return ((this.price + this.price * 0.075) * 0.9).toFixed(2);
+                    return (this.price * 1.07 * 0.9).toFixed(2);
                 } else {
-                    return (this.price + this.price * 0.075).toFixed(2);
+                    return (this.price * 1.07).toFixed(2);
                 }
             },
             getRealTime: function() {

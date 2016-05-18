@@ -80,6 +80,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
                         .success(function(data, status, headers, config) {
                             shared.lockUserCar(request.car_id);
                             shared.lockUserPayment(request.payment_id);
+                            shared.useDiscount();
                             shared.hideLoading();
 
                             $scope.hideReservationSheet();

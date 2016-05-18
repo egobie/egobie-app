@@ -157,6 +157,14 @@ angular.module("util.shared", ["util.url"])
                 return user.type === "RESIDENTIAL";
             },
 
+            useDiscount: function() {
+                if (user.discount > 0) {
+                    user.discount--;
+                }
+
+                refreshScope();
+            },
+
             refreshHome: function(address) {
                 user.home_state = address.state;
                 user.home_city = address.city;
