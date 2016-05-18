@@ -31,7 +31,9 @@
                 <p class="no">No payment added yet</p>
                 <p class="add">Click <i class="icon ion-android-add icon-2"></i> to add a new one</p>
             </ion-item>
+        </ion-list>
 
+        <ion-list>
             <ion-item class="egobie-payment activated"
                       ng-repeat="(id, p) in payments"
                       ng-click="showPaymentActionSheet(p)">

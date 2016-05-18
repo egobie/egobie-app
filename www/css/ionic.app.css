@@ -11932,7 +11932,7 @@ a.button {
 .egobie-left {
   float: left; }
 
-.egobie-center, .egobie-payment-template, .egobie-payment-visa, .egobie-payment, .egobie-payment-discover {
+.egobie-center {
   left: 0;
   right: 0;
   margin-left: auto !important;
@@ -12024,7 +12024,7 @@ a.button {
 .egobie-left {
   float: left; }
 
-.egobie-center, .egobie-payment-template, .egobie-payment-visa, .egobie-payment, .egobie-payment-discover {
+.egobie-center {
   left: 0;
   right: 0;
   margin-left: auto !important;
@@ -12153,6 +12153,8 @@ a.button {
   height: 180px;
   width: 90%;
   margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
   border: 0;
   border-radius: 10px;
   background: transparent;
@@ -12260,7 +12262,7 @@ a.button {
 .egobie-left {
   float: left; }
 
-.egobie-center, .egobie-payment-template, .egobie-payment-visa, .egobie-payment, .egobie-payment-discover {
+.egobie-center {
   left: 0;
   right: 0;
   margin-left: auto !important;
