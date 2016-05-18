@@ -17,6 +17,7 @@ angular.module('app.about', ['ionic', 'util.url', 'util.shared'])
 
         $scope.hideFeedback = function() {
             $scope.feedbackModel.hide();
+            $scope.feedbackModel.remove();
         };
 
         $scope.feedback = {

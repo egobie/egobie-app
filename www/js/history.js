@@ -29,6 +29,8 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
 
         $scope.hideRating = function() {
             $scope.ratingModel.hide();
+            $scope.ratingModel.remove();
+
             if ($scope.selectedHistory.available) {
                 $timeout(function() {
                     $scope.historyModel.show();
@@ -86,6 +88,7 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
         $scope.hideHistory = function() {
             $scope.selectedHistory = null;
             $scope.historyModel.hide();
+            $scope.historyModel.remove();
         };
 
         $scope.loadReservations = function() {

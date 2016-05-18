@@ -20,6 +20,7 @@ angular.module('app.car.add', ['ionic', 'util.shared', 'util.url'])
         $scope.hideAddCar = function() {
             clearSelected();
             $scope.addCarModal.hide();
+            $scope.addCarModal.remove();
         };
 
         $scope.changeMaker = function() {

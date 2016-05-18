@@ -43,6 +43,7 @@ angular.module('app.payment.edit', ['ionic', 'credit-cards', 'util.shared', 'uti
         $scope.hideEditPayment = function() {
             clearSelected();
             $scope.editPaymentModal.hide();
+            $scope.editPaymentModal.remove();
         };
 
         function clearSelected() {
