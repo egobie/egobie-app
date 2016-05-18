@@ -57,6 +57,8 @@ angular
             // for form inputs)
             if(window.cordova && window.cordova.plugins.Keyboard) {
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+                // Enable background mode
+                cordova.plugins.backgroundMode.enable();
             }
             if(window.StatusBar) {
                 // org.apache.cordova.statusbar required
