@@ -120,26 +120,34 @@
             }
         }
 
-        .bottom {
+        .bottom-will, .bottom-delay, .bottom-in-progress {
             width: 95%;
             height: 30px;
             line-height: 30px;
-            font-size: 25px;
             font-weight: 900;
             text-align: right;
             padding-right: 10px;
-            margin: 10px auto 30px auto;
+            margin: 10px auto;
             border-top: 1px solid rgba(0, 0, 0, 0.31);
         }
 
-        .bottom:before, .min:after, .hour:after, .day:after {
+        .bottom-will, .bottom-delay {
+            font-size: 25px;
+        }
+
+        .bottom-in-progress {
+            font-size: 18px;
+            color: #5CB85C;
+        }
+        
+        .bottom-will:before, .min:after, .hour:after, .day:after {
             font-size: 15px;
             height: 30px;
             line-height: 30px;
             font-weight: normal;
         }
 
-        .bottom:before {
+        .bottom-will:before {
             content: "Will start in:";
             padding-right: 5px;
         }

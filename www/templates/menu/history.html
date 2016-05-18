@@ -62,8 +62,15 @@
                         </div>
                     </div>
                 </div>
-                <p class="bottom"
+                <p class="bottom-will"
+                   ng-show="isWill(reservation)"
                    ng-class="unitStyle(reservation.unit)">{{reservation.how_long}}</p>
+
+                <p class="bottom-delay"
+                   ng-show="isDelay(reservation)">Will start soon</p>
+
+                <p class="bottom-in-progress"
+                   ng-show="isInProgress(reservation)">In Progress</p>
             </ion-item>
         </ion-list>
 

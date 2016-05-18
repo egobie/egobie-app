@@ -10665,22 +10665,26 @@ a.button {
             font-size: 11px; }
         .egobie-reservation-list .top .right .plate-reserve .plate .value {
           margin-bottom: 5px; }
-  .egobie-reservation-list .bottom {
+  .egobie-reservation-list .bottom-will, .egobie-reservation-list .bottom-delay, .egobie-reservation-list .bottom-in-progress {
     width: 95%;
     height: 30px;
     line-height: 30px;
-    font-size: 25px;
     font-weight: 900;
     text-align: right;
     padding-right: 10px;
-    margin: 10px auto 30px auto;
+    margin: 10px auto;
     border-top: 1px solid rgba(0, 0, 0, 0.31); }
-  .egobie-reservation-list .bottom:before, .egobie-reservation-list .min:after, .egobie-reservation-list .hour:after, .egobie-reservation-list .day:after {
+  .egobie-reservation-list .bottom-will, .egobie-reservation-list .bottom-delay {
+    font-size: 25px; }
+  .egobie-reservation-list .bottom-in-progress {
+    font-size: 18px;
+    color: #5CB85C; }
+  .egobie-reservation-list .bottom-will:before, .egobie-reservation-list .min:after, .egobie-reservation-list .hour:after, .egobie-reservation-list .day:after {
     font-size: 15px;
     height: 30px;
     line-height: 30px;
     font-weight: normal; }
-  .egobie-reservation-list .bottom:before {
+  .egobie-reservation-list .bottom-will:before {
     content: "Will start in:";
     padding-right: 5px; }
   .egobie-reservation-list .min:after, .egobie-reservation-list .hour:after, .egobie-reservation-list .day:after {

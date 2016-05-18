@@ -230,6 +230,18 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
             }
         };
 
+        $scope.isWill = function(reservation) {
+            return reservation.how_long > 0 && reservation.status === "RESERVED";
+        };
+
+        $scope.isDelay = function(reservation) {
+            return reservation.how_long < 0 && reservation.status === "RESERVED";
+        };
+
+        $scope.isInProgress = function(reservation) {
+            return reservation.status === "IN_PROGRESS";
+        };
+
         $scope.historyPercent = function(value) {
             return (100 * (value / $scope.max)) + '%';
         };
