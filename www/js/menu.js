@@ -36,12 +36,6 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
                     resolveUserPayments: function(requestUserPayments) {
                         return requestUserPayments.promise;
                     }
-//                    resolveUserServices: function(requestUserServices) {
-//                        return requestUserServices.promise;
-//                    },
-//                    resolveUserHistories: function(requestUserHistories) {
-//                        return requestUserHistories.promise;
-//                    }
                 }
             })
 
