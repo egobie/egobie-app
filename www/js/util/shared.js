@@ -514,7 +514,7 @@ angular.module("util.shared", ["util.url"])
                 $ionicLoading.show({
                     template: '<ion-spinner icon="bubbles"></ion-spinner>',
                     hideOnStateChange: true,
-                    duration: 5000
+                    duration: 10000
                 });
             },
 

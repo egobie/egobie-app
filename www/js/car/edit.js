@@ -44,7 +44,6 @@ angular.module('app.car.edit', ['ionic', 'util.shared', 'util.url'])
         $scope.hideEditCar = function() {
             clearSelected();
             $scope.editCarModal.hide();
-            $scope.editCarModal.remove();
         };
 
         function clearSelected() {

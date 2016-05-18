@@ -21,7 +21,6 @@ angular.module('app.payment.add', ['ionic', 'credit-cards', 'util.shared', 'util
         $scope.hideAddPayment = function() {
             clearSelected();
             $scope.addPaymentModal.hide();
-            $scope.addPaymentModal.remove();
         };
 
         $scope.createPayment = function() {

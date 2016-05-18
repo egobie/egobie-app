@@ -11,7 +11,6 @@ angular.module('app.setting.home', ['ionic', 'util.shared', 'util.url'])
 
         $scope.hideEditHome = function() {
             $scope.editHomeModal.hide();
-            $scope.editHomeModal.remove();
         };
 
         $scope.editHome = function() {

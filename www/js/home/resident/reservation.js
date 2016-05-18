@@ -123,7 +123,6 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
 
         $scope.hideOpeningModal = function() {
             $scope.openingModal.hide();
-            $scope.openingModal.remove();
         };
 
         for (var _i = 0; _i < orderService.services.length; _i++) {

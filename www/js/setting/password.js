@@ -9,7 +9,6 @@ angular.module('app.setting.password', ['ionic', 'util.shared', 'util.url'])
 
         $scope.hideEditPassword = function() {
             $scope.editPasswordModal.hide();
-            $scope.editPasswordModal.remove();
         };
 
         $scope.editPassword = function() {

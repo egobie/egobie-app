@@ -17,7 +17,6 @@ angular.module('app.setting.user', ['ionic', 'util.shared', 'util.url'])
 
         $scope.hideEditUser = function() {
             $scope.editUserModal.hide();
-            $scope.editUserModal.remove();
         };
 
         $scope.editUser = function() {
