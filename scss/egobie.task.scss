@@ -1,5 +1,9 @@
 @import "egobie";
 
+$History-Done: #5CB85C;
+$History-Progress: #5BC0DE;
+$History-Reserved: #F0AD4E;
+
 .egobie {
     &-task-list {
         padding: 0px;
@@ -12,11 +16,11 @@
             display: flex;
             padding: 10px;
 
-            .time-services {
+            .status-time-services {
                 display: inline-block;
                 width: 50%;
 
-                .time, .services {
+                .status, .time, .services {
                     .title {
                         font-size: 12px;
                     }
@@ -24,6 +28,7 @@
                     .value {
                         font-size: 11px;
                         color: #000000;
+                        font-weight: 900;
 
                         span {
                             display: block;
@@ -31,11 +36,6 @@
                             color: #1BB3EC;
                         }
                     }
-                }
-
-                .time .value {
-                    font-size: 11px;
-                    margin-bottom: 2px;
                 }
 
                 .services .value:before {
@@ -58,11 +58,13 @@
                     .value {
                         color: #000000;
                         font-size: 11px;
+                        font-weight: 900;
                     }
                 }
 
                 .plate .value {
                     margin-bottom: 5px;
+                    font-weight: 900;
                 }
             }
         }
@@ -79,5 +81,17 @@
                 display: block;
             }
         }
+    }
+
+    &-task-border-done {
+        border-left: 5px solid $History-Done;
+    }
+
+    &-task-border-progress {
+        border-left: 5px solid $History-Progress;
+    }
+
+    &-task-border-reserved {
+        border-left: 5px solid $History-Reserved;
     }
 }

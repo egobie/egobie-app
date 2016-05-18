@@ -47,6 +47,8 @@ angular.module('util.url', [])
             userHistories: host + "/history",
             ratingHistory: host + "/history/rating",
 
-            tasks: host + "/egobie/service/task"
+            tasks: host + "/egobie/service/task",
+            startTask: host + "/egobie/service/progress",
+            finishTask: host + "/egobie/service/done"
         };
     });

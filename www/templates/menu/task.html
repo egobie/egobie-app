@@ -22,11 +22,16 @@
 
             <ion-item class="egobie-task-list"
                       ng-repeat="task in tasks"
-                      ng-click="showTask(task)">
+                      ng-class="taskBorderStyle(task.status)"
+                      ng-click="showStatusSheet(task)">
                 <div class="top">
-                    <div class="time-services">
+                    <div class="status-time-services">
+                        <div class="status">
+                            <p class="title">Status</p>
+                            <p class="value">{{task.status}}</p>
+                        </div>
                         <div class="time">
-                            <p class="title">Estimated Start:</p>
+                            <p class="title">Estimated Start</p>
                             <p class="value">{{task.start}}</p>
                         </div>
                         <div class="services">
