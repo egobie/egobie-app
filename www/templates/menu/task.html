@@ -5,7 +5,7 @@
         <button class="button button-icon icon ion-navicon egobie-display-inherit" menu-toggle="left"></button>
         <h1 class="title">MY TASKS</h1>
         <button class="button button-icon icon ion-android-refresh egobie-display-inherit"
-                ng-click="loadTasks()"></button>
+                ng-click="loadTasks(true)"></button>
     </ion-header-bar>
     <div class="egobie-bg-mask">
         <div class="egobie-bg-mask-1"></div>
@@ -13,7 +13,7 @@
     </div>
     <ion-content padding="true">
         <ion-list>
-            <ion-item class="item-divider item-icon-right egobie-reservation-title">TAKS LIST</ion-item>
+            <ion-item class="item-divider item-icon-right egobie-reservation-title">TASKS LIST</ion-item>
             <ion-item class="egobie-empty-reservation"
                       ng-show="noTask()">
                 <i class="icon ion-android-checkmark-circle icon-1"></i>

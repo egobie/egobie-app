@@ -247,11 +247,11 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.noReservation = function() {
-            return $scope.reservations.length === 0;
+            return !$scope.reservations || $scope.reservations.length === 0;
         };
 
         $scope.noHistory = function() {
-            return Object.keys($scope.histories).length === 0;
+            return !$scope.histories || Object.keys($scope.histories).length === 0;
         };
 
         $scope.getServiceType = shared.getServiceType;

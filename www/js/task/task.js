@@ -1,9 +1,10 @@
 angular.module('app.task', ['ionic', 'util.shared', 'util.url'])
 
-    .controller('taskCtrl', function($scope, $http, $ionicActionSheet, $ionicPopup, shared, url) {
+    .controller('taskCtrl', function($scope, $http, $interval, $ionicActionSheet, $ionicPopup, shared, url) {
         $scope.tasks = [];
         $scope.selectedTask = null;
         $scope.taskModel = null;
+        $scope.interval = null;
 
         $scope.showStatusSheet = function(task) {
             $scope.hideStatusSheet = $ionicActionSheet.show({
@@ -71,10 +72,23 @@ angular.module('app.task', ['ionic', 'util.shared', 'util.url'])
             });
         };
 
-        $scope.loadTasks = function() {
+        $scope.loadTasks = function(animation) {
+            if (animation) {
+                if ($scope.interval) {
+                    $interval.cancel($scope.interval);
+                }
+
+                $scope.interval = $interval(function() {
+                    $scope.loadTasks(false);
+                }, 300000);
+            }
+
+            if (animation) {
+                shared.showLoading();
+            }
+
             $scope.tasks = [];
 
-            shared.showLoading();
             $http
                 .post(url.tasks, shared.getRequestBody({}))
                 .success(function(data, status, headers, config) {
@@ -104,10 +118,10 @@ angular.module('app.task', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.noTask = function() {
-            return !$scope.tasks.length || $scope.tasks.length === 0;
+            return !$scope.tasks || $scope.tasks.length === 0;
         };
 
         $scope.getServiceType = shared.getServiceType;
 
-        $scope.loadTasks();
+        $scope.loadTasks(true);
     });
