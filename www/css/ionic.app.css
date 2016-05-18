@@ -10643,6 +10643,10 @@ a.button {
         .egobie-reservation-list .top .right .time-services .time .value, .egobie-reservation-list .top .right .time-services .services .value {
           font-size: 11px;
           color: #000000; }
+          .egobie-reservation-list .top .right .time-services .time .value span, .egobie-reservation-list .top .right .time-services .services .value span {
+            display: block;
+            padding-left: 10px;
+            color: #1BB3EC; }
         .egobie-reservation-list .top .right .time-services .time .value {
           font-size: 11px;
           margin-bottom: 2px; }

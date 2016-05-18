@@ -76,6 +76,12 @@
                         .value {
                             font-size: 11px;
                             color: #000000;
+
+                            span {
+                                display: block;
+                                padding-left: 10px;
+                                color: #1BB3EC;
+                            }
                         }
                     }
 

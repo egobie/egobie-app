@@ -39,6 +39,7 @@
                                 <p class="value"
                                    ng-repeat="service in reservation.services">
                                     {{service.name}} ({{service.full_type}})
+                                    <span ng-show="service.note !== ''">{{service.note}}</span>
                                 </p>
                             </div>
                             <div class="services"
