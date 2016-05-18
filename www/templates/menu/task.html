@@ -38,7 +38,7 @@
                             <p class="title">Services</p>
                             <p class="value"
                                ng-repeat="service in task.services">
-                                {{service.name}} ({{service.type}})
+                                {{service.name}} ({{getServiceType(service.type)}})
                                 <span ng-show="service.note !== ''">{{service.note}}</span>
                             </p>
                         </div>

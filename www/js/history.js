@@ -242,6 +242,8 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
             return Object.keys($scope.histories).length === 0;
         };
 
+        $scope.getServiceType = shared.getServiceType;
+
         $scope.loadReservations();
         $scope.loadHistories();
     });

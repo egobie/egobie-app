@@ -32,8 +32,10 @@
                             </div>
                         </div>
                         <div class="right">
+                            <!--
                             <i class="icon ion-clock"></i>
                             <p>On Time</p>
+                            -->
                         </div>
                     </div>
                     <div class="bottom">
@@ -104,16 +106,22 @@
 
             <ion-list>
                 <ion-item class="egobie-history-service">
-                    <div class="section">Service</div>
+                    <div class="section">Services</div>
                     <div class="service"
                          ng-repeat="service in selectedHistory.services">
                         <i class="dot"></i>
-                        <i class="line"></i>
-                        <p>{{service.name}}</p>
-                        <div ng-repeat="item in service.items">
-                            <i></i>
-                            <p>{{item}}</p>
-                        </div>
+                        <p>{{service.name}} ({{getServiceType(service.type)}})</p>
+                    </div>
+                </ion-item>
+            </ion-list>
+
+            <ion-list>
+                <ion-item class="egobie-history-service">
+                    <div class="section">Extra Services</div>
+                    <div class="service"
+                         ng-repeat="addon in selectedHistory.addons">
+                        <i class="dot"></i>
+                        <p>{{addon.name}}</p>
                     </div>
                 </ion-item>
             </ion-list>

@@ -15,7 +15,7 @@
                 <div class="date">{{selectedHistory.start}}</div>
                 <div class="services">
                     <p ng-repeat="service in selectedHistory.services">
-                        <i class="icon ion-wrench"></i>{{service.name}} ({{service.full_type}})
+                        <i class="icon ion-wrench"></i>{{service.name}} ({{getServiceType(service.type)}})
                     </p>
                 </div>
             </ion-item>

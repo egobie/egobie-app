@@ -107,5 +107,7 @@ angular.module('app.task', ['ionic', 'util.shared', 'util.url'])
             return !$scope.tasks.length || $scope.tasks.length === 0;
         };
 
+        $scope.getServiceType = shared.getServiceType;
+
         $scope.loadTasks();
     });

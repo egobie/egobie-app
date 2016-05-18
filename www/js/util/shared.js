@@ -309,15 +309,8 @@ angular.module("util.shared", ["util.url"])
                 if (histories) {
                     Array.prototype.forEach.call(histories, function(history) {
                         history.available = history.rating > 0;
-                        history.services = [];
                         userHistories[history.id] = history;
-
-                        Array.prototype.forEach.call(history.service_ids, function(id) {
-                            history.services.push(services[id]);
-                        });
                     });
-
-                    console.log(histories);
                 }
             },
 
