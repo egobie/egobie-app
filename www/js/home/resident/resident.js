@@ -45,8 +45,26 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
             index: {},
             services: [],
             clear: function() {
+                var charge = null;
+                var addons = null;
+
                 for (var _j = 0; _j < this.services.length; _j++) {
                     this.services[_j].checked = false;
+
+                    charge = this.services[_j].charge;
+                    addons = this.services[_j].addons;
+
+                    if (charge) {
+                        for (var i = 0; i < charge.length; i++) {
+                            charge[i].amount = 1;
+                        }
+                    }
+
+                    if (addons) {
+                        for (var i = 0; i < addons.length; i++) {
+                            addons[i].amount = 1;
+                        }
+                    }
                 }
             }
         };
@@ -143,8 +161,9 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
 
                         if (this.addons[addons[i].name].count <= 0) {
                             if (this.addons[addons[i].name].checked) {
-                                order.price -= this.addons[addons[i].name].addon.price;
+                                order.price -= this.addons[addons[i].name].addon.price * this.addons[addons[i].name].addon.amount;
                                 order.time -= this.addons[addons[i].name].addon.time;
+                                this.addons[addons[i].name].addon.amount = 1;
                             }
 
                             delete this.addons[addons[i].name];
