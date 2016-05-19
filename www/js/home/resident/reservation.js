@@ -347,6 +347,8 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
             order.time -= service.time;
 
             if (order.price <= 0 || order.time <= 0) {
+                order.price = 0;
+                order.time = 0;
                 orderOpening.clear();
             }
 
