@@ -11450,13 +11450,13 @@ a.button {
     }
     */
   /* Menu Icons */ }
+  .egobie-menu-mask {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(31, 55, 76, 0.7); }
   .egobie-menu-bg {
     background-image: url("../img/bg.jpg"); }
-    .egobie-menu-bg .menu-mask {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      background: rgba(31, 55, 76, 0.7); }
   .egobie-menu-bg * {
     color: #FFFFFF; }
   .egobie-menu-item, .egobie-menu-item-last {
@@ -13224,6 +13224,7 @@ a.button {
   border: 0px;
   border-bottom: 1px solid #FFFFFF; }
   .egobie-signup-item input {
+    padding-right: 20px !important;
     color: #FFFFFF; }
     .egobie-signup-item input::-webkit-input-placeholder {
       color: #FFFFFF; }

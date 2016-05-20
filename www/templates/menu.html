@@ -8,10 +8,10 @@
         </ion-nav-bar>
         <ion-nav-view name="side-menu"></ion-nav-view>
     </ion-side-menu-content>
-    <ion-side-menu side="left">
-        <ion-content overflow-scroll="true" padding="false" class="side-menu-left egobie-menu-bg"
+    <ion-side-menu side="left" class="egobie-menu-bg">
+        <div class="egobie-menu-mask"></div>
+        <ion-content padding="false" class="side-menu-left"
                      ng-controller="menuCtrl">
-            <div class="menu-mask"></div>
             <ion-list ng-show="user.isResidential">
                 <ion-item class="item-avatar egobie-menu-profile">
                     <div class="egobie-menu-profile-logo"></div>

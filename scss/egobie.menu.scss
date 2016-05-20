@@ -2,15 +2,15 @@
 
 .egobie {
 
+    &-menu-mask {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: rgba(31, 55, 76, 0.70);
+    }
+
     &-menu-bg {
         background-image: image($Sign-Bg);
-
-        .menu-mask {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            background: rgba(31, 55, 76, 0.70);
-        }
     }
 
     &-menu-bg * {
