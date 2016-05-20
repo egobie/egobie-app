@@ -39,16 +39,17 @@
 
             .left {
                 display: inline-block;
-                width: 23%;
+                width: 20%;
                 height: inherit;
-                margin: 15px 10px 0px 5px;
+                margin: 15px 5px 0px 5px;
                 border-right: 1px solid #000000;
 
                 .price {
-                    font-size: 20px;
+                    font-size: 14px;
                     height: 28px;
                     line-height: 28px;
                     padding-left: 10px;
+                    margin-right: 5px;
 
                     &:before {
                         content: "$";
@@ -67,6 +68,7 @@
 
                 .time-services {
                     display: inline-block;
+                    width: 120px;
 
                     .time, .services {
                         .title {
@@ -76,6 +78,7 @@
                         .value {
                             font-size: 11px;
                             color: #000000;
+                            overflow: visible;
 
                             span {
                                 display: block;

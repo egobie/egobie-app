@@ -10626,10 +10626,11 @@ a.button {
       margin: 15px 10px 0px 5px;
       border-right: 1px solid #000000; }
       .egobie-reservation-list .top .left .price {
-        font-size: 20px;
+        font-size: 14px;
         height: 28px;
         line-height: 28px;
-        padding-left: 10px; }
+        padding-left: 10px;
+        margin-right: 5px; }
         .egobie-reservation-list .top .left .price:before {
           content: "$";
           position: absolute;
@@ -10646,7 +10647,8 @@ a.button {
           font-size: 12px; }
         .egobie-reservation-list .top .right .time-services .time .value, .egobie-reservation-list .top .right .time-services .services .value {
           font-size: 11px;
-          color: #000000; }
+          color: #000000;
+          overflow: visible; }
           .egobie-reservation-list .top .right .time-services .time .value span, .egobie-reservation-list .top .right .time-services .services .value span {
             display: block;
             padding-left: 10px;
