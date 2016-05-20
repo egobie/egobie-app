@@ -1,12 +1,13 @@
 angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
 
-    .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+    .config(function($stateProvider, $ionicConfigProvider) {
         // Ionic uses AngularUI Router which uses the concept of states
         // Learn more here: https://github.com/angular-ui/ui-router
         // Set up the various states which the app can be in.
         // Each state's controller can be found in controllers.js
         // $ionicConfigProvider.views.maxCache(10);
         $ionicConfigProvider.views.transition('platform');
+        $ionicConfigProvider.views.swipeBackEnabled(false);
         // $ionicConfigProvider.views.forwardCache(false);
         $ionicConfigProvider.backButton.icon('ion-ios-arrow-back');
         $ionicConfigProvider.backButton.text('');                  // default is 'Back'
@@ -101,8 +102,6 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
                     }
                 }
             });
-
-//        $urlRouterProvider.otherwise('/menu/home');
     })
 
     .controller('menuCtrl', function($scope, shared) {

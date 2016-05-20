@@ -9676,7 +9676,7 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-header-bar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   border: 0px !important; }
   .egobie-header-bar h1, .egobie-header-bar .button {
     color: #FFFFFF !important; }
@@ -9803,7 +9803,7 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-header-bar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   border: 0px !important; }
   .egobie-header-bar h1, .egobie-header-bar .button {
     color: #FFFFFF !important; }
@@ -9895,7 +9895,7 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-header-bar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   border: 0px !important; }
   .egobie-header-bar h1, .egobie-header-bar .button {
     color: #FFFFFF !important; }
@@ -10115,7 +10115,7 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-header-bar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   border: 0px !important; }
   .egobie-header-bar h1, .egobie-header-bar .button {
     color: #FFFFFF !important; }
@@ -10273,7 +10273,7 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-header-bar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   border: 0px !important; }
   .egobie-header-bar h1, .egobie-header-bar .button {
     color: #FFFFFF !important; }
@@ -10353,35 +10353,39 @@ a.button {
   border-top: 1px solid #AAAAAA;
   border-bottom: 1px solid #AAAAAA;
   overflow: visible; }
-  .egobie-coupon .share .social {
-    width: 40px;
-    height: 40px;
-    display: inline-block;
-    position: relative;
-    font-size: 30px;
-    border: 1px solid #AAAAAA;
-    border-radius: 100%;
-    top: -40px;
-    margin-left: 3%;
-    padding: 0px;
-    background-color: #F8F8FA; }
-    .egobie-coupon .share .social:first-child {
-      margin-left: 20%; }
-    .egobie-coupon .share .social i {
-      display: block;
-      padding: 0px; }
-      .egobie-coupon .share .social i.message {
-        margin-left: 7px;
-        margin-top: 5px; }
-      .egobie-coupon .share .social i.email {
-        margin-left: 7px;
-        margin-top: 4px; }
-      .egobie-coupon .share .social i.facebook {
-        margin-left: 13px;
-        margin-top: 4px; }
-      .egobie-coupon .share .social i.twitter {
-        margin-left: 6px;
-        margin-top: 4px; }
+  .egobie-coupon .share .social-list {
+    display: table;
+    width: 90%;
+    border-spacing: 25px;
+    margin: -20px auto -10px auto; }
+    .egobie-coupon .share .social-list .social {
+      display: table-cell;
+      width: 40px;
+      height: 40px;
+      position: relative;
+      font-size: 30px;
+      border: 1px solid #AAAAAA;
+      border-radius: 100%;
+      margin-left: 3%;
+      padding: 0px;
+      background-color: #F8F8FA; }
+      .egobie-coupon .share .social-list .social:first-child {
+        margin-left: 20%; }
+      .egobie-coupon .share .social-list .social i {
+        display: block;
+        padding: 0px; }
+        .egobie-coupon .share .social-list .social i.message {
+          margin-left: 8px;
+          margin-top: 5px; }
+        .egobie-coupon .share .social-list .social i.email {
+          margin-left: 8px;
+          margin-top: 4px; }
+        .egobie-coupon .share .social-list .social i.facebook {
+          margin-left: 15px;
+          margin-top: 4px; }
+        .egobie-coupon .share .social-list .social i.twitter {
+          margin-left: 8px;
+          margin-top: 4px; }
   .egobie-coupon .share p {
     height: 50px;
     line-height: 50px;
@@ -10454,7 +10458,7 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-header-bar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   border: 0px !important; }
   .egobie-header-bar h1, .egobie-header-bar .button {
     color: #FFFFFF !important; }
@@ -10546,7 +10550,7 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-header-bar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   border: 0px !important; }
   .egobie-header-bar h1, .egobie-header-bar .button {
     color: #FFFFFF !important; }
@@ -11171,7 +11175,7 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-header-bar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   border: 0px !important; }
   .egobie-header-bar h1, .egobie-header-bar .button {
     color: #FFFFFF !important; }
@@ -11408,7 +11412,7 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-header-bar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   border: 0px !important; }
   .egobie-header-bar h1, .egobie-header-bar .button {
     color: #FFFFFF !important; }
@@ -11599,7 +11603,7 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-header-bar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   border: 0px !important; }
   .egobie-header-bar h1, .egobie-header-bar .button {
     color: #FFFFFF !important; }
@@ -11691,7 +11695,7 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-header-bar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   border: 0px !important; }
   .egobie-header-bar h1, .egobie-header-bar .button {
     color: #FFFFFF !important; }
@@ -11804,7 +11808,7 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-header-bar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   border: 0px !important; }
   .egobie-header-bar h1, .egobie-header-bar .button {
     color: #FFFFFF !important; }
@@ -11965,7 +11969,7 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-header-bar, .egobie-payment-header-bar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   border: 0px !important; }
   .egobie-header-bar h1, .egobie-payment-header-bar h1, .egobie-header-bar .button, .egobie-payment-header-bar .button {
     color: #FFFFFF !important; }
@@ -12057,7 +12061,7 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-header-bar, .egobie-payment-header-bar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   border: 0px !important; }
   .egobie-header-bar h1, .egobie-payment-header-bar h1, .egobie-header-bar .button, .egobie-payment-header-bar .button {
     color: #FFFFFF !important; }
@@ -12197,7 +12201,8 @@ a.button {
         line-height: 30px; }
       .egobie-payment-template .left p.number, .egobie-payment-visa .left p.number, .egobie-payment .left p.number, .egobie-payment-discover .left p.number {
         margin-top: 10%;
-        font-size: large; }
+        font-size: large;
+        overflow: visible; }
       .egobie-payment-template .left p span.exp, .egobie-payment-visa .left p span.exp, .egobie-payment .left p span.exp, .egobie-payment-discover .left p span.exp {
         margin-top: 5%;
         font-size: medium; }
@@ -12295,7 +12300,7 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-header-bar, .egobie-payment-header-bar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   border: 0px !important; }
   .egobie-header-bar h1, .egobie-payment-header-bar h1, .egobie-header-bar .button, .egobie-payment-header-bar .button {
     color: #FFFFFF !important; }
@@ -12453,7 +12458,7 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-header-bar, .egobie-service-header-bar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   border: 0px !important; }
   .egobie-header-bar h1, .egobie-service-header-bar h1, .egobie-header-bar .button, .egobie-service-header-bar .button {
     color: #FFFFFF !important; }
@@ -12545,7 +12550,7 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-header-bar, .egobie-service-header-bar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   border: 0px !important; }
   .egobie-header-bar h1, .egobie-service-header-bar h1, .egobie-header-bar .button, .egobie-service-header-bar .button {
     color: #FFFFFF !important; }
@@ -12847,7 +12852,7 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-header-bar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   border: 0px !important; }
   .egobie-header-bar h1, .egobie-header-bar .button {
     color: #FFFFFF !important; }
@@ -12939,7 +12944,7 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-header-bar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   border: 0px !important; }
   .egobie-header-bar h1, .egobie-header-bar .button {
     color: #FFFFFF !important; }
@@ -13102,7 +13107,7 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-header-bar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   border: 0px !important; }
   .egobie-header-bar h1, .egobie-header-bar .button {
     color: #FFFFFF !important; }
@@ -13328,7 +13333,7 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-header-bar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   border: 0px !important; }
   .egobie-header-bar h1, .egobie-header-bar .button {
     color: #FFFFFF !important; }
@@ -13478,7 +13483,7 @@ a.button {
   content: url("../../../img/icons/eGobie_Profile_on.png"); }
 
 .egobie-header-bar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   border: 0px !important; }
   .egobie-header-bar h1, .egobie-header-bar .button {
     color: #FFFFFF !important; }

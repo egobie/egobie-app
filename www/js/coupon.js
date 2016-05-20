@@ -1,16 +1,15 @@
 angular.module('app.coupon', ['ionic', 'ngCordova', 'util.shared'])
 
     .controller('couponCtrl', function($scope, $cordovaSocialSharing, shared) {
-        $scope._body = 'Enjoy eGobie car service now! Use my coupon code: ' + $scope.coupon + ' to sign up and get 10% off your first booking!';
         $scope.coupon = shared.getUser().coupon;
+        $scope._body = 'Enjoy eGobie car service now! Use my coupon code "' + $scope.coupon + '" to sign up and get 10% off your first booking!';
 
         $scope.shareByMessage = function() {
             $cordovaSocialSharing
                 .shareViaSMS($scope._body, '')
                 .then(function() {
-                    shared.alert("SMS - OK");
                 }, function(err) {
-                    shared.alert("SMS - error - ", err);
+                    
                 });
         };
 
@@ -18,9 +17,7 @@ angular.module('app.coupon', ['ionic', 'ngCordova', 'util.shared'])
             $cordovaSocialSharing
                 .shareViaEmail($scope._body, "eGobie Invitation Code", [], [], [], null)
                 .then(function() {
-                    shared.alert("Email - OK");
                 }, function(err) {
-                    shared.alert("Email - error - ", err);
                 });
         };
 
@@ -28,9 +25,7 @@ angular.module('app.coupon', ['ionic', 'ngCordova', 'util.shared'])
             $cordovaSocialSharing
                 .shareViaFacebook($scope._body)
                 .then(function() {
-                    shared.alert("Facebook - OK");
                 }, function(err) {
-                    shared.alert("Facebook - error - ", err);
                 });
         };
 
@@ -38,9 +33,7 @@ angular.module('app.coupon', ['ionic', 'ngCordova', 'util.shared'])
             $cordovaSocialSharing
                 .shareViaTwitter($scope._body)
                 .then(function() {
-                    shared.alert("Twitter - OK");
                 }, function(err) {
-                    shared.alert("Twitter - error - ", err);
                 });
         };
     });

@@ -19,23 +19,25 @@
                 </div>
             </ion-item>
             <ion-item class="share">
-                <div class="social" ng-click="shareByMessage()">
-                    <i class="icon ion-chatbox placeholder-icon message"></i>
+                <div class="social-list">
+                    <div class="social" ng-click="shareByMessage()">
+                        <i class="icon ion-chatbox placeholder-icon message"></i>
+                    </div>
+                    <div class="social" ng-click="shareByEmail()">
+                        <i class="icon ion-email placeholder-icon email"></i>
+                    </div>
+                    <div class="social" ng-click="shareByFacebook()">
+                        <i class="icon ion-social-facebook placeholder-icon facebook"></i>
+                    </div>
+                    <div class="social" ng-click="shareByTwitter()">
+                        <i class="icon ion-social-twitter placeholder-icon twitter"></i>
+                    </div>
                 </div>
-                <div class="social" ng-click="shareByEmail()">
-                    <i class="icon ion-email placeholder-icon email"></i>
-                </div>
-                <div class="social" ng-click="shareByFacebook()">
-                    <i class="icon ion-social-facebook placeholder-icon facebook"></i>
-                </div>
-                <div class="social" ng-click="shareByTwitter()">
-                    <i class="icon ion-social-twitter placeholder-icon twitter"></i>
-                </div>
-                <p>Share It!</p>
+                <!--<p>Share It!</p>-->
                 <div class="share-des">
-                    Share with friends and they will get 10% discount<br/>
-                    credit. We will also apply 10% discount to your next<br/>
-                    reservation
+                    Share with friends and they will get 10%<br/>
+                    discount credit. We will also apply 10%<br/>
+                    discount to your next reservation
                 </div>
             </ion-item>
         </ion-list>
