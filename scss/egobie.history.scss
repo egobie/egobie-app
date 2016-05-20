@@ -280,7 +280,7 @@
                 .plate, .maker, .model {
                     display: inline-block;
                     height: 65px;
-                    padding: 10px;
+                    padding: 10px 0px 0px 5px;
                     border: 0px;
                     overflow: visible;
 
@@ -290,11 +290,15 @@
                     }
 
                     .content {
-                        font-size: 14px;
+                        font-size: 12px;
                         font-weight: 500;
                         color: #000000;
                         padding-bottom: 5px;
                     }
+                }
+
+                .plate {
+                    padding-left: 10px; 
                 }
             }
         }
@@ -418,6 +422,7 @@
                     .time {
                         display: inline-block;
                         font-weight: 600;
+                        overflow: visible;
                     }
                 }
 
@@ -558,10 +563,6 @@
 
                     .content:before {
                         content: "$";
-                        font-size: 12px;
-                        margin-right: 3px;
-                        position: relative;
-                        bottom: 5px;
                     }
                 }
 
@@ -569,7 +570,7 @@
                     display: inline-block;
                     margin-bottom: 5px;
                     font-size: 13px;
-                    margin-left: 150px;
+                    margin-left: 80px;
                 }
             }
         }

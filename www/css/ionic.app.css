@@ -10779,17 +10779,19 @@ a.button {
     .egobie-history-list .right .egobie-other .plate, .egobie-history-list .right .egobie-other .maker, .egobie-history-list .right .egobie-other .model {
       display: inline-block;
       height: 65px;
-      padding: 10px;
+      padding: 10px 0px 0px 5px;
       border: 0px;
       overflow: visible; }
       .egobie-history-list .right .egobie-other .plate .title, .egobie-history-list .right .egobie-other .maker .title, .egobie-history-list .right .egobie-other .model .title {
         margin-bottom: 5px;
         font-size: 10px; }
       .egobie-history-list .right .egobie-other .plate .content, .egobie-history-list .right .egobie-other .maker .content, .egobie-history-list .right .egobie-other .model .content {
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 500;
         color: #000000;
         padding-bottom: 5px; }
+    .egobie-history-list .right .egobie-other .plate {
+      padding-left: 10px; }
 
 .egobie-history-border-good {
   border-left: 5px solid #5CB85C; }
@@ -10872,7 +10874,8 @@ a.button {
       margin-right: 10px; }
     .egobie-history-detail .egobie-history-time .left .start .time, .egobie-history-detail .egobie-history-time .left .middle .time, .egobie-history-detail .egobie-history-time .left .end .time {
       display: inline-block;
-      font-weight: 600; }
+      font-weight: 600;
+      overflow: visible; }
   .egobie-history-detail .egobie-history-time .left .middle {
     height: 15px;
     overflow: visible; }
@@ -10967,16 +10970,12 @@ a.button {
     font-size: 13px;
     width: 90px; }
     .egobie-history-detail .egobie-history-payment .price-type .price .content:before {
-      content: "$";
-      font-size: 12px;
-      margin-right: 3px;
-      position: relative;
-      bottom: 5px; }
+      content: "$"; }
   .egobie-history-detail .egobie-history-payment .price-type .type {
     display: inline-block;
     margin-bottom: 5px;
     font-size: 13px;
-    margin-left: 150px; }
+    margin-left: 80px; }
 
 .egobie-history-detail .egobie-history-service {
   border: 0px;
