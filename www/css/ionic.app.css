@@ -9960,7 +9960,7 @@ a.button {
   border: 0px;
   padding: 0px;
   border-radius: 10px;
-  background: rgba(255, 165, 0, 0.91);
+  background: orange;
   box-shadow: 3px 5px 9px 0px rgba(0, 0, 0, 0.26); }
   .egobie-plate .bar, .egobie-car .bar {
     position: absolute;
@@ -10166,7 +10166,7 @@ a.button {
     position: absolute;
     width: 50px;
     height: 50px;
-    background-color: rgba(5, 10, 16, 0.85);
+    background-color: #050a10;
     z-index: -1; }
   .egobie-form .item i.icon, .egobie-car-add .item i.icon, .egobie-car-edit .item i.icon {
     width: 50px;
@@ -10174,7 +10174,7 @@ a.button {
     font-size: 30px;
     color: #FFFFFF;
     display: inline-block;
-    padding-left: 13px;
+    padding-left: 14px;
     padding-top: 10px; }
   .egobie-form .item input, .egobie-car-add .item input, .egobie-car-edit .item input, .egobie-form .item select, .egobie-car-add .item select, .egobie-car-edit .item select {
     display: inline-block;
@@ -10596,7 +10596,7 @@ a.button {
 
 .egobie-reservation-title, .egobie-history-title {
   padding-left: 0px;
-  font-size: 25px;
+  font-size: 20px;
   color: #404041;
   height: 40px;
   border: 0;
@@ -11214,7 +11214,7 @@ a.button {
     position: absolute;
     height: 100%;
     width: 100%;
-    background: rgba(0, 0, 0, 0.1); }
+    background: rgba(0, 0, 0, 0.35); }
   .egobie-on-demand .panel, .egobie-reservation .panel {
     position: absolute;
     display: flex;
@@ -11222,7 +11222,7 @@ a.button {
     bottom: 0px;
     width: 100%;
     color: #FFFFFF;
-    background: rgba(0, 0, 0, 0.3); }
+    background: rgba(0, 0, 0, 0.5); }
     .egobie-on-demand .panel .left, .egobie-reservation .panel .left {
       display: inline-block;
       width: 70%; }
@@ -11231,10 +11231,13 @@ a.button {
         line-height: 40px;
         font-size: 25px;
         font-weight: 500;
-        padding-left: 10px;
+        padding-left: 20px;
         color: #FFFFFF; }
       .egobie-on-demand .panel .left .content, .egobie-reservation .panel .left .content {
-        color: #FFFFFF; }
+        color: #FFFFFF;
+        overflow: visible;
+        font-size: 15px;
+        margin-left: 20px; }
     .egobie-on-demand .panel .right, .egobie-reservation .panel .right {
       display: inline-block;
       position: relative;
@@ -11246,9 +11249,11 @@ a.button {
         bottom: 10px; }
 
 .egobie-on-demand {
+  background: url("../img/ondemand.jpg") no-repeat center center;
   background-size: cover; }
 
 .egobie-reservation {
+  background: url("../img/reserve.jpg") no-repeat center center;
   background-size: cover; }
 
 .egobie-resident-order div.service {
@@ -12339,7 +12344,7 @@ a.button {
     position: absolute;
     width: 50px;
     height: 50px;
-    background-color: rgba(5, 10, 16, 0.85);
+    background-color: #050a10;
     z-index: -1; }
   .egobie-form .item i.icon, .egobie-payment-add .item i.icon, .egobie-payment-edit .item i.icon {
     width: 50px;
@@ -12347,7 +12352,7 @@ a.button {
     font-size: 30px;
     color: #FFFFFF;
     display: inline-block;
-    padding-left: 13px;
+    padding-left: 14px;
     padding-top: 10px; }
   .egobie-form .item input, .egobie-payment-add .item input, .egobie-payment-edit .item input, .egobie-form .item select, .egobie-payment-add .item select, .egobie-payment-edit .item select {
     display: inline-block;
@@ -12598,7 +12603,7 @@ a.button {
 .egobie-service-title {
   width: 95%;
   padding-left: 0px;
-  font-size: 25px;
+  font-size: 20px;
   color: #9F9F9F;
   height: 40px;
   border: 0;
@@ -12983,7 +12988,7 @@ a.button {
     position: absolute;
     width: 50px;
     height: 50px;
-    background-color: rgba(5, 10, 16, 0.85);
+    background-color: #050a10;
     z-index: -1; }
   .egobie-form .item i.icon, .egobie-user-form .item i.icon, .egobie-password-form .item i.icon, .egobie-home-form .item i.icon, .egobie-work-form .item i.icon {
     width: 50px;
@@ -12991,7 +12996,7 @@ a.button {
     font-size: 30px;
     color: #FFFFFF;
     display: inline-block;
-    padding-left: 13px;
+    padding-left: 14px;
     padding-top: 10px; }
   .egobie-form .item input, .egobie-user-form .item input, .egobie-password-form .item input, .egobie-home-form .item input, .egobie-work-form .item input, .egobie-form .item select, .egobie-user-form .item select, .egobie-password-form .item select, .egobie-home-form .item select, .egobie-work-form .item select {
     display: inline-block;
@@ -13066,7 +13071,7 @@ a.button {
 .egobie-width-200 {
   width: 200px; }
 
-.egobie-width-300, .egobie-sign-item, .egobie-signin-item, .egobie-signup-item, .egobie-sign-button {
+.egobie-width-300 {
   width: 300px; }
 
 .egobie-height-200 {
@@ -13170,14 +13175,15 @@ a.button {
 
 .egobie-company {
   text-align: center;
-  height: 35px;
+  height: 20px;
   width: 100%;
   font-size: 20px;
   margin-top: 10px;
-  margin-bottom: 0px;
+  margin-bottom: 5px;
   color: #FFFFFF; }
 
 .egobie-sign-item {
+  width: 90%;
   padding: 0px;
   border: none;
   background: transparent; }
@@ -13188,6 +13194,7 @@ a.button {
     text-decoration: none; }
 
 .egobie-signin-item {
+  width: 90%;
   background: transparent;
   border-color: #FFFFFF;
   border: 0px;
@@ -13211,6 +13218,7 @@ a.button {
     color: #FFFFFF; }
 
 .egobie-signup-item {
+  width: 90%;
   background: transparent;
   border-color: #FFFFFF;
   border: 0px;
@@ -13234,6 +13242,7 @@ a.button {
     color: #FFFFFF; }
 
 .egobie-sign-button {
+  width: 90%;
   display: block;
   clear: both;
   margin-top: 20px;

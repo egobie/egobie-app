@@ -68,18 +68,18 @@
     &-company {
         @extend .egobie-center;
         text-align: center;
-        height: 35px;
+        height: 20px;
         width: 100%;
         font-size: 20px;
         margin-top: 10px;
-        margin-bottom: 0px;
+        margin-bottom: 5px;
         color: #FFFFFF;
     }
 
     &-sign-item {
         @extend .egobie-center;
-        @extend .egobie-width-300;
 
+        width: 90%;
         padding: 0px;
         border: none;
         background: transparent;
@@ -94,9 +94,9 @@
 
     &-signin-item {
         @extend .egobie-margin-top-10;
-        @extend .egobie-width-300;
         @extend .egobie-center;
 
+        width: 90%;
         background: transparent;
         border-color: #FFFFFF;
         border: 0px;
@@ -120,9 +120,9 @@
 
     &-signup-item {
         @extend .egobie-margin-top-5;
-        @extend .egobie-width-300;
         @extend .egobie-center;
 
+        width: 90%;
         background: transparent;
         border-color: #FFFFFF;
         border: 0px;
@@ -146,8 +146,8 @@
 
     &-sign-button {
         @extend .egobie-center;
-        @extend .egobie-width-300;
 
+        width: 90%;
         display: block;
         clear: both;
         margin-top: 20px;

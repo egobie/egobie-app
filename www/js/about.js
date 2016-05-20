@@ -5,6 +5,10 @@ angular.module('app.about', ['ionic', 'util.url', 'util.shared'])
             window.open(url.website, "_system");
         };
 
+        $scope.openFAQ = function() {
+            window.open(url.faq, "_system");
+        };
+
         $ionicModal.fromTemplateUrl('feedback', {
             scope: $scope
         }).then(function(modal) {
