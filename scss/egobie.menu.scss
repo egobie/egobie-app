@@ -6,11 +6,13 @@
         position: absolute;
         height: 100%;
         width: 100%;
-        background: rgba(31, 55, 76, 0.70);
+        /*background: rgba(31, 55, 76, 0.70);*/
+        background: rgba(27, 28, 29, 0.7);
     }
 
     &-menu-bg {
-        background-image: image($Sign-Bg);
+        background: image($Sign-Bg) no-repeat center center;
+        background-size: cover;
     }
 
     &-menu-bg * {

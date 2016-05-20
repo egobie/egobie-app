@@ -33,7 +33,7 @@
     }
 
     &-sign-bg {
-        /*background-image: image($Sign-Bg);*/
+        background: image($Sign-Bg) no-repeat center center;
         background-size: cover;
         padding: 0px;
 
@@ -41,7 +41,8 @@
             position: absolute;
             height: 100%;
             width: 100%;
-            background: rgba(118, 67, 134, 0.60);
+            /*background: rgba(118, 67, 134, 0.60);*/
+            background: rgba(15, 16, 37, 0.55)
         }
 
         .list {
@@ -56,13 +57,13 @@
     &-signin-logo {
         @extend .egobie-sign-logo;
 
-        /*content: logo($Logo-White);*/
+        content: logo($Logo-White);
     }
 
     &-signup-logo {
         @extend .egobie-sign-logo;
 
-        /*content: logo($Logo-White);*/
+        content: logo($Logo-White);
     }
 
     &-company {
@@ -93,7 +94,6 @@
     }
 
     &-signin-item {
-        @extend .egobie-margin-top-10;
         @extend .egobie-center;
 
         width: 90%;

@@ -11454,9 +11454,11 @@ a.button {
     position: absolute;
     height: 100%;
     width: 100%;
-    background: rgba(31, 55, 76, 0.7); }
+    /*background: rgba(31, 55, 76, 0.70);*/
+    background: rgba(27, 28, 29, 0.7); }
   .egobie-menu-bg {
-    background-image: url("../img/bg.jpg"); }
+    background: url("../img/bg.jpg") no-repeat center center;
+    background-size: cover; }
   .egobie-menu-bg * {
     color: #FFFFFF; }
   .egobie-menu-item, .egobie-menu-item-last {
@@ -13059,7 +13061,7 @@ a.button {
 .egobie-margin-right-5 {
   margin-right: 5px; }
 
-.egobie-margin-top-10, .egobie-signin-item {
+.egobie-margin-top-10 {
   margin-top: 10px; }
 
 .egobie-margin-top-20 {
@@ -13154,24 +13156,25 @@ a.button {
   border: 0px; }
 
 .egobie-sign-bg {
-  /*background-image: image($Sign-Bg);*/
+  background: url("../img/bg.jpg") no-repeat center center;
   background-size: cover;
   padding: 0px; }
   .egobie-sign-bg .mask {
     position: absolute;
     height: 100%;
     width: 100%;
-    background: rgba(118, 67, 134, 0.6); }
+    /*background: rgba(118, 67, 134, 0.60);*/
+    background: rgba(15, 16, 37, 0.55); }
   .egobie-sign-bg .list {
     position: relative; }
     .egobie-sign-bg .list .mask {
       background: rgba(12, 10, 12, 0.4); }
 
 .egobie-signin-logo {
-  /*content: logo($Logo-White);*/ }
+  content: url("../img/logo/white.png"); }
 
 .egobie-signup-logo {
-  /*content: logo($Logo-White);*/ }
+  content: url("../img/logo/white.png"); }
 
 .egobie-company {
   text-align: center;
