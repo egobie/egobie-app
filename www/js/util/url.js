@@ -1,10 +1,16 @@
 angular.module('util.url', [])
 
     .factory('url', function() {
-        var host = "http://localhost:8000";
-//        var host = "http://ec2-52-91-137-51.compute-1.amazonaws.com:8000";
+//        var host = "http://localhost:8000";
+        var host = "http://ec2-52-90-93-52.compute-1.amazonaws.com:8000";
 
         return {
+            website: "http://www.egobie.com/",
+            faq: "http://www.egobie.com/#!faq/aifir",
+
+            checkEmail: host + "/check/email",
+            checkUsername: host + "/check/name",
+
             signIn: host + "/signin",
             signUp: host + "/signup",
 
@@ -19,6 +25,7 @@ angular.module('util.url', [])
             newPayment: host + "/payment/new",
             editPayment: host + "/payment/update",
             deletePayment: host + "/payment/delete",
+            pay: host + "/payment/pay",
 
             updateUser: host + "/user/update/user",
             updateHome: host + "/user/update/home",
@@ -27,12 +34,22 @@ angular.module('util.url', [])
             feedback: host + "/user/feedback",
 
             services: host + "/service",
-            userServices: host + "/service/user",
-            openings: host + "/service/opening",
-            placeOrder: host + "/service/order",
-            serviceDemand: host + "/service/demand",
-            openingDemand: host + "/service/demand/opening/",
+            userReservations: host + "/service/reservation",
 
-            userHistories: host + "/history"
+            openings: host + "/service/opening",
+            ondemand: host + "/service/now",
+            placeOrder: host + "/service/order",
+            cancelOrder: host + "/service/cancel",
+            demandService: host + "/service/demand",
+            readService: host + "/service/read/",
+            demandAddon: host + "/service/demand/addon",
+            demandOpening: host + "/service/demand/opening/",
+
+            userHistories: host + "/history",
+            ratingHistory: host + "/history/rating",
+
+            tasks: host + "/egobie/service/task",
+            startTask: host + "/egobie/service/progress",
+            finishTask: host + "/egobie/service/done"
         };
     });

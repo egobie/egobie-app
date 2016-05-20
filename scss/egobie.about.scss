@@ -1,0 +1,58 @@
+@import 'egobie';
+
+.egobie {
+
+    &-about-page {
+        border: 0px;
+
+        .item {
+            border: 0px;
+            margin-left: auto;
+            margin-right: auto;
+
+            &:first-child {
+                padding-bottom: 15px;
+                margin-bottom: 5px;
+                //border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+            }
+        }
+    }
+
+    &-feedback {
+        background: transparent;
+        border: 0px;
+
+        input, textarea, button {
+            width: 90%;
+            margin: auto auto 15px auto;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+        }
+
+        input, textarea {
+            background: transparent;
+        }
+
+        input:focus, textarea:focus {
+            border: 1px solid #000000;
+        }
+
+        input {
+            height: 40px;
+            line-height: 40px;
+            font-size: 20px;
+            padding-left: 10px;
+        }
+
+        textarea {
+            height: 200px;
+            font-size: 15px;
+            padding: 10px;
+            resize: none;
+        }
+
+        button {
+            border-radius: 5px;
+        }
+    }
+}

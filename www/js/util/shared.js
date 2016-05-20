@@ -1,10 +1,8 @@
 angular.module("util.shared", ["util.url"])
 
     .service("shared", function($rootScope, $window, $ionicPopup, $ionicLoading, $http, $q, url) {
-        var headers = {
-            "Egobie-Id": "",
-            "Egobie-Token": ""
-        };
+
+        var menu = null;
 
         var user = {
             id: "",
@@ -12,6 +10,7 @@ angular.module("util.shared", ["util.url"])
             username: "",
             email: "",
             coupon: "",
+            discount: 0,
             phone: "",
             first: "",
             last: "",
@@ -44,9 +43,32 @@ angular.module("util.shared", ["util.url"])
             'WHITE', 'BLACK', 'SILVER', 'GRAY', 'RED', 'BLUE', 'BROWN', 'YELLOW', 'GOLD', 'GREEN', 'PINK', 'OTHERS'
         ];
 
+        var cardTypes = [{
+            name: 'American Express',
+            pattern: /^3[47]/,
+            valid_length: [15]
+        }, {
+            name: 'Visa Electron',
+            pattern: /^(4026|417500|4508|4844|491(3|7))/,
+            valid_length: [16]
+        }, {
+            name: 'Visa',
+            pattern: /^4/,
+            valid_length: [16]
+        }, {
+            name: 'MasterCard',
+            pattern: /^5[1-5]/,
+            valid_length: [16]
+        }, {
+            name: 'Discover',
+            pattern: /^(6011|622(12[6-9]|1[3-9][0-9]|[2-8][0-9]{2}|9[0-1][0-9]|92[0-5]|64[4-9])|65)/,
+            valid_length: [16]
+        }];
+
         var userCars = {};
         var userPayments = {};
-        var userServices = [];
+        var userReservations = [];
+        var userDones = [];
         var userHistories = {};
         var carMakers = [];
         var carModels = {};
@@ -58,13 +80,13 @@ angular.module("util.shared", ["util.url"])
 
         var serviceNames = {
             "CAR_WASH": "Car Wash",
-            "OIL_CHANGE": "Oil Change",
+            "OIL_CHANGE": "Lube Service",
             "DETAILING": "Detailing"
         };
 
-        // Email Reg
         var regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         var regCoupon = /^([A-Z0-9]{5})$/;
+        var regPhone = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
 
         var years = [];
         var _current_year = new Date().getFullYear();
@@ -76,7 +98,7 @@ angular.module("util.shared", ["util.url"])
 
         $window.rootScopes = $window.rootScopes || [];
         $window.rootScopes.push($rootScope);
-        
+
         if (!!$window.shared) {
             return $window.shared;
         }
@@ -90,13 +112,10 @@ angular.module("util.shared", ["util.url"])
         }
 
         $window.shared = {
-            minUsername: 5,
-            maxUsername: 16,
-            minPassword: 8,
-            maxPassword: 20,
 
             refreshUser: function(u) {
                 user.id = u.id;
+                user.type = u.type;
                 user.token = u.password;
                 user.username = u.username;
                 user.first = u.first_name;
@@ -105,6 +124,7 @@ angular.module("util.shared", ["util.url"])
                 user.email = u.email;
                 user.phone = u.phone_number;
                 user.coupon = u.coupon;
+                user.discount = u.discount;
 
                 user.home_state = u.home_address_state;
                 user.home_city = u.home_address_city;
@@ -116,15 +136,32 @@ angular.module("util.shared", ["util.url"])
                 user.work_zip = u.work_address_zip;
                 user.work_street = u.work_address_street;
 
-                headers["Egobie-Id"] = user.id;
-                headers["Egobie-Token"] = user.token;
+                if (menu) {
+                    menu.user.name = user.first;
+                }
 
                 refreshScope();
             },
 
             refreshUserToken: function(token) {
                 user.token = token;
-                headers["Egobie-Token"] = user.token;
+
+                refreshScope();
+            },
+
+            getUser: function() {
+                return user;
+            },
+
+            isResidential: function() {
+                return user.type === "RESIDENTIAL";
+            },
+
+            useDiscount: function() {
+                if (user.discount > 0) {
+                    user.discount--;
+                }
+
                 refreshScope();
             },
 
@@ -146,12 +183,11 @@ angular.module("util.shared", ["util.url"])
                 refreshScope();
             },
 
-            getUser: function() {
-                return user;
-            },
+            getRequestBody: function(body) {
+                body.user_id = user.id;
+                body.user_token = user.token;
 
-            getHeaders: function() {
-                return headers;
+                return body;
             },
 
             getYears: function() {
@@ -167,11 +203,17 @@ angular.module("util.shared", ["util.url"])
             },
 
             addServices: function(data) {
+                var self = this;
+
                 if (data) {
                     Array.prototype.forEach.call(data, function(service) {
+                        service.free = service.free || [];
+                        service.charge = service.charge || [];
+                        service.addons = service.addons || [];
                         services[service.id] = service;
                         // Used for selection
                         services[service.id].checked = false;
+                        services[service.id].full_type = self.getServiceType(services[service.id].type);
 
                         if (service.type === "CAR_WASH") {
                             carWash.push(service);
@@ -182,6 +224,18 @@ angular.module("util.shared", ["util.url"])
                         }
                     });
                 }
+            },
+
+            getServiceType: function(type) {
+                if (type === "CAR_WASH") {
+                    return "Car Wash";
+                } else if (type === "OIL_CHANGE") {
+                    return "Oil & Filter";
+                } else if (type === "DETAILING") {
+                    return "Detailing";
+                }
+
+                return "";
             },
 
             getCarWashServices: function() {
@@ -208,32 +262,51 @@ angular.module("util.shared", ["util.url"])
                 return services[id];
             },
 
-            getUserHistory: function(id) {
-                var history = userHistories[id];
-
-                if (history) {
-                    var temp = {
-                        start: history.start_time,
-                        end: history.end_time,
-                        price: history.price,
-                        account_name: userPayments[history.user_payment_id]['account_name'],
-                        account_number: userPayments[history.user_payment_id]['account_number'],
-                        account_type: userPayments[history.user_payment_id]['account_type'],
-                        plate: userCars[history.user_car_id]['plate'],
-                        state: userCars[history.user_car_id]['state'],
-                        year: userCars[history.user_car_id]['year'],
-                        color: userCars[history.user_car_id]['color'],
-                        maker: userCars[history.user_car_id]['maker'],
-                        model: userCars[history.user_car_id]['model'],
-                        services: []
-                    };
-
-                    Array.prototype.forEach.call(history.services, function(id) {
-                        temp.services.push(services[id]);
+            readService: function(id) {
+                $http
+                    .post(url.readService + id, this.getRequestBody({}))
+                    .success(function(data, status, headers, config) {
+                        
+                    })
+                    .error(function(data, status, headers, config) {
+                        this.alert("send read for service - " + data);
                     });
+            },
 
-                    return temp;
-                }
+            demandService: function(ids) {
+                $http
+                    .post(url.demandService, this.getRequestBody({
+                        services: ids
+                    }))
+                    .success(function(data, status, headers, config) {
+                        
+                    })
+                    .error(function(data, status, headers, config) {
+                        this.alert("send demand for service - " + data);
+                    });
+            },
+
+            demandAddons: function(ids) {
+                $http
+                    .post(url.demandAddon, this.getRequestBody({
+                        addons: ids
+                    }))
+                    .success(function(data, status, headers, config) {
+                        
+                    })
+                    .error(function(data, status, headers, config) {
+                        this.alert("send demand for Addons - " + data);
+                    });
+            },
+
+            refreshUserHistory: function(history) {
+                userHistories[history.id].note = history.note;
+                userHistories[history.id].rating = history.rating;
+                userHistories[history.id].available = history.available;
+            },
+
+            getUserHistory: function(id) {
+                return userHistories[id];
             },
 
             getUserHistories: function() {
@@ -243,17 +316,50 @@ angular.module("util.shared", ["util.url"])
             addUserHistories: function(histories) {
                 if (histories) {
                     Array.prototype.forEach.call(histories, function(history) {
+                        history.available = history.rating > 0;
                         userHistories[history.id] = history;
                     });
                 }
             },
 
-            getUserServices: function() {
-                return userServices;
+            clearUserHistories: function() {
+                userHistories = {};
             },
 
-            addUserServices: function(services) {
-                userServices = services;
+            getUserReservations: function() {
+                return userReservations;
+            },
+
+            addUserReservations: function(reservations) {
+                var self = this;
+
+                if (reservations) {
+                    Array.prototype.forEach.call(reservations, function(reservation) {
+                        if (reservation.services) {
+                            Array.prototype.forEach.call(reservation.services, function(service) {
+                                service.full_type = self.getServiceType(service.type);
+                            });
+                        }
+
+                        userReservations.push(reservation);                        
+                    });
+                }
+            },
+
+            clearUserReservations: function() {
+                userReservations = [];
+            },
+
+            getUserDones: function() {
+                return userDones;
+            },
+
+            addUserDones: function(dones) {
+                userDones = dones;
+            },
+
+            clearUserdones: function() {
+                userDones = [];
             },
 
             getCarMakers: function() {
@@ -286,6 +392,7 @@ angular.module("util.shared", ["util.url"])
             addUserCars: function(cars) {
                 if (cars) {
                     Array.prototype.forEach.call(cars, function(car) {
+                        car.full_state = states[car.state].toUpperCase();
                         userCars[car.id] = car;
                     });
                 }
@@ -299,6 +406,17 @@ angular.module("util.shared", ["util.url"])
 
             deleteUserCar: function(id) {
                 delete userCars[id];
+                refreshScope();
+            },
+
+            lockUserCar: function(id) {
+                userCars[id].reserved += 1;
+                refreshScope();
+            },
+
+            unlockUserCar: function(id) {
+                userCars[id].reserved -= 1;
+                refreshScope();
             },
 
             getUserPayments: function() {
@@ -322,6 +440,28 @@ angular.module("util.shared", ["util.url"])
 
             deleteUserPayment: function(id) {
                 delete userPayments[id];
+                refreshScope();
+            },
+
+            lockUserPayment: function(id) {
+                userPayments[id].reserved += 1;
+                refreshScope();
+            },
+
+            unlockUserPayment: function(id) {
+                userPayments[id].reserved -= 1;
+                refreshScope();
+            },
+
+            demandOpening: function(id) {
+                $http
+                    .post(url.demandOpening + id, this.getRequestBody({}))
+                    .success(function(data, status, headers, config) {
+                        
+                    })
+                    .error(function(data, status, headers, config) {
+                        this.alert("send demand for opening - " + data);
+                    });
             },
 
             testEmail: function(email) {
@@ -332,11 +472,49 @@ angular.module("util.shared", ["util.url"])
                 return regCoupon.test(coupon);
             },
 
+            testPhone: function(phone) {
+                console.log(phone);
+                return regPhone.test(phone);
+            },
+
+            testCreditCard: function(accountNumber) {
+                if (accountNumber) {
+                    var len = ("" + accountNumber).length;
+
+                    for (var i in cardTypes) {
+                        if (cardTypes[i].pattern.test(accountNumber) && cardTypes[i].valid_length.indexOf(len) >= 0) {
+                            return cardTypes[i].name;
+                        }
+                    }
+                }
+
+                return "invalid";
+            },
+
+            getTime: function(t) {
+                var sufix = "";
+
+                if (t % 1 === 0) {
+                    sufix = ":00";
+                } else {
+                    t -= 0.5;
+                    sufix = ":30";
+                }
+
+                if (t < 10) {
+                    return "0" + t + sufix + " A.M";
+                } else if (t < 12) {
+                    return t + sufix + " A.M";
+                } else {
+                    return t + sufix + " P.M";
+                }
+            },
+
             showLoading: function () {
                 $ionicLoading.show({
                     template: '<ion-spinner icon="bubbles"></ion-spinner>',
                     hideOnStateChange: true,
-                    duration: 5000
+                    duration: 10000
                 });
             },
 
@@ -349,6 +527,10 @@ angular.module("util.shared", ["util.url"])
                     title: data
                 });
                 console.log(data);
+            },
+
+            setMenuScope: function(menuScope) {
+                menu = menuScope;
             }
         };
 

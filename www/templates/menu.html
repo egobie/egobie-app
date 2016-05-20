@@ -8,47 +8,62 @@
         </ion-nav-bar>
         <ion-nav-view name="side-menu"></ion-nav-view>
     </ion-side-menu-content>
-    <ion-side-menu side="left">
-        <ion-content padding="false" class="side-menu-left egobie-menu-bg">
-            <ion-list>
-                <ion-item class="item-avatar margin-top-20 egobie-menu-profile">
+    <ion-side-menu side="left" class="egobie-menu-bg">
+        <div class="egobie-menu-mask"></div>
+        <ion-content padding="false" class="side-menu-left"
+                     ng-controller="menuCtrl">
+            <ion-list ng-show="user.isResidential">
+                <ion-item class="item-avatar egobie-menu-profile">
                     <div class="egobie-menu-profile-logo"></div>
-                    <div class="egobie-menu-profile-name">Bo Huang</div>
+                    <div class="egobie-menu-profile-name">{{user.name}}</div>
                 </ion-item>
 
-                <ion-item ui-sref="menu.home" menu-close="" class="item item-icon-left egobie-menu-item">
+                <ion-item ui-sref="menu.home.resident" menu-close="" class="item item-icon-left egobie-menu-item">
                     <i class="icon egobie-home-off"></i><span>HOME</span>
                 </ion-item>
 
                 <ion-item ui-sref="menu.notification" menu-close="" class="item item-icon-left egobie-menu-item">
-                    <i class="icon egobie-notification-off"></i>NOTIFICATIONS
-                    <span class="badge badge-assertive">111</span>
+                    <i class="icon egobie-notification-off"></i><span>NOTIFICATIONS</span>
+                    <!--<span class="badge badge-assertive">111</span>-->
                 </ion-item>
 
                 <ion-item ui-sref="menu.service" menu-close="" class="item item-icon-left egobie-menu-item">
-                    <i class="icon egobie-service-off"></i>EGOBIE SERVICES
+                    <i class="icon egobie-service-off"></i><span>EGOBIE SERVICES</span>
                 </ion-item>
 
                 <ion-item ui-sref="menu.history" menu-close="" class="item item-icon-left egobie-menu-item">
-                    <i class="icon egobie-history-off"></i>MY SERVICES
+                    <i class="icon egobie-history-off"></i><span>MY SERVICES</span>
                     <!--<span class="badge badge-assertive">0</span>-->
+                </ion-item>
+                <ion-item ui-sref="menu.coupon" menu-close="" class="item item-icon-left egobie-menu-item">
+                    <i class="icon egobie-coupon-off"></i><span>GET YOUR GIFT</span>
                 </ion-item>
 
                 <ion-item ui-sref="menu.car" menu-close="" class="item item-icon-left egobie-menu-item">
-                    <i class="icon egobie-vehicle-off"></i>VEHICLES
+                    <i class="icon egobie-vehicle-off"></i><span>VEHICLES</span>
                     <!--<span class="item-note">Grammy</span>-->
                 </ion-item>
 
                 <ion-item ui-sref="menu.payment" menu-close="" class="item item-icon-left egobie-menu-item">
-                    <i class="icon egobie-payment-off"></i>PAYMENT
+                    <i class="icon egobie-payment-off"></i><span>PAYMENTS</span>
                 </ion-item>
 
                 <ion-item ui-sref="menu.setting" menu-close="" class="item item-icon-left egobie-menu-item">
-                    <i class="icon egobie-setting-off"></i>SETTINGS
+                    <i class="icon egobie-setting-off"></i><span>SETTINGS</span>
                 </ion-item>
 
                 <ion-item ui-sref="menu.about" menu-close="" class="item item-icon-left egobie-menu-item-last">
-                    <i class="icon egobie-about-off"></i>ABOUT
+                    <i class="icon egobie-about-off"></i><span>ABOUT</span>
+                </ion-item>
+            </ion-list>
+            <ion-list ng-show="!user.isResidential">
+                <ion-item class="item-avatar egobie-menu-profile">
+                    <div class="egobie-menu-profile-logo"></div>
+                    <div class="egobie-menu-profile-name">{{user.name}}</div>
+                </ion-item>
+
+                <ion-item ui-sref="menu.task" menu-close="" class="item item-icon-left egobie-menu-item">
+                    <i class="icon egobie-history-off"></i><span>MY TASKS</span>
                 </ion-item>
             </ion-list>
         </ion-content>

@@ -6,7 +6,7 @@ $Tutorial-5: 'tp5.svg';
 
 $Sign-In-Logo: 'sign_in.svg';
 $Sign-Up-Logo: 'sign_up.svg';
-$Sign-Bg: 'sign_bg.svg';
+$Sign-Bg: 'bg.jpg';//'sign_bg.svg';
 
 $Menu-Home-On: 'home_on.png';
 $Menu-Home-Off: 'home_off.png';
@@ -22,6 +22,9 @@ $Menu-History-Off: 'history_off.png';
 
 $Menu-Vehicle-On: 'vehicles_on.png';
 $Menu-Vehicle-Off: 'vehicles_off.png';
+
+$Menu-Coupon-On: 'coupon_on.png';
+$Menu-Coupon-Off: 'coupon_off.png';
 
 $Menu-Payment-On: 'payment_on.png';
 $Menu-Payment-Off: 'payment_off.png';
@@ -40,12 +43,27 @@ $Payment-Amex: 'payment_amex.png';
 $Payment-Visa: 'payment_visa.png';
 $Payment-Master: 'payment_master.png';
 
+$Home-On-Demand: 'ondemand.jpg';
+$Home-Reserve: 'reserve.jpg';
+
+$Coupon-Gift: 'gift.jpg';
+$Coupon-Tag: 'tag.jpg';
+
+$State-NJ: 'state/NJ.png';
+
+
 //Dark Navy Blue: #404041 rgb(40, 40, 41)
 //Light Grey Blue: #D1D2D4 rgb(209, 210, 212)
 $Dark-Navy-Blue: #404041;
 $Light-Grey-Blue: #D1D2D4;
 $Egobie-Blue: #1B4A5E;
+$Egobie-Blue-2: #282C4E;
+$Egobie-Blue-3: #1672EE;
 
+
+$Egobie-BG-Color: #FFFFFF;
+$Egovie-Header-BG-Color: #364351;
+$Egobie-Color: #6FCBFF; //#5C8CA7;
 
 @function image($name) {
     @return url('../img/#{$name}');
@@ -76,7 +94,34 @@ $Egobie-Blue: #1B4A5E;
     appearance: $content;
 }
 
+@mixin placehoder-color($color) {
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+    &::-moz-placeholder {
+        color: $color;
+    }
+    &:-moz-placeholder {
+        color: $color;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+    }
+}
+
 .egobie {
+
+    &-display-none {
+        display: none !important;
+    }
+
+    &-display-inherit {
+        display: inherit !important;
+    }
+
+    &-padding-0 {
+        padding: 0px;
+    }
 
     &-margin-left-3 {
         margin-left: 3px;
@@ -84,6 +129,10 @@ $Egobie-Blue: #1B4A5E;
 
     &-margin-top-5 {
         margin-top: 5px;
+    }
+
+    &-margin-top-15 {
+        margin-top: 15px;
     }
 
     &-margin-right-5 {
@@ -96,6 +145,10 @@ $Egobie-Blue: #1B4A5E;
 
     &-margin-top-20 {
         margin-top: 20px;
+    }
+
+    &-margin-bottom-10 {
+        margin-bottom: 10px;
     }
 
     &-width-200 {
@@ -138,10 +191,52 @@ $Egobie-Blue: #1B4A5E;
     }
 
     &-header-bar {
-        background-color: $Dark-Navy-Blue !important;
+        //background-color: $Egovie-Header-BG-Color !important;
+        background-color: rgba(0, 0, 0, 0.75);
+        border: 0px !important;
+        //background: transparent;
 
         h1, .button {
-            color: $Light-Grey-Blue !important;
+            //color: $Egobie-Color !important;
+            color: #FFFFFF !important;
         }
     }
+
+    &-whole-page {
+        .list, .scroll {
+            height: 100%;
+        }
+    }
+
+    &-transparent, &-transparent * {
+        background: transparent;
+        //color: #FFFFFF;
+        color: #000000;
+    }
+
+    &-bg-mask {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        &-1 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            //background-color: rgb(28, 89, 150);
+            background-color: #FFFFFF;
+        }
+
+        &-2 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            //background-color: rgba(54, 67, 81, 0.85);
+            background-color: rgba(147, 153, 156, 0.10);
+        }
+    }
+}
+
+* {
+    font-family: eGobieFont !important;
 }

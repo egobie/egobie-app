@@ -1,0 +1,132 @@
+@import 'egobie';
+
+.egobie {
+    &-coupon {
+        .coupon {
+            height: 350px;
+            border: 0px;
+
+            .gift {
+                position: relative;
+                margin-left: auto;
+                margin-right: auto;
+                overflow: hidden;
+                width: 200px;
+                height: 100px;
+                text-align: center;
+
+                .image {
+                    max-width: 100%;
+                    max-height: 100%;
+                    content: image($Coupon-Gift);
+                }
+            }
+
+            .content {
+                font-size: 20px;
+                height: 25px;
+                line-height: 25px;
+                text-align: center;
+            }
+
+            .code {
+                position: relative;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 10px;
+                height: 130px;
+                width: 250px;
+
+                img {
+                    display: block;
+                    position: absolute;
+                    max-width: 100%;
+                    max-height: 100%;
+                    width: 250px;
+                    content: image($Coupon-Tag);
+                }
+
+                p {
+                    position: absolute;
+                    font-size: 35px;
+                    left: 0px;
+                    right: 0px;
+                    top: 0px;
+                    bottom: 0px;
+                    line-height: 125px;
+                }
+            }
+        }
+
+        .share {
+            height: 200px;
+            border: 0px;
+            border-top: 1px solid #AAAAAA;
+            border-bottom: 1px solid #AAAAAA;
+            overflow: visible;
+
+            .social-list {
+                display: table;
+                width: 90%;
+                border-spacing: 25px;
+                margin: -20px auto -10px auto;
+
+                .social {
+                    display: table-cell;
+                    width: 40px;
+                    height: 40px;
+                    position: relative;
+                    font-size: 30px;
+                    border: 1px solid #AAAAAA;
+                    border-radius: 100%;
+                    margin-left: 3%;
+                    padding: 0px;
+                    background-color: #F8F8FA;
+
+                    &:first-child {
+                        margin-left: 20%;
+                    }
+
+                    i {
+                        display: block;
+                        padding: 0px;
+
+                        &.message {
+                            margin-left: 8px;
+                            margin-top: 5px;
+                        }
+
+                        &.email {
+                            margin-left: 8px;
+                            margin-top: 4px;
+                        }
+
+                        &.facebook {
+                            margin-left: 15px;
+                            margin-top: 4px;
+                        }
+
+                        &.twitter {
+                            margin-left: 8px;
+                            margin-top: 4px;
+                        }
+                    }
+                }
+            }
+
+            p {
+                height: 50px;
+                line-height: 50px;
+                font-size: 30px;
+                text-align: center;
+                margin-top: -30px;
+            }
+
+            .share-des {
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+    }
+}

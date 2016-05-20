@@ -1,0 +1,331 @@
+@import 'egobie';
+@import 'service';
+
+$Left-Bar: #1BB3EC;
+
+$Item-Border-Bottom: #9F9F9F;
+$Item: #F8F8FA;
+
+$Title-Border-Bottom: #1BB3EC;
+$Title: #9F9F9F;
+
+$Background: #FFFFFF; //#404041
+$Font-Color: #404041; //#E9E9E9
+
+$Basic: $Dark-Navy-Blue;
+$Free: #4AC374;
+$Extra: #FF9900;
+$Advance: #567CC0;
+
+.egobie {
+
+    &-price-before {
+        content: "$";
+        font-size: 15px;
+        position: relative;
+        display: inline-block;
+        margin-right: 2px;
+        bottom: 17px;
+        left: 1px;
+    }
+
+    &-price-after {
+        content: ".00";
+        font-size: 15px;
+    }
+
+    &-service-header-bar {
+        @extend .egobie-header-bar;
+    }
+
+    &-service-list,
+    &-service-list * {
+        background: transparent;
+        color: $Font-Color !important;
+    }
+
+    &-service-title {
+        @extend .egobie-center;
+
+        width: 95%;
+        padding-left: 0px;
+        font-size: 20px;
+        color: $Title;
+        height: 40px;
+        border: 0;
+        margin-top: 35px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid $Title-Border-Bottom;
+        background: transparent;
+    }
+
+    &-service-item {
+        @extend .egobie-center;
+
+        width: 95%;
+        display: flex;
+        border-spacing: 0px;
+        padding: 0px;
+        margin-top: 15px;
+        border: 0px;
+        border-bottom: 1px solid $Item-Border-Bottom;
+
+        div {
+            display: inline-block;
+
+            &.left {
+                background-color: $Left-Bar !important;
+                width: 3px;
+                height: 40px;
+            }
+
+            &.middle {
+                width: 90%;
+
+                p {
+                    &.name {
+                        height: 18px;
+                        line-height: 18px;
+                        font-size: 15px;
+                        display: block;
+
+                        span {
+                            font-size: 12px;
+                            font-weight: 900;
+                            padding-left: 5px;
+                            color: #1BB3EC !important;
+                        }
+                    }
+
+                    &.note {
+                        font-size: 13px;
+                        color: #1BB3EC !important;
+                    }
+
+                    &.time {
+                        font-size: 11px;
+                        display: block;
+                    }
+
+                    &.price {
+                        padding: 0px;
+                        height: 50px;
+                        font-size: 25px;
+                        line-height: 40px;
+                        margin-left: 10px;
+                        margin-right: 15px;
+                        float: left;
+
+                        &:before {
+                            @extend .egobie-price-before;
+                        }
+
+                        &:after {
+                            @extend .egobie-price-after;
+                        }
+                    }
+                }
+            }
+
+            &.right {
+                width: 10px;
+
+                &:before {
+                    position: relative;
+                    font-size: 30px;
+                    font-weight: bolder;
+                    right: -10px;
+                    top: 5px;
+                }
+            }
+        }
+    }
+
+    &-service-detail-title {
+        display: flex;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.26);
+
+        div {
+            display: inline-block;
+            
+            &.left {
+                position: relative;
+                width: 30%;
+
+                .price {
+                    font-size: 40px;
+                    position: relative;
+                    height: 50px;
+                    line-height: 40px;
+
+                    &:before {
+                        @extend .egobie-price-before;
+
+                        left: 3px;
+                    }
+
+                    &:after {
+                        @extend .egobie-price-after;
+                    }
+                }
+
+                .time {
+                    padding-left: 5px;
+
+                    &:after {
+                        content: " mins";
+                    }
+                }
+            }
+
+            &.right {
+                width: 70%;
+                padding-left: 20px;
+
+                .name {
+                    font-size: 20px;
+                    height: 30px;
+                    line-height: 30px;
+                }
+
+                .time {
+                    border: 1px solid red;
+                }
+            }
+        }
+    }
+
+    &-service-detail-list {
+
+        .detail-section {
+            margin: 0px;
+            border: 0px;
+            position: relative;
+            margin-bottom: -5px;
+            background: transparent;
+
+            .dot {
+                position: absolute;
+                display: block;
+                width: 16px;
+                height: 16px;
+                left: 11px;
+                border-radius: 100%
+            }
+
+            .line {
+                position: absolute;
+                width: 3px;
+                height: 100%;
+                left: 17px;
+            }
+
+            p {
+                font-size: 15px;
+                font-weight: bold;
+                height: 16px;
+                line-height: 16px;
+                width: 90%;
+                margin-left: 20px;
+            }
+        }
+
+        .detail-item {
+            margin: 0px;
+            margin-bottom: 12px;
+            position: relative;
+            border-radius: 8px;
+            overflow: visible;
+            padding: 5px;
+            background-color: $Item;
+
+            .line {
+                position: absolute;
+                width: 3px;
+                height: 250%;
+                top: -20px;
+                left: 16px;
+            }
+
+            p.name {
+                font-size: 13px;
+                font-weight: bold;
+                height: 16px;
+                line-height: 16px;
+                width: 90%;
+                margin-left: 25px;
+            }
+
+            p.note {
+                height: 13px;
+                line-height: 13px;
+                font-size: 12px;
+                font-weight: normal;
+                margin-bottom: 5px;
+                margin-left: 25px;
+            }
+
+            p.addon {
+                display: flex;
+                margin-top: 5px;
+                font-size: 11px;
+                margin-left: 25px;
+
+                span {
+                    display: inline-block;
+                    margin-right: 20px;
+                    color: rgba(0, 0, 0, 0.5);
+                }
+            }
+            
+            &:last-child {
+                .line {
+                    height: 105%;
+                    top: -1px;
+                }
+            }
+        }
+    }
+
+    &-service-basic * {
+        .dot, .line {
+            background-color: $Basic !important;
+        }
+
+        .detail-section p {
+            color: $Basic !important;
+        }
+    }
+
+    &-service-free * {
+        .dot, .line {
+            background-color: $Free !important;
+        }
+
+        .detail-section p {
+            color: $Free !important;
+        }
+    }
+
+    &-service-extra * {
+        .dot, .line {
+            background-color: $Extra !important;
+        }
+
+        .detail-section p {
+            color: $Extra !important;
+        }
+    }
+
+    &-service-advance * {
+        .dot, .line {
+            background-color: $Advance !important;
+        }
+
+        .detail-section p {
+            color: $Advance !important;
+        }
+    }
+}

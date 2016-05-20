@@ -108,6 +108,7 @@
 }
 
 // Link and Button Active States
+/*
 .item.active,
 .item.activated,
 .item-complex.active .item-content,
@@ -145,6 +146,7 @@
     @include item-active-style($item-dark-active-bg, $item-dark-active-border);
   }
 }
+*/
 
 // Handle text overflow
 .item,

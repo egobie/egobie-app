@@ -26,7 +26,12 @@ angular.module('app.sign.in', ['ionic', 'util.shared', 'util.url'])
                 })
                 .success(function(data, status, headers, config) {
                     shared.refreshUser(data);
-                    $state.go('menu.home');
+
+                    if (shared.isResidential()) {
+                        $state.go('menu.home.resident');
+                    } else {
+                        $state.go('menu.task');
+                    }
                 })
                 .error(function(data, status, headers, config) {
                     shared.hideLoading();

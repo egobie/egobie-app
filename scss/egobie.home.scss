@@ -1,15 +1,205 @@
 @import 'egobie';
 
 .egobie {
-    &-resident-order-item {
-        @extend .egobie-margin-top-5;
+    &-home-tab {
+        .tab-nav, .tab-nav * {
+            background-color: #FFFFFF !important;
+            color: #000000 !important;
+            border-color: #000000 !important;
+        }
+    }
 
-        padding-top: 8px;
-        padding-bottom: 8px;
-        height: 40px;
+    &-on-demand, &-reservation {
+        padding: 0px;
+        position: relative;
+        height: 50%;
 
-        i:before {
-            font-size: 25px;
+        .mask {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.35);
+        }
+
+        .panel {
+            position: absolute;
+            display: flex;
+            height: 40%;
+            bottom: 0px;
+            width: 100%;
+            color: #FFFFFF;
+            background: rgba(0,0,0,0.50);
+
+            .left {
+                display: inline-block;
+                width: 70%;
+
+                .title {
+                    height: 40px;
+                    line-height: 40px;
+                    font-size: 25px;
+                    font-weight: 500;
+                    padding-left: 20px;
+                    color: #FFFFFF;
+                }
+
+                .content {
+                    color: #FFFFFF;
+                    overflow: visible;
+                    font-size: 15px;
+                    margin-left: 20px;
+                }
+            }
+
+            .right {
+                display: inline-block;
+                position: relative;
+                width: 25%;
+
+                .navigation {
+                    position: absolute;
+                    font-size: 35px;
+                    right: 10px;
+                    bottom: 10px;
+                }
+            }
+        }
+    }
+
+    &-on-demand {
+        background: image($Home-On-Demand) no-repeat center center;
+        background-size: cover;
+    }
+
+    &-reservation {
+        background: image($Home-Reserve) no-repeat center center;
+        background-size: cover;
+    }
+
+    &-resident-order {
+        div.service {
+            display: flex;
+            width: 95%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+
+            .name {
+                display: flex;
+                line-height: 40px;
+                height: 40px;
+                width: 85%;
+                padding-left: 18px;
+                
+                p {
+                    padding: 0px;
+                    font-size: 13px;
+                    width: 85%;
+                }
+                
+                input {
+                    display: inline-block;
+                    width: 30px;
+                    height: 30px;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    text-align: center;
+                    border: 1px solid rgba(0, 0, 0, 0.6);
+                }
+            }
+
+            i {
+                display: inline-block;
+                width: 15%;
+                text-align: center;
+                line-height: 40px;
+                font-size: 40px;
+                color: red;
+                border-left: 1px solid rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .item {
+            @extend .egobie-margin-top-5;
+
+            width: 95% !important;
+            margin-left: auto;
+            margin-right: auto;
+
+            padding-top: 8px;
+            padding-bottom: 8px;
+            height: 40px;
+            background: transparent;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+
+            i:before {
+                font-size: 25px;
+            }
+        }
+
+        .item-divider {
+            border: 0px;
+            border-radius: 0px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.60);
+            padding-left: 0px;
+
+            span {
+                font-size: 12px;
+            }
+        }
+
+        .button {
+            width: 95% !important;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid rgba(0, 0, 0, 0.35);
+
+            &:before {
+                color: #FF1919;
+            }
+
+            span {
+                font-size: 13px;
+            }
+        }
+    }
+
+    &-resident-footer h1 span {
+        color: #33CDFF;
+        font-size: 13px;
+    }
+
+    &-resident-demand-opening {
+        display: flex;
+        height: 60px !important;
+        margin-top: 10px;
+        background: 0 0;
+        border-radius: 5px;
+        border: 1px solid rgba(0,0,0,.5);
+
+        i.left {
+            display: block;
+            width: 15%;
+            
+            &:before {
+                font-size: 40px;
+            }
+        }
+
+        div.right {
+            width: 85%;
+
+            p.time, p.note {
+                font-size: 11px;
+
+                span {
+                    font-weight: 700;
+                    font-size: 14px;
+                }
+            }
         }
     }
 }

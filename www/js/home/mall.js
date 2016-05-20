@@ -3,8 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-angular.module('app.home.mall', ['ionic', 'ionic.rating',
-    'ngAnimate', 'ui.bootstrap', 'ui.bootstrap.datetimepicker'])
+angular.module('app.home.mall', ['ionic', 'ionic.rating'])
 
     .factory('locations', function() {
         return [

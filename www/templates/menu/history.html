@@ -1,151 +1,137 @@
-<ion-view title="HISTORY" cache-view="false"
+<ion-view hide-nav-bar="true" cache-view="false"
           ng-app="app.history"
-          ng-controller="historytrl">
-    <ion-nav-buttons side="right">
-      <button class="button button-icon icon ion-android-refresh"
-              ng-click="loadReservations()"></button>
-    </ion-nav-buttons>
-    <ion-content padding="true" class="has-header">
+          ng-controller="historyCtrl">
+    <ion-header-bar class="egobie-header-bar">
+        <button class="button button-icon icon ion-navicon egobie-display-inherit" menu-toggle="left"></button>
+        <h1 class="title">MY SERVICES</h1>
+    </ion-header-bar>
+    <div class="egobie-bg-mask">
+        <div class="egobie-bg-mask-1"></div>
+        <div class="egobie-bg-mask-2"></div>
+    </div>
+    <ion-content padding="true">
         <ion-list>
-            <ion-item menu-close="" class="item-divider item-icon-right">
-                <i class="icon"></i>Reservation
+            <ion-item class="item-divider item-icon-right egobie-reservation-title">
+                <i class="icon ion-android-refresh"
+                   ng-click="loadReservations()"></i>RESERVATION
             </ion-item>
-            <ion-item class="egobie-history-empty"
-                      ng-show="reservations.length === 0">
-                <hr align="center">Your reservations will be listed here<hr align="center">
-            </ion-item>
-
-            <ion-item menu-close="" class="card"
-                      ng-repeat="reservation in reservations">
-                <ion-list class="card">
-                    <ion-item class="item-avatar">
-                        <img class="egobie-avatar"/>
-                        <h2>{{reservation.plate}}</h2>
-                        <p>
-                            <a href="#" class="subdued">{{reservation.time}}</a>
-                            <a href="#" class="subdued">{{reservation.price}} $</a>
-                        </p>
-                    </ion-item>
-
-                    <ion-item class="item-body">
-                        <p>
-                            This is Note
-                        </p>
-                    </ion-item>
-                </ion-list>
+            <ion-item class="egobie-empty-reservation"
+                      ng-show="noReservation()">
+                <i class="icon ion-android-checkmark-circle icon-1"></i>
+                <p class="no">No reservation</p>
             </ion-item>
 
-            <ion-item menu-close="" class="item-divider item-icon-right">
-                <i class="icon"></i>Done
+            <ion-item class="egobie-reservation-list"
+                      ng-repeat="reservation in reservations"
+                      ng-click="showCancelSheet(reservation)">
+                <div class="top">
+                    <div class="left">
+                        <p class="price">{{reservation.price}}</p>
+                    </div>
+                    <div class="right">
+                        <div class="time-services">
+                            <div class="time">
+                                <p class="title">Estimated Start:</p>
+                                <p class="value">{{reservation.reserve_start_time}}</p>
+                            </div>
+                            <div class="services">
+                                <p class="title">Services</p>
+                                <p class="value"
+                                   ng-repeat="service in reservation.services">
+                                    {{service.name}} ({{service.full_type}})
+                                    <span ng-show="service.note !== ''">{{service.note}}</span>
+                                </p>
+                            </div>
+                            <div class="services"
+                                 ng-show="reservation.addons && reservation.addons.length > 0">
+                                <p class="title">Extra Services</p>
+                                <p class="value"
+                                   ng-repeat="addon in reservation.addons">{{addon.name}}</p>
+                            </div>
+                        </div>
+
+                        <div class="plate-reserve">
+                            <div class="plate">
+                                <p class="title">Plate No.</p>
+                                <p class="value">{{reservation.plate}}</p>
+                            </div>
+                            <div class="reserve">
+                                <p class="title">Reservation ID</p>
+                                <p class="value">{{reservation.reservation_id}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="bottom-will"
+                   ng-show="isWill(reservation)"
+                   ng-class="unitStyle(reservation.unit)">{{reservation.how_long}}</p>
+
+                <p class="bottom-delay"
+                   ng-show="isDelay(reservation)">Will start soon</p>
+
+                <p class="bottom-in-progress"
+                   ng-show="isInProgress(reservation)">In Progress</p>
+            </ion-item>
+        </ion-list>
+
+        <ion-list>
+            <ion-item class="item-divider item-icon-right egobie-history-title">
+                <i class="icon ion-android-refresh"
+                   ng-click="loadHistories()"></i>HISTORY
+            </ion-item>
+            <ion-item class="egobie-empty-history"
+                      ng-show="noHistory()">
+                <i class="icon ion-clipboard icon-1"></i>
+                <p class="no">No history</p>
             </ion-item>
 
-            <ion-item class="egobie-history-empty"
-                      ng-show="histories.length === 0">
-                <hr align="center">No History<hr align="center">
-            </ion-item>
-
-            <ion-item menu-close="" class="card"
+            <ion-item class="egobie-history-list"
                       ng-repeat="(id, history) in histories"
+                      ng-class="borderStyle(history.rating)"
                       ng-click="showHistory(id)">
-                <ion-list class="card">
-                    <ion-item class="item-avatar">
-                        <img class="egobie-avatar"/>
-                        <h2>{{history.plate}}</h2>
-                        <p>
-                            <a href="#" class="subdued">{{history.end_time}}</a>
-                            <a href="#" class="subdued">{{history.price}} $</a>
-                        </p>
-                        <p>
-                            <rating max="max" readonly="true"
-                                    ng-model="history.rating"></rating>
-                            <span class="egobie-history-rating"
-                                  ng-class="historyLabelStyle(history.rating)">{{historyPercent(history.rating)}}</span>
-                        </p>
-                    </ion-item>
-
-                    <ion-item class="item-body">
-                        <p>
-                            <a href="#" class="subdued">{{history.maker}}</a>
-                            <a href="#" class="subdued">{{history.model}}</a>
-                        </p>
-                    </ion-item>
-                </ion-list>
+                <div class="left">
+                    <div class="price">{{history.price}}</div>
+                    <div class="ontime">
+                        <!--
+                        <i class="icon ion-clock"></i>
+                        <p>On time</p>
+                        -->
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="egobie-range">
+                        <div class="start">
+                            <i class="dot"></i>
+                            <i class="line"></i>
+                            <p>{{history.start_time}}</p>
+                        </div>
+                        <div class="end">
+                            <i class="dot"></i>
+                            <p>{{history.end_time}}</p>
+                        </div>
+                    </div>
+                    <div class="egobie-rating"
+                         ng-class="ratingStyle(history.rating)">
+                        <rating max="max" readonly="true"
+                                ng-model="history.rating"></rating>
+                        <span class="egobie-history-rating">{{historyPercent(history.rating)}}</span>
+                    </div>
+                    <div class="egobie-other">
+                        <div class="plate">
+                            <p class="title">PLATE</p>
+                            <p class="content">{{history.plate}}</p>
+                        </div>
+                        <div class="maker">
+                            <p class="title">MAKER</p>
+                            <p class="content">{{history.maker}}</p>
+                        </div>
+                        <div class="model">
+                            <p class="title">MODEL</p>
+                            <p class="content">{{history.model}}</p>
+                        </div>
+                    </div>
+                </div>
             </ion-item>
         </ion-list>
     </ion-content>
-
-    <script id="history-detail" type="text/ng-template">
-        <ion-modal-view hide-nav-bar="true">
-            <ion-header-bar class="bar bar-header bar-stable">
-                <h1 class="title">HISTORY</h1>
-                <button class="button button-icon icon ion-android-close"
-                        ng-click="hideHistory()"></button>
-            </ion-header-bar>
-            <ion-content padding="true" class="has-header egobie-history-detail">
-                <ion-list>
-                    <!-- Payment -->
-                    <ion-item class="item-divider">Time</ion-item>
-
-                    <ion-list>
-                        <ion-item>
-                            Start Time<span class="item-note">{{selectedHistory.start}}</span>
-                        </ion-item>
-                        <ion-item>
-                            Finish Time<span class="item-note">{{selectedHistory.end}}</span>
-                        </ion-item>
-                    </ion-list>
-
-                    <!-- Car -->
-                    <ion-item class="item-divider">Car</ion-item>
-
-                    <ion-list>
-                        <ion-item>
-                            Plate<span class="item-note">{{selectedHistory.plate}}</span>
-                        </ion-item>
-                        <ion-item>
-                            Maker<span class="item-note">{{selectedHistory.maker}}</span>
-                        </ion-item>
-                        <ion-item>
-                            Model<span class="item-note">{{selectedHistory.model}}</span>
-                        </ion-item>
-                        <ion-item>
-                            Year<span class="item-note">{{selectedHistory.year}}</span>
-                        </ion-item>
-                        <ion-item>
-                            State<span class="item-note">{{selectedHistory.state}}</span>
-                        </ion-item>
-                        <ion-item>
-                            Color<span class="item-note">{{selectedHistory.color}}</span>
-                        </ion-item>
-                    </ion-list>
-
-                    <!-- Payment -->
-                    <ion-item class="item-divider">Payment</ion-item>
-
-                    <ion-list>
-                        <ion-item>
-                            Amount<span class="item-note">{{selectedHistory.price}} $</span>
-                        </ion-item>
-                        <ion-item>
-                            Holder Name<span class="item-note">{{selectedHistory.account_name}}</span>
-                        </ion-item>
-                        <ion-item>
-                            Account Number<span class="item-note">**** {{selectedHistory.account_number}}</span>
-                        </ion-item>
-                        <ion-item>
-                            Payment Type<span class="item-note">{{selectedHistory.account_type}}</span>
-                        </ion-item>
-                    </ion-list>
-
-                    <!-- Services -->
-                    <ion-item class="item-divider">Services</ion-item>
-
-                    <ion-list ng-repeat="service in selectedHistory.services">
-                        <ion-item>{{service.name}}</ion-item>
-                        <p ng-repeat="item in service.items">{{item}}</p>
-                    </ion-list>
-                </ion-list>
-            </ion-content>
-        </ion-modal-view>
-    </script>
 </ion-view>
