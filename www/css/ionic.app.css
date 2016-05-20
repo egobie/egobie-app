@@ -10195,6 +10195,11 @@ a.button {
       color: #93999C; }
     .egobie-form .item input:-ms-input-placeholder, .egobie-car-add .item input:-ms-input-placeholder, .egobie-car-edit .item input:-ms-input-placeholder, .egobie-form .item select:-ms-input-placeholder, .egobie-car-add .item select:-ms-input-placeholder, .egobie-car-edit .item select:-ms-input-placeholder {
       color: #93999C; }
+  .egobie-form .item select, .egobie-car-add .item select, .egobie-car-edit .item select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin-left: 6px !important; }
   .egobie-form .item input, .egobie-car-add .item input, .egobie-car-edit .item input {
     padding-left: 17px; }
 
@@ -10348,44 +10353,42 @@ a.button {
       line-height: 125px; }
 
 .egobie-coupon .share {
-  height: 200px;
   border: 0px;
   border-top: 1px solid #AAAAAA;
   border-bottom: 1px solid #AAAAAA;
   overflow: visible; }
   .egobie-coupon .share .social-list {
-    display: table;
-    width: 90%;
-    border-spacing: 25px;
-    margin: -20px auto -10px auto; }
+    display: flex;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px; }
     .egobie-coupon .share .social-list .social {
-      display: table-cell;
-      width: 40px;
+      width: 25%;
       height: 40px;
       position: relative;
-      font-size: 30px;
-      border: 1px solid #AAAAAA;
-      border-radius: 100%;
-      margin-left: 3%;
       padding: 0px;
-      background-color: #F8F8FA; }
-      .egobie-coupon .share .social-list .social:first-child {
-        margin-left: 20%; }
-      .egobie-coupon .share .social-list .social i {
+      text-align: center; }
+      .egobie-coupon .share .social-list .social i.circle {
+        position: absolute;
+        background-color: #F8F8FA;
+        border: 1px solid #AAAAAA;
+        border-radius: 100%;
+        height: 35px;
+        width: 35px;
+        left: 0px;
+        right: 0px;
+        margin-left: auto;
+        margin-right: auto; }
+      .egobie-coupon .share .social-list .social i.icon {
         display: block;
-        padding: 0px; }
-        .egobie-coupon .share .social-list .social i.message {
-          margin-left: 8px;
-          margin-top: 5px; }
-        .egobie-coupon .share .social-list .social i.email {
-          margin-left: 8px;
-          margin-top: 4px; }
-        .egobie-coupon .share .social-list .social i.facebook {
-          margin-left: 15px;
-          margin-top: 4px; }
-        .egobie-coupon .share .social-list .social i.twitter {
-          margin-left: 8px;
-          margin-top: 4px; }
+        position: absolute;
+        padding: 0px;
+        top: 5px;
+        left: 0px;
+        right: 0px;
+        margin-right: auto;
+        margin-left: auto; }
   .egobie-coupon .share p {
     height: 50px;
     line-height: 50px;
@@ -10621,9 +10624,9 @@ a.button {
     display: flex; }
     .egobie-reservation-list .top .left {
       display: inline-block;
-      width: 23%;
+      width: 20%;
       height: inherit;
-      margin: 15px 10px 0px 5px;
+      margin: 15px 5px 0px 5px;
       border-right: 1px solid #000000; }
       .egobie-reservation-list .top .left .price {
         font-size: 14px;
@@ -10642,7 +10645,8 @@ a.button {
       padding-top: 10px;
       padding-bottom: 10px; }
       .egobie-reservation-list .top .right .time-services {
-        display: inline-block; }
+        display: inline-block;
+        width: 120px; }
         .egobie-reservation-list .top .right .time-services .time .title, .egobie-reservation-list .top .right .time-services .services .title {
           font-size: 12px; }
         .egobie-reservation-list .top .right .time-services .time .value, .egobie-reservation-list .top .right .time-services .services .value {
@@ -11278,8 +11282,9 @@ a.button {
     padding-left: 18px; }
     .egobie-resident-order div.service .name p {
       padding: 0px;
-      font-size: 13px;
-      width: 85%; }
+      font-size: 12px;
+      width: 85%;
+      overflow: visible; }
     .egobie-resident-order div.service .name input {
       display: inline-block;
       width: 30px;
@@ -12382,6 +12387,11 @@ a.button {
       color: #93999C; }
     .egobie-form .item input:-ms-input-placeholder, .egobie-payment-add .item input:-ms-input-placeholder, .egobie-payment-edit .item input:-ms-input-placeholder, .egobie-form .item select:-ms-input-placeholder, .egobie-payment-add .item select:-ms-input-placeholder, .egobie-payment-edit .item select:-ms-input-placeholder {
       color: #93999C; }
+  .egobie-form .item select, .egobie-payment-add .item select, .egobie-payment-edit .item select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin-left: 6px !important; }
   .egobie-form .item input, .egobie-payment-add .item input, .egobie-payment-edit .item input {
     padding-left: 17px; }
 
@@ -12640,8 +12650,9 @@ a.button {
       .egobie-service-item div.middle p.name, .egobie-service-item-select div.middle p.name {
         height: 18px;
         line-height: 18px;
-        font-size: 15px;
-        display: block; }
+        font-size: 12px;
+        display: block;
+        overflow: visible; }
         .egobie-service-item div.middle p.name span, .egobie-service-item-select div.middle p.name span {
           font-size: 12px;
           font-weight: 900;
@@ -12659,7 +12670,7 @@ a.button {
         font-size: 25px;
         line-height: 40px;
         margin-left: 10px;
-        margin-right: 15px;
+        margin-right: 10px;
         float: left; }
     .egobie-service-item div.right, .egobie-service-item-select div.right {
       width: 10px; }
@@ -13026,6 +13037,11 @@ a.button {
       color: #93999C; }
     .egobie-form .item input:-ms-input-placeholder, .egobie-user-form .item input:-ms-input-placeholder, .egobie-password-form .item input:-ms-input-placeholder, .egobie-home-form .item input:-ms-input-placeholder, .egobie-work-form .item input:-ms-input-placeholder, .egobie-form .item select:-ms-input-placeholder, .egobie-user-form .item select:-ms-input-placeholder, .egobie-password-form .item select:-ms-input-placeholder, .egobie-home-form .item select:-ms-input-placeholder, .egobie-work-form .item select:-ms-input-placeholder {
       color: #93999C; }
+  .egobie-form .item select, .egobie-user-form .item select, .egobie-password-form .item select, .egobie-home-form .item select, .egobie-work-form .item select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin-left: 6px !important; }
   .egobie-form .item input, .egobie-user-form .item input, .egobie-password-form .item input, .egobie-home-form .item input, .egobie-work-form .item input {
     padding-left: 17px; }
 
