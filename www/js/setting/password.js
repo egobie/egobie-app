@@ -9,13 +9,10 @@ angular.module('app.setting.password', ['ionic', 'util.shared', 'util.url'])
 
         $scope.hideEditPassword = function() {
             $scope.editPasswordModal.hide();
-            $scope.editPasswordModal.remove();
         };
 
         $scope.editPassword = function() {
             var password = {
-                user_id: shared.getUser().id,
-                user_token: shared.getUser().token,
                 password: $scope.password.old,
                 new_password: $scope.password.new1
             };
@@ -27,9 +24,7 @@ angular.module('app.setting.password', ['ionic', 'util.shared', 'util.url'])
             shared.showLoading();
 
             $http
-                .post(url.updatePassword, password, {
-                    headers: shared.getHeaders()
-                })
+                .post(url.updatePassword, shared.getRequestBody(password))
                 .success(function(data, status, headers, config) {
                     shared.refreshUserToken(data.token);
                     shared.hideLoading();

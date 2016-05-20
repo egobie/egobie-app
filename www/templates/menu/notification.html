@@ -1,9 +1,19 @@
-<ion-view title="NOTIFICATIONS"
+<ion-view hide-nav-bar="true" cache-view="false"
           ng-app="app.notification"
           ng-controller="notificationCtrl">
-    <ion-content padding="true" class="has-header">
-        <ion-item class="egobie-notification-empty">
-            <hr align="center">No Notification<hr align="center">
+    <ion-header-bar class="egobie-header-bar">
+        <button class="button button-icon icon ion-navicon egobie-display-inherit" menu-toggle="left"></button>
+        <h1 class="title">NOTIFICATIONS</h1>
+    </ion-header-bar>
+    <div class="egobie-bg-mask">
+        <div class="egobie-bg-mask-1"></div>
+        <div class="egobie-bg-mask-2"></div>
+    </div>
+    <ion-content padding="true">
+        <ion-item class="egobie-empty-notification"
+                  ng-show="noNotification()">
+            <i class="icon ion-android-notifications icon-1"></i>
+            <p class="no">No notification</p>
         </ion-item>
     </ion-content>
 </ion-view>

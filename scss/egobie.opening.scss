@@ -1,0 +1,95 @@
+@import 'egobie';
+
+.egobie {
+
+    /*
+    &-opening-list-left {
+        position: absolute;
+        display: inline-block;
+        width: 3px;
+        height: 100%;
+        left: 30px;
+        background-color: #404041;
+        z-index: 3;
+    }
+    */
+
+    &-opening-list-right {
+
+        .egobie-opening-list {
+            width: 90%;
+            margin-left: auto !important;
+            margin-right: auto !important;
+
+            border-radius: 10px;
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 0px;
+
+            .opening-day {
+                margin: 0px;
+                border: 0px;
+                position: relative;
+
+                /*
+                .dot {
+                    position: absolute;
+                    display: block;
+                    width: 16px;
+                    height: 16px;
+                    left: 19px;
+                    top: 10px;
+                    border-radius: 100%;
+                    background-color: #404041;
+                }
+                */
+
+                p {
+                    font-size: 15px;
+                    font-weight: bold;
+                    height: 30px;
+                    line-height: 30px;
+                    padding-left: 15px;
+                    border-radius: 5px;
+                }
+            }
+
+            .opening-time-list {
+                border-radius: 5px;
+                margin-top: 10px;
+
+                .opening-time {
+                    margin: 0px;
+                    margin-bottom: 5px;
+                    position: relative;
+                    overflow: visible;
+                    padding: 10px;
+                    border-radius: 5px;
+                    border-right: 4px solid #404041;
+                    border-top: 1px solid #404041;
+                    border-bottom: 1px solid #404041;
+                    border-left: 1px solid #404041;
+
+                    i {
+                        font-size: 13px;
+                        height: 16px;
+                        line-height: 16px;
+                        width: 90%;
+                        margin-left: 10px;
+                        
+                        &.start {
+                            font-weight: bold;
+                        }
+                    }
+
+                    &:last-child {
+                        .line {
+                            height: 105%;
+                            top: -1px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

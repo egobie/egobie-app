@@ -1,0 +1,86 @@
+@import 'egobie';
+@import 'form';
+
+.egobie {
+
+    &-setting-page {
+        border: 0px;
+
+        .item {
+            border: 0px;
+        }
+
+        .item-divider {
+            border: 0px;
+            //border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+            font-size: 20px;
+            margin-top: 15px;
+            padding-bottom: 15px;
+        }
+    }
+
+    &-user-form-bg {
+        @extend .egobie-form-bg;
+    }
+
+    &-user-form-button {
+        @extend .egobie-form-button;
+    }
+
+    &-user-form {
+        @extend .egobie-form;
+    }
+
+
+    &-password-form-bg {
+        @extend .egobie-form-bg;
+    }
+
+    &-password-form-button {
+        @extend .egobie-form-button;
+    }
+
+    &-password-form {
+        @extend .egobie-form;
+    }
+
+
+    &-home-form-bg {
+        @extend .egobie-form-bg;
+    }
+
+    &-home-form-button {
+        @extend .egobie-form-button;
+    }
+
+    &-home-form {
+        @extend .egobie-form;
+    }
+
+
+    &-home-form-bg {
+        @extend .egobie-form-bg;
+    }
+
+    &-home-form-button {
+        @extend .egobie-form-button;
+    }
+
+    &-home-form {
+        @extend .egobie-form;
+    }
+
+
+    &-work-form-bg {
+        @extend .egobie-form-bg;
+    }
+
+    &-work-form-button {
+        @extend .egobie-form-button;
+    }
+
+    &-work-form {
+        @extend .egobie-form;
+    }
+}

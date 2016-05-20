@@ -1,6 +1,12 @@
 angular.module('app.setting.user', ['ionic', 'util.shared', 'util.url'])
 
-    .controller('userEditCtrl', function($scope, $http, shared, url) {
+    .controller('userEditCtrl', function($scope, $state, $http, $timeout, shared, url) {
+        $scope.title = "USER ACCOUNT";
+
+        if ($scope._egobie) {
+            $scope.title = "SETUP PROFILE";
+        }
+
         $scope.user = {
             first: shared.getUser().first,
             last : shared.getUser().last,
@@ -11,13 +17,10 @@ angular.module('app.setting.user', ['ionic', 'util.shared', 'util.url'])
 
         $scope.hideEditUser = function() {
             $scope.editUserModal.hide();
-            $scope.editUserModal.remove();
         };
 
         $scope.editUser = function() {
             var user = {
-                user_id: shared.getUser().id,
-                user_token: shared.getUser().token,
                 first_name: $scope.user.first,
                 last_name: $scope.user.last,
                 middle_name: $scope.user.middle,
@@ -32,13 +35,19 @@ angular.module('app.setting.user', ['ionic', 'util.shared', 'util.url'])
             shared.showLoading();
 
             $http
-                .post(url.updateUser, user, {
-                    headers: shared.getHeaders()
-                })
+                .post(url.updateUser, shared.getRequestBody(user))
                 .success(function(data, status, hearders, config) {
                     shared.refreshUser(data);
                     shared.hideLoading();
                     $scope.hideEditUser();
+
+                    if ($scope._egobie) {
+                        $timeout(function() {
+                            var temp = $scope._egobie;
+                            delete $scope._egobie;
+                            $state.go(temp);
+                        }, 300);
+                    }
                 })
                 .error(function(data, status, headers, config) {
                     shared.hideLoading();
@@ -57,13 +66,13 @@ angular.module('app.setting.user', ['ionic', 'util.shared', 'util.url'])
                 return false;
             }
 
-            if (!user.email) {
-                shared.alert("Please input email!");
+            if (!user.email || !shared.testEmail(user.email)) {
+                shared.alert("Please input valid Email!");
                 return false;
             }
 
-            if (!user.phone_number) {
-                shared.alert("Please input Phone Number!");
+            if (!user.phone_number || !shared.testPhone(user.phone_number)) {
+                shared.alert("Please input valid Phone Number!");
                 return false;
             }
 

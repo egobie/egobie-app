@@ -1,46 +1,325 @@
 @import 'egobie';
+@import 'history';
 
 .egobie {
 
-    &-history-empty {
-        border: 0px;
+    &-empty-reservation {
+        @extend .egobie-no-reservation;
+    }
+
+    &-empty-history {
+        @extend .egobie-no-history;
+    }
+
+    &-reservation-title, &-history-title {
+        padding-left: 0px;
+        font-size: 20px;
+        color: #404041;
+        height: 40px;
+        border: 0;
         margin-top: 5px;
-        margin-bottom: 5px;
-        text-align: center;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #404041;
+        //background-color: #FFFFFF;
+    }
 
-        hr {
-            @include linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    &-history-title {
+        margin-top: 20px;
+    }
 
-            border: 0;
-            height: 1px;
-            width: 300px;
+    &-reservation-list {
+        padding: 0px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.26);
+
+        .top {
+            display: flex;
+
+            .left {
+                display: inline-block;
+                width: 23%;
+                height: inherit;
+                margin: 15px 10px 0px 5px;
+                border-right: 1px solid #000000;
+
+                .price {
+                    font-size: 20px;
+                    height: 28px;
+                    line-height: 28px;
+                    padding-left: 10px;
+
+                    &:before {
+                        content: "$";
+                        position: absolute;
+                        font-size: 12px;
+                        top: 8px;
+                        left: 8px;
+                    }
+                }
+            }
+
+            .right {
+                display: flex;
+                padding-top: 10px;
+                padding-bottom: 10px;
+
+                .time-services {
+                    display: inline-block;
+
+                    .time, .services {
+                        .title {
+                            font-size: 12px;
+                        }
+
+                        .value {
+                            font-size: 11px;
+                            color: #000000;
+
+                            span {
+                                display: block;
+                                padding-left: 10px;
+                                color: #1BB3EC;
+                            }
+                        }
+                    }
+
+                    .time .value {
+                        font-size: 11px;
+                        margin-bottom: 2px;
+                    }
+
+                    .services .value:before {
+                        content: "- ";
+                    }
+                }
+
+                .plate-reserve {
+                    display: inline-block;
+                    margin-left: 10px;
+
+                    .plate, .reserve {
+                        padding-left: 11px;
+
+                        .title {
+                            display: block;
+                            font-size: 12px;
+                        }
+
+                        .value {
+                            color: #000000;
+                            font-size: 11px;
+                        }
+                    }
+
+                    .plate .value {
+                        margin-bottom: 5px;
+                    }
+                }
+            }
         }
 
-        hr:first-child {
-            margin-bottom: 20px;
+        .bottom-will, .bottom-delay, .bottom-in-progress {
+            width: 95%;
+            height: 30px;
+            line-height: 30px;
+            font-weight: 900;
+            text-align: right;
+            padding-right: 10px;
+            margin: 10px auto;
+            border-top: 1px solid rgba(0, 0, 0, 0.31);
         }
 
-        hr:last-child {
-            margin-top: 20px;
+        .bottom-will, .bottom-delay {
+            font-size: 25px;
+        }
+
+        .bottom-in-progress {
+            font-size: 18px;
+            color: #5CB85C;
+        }
+        
+        .bottom-will:before, .min:after, .hour:after, .day:after {
+            font-size: 15px;
+            height: 30px;
+            line-height: 30px;
+            font-weight: normal;
+        }
+
+        .bottom-will:before {
+            content: "Will start in:";
+            padding-right: 5px;
+        }
+
+        .min:after, .hour:after, .day:after {
+            padding-left: 5px;
+        }
+
+        .min:after {
+            content: "mins";
+        }
+
+        .hour:after {
+            content: "hours";
+        }
+
+        .day:after {
+            content: "days";
         }
     }
 
-    &-history-detail {
-        .item {
-            @extend .egobie-margin-top-5;
+    &-history-list {
+        display: flex;
+        padding: 10px;
+        height: 165px;
+        margin-top: 15px;
+        border-radius: 8px;
+        box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.26);
 
-            padding-top: 8px;
-            padding-bottom: 8px;
-            height: 40px;
+        .left {
+            display: inline-block;
+            width: 35%;
+            border-right: 1px solid #404041;
+
+            .price {
+                font-size: 25px;
+                padding-left: 8px;
+                margin-top: 10px;
+
+                &:before {
+                    content: "$";
+                    position: absolute;
+                    font-size: 15px;
+                    left: 10px;
+                    top: 10px;
+                }
+            }
+
+            .ontime {
+                display: flex;
+                margin-top: 82px;
+                height: 40px;
+                line-height: 40px;
+
+                i {
+                    display: inline-block;
+                    font-size: 15px;
+                    padding-right: 5px;
+                    color: green;
+                }
+
+                p {
+                    display: inline-block;
+                    font-size: 15px;
+                    color: green;
+                }
+            }
         }
+
+        .right {
+            display: inline-block;
+            width: 65%;
+
+            .egobie-range {
+
+                .start, .end {
+                    position: relative;
+
+                    .dot {
+                        width: 10px;
+                        height: 10px;
+                        border: 3px solid #000000;
+                        border-radius: 100%;
+                        display: inline-block;
+                        position: absolute;
+                        top: 5px;
+                        left: 15px;
+                    }
+
+                    .line {
+                        position: absolute;
+                        display: inline-block;
+                        border: 1px dashed #000000;
+                        height: 18px;
+                        left: 19px;
+                        top: 16px;
+                    }
+
+                    p {
+                        margin-left: 40px;
+                        font-size: 14px;
+                        font-weight: 500;
+
+                    }
+                }
+
+                .end {
+                    margin-top: 5px;
+
+                    .dot {
+                        top: 11px;
+                    }
+
+                    p {
+                        border-top: 1px solid #000000;
+                        padding-top: 5px;
+                    }
+                }
+            }
+
+            .egobie-rating {
+                display: flex;
+                margin: 15px 5px 0px 30px;
+            }
+
+            .egobie-other {
+                .plate, .maker, .model {
+                    display: inline-block;
+                    height: 65px;
+                    padding: 10px;
+                    border: 0px;
+                    overflow: visible;
+
+                    .title {
+                        margin-bottom: 5px;
+                        font-size: 10px;
+                    }
+
+                    .content {
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: #000000;
+                        padding-bottom: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    &-history-border-good {
+        border-left: 5px solid $History-Good;
+    }
+
+    &-history-border-ok {
+        border-left: 5px solid $History-OK;
+    }
+
+    &-history-border-fine {
+        border-left: 5px solid $History-Fine;
+    }
+
+    &-history-border-bad {
+        border-left: 5px solid $History-Bad;
     }
 
     &-history-rating {
         display: inline;
-        padding: .2em .6em .3em;
+        padding: .0em .6em .3em;
         font-size: 75%;
         font-weight: bold;
-        line-height: 1;
+        line-height: 20px;
+        height: 20px;
         color: #FFF;
         text-align: center;
         white-space: nowrap;
@@ -49,18 +328,437 @@
     }
 
     &-history-rating-good {
-        background-color: #5CB85C;
+        li i {
+            color: $History-Good;
+        }
+
+        span {
+            background-color: $History-Good;
+        }
     }
 
     &-history-rating-ok {
-        background-color: #5BC0DE;
+        li i {
+            color: $History-OK;
+        }
+
+        span {
+            background-color: $History-OK;
+        }
     }
 
     &-history-rating-fine {
-        background-color: #F0AD4E;
+        li i {
+            color: $History-Fine;
+        }
+
+        span {
+            background-color: $History-Fine;
+        }
     }
 
     &-history-rating-bad {
-        background-color: #FF0E0E;
+        li i {
+            color: $History-Bad;
+        }
+
+        span {
+            background-color: $History-Bad;
+        }
+    }
+
+    &-history-detail {
+
+        .card {
+            @extend .egobie-center;
+
+            width: 95%;
+            padding: 0;
+            border: 1px solid #404041;
+            border-radius: 10px;
+            margin-top: 15px;
+            background: transparent;
+        }
+
+        .section {
+            font-size: 18px;
+            font-weight: 500;
+            border: 0px;
+            padding: 9px;
+            color: #FF9900;
+        }
+
+        .egobie-history-time {
+            @extend .card;
+
+            .left {
+                display: inline-block;
+                width: 70%;
+
+                .start, .middle, .end {
+                    display: flex;
+                    padding: 10px;
+
+                    .title {
+                        display: inline-block;
+                        width: 40px;
+                        font-weight: 600;
+                    }
+
+                    i {
+                        display: inline-block;
+                        width: 15px;
+                        height: 15px;
+                        margin-right: 10px;
+                    }
+
+                    .time {
+                        display: inline-block;
+                        font-weight: 600;
+                    }
+                }
+
+                .middle {
+                    height: 15px;
+                    overflow: visible;
+
+                    i {
+                        background-color: #404041;
+                        margin-left: 5px;
+                        margin-top: -20px;
+                        width: 3px;
+                        height: 40px;
+                    }
+                }
+            }
+
+            .right {
+                display: inline-block;
+                position: absolute;
+                padding: 10px;
+                width: 30%;
+
+                i {
+                    display: inline;
+                    margin-right: 3px;
+                    color: green;
+                }
+
+                p {
+                    display: inline;
+                    position: relative;
+                    margin-top: 0;
+                    font-size: 18px;
+                    color: green;
+                }
+            }
+
+            .bottom {
+                border-top: 1px solid #404041;
+
+                p {
+                    display: inline-block;
+                    margin-right: 10px;
+                    line-height: 40px;
+                    font-size: 20px;
+                    float: right;
+
+                    &:before {
+                        content: "Reservation ID: #";
+                        margin-right: 5px;
+                    }
+                }
+            }
+
+        }
+
+        .egobie-history-car {
+            @extend .card;
+
+            border: 0px;
+            border-top: 1px solid #404041;
+            border-radius: 0px;
+
+            .plate-state, .maker-model, .year-color {
+                height: 65px;
+                padding: 10px;
+                border: 0px;
+                overflow: visible;
+
+                .title {
+                    margin-bottom: 5px;
+                    font-size: 13px;
+                }
+
+                .content {
+                    font-size: 15px;
+                    font-weight: 500;
+                    color: #404041;
+                    padding-bottom: 5px;
+                    border-bottom: 1px solid #404041;
+                }
+                
+                .plate, .maker, .year {
+                    display: inline-block;
+                    margin-bottom: 5px;
+                    font-size: 13px;
+                    width: 100px;
+                }
+
+                .state, .model, .color {
+                    display: inline-block;
+                    margin-bottom: 5px;
+                    font-size: 13px;
+                    width: 100px;
+                    margin-left: 50px;
+                }
+            }
+        }
+
+        .egobie-history-payment {
+            @extend .card;
+
+            border: 0px;
+            border-top: 1px solid #404041;
+            border-radius: 0px;
+
+            .name, .number, .price-type {
+                height: 65px;
+                padding: 10px;
+                border: 0px;
+                overflow: visible;
+
+                .title {
+                    margin-bottom: 5px;
+                    font-size: 13px;
+                }
+
+                .content {
+                    font-size: 15px;
+                    font-weight: 500;
+                    color: #404041;
+                    padding-bottom: 5px;
+                    border-bottom: 1px solid #404041;
+                }
+            }
+
+            .name .content, .number .content {
+                width: 200px;
+            }
+
+            .price-type {
+                .price {
+                    display: inline-block;
+                    margin-bottom: 5px;
+                    font-size: 13px;
+                    width: 90px;
+
+                    .content:before {
+                        content: "$";
+                        font-size: 12px;
+                        margin-right: 3px;
+                        position: relative;
+                        bottom: 5px;
+                    }
+                }
+
+                .type {
+                    display: inline-block;
+                    margin-bottom: 5px;
+                    font-size: 13px;
+                    margin-left: 150px;
+                }
+            }
+        }
+
+        .egobie-history-service {
+            @extend .card;
+
+            border: 0px;
+            border-top: 1px solid #404041;
+            border-radius: 0px;
+
+            .service {
+                position: relative;
+                margin-top: 10px;
+
+                .dot {
+                    display: block;
+                    position: absolute;
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 100%;
+                    left: 15px;
+                    top: 8px;
+                    background-color: #404041;
+                }
+
+                .line {
+                    display: block;
+                    position: absolute;
+                    width: 2px;
+                    height: 30px;
+                    left: 14px;
+                    top: 10px;
+                    background-color: #404041;
+                }
+
+                p {
+                    position: relative;
+                    font-size: 13px;
+                    width: 85%;
+                    left: 25px;
+                    height: 20px;
+                }
+
+                div {
+                    position: relative;
+                    margin-bottom: 10px;
+                    overflow: visible;
+
+                    i {
+                        position: absolute;
+                        background-color: #404041;
+                        width: 2px;
+                        left: 14px;
+                        height: 150%;
+                    }
+
+                    p {
+                        position: relative;
+                        padding-left: 30px;
+                        width: 95%;
+                        left: 0px;
+                        font-size: 15px;
+                        font-weight: 600;
+                        height: 30px;
+                        line-height: 30px;
+                        border: 1px solid #404041;
+                        border-radius: 8px;
+                    }
+
+                    &:last-child {
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+    }
+
+    &-service-rating {
+        .top {
+            height: 200px;
+            padding: 0px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            box-shadow: 0px 3px 9px 0px rgba(0,0,0,.26);
+
+            div.price {
+                position: relative;
+                font-size: 35px;
+                height: 40px;
+                line-height: 40px;
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 30px;
+                text-align: center;
+
+                &:before {
+                    content: "$";
+                    position: absolute;
+                    font-size: 25px;
+                    left: 65px;
+                    top: -10px;
+                }
+            }
+
+            div.date {
+                text-align: center;
+                margin-top: 5px;
+                font-size: 13px;
+            }
+
+            div.services {
+                margin-top: 20px;
+
+                p {
+                    position: relative;
+                    overflow: visible;
+                    font-size: 15px;
+                    height: 20px;
+                    line-height: 20px;
+                    width: 80%;
+                    margin-left: 90px;
+
+                    i {
+                        font-size: 15px;
+                        left: -5px;
+                        display: inline-block;
+                        position: relative;
+                    }
+                }
+            }
+        }
+        
+        .bottom {
+            padding: 0px;
+            height: 300px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            box-shadow: 0px 3px 9px 0px rgba(0,0,0,.26);
+
+            p {
+                font-size: 25px;
+                text-align: center;
+                height: 30px;
+                line-height: 30px;
+                margin-top: 10px;
+            }
+
+            div.rating {
+
+                ul {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    text-align: center;
+                }
+
+                i {
+                    font-size: 35px;
+                }
+            }
+
+            div.advice {
+                text-align: left;
+                padding-left: 10px;
+                margin-top: 5px;
+            }
+
+            .feedback {
+                resize: none;
+                border: 1px solid rgba(0, 0, 0, 0.7);
+                height: 100px;
+                width: 95%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 10px;
+                resize: none;
+            }
+        }
+
+        button {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            color: #FFFFFF;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
     }
 }

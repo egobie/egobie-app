@@ -18,6 +18,18 @@ $dark:                            #444 !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
+$century-gothic-font-path: "../lib/custom/fonts/Century_Gothic" !default;
+@font-face {
+  font-family: "eGobieFont";
+  src: url("#{$century-gothic-font-path}/Century_Gothic.eot");
+  src: url("#{$century-gothic-font-path}/Century_Gothic.eot?#iefix") format("embedded-opentype"),
+       url("#{$century-gothic-font-path}/Century_Gothic.woff2") format("woff2"),
+       url("#{$century-gothic-font-path}/Century_Gothic.woff") format("woff"),
+       url("#{$century-gothic-font-path}/Century_Gothic.ttf") format("truetype"),
+       url("#{$century-gothic-font-path}/Century_Gothic.svg#eGobieFont") format("svg");
+}
+
+
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 

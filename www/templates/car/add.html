@@ -1,22 +1,27 @@
-<ion-modal-view ng-app="app.car.add"
+<ion-modal-view hide-nav-bar="true" cache-view="false"
+                ng-app="app.car.add"
                 ng-controller="carAddCtrl">
-    <ion-header-bar class="bar bar-header bar-stable">
+    <ion-header-bar class="egobie-header-bar">
         <h1 class="title">NEW CAR</h1>
         <button class="button button-icon icon ion-android-close"
                 ng-click="hideAddCar()"></button>
     </ion-header-bar>
-    <ion-content padding="true" class="has-header padding">
+    <div class="egobie-bg-mask">
+        <div class="egobie-bg-mask-1"></div>
+        <div class="egobie-bg-mask-2"></div>
+    </div>
+    <ion-content padding="true">
         <ion-list class="egobie-car-add">
-            <!-- Plate -->
             <ion-item class="item-input">
-                <i class="icon ion-person placeholder-icon"></i>
+                <i class="icon-mask"></i>
+                <i class="icon ion-person"></i>
                 <input id="addcar-plate" type="text" placeholder="Plate Number"
                        ng-model="selected.plate"/>
             </ion-item>
 
-            <!-- Year -->
             <ion-item class="item-input">
-                <i class="icon ion-calendar placeholder-icon"></i>
+                <i class="icon-mask"></i>
+                <i class="icon ion-calendar"></i>
                 <select id="addcar-year"
                         ng-model="selected.year"
                         ng-options="year as year for year in years">
@@ -24,9 +29,9 @@
                 </select>
             </ion-item>
 
-            <!-- State -->
             <ion-item class="item-input">
-                <i class="icon ion-map placeholder-icon"></i>
+                <i class="icon-mask"></i>
+                <i class="icon ion-map"></i>
                 <select id="addcar-state"
                         ng-model="selected.state"
                         ng-options="state as fullname for (state, fullname) in states">
@@ -34,9 +39,9 @@
                 </select>
             </ion-item>
 
-            <!-- Maker -->
             <ion-item class="item-input">
-                <i class="icon ion-ios-compose placeholder-icon"></i>
+                <i class="icon-mask"></i>
+                <i class="icon ion-ios-compose" style="padding-left: 16px;"></i>
                 <select id="addcar-maker"
                         ng-model="selected.maker"
                         ng-options="maker.id as maker.title for maker in makers"
@@ -45,9 +50,9 @@
                 </select>
             </ion-item>
 
-            <!-- Model -->
             <ion-item class="item-input">
-                <i class="icon ion-hammer placeholder-icon"></i>
+                <i class="icon-mask"></i>
+                <i class="icon ion-hammer" style="padding-left: 16px;"></i>
                 <select id="addcar-model"
                         ng-model="selected.model"
                         ng-options="model.id as model.title for model in models">
@@ -55,9 +60,9 @@
                 </select>
             </ion-item>
 
-            <!-- Color -->
             <ion-item class="item-input">
-                <i class="icon ion-paintbucket placeholder-icon"></i>
+                <i class="icon-mask"></i>
+                <i class="icon ion-paintbucket"></i>
                 <select id="addcar-color"
                         ng-model="selected.color"
                         ng-options="color as color for color in colors">
@@ -65,6 +70,6 @@
                 </select>
             </ion-item>
         </ion-list>
-        <button class="button button-block button-dark" ng-click="createCar()">Save</button>
+        <button class="button button-block egobie-form-button" ng-click="createCar()">Save</button>
     </ion-content>
 </ion-modal-view>

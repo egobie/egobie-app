@@ -9,17 +9,12 @@ angular.module('app.setting.home', ['ionic', 'util.shared', 'util.url'])
             street: shared.getUser().home_street
         };
 
-        console.log("Home - ", $scope.home);
-
         $scope.hideEditHome = function() {
             $scope.editHomeModal.hide();
-            $scope.editHomeModal.remove();
         };
 
         $scope.editHome = function() {
             var address = {
-                user_id: shared.getUser().id,
-                user_token: shared.getUser().token,
                 state: $scope.home.state,
                 city: $scope.home.city,
                 zip: $scope.home.zip,
@@ -30,14 +25,10 @@ angular.module('app.setting.home', ['ionic', 'util.shared', 'util.url'])
                 return;
             }
 
-            console.log(address);
-
             shared.showLoading();
 
             $http
-                .post(url.updateHome, address, {
-                    headers: shared.getHeaders()
-                })
+                .post(url.updateHome, shared.getRequestBody(address))
                 .success(function(data, status, hearders, config) {
                     shared.refreshHome(address);
                     shared.hideLoading();

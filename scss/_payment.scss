@@ -1,0 +1,225 @@
+@import 'egobie';
+
+.egobie-no-payment {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+    text-align: center;
+    border: 0px;
+    background: transparent;
+
+    .sample-card {
+        border: 1px solid #404041;
+        border-radius: 20px;
+        height: 150px;
+        width: 250px;
+        margin: auto;
+        margin-top: 50px;
+
+        .top {
+            position: relative;
+            height: 30%;
+            border-bottom: 1px solid #404041;
+
+            .line {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                height: 4px;
+                width: 150px;
+                border-radius: 10px;
+                background-color: #404041;
+            }
+        }
+
+        .bottom {
+            position: relative;
+            height: 70%;
+
+            .line-1, .line-2, .line-3, .line-4, i {
+                position: absolute;
+            }
+
+            .line-1, .line-2, .line-3, .line-4 {
+                height: 4px;
+                border-radius: 10px;
+            }
+
+            .line-1, .line-2, .line-3 {
+                left: 20px;
+            }
+
+            .line-1, .line-4 {
+                top: 20px;
+            }
+
+            .line-1 {
+                width: 100px;
+                background-color: #404041;
+            }
+
+            .line-2 {
+                width: 100px;
+                top: 40px;
+                background-color: #FF9900;
+            }
+
+            .line-3 {
+                width: 50px;
+                top: 60px;
+                background-color: #404041;
+            }
+
+            .line-4 {
+                width: 50px;
+                right: 20px;
+                background-color: #404041;
+            }
+
+            i {
+                height: 30px;
+                width: 30px;
+                border: 1px solid #62CBE1;
+                border-radius: 100%;
+                bottom: 10px;
+
+                &.circle-1 {
+                    right: 20px;
+                }
+
+                &.circle-2 {
+                    right: 40px;
+                }
+            }
+        }
+    }
+
+    p.no {
+        font-size: 20px;
+        font-weight: 600;
+        height: 30px;
+        line-height: 30px;
+        margin-top: 50px;
+    }
+    
+    p.add .icon-2 {
+        font-size: 30px;
+    }
+}
+
+.egobie-payment-disabled {
+    opacity: 0.25;
+    box-shadow: none !important;
+}
+
+.egobie-payment-template {
+
+    display: table;
+    padding: 0;
+    height: 180px;
+    width: 90%;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    box-shadow: 3px 5px 9px 0px rgba(0, 0, 0, 0.26);
+
+    * {
+        color: #FFFFFF;
+    }
+
+    .left {
+        display: table-cell;
+        width: 70%;
+        border-style: solid;
+        border-color: #FFFFFF;
+        //border-width: 1px 0px 1px 1px;
+        //border-radius: 10px 0px 0px 10px;
+
+        p {
+            display: block;
+            position: relative;
+            width: 90%;
+            height: 25px;
+            line-height: 25px;
+            margin-left: 8%;
+            color: #FFFFFF;
+
+            &.name {
+                margin-top: 10%;
+                font-size: x-large;
+                height: 30px;
+                line-height: 30px;
+            }
+
+            &.number {
+                margin-top: 10%;
+                font-size: large;
+                overflow: visible;
+            }
+
+            span.exp {
+                margin-top: 5%;
+                font-size: medium;
+
+                i {
+                    color: rgba(255, 255, 255, 0.5);
+                }
+            }
+
+            span.zip {
+                font-size: medium;
+                float: right;
+
+                i {
+                    color: rgba(255, 255, 255, 0.5);
+                }
+            }
+
+            &.type {
+                margin-top: 15px;
+                font-size: small;
+            }
+        }
+    }
+
+    .right {
+        display: table-cell;
+        border-style: solid;
+        border-color: #FFFFFF;
+        //border-width: 1px 1px 1px 0px;
+        //border-radius: 0px 10px 10px 0px;
+        //background-color: #364351;
+
+        i {
+            display: block;
+            position: absolute;
+            height: 38%;
+            right: 5%;
+
+            &.egobie-logo {
+                top: 5%;
+                content: logo($Logo-White);
+            }
+
+            &.visa-logo {
+                bottom: 0px;
+                content: icon($Payment-Visa);
+            }
+        }
+    }
+}
+
+.egobie-payment-visa {
+    @extend .egobie-payment-template;
+
+    background: linear-gradient(100deg, #1391CF 20%, #117ECA 50%, #1075B3 85%);
+}
+
+.egobie-payment-discover {
+    @extend .egobie-payment-template;
+
+    background: linear-gradient(100deg, #FD8854 20%, #FD6929 50%, #F26223 85%);
+}

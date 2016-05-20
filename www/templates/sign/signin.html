@@ -1,22 +1,22 @@
-<ion-view padding="true" class="padding egobie-sign-bg"
+<ion-view hide-nav-bar="true" class="egobie-sign-bg"
           ng-app="app.sign.in"
           ng-controller="signInCtrl">
+    <div class="mask"></div>
     <ion-content padding="true" class="has-header">
         <ion-list class="list-inset">
             <img class="egobie-signin-logo"/>
-
-            <!--<img class="img-signin-divide" src="delorean.jpg"/>-->
-            <ion-item class="item-input egobie-signin-item">
+            <div class="egobie-company">eGobie Car Services</div>
+            <ion-item class="item-input egobie-signin-item" style="margin-top: 50px;">
                 <i class="icon ion-android-person placeholder-icon"></i>
                 <input id="sign-in-username" type="text" placeholder="Username"/>
             </ion-item>
-            <ion-item class="item-input egobie-signin-item">
+            <ion-item class="item-input egobie-signin-item" style="margin-top: 10px;">
                 <i class="icon ion-locked placeholder-icon"></i>
                 <input id="sign-in-password" type="password" placeholder="Password"/>
             </ion-item>
             <!--<ion-toggle toggle-class="toggle-calm" class="margin-top-5 width-300 toggle-signin">Keep me sign in</ion-toggle>-->
 
-            <button class="button button-dark egobie-sign-button"
+            <button class="button button-outline egobie-sign-button"
                     ng-controller="signInCtrl"
                     ng-click="signIn()">Sign In</button>
             <ion-item class="egobie-sign-item">

@@ -6,7 +6,7 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 angular
-    .module('app', ['ionic', 'app.directives',
+    .module('app', ['ionic', 'ngCordova', 'app.directives',
         'app.sign',
         'app.sign.in',
         'app.sign.up',
@@ -15,11 +15,15 @@ angular
         'app.menu',
 
         'app.home',
-        'app.home.mall',
         'app.home.resident',
+        'app.home.resident.demand',
+        'app.home.resident.reservation',
+
+        'app.home.mall',
         'app.home.business',
 
         'app.service',
+        'app.service.detail',
 
         'app.setting',
         'app.setting.user',
@@ -33,12 +37,15 @@ angular
 
         'app.history',
         'app.notification',
+        'app.coupon',
 
         'app.payment',
         'app.payment.add',
         'app.payment.edit',
 
         'app.about',
+        'app.task',
+
         'util.shared',
         'util.url',
         'util.request'
@@ -50,6 +57,8 @@ angular
             // for form inputs)
             if(window.cordova && window.cordova.plugins.Keyboard) {
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+                // Enable background mode
+                cordova.plugins.backgroundMode.enable();
             }
             if(window.StatusBar) {
                 // org.apache.cordova.statusbar required

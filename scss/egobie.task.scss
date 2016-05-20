@@ -1,0 +1,97 @@
+@import "egobie";
+
+$History-Done: #5CB85C;
+$History-Progress: #5BC0DE;
+$History-Reserved: #F0AD4E;
+
+.egobie {
+    &-task-list {
+        padding: 0px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.26);
+
+        .top {
+            display: flex;
+            padding: 10px;
+
+            .status-time-services {
+                display: inline-block;
+                width: 50%;
+
+                .status, .time, .services {
+                    .title {
+                        font-size: 12px;
+                    }
+
+                    .value {
+                        font-size: 11px;
+                        color: #000000;
+                        font-weight: 900;
+
+                        span {
+                            display: block;
+                            padding-left: 10px;
+                            color: #1BB3EC;
+                        }
+                    }
+                }
+
+                .services .value:before {
+                    content: "- ";
+                }
+            }
+
+            .customer-phone-plate-reserve {
+                display: inline-block;
+                margin-left: 10px;
+
+                .customer, .phone, .plate, .reserve {
+                    padding-left: 11px;
+
+                    .title {
+                        display: block;
+                        font-size: 12px;
+                    }
+
+                    .value {
+                        color: #000000;
+                        font-size: 11px;
+                        font-weight: 900;
+                    }
+                }
+
+                .plate .value {
+                    margin-bottom: 5px;
+                    font-weight: 900;
+                }
+            }
+        }
+
+        .bottom {
+            width: 95%;
+            font-size: 13px;
+            text-align: right;
+            padding-right: 10px;
+            margin: 10px auto 30px auto;
+            border-top: 1px solid rgba(0, 0, 0, 0.31);
+
+            span {
+                display: block;
+            }
+        }
+    }
+
+    &-task-border-done {
+        border-left: 5px solid $History-Done;
+    }
+
+    &-task-border-progress {
+        border-left: 5px solid $History-Progress;
+    }
+
+    &-task-border-reserved {
+        border-left: 5px solid $History-Reserved;
+    }
+}
