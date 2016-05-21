@@ -11347,7 +11347,8 @@ a.button {
     .egobie-resident-demand-opening i.left:before {
       font-size: 40px; }
   .egobie-resident-demand-opening div.right {
-    width: 85%; }
+    width: 85%;
+    padding-left: 5px; }
     .egobie-resident-demand-opening div.right p.time, .egobie-resident-demand-opening div.right p.note {
       font-size: 11px; }
       .egobie-resident-demand-opening div.right p.time span, .egobie-resident-demand-opening div.right p.note span {
