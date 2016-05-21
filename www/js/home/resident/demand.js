@@ -1,7 +1,7 @@
 angular.module('app.home.resident.demand', ['ionic', 'app.home.resident', 'util.shared', 'util.url'])
 
     .controller('demandCtrl', function($scope, $state, $http, shared, url,
-            orderService, orderCar, orderPayment, orderOpening, order, demandOrder) {
+            orderService, orderCar, orderPayment, orderOpening, orderAddon, order, demandOrder) {
         $scope.services = orderService.services;
         $scope.getTime = shared.getTime;
 
@@ -59,6 +59,7 @@ angular.module('app.home.resident.demand', ['ionic', 'app.home.resident', 'util.
         $scope.goHome = function() {
             demandOrder.clear();
             orderService.clear();
+            orderAddon.clear();
             orderCar.clear();
             orderPayment.clear();
             orderOpening.clear();
