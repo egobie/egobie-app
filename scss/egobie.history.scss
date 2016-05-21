@@ -39,16 +39,17 @@
 
             .left {
                 display: inline-block;
-                width: 23%;
+                width: 20%;
                 height: inherit;
-                margin: 15px 10px 0px 5px;
+                margin: 15px 5px 0px 5px;
                 border-right: 1px solid #000000;
 
                 .price {
-                    font-size: 20px;
+                    font-size: 14px;
                     height: 28px;
                     line-height: 28px;
                     padding-left: 10px;
+                    margin-right: 5px;
 
                     &:before {
                         content: "$";
@@ -67,6 +68,7 @@
 
                 .time-services {
                     display: inline-block;
+                    width: 120px;
 
                     .time, .services {
                         .title {
@@ -76,6 +78,7 @@
                         .value {
                             font-size: 11px;
                             color: #000000;
+                            overflow: visible;
 
                             span {
                                 display: block;
@@ -88,6 +91,7 @@
                     .time .value {
                         font-size: 11px;
                         margin-bottom: 2px;
+                        font-weight: bold;
                     }
 
                     .services .value:before {
@@ -115,6 +119,7 @@
 
                     .plate .value {
                         margin-bottom: 5px;
+                        font-weight: bold;
                     }
                 }
             }
@@ -132,7 +137,7 @@
         }
 
         .bottom-will, .bottom-delay {
-            font-size: 25px;
+            font-size: 20px;
         }
 
         .bottom-in-progress {
@@ -277,7 +282,7 @@
                 .plate, .maker, .model {
                     display: inline-block;
                     height: 65px;
-                    padding: 10px;
+                    padding: 10px 0px 0px 5px;
                     border: 0px;
                     overflow: visible;
 
@@ -287,11 +292,15 @@
                     }
 
                     .content {
-                        font-size: 14px;
+                        font-size: 12px;
                         font-weight: 500;
                         color: #000000;
                         padding-bottom: 5px;
                     }
+                }
+
+                .plate {
+                    padding-left: 10px; 
                 }
             }
         }
@@ -415,6 +424,7 @@
                     .time {
                         display: inline-block;
                         font-weight: 600;
+                        overflow: visible;
                     }
                 }
 
@@ -555,10 +565,6 @@
 
                     .content:before {
                         content: "$";
-                        font-size: 12px;
-                        margin-right: 3px;
-                        position: relative;
-                        bottom: 5px;
                     }
                 }
 
@@ -566,7 +572,7 @@
                     display: inline-block;
                     margin-bottom: 5px;
                     font-size: 13px;
-                    margin-left: 150px;
+                    margin-left: 80px;
                 }
             }
         }
@@ -668,10 +674,6 @@
 
                 &:before {
                     content: "$";
-                    position: absolute;
-                    font-size: 25px;
-                    left: 65px;
-                    top: -10px;
                 }
             }
 
@@ -691,7 +693,7 @@
                     height: 20px;
                     line-height: 20px;
                     width: 80%;
-                    margin-left: 90px;
+                    margin-left: 60px;
 
                     i {
                         font-size: 15px;

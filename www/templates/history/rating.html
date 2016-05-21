@@ -30,8 +30,10 @@
                 <textarea class="feedback"
                           ng-model="selectedHistory.note"></textarea>
             </ion-item>
-            <button class="button button-block"
-                    ng-click="submitRating()">SUBMIT</button>
         </ion-list>
     </ion-content>
+    <ion-footer-bar class="bar-dark egobie-resident-footer"
+                    ng-click="submitRating()">
+        <h1 class="title">SUBMIT</h1>
+    </ion-footer-bar>
 </ion-modal-view>

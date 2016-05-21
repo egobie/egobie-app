@@ -9,14 +9,14 @@
         <div class="egobie-bg-mask-1"></div>
         <div class="egobie-bg-mask-2"></div>
     </div>
-    <ion-content overflow-scroll="true" padding="true">
+    <ion-content padding="true" class="has-footer">
         <ion-list class="egobie-resident-order">
             <ion-item class="egobie-resident-demand-opening"
                       ng-controller="demandOpeningCtrl">
                 <i class="ion-clock left"></i>
                 <div class="right">
-                    <p class="time">Available between <span>{{opening.start}} - {{opening.end}}</span></p>
-                    <p class="note">Arrive in <span>{{opening.diff + 10}} to {{opening.diff + 20}} mins</span></p>
+                    <p class="time">Available <span>{{opening.start}} - {{opening.end}}</span></p>
+                    <p class="note">Arrive <span>{{opening.diff + 10}} to {{opening.diff + 20}} mins</span></p>
                 </div>
             </ion-item>
         </ion-list>

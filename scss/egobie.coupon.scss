@@ -60,57 +60,47 @@
         }
 
         .share {
-            height: 200px;
             border: 0px;
             border-top: 1px solid #AAAAAA;
             border-bottom: 1px solid #AAAAAA;
             overflow: visible;
 
             .social-list {
-                display: table;
-                width: 90%;
-                border-spacing: 25px;
-                margin: -20px auto -10px auto;
+                display: flex;
+                width: 70%;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 25px;
 
                 .social {
-                    display: table-cell;
-                    width: 40px;
+                    width: 25%;
                     height: 40px;
                     position: relative;
-                    font-size: 30px;
-                    border: 1px solid #AAAAAA;
-                    border-radius: 100%;
-                    margin-left: 3%;
                     padding: 0px;
-                    background-color: #F8F8FA;
+                    text-align: center;
 
-                    &:first-child {
-                        margin-left: 20%;
+                    i.circle {
+                        position: absolute;
+                        background-color: #F8F8FA;
+                        border: 1px solid #AAAAAA;
+                        border-radius: 100%;
+                        height: 35px;
+                        width: 35px;
+                        left: 0px;
+                        right: 0px;
+                        margin-left: auto;
+                        margin-right: auto;
                     }
 
-                    i {
+                    i.icon {
                         display: block;
+                        position: absolute;
                         padding: 0px;
-
-                        &.message {
-                            margin-left: 8px;
-                            margin-top: 5px;
-                        }
-
-                        &.email {
-                            margin-left: 8px;
-                            margin-top: 4px;
-                        }
-
-                        &.facebook {
-                            margin-left: 15px;
-                            margin-top: 4px;
-                        }
-
-                        &.twitter {
-                            margin-left: 8px;
-                            margin-top: 4px;
-                        }
+                        top: 5px;
+                        left: 0px;
+                        right: 0px;
+                        margin-right: auto;
+                        margin-left: auto;
                     }
                 }
             }
