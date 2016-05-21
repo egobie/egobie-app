@@ -674,10 +674,6 @@
 
                 &:before {
                     content: "$";
-                    position: absolute;
-                    font-size: 25px;
-                    left: 65px;
-                    top: -10px;
                 }
             }
 
@@ -697,7 +693,7 @@
                     height: 20px;
                     line-height: 20px;
                     width: 80%;
-                    margin-left: 90px;
+                    margin-left: 60px;
 
                     i {
                         font-size: 15px;

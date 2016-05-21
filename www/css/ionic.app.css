@@ -10687,7 +10687,7 @@ a.button {
     margin: 10px auto;
     border-top: 1px solid rgba(0, 0, 0, 0.31); }
   .egobie-reservation-list .bottom-will, .egobie-reservation-list .bottom-delay {
-    font-size: 25px; }
+    font-size: 20px; }
   .egobie-reservation-list .bottom-in-progress {
     font-size: 18px;
     color: #5CB85C; }
@@ -11052,11 +11052,7 @@ a.button {
     margin-top: 30px;
     text-align: center; }
     .egobie-service-rating .top div.price:before {
-      content: "$";
-      position: absolute;
-      font-size: 25px;
-      left: 65px;
-      top: -10px; }
+      content: "$"; }
   .egobie-service-rating .top div.date {
     text-align: center;
     margin-top: 5px;
@@ -11070,7 +11066,7 @@ a.button {
       height: 20px;
       line-height: 20px;
       width: 80%;
-      margin-left: 90px; }
+      margin-left: 60px; }
       .egobie-service-rating .top div.services p i {
         font-size: 15px;
         left: -5px;
