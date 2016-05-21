@@ -11,7 +11,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
     })
 
     .controller('orderCtrl', function($scope, $state, $ionicActionSheet, $http,
-            shared, url, orderOpening, orderCar, orderService, orderAddon, orderPayment, order) {
+            shared, url, orderOpening, orderCar, orderService, orderAddon, orderPayment, demandOrder, order) {
         $scope.validateRequest = function(request) {
             if (request.car_id <= 0) {
                 shared.alert("Please choose a vehicle");
@@ -109,6 +109,9 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
             orderAddon.clear();
             orderPayment.clear();
             order.clear();
+            demandOrder.clear();
+            
+            console.log("clear");
         };
     })
 
