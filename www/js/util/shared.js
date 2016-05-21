@@ -526,7 +526,7 @@ angular.module("util.shared", ["util.url"])
                 $ionicPopup.alert({
                     title: data
                 });
-                console.log(data);
+//                console.log(data);
             },
 
             setMenuScope: function(menuScope) {

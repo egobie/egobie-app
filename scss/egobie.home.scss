@@ -90,15 +90,16 @@
                 display: flex;
                 line-height: 40px;
                 height: 40px;
-                width: 85%;
+                width: 95%;
                 padding-left: 18px;
-                
+
                 p {
                     padding: 0px;
-                    font-size: 13px;
+                    font-size: 12px;
                     width: 85%;
+                    overflow: visible;
                 }
-                
+
                 input {
                     display: inline-block;
                     width: 30px;
@@ -191,6 +192,7 @@
 
         div.right {
             width: 85%;
+            padding-left: 5px;
 
             p.time, p.note {
                 font-size: 11px;

@@ -86,8 +86,9 @@ $Advance: #567CC0;
                     &.name {
                         height: 18px;
                         line-height: 18px;
-                        font-size: 15px;
+                        font-size: 12px;
                         display: block;
+                        overflow: visible;
 
                         span {
                             font-size: 12px;
@@ -113,7 +114,7 @@ $Advance: #567CC0;
                         font-size: 25px;
                         line-height: 40px;
                         margin-left: 10px;
-                        margin-right: 15px;
+                        margin-right: 10px;
                         float: left;
 
                         &:before {
