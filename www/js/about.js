@@ -2,11 +2,13 @@ angular.module('app.about', ['ionic', 'util.url', 'util.shared'])
 
     .controller('aboutCtrl', function($scope, $ionicModal, $ionicPopup, $http, shared, url) {
         $scope.openWebsite = function() {
-            window.open(url.website, "_system");
+            console.log('open - start');
+            window.open(url.website, "_blank", "location=no");
+            console.log('open - done');
         };
 
         $scope.openFAQ = function() {
-            window.open(url.faq, "_system");
+            window.open(url.faq, "_blank", "location=no");
         };
 
         $ionicModal.fromTemplateUrl('feedback', {

@@ -59,6 +59,8 @@ angular
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
                 // Enable background mode
                 cordova.plugins.backgroundMode.enable();
+                // Open link
+                window.open = cordova.InAppBrowser.open;
             }
             if(window.StatusBar) {
                 // org.apache.cordova.statusbar required
