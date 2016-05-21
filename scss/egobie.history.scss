@@ -91,6 +91,7 @@
                     .time .value {
                         font-size: 11px;
                         margin-bottom: 2px;
+                        font-weight: bold;
                     }
 
                     .services .value:before {
@@ -118,6 +119,7 @@
 
                     .plate .value {
                         margin-bottom: 5px;
+                        font-weight: bold;
                     }
                 }
             }
@@ -135,7 +137,7 @@
         }
 
         .bottom-will, .bottom-delay {
-            font-size: 25px;
+            font-size: 20px;
         }
 
         .bottom-in-progress {

@@ -10659,7 +10659,8 @@ a.button {
             color: #1BB3EC; }
         .egobie-reservation-list .top .right .time-services .time .value {
           font-size: 11px;
-          margin-bottom: 2px; }
+          margin-bottom: 2px;
+          font-weight: bold; }
         .egobie-reservation-list .top .right .time-services .services .value:before {
           content: "- "; }
       .egobie-reservation-list .top .right .plate-reserve {
@@ -10674,7 +10675,8 @@ a.button {
             color: #000000;
             font-size: 11px; }
         .egobie-reservation-list .top .right .plate-reserve .plate .value {
-          margin-bottom: 5px; }
+          margin-bottom: 5px;
+          font-weight: bold; }
   .egobie-reservation-list .bottom-will, .egobie-reservation-list .bottom-delay, .egobie-reservation-list .bottom-in-progress {
     width: 95%;
     height: 30px;
@@ -13391,13 +13393,14 @@ a.button {
     padding: 10px; }
     .egobie-task-list .top .status-time-services {
       display: inline-block;
-      width: 50%; }
+      width: 60%; }
       .egobie-task-list .top .status-time-services .status .title, .egobie-task-list .top .status-time-services .time .title, .egobie-task-list .top .status-time-services .services .title {
         font-size: 12px; }
       .egobie-task-list .top .status-time-services .status .value, .egobie-task-list .top .status-time-services .time .value, .egobie-task-list .top .status-time-services .services .value {
         font-size: 11px;
         color: #000000;
-        font-weight: 900; }
+        font-weight: 900;
+        overflow: visible; }
         .egobie-task-list .top .status-time-services .status .value span, .egobie-task-list .top .status-time-services .time .value span, .egobie-task-list .top .status-time-services .services .value span {
           display: block;
           padding-left: 10px;
@@ -13415,7 +13418,8 @@ a.button {
         .egobie-task-list .top .customer-phone-plate-reserve .customer .value, .egobie-task-list .top .customer-phone-plate-reserve .phone .value, .egobie-task-list .top .customer-phone-plate-reserve .plate .value, .egobie-task-list .top .customer-phone-plate-reserve .reserve .value {
           color: #000000;
           font-size: 11px;
-          font-weight: 900; }
+          font-weight: 900;
+          overflow: visible; }
       .egobie-task-list .top .customer-phone-plate-reserve .plate .value {
         margin-bottom: 5px;
         font-weight: 900; }
