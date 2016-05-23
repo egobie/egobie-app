@@ -136,12 +136,12 @@
             border-top: 1px solid rgba(0, 0, 0, 0.31);
         }
 
-        .bottom-will, .bottom-delay {
-            font-size: 20px;
+        .bottom-will, .bottom-delay, .bottom-in-progress {
+            font-size: 18px;
+            margin-bottom: 0px;
         }
 
         .bottom-in-progress {
-            font-size: 18px;
             color: #5CB85C;
         }
         

@@ -36,6 +36,9 @@ angular
         'app.car.edit',
 
         'app.history',
+        'app.history.history',
+        'app.history.reservation',
+
         'app.notification',
         'app.coupon',
 

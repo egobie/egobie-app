@@ -1,6 +1,4 @@
-<ion-view hide-nav-bar="true" cache-view="false"
-          ng-app="app.history"
-          ng-controller="historyCtrl">
+<ion-view hide-nav-bar="true" cache-view="false">
     <ion-header-bar class="egobie-header-bar">
         <button class="button button-icon icon ion-navicon egobie-display-inherit" menu-toggle="left"></button>
         <h1 class="title">MY SERVICES</h1>
@@ -10,7 +8,8 @@
         <div class="egobie-bg-mask-2"></div>
     </div>
     <ion-content padding="true">
-        <ion-list>
+        <ion-list ng-app="app.history.reservation"
+                  ng-controller="myReservationCtrl">
             <ion-item class="item-divider item-icon-right egobie-reservation-title">
                 <i class="icon ion-android-refresh"
                    ng-click="loadReservations()"></i>RESERVATION
@@ -74,7 +73,8 @@
             </ion-item>
         </ion-list>
 
-        <ion-list>
+        <ion-list ng-app="app.history.history"
+                  ng-controller="myHistoryCtrl">
             <ion-item class="item-divider item-icon-right egobie-history-title">
                 <i class="icon ion-android-refresh"
                    ng-click="loadHistories()"></i>HISTORY

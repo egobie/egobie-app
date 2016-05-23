@@ -49,15 +49,6 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
                 }
             })
 
-            .state('menu.history', {
-                url: '/history',
-                views: {
-                    'side-menu': {
-                        templateUrl: 'templates/menu/history.html'
-                    }
-                }
-            })
-
             .state('menu.task', {
                 url: '/task',
                 views: {

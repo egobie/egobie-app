@@ -10686,10 +10686,10 @@ a.button {
     padding-right: 10px;
     margin: 10px auto;
     border-top: 1px solid rgba(0, 0, 0, 0.31); }
-  .egobie-reservation-list .bottom-will, .egobie-reservation-list .bottom-delay {
-    font-size: 20px; }
-  .egobie-reservation-list .bottom-in-progress {
+  .egobie-reservation-list .bottom-will, .egobie-reservation-list .bottom-delay, .egobie-reservation-list .bottom-in-progress {
     font-size: 18px;
+    margin-bottom: 0px; }
+  .egobie-reservation-list .bottom-in-progress {
     color: #5CB85C; }
   .egobie-reservation-list .bottom-will:before, .egobie-reservation-list .min:after, .egobie-reservation-list .hour:after, .egobie-reservation-list .day:after {
     font-size: 15px;
