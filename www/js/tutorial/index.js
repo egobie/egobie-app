@@ -18,7 +18,7 @@ angular.module('app.tutorial', ['ionic'])
         $scope.next = function() {
             $ionicSlideBoxDelegate.next();
         };
-        
+
         $scope.previous = function() {
             $ionicSlideBoxDelegate.previous();
         };
@@ -26,7 +26,7 @@ angular.module('app.tutorial', ['ionic'])
         $scope.startToUse = function() {
             $state.go('menu.home.resident');
         };
-        
+
         $scope.slideChanged = function($index) {
             $scope.slideIndex = $index;
         };

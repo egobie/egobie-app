@@ -80,7 +80,7 @@ $Advance: #567CC0;
             }
 
             &.middle {
-                width: 90%;
+                width: 70%;
 
                 p {
                     &.name {
@@ -106,6 +106,7 @@ $Advance: #567CC0;
                     &.time {
                         font-size: 11px;
                         display: block;
+                        overflow: visible;
                     }
 
                     &.price {
@@ -129,14 +130,15 @@ $Advance: #567CC0;
             }
 
             &.right {
-                width: 10px;
+                width: 30%;
 
                 &:before {
                     position: relative;
                     font-size: 30px;
                     font-weight: bolder;
-                    right: -10px;
+                    right: 10px;
                     top: 5px;
+                    float: right;
                 }
             }
         }

@@ -12645,7 +12645,7 @@ a.button {
       width: 3px;
       height: 40px; }
     .egobie-service-item div.middle, .egobie-service-item-select div.middle {
-      width: 90%; }
+      width: 70%; }
       .egobie-service-item div.middle p.name, .egobie-service-item-select div.middle p.name {
         height: 18px;
         line-height: 18px;
@@ -12662,7 +12662,8 @@ a.button {
         color: #1BB3EC !important; }
       .egobie-service-item div.middle p.time, .egobie-service-item-select div.middle p.time {
         font-size: 11px;
-        display: block; }
+        display: block;
+        overflow: visible; }
       .egobie-service-item div.middle p.price, .egobie-service-item-select div.middle p.price {
         padding: 0px;
         height: 50px;
@@ -12672,13 +12673,14 @@ a.button {
         margin-right: 10px;
         float: left; }
     .egobie-service-item div.right, .egobie-service-item-select div.right {
-      width: 10px; }
+      width: 30%; }
       .egobie-service-item div.right:before, .egobie-service-item-select div.right:before {
         position: relative;
         font-size: 30px;
         font-weight: bolder;
-        right: -10px;
-        top: 5px; }
+        right: 10px;
+        top: 5px;
+        float: right; }
 
 .egobie-service-detail-title {
   display: flex;

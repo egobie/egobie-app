@@ -6,7 +6,7 @@ angular.module('app.service', ['ionic', 'util.shared', 'util.url'])
                 url: '/service',
                 views: {
                     'side-menu': {
-                        templateUrl: 'templates/menu/service.html'
+                        templateUrl: 'templates/service/index.html'
                     }
                 }
             });
