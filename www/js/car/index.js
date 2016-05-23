@@ -6,14 +6,13 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
                 url: '/car',
                 views: {
                     'side-menu': {
-                        templateUrl: 'templates/menu/car.html'
+                        templateUrl: 'templates/car/index.html'
                     }
                 }
             });
     })
 
     .controller('carCtrl', function($scope, $ionicModal, $ionicPopup, $ionicActionSheet, $http, shared, url) {
-        console.log($scope.payments);
         $scope.cars = shared.getUserCars();
 
         $scope.selected = {
