@@ -42,11 +42,7 @@ angular.module('app.payment', ['ionic', 'util.shared', 'util.url'])
 
                 destructiveText: 'Delete',
                 destructiveButtonClicked: function() {
-                    if (payment.reserved <= 0) {
-                        $scope.deletePayment(payment.id);
-                    } else {
-                        shared.alert("Cannot delete since it's used by one of your reservation");
-                    }
+                    $scope.deletePayment(payment.id);
                 },
 
                 cancelText: 'Cancel',

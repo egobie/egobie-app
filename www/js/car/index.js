@@ -42,11 +42,7 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
 
                 destructiveText: 'Delete',
                 destructiveButtonClicked: function() {
-                    if (car.reserved <= 0) {
-                        $scope.deleteCar(car.id);
-                    } else {
-                        shared.alert("Cannot delete since it's used by one of your reservation");
-                    }
+                    $scope.deleteCar(car.id);
                 },
 
                 cancelText: 'Cancel',

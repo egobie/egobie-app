@@ -61,8 +61,6 @@ angular.module('app.history.reservation', ['ionic', 'util.shared', 'util.url'])
                                     id: reservation.id
                                 }))
                                 .success(function(data, status, headers, config) {
-                                    shared.unlockUserCar(reservation.car_id);
-                                    shared.unlockUserPayment(reservation.payment_id);
                                     shared.hideLoading();
 
                                     $scope.hideCancelSheet();

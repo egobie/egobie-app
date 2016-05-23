@@ -356,16 +356,6 @@ angular.module("util.shared", ["util.url"])
                 refreshScope();
             },
 
-            lockUserCar: function(id) {
-                userCars[id].reserved += 1;
-                refreshScope();
-            },
-
-            unlockUserCar: function(id) {
-                userCars[id].reserved -= 1;
-                refreshScope();
-            },
-
             getUserPayments: function() {
                 return userPayments;
             },
@@ -387,16 +377,6 @@ angular.module("util.shared", ["util.url"])
 
             deleteUserPayment: function(id) {
                 delete userPayments[id];
-                refreshScope();
-            },
-
-            lockUserPayment: function(id) {
-                userPayments[id].reserved += 1;
-                refreshScope();
-            },
-
-            unlockUserPayment: function(id) {
-                userPayments[id].reserved -= 1;
                 refreshScope();
             },
 
