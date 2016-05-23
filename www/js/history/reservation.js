@@ -4,6 +4,12 @@ angular.module('app.history.reservation', ['ionic', 'util.shared', 'util.url'])
         $scope.reservations = [];
         $scope.interval = null;
 
+        $scope.$on('$destroy', function(event) {
+            if ($scope.interval) {
+                $interval.cancel($scope.interval);
+            }
+        });
+
         $scope.loadReservations = function(animation) {
             if ($scope.interval) {
                 $interval.cancel($scope.interval);

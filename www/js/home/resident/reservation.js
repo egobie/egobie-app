@@ -110,8 +110,6 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
             orderPayment.clear();
             order.clear();
             demandOrder.clear();
-            
-            console.log("clear");
         };
     })
 

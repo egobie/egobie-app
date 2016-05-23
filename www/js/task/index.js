@@ -18,16 +18,18 @@ angular.module('app.task', ['ionic', 'util.shared', 'util.url'])
         $scope.taskModel = null;
         $scope.interval = null;
 
+        $scope.$on('$destroy', function(event) {
+            if ($scope.interval) {
+                $interval.cancel($scope.interval);
+            }
+        });
+
         $scope.showStatusSheet = function(task) {
-            $scope.hideStatusSheet = $ionicActionSheet.show({
-                titleText: 'Change Status',
-                buttons: [
-                    {text: "Start"},
-                    {text: "Done"}
-                ],
-                buttonClicked: function(index) {
-                    if (index === 0) {
-                        // Start
+            if (task.status === "RESERVED") {
+                $scope.hideStatusSheet = $ionicActionSheet.show({
+                    titleText: 'Start Task (CANNOT MAKE THIS TASK "RESERVED" AGAIN)',
+                    destructiveText: "Start",
+                    destructiveButtonClicked: function() {
                         $ionicPopup.confirm({
                             title: "Start this task?"
                         }).then(function(sure) {
@@ -50,8 +52,17 @@ angular.module('app.task', ['ionic', 'util.shared', 'util.url'])
                                     });
                             }
                         });
-                    } else if (index === 1) {
-                        // Done
+                    },
+                    cancelText: 'Close',
+                    cancel: function() {
+
+                    }
+                });
+            } else if (task.status === "IN_PROGRESS") {
+                $scope.hideStatusSheet = $ionicActionSheet.show({
+                    titleText: 'Finish Task CANNOT MAKE THIS TASK "RESERVED" OR "IN_PROGRESS" AGAIN',
+                    destructiveText: "DONE",
+                    destructiveButtonClicked: function() {
                         $ionicPopup.confirm({
                             title: "Finish this task?"
                         }).then(function(sure) {
@@ -73,15 +84,15 @@ angular.module('app.task', ['ionic', 'util.shared', 'util.url'])
                                     });
                             }
                         });
-                    }
 
-                    return false;
-                },
-                cancelText: 'Close',
-                cancel: function() {
-                    
-                }
-            });
+                        return false;
+                    },
+                    cancelText: 'Close',
+                    cancel: function() {
+
+                    }
+                });
+            }
         };
 
         $scope.loadTasks = function(animation) {

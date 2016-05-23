@@ -10,6 +10,12 @@ angular.module('app.history.history', ['ionic', 'util.shared', 'util.url'])
             score: 0
         };
 
+        $scope.$on('$destroy', function(event) {
+            if ($scope.interval) {
+                $interval.cancel($scope.interval);
+            }
+        });
+
         $ionicModal.fromTemplateUrl('templates/history/rating.html', {
             scope: $scope
         }).then(function(modal) {

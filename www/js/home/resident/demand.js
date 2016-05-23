@@ -85,6 +85,12 @@ angular.module('app.home.resident.demand', ['ionic', 'app.home.resident', 'util.
             orderOpening, demandOrder) {
         $scope.opening = orderOpening;
 
+        $scope.$on('$destroy', function() {
+            if (demandOrder.interval) {
+                $interval.cancel(demandOrder.interval);
+            }
+        });
+
         demandOrder.interval = $interval(function() {
             $http
                 .post(url.ondemand, shared.getRequestBody({
