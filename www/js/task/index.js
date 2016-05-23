@@ -1,5 +1,17 @@
 angular.module('app.task', ['ionic', 'util.shared', 'util.url'])
 
+    .config(function($stateProvider) {
+        $stateProvider
+            .state('menu.task', {
+                url: '/task',
+                views: {
+                    'side-menu': {
+                        templateUrl: 'templates/task/index.html'
+                    }
+                }
+            });
+    })
+
     .controller('taskCtrl', function($scope, $http, $interval, $ionicActionSheet, $ionicPopup, shared, url) {
         $scope.tasks = [];
         $scope.selectedTask = null;

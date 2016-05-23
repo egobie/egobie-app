@@ -48,15 +48,6 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
                     }
                 }
             })
-
-            .state('menu.task', {
-                url: '/task',
-                views: {
-                    'side-menu': {
-                        templateUrl: 'templates/menu/task.html'
-                    }
-                }
-            });
     })
 
     .controller('menuCtrl', function($scope, shared) {
