@@ -58,15 +58,6 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
                 }
             })
 
-            .state('menu.coupon', {
-                url: '/coupon',
-                views: {
-                    'side-menu': {
-                        templateUrl: 'templates/menu/coupon.html'
-                    }
-                }
-            })
-
             .state('menu.setting', {
                 url: '/setting',
                 views: {
