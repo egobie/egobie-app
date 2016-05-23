@@ -1,5 +1,17 @@
 angular.module('app.setting', ['ionic', 'util.shared', 'util.url'])
 
+    .config(function($stateProvider) {
+        $stateProvider
+            .state('menu.setting', {
+                url: '/setting',
+                views: {
+                    'side-menu': {
+                        templateUrl: 'templates/setting/index.html'
+                    }
+                }
+            });
+    })
+
     .controller('settingCtrl', function($scope, $ionicModal, shared, url) {
         $scope.showEditUser = function() {
             $ionicModal.fromTemplateUrl('templates/setting/user.html', {
