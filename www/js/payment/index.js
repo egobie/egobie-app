@@ -6,7 +6,7 @@ angular.module('app.payment', ['ionic', 'util.shared', 'util.url'])
                 url: '/payment',
                 views: {
                     'side-menu': {
-                        templateUrl: 'templates/menu/payment.html'
+                        templateUrl: 'templates/payment/index.html'
                     }
                 }
             });
@@ -14,7 +14,6 @@ angular.module('app.payment', ['ionic', 'util.shared', 'util.url'])
 
     .controller('paymentCtrl', function($scope, $ionicModal, $ionicPopup, $ionicActionSheet, $http, shared, url) {
         $scope.payments = shared.getUserPayments();
-        console.log($scope.payments);
 
         $scope.payment = {
             id: 0,
