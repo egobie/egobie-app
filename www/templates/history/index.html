@@ -86,9 +86,9 @@
             </ion-item>
 
             <ion-item class="egobie-history-list"
-                      ng-repeat="(id, history) in histories"
+                      ng-repeat="history in histories"
                       ng-class="borderStyle(history.rating)"
-                      ng-click="showHistory(id)">
+                      ng-click="showHistory(history)">
                 <div class="left">
                     <div class="price">{{history.price}}</div>
                     <div class="ontime">

@@ -67,9 +67,7 @@ angular.module("util.shared", ["util.url"])
 
         var userCars = {};
         var userPayments = {};
-        var userReservations = [];
         var userDones = [];
-        var userHistories = {};
         var carMakers = [];
         var carModels = {};
         var services = {};
@@ -297,57 +295,6 @@ angular.module("util.shared", ["util.url"])
                     .error(function(data, status, headers, config) {
                         this.alert("send demand for Addons - " + data);
                     });
-            },
-
-            refreshUserHistory: function(history) {
-                userHistories[history.id].note = history.note;
-                userHistories[history.id].rating = history.rating;
-                userHistories[history.id].available = history.available;
-            },
-
-            getUserHistory: function(id) {
-                return userHistories[id];
-            },
-
-            getUserHistories: function() {
-                return userHistories;
-            },
-
-            addUserHistories: function(histories) {
-                if (histories) {
-                    Array.prototype.forEach.call(histories, function(history) {
-                        history.available = history.rating > 0;
-                        userHistories[history.id] = history;
-                    });
-                }
-            },
-
-            clearUserHistories: function() {
-                userHistories = {};
-            },
-
-            getUserReservations: function() {
-                return userReservations;
-            },
-
-            addUserReservations: function(reservations) {
-                var self = this;
-
-                if (reservations) {
-                    Array.prototype.forEach.call(reservations, function(reservation) {
-                        if (reservation.services) {
-                            Array.prototype.forEach.call(reservation.services, function(service) {
-                                service.full_type = self.getServiceType(service.type);
-                            });
-                        }
-
-                        userReservations.push(reservation);                        
-                    });
-                }
-            },
-
-            clearUserReservations: function() {
-                userReservations = [];
             },
 
             getUserDones: function() {

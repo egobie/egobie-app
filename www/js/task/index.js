@@ -85,26 +85,24 @@ angular.module('app.task', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.loadTasks = function(animation) {
-            if (animation) {
-                if ($scope.interval) {
-                    $interval.cancel($scope.interval);
-                }
-
-                $scope.interval = $interval(function() {
-                    $scope.loadTasks(false);
-                }, 300000);
+            if ($scope.interval) {
+                $interval.cancel($scope.interval);
             }
+
+            $scope.interval = $interval(function() {
+                $scope.loadTasks(false);
+            }, 60000);
 
             if (animation) {
                 shared.showLoading();
             }
 
-            $scope.tasks = [];
-
             $http
                 .post(url.tasks, shared.getRequestBody({}))
                 .success(function(data, status, headers, config) {
                     shared.hideLoading();
+
+                    $scope.tasks = [];
                     $scope.tasks = data;
                 })
                 .error(function(data, status, headers, config) {

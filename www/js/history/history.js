@@ -1,10 +1,11 @@
 angular.module('app.history.history', ['ionic', 'util.shared', 'util.url'])
 
-    .controller('myHistoryCtrl', function($scope, $ionicModal, $http, $timeout, shared, url) {
+    .controller('myHistoryCtrl', function($scope, $ionicModal, $http, $timeout, $interval, shared, url) {
         $scope.histories = {};
         $scope.max = 5;
         $scope.selectedHistory = null;
         $scope.historyModel = null;
+        $scope.interval = null;
         $scope.rating = {
             score: 0
         };
@@ -45,9 +46,9 @@ angular.module('app.history.history', ['ionic', 'util.shared', 'util.url'])
                 $http
                     .post(url.ratingHistory, shared.getRequestBody(request))
                     .success(function(data, status, headers, config) {
-                        $scope.selectedHistory.available = true;
                         shared.hideLoading();
-                        shared.refreshUserHistory($scope.selectedHistory);
+
+                        $scope.selectedHistory.available = true;
                         $scope.hideRating();
                     })
                     .error(function(data, status, headers, config) {
@@ -63,8 +64,8 @@ angular.module('app.history.history', ['ionic', 'util.shared', 'util.url'])
             $scope.historyModel = modal;
         });
 
-        $scope.showHistory = function(id) {
-            $scope.selectedHistory = shared.getUserHistory(id);
+        $scope.showHistory = function(history) {
+            $scope.selectedHistory = history;
 
             if (!$scope.selectedHistory.available) {
                 // If history is not rated yet, force user to rate and open history
@@ -82,16 +83,26 @@ angular.module('app.history.history', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.loadHistories = function() {
-            $scope.histories = {};
-            shared.clearUserHistories();
+            if ($scope.interval) {
+                $interval.cancel($scope.interval);
+            }
+
+            $scope.interval = $interval(function() {
+                $scope.loadHistories(false);
+            }, 60000);
 
             $http
                 .post(url.userHistories, shared.getRequestBody({
                     page: 0
                 }))
                 .success(function(data, status, headers, config) {
-                    shared.addUserHistories(data);
-                    $scope.histories = shared.getUserHistories();
+                    if (data) {
+                        Array.prototype.forEach.call(data, function(history) {
+                            history.available = history.rating > 0;
+                        });
+                    }
+
+                    $scope.histories = data;
                 })
                 .error(function(data, status, headers, config) {
                     shared.alert(data);

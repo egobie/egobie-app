@@ -1,19 +1,38 @@
 angular.module('app.history.reservation', ['ionic', 'util.shared', 'util.url'])
 
-    .controller('myReservationCtrl', function($scope, $ionicPopup, $ionicActionSheet, $http, shared, url) {
+    .controller('myReservationCtrl', function($scope, $ionicPopup, $ionicActionSheet, $http, $interval, shared, url) {
         $scope.reservations = [];
+        $scope.interval = null;
 
-        $scope.loadReservations = function() {
-            $scope.reservations = [];
-            shared.clearUserReservations();
+        $scope.loadReservations = function(animation) {
+            if ($scope.interval) {
+                $interval.cancel($scope.interval);
+            }
 
-            shared.showLoading();
+            $scope.interval = $interval(function() {
+                $scope.loadReservations(false);
+            }, 60000);
+
+            if (animation) {
+                shared.showLoading();
+            }
+
             $http
                 .post(url.userReservations, shared.getRequestBody({}))
                 .success(function(data, status, headers, config) {
                     shared.hideLoading();
-                    shared.addUserReservations(data);
-                    $scope.reservations = shared.getUserReservations();
+
+                    if (data) {
+                        Array.prototype.forEach.call(data, function(reservation) {
+                            if (reservation.services) {
+                                Array.prototype.forEach.call(reservation.services, function(service) {
+                                    service.full_type = shared.getServiceType(service.type);
+                                });
+                            }                      
+                        });
+                    }
+
+                    $scope.reservations = data;
                 })
                 .error(function(data, status, headers, config) {
                     shared.hideLoading();
@@ -90,5 +109,5 @@ angular.module('app.history.reservation', ['ionic', 'util.shared', 'util.url'])
             return !$scope.reservations || $scope.reservations.length === 0;
         };
 
-        $scope.loadReservations();
+        $scope.loadReservations(true);
     });
