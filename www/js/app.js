@@ -6,7 +6,7 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 angular
-    .module('app', ['ionic', 'ngCordova', 'app.directives',
+    .module('app', ['ionic', 'ngCordova',
         'app.sign',
         'app.sign.in',
         'app.sign.up',

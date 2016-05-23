@@ -1,6 +1,6 @@
 angular.module('app.sign.in', ['ionic', 'util.shared', 'util.url'])
 
-    .controller('signInCtrl', function(shared, url, $scope, $state, $http) {
+    .controller('signInCtrl', function($scope, $state, $http, shared, url) {
         $scope.signInForm = {
             username: "",
             password: ""
@@ -8,8 +8,8 @@ angular.module('app.sign.in', ['ionic', 'util.shared', 'util.url'])
 
         $scope.signIn = function() {
             var body = {
-                "username": document.getElementById("sign-in-username").value,
-                "password": document.getElementById("sign-in-password").value
+                username: $scope.signInForm.username,
+                password: $scope.signInForm.password
             };
 
             if (!validateUser(body.username, body.password)) {
@@ -19,11 +19,7 @@ angular.module('app.sign.in', ['ionic', 'util.shared', 'util.url'])
             shared.showLoading();
 
             $http
-                .post(url.signIn, body, {
-                    headers: {
-                        "Content-Type": "application/json"
-                    }
-                })
+                .post(url.signIn, body)
                 .success(function(data, status, headers, config) {
                     shared.refreshUser(data);
 
