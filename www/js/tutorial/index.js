@@ -6,7 +6,7 @@ angular.module('app.tutorial', ['ionic'])
 
             .state('tutorial', {
                 url: '/tutorial',
-                templateUrl: 'templates/tutorial.html',
+                templateUrl: 'templates/tutorial/index.html',
                 controller: 'tutorialCtrl'
             });
     })
