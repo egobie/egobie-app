@@ -44,6 +44,8 @@ angular
         'app.payment.edit',
 
         'app.about',
+        'app.about.feedback',
+
         'app.task',
 
         'util.shared',

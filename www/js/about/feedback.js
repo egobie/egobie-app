@@ -1,26 +1,6 @@
-angular.module('app.about', ['ionic', 'util.url', 'util.shared'])
+angular.module('app.about.feedback', ['ionic', 'util.url', 'util.shared'])
 
-    .controller('aboutCtrl', function($scope, $ionicModal, $ionicPopup, $http, shared, url) {
-        $scope.openWebsite = function() {
-            console.log('open - start');
-            window.open(url.website, "_blank", "location=no");
-            console.log('open - done');
-        };
-
-        $scope.openFAQ = function() {
-            window.open(url.faq, "_blank", "location=no");
-        };
-
-        $ionicModal.fromTemplateUrl('feedback', {
-            scope: $scope
-        }).then(function(modal) {
-            $scope.feedbackModel = modal;
-        });
-
-        $scope.showFeedback = function() {
-            $scope.feedbackModel.show();
-        };
-
+    .controller('feedbackCtrl', function($scope, $ionicPopup, $http, shared, url) {
         $scope.hideFeedback = function() {
             $scope.feedbackModel.hide();
         };
@@ -51,7 +31,7 @@ angular.module('app.about', ['ionic', 'util.url', 'util.shared'])
                 .success(function(data, status, headers, config) {
                     shared.hideLoading();
                     $ionicPopup.show({
-                        title: "Thanks for your feedback! Your support makes us better!",
+                        title: "Thanks for your feedback! Your suggestions make us better!",
                         buttons: [{
                             text: 'OK',
                             type: 'button-positive',

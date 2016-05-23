@@ -85,15 +85,6 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
                 }
             })
 
-            .state('menu.about', {
-                url: '/about',
-                views: {
-                    'side-menu': {
-                        templateUrl: 'templates/menu/about.html'
-                    }
-                }
-            })
-
             .state('menu.task', {
                 url: '/task',
                 views: {

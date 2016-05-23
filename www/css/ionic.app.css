@@ -11475,7 +11475,8 @@ a.button {
     margin-top: 3px;
     background: transparent; }
     .egobie-menu-item .item-content, .egobie-menu-item-last .item-content {
-      background: transparent; }
+      background: transparent;
+      padding: 12px 49px 12px 12px; }
     .egobie-menu-item i, .egobie-menu-item-last i {
       transform: scale(0.6); }
     .egobie-menu-item span, .egobie-menu-item-last span {
