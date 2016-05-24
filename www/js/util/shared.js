@@ -43,6 +43,15 @@ angular.module("util.shared", ["util.url"])
             'WHITE', 'BLACK', 'SILVER', 'GRAY', 'RED', 'BLUE', 'BROWN', 'YELLOW', 'GOLD', 'GREEN', 'PINK', 'OTHERS'
         ];
 
+        var weeks = [
+            "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+        ];
+
+        var months = [
+            "January", "February", "March", "April", "May", "June", "July",
+            "August", "September", "October", "November", "December"
+        ];
+
         var cardTypes = [{
             name: 'American Express',
             pattern: /^3[47]/,
@@ -416,6 +425,22 @@ angular.module("util.shared", ["util.url"])
                 }
 
                 return "invalid";
+            },
+
+            processOpening: function(openings) {
+                if (openings) {
+                    Array.prototype.forEach.call(openings, function(opening) {
+                        var d = new Date(opening.day);
+                        d.setDate(d.getDate() + 1);
+
+                        opening.year = d.getFullYear();
+                        opening.month = months[d.getMonth()];
+                        opening.weekday = weeks[d.getDay()];
+                        opening.date = d.getDate() < 10 ? ("0" + d.getDate()) : d.getDate();
+                    });
+                }
+
+                return openings;
             },
 
             getTime: function(t) {

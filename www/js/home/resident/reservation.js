@@ -156,7 +156,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
                 }))
                 .success(function(data, status, headers, config) {
                     shared.hideLoading();
-                    $scope.openings = data;
+                    $scope.openings = shared.processOpening(data);
                 })
                 .error(function(data, status, headers, config) {
                     shared.hideLoading();

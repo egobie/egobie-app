@@ -11868,25 +11868,26 @@ a.button {
       margin: 0px;
       border: 0px;
       position: relative;
-      /*
-                .dot {
-                    position: absolute;
-                    display: block;
-                    width: 16px;
-                    height: 16px;
-                    left: 19px;
-                    top: 10px;
-                    border-radius: 100%;
-                    background-color: #404041;
-                }
-                */ }
-      .egobie-opening-list-right .egobie-opening-list .opening-day p {
-        font-size: 15px;
-        font-weight: bold;
-        height: 30px;
-        line-height: 30px;
-        padding-left: 15px;
-        border-radius: 5px; }
+      display: flex; }
+      .egobie-opening-list-right .egobie-opening-list .opening-day div.day {
+        height: 35px;
+        line-height: 35px;
+        margin-left: 10px;
+        font-size: 40px; }
+      .egobie-opening-list-right .egobie-opening-list .opening-day div.month-year-week {
+        margin-left: 10px;
+        width: 70%; }
+        .egobie-opening-list-right .egobie-opening-list .opening-day div.month-year-week i.month-year {
+          display: block;
+          font-size: 15px; }
+        .egobie-opening-list-right .egobie-opening-list .opening-day div.month-year-week i.week {
+          display: block;
+          font-size: 12px; }
+      .egobie-opening-list-right .egobie-opening-list .opening-day i.more {
+        width: 10%;
+        font-size: 25px;
+        height: 40px;
+        line-height: 40px; }
     .egobie-opening-list-right .egobie-opening-list .opening-time-list {
       border-radius: 5px;
       margin-top: 10px; }

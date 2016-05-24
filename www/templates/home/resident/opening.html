@@ -12,7 +12,7 @@
         <div class="egobie-bg-mask-1"></div>
         <div class="egobie-bg-mask-2"></div>
     </div>
-    <ion-content padding="true" class="has-header">
+    <ion-content overflow-scroll="true" class="has-header">
         <!--<ion-list class="egobie-opening-list-left"></ion-list>-->
         <ion-list class="list-margin-top-10 egobie-opening-list-right">
             <ion-item class="egobie-opening-list"
@@ -21,7 +21,12 @@
                 <div class="opening-day"
                      ng-click="showOpening($index)">
                     <!--<i class="dot"/>-->
-                    <p>{{opening.day}}</p>
+                    <div class="day">{{opening.date}}</div>
+                    <div class="month-year-week">
+                        <i class="week">{{opening.weekday}}</i>
+                        <i class="month-year">{{opening.month}} {{opening.year}}</i>
+                    </div>
+                    <i class="more ion-navicon"></i>
                 </div>
                 <div class="opening-time-list"
                      ng-show="index === showIndex">
