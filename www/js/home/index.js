@@ -9,6 +9,15 @@ angular.module('app.home', ['ionic', 'ionic.rating'])
 
         $stateProvider
 
+            .state('menu.home', {
+                url: '/home',
+                views: {
+                    'side-menu': {
+                        templateUrl: 'templates/home/index.html'
+                    }
+                }
+            })
+
             .state('menu.home.resident', {
                 url: '/resident',
                 views: {

@@ -129,7 +129,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
                 services.push(orderService.services[_i].id);
             }
         }
-        
+
         for (var key in orderAddon.addons) {
             if (orderAddon.addons[key].checked) {
                 addons.push(orderAddon.addons[key].addon.id);

@@ -19,7 +19,7 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
             // Side Menu
             .state('menu', {
                 url: '/menu',
-                templateUrl: 'templates/menu.html',
+                templateUrl: 'templates/menu/index.html',
                 abstract: true,
                 resolve: {
                     resolveUserCars: function(requestUserCars) {
@@ -38,16 +38,7 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
                         return requestUserPayments.promise;
                     }
                 }
-            })
-
-            .state('menu.home', {
-                url: '/home',
-                views: {
-                    'side-menu': {
-                        templateUrl: 'templates/menu/home.html'
-                    }
-                }
-            })
+            });
     })
 
     .controller('menuCtrl', function($scope, shared) {
