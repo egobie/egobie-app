@@ -6,7 +6,7 @@ angular.module('app.task', ['ionic', 'util.shared', 'util.url'])
                 url: '/task',
                 views: {
                     'side-menu': {
-                        templateUrl: 'templates/task/index.html'
+                        templateUrl: 'templates/task/task.html'
                     }
                 }
             });

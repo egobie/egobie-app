@@ -200,7 +200,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
                 url: '/resident/demand',
                 views: {
                     'resident-view': {
-                        templateUrl: 'templates/home/resident/demand/index.html'
+                        templateUrl: 'templates/home/resident/demand/demand.html'
                     }
                 }
             })
@@ -218,7 +218,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
                 url: '/resident/reservation',
                 views: {
                     'resident-view': {
-                        templateUrl: 'templates/home/resident/reservation/index.html'
+                        templateUrl: 'templates/home/resident/reservation/reservation.html'
                     }
                 }
             })

@@ -6,7 +6,7 @@ angular.module('app.about', ['ionic', 'util.url', 'util.shared'])
                 url: '/about',
                 views: {
                     'side-menu': {
-                        templateUrl: 'templates/about/index.html'
+                        templateUrl: 'templates/about/about.html'
                     }
                 }
             });

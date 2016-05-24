@@ -13,7 +13,7 @@ angular.module('app.home', ['ionic', 'ionic.rating'])
                 url: '/home',
                 views: {
                     'side-menu': {
-                        templateUrl: 'templates/home/index.html'
+                        templateUrl: 'templates/home/home.html'
                     }
                 }
             })
@@ -22,7 +22,7 @@ angular.module('app.home', ['ionic', 'ionic.rating'])
                 url: '/resident',
                 views: {
                     'resident-view': {
-                        templateUrl: 'templates/home/resident/index.html'
+                        templateUrl: 'templates/home/resident/resident.html'
                     }
                 }
             })
@@ -31,7 +31,7 @@ angular.module('app.home', ['ionic', 'ionic.rating'])
                 url: '/mall',
                 views: {
                     'mall-view': {
-                        templateUrl: 'templates/home/mall/index.html'
+                        templateUrl: 'templates/home/mall/mall.html'
                     }
                 }
             })
@@ -40,7 +40,7 @@ angular.module('app.home', ['ionic', 'ionic.rating'])
                 url: '/business',
                 views: {
                     'business-view': {
-                        templateUrl: 'templates/home/business/index.html'
+                        templateUrl: 'templates/home/business/business.html'
                     }
                 }
             });

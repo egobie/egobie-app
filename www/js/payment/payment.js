@@ -6,7 +6,7 @@ angular.module('app.payment', ['ionic', 'util.shared', 'util.url'])
                 url: '/payment',
                 views: {
                     'side-menu': {
-                        templateUrl: 'templates/payment/index.html'
+                        templateUrl: 'templates/payment/payment.html'
                     }
                 }
             });

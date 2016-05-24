@@ -7,7 +7,7 @@ angular.module('app.history', ['ionic', 'util.shared', 'util.url'])
                 url: '/history',
                 views: {
                     'side-menu': {
-                        templateUrl: 'templates/history/index.html'
+                        templateUrl: 'templates/history/history.html'
                     }
                 }
             });

@@ -6,7 +6,7 @@ angular.module('app.setting', ['ionic', 'util.shared', 'util.url'])
                 url: '/setting',
                 views: {
                     'side-menu': {
-                        templateUrl: 'templates/setting/index.html'
+                        templateUrl: 'templates/setting/setting.html'
                     }
                 }
             });

@@ -7,7 +7,7 @@ angular.module('app.sign', ['ionic', 'util.shared', 'util.url'])
             // Sign
             .state('sign', {
                 url: '/sign',
-                templateUrl: 'templates/sign/index.html',
+                templateUrl: 'templates/sign/sign.html',
                 abstract: true
             })
 

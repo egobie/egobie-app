@@ -6,7 +6,7 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
                 url: '/car',
                 views: {
                     'side-menu': {
-                        templateUrl: 'templates/car/index.html'
+                        templateUrl: 'templates/car/car.html'
                     }
                 }
             });

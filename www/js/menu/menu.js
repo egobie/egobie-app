@@ -19,7 +19,7 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
             // Side Menu
             .state('menu', {
                 url: '/menu',
-                templateUrl: 'templates/menu/index.html',
+                templateUrl: 'templates/menu/menu.html',
                 abstract: true,
                 resolve: {
                     resolveUserCars: function(requestUserCars) {

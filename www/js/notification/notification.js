@@ -6,7 +6,7 @@ angular.module('app.notification', ['ionic'])
                 url: '/notification',
                 views: {
                     'side-menu': {
-                        templateUrl: 'templates/notification/index.html'
+                        templateUrl: 'templates/notification/notification.html'
                     }
                 }
             });

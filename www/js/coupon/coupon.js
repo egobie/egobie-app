@@ -6,7 +6,7 @@ angular.module('app.coupon', ['ionic', 'ngCordova', 'util.shared'])
                 url: '/coupon',
                 views: {
                     'side-menu': {
-                        templateUrl: 'templates/coupon/index.html'
+                        templateUrl: 'templates/coupon/coupon.html'
                     }
                 }
             });
