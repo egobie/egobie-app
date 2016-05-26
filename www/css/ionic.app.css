@@ -13204,7 +13204,7 @@ a.button {
       background: rgba(12, 10, 12, 0.4); }
 
 .egobie-signin-logo {
-  /*content: logo($Logo-White);*/
+  content: url("../img/logo/white.png");
   margin-top: 50px; }
 
 .egobie-signup-logo {
