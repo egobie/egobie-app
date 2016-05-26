@@ -301,7 +301,6 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
 
             shared.demandService(ids);
             $scope.$ionicGoBack();
-            //$state.go("menu.home.reservation");
         };
 
         $scope.selectService = function() {
@@ -326,6 +325,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
             service.checked = !pre;
 
             if (service.checked) {
+                orderService.selected++;
                 order.price += service.price;
                 order.time += service.time;
 

@@ -11263,6 +11263,14 @@ a.button {
   background: url("../img/reserve.jpg") no-repeat center center;
   background-size: cover; }
 
+.egobie-resident-order div.note {
+  border: 0px;
+  padding-bottom: 15px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.5); }
+
 .egobie-resident-order div.service {
   display: flex;
   width: 95%;
@@ -13200,7 +13208,7 @@ a.button {
   margin-top: 50px; }
 
 .egobie-signup-logo {
-  /*content: logo($Logo-White);*/ }
+  content: url("../img/logo/white.png"); }
 
 .egobie-company {
   text-align: center;

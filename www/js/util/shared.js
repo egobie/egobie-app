@@ -98,8 +98,8 @@ angular.module("util.shared", ["util.url"])
         var years = [];
         var _current_year = new Date().getFullYear();
 
-        // 1999 - 2016
-        for (var i = 1999; i <= _current_year; i++) {
+        // 1980 - 2016
+        for (var i = 1980; i <= _current_year; i++) {
             years.push(i);
         }
 

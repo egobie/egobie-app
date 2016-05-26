@@ -1,15 +1,17 @@
 <ion-view hide-nav-bar="true" cache-view="false"
           ng-controller="addonSelectCtl">
     <ion-header-bar class="egobie-header-bar">
+        <!--
         <button class="button button-icon icon ion-ios-arrow-back"
                 ng-click="pickAddon()"></button>
+        -->
         <h1 class="title">EXTRA SERVICES</h1>
     </ion-header-bar>
     <div class="egobie-bg-mask">
         <div class="egobie-bg-mask-1"></div>
         <div class="egobie-bg-mask-2"></div>
     </div>
-    <ion-content padding="true" class="egobie-service-list">
+    <ion-content padding="true" class="egobie-service-list has-footer">
         <ion-list>
             <ion-item menu-close="" class="egobie-service-item-select"
                       ng-repeat="(name, addon) in addons"
@@ -27,10 +29,8 @@
         </ion-list>
     </ion-content>
 
-    <!--
     <ion-footer-bar class="bar-dark"
                     ng-click="pickAddon()">
         <h1 class="title">Save</h1>
     </ion-footer-bar>
-    -->
 </ion-view>
