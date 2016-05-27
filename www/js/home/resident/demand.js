@@ -8,11 +8,14 @@ angular.module('app.home.resident.demand', ['ionic', 'app.home.resident', 'util.
         $scope.getTime = shared.getTime;
 
         $scope.selectService = function() {
+            shared.openService();
             $state.go('menu.home.residentService');
         };
 
         $scope.unselectService = function($event, service) {
-            if (service.id in orderService.index) {
+            shared.unselectService(service.id);
+
+            if (service.id in orderService.index) {                
                 orderService.services[orderService.index[service.id]].checked = false;
             }
         };
