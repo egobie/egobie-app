@@ -12,7 +12,9 @@ angular.module('app.about', ['ionic', 'util.url', 'util.shared'])
             });
     })
 
-    .controller('aboutCtrl', function($scope, $ionicModal, url) {
+    .controller('aboutCtrl', function($scope, $ionicModal, shared, url) {
+        shared.goAbout();
+
         $scope.openWebsite = function() {
             window.open(url.website, "_blank", "location=no");
         };
@@ -28,6 +30,7 @@ angular.module('app.about', ['ionic', 'util.url', 'util.shared'])
         });
 
         $scope.showFeedback = function() {
+            shared.openFeedback();
             $scope.feedbackModel.show();
         };
     });

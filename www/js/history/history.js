@@ -1,6 +1,8 @@
 angular.module('app.history.history', ['ionic', 'util.shared', 'util.url'])
 
     .controller('myHistoryCtrl', function($scope, $ionicModal, $http, $timeout, $interval, shared, url) {
+        shared.goHistory();
+
         $scope.histories = {};
         $scope.max = 5;
         $scope.selectedHistory = null;
@@ -23,6 +25,7 @@ angular.module('app.history.history', ['ionic', 'util.shared', 'util.url'])
         });
 
         $scope.showRating = function() {
+            shared.openRating();
             $scope.ratingModel.show();
         };
 
@@ -31,6 +34,7 @@ angular.module('app.history.history', ['ionic', 'util.shared', 'util.url'])
 
             if ($scope.selectedHistory.available) {
                 $timeout(function() {
+                    shared.readHistory();
                     $scope.historyModel.show();
                 }, 500);
             }
@@ -79,6 +83,7 @@ angular.module('app.history.history', ['ionic', 'util.shared', 'util.url'])
                 $scope.selectedHistory.rating = 0;
                 $scope.showRating();
             } else {
+                shared.readHistory();
                 $scope.historyModel.show();
             }
         };

@@ -13,8 +13,9 @@ angular.module('app.payment', ['ionic', 'util.shared', 'util.url'])
     })
 
     .controller('paymentCtrl', function($scope, $ionicModal, $ionicPopup, $ionicActionSheet, $http, shared, url) {
-        $scope.payments = shared.getUserPayments();
+        shared.goPayment();
 
+        $scope.payments = shared.getUserPayments();
         $scope.payment = {
             id: 0,
             name: "",

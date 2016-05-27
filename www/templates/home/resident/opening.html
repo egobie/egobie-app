@@ -19,7 +19,7 @@
                       ng-repeat="opening in openings"
                       ng-init="index = $index">
                 <div class="opening-day"
-                     ng-click="showOpening($index)">
+                     ng-click="showOpening($index, opening.day)">
                     <!--<i class="dot"/>-->
                     <div class="day">{{opening.date}}</div>
                     <div class="month-year-week">

@@ -481,6 +481,104 @@ angular.module("util.shared", ["util.url"])
 //                console.log(data);
             },
 
+            goHome: function() {
+                $http.post(url.goHome, this.getRequestBody({}));
+            },
+
+            goNotification: function() {
+                $http.post(url.goNotification, this.getRequestBody({}));
+            },
+
+            goService: function() {
+                $http.post(url.goService, this.getRequestBody({}));
+            },
+
+            goHistory: function() {
+                $http.post(url.goHistory, this.getRequestBody({}));
+            },
+
+            goCoupon: function() {
+                $http.post(url.goCoupon, this.getRequestBody({}));
+            },
+
+            goCar: function() {
+                $http.post(url.goCar, this.getRequestBody({}));
+            },
+
+            goPayment: function() {
+                $http.post(url.goPayment, this.getRequestBody({}));
+            },
+
+            goSetting: function() {
+                $http.post(url.goSetting, this.getRequestBody({}));
+            },
+
+            goAbout: function() {
+                $http.post(url.goAbout, this.getRequestBody({}));
+            },
+
+            goReservation: function() {
+                $http.post(url.goReservation, this.getRequestBody({}));
+            },
+
+            goOndemand: function() {
+                $http.post(url.goOndemand, this.getRequestBody({}));
+            },
+
+            openRating: function() {
+                $http.post(url.openRating, this.getRequestBody({}));
+            },
+
+            openFeedback: function() {
+                $http.post(url.openFeedback, this.getRequestBody({}));
+            },
+
+            openService: function() {
+                $http.post(url.openService, this.getRequestBody({}));
+            },
+
+            openExtra: function() {
+                $http.post(url.openExtra, this.getRequestBody({}));
+            },
+
+            openDate: function() {
+                $http.post(url.openDate, this.getRequestBody({}));
+            },
+
+            openCar: function() {
+                $http.post(url.openCar, this.getRequestBody({}));
+            },
+
+            openPayment: function() {
+                $http.post(url.openPayment, this.getRequestBody({}));
+            },
+
+            readHistory: function() {
+                $http.post(url.readHistory, this.getRequestBody({}));
+            },
+
+            clickOpening: function(opening) {
+                $http.post(url.clickOpening, this.getRequestBody({
+                    data: opening
+                }));
+            },
+
+            reloadOpening: function() {
+                $http.post(url.reloadOpening, this.getRequestBody({}));
+            },
+
+            unselectService: function(id) {
+                $http.post(url.unselectService, this.getRequestBody({
+                    data: id + ""
+                }));
+            },
+
+            unselectExtra: function(id) {
+                $http.post(url.unselectExtra, this.getRequestBody({
+                    data: id + ""
+                }));
+            },
+
             setMenuScope: function(menuScope) {
                 menu = menuScope;
             }

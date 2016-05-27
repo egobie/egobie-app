@@ -2,6 +2,8 @@ angular.module('app.home.resident.demand', ['ionic', 'app.home.resident', 'util.
 
     .controller('demandCtrl', function($scope, $state, $http, shared, url,
             orderService, orderCar, orderPayment, orderOpening, orderAddon, order, demandOrder) {
+        shared.goOndemand();
+
         $scope.services = orderService.services;
         $scope.getTime = shared.getTime;
 

@@ -12,7 +12,9 @@ angular.module('app.setting', ['ionic', 'util.shared', 'util.url'])
             });
     })
 
-    .controller('settingCtrl', function($scope, $ionicModal, shared, url) {
+    .controller('settingCtrl', function($scope, $ionicModal, shared) {
+        shared.goSetting();
+
         $scope.showEditUser = function() {
             $ionicModal.fromTemplateUrl('templates/setting/user.html', {
                 scope: $scope

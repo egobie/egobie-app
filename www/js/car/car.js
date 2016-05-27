@@ -13,8 +13,9 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
     })
 
     .controller('carCtrl', function($scope, $ionicModal, $ionicPopup, $ionicActionSheet, $http, shared, url) {
-        $scope.cars = shared.getUserCars();
+        shared.goCar();
 
+        $scope.cars = shared.getUserCars();
         $scope.selected = {
             id: 0,
             plate: "",

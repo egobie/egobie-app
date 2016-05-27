@@ -1,8 +1,8 @@
 angular.module('util.url', [])
 
     .factory('url', function() {
-//        var host = "http://localhost:8000";
-        var host = "http://ec2-52-90-93-52.compute-1.amazonaws.com:8000";
+        var host = "http://localhost:8000";
+//        var host = "http://ec2-52-90-93-52.compute-1.amazonaws.com:8000";
 
         return {
             website: "http://www.egobie.com/",
@@ -50,6 +50,34 @@ angular.module('util.url', [])
 
             tasks: host + "/egobie/service/task",
             startTask: host + "/egobie/service/progress",
-            finishTask: host + "/egobie/service/done"
+            finishTask: host + "/egobie/service/done",
+
+            goHome: host + "/action/go/home",
+            goNotification: host + "/action/go/notification",
+            goService: host + "/action/go/service",
+            goHistory: host + "/action/go/history",
+            goCoupon: host + "/action/go/coupon",
+            goCar: host + "/action/go/car",
+            goPayment: host + "/action/go/payment",
+            goSetting: host + "/action/go/setting",
+            goAbout: host + "/action/go/about",
+            goReservation: host + "/action/go/reservation",
+            goOndemand: host + "/action/go/ondemand",
+
+            openRating: host + "/action/open/rating",
+            openFeedback: host + "/action/open/feedback",
+            openService: host + "/action/open/Service",
+            openExtra: host + "/action/open/extra",
+            openDate: host + "/action/open/date",
+            openCar: host + "/action/open/car",
+            openPayment: host + "/action/open/payment",
+
+            readHistory: host + "/action/read/history",
+
+            clickOpening: host + "/action/click/opening",
+            reloadOpening: host + "/action/reload/opening",
+
+            unselectService: host + "/action/unselect/service",
+            unselectExtra: host + "/action/unselect/extra"
         };
     });

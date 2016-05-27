@@ -261,6 +261,8 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
     })
 
     .controller('navigationCtrl', function($scope, $state, $ionicModal, shared) {
+        shared.goHome();
+
         var user = shared.getUser();
 
         $scope.showEditUser = function() {

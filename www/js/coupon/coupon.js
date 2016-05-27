@@ -13,6 +13,8 @@ angular.module('app.coupon', ['ionic', 'ngCordova', 'util.shared'])
     })
 
     .controller('couponCtrl', function($scope, $cordovaSocialSharing, shared) {
+        shared.goCoupon();
+
         $scope.coupon = shared.getUser().coupon;
         $scope._body = 'Enjoy eGobie car service now! Use my coupon code "' + $scope.coupon + '" to sign up and get 10% off your first booking!';
 

@@ -1,4 +1,4 @@
-angular.module('app.notification', ['ionic'])
+angular.module('app.notification', ['ionic', 'util.shared'])
 
     .config(function($stateProvider) {
         $stateProvider
@@ -12,7 +12,9 @@ angular.module('app.notification', ['ionic'])
             });
     })
 
-    .controller('notificationCtrl', function($scope) {
+    .controller('notificationCtrl', function($scope, shared) {
+        shared.goNotification();
+
         $scope.noNotification = function() {
             return true;
         };

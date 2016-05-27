@@ -1,6 +1,8 @@
 angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', 'util.shared', 'util.url'])
 
-    .controller('reservationOrderCtrl', function($scope, order) {
+    .controller('reservationOrderCtrl', function($scope, shared, order) {
+        shared.goReservation();
+
         $scope.order = order;
 
         $scope.$watch(function() {
@@ -136,17 +138,19 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
             }
         }
 
-        $scope.showOpening = function(index) {
+        $scope.showOpening = function(index, day) {
             if (index === $scope.showIndex) {
                 $scope.showIndex = -1;
             } else {
                 $scope.showIndex = index;
+                shared.clickOpening(day);
             }
         };
 
         $scope.reloadOpening = function() {
             $scope.showIndex = -1;
             $scope.openings = [];
+            shared.reloadOpening();
             shared.showLoading();
 
             $http
@@ -182,7 +186,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
         $scope.reloadOpening();
     })
 
-    .controller('openingSelectCtl', function($scope, $ionicModal, orderOpening) {
+    .controller('openingSelectCtl', function($scope, $ionicModal, shared, orderOpening) {
         $scope.opening = {
             day: orderOpening.day,
             start: orderOpening.start,
@@ -203,6 +207,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
             }).then(function(modal) {
                 $scope.openingModal = modal;
                 $scope.openingModal.show();
+                shared.openDate();
             });
         };
     })
@@ -226,7 +231,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
         };
     })
 
-    .controller('carSelectCtrl', function($scope, $state, $timeout, $ionicModal, orderCar) {
+    .controller('carSelectCtrl', function($scope, $state, $timeout, $ionicModal, shared, orderCar) {
         $scope.cars = orderCar.cars;
         $scope.selectedCar = orderCar.selected;
 
@@ -247,6 +252,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
         };
 
         $scope.selectCar = function() {
+            shared.openCar();
             $state.go('menu.home.residentCar');
         };
 
@@ -304,6 +310,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
         };
 
         $scope.selectService = function() {
+            shared.openService();
             $state.go('menu.home.residentService');
         };
 
@@ -335,6 +342,8 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
         };
 
         $scope.unselectService = function($event, service) {
+            shared.unselectService(service.id);
+
             if (service.id in orderService.index) {
                 orderService.services[orderService.index[service.id]].checked = false;
 
@@ -377,10 +386,13 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
         $scope.addons = orderAddon.addons;
 
         $scope.selectAddon = function() {
+            shared.openExtra();
             $state.go('menu.home.residentAddon');
         };
 
         $scope.unselectAddon = function($event, addon) {
+            shared.unselectService(addon.id);
+
             addon.checked = false;
             order.price -= (addon.addon.price * addon.addon.amount);
             order.time -= addon.addon.time;
@@ -450,7 +462,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
         };
     })
 
-    .controller('paymentSelectCtrl', function($scope, $state, $timeout, $ionicModal, orderPayment) {
+    .controller('paymentSelectCtrl', function($scope, $state, $timeout, $ionicModal, shared, orderPayment) {
         $scope.payments = orderPayment.payments;
         $scope.selectedPayment = orderPayment.selected;
 
@@ -471,6 +483,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
         };
 
         $scope.selectPayment = function() {
+            shared.openPayment();
             $state.go('menu.home.residentPayment');
         };
 
