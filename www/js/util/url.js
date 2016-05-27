@@ -66,7 +66,7 @@ angular.module('util.url', [])
 
             openRating: host + "/action/open/rating",
             openFeedback: host + "/action/open/feedback",
-            openService: host + "/action/open/Service",
+            openService: host + "/action/open/service",
             openExtra: host + "/action/open/extra",
             openDate: host + "/action/open/date",
             openCar: host + "/action/open/car",
