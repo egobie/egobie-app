@@ -1,4 +1,4 @@
-angular.module('app.history.history', ['ionic', 'util.shared', 'util.url'])
+angular.module('app.myservice.history', ['ionic', 'util.shared', 'util.url'])
 
     .controller('myHistoryCtrl', function($scope, $ionicModal, $http, $timeout, $interval, shared, url) {
         shared.goHistory();
@@ -18,7 +18,7 @@ angular.module('app.history.history', ['ionic', 'util.shared', 'util.url'])
             }
         });
 
-        $ionicModal.fromTemplateUrl('templates/history/rating.html', {
+        $ionicModal.fromTemplateUrl('templates/myservice/history/rating.html', {
             scope: $scope
         }).then(function(modal) {
             $scope.ratingModel = modal;
@@ -68,7 +68,7 @@ angular.module('app.history.history', ['ionic', 'util.shared', 'util.url'])
             }
         };
 
-        $ionicModal.fromTemplateUrl('templates/history/detail.html', {
+        $ionicModal.fromTemplateUrl('templates/myservice/history/detail.html', {
             scope: $scope
         }).then(function(modal) {
             $scope.historyModel = modal;

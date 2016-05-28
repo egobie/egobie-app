@@ -1,4 +1,4 @@
-angular.module('app.history.reservation', ['ionic', 'util.shared', 'util.url'])
+angular.module('app.myservice.reservation', ['ionic', 'util.shared', 'util.url'])
 
     .controller('myReservationCtrl', function($scope, $ionicPopup, $ionicActionSheet, $http, $interval, shared, url) {
         $scope.reservations = [];

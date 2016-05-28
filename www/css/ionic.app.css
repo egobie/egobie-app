@@ -10411,6 +10411,445 @@ a.button {
 .egobie-margin-left-3 {
   margin-left: 3px; }
 
+.egobie-margin-top-5, .egobie-resident-order .item {
+  margin-top: 5px; }
+
+.egobie-margin-top-15 {
+  margin-top: 15px; }
+
+.egobie-margin-right-5 {
+  margin-right: 5px; }
+
+.egobie-margin-top-10 {
+  margin-top: 10px; }
+
+.egobie-margin-top-20 {
+  margin-top: 20px; }
+
+.egobie-margin-bottom-10 {
+  margin-bottom: 10px; }
+
+.egobie-width-200 {
+  width: 200px; }
+
+.egobie-width-300 {
+  width: 300px; }
+
+.egobie-height-200 {
+  height: 200px; }
+
+.egobie-height-300 {
+  height: 300px; }
+
+.egobie-left {
+  float: left; }
+
+.egobie-center {
+  left: 0;
+  right: 0;
+  margin-left: auto !important;
+  margin-right: auto !important; }
+
+.egobie-right {
+  float: right; }
+
+.egobie-avatar {
+  left: 10px !important;
+  top: 25px !important;
+  transform: scale(1.5);
+  border-radius: 0 !important;
+  content: url("../../../img/icons/eGobie_Profile_on.png"); }
+
+.egobie-header-bar {
+  background-color: rgba(0, 0, 0, 0.75);
+  border: 0px !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #FFFFFF !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
+.egobie-transparent, .egobie-transparent * {
+  background: transparent;
+  color: #000000; }
+
+.egobie-bg-mask {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+  .egobie-bg-mask-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF; }
+  .egobie-bg-mask-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(147, 153, 156, 0.1); }
+
+* {
+  font-family: eGobieFont !important; }
+
+.egobie-home-tab .tab-nav, .egobie-home-tab .tab-nav * {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border-color: #000000 !important; }
+
+.egobie-on-demand, .egobie-reservation {
+  padding: 0px;
+  position: relative;
+  height: 50%; }
+  .egobie-on-demand .mask, .egobie-reservation .mask {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.35); }
+  .egobie-on-demand .panel, .egobie-reservation .panel {
+    position: absolute;
+    display: flex;
+    height: 40%;
+    bottom: 0px;
+    width: 100%;
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, 0.5); }
+    .egobie-on-demand .panel .left, .egobie-reservation .panel .left {
+      display: inline-block;
+      width: 70%; }
+      .egobie-on-demand .panel .left .title, .egobie-reservation .panel .left .title {
+        height: 40px;
+        line-height: 40px;
+        font-size: 25px;
+        font-weight: 500;
+        padding-left: 20px;
+        color: #FFFFFF; }
+      .egobie-on-demand .panel .left .content, .egobie-reservation .panel .left .content {
+        color: #FFFFFF;
+        overflow: visible;
+        font-size: 15px;
+        margin-left: 20px; }
+    .egobie-on-demand .panel .right, .egobie-reservation .panel .right {
+      display: inline-block;
+      position: relative;
+      width: 25%; }
+      .egobie-on-demand .panel .right .navigation, .egobie-reservation .panel .right .navigation {
+        position: absolute;
+        font-size: 35px;
+        right: 10px;
+        bottom: 10px; }
+
+.egobie-on-demand {
+  background: url("../img/ondemand.jpg") no-repeat center center;
+  background-size: cover; }
+
+.egobie-reservation {
+  background: url("../img/reserve.jpg") no-repeat center center;
+  background-size: cover; }
+
+.egobie-resident-order div.note {
+  border: 0px;
+  padding-bottom: 15px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.5); }
+
+.egobie-resident-order div.service {
+  display: flex;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.5); }
+  .egobie-resident-order div.service .name {
+    display: flex;
+    line-height: 40px;
+    height: 40px;
+    width: 95%;
+    padding-left: 18px; }
+    .egobie-resident-order div.service .name p {
+      padding: 0px;
+      font-size: 12px;
+      width: 85%;
+      overflow: visible; }
+    .egobie-resident-order div.service .name input {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin-top: auto;
+      margin-bottom: auto;
+      text-align: center;
+      border: 1px solid rgba(0, 0, 0, 0.6); }
+  .egobie-resident-order div.service i {
+    display: inline-block;
+    width: 15%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 40px;
+    color: red;
+    border-left: 1px solid rgba(0, 0, 0, 0.5); }
+
+.egobie-resident-order .item {
+  width: 95% !important;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 40px;
+  background: transparent;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.5); }
+  .egobie-resident-order .item i:before {
+    font-size: 25px; }
+
+.egobie-resident-order .item-divider {
+  border: 0px;
+  border-radius: 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+  padding-left: 0px; }
+  .egobie-resident-order .item-divider span {
+    font-size: 12px; }
+
+.egobie-resident-order .button {
+  width: 95% !important;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgba(0, 0, 0, 0.35); }
+  .egobie-resident-order .button:before {
+    color: #FF1919; }
+  .egobie-resident-order .button span {
+    font-size: 13px; }
+
+.egobie-resident-footer h1 span {
+  color: #33CDFF;
+  font-size: 13px; }
+
+.egobie-resident-demand-opening {
+  display: flex;
+  height: 60px !important;
+  margin-top: 10px;
+  background: 0 0;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.5); }
+  .egobie-resident-demand-opening i.left {
+    display: block;
+    width: 15%; }
+    .egobie-resident-demand-opening i.left:before {
+      font-size: 40px; }
+  .egobie-resident-demand-opening div.right {
+    width: 85%;
+    padding-left: 5px; }
+    .egobie-resident-demand-opening div.right p.time, .egobie-resident-demand-opening div.right p.note {
+      font-size: 11px; }
+      .egobie-resident-demand-opening div.right p.time span, .egobie-resident-demand-opening div.right p.note span {
+        font-weight: 700;
+        font-size: 13px; }
+
+.egobie-display-none {
+  display: none !important; }
+
+.egobie-display-inherit {
+  display: inherit !important; }
+
+.egobie-padding-0 {
+  padding: 0px; }
+
+.egobie-margin-left-3 {
+  margin-left: 3px; }
+
+.egobie-margin-top-5 {
+  margin-top: 5px; }
+
+.egobie-margin-top-15 {
+  margin-top: 15px; }
+
+.egobie-margin-right-5 {
+  margin-right: 5px; }
+
+.egobie-margin-top-10 {
+  margin-top: 10px; }
+
+.egobie-margin-top-20 {
+  margin-top: 20px; }
+
+.egobie-margin-bottom-10 {
+  margin-bottom: 10px; }
+
+.egobie-width-200 {
+  width: 200px; }
+
+.egobie-width-300 {
+  width: 300px; }
+
+.egobie-height-200 {
+  height: 200px; }
+
+.egobie-height-300 {
+  height: 300px; }
+
+.egobie-left {
+  float: left; }
+
+.egobie-center {
+  left: 0;
+  right: 0;
+  margin-left: auto !important;
+  margin-right: auto !important; }
+
+.egobie-right {
+  float: right; }
+
+.egobie-avatar {
+  left: 10px !important;
+  top: 25px !important;
+  transform: scale(1.5);
+  border-radius: 0 !important;
+  content: url("../../../img/icons/eGobie_Profile_on.png"); }
+
+.egobie-header-bar {
+  background-color: rgba(0, 0, 0, 0.75);
+  border: 0px !important; }
+  .egobie-header-bar h1, .egobie-header-bar .button {
+    color: #FFFFFF !important; }
+
+.egobie-whole-page .list, .egobie-whole-page .scroll {
+  height: 100%; }
+
+.egobie-transparent, .egobie-transparent * {
+  background: transparent;
+  color: #000000; }
+
+.egobie-bg-mask {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+  .egobie-bg-mask-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF; }
+  .egobie-bg-mask-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(147, 153, 156, 0.1); }
+
+* {
+  font-family: eGobieFont !important; }
+
+.egobie {
+  /*
+    &-menu-bg, &-menu-bg * {
+        color: $Light-Grey-Blue !important;
+        background-color: $Dark-Navy-Blue !important;
+
+        .badge {
+            background-color: #EF473A !important;
+        }
+    }
+    */
+  /* Menu Icons */ }
+  .egobie-menu-mask {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /*background: rgba(31, 55, 76, 0.70);*/
+    background: rgba(27, 28, 29, 0.7); }
+  .egobie-menu-bg {
+    background: url("../img/bg.jpg") no-repeat center center;
+    background-size: cover; }
+  .egobie-menu-bg * {
+    color: #FFFFFF; }
+  .egobie-menu-item, .egobie-menu-item-last {
+    border: 0px;
+    margin-top: 3px;
+    background: transparent; }
+    .egobie-menu-item .item-content, .egobie-menu-item-last .item-content {
+      background: transparent;
+      padding: 12px 49px 12px 12px; }
+    .egobie-menu-item i, .egobie-menu-item-last i {
+      transform: scale(0.6); }
+    .egobie-menu-item span, .egobie-menu-item-last span {
+      margin-left: 10px; }
+  .egobie-menu-item-last {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+  .egobie-menu-profile {
+    background: transparent;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+    .egobie-menu-profile-logo {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      margin-top: auto;
+      margin-bottom: auto;
+      max-width: 50px;
+      max-height: 50px;
+      content: url("../img/logo/light_grey_blue.png"); }
+    .egobie-menu-profile-name {
+      position: absolute;
+      text-transform: capitalize;
+      bottom: 27px;
+      margin-left: 15px;
+      margin-top: auto;
+      margin-bottom: auto;
+      height: 35px;
+      width: 200px;
+      line-height: 32px;
+      font-size: 20px; }
+  .egobie-home-on {
+    content: url("../img/icon/home_on.png"); }
+  .egobie-home-off {
+    content: url("../img/icon/home_off.png"); }
+  .egobie-notification-on {
+    content: url("../img/icon/notifications_on.png"); }
+  .egobie-notification-off {
+    content: url("../img/icon/notifications_off.png"); }
+  .egobie-service-on {
+    content: url("../img/icon/services_on.png"); }
+  .egobie-service-off {
+    content: url("../img/icon/services_off.png"); }
+  .egobie-coupon-on {
+    content: url("../img/icon/coupon_off.png"); }
+  .egobie-coupon-off {
+    content: url("../img/icon/coupon_off.png"); }
+  .egobie-history-on {
+    content: url("../img/icon/history_on.png"); }
+  .egobie-history-off {
+    content: url("../img/icon/history_off.png"); }
+  .egobie-vehicle-on {
+    content: url("../img/icon/vehicles_on.png"); }
+  .egobie-vehicle-off {
+    content: url("../img/icon/vehicles_off.png"); }
+  .egobie-payment-on {
+    content: url("../img/icon/payment_on.png"); }
+  .egobie-payment-off {
+    content: url("../img/icon/payment_off.png"); }
+  .egobie-setting-on {
+    content: url("../img/icon/settings_on.png"); }
+  .egobie-setting-off {
+    content: url("../img/icon/settings_off.png"); }
+  .egobie-about-on {
+    content: url("../img/icon/about_on.png"); }
+  .egobie-about-off {
+    content: url("../img/icon/about_off.png"); }
+
+.egobie-display-none {
+  display: none !important; }
+
+.egobie-display-inherit {
+  display: inherit !important; }
+
+.egobie-padding-0 {
+  padding: 0px; }
+
+.egobie-margin-left-3 {
+  margin-left: 3px; }
+
 .egobie-margin-top-5 {
   margin-top: 5px; }
 
@@ -10585,21 +11024,24 @@ a.button {
 
 .egobie-no-reservation, .egobie-empty-reservation, .egobie-no-history, .egobie-empty-history {
   width: 100%;
-  margin-bottom: 10px;
+  height: 400px;
+  margin-top: 20px;
   text-align: center;
   border: 0px;
   background: transparent; }
   .egobie-no-reservation .icon-1, .egobie-empty-reservation .icon-1, .egobie-no-history .icon-1, .egobie-empty-history .icon-1 {
     display: block;
-    height: 100px;
+    height: 150px;
     width: 250px;
     margin: auto;
-    font-size: 80px; }
+    margin-top: 50px;
+    font-size: 150px; }
   .egobie-no-reservation p.no, .egobie-empty-reservation p.no, .egobie-no-history p.no, .egobie-empty-history p.no {
     font-size: 20px;
     font-weight: 600;
     height: 30px;
-    line-height: 30px; }
+    line-height: 30px;
+    margin-top: 20px; }
 
 .egobie-reservation-title, .egobie-history-title {
   padding-left: 0px;
@@ -11115,445 +11557,6 @@ a.button {
   margin-top: 10px;
   color: #FFFFFF;
   background-color: rgba(0, 0, 0, 0.7); }
-
-.egobie-display-none {
-  display: none !important; }
-
-.egobie-display-inherit {
-  display: inherit !important; }
-
-.egobie-padding-0 {
-  padding: 0px; }
-
-.egobie-margin-left-3 {
-  margin-left: 3px; }
-
-.egobie-margin-top-5, .egobie-resident-order .item {
-  margin-top: 5px; }
-
-.egobie-margin-top-15 {
-  margin-top: 15px; }
-
-.egobie-margin-right-5 {
-  margin-right: 5px; }
-
-.egobie-margin-top-10 {
-  margin-top: 10px; }
-
-.egobie-margin-top-20 {
-  margin-top: 20px; }
-
-.egobie-margin-bottom-10 {
-  margin-bottom: 10px; }
-
-.egobie-width-200 {
-  width: 200px; }
-
-.egobie-width-300 {
-  width: 300px; }
-
-.egobie-height-200 {
-  height: 200px; }
-
-.egobie-height-300 {
-  height: 300px; }
-
-.egobie-left {
-  float: left; }
-
-.egobie-center {
-  left: 0;
-  right: 0;
-  margin-left: auto !important;
-  margin-right: auto !important; }
-
-.egobie-right {
-  float: right; }
-
-.egobie-avatar {
-  left: 10px !important;
-  top: 25px !important;
-  transform: scale(1.5);
-  border-radius: 0 !important;
-  content: url("../../../img/icons/eGobie_Profile_on.png"); }
-
-.egobie-header-bar {
-  background-color: rgba(0, 0, 0, 0.75);
-  border: 0px !important; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #FFFFFF !important; }
-
-.egobie-whole-page .list, .egobie-whole-page .scroll {
-  height: 100%; }
-
-.egobie-transparent, .egobie-transparent * {
-  background: transparent;
-  color: #000000; }
-
-.egobie-bg-mask {
-  position: absolute;
-  width: 100%;
-  height: 100%; }
-  .egobie-bg-mask-1 {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #FFFFFF; }
-  .egobie-bg-mask-2 {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(147, 153, 156, 0.1); }
-
-* {
-  font-family: eGobieFont !important; }
-
-.egobie-home-tab .tab-nav, .egobie-home-tab .tab-nav * {
-  background-color: #FFFFFF !important;
-  color: #000000 !important;
-  border-color: #000000 !important; }
-
-.egobie-on-demand, .egobie-reservation {
-  padding: 0px;
-  position: relative;
-  height: 50%; }
-  .egobie-on-demand .mask, .egobie-reservation .mask {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.35); }
-  .egobie-on-demand .panel, .egobie-reservation .panel {
-    position: absolute;
-    display: flex;
-    height: 40%;
-    bottom: 0px;
-    width: 100%;
-    color: #FFFFFF;
-    background: rgba(0, 0, 0, 0.5); }
-    .egobie-on-demand .panel .left, .egobie-reservation .panel .left {
-      display: inline-block;
-      width: 70%; }
-      .egobie-on-demand .panel .left .title, .egobie-reservation .panel .left .title {
-        height: 40px;
-        line-height: 40px;
-        font-size: 25px;
-        font-weight: 500;
-        padding-left: 20px;
-        color: #FFFFFF; }
-      .egobie-on-demand .panel .left .content, .egobie-reservation .panel .left .content {
-        color: #FFFFFF;
-        overflow: visible;
-        font-size: 15px;
-        margin-left: 20px; }
-    .egobie-on-demand .panel .right, .egobie-reservation .panel .right {
-      display: inline-block;
-      position: relative;
-      width: 25%; }
-      .egobie-on-demand .panel .right .navigation, .egobie-reservation .panel .right .navigation {
-        position: absolute;
-        font-size: 35px;
-        right: 10px;
-        bottom: 10px; }
-
-.egobie-on-demand {
-  background: url("../img/ondemand.jpg") no-repeat center center;
-  background-size: cover; }
-
-.egobie-reservation {
-  background: url("../img/reserve.jpg") no-repeat center center;
-  background-size: cover; }
-
-.egobie-resident-order div.note {
-  border: 0px;
-  padding-bottom: 15px;
-  text-align: center;
-  font-size: 15px;
-  font-weight: 900;
-  color: rgba(0, 0, 0, 0.5); }
-
-.egobie-resident-order div.service {
-  display: flex;
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5px;
-  border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.5); }
-  .egobie-resident-order div.service .name {
-    display: flex;
-    line-height: 40px;
-    height: 40px;
-    width: 95%;
-    padding-left: 18px; }
-    .egobie-resident-order div.service .name p {
-      padding: 0px;
-      font-size: 12px;
-      width: 85%;
-      overflow: visible; }
-    .egobie-resident-order div.service .name input {
-      display: inline-block;
-      width: 30px;
-      height: 30px;
-      margin-top: auto;
-      margin-bottom: auto;
-      text-align: center;
-      border: 1px solid rgba(0, 0, 0, 0.6); }
-  .egobie-resident-order div.service i {
-    display: inline-block;
-    width: 15%;
-    text-align: center;
-    line-height: 40px;
-    font-size: 40px;
-    color: red;
-    border-left: 1px solid rgba(0, 0, 0, 0.5); }
-
-.egobie-resident-order .item {
-  width: 95% !important;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  height: 40px;
-  background: transparent;
-  border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.5); }
-  .egobie-resident-order .item i:before {
-    font-size: 25px; }
-
-.egobie-resident-order .item-divider {
-  border: 0px;
-  border-radius: 0px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
-  padding-left: 0px; }
-  .egobie-resident-order .item-divider span {
-    font-size: 12px; }
-
-.egobie-resident-order .button {
-  width: 95% !important;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid rgba(0, 0, 0, 0.35); }
-  .egobie-resident-order .button:before {
-    color: #FF1919; }
-  .egobie-resident-order .button span {
-    font-size: 13px; }
-
-.egobie-resident-footer h1 span {
-  color: #33CDFF;
-  font-size: 13px; }
-
-.egobie-resident-demand-opening {
-  display: flex;
-  height: 60px !important;
-  margin-top: 10px;
-  background: 0 0;
-  border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.5); }
-  .egobie-resident-demand-opening i.left {
-    display: block;
-    width: 15%; }
-    .egobie-resident-demand-opening i.left:before {
-      font-size: 40px; }
-  .egobie-resident-demand-opening div.right {
-    width: 85%;
-    padding-left: 5px; }
-    .egobie-resident-demand-opening div.right p.time, .egobie-resident-demand-opening div.right p.note {
-      font-size: 11px; }
-      .egobie-resident-demand-opening div.right p.time span, .egobie-resident-demand-opening div.right p.note span {
-        font-weight: 700;
-        font-size: 13px; }
-
-.egobie-display-none {
-  display: none !important; }
-
-.egobie-display-inherit {
-  display: inherit !important; }
-
-.egobie-padding-0 {
-  padding: 0px; }
-
-.egobie-margin-left-3 {
-  margin-left: 3px; }
-
-.egobie-margin-top-5 {
-  margin-top: 5px; }
-
-.egobie-margin-top-15 {
-  margin-top: 15px; }
-
-.egobie-margin-right-5 {
-  margin-right: 5px; }
-
-.egobie-margin-top-10 {
-  margin-top: 10px; }
-
-.egobie-margin-top-20 {
-  margin-top: 20px; }
-
-.egobie-margin-bottom-10 {
-  margin-bottom: 10px; }
-
-.egobie-width-200 {
-  width: 200px; }
-
-.egobie-width-300 {
-  width: 300px; }
-
-.egobie-height-200 {
-  height: 200px; }
-
-.egobie-height-300 {
-  height: 300px; }
-
-.egobie-left {
-  float: left; }
-
-.egobie-center {
-  left: 0;
-  right: 0;
-  margin-left: auto !important;
-  margin-right: auto !important; }
-
-.egobie-right {
-  float: right; }
-
-.egobie-avatar {
-  left: 10px !important;
-  top: 25px !important;
-  transform: scale(1.5);
-  border-radius: 0 !important;
-  content: url("../../../img/icons/eGobie_Profile_on.png"); }
-
-.egobie-header-bar {
-  background-color: rgba(0, 0, 0, 0.75);
-  border: 0px !important; }
-  .egobie-header-bar h1, .egobie-header-bar .button {
-    color: #FFFFFF !important; }
-
-.egobie-whole-page .list, .egobie-whole-page .scroll {
-  height: 100%; }
-
-.egobie-transparent, .egobie-transparent * {
-  background: transparent;
-  color: #000000; }
-
-.egobie-bg-mask {
-  position: absolute;
-  width: 100%;
-  height: 100%; }
-  .egobie-bg-mask-1 {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #FFFFFF; }
-  .egobie-bg-mask-2 {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(147, 153, 156, 0.1); }
-
-* {
-  font-family: eGobieFont !important; }
-
-.egobie {
-  /*
-    &-menu-bg, &-menu-bg * {
-        color: $Light-Grey-Blue !important;
-        background-color: $Dark-Navy-Blue !important;
-
-        .badge {
-            background-color: #EF473A !important;
-        }
-    }
-    */
-  /* Menu Icons */ }
-  .egobie-menu-mask {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    /*background: rgba(31, 55, 76, 0.70);*/
-    background: rgba(27, 28, 29, 0.7); }
-  .egobie-menu-bg {
-    background: url("../img/bg.jpg") no-repeat center center;
-    background-size: cover; }
-  .egobie-menu-bg * {
-    color: #FFFFFF; }
-  .egobie-menu-item, .egobie-menu-item-last {
-    border: 0px;
-    margin-top: 3px;
-    background: transparent; }
-    .egobie-menu-item .item-content, .egobie-menu-item-last .item-content {
-      background: transparent;
-      padding: 12px 49px 12px 12px; }
-    .egobie-menu-item i, .egobie-menu-item-last i {
-      transform: scale(0.6); }
-    .egobie-menu-item span, .egobie-menu-item-last span {
-      margin-left: 10px; }
-  .egobie-menu-item-last {
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
-  .egobie-menu-profile {
-    background: transparent;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    border: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
-    .egobie-menu-profile-logo {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      margin-top: auto;
-      margin-bottom: auto;
-      max-width: 50px;
-      max-height: 50px;
-      content: url("../img/logo/light_grey_blue.png"); }
-    .egobie-menu-profile-name {
-      position: absolute;
-      text-transform: capitalize;
-      bottom: 27px;
-      margin-left: 15px;
-      margin-top: auto;
-      margin-bottom: auto;
-      height: 35px;
-      width: 200px;
-      line-height: 32px;
-      font-size: 20px; }
-  .egobie-home-on {
-    content: url("../img/icon/home_on.png"); }
-  .egobie-home-off {
-    content: url("../img/icon/home_off.png"); }
-  .egobie-notification-on {
-    content: url("../img/icon/notifications_on.png"); }
-  .egobie-notification-off {
-    content: url("../img/icon/notifications_off.png"); }
-  .egobie-service-on {
-    content: url("../img/icon/services_on.png"); }
-  .egobie-service-off {
-    content: url("../img/icon/services_off.png"); }
-  .egobie-coupon-on {
-    content: url("../img/icon/coupon_off.png"); }
-  .egobie-coupon-off {
-    content: url("../img/icon/coupon_off.png"); }
-  .egobie-history-on {
-    content: url("../img/icon/history_on.png"); }
-  .egobie-history-off {
-    content: url("../img/icon/history_off.png"); }
-  .egobie-vehicle-on {
-    content: url("../img/icon/vehicles_on.png"); }
-  .egobie-vehicle-off {
-    content: url("../img/icon/vehicles_off.png"); }
-  .egobie-payment-on {
-    content: url("../img/icon/payment_on.png"); }
-  .egobie-payment-off {
-    content: url("../img/icon/payment_off.png"); }
-  .egobie-setting-on {
-    content: url("../img/icon/settings_on.png"); }
-  .egobie-setting-off {
-    content: url("../img/icon/settings_off.png"); }
-  .egobie-about-on {
-    content: url("../img/icon/about_on.png"); }
-  .egobie-about-off {
-    content: url("../img/icon/about_off.png"); }
 
 .egobie-display-none {
   display: none !important; }
