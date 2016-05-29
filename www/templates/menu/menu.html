@@ -24,7 +24,8 @@
 
                 <ion-item ui-sref="menu.notification" menu-close="" class="item item-icon-left egobie-menu-item">
                     <i class="icon egobie-notification-off"></i><span>NOTIFICATIONS</span>
-                    <!--<span class="badge badge-assertive">111</span>-->
+                    <span class="badge badge-assertive"
+                          ng-show="badge.notification > 0">{{badge.notification}}</span>
                 </ion-item>
 
                 <ion-item ui-sref="menu.service" menu-close="" class="item item-icon-left egobie-menu-item">
@@ -33,7 +34,8 @@
 
                 <ion-item ui-sref="menu.myservice" menu-close="" class="item item-icon-left egobie-menu-item">
                     <i class="icon egobie-history-off"></i><span>MY SERVICES</span>
-                    <span class="badge badge-assertive">10</span>
+                    <span class="badge badge-assertive"
+                          ng-show="badge.history > 0">{{badge.history}}</span>
                 </ion-item>
                 <ion-item ui-sref="menu.coupon" menu-close="" class="item item-icon-left egobie-menu-item">
                     <i class="icon egobie-coupon-off"></i><span>GET YOUR GIFT</span>

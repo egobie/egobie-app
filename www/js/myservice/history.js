@@ -2,7 +2,6 @@ angular.module('app.myservice.history', ['ionic', 'util.shared', 'util.url'])
 
     .controller('myHistoryCtrl', function($scope, $ionicModal, $http, $timeout, $interval, shared, url) {
         shared.goHistory();
-        console.log("create history");
 
         $scope.histories = {};
         $scope.max = 5;
@@ -109,9 +108,15 @@ angular.module('app.myservice.history', ['ionic', 'util.shared', 'util.url'])
                     page: 0
                 }))
                 .success(function(data, status, headers, config) {
+                    shared.unratedHistory = 0;
+
                     if (data) {
                         Array.prototype.forEach.call(data, function(history) {
                             history.available = history.rating > 0;
+
+                            if (!history.available) {
+                                shared.unratedHistory++;
+                            }
                         });
                     }
 

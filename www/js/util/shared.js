@@ -2,8 +2,6 @@ angular.module("util.shared", ["util.url"])
 
     .service("shared", function($rootScope, $window, $ionicPopup, $ionicLoading, $http, $q, url) {
 
-        var menu = null;
-
         var user = {
             id: "",
             token: "",
@@ -119,6 +117,7 @@ angular.module("util.shared", ["util.url"])
         }
 
         $window.shared = {
+            unratedHistory: 0,
 
             refreshUser: function(u) {
                 user.id = u.id;
@@ -142,10 +141,6 @@ angular.module("util.shared", ["util.url"])
                 user.work_city = u.work_address_city;
                 user.work_zip = u.work_address_zip;
                 user.work_street = u.work_address_street;
-
-                if (menu) {
-                    menu.user.name = user.first;
-                }
 
                 refreshScope();
             },
@@ -400,6 +395,10 @@ angular.module("util.shared", ["util.url"])
                     });
             },
 
+            getUnratedHistory: function() {
+                return this.unratedHistory;
+            },
+
             testEmail: function(email) {
                 return regEmail.test(email);
             },
@@ -493,10 +492,6 @@ angular.module("util.shared", ["util.url"])
                 $http.post(url.goService, this.getRequestBody({}));
             },
 
-            goReservation: function() {
-                $http.post(url.goReservation, this.getRequestBody({}));
-            },
-
             goHistory: function() {
                 $http.post(url.goHistory, this.getRequestBody({}));
             },
@@ -581,10 +576,6 @@ angular.module("util.shared", ["util.url"])
                 $http.post(url.unselectExtra, this.getRequestBody({
                     data: id + ""
                 }));
-            },
-
-            setMenuScope: function(menuScope) {
-                menu = menuScope;
             }
         };
 

@@ -29,4 +29,17 @@ angular.module('app.myservice', ['ionic', 'util.shared', 'util.url'])
                     }
                 }
             });
+    })
+
+    .controller('myServiceCtrl', function($scope, shared) {
+        $scope.badge = {
+            history: shared.getUnratedHistory()
+        };
+
+        $scope.$watch(function() {
+            return shared.getUnratedHistory();
+        }, function(newValue) {
+            console.log("myservice - update history");
+            $scope.badge.history = newValue;
+        });
     });
