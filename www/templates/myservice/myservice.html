@@ -1,11 +1,12 @@
 <ion-tabs class="tabs-striped tabs-icon-top"
-          ng-app="app.myservice">
+          ng-app="app.myservice"
+          ng-controller="myServiceCtrl">
 
     <ion-tab title="Reservation" icon="ion-android-checkmark-circle" ui-sref="menu.myservice.reservation">
         <ion-nav-view name="reservation-view"></ion-nav-view>
     </ion-tab>
 
-    <ion-tab title="Hisotry" icon="ion-clipboard" ui-sref="menu.myservice.history"
+    <ion-tab title="History" icon="ion-clipboard" ui-sref="menu.myservice.history"
              badge="badge.history" badge-style="badge-assertive">
         <ion-nav-view name="history-view"></ion-nav-view>
     </ion-tab>

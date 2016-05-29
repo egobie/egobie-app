@@ -58,6 +58,7 @@ angular.module('app.myservice.history', ['ionic', 'util.shared', 'util.url'])
                     .post(url.ratingHistory, shared.getRequestBody(request))
                     .success(function(data, status, headers, config) {
                         shared.hideLoading();
+                        shared.unratedHistory--;
 
                         $scope.selectedHistory.available = true;
                         $scope.hideRating();

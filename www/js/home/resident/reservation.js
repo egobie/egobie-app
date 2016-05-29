@@ -86,7 +86,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
                             $scope.hideReservationSheet();
                             $scope.clearReservation();
 
-                            $state.go("menu.history");
+                            $state.go("menu.myservice.reservation");
                         })
                         .error(function(data, status, headers, config) {
                             $scope.hideReservationSheet();
