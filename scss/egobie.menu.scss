@@ -47,6 +47,10 @@
 
         span {
             margin-left: 10px;
+
+            &.badge {
+                top: 11px;
+            }
         }
     }
 

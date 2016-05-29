@@ -10778,6 +10778,8 @@ a.button {
       transform: scale(0.6); }
     .egobie-menu-item span, .egobie-menu-item-last span {
       margin-left: 10px; }
+      .egobie-menu-item span.badge, .egobie-menu-item-last span.badge {
+        top: 11px; }
   .egobie-menu-item-last {
     padding-bottom: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
@@ -13308,6 +13310,11 @@ a.button {
   color: #1B4A5E;
   border-color: #1B4A5E;
   background: transparent; }
+
+.egobie-sign-out {
+  display: inline-block;
+  padding: 5px 10px 10px 20px;
+  color: rgba(255, 255, 255, 0.6); }
 
 .egobie-display-none {
   display: none !important; }
