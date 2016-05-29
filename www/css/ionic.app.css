@@ -10496,10 +10496,16 @@ a.button {
   color: #000000 !important;
   border-color: #000000 !important; }
 
+.egobie-reservation {
+  height: 50%; }
+
+.egobie-on-demand {
+  height: 51%; }
+
 .egobie-on-demand, .egobie-reservation {
   padding: 0px;
   position: relative;
-  height: 50%; }
+  border: 0px; }
   .egobie-on-demand .mask, .egobie-reservation .mask {
     position: absolute;
     height: 100%;

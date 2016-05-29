@@ -9,10 +9,18 @@
         }
     }
 
+    &-reservation {
+        height: 50%;
+    }
+
+    &-on-demand {
+        height: 51%;
+    }
+    
     &-on-demand, &-reservation {
         padding: 0px;
         position: relative;
-        height: 50%;
+        border: 0px;
 
         .mask {
             position: absolute;
