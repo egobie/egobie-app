@@ -31,15 +31,113 @@ angular.module('app.myservice', ['ionic', 'util.shared', 'util.url'])
             });
     })
 
-    .controller('myServiceCtrl', function($scope, shared) {
+    .controller('myServiceCtrl', function($scope, $interval, $http, shared, url) {
+        console.log("create my service");
+
         $scope.badge = {
             history: shared.getUnratedHistory()
         };
 
+        $scope.intervals = {
+            history: null,
+            reservation: null
+        };
+
+        $scope.reservations = [];
+        $scope.histories = {};
+
         $scope.$watch(function() {
             return shared.getUnratedHistory();
         }, function(newValue) {
-            console.log("myservice - update history");
             $scope.badge.history = newValue;
         });
+
+        $scope.$on('$destroy', function(event) {
+            for (var interval in $scope.intervals) {
+                if ($scope.intervals[interval]) {
+                    console.log("destroy my service - ", interval);
+                    $interval.cancel($scope.intervals[interval]);
+                }
+            }
+
+            console.log("destroy my service");
+        });
+
+        $scope.loadHistories = function(animation) {
+            if ($scope.intervals.history) {
+                $interval.cancel($scope.intervals.history);
+            }
+
+            $scope.intervals.history = $interval(function() {
+                $scope.loadHistories(false);
+            }, 60000);
+
+            if (animation) {
+                shared.showLoading();
+            }
+
+            $http
+                .post(url.userHistories, shared.getRequestBody({
+                    page: 0
+                }))
+                .success(function(data, status, headers, config) {
+                    shared.hideLoading();
+                    shared.unratedHistory = 0;
+
+                    if (data) {
+                        Array.prototype.forEach.call(data, function(history) {
+                            history.available = history.rating > 0;
+
+                            if (!history.available) {
+                                shared.unratedHistory++;
+                            }
+                        });
+                    }
+
+                    $scope.histories = data;
+                })
+                .error(function(data, status, headers, config) {
+                    shared.hideLoading();
+                    shared.alert(data);
+                });
+        };
+
+        $scope.loadReservations = function(animation) {
+            if ($scope.intervals.reservation) {
+                $interval.cancel($scope.intervals.reservation);
+            }
+
+            $scope.intervals.reservation = $interval(function() {
+                $scope.loadReservations(false);
+            }, 60000);
+
+            if (animation) {
+                shared.showLoading();
+            }
+
+            $http
+                .post(url.userReservations, shared.getRequestBody({}))
+                .success(function(data, status, headers, config) {
+                    shared.hideLoading();
+
+                    if (data) {
+                        Array.prototype.forEach.call(data, function(reservation) {
+                            if (reservation.services) {
+                                Array.prototype.forEach.call(reservation.services, function(service) {
+                                    service.full_type = shared.getServiceType(service.type);
+                                });
+                            }                      
+                        });
+                    }
+
+                    $scope.reservations = data;
+                })
+                .error(function(data, status, headers, config) {
+                    shared.hideLoading();
+                    shared.alert(data);
+                });
+        };
+
+        $scope.loadReservations(true);
+        $scope.loadHistories(false);
     });

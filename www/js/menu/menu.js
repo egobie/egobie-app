@@ -55,14 +55,12 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
         $scope.$watch(function() {
             return shared.getUser().first;
         }, function(newValue) {
-            console.log("menu - update username");
             $scope.user.name = newValue || "Welcome";
         });
 
         $scope.$watch(function() {
             return shared.getUnratedHistory();
         }, function(newValue) {
-            console.log("menu - update history");
             $scope.badge.history = newValue;
         });
     });

@@ -3,21 +3,12 @@ angular.module('app.myservice.history', ['ionic', 'util.shared', 'util.url'])
     .controller('myHistoryCtrl', function($scope, $ionicModal, $http, $timeout, $interval, shared, url) {
         shared.goHistory();
 
-        $scope.histories = {};
         $scope.max = 5;
         $scope.selectedHistory = null;
         $scope.historyModel = null;
-        $scope.interval = null;
         $scope.rating = {
             score: 0
         };
-
-        $scope.$on('$destroy', function(event) {
-            console.log("destroy history");
-            if ($scope.interval) {
-                $interval.cancel($scope.interval);
-            }
-        });
 
         $ionicModal.fromTemplateUrl('templates/myservice/history/rating.html', {
             scope: $scope
@@ -95,39 +86,6 @@ angular.module('app.myservice.history', ['ionic', 'util.shared', 'util.url'])
             $scope.historyModel.hide();
         };
 
-        $scope.loadHistories = function() {
-            if ($scope.interval) {
-                $interval.cancel($scope.interval);
-            }
-
-            $scope.interval = $interval(function() {
-                $scope.loadHistories(false);
-            }, 60000);
-
-            $http
-                .post(url.userHistories, shared.getRequestBody({
-                    page: 0
-                }))
-                .success(function(data, status, headers, config) {
-                    shared.unratedHistory = 0;
-
-                    if (data) {
-                        Array.prototype.forEach.call(data, function(history) {
-                            history.available = history.rating > 0;
-
-                            if (!history.available) {
-                                shared.unratedHistory++;
-                            }
-                        });
-                    }
-
-                    $scope.histories = data;
-                })
-                .error(function(data, status, headers, config) {
-                    shared.alert(data);
-                });
-        };
-
         $scope.borderStyle = function(rating) {
             // 0.0 - 1.0
             if (rating <= 0) {
@@ -191,6 +149,4 @@ angular.module('app.myservice.history', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.getServiceType = shared.getServiceType;
-
-        $scope.loadHistories();
     });

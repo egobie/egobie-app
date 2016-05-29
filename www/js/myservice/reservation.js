@@ -1,53 +1,7 @@
 angular.module('app.myservice.reservation', ['ionic', 'util.shared', 'util.url'])
 
     .controller('myReservationCtrl', function($scope, $ionicPopup, $ionicActionSheet, $http, $interval, shared, url) {
-        console.log("create reservation");
         shared.goReservation();
-        $scope.reservations = [];
-        $scope.interval = null;
-
-        $scope.$on('$destroy', function(event) {
-            console.log("destroy reservation");
-            if ($scope.interval) {
-                $interval.cancel($scope.interval);
-            }
-        });
-
-        $scope.loadReservations = function(animation) {
-            if ($scope.interval) {
-                $interval.cancel($scope.interval);
-            }
-
-            $scope.interval = $interval(function() {
-                $scope.loadReservations(false);
-            }, 60000);
-
-            if (animation) {
-                shared.showLoading();
-            }
-
-            $http
-                .post(url.userReservations, shared.getRequestBody({}))
-                .success(function(data, status, headers, config) {
-                    shared.hideLoading();
-
-                    if (data) {
-                        Array.prototype.forEach.call(data, function(reservation) {
-                            if (reservation.services) {
-                                Array.prototype.forEach.call(reservation.services, function(service) {
-                                    service.full_type = shared.getServiceType(service.type);
-                                });
-                            }                      
-                        });
-                    }
-
-                    $scope.reservations = data;
-                })
-                .error(function(data, status, headers, config) {
-                    shared.hideLoading();
-                    shared.alert(data);
-                });
-        };
 
         $scope.showCancelSheet = function(reservation) {
             $scope.hideCancelSheet = $ionicActionSheet.show({
@@ -115,6 +69,4 @@ angular.module('app.myservice.reservation', ['ionic', 'util.shared', 'util.url']
         $scope.noReservation = function() {
             return !$scope.reservations || $scope.reservations.length === 0;
         };
-
-        $scope.loadReservations(true);
     });
