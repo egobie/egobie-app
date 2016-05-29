@@ -32,8 +32,6 @@ angular.module('app.myservice', ['ionic', 'util.shared', 'util.url'])
     })
 
     .controller('myServiceCtrl', function($scope, $interval, $http, shared, url) {
-        console.log("create my service");
-
         $scope.badge = {
             history: shared.getUnratedHistory()
         };
@@ -55,12 +53,9 @@ angular.module('app.myservice', ['ionic', 'util.shared', 'util.url'])
         $scope.$on('$destroy', function(event) {
             for (var interval in $scope.intervals) {
                 if ($scope.intervals[interval]) {
-                    console.log("destroy my service - ", interval);
                     $interval.cancel($scope.intervals[interval]);
                 }
             }
-
-            console.log("destroy my service");
         });
 
         $scope.loadHistories = function(animation) {
