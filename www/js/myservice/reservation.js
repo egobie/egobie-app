@@ -1,10 +1,13 @@
 angular.module('app.myservice.reservation', ['ionic', 'util.shared', 'util.url'])
 
     .controller('myReservationCtrl', function($scope, $ionicPopup, $ionicActionSheet, $http, $interval, shared, url) {
+        console.log("create reservation");
+        shared.goReservation();
         $scope.reservations = [];
         $scope.interval = null;
 
         $scope.$on('$destroy', function(event) {
+            console.log("destroy reservation");
             if ($scope.interval) {
                 $interval.cancel($scope.interval);
             }

@@ -493,6 +493,10 @@ angular.module("util.shared", ["util.url"])
                 $http.post(url.goService, this.getRequestBody({}));
             },
 
+            goReservation: function() {
+                $http.post(url.goReservation, this.getRequestBody({}));
+            },
+
             goHistory: function() {
                 $http.post(url.goHistory, this.getRequestBody({}));
             },

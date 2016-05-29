@@ -2,6 +2,7 @@ angular.module('app.myservice.history', ['ionic', 'util.shared', 'util.url'])
 
     .controller('myHistoryCtrl', function($scope, $ionicModal, $http, $timeout, $interval, shared, url) {
         shared.goHistory();
+        console.log("create history");
 
         $scope.histories = {};
         $scope.max = 5;
@@ -13,6 +14,7 @@ angular.module('app.myservice.history', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.$on('$destroy', function(event) {
+            console.log("destroy history");
             if ($scope.interval) {
                 $interval.cancel($scope.interval);
             }
