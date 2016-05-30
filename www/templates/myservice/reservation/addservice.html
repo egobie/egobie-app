@@ -1,0 +1,47 @@
+<ion-modal-view hide-nav-bar="true" cache-view="false">
+    <ion-header-bar class="egobie-header-bar">
+        <h1 class="title">EXTRA SERVICES</h1>
+        <button class="button button-icon icon ion-android-close"
+                ng-click="hideAddServiceModel()"></button>
+    </ion-header-bar>
+    <div class="egobie-bg-mask">
+        <div class="egobie-bg-mask-1"></div>
+        <div class="egobie-bg-mask-2"></div>
+    </div>
+    <ion-content padding="true" class="egobie-service-list has-header has-footer">
+        <ion-list class="egobie-resident-order">
+            <ion-item class="item-divider">Price <span>(tax and discount included)</span></ion-item>
+
+            <ion-item class="item-icon-left item-icon-right">
+                <i class="icon ion-cash"></i>
+                {{order.real_price}}
+                <i class="icon ion-social-usd"></i>
+            </ion-item>
+        </ion-list>
+
+        <ion-list class="egobie-resident-order">
+            <ion-item class="item-divider">Extra Service</ion-item>
+        </ion-list>
+
+        <ion-list>
+            <ion-item menu-close="" class="egobie-service-item-select"
+                      ng-repeat="(name, charge) in charges"
+                      ng-class="isChargeSelected(charge.checked)"
+                      ng-click="toggleCharge(charge)">
+                <div class="left"></div>
+                <div class="middle">
+                    <p class="price">{{charge.price}}</p>
+                    <p class="name">{{charge.name}}</p>
+                    <p class="note">{{charge.note}}</p>
+                    <p class="time"
+                       ng-show="charge.time > 0">Estimated Time : {{charge.time}}</p>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+
+    <ion-footer-bar class="bar-dark"
+                    ng-click="addExtraService()">
+        <h1 class="title">Save</h1>
+    </ion-footer-bar>
+</ion-modal-view>

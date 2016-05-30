@@ -38,6 +38,7 @@ angular.module('util.url', [])
 
             openings: host + "/service/opening",
             ondemand: host + "/service/now",
+            addService: host + "/service/add",
             placeOrder: host + "/service/order",
             cancelOrder: host + "/service/cancel",
             demandService: host + "/service/demand",

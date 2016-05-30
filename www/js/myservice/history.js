@@ -1,6 +1,6 @@
 angular.module('app.myservice.history', ['ionic', 'util.shared', 'util.url'])
 
-    .controller('myHistoryCtrl', function($scope, $ionicModal, $http, $timeout, $interval, shared, url) {
+    .controller('myHistoryCtrl', function($scope, $ionicModal, $http, $timeout, shared, url) {
         shared.goHistory();
 
         $scope.max = 5;
