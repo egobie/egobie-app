@@ -11,6 +11,10 @@
         @extend .egobie-no-history;
     }
 
+    &-empty-extra-service {
+        @extend .egobie-no-extra-service;
+    }
+
     &-reservation-title, &-history-title {
         padding-left: 0px;
         font-size: 20px;

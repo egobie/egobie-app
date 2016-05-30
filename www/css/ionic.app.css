@@ -11030,21 +11030,21 @@ a.button {
 * {
   font-family: eGobieFont !important; }
 
-.egobie-no-reservation, .egobie-empty-reservation, .egobie-no-history, .egobie-empty-history {
+.egobie-no-reservation, .egobie-empty-reservation, .egobie-no-history, .egobie-empty-history, .egobie-no-extra-service, .egobie-empty-extra-service {
   width: 100%;
   height: 400px;
   margin-top: 20px;
   text-align: center;
   border: 0px;
   background: transparent; }
-  .egobie-no-reservation .icon-1, .egobie-empty-reservation .icon-1, .egobie-no-history .icon-1, .egobie-empty-history .icon-1 {
+  .egobie-no-reservation .icon-1, .egobie-empty-reservation .icon-1, .egobie-no-history .icon-1, .egobie-empty-history .icon-1, .egobie-no-extra-service .icon-1, .egobie-empty-extra-service .icon-1 {
     display: block;
     height: 150px;
     width: 250px;
     margin: auto;
     margin-top: 50px;
     font-size: 150px; }
-  .egobie-no-reservation p.no, .egobie-empty-reservation p.no, .egobie-no-history p.no, .egobie-empty-history p.no {
+  .egobie-no-reservation p.no, .egobie-empty-reservation p.no, .egobie-no-history p.no, .egobie-empty-history p.no, .egobie-no-extra-service p.no, .egobie-empty-extra-service p.no {
     font-size: 20px;
     font-weight: 600;
     height: 30px;

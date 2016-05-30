@@ -23,7 +23,12 @@
             <ion-item class="item-divider">Extra Service</ion-item>
         </ion-list>
 
-        <ion-list>
+        <ion-item class="egobie-empty-extra-service"
+                      ng-show="noCharges()">
+            <p class="no">No Extra Service Available</p>
+        </ion-item>
+
+        <ion-list ng-show="!noCharges()">
             <ion-item menu-close="" class="egobie-service-item-select"
                       ng-repeat="(name, charge) in charges"
                       ng-class="isChargeSelected(charge.checked)"
@@ -42,6 +47,6 @@
 
     <ion-footer-bar class="bar-dark"
                     ng-click="addExtraService()">
-        <h1 class="title">Save</h1>
+        <h1 class="title">Add</h1>
     </ion-footer-bar>
 </ion-modal-view>

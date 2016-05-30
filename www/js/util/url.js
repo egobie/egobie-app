@@ -41,6 +41,7 @@ angular.module('util.url', [])
             addService: host + "/service/add",
             placeOrder: host + "/service/order",
             cancelOrder: host + "/service/cancel",
+            forceCancelOrder: host + "/service/cancel/force",
             demandService: host + "/service/demand",
             readService: host + "/service/read/",
             demandAddon: host + "/service/demand/addon",

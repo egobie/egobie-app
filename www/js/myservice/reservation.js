@@ -26,35 +26,11 @@ angular.module('app.myservice.reservation', ['ionic', 'util.shared', 'util.url']
         };
 
         $scope.showCancelSheet = function(reservation) {
+            $scope.order.service_id = reservation.id;
             $scope.hideCancelSheet = $ionicActionSheet.show({
                 titleText: 'Cancel Order',
                 destructiveText: 'Cancel Reservation',
-                destructiveButtonClicked: function() {
-                    $ionicPopup.confirm({
-                        title: "Are you sure to cancel this reservation?"
-                    }).then(function(sure) {
-                        if (!sure) {
-                            return;
-                        }
-
-                        shared.showLoading();
-                        $http
-                            .post(url.cancelOrder, shared.getRequestBody({
-                                id: reservation.id
-                            }))
-                            .success(function(data, status, headers, config) {
-                                shared.hideLoading();
-
-                                $scope.hideCancelSheet();
-                                $scope.loadReservations();
-                            })
-                            .error(function(data, status, headers, config) {
-                                $scope.hideCancelSheet();
-                                shared.hideLoading();
-                                shared.alert(data);
-                            });
-                    });
-                },
+                destructiveButtonClicked: $scope.cancel,
                 buttons: [
                     {text: 'Add Service'}
                 ],
@@ -102,6 +78,69 @@ angular.module('app.myservice.reservation', ['ionic', 'util.shared', 'util.url']
                 cancel: function() {
                 }
             });
+        };
+
+        $scope.cancel = function() {
+            $ionicPopup.confirm({
+                title: "Are you sure to cancel this reservation?"
+            }).then(function(sure) {
+                if (!sure) {
+                    return;
+                }
+
+                shared.showLoading();
+                $http
+                    .post(url.cancelOrder, shared.getRequestBody({
+                        id: $scope.order.service_id
+                    }))
+                    .success(function(data, status, headers, config) {
+                        shared.hideLoading();
+
+                        if (status === 200) {
+                            $scope.hideCancelSheet();
+                            $scope.loadReservations();
+                        } else {
+                            $scope.forceCancel();
+                        }
+                    })
+                    .error(function(data, status, headers, config) {
+                        $scope.hideCancelSheet();
+                        shared.hideLoading();
+                        shared.alert(data);
+                    });
+            });
+        };
+
+        $scope.forceCancel = function() {
+            $ionicPopup.confirm({
+                title: "We Will charge 50% of the appointment cost. Are you sure the cancel this reservation?"
+            }).then(function(sure) {
+                if (!sure) {
+                    return;
+                }
+
+                console.log(url.forceCancelOrder);
+
+                shared.showLoading();
+                $http
+                    .post(url.forceCancelOrder, shared.getRequestBody({
+                        id: $scope.order.service_id
+                    }))
+                    .success(function(data, status, headers, config) {
+                        shared.hideLoading();
+                        $scope.hideCancelSheet();
+                        $scope.loadReservations();
+                    })
+                    .error(function(data, status, headers, config) {
+                        $scope.hideCancelSheet();
+                        shared.hideLoading();
+                        shared.alert(data);
+                    });
+            });
+        };
+
+        $scope.noCharges = function() {
+            return Object.keys($scope.charges).length === 0;
         };
 
         $scope.addExtraService = function() {
