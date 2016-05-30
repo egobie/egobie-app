@@ -63,4 +63,8 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
         }, function(newValue) {
             $scope.badge.history = newValue;
         });
+
+        $scope.signOut = function() {
+            shared.signOut();
+        };
     });

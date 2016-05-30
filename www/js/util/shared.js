@@ -1,6 +1,6 @@
 angular.module("util.shared", ["util.url"])
 
-    .service("shared", function($rootScope, $window, $ionicPopup, $ionicLoading, $http, $q, url) {
+    .service("shared", function($rootScope, $window, $ionicPopup, $ionicLoading, $ionicHistory, $http, $state, url) {
 
         var user = {
             id: "",
@@ -563,6 +563,46 @@ angular.module("util.shared", ["util.url"])
                 $http.post(url.unselectExtra, this.getRequestBody({
                     data: id + ""
                 }));
+            },
+
+            signOut: function() {
+                $ionicHistory.clearHistory();
+                $ionicHistory.clearCache().then(function() {
+                    user = {
+                        id: "",
+                        token: "",
+                        username: "",
+                        email: "",
+                        coupon: "",
+                        discount: 0,
+                        phone: "",
+                        first: "",
+                        last: "",
+                        middle: "",
+                        home_state: "",
+                        home_city: "",
+                        home_zip: "",
+                        home_street: "",
+                        work_state: "",
+                        work_city: "",
+                        work_zip: "",
+                        work_street: ""
+                    };
+
+                    userCars = {};
+                    userPayments = {};
+                    carMakers = [];
+                    carModels = {};
+                    services = {};
+
+                    carWash = [];
+                    oilChange = [];
+                    detailing = [];
+
+                    years = [];
+
+                    $state.go('sign.in');
+                });
             }
         };
 
