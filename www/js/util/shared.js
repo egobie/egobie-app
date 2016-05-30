@@ -74,7 +74,6 @@ angular.module("util.shared", ["util.url"])
 
         var userCars = {};
         var userPayments = {};
-        var userDones = [];
         var carMakers = [];
         var carModels = {};
         var services = {};
@@ -299,18 +298,6 @@ angular.module("util.shared", ["util.url"])
                     .error(function(data, status, headers, config) {
                         this.alert("send demand for Addons - " + data);
                     });
-            },
-
-            getUserDones: function() {
-                return userDones;
-            },
-
-            addUserDones: function(dones) {
-                userDones = dones;
-            },
-
-            clearUserdones: function() {
-                userDones = [];
             },
 
             getCarMakers: function() {
