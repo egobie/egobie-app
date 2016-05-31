@@ -121,6 +121,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
 
         var services = [];
         var addons = [];
+        var types = {};
 
         $scope.hideOpeningModal = function() {
             $scope.openingModal.hide();
@@ -129,6 +130,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
         for (var _i = 0; _i < orderService.services.length; _i++) {
             if (orderService.services[_i].checked) {
                 services.push(orderService.services[_i].id);
+                types[orderService.services[_i].type] = 1;
             }
         }
 
@@ -156,7 +158,8 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
             $http
                 .post(url.openings, shared.getRequestBody({
                     services: services,
-                    addons: addons
+                    addons: addons,
+                    mixed: Object.keys(types).length > 1
                 }))
                 .success(function(data, status, headers, config) {
                     shared.hideLoading();

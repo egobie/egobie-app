@@ -40,35 +40,6 @@
                     </div>
                 </div>
             </ion-item>
-
-            <!--
-            <ion-item class="item-divider item-icon-right"
-                      ng-click="showOpening($index)">
-                <i class="icon ion-ios-arrow-down"></i>{{opening.day}}
-            </ion-item>
-            <ion-radio ng-repeat="r in opening.range"
-                       ng-click="goToOrder(r.id, opening.day, r.start, r.end)"
-                       ng-model="selectedRange"
-                       ng-value="r.id"
-                       ng-show="index === showIndex">{{r.id}} - {{getTime(r.start)}} to {{getTime(r.end)}}</ion-radio>
-            -->
-            <!--
-            <ion-item class="opening-day"
-                      ng-click="showOpening($index)">
-                <i class="dot"/>
-                <i class="line"/>
-                <p>{{opening.day}}</p>
-            </ion-item>
-            <ion-item class="opening-time"
-                      ng-repeat="r in opening.range"
-                      ng-click="goToOrder(r.id, opening.day, r.start, r.end)"
-                      ng-model="selectedRange"
-                      ng-value="r.id"
-                      ng-show="index === showIndex">
-                <i class="line"/>
-                <p>{{r.id}} - {{getTime(r.start)}} to {{getTime(r.end)}}</p>
-            </ion-item>
-            -->
         </ion-list>
     </ion-content>
 </ion-modal-view>
