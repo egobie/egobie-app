@@ -40,7 +40,7 @@ angular.module('app.home.resident.demand', ['ionic', 'app.home.resident', 'util.
             $http
                 .post(url.ondemand, shared.getRequestBody({
                     services: demandOrder.services,
-                    mixed: Object.keys(types).length > 1
+                    types: Object.keys(types).length > 1 ? "BOTH" : Object.keys(types)[0]
                 }))
                 .success(function(data, status, headers, config) {
                     orderOpening.id = data["id"];
