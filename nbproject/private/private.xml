@@ -3,13 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/bohuang/work_folder/egobie-app/www/templates/home/resident/opening.html</file>
-            <file>file:/Users/bohuang/work_folder/egobie-app/www/js/home/resident.js</file>
-            <file>file:/Users/bohuang/work_folder/egobie-app/scss/egobie.history.scss</file>
-            <file>file:/Users/bohuang/work_folder/egobie-app/www/templates/home/resident/order.html</file>
-            <file>file:/Users/bohuang/work_folder/egobie-app/www/js/util/url.js</file>
-            <file>file:/Users/bohuang/work_folder/egobie-app/www/js/util/shared.js</file>
-            <file>file:/Users/bohuang/work_folder/egobie-app/www/templates/menu/history.html</file>
+            <file>file:/Users/bohuang/work_folder/egobie-app/config.xml</file>
+            <file>file:/Users/bohuang/work_folder/egobie-app/www/js/about/about.js</file>
+            <file>file:/Users/bohuang/work_folder/egobie-app/www/templates/sign/signin.html</file>
+            <file>file:/Users/bohuang/work_folder/egobie-app/scss/egobie.sign.scss</file>
+            <file>file:/Users/bohuang/work_folder/egobie-app/www/index.html</file>
         </group>
     </open-files>
 </project-private>

@@ -77,7 +77,7 @@ angular.module('app.car.edit', ['ionic', 'util.shared', 'util.url'])
             }
 
             if (!car.maker) {
-                shared.alert("Please choose the maker!");
+                shared.alert("Please choose the make!");
                 return false;
             }
 

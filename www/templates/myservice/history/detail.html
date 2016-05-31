@@ -1,0 +1,132 @@
+<ion-modal-view hide-nav-bar="true">
+    <ion-header-bar class="egobie-header-bar">
+        <h1 class="title">HISTORY</h1>
+        <button class="button button-icon icon ion-android-close"
+                ng-click="hideHistory()"></button>
+    </ion-header-bar>
+    <div class="egobie-bg-mask">
+        <div class="egobie-bg-mask-1"></div>
+        <div class="egobie-bg-mask-2"></div>
+    </div>
+    <ion-content padding="true" class="egobie-history-detail">
+        <ion-list>
+            <ion-list>
+                <ion-item class="egobie-history-time">
+                    <div class="section">Timeline</div>
+                    <div class="top">
+                        <div class="left">
+                            <div class="start">
+                                <p class="title">Start</P>
+                                <i class="icon ion-clock"></i>
+                                <p class="time">{{selectedHistory.start_time}}</p>
+                            </div>
+                            <!--
+                            <div class="middle">
+                                <p class="title"></P>
+                                <i></i>
+                                <p class="time"></p>
+                            </div>
+                            -->
+                            <div class="end">
+                                <p class="title">End</P>
+                                <i class="icon ion-ios-circle-filled"></i>
+                                <p class="time">{{selectedHistory.end_time}}</p>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <!--
+                            <i class="icon ion-clock"></i>
+                            <p>On Time</p>
+                            -->
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <p>{{selectedHistory.reservation_id}}</p>
+                    </div>
+                </ion-item>
+            </ion-list>
+
+            <ion-list>
+                <ion-item class="egobie-history-car">
+                    <div class="section">Vehicle</div>
+                    <div class="plate-state">
+                        <div class="plate">
+                            <p class="title">Plate No.</p>
+                            <p class="content">{{selectedHistory.plate}}</p>
+                        </div>
+                        <div class="state">
+                            <p class="title">State</p>
+                            <p class="content">{{selectedHistory.state}}</p>
+                        </div>
+                    </div>
+                    <div class="maker-model">
+                        <div class="maker">
+                            <p class="title">Make</p>
+                            <p class="content">{{selectedHistory.maker}}</p>
+                        </div>
+                        <div class="model">
+                            <p class="title">Model</p>
+                            <p class="content">{{selectedHistory.model}}</p>
+                        </div>
+                    </div>
+                    <div class="year-color">
+                        <div class="year">
+                            <p class="title">Year</p>
+                            <p class="content">{{selectedHistory.year}}</p>
+                        </div>
+                        <div class="color">
+                            <p class="title">Color</p>
+                            <p class="content">{{selectedHistory.color}}</p>
+                        </div>
+                    </div>
+                </ion-item>
+            </ion-list>
+
+            <ion-list>
+                <ion-item class="egobie-history-payment">
+                    <div class="section">Payment</div>
+                    <div class="name">
+                        <p class="title">Holder Name</p>
+                        <p class="content">{{selectedHistory.account_name}}</p>
+                    </div>
+                    <div class="number">
+                        <p class="title">Account Number</p>
+                        <p class="content">XXXX XXXX XXXX {{selectedHistory.account_number}}</p>
+                    </div>
+                    <div class="price-type">
+                        <div class="price">
+                            <p class="title">Amount</p>
+                            <p class="content">{{selectedHistory.price}}</p>
+                        </div>
+                        <div class="type">
+                            <p class="title">Payment Type</p>
+                            <p class="content">{{selectedHistory.account_type}}</p>
+                        </div>
+                    </div>
+                </ion-item>
+            </ion-list>
+
+            <ion-list>
+                <ion-item class="egobie-history-service">
+                    <div class="section">Services</div>
+                    <div class="service"
+                         ng-repeat="service in selectedHistory.services">
+                        <i class="dot"></i>
+                        <p>{{service.name}} ({{getServiceType(service.type)}})</p>
+                    </div>
+                </ion-item>
+            </ion-list>
+
+            <ion-list>
+                <ion-item class="egobie-history-service">
+                    <div class="section">Extra Services</div>
+                    <div class="service"
+                         ng-repeat="addon in selectedHistory.addons">
+                        <i class="dot"></i>
+                        <p>{{addon.name}}</p>
+                    </div>
+                </ion-item>
+            </ion-list>
+        </ion-list>
+    </ion-content>
+</ion-modal-view>

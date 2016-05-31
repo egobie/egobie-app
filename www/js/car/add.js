@@ -87,7 +87,7 @@ angular.module('app.car.add', ['ionic', 'util.shared', 'util.url'])
             }
 
             if (!car.maker) {
-                shared.alert("Please choose the maker!");
+                shared.alert("Please choose the make!");
                 return false;
             }
 

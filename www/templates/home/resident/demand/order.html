@@ -24,7 +24,7 @@
         <ion-list class="egobie-resident-order">
             <ion-item class="item-divider item-icon-right">Services</ion-item>
 
-            <div class="service"
+            <div class="service" style="opacity: 0.50;"
                  ng-repeat="service in services | filter: {checked: true}">
                 <div class="name">{{service.name}} ({{service.full_type}} ${{service.price}})</div>
             </div>

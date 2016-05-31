@@ -58,6 +58,7 @@
         @extend .egobie-sign-logo;
 
         content: logo($Logo-White);
+        margin-top: 50px;
     }
 
     &-signup-logo {
@@ -168,5 +169,11 @@
         color: $Egobie-Blue;
         border-color: $Egobie-Blue;
         background: transparent;
+    }
+
+    &-sign-out {
+        display: inline-block;
+        padding: 5px 10px 10px 20px;
+        color: rgba(255,255,255,0.6);
     }
 }

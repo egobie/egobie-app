@@ -1,0 +1,75 @@
+<ion-view hide-nav-bar="true" cache-view="false"
+          ng-app="app.myservice.reservation"
+          ng-controller="myReservationCtrl">
+    <ion-header-bar class="egobie-header-bar">
+        <button class="button button-icon icon ion-navicon egobie-display-inherit" menu-toggle="left"></button>
+        <h1 class="title">RESERVATION</h1>
+        <button class="button button-icon icon ion-android-refresh"
+                ng-click="loadReservations()"></button>
+    </ion-header-bar>
+    <div class="egobie-bg-mask">
+        <div class="egobie-bg-mask-1"></div>
+        <div class="egobie-bg-mask-2"></div>
+    </div>
+    <ion-content padding="true" overflow-scroll="true" class="has-tabs">
+        <ion-list>
+            <ion-item class="egobie-empty-reservation"
+                      ng-show="noReservation()">
+                <i class="icon ion-android-checkmark-circle icon-1"></i>
+                <p class="no">No reservation</p>
+            </ion-item>
+
+            <ion-item class="egobie-reservation-list"
+                      ng-repeat="reservation in reservations"
+                      ng-click="showCancelSheet(reservation)">
+                <div class="top">
+                    <div class="left">
+                        <p class="price">{{reservation.price}}</p>
+                    </div>
+                    <div class="right">
+                        <div class="time-services">
+                            <div class="time">
+                                <p class="title">Estimated Start:</p>
+                                <p class="value">{{reservation.reserve_start_time}}</p>
+                            </div>
+                            <div class="services">
+                                <p class="title">Services</p>
+                                <p class="value"
+                                   ng-repeat="service in reservation.services">
+                                    {{service.name}} ({{service.full_type}})
+                                    <span ng-show="service.note !== ''">{{service.note}}</span>
+                                </p>
+                            </div>
+                            <div class="services"
+                                 ng-show="reservation.addons && reservation.addons.length > 0">
+                                <p class="title">Extra Services</p>
+                                <p class="value"
+                                   ng-repeat="addon in reservation.addons">{{addon.name}}</p>
+                            </div>
+                        </div>
+
+                        <div class="plate-reserve">
+                            <div class="plate">
+                                <p class="title">Plate No.</p>
+                                <p class="value">{{reservation.plate}}</p>
+                            </div>
+                            <div class="reserve">
+                                <p class="title">Reservation ID</p>
+                                <p class="value">{{reservation.reservation_id}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="bottom-will"
+                   ng-show="isWill(reservation)"
+                   ng-class="unitStyle(reservation.unit)">{{reservation.how_long}}</p>
+
+                <p class="bottom-delay"
+                   ng-show="isDelay(reservation)">Will start soon</p>
+
+                <p class="bottom-in-progress"
+                   ng-show="isInProgress(reservation)">In Progress</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

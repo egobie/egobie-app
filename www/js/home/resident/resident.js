@@ -200,7 +200,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
                 url: '/resident/demand',
                 views: {
                     'resident-view': {
-                        templateUrl: 'templates/home/resident/demand.html'
+                        templateUrl: 'templates/home/resident/demand/demand.html'
                     }
                 }
             })
@@ -218,7 +218,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
                 url: '/resident/reservation',
                 views: {
                     'resident-view': {
-                        templateUrl: 'templates/home/resident/reservation.html'
+                        templateUrl: 'templates/home/resident/reservation/reservation.html'
                     }
                 }
             })
@@ -261,6 +261,8 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
     })
 
     .controller('navigationCtrl', function($scope, $state, $ionicModal, shared) {
+        shared.goHome();
+
         var user = shared.getUser();
 
         $scope.showEditUser = function() {

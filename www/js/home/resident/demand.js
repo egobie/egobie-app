@@ -2,23 +2,32 @@ angular.module('app.home.resident.demand', ['ionic', 'app.home.resident', 'util.
 
     .controller('demandCtrl', function($scope, $state, $http, shared, url,
             orderService, orderCar, orderPayment, orderOpening, orderAddon, order, demandOrder) {
+        shared.goOndemand();
+
         $scope.services = orderService.services;
         $scope.getTime = shared.getTime;
 
         $scope.selectService = function() {
+            shared.openService();
             $state.go('menu.home.residentService');
         };
 
         $scope.unselectService = function($event, service) {
-            if (service.id in orderService.index) {
+            shared.unselectService(service.id);
+
+            if (service.id in orderService.index) {                
                 orderService.services[orderService.index[service.id]].checked = false;
             }
         };
 
         $scope.gotoDemandOrder = function() {
+            var types = {};
+            demandOrder.services = [];
+
             for (var i in $scope.services) {
                 if ($scope.services[i].checked) {
                     demandOrder.services.push($scope.services[i].id);
+                    types[$scope.services[i].type] = 1;
                 }
             }
 
@@ -30,7 +39,8 @@ angular.module('app.home.resident.demand', ['ionic', 'app.home.resident', 'util.
             shared.showLoading();
             $http
                 .post(url.ondemand, shared.getRequestBody({
-                    services: demandOrder.services
+                    services: demandOrder.services,
+                    types: Object.keys(types).length > 1 ? "BOTH" : Object.keys(types)[0]
                 }))
                 .success(function(data, status, headers, config) {
                     orderOpening.id = data["id"];
@@ -42,9 +52,12 @@ angular.module('app.home.resident.demand', ['ionic', 'app.home.resident', 'util.
                     $state.go("menu.home.demandOrder");
                 })
                 .error(function(data, status, headers, config) {
+                    shared.hideLoading();
+
                     if (data === "NO") {
-                        shared.hideLoading();
-                        shared.alert("Not Available");
+                        shared.alert("Not Available (WE SUPPORT ON-DEMAND REQUEST BETWEEN 8:00 A.M. to 8:00 P.M. ONLY)");
+                    } else {
+                        shared.alert(data);
                     }
                 });
         };
@@ -84,6 +97,12 @@ angular.module('app.home.resident.demand', ['ionic', 'app.home.resident', 'util.
     .controller('demandOpeningCtrl', function($scope, $http, $interval, shared, url,
             orderOpening, demandOrder) {
         $scope.opening = orderOpening;
+
+        $scope.$on('$destroy', function() {
+            if (demandOrder.interval) {
+                $interval.cancel(demandOrder.interval);
+            }
+        });
 
         demandOrder.interval = $interval(function() {
             $http

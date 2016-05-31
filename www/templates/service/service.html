@@ -1,0 +1,71 @@
+<ion-view hide-nav-bar="true" cache-view="false"
+          ng-app="app.service"
+          ng-controller="serviceCtrl">
+    <ion-header-bar class="egobie-header-bar">
+        <button class="button button-icon icon ion-navicon egobie-display-inherit" menu-toggle="left"></button>
+        <h1 class="title">EGOBIE SERVICES</h1>
+    </ion-header-bar>
+    <div class="egobie-bg-mask">
+        <div class="egobie-bg-mask-1"></div>
+        <div class="egobie-bg-mask-2"></div>
+    </div>
+    <ion-content padding="true" class="egobie-service-list">
+        <ion-list>
+            <ion-item menu-close="" class="item-divider item-icon-right egobie-service-title egobie-margin-top-15"
+                      ng-click="toggleShownService('CAR_WASH')">
+                <!-- <i class="icon ion-ios-arrow-down"></i> -->{{serviceNames["CAR_WASH"].toUpperCase()}}
+            </ion-item>
+            <ion-item menu-close="" class="egobie-service-item"
+                      ng-repeat="service in carWash"
+                      ng-click="showService(service)"
+                      ng-show="isShownService('CAR_WASH')">
+                <div class="left"></div>
+                <div class="middle">
+                    <p class="price">{{service.price}}</p>
+                    <p class="name">{{service.name}}</p>
+                    <p class="note">{{service.note}}</p>
+                    <p class="time">Estimated Time : {{service.time}} mins</p>
+                </div>
+                <div class="icon ion-ios-arrow-right right"></div>
+            </ion-item>
+
+            <ion-item menu-close="" class="item-divider item-icon-right egobie-service-title"
+                      ng-click="toggleShownService('OIL_CHANGE')">
+                <!-- <i class="icon ion-ios-arrow-down"></i> -->{{serviceNames["OIL_CHANGE"].toUpperCase()}}
+            </ion-item>
+            <ion-item menu-close="" class="egobie-service-item"
+                      ng-repeat="service in oilChange"
+                      ng-click="showService(service)"
+                      ng-show="isShownService('OIL_CHANGE')">
+                <div class="left"></div>
+                <div class="middle">
+                    <p class="price">{{service.price}}</p>
+                    <p class="name">{{service.name}}</p>
+                    <p class="note">{{service.note}}</p>
+                    <p class="time">Estimated Time : {{service.time}}</p>
+                </div>
+                <div class="icon ion-ios-arrow-right right"></div>
+            </ion-item>
+
+            <!--
+            <ion-item menu-close="" class="item-divider item-icon-right egobie-service-title"
+                      ng-click="toggleShownService('DETAILING')">
+                {{serviceNames["DETAILING"].toUpperCase()}}
+            </ion-item>
+            <ion-item menu-close="" class="egobie-service-item"
+                      ng-repeat="service in detailing"
+                      ng-click="showService(service)"
+                      ng-show="isShownService('DETAILING')">
+                <div class="left"></div>
+                <div class="middle">
+                    <p class="price">{{service.price}}</p>
+                    <p class="name">{{service.name}}<span class="note">{{service.note}}</span></p>
+                    <p class="note">{{service.note}}</p>
+                    <p class="time">Estimated Time : {{service.time}}</p>
+                </div>
+                <div class="icon ion-ios-arrow-right right"></div>
+            </ion-item>
+            -->
+        </ion-list>
+    </ion-content>
+</ion-view>
