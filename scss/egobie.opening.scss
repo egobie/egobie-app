@@ -30,27 +30,35 @@
                 margin: 0px;
                 border: 0px;
                 position: relative;
+                display: flex;
 
-                /*
-                .dot {
-                    position: absolute;
-                    display: block;
-                    width: 16px;
-                    height: 16px;
-                    left: 19px;
-                    top: 10px;
-                    border-radius: 100%;
-                    background-color: #404041;
+                div.day {
+                    height: 35px;
+                    line-height: 35px;
+                    margin-left: 10px;
+                    font-size: 40px;
                 }
-                */
 
-                p {
-                    font-size: 15px;
-                    font-weight: bold;
-                    height: 30px;
-                    line-height: 30px;
-                    padding-left: 15px;
-                    border-radius: 5px;
+                div.month-year-week {
+                    margin-left: 10px;
+                    width: 70%;
+
+                    i.month-year {
+                        display: block;
+                        font-size: 15px;
+                    }
+
+                    i.week {
+                        display: block;
+                        font-size: 12px;
+                    }
+                }
+
+                i.more {
+                    width: 10%;
+                    font-size: 25px;
+                    height: 40px;
+                    line-height: 40px;
                 }
             }
 

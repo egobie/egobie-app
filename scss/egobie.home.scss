@@ -9,10 +9,18 @@
         }
     }
 
+    &-reservation {
+        height: 50%;
+    }
+
+    &-on-demand {
+        height: 51%;
+    }
+    
     &-on-demand, &-reservation {
         padding: 0px;
         position: relative;
-        height: 50%;
+        border: 0px;
 
         .mask {
             position: absolute;
@@ -77,6 +85,15 @@
     }
 
     &-resident-order {
+        div.note {
+            border: 0px;
+            padding-bottom: 15px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 900;
+            color: rgba(0,0,0,0.5);
+        }
+
         div.service {
             display: flex;
             width: 95%;
@@ -199,7 +216,7 @@
 
                 span {
                     font-weight: 700;
-                    font-size: 14px;
+                    font-size: 13px;
                 }
             }
         }

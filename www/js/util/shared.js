@@ -1,8 +1,6 @@
 angular.module("util.shared", ["util.url"])
 
-    .service("shared", function($rootScope, $window, $ionicPopup, $ionicLoading, $http, $q, url) {
-
-        var menu = null;
+    .service("shared", function($rootScope, $window, $ionicPopup, $ionicLoading, $ionicHistory, $http, $state, url) {
 
         var user = {
             id: "",
@@ -43,6 +41,15 @@ angular.module("util.shared", ["util.url"])
             'WHITE', 'BLACK', 'SILVER', 'GRAY', 'RED', 'BLUE', 'BROWN', 'YELLOW', 'GOLD', 'GREEN', 'PINK', 'OTHERS'
         ];
 
+        var weeks = [
+            "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+        ];
+
+        var months = [
+            "January", "February", "March", "April", "May", "June", "July",
+            "August", "September", "October", "November", "December"
+        ];
+
         var cardTypes = [{
             name: 'American Express',
             pattern: /^3[47]/,
@@ -67,9 +74,6 @@ angular.module("util.shared", ["util.url"])
 
         var userCars = {};
         var userPayments = {};
-        var userReservations = [];
-        var userDones = [];
-        var userHistories = {};
         var carMakers = [];
         var carModels = {};
         var services = {};
@@ -91,8 +95,8 @@ angular.module("util.shared", ["util.url"])
         var years = [];
         var _current_year = new Date().getFullYear();
 
-        // 1999 - 2016
-        for (var i = 1999; i <= _current_year; i++) {
+        // 1980 - 2016
+        for (var i = 1980; i <= _current_year; i++) {
             years.push(i);
         }
 
@@ -112,6 +116,7 @@ angular.module("util.shared", ["util.url"])
         }
 
         $window.shared = {
+            unratedHistory: 0,
 
             refreshUser: function(u) {
                 user.id = u.id;
@@ -135,10 +140,6 @@ angular.module("util.shared", ["util.url"])
                 user.work_city = u.work_address_city;
                 user.work_zip = u.work_address_zip;
                 user.work_street = u.work_address_street;
-
-                if (menu) {
-                    menu.user.name = user.first;
-                }
 
                 refreshScope();
             },
@@ -299,69 +300,6 @@ angular.module("util.shared", ["util.url"])
                     });
             },
 
-            refreshUserHistory: function(history) {
-                userHistories[history.id].note = history.note;
-                userHistories[history.id].rating = history.rating;
-                userHistories[history.id].available = history.available;
-            },
-
-            getUserHistory: function(id) {
-                return userHistories[id];
-            },
-
-            getUserHistories: function() {
-                return userHistories;
-            },
-
-            addUserHistories: function(histories) {
-                if (histories) {
-                    Array.prototype.forEach.call(histories, function(history) {
-                        history.available = history.rating > 0;
-                        userHistories[history.id] = history;
-                    });
-                }
-            },
-
-            clearUserHistories: function() {
-                userHistories = {};
-            },
-
-            getUserReservations: function() {
-                return userReservations;
-            },
-
-            addUserReservations: function(reservations) {
-                var self = this;
-
-                if (reservations) {
-                    Array.prototype.forEach.call(reservations, function(reservation) {
-                        if (reservation.services) {
-                            Array.prototype.forEach.call(reservation.services, function(service) {
-                                service.full_type = self.getServiceType(service.type);
-                            });
-                        }
-
-                        userReservations.push(reservation);                        
-                    });
-                }
-            },
-
-            clearUserReservations: function() {
-                userReservations = [];
-            },
-
-            getUserDones: function() {
-                return userDones;
-            },
-
-            addUserDones: function(dones) {
-                userDones = dones;
-            },
-
-            clearUserdones: function() {
-                userDones = [];
-            },
-
             getCarMakers: function() {
                 return carMakers;
             },
@@ -409,16 +347,6 @@ angular.module("util.shared", ["util.url"])
                 refreshScope();
             },
 
-            lockUserCar: function(id) {
-                userCars[id].reserved += 1;
-                refreshScope();
-            },
-
-            unlockUserCar: function(id) {
-                userCars[id].reserved -= 1;
-                refreshScope();
-            },
-
             getUserPayments: function() {
                 return userPayments;
             },
@@ -443,16 +371,6 @@ angular.module("util.shared", ["util.url"])
                 refreshScope();
             },
 
-            lockUserPayment: function(id) {
-                userPayments[id].reserved += 1;
-                refreshScope();
-            },
-
-            unlockUserPayment: function(id) {
-                userPayments[id].reserved -= 1;
-                refreshScope();
-            },
-
             demandOpening: function(id) {
                 $http
                     .post(url.demandOpening + id, this.getRequestBody({}))
@@ -462,6 +380,10 @@ angular.module("util.shared", ["util.url"])
                     .error(function(data, status, headers, config) {
                         this.alert("send demand for opening - " + data);
                     });
+            },
+
+            getUnratedHistory: function() {
+                return this.unratedHistory;
             },
 
             testEmail: function(email) {
@@ -489,6 +411,22 @@ angular.module("util.shared", ["util.url"])
                 }
 
                 return "invalid";
+            },
+
+            processOpening: function(openings) {
+                if (openings) {
+                    Array.prototype.forEach.call(openings, function(opening) {
+                        var d = new Date(opening.day);
+                        d.setDate(d.getDate() + 1);
+
+                        opening.year = d.getFullYear();
+                        opening.month = months[d.getMonth()];
+                        opening.weekday = weeks[d.getDay()];
+                        opening.date = d.getDate() < 10 ? ("0" + d.getDate()) : d.getDate();
+                    });
+                }
+
+                return openings;
             },
 
             getTime: function(t) {
@@ -529,8 +467,142 @@ angular.module("util.shared", ["util.url"])
 //                console.log(data);
             },
 
-            setMenuScope: function(menuScope) {
-                menu = menuScope;
+            goHome: function() {
+                $http.post(url.goHome, this.getRequestBody({}));
+            },
+
+            goNotification: function() {
+                $http.post(url.goNotification, this.getRequestBody({}));
+            },
+
+            goService: function() {
+                $http.post(url.goService, this.getRequestBody({}));
+            },
+
+            goHistory: function() {
+                $http.post(url.goHistory, this.getRequestBody({}));
+            },
+
+            goCoupon: function() {
+                $http.post(url.goCoupon, this.getRequestBody({}));
+            },
+
+            goCar: function() {
+                $http.post(url.goCar, this.getRequestBody({}));
+            },
+
+            goPayment: function() {
+                $http.post(url.goPayment, this.getRequestBody({}));
+            },
+
+            goSetting: function() {
+                $http.post(url.goSetting, this.getRequestBody({}));
+            },
+
+            goAbout: function() {
+                $http.post(url.goAbout, this.getRequestBody({}));
+            },
+
+            goReservation: function() {
+                $http.post(url.goReservation, this.getRequestBody({}));
+            },
+
+            goOndemand: function() {
+                $http.post(url.goOndemand, this.getRequestBody({}));
+            },
+
+            openRating: function() {
+                $http.post(url.openRating, this.getRequestBody({}));
+            },
+
+            openFeedback: function() {
+                $http.post(url.openFeedback, this.getRequestBody({}));
+            },
+
+            openService: function() {
+                $http.post(url.openService, this.getRequestBody({}));
+            },
+
+            openExtra: function() {
+                $http.post(url.openExtra, this.getRequestBody({}));
+            },
+
+            openDate: function() {
+                $http.post(url.openDate, this.getRequestBody({}));
+            },
+
+            openCar: function() {
+                $http.post(url.openCar, this.getRequestBody({}));
+            },
+
+            openPayment: function() {
+                $http.post(url.openPayment, this.getRequestBody({}));
+            },
+
+            readHistory: function() {
+                $http.post(url.readHistory, this.getRequestBody({}));
+            },
+
+            clickOpening: function(opening) {
+                $http.post(url.clickOpening, this.getRequestBody({
+                    data: opening
+                }));
+            },
+
+            reloadOpening: function() {
+                $http.post(url.reloadOpening, this.getRequestBody({}));
+            },
+
+            unselectService: function(id) {
+                $http.post(url.unselectService, this.getRequestBody({
+                    data: id + ""
+                }));
+            },
+
+            unselectExtra: function(id) {
+                $http.post(url.unselectExtra, this.getRequestBody({
+                    data: id + ""
+                }));
+            },
+
+            signOut: function() {
+                $ionicHistory.clearHistory();
+                $ionicHistory.clearCache().then(function() {
+                    user = {
+                        id: "",
+                        token: "",
+                        username: "",
+                        email: "",
+                        coupon: "",
+                        discount: 0,
+                        phone: "",
+                        first: "",
+                        last: "",
+                        middle: "",
+                        home_state: "",
+                        home_city: "",
+                        home_zip: "",
+                        home_street: "",
+                        work_state: "",
+                        work_city: "",
+                        work_zip: "",
+                        work_street: ""
+                    };
+
+                    userCars = {};
+                    userPayments = {};
+                    carMakers = [];
+                    carModels = {};
+                    services = {};
+
+                    carWash = [];
+                    oilChange = [];
+                    detailing = [];
+
+                    years = [];
+
+                    $state.go('sign.in');
+                });
             }
         };
 

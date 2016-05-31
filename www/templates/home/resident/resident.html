@@ -1,0 +1,41 @@
+<ion-view hide-nav-bar="true" cache-view="false"
+          ng-app="app.home.resident"
+          ng-controller="navigationCtrl">
+    <ion-header-bar class="egobie-header-bar">
+        <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+        <h1 class="title">HOME</h1>
+    </ion-header-bar>
+    <ion-content overflow-scroll="true" class="egobie-whole-page">
+        <ion-list class="egobie-whole-page">
+            <ion-item class="egobie-reservation"
+                      ng-click="gotoReservation()">
+                <div class="mask"></div>
+                <div class="panel">
+                    <div class="left">
+                        <p class="title">Reservation</p>
+                        <p class="content">Make a reservation and we will provide</p>
+                        <p class="content">timely service to you</p>
+                    </div>
+                    <div class="right">
+                        <i class="icon ion-arrow-right-c navigation"></i>
+                    </div>
+                </div>
+            </ion-item>
+
+            <ion-item class="egobie-on-demand"
+                      ng-click="gotoOnDemand()">
+                <div class="mask"></div>
+                <div class="panel">
+                    <div class="left">
+                        <p class="title">On Demand</p>
+                        <p class="content">Request now, we will come to your</p>
+                        <p class="content">place within hours</p>
+                    </div>
+                    <div class="right">
+                        <i class="icon ion-arrow-right-c navigation"></i>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
