@@ -10396,7 +10396,7 @@ a.button {
     text-align: center;
     margin-top: -30px; }
   .egobie-coupon .share .share-des {
-    font-size: 14px;
+    font-size: 13px;
     text-align: center; }
 
 .egobie-display-none {
@@ -10556,7 +10556,7 @@ a.button {
   border: 0px;
   padding-bottom: 15px;
   text-align: center;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 900;
   color: rgba(0, 0, 0, 0.5); }
 
@@ -12612,7 +12612,7 @@ a.button {
   font-family: eGobieFont !important; }
 
 .egobie-service-disabled {
-  opacity: 0.25;
+  opacity: 0.40;
   box-shadow: none !important; }
 
 .egobie-service-item-select {

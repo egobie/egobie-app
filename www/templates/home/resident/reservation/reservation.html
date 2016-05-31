@@ -55,11 +55,11 @@
                       ng-click="showOpeningModal()">
                 Choose Datetime<i class="icon ion-ios-arrow-right"></i>
             </ion-item>
-            <ion-item class="item-icon-left">
+            <ion-item class="item-icon-left" style="opacity: 0.50;">
                 <i class="icon ion-calendar"></i>{{opening.day}}
             </ion-item>
-            <ion-item class="item-icon-left">
-                <i class="icon ion-calendar"></i>{{opening.start}} to {{opening.end}}
+            <ion-item class="item-icon-left" style="opacity: 0.50;">
+                <i class="icon ion-clock"></i>{{opening.start}} to {{opening.end}}
             </ion-item>
         </ion-list>
 
@@ -92,12 +92,12 @@
         <ion-list class="egobie-resident-order">
             <ion-item class="item-divider">Price & Time <span>(tax and discount included)</span></ion-item>
 
-            <ion-item class="item-icon-left item-icon-right">
+            <ion-item class="item-icon-left item-icon-right" style="opacity: 0.50;">
                 <i class="icon ion-cash"></i>
                 {{order.getRealPrice()}}
                 <i class="icon ion-social-usd"></i>
             </ion-item>
-            <ion-item class="item-icon-left egobie-margin-bottom-10">
+            <ion-item class="item-icon-left egobie-margin-bottom-10" style="opacity: 0.50;">
                 <i class="icon ion-ios-time"></i>{{order.getRealTime()}}
             </ion-item>
         </ion-list>

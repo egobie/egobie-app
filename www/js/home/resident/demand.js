@@ -21,6 +21,8 @@ angular.module('app.home.resident.demand', ['ionic', 'app.home.resident', 'util.
         };
 
         $scope.gotoDemandOrder = function() {
+            demandOrder.services = [];
+
             for (var i in $scope.services) {
                 if ($scope.services[i].checked) {
                     demandOrder.services.push($scope.services[i].id);
@@ -49,7 +51,7 @@ angular.module('app.home.resident.demand', ['ionic', 'app.home.resident', 'util.
                 .error(function(data, status, headers, config) {
                     if (data === "NO") {
                         shared.hideLoading();
-                        shared.alert("Not Available");
+                        shared.alert("Not Available (WE SUPPORT ON-DEMAND REQUEST BETWEEN 8:00 A.M. to 8:00 P.M. ONLY)");
                     }
                 });
         };
