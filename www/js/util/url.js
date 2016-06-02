@@ -1,8 +1,8 @@
 angular.module('util.url', [])
 
     .factory('url', function() {
-        var host = "http://localhost:8000";
-//        var host = "http://ec2-52-90-93-52.compute-1.amazonaws.com:8000";
+//        var host = "http://localhost:8000";
+        var host = "http://egobie-app-lb-1883256124.us-east-1.elb.amazonaws.com";
 
         return {
             website: "http://www.egobie.com/",
