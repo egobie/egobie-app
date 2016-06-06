@@ -10,7 +10,7 @@
         <div class="egobie-bg-mask-1"></div>
         <div class="egobie-bg-mask-2"></div>
     </div>
-    <ion-content padding="true">
+    <ion-scroll padding="true" class="has-header egobie-full-height">
         <ion-item class="egobie-feedback">
             <input type="text" placeholder="Title"
                    ng-model="feedback.title">
@@ -19,5 +19,5 @@
             <button class="button button-block button-dark"
                     ng-click="sendFeedback()">Send</button>
         </ion-item>
-    </ion-content>
+    </ion-scroll>
 </ion-modal-view>
