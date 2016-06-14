@@ -21,13 +21,11 @@ angular.module('app.home.resident.demand', ['ionic', 'app.home.resident', 'util.
         };
 
         $scope.gotoDemandOrder = function() {
-            var types = {};
             demandOrder.services = [];
 
             for (var i in $scope.services) {
                 if ($scope.services[i].checked) {
                     demandOrder.services.push($scope.services[i].id);
-                    types[$scope.services[i].type] = 1;
                 }
             }
 
@@ -39,8 +37,7 @@ angular.module('app.home.resident.demand', ['ionic', 'app.home.resident', 'util.
             shared.showLoading();
             $http
                 .post(url.ondemand, shared.getRequestBody({
-                    services: demandOrder.services,
-                    types: Object.keys(types).length > 1 ? "BOTH" : Object.keys(types)[0]
+                    services: demandOrder.services
                 }))
                 .success(function(data, status, headers, config) {
                     orderOpening.id = data["id"];
