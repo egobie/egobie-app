@@ -290,7 +290,8 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
         };
     })
 
-    .controller('serviceSelectCtl', function($scope, $state, $ionicModal, shared, orderService, orderAddon, order, orderOpening) {
+    .controller('serviceSelectCtl', function($scope, $state, $ionicModal, shared, 
+            orderService, orderAddon, order, orderOpening) {
         $scope.services = orderService.services;
         $scope.serviceNames = shared.getServiceNames();
         $scope.carWash = shared.getCarWashServices();
@@ -314,6 +315,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
             }
 
             shared.demandService(ids);
+            orderOpening.clear();
             $scope.$ionicGoBack();
         };
 
@@ -351,6 +353,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
 
         $scope.unselectService = function($event, service) {
             shared.unselectService(service.id);
+            orderOpening.clear();
 
             if (service.id in orderService.index) {
                 orderService.services[orderService.index[service.id]].checked = false;
@@ -365,7 +368,6 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
             if (order.price <= 0 || order.time <= 0) {
                 order.price = 0;
                 order.time = 0;
-                orderOpening.clear();
             }
 
             $event.stopPropagation();
@@ -390,7 +392,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
         };
     })
 
-    .controller('addonSelectCtl', function($scope, $state, shared, orderAddon, order) {
+    .controller('addonSelectCtl', function($scope, $state, shared, orderAddon, orderOpening, order) {
         $scope.addons = orderAddon.addons;
 
         $scope.selectAddon = function() {
@@ -400,6 +402,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
 
         $scope.unselectAddon = function($event, addon) {
             shared.unselectService(addon.id);
+            orderOpening.clear();
 
             addon.checked = false;
             order.price -= (addon.addon.price * addon.addon.amount);
@@ -464,7 +467,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
             }
 
             shared.demandAddons(ids);
-
+            orderOpening.clear();
             $scope.$ionicGoBack();
             //$state.go("menu.home.reservation");
         };
