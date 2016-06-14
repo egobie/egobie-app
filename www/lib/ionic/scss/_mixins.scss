@@ -3,19 +3,19 @@
 // --------------------------------------------------
 
 @mixin button-style($bg-color, $border-color, $active-bg-color, $active-border-color, $color) {
-  border-color: transparent;//$border-color;
+  border-color: $border-color;
   background-color: $bg-color;
   color: $color;
 
   // Give desktop users something to play with
   &:hover {
-    color: $color;
     text-decoration: none;
   }
   &.active,
   &.activated {
-    //border-color: transparent;//$active-border-color;
-    background-color: $active-bg-color;
+    @if $active-border-color != ""{
+      border-color: $active-border-color;
+    }
     //box-shadow: inset 0 1px 4px rgba(0,0,0,0.1);
   }
 }
@@ -47,7 +47,6 @@
     color: $text-color;
     &.active,
     &.activated {
-      background-color: $color;
       box-shadow: none;
       color: #fff;
     }
@@ -99,10 +98,8 @@
 
 @mixin item-active-style($active-bg-color, $active-border-color) {
   border-color: $active-border-color;
-  background-color: $active-bg-color;
   &.item-complex > .item-content {
     border-color: $active-border-color;
-    background-color: $active-bg-color;
   }
 }
 
