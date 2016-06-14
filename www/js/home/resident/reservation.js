@@ -461,7 +461,6 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
 
             for (var key in $scope.addons) {
                 if ($scope.addons[key].checked) {
-                    console.log($scope.addons[key]);
                     ids.push($scope.addons[key].addon.id);
                 }
             }
