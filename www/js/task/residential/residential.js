@@ -36,7 +36,7 @@ angular.module('app.task.residential', ['ionic', 'util.shared', 'util.url'])
                     }
                 });
             } else if (task.status === "IN_PROGRESS") {
-                $scope.hideStatusSheet = $ionicActionSheet.show({
+                $scope.hideUserTaskSheet = $ionicActionSheet.show({
                     titleText: 'Finish Task CANNOT MAKE THIS TASK "RESERVED" OR "IN_PROGRESS" AGAIN',
                     destructiveText: "DONE",
                     destructiveButtonClicked: function() {
@@ -73,6 +73,6 @@ angular.module('app.task.residential', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.noUserTask = function() {
-            return !$scope.tasks || $scope.tasks.length === 0;
+            return !$scope.userTasks || $scope.userTasks.length === 0;
         };
     });
