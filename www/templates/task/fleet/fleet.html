@@ -1,0 +1,60 @@
+<ion-view hide-nav-bar="true" cache-view="false"
+          ng-app="app.task.fleet"
+          ng-controller="taskFleetCtrl">
+    <ion-header-bar class="egobie-header-bar">
+        <button class="button button-icon icon ion-navicon egobie-display-inherit" menu-toggle="left"></button>
+        <h1 class="title">FLEET TASKS</h1>
+        <button class="button button-icon icon ion-android-refresh egobie-display-inherit"
+                ng-click="loadTasks(true)"></button>
+    </ion-header-bar>
+    <div class="egobie-bg-mask">
+        <div class="egobie-bg-mask-1"></div>
+        <div class="egobie-bg-mask-2"></div>
+    </div>
+    <ion-content padding="true">
+        <ion-list>
+            <ion-item class="egobie-empty-reservation"
+                      ng-show="noFleetTask()">
+                <i class="icon ion-android-checkmark-circle icon-1"></i>
+                <p class="no">No Task</p>
+            </ion-item>
+
+            <ion-item class="egobie-task-list"
+                      ng-repeat="task in fleetTasks"
+                      ng-class="taskBorderStyle(task.status)"
+                      ng-click="showFleetTaskSheet(task)">
+                <div class="top">
+                    <div class="status-time-services">
+                        <div class="status">
+                            <p class="title">Status</p>
+                            <p class="value">{{task.status}}</p>
+                        </div>
+                        <div class="time">
+                            <p class="title">Estimated Start</p>
+                            <p class="value">{{task.start}}</p>
+                        </div>
+                        <div class="services">
+                            <p class="title">Business Name</p>
+                            <p class="value">{{task.fleet_name}}</p>
+                        </div>
+                    </div>
+
+                    <div class="customer-phone-plate-reserve">
+                        <div class="customer">
+                            <p class="title">Customer</p>
+                            <p class="value">{{task.first}} {{task.last}}</p>
+                        </div>
+                        <div class="phone">
+                            <p class="title">Phone Number</p>
+                            <p class="value">{{task.phone}}</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="bottom">
+                    <span>{{task.street}}</span>
+                    <span>{{task.state}}, {{task.city}}, {{task.zip}}</span>
+                </p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

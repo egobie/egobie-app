@@ -1,0 +1,47 @@
+<ion-modal-view hide-nav-bar="true" cache-view="false">
+    <ion-header-bar class="egobie-header-bar">
+        <h1 class="title">DETAIL</h1>
+        <button class="button button-icon icon ion-android-close"
+                ng-click="hideOrderDetail()"></button>
+    </ion-header-bar>
+    <div class="egobie-bg-mask">
+        <div class="egobie-bg-mask-1"></div>
+        <div class="egobie-bg-mask-2"></div>
+    </div>
+    <ion-content padding="true" class="padding has-header has-footer">
+        <ion-list>
+            <ion-item class="egobie-fleet-order-list"
+                      ng-repeat="(id, detail) in details">
+                <div class="top">
+                    <div class="services">
+                        <div class="items">
+                            <p class="title">Services</p>
+                            <p class="value"
+                               ng-repeat="service in detail.services">
+                                {{service.name}} ({{service.type}})
+                                <span>{{service.note}}</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="addons">
+                        <div class="items">
+                            <p class="title">Extra Services</p>
+                            <p class="value"
+                               ng-repeat="addon in detail.addons">
+                                {{addon.name}}
+                                <span>{{addon.note}}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <p class="bottom">{{detail.car_count}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    <ion-footer-bar class="bar-dark"
+                    ng-class="isDisabled()"
+                    ng-click="savePrice()">
+        <h1 class="title">Save</h1>
+    </ion-footer-bar>
+</ion-modal-view>

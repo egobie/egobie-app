@@ -50,6 +50,8 @@ angular
         'app.about.feedback',
 
         'app.task',
+        'app.task.fleet',
+        'app.task.residential',
 
         'util.shared',
         'util.url',

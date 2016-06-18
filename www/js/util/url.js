@@ -1,8 +1,8 @@
 angular.module('util.url', [])
 
     .factory('url', function() {
-//        var host = "http://localhost:8000";
-        var host = "http://egobie-app-lb-1883256124.us-east-1.elb.amazonaws.com";
+        var host = "http://localhost:8000";
+//        var host = "http://egobie-app-lb-1883256124.us-east-1.elb.amazonaws.com";
 
         return {
             website: "http://www.egobie.com/",
@@ -51,8 +51,11 @@ angular.module('util.url', [])
             ratingHistory: host + "/history/rating",
 
             tasks: host + "/egobie/service/task",
-            startTask: host + "/egobie/service/progress",
-            finishTask: host + "/egobie/service/done",
+            details: host + "/egobie/service/task/detail",
+            startUserTask: host + "/egobie/service/user/progress",
+            finishUserTask: host + "/egobie/service/user/done",
+            startFleetTask: host + "/egobie/service/fleet/progress",
+            finishFleetTask: host + "/egobie/service/fleet/done",
 
             goHome: host + "/action/go/home",
             goNotification: host + "/action/go/notification",

@@ -1,6 +1,6 @@
 angular.module("util.shared", ["util.url"])
 
-    .service("shared", function($rootScope, $window, $ionicPopup, $ionicLoading, $ionicHistory, $http, $state, url) {
+    .service("shared", function($rootScope, $window, $ionicPopup, $ionicLoading, $ionicHistory, $interval, $http, $state, url) {
 
         var user = {
             id: "",
@@ -88,6 +88,10 @@ angular.module("util.shared", ["util.url"])
             "DETAILING": "Detailing"
         };
 
+        var userTasks = [];
+        var fleetTasks = [];
+        var taskInterval = null;
+
         var regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         var regCoupon = /^([A-Z0-9]{5})$/;
         var regPhone = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
@@ -96,7 +100,7 @@ angular.module("util.shared", ["util.url"])
         var _current_year = new Date().getFullYear();
 
         // 1980 - 2016
-        for (var i = 1980; i <= _current_year; i++) {
+        for (var i = _current_year; i >= 1980; i--) {
             years.push(i);
         }
 
@@ -384,6 +388,47 @@ angular.module("util.shared", ["util.url"])
 
             getUnratedHistory: function() {
                 return this.unratedHistory;
+            },
+
+            loadTasks: function(animation) {
+                if (this.isResidential()) {
+                    return;
+                }
+
+                var self = this;
+
+                if (animation) {
+                    this.showLoading();
+
+                    if (taskInterval) {
+                        $interval.cancel(taskInterval);
+                    }
+
+                    taskInterval = $interval(function() {
+                        self.loadTasks(false);
+                    }, 15000);
+                }
+
+                $http
+                    .post(url.tasks, this.getRequestBody({}))
+                    .success(function(data, status, headers, config) {
+                        self.hideLoading();
+
+                        userTasks = data.user_tasks || [];
+                        fleetTasks = data.fleet_tasks || [];
+                    })
+                    .error(function(data, status, headers, config) {
+                        self.hideLoading();
+                        self.alert(data);
+                    });
+            },
+
+            getUserTasks: function() {
+                return userTasks;
+            },
+            
+            getFleetTasks: function() {
+                return fleetTasks;
             },
 
             testEmail: function(email) {
