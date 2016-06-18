@@ -13638,6 +13638,57 @@ a.button {
     .egobie-task-list .bottom span {
       display: block; }
 
+.egobie-fleet-task-detail-list {
+  width: 95%;
+  padding: 0px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.26); }
+  .egobie-fleet-task-detail-list .top {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+    .egobie-fleet-task-detail-list .top .services, .egobie-fleet-task-detail-list .top .addons {
+      display: inline-block; }
+      .egobie-fleet-task-detail-list .top .services .items .title, .egobie-fleet-task-detail-list .top .addons .items .title {
+        font-size: 12px;
+        font-weight: 900; }
+      .egobie-fleet-task-detail-list .top .services .items .value, .egobie-fleet-task-detail-list .top .addons .items .value {
+        font-size: 10px;
+        color: #000000;
+        overflow: visible; }
+        .egobie-fleet-task-detail-list .top .services .items .value span, .egobie-fleet-task-detail-list .top .addons .items .value span {
+          display: block;
+          padding-left: 5px;
+          color: #1BB3EC; }
+        .egobie-fleet-task-detail-list .top .services .items .value:before, .egobie-fleet-task-detail-list .top .addons .items .value:before {
+          content: "- "; }
+    .egobie-fleet-task-detail-list .top .services {
+      width: 45%;
+      margin-left: 10px; }
+    .egobie-fleet-task-detail-list .top .addons {
+      margin-left: 5px; }
+  .egobie-fleet-task-detail-list .bottom {
+    width: 95%;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 900;
+    text-align: right;
+    padding-right: 10px;
+    margin: 10px auto;
+    font-size: 18px;
+    border-top: 1px solid rgba(0, 0, 0, 0.31); }
+    .egobie-fleet-task-detail-list .bottom:before {
+      content: "Vehicles:";
+      padding-right: 5px;
+      font-size: 15px;
+      height: 30px;
+      line-height: 30px;
+      font-weight: normal; }
+
 .egobie-task-border-done {
   border-left: 5px solid #5CB85C; }
 

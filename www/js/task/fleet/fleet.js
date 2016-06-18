@@ -108,6 +108,24 @@ angular.module('app.task.fleet', ['ionic', 'util.shared', 'util.url'])
 
                     }
                 });
+            } else  {
+                $scope.hideFleetTaskSheet = $ionicActionSheet.show({
+                    titleText: 'View Task',
+                    buttons: [
+                        { text: 'View' }
+                    ],
+                    buttonClicked: function(index) {
+                        if (index === 0) {
+                            $scope.showOrderDetail(task.id);
+                        }
+
+                        return true;
+                    },
+                    cancelText: 'Close',
+                    cancel: function() {
+
+                    }
+                });
             }
         };
 
