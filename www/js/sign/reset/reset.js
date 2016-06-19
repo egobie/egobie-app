@@ -16,8 +16,6 @@ angular.module('app.sign.reset', ['ionic', 'util.shared', 'util.url'])
             if ($scope.reset.timer) {
                 $interval.cancel($scope.reset.timer);
             }
-
-            console.log("Close");
         });
 
         $scope.gotoStep2 = function() {

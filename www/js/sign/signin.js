@@ -21,6 +21,12 @@ angular.module('app.sign.in', ['ionic', 'util.shared', 'util.url'])
             $http
                 .post(url.signIn, body)
                 .success(function(data, status, headers, config) {
+                    if (data.type !== 'RESIDENTIAL' && data.type !== 'RESIDENTIAL') {
+                        shared.hideLoading();
+                        shared.alert("Invalid User");
+                        return;
+                    }
+
                     shared.refreshUser(data);
 
                     if (shared.isResidential()) {
