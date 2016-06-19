@@ -299,14 +299,17 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
 
         $scope.pickService = function() {
             var ids = [];
+            var types = {};
 
             for (var _i = 0; _i < $scope.services.length; _i++) {
                 if ($scope.services[_i].checked) {
+                    types[$scope.services[_i].type] = true;
                     ids.push($scope.services[_i].id);
                 }
             }
 
             shared.demandService(ids);
+            order.mixed = (Object.keys(types).length > 1);
             orderOpening.clear();
             $scope.$ionicGoBack();
         };
@@ -356,6 +359,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
 
             order.price -= service.price;
             order.time -= service.time;
+            order.mixed = false;
 
             if (order.price <= 0 || order.time <= 0) {
                 order.price = 0;

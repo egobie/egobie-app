@@ -14,6 +14,7 @@ angular.module('app.home.resident.demand', ['ionic', 'app.home.resident', 'util.
 
         $scope.unselectService = function($event, service) {
             shared.unselectService(service.id);
+            order.mixed = false;
 
             if (service.id in orderService.index) {                
                 orderService.services[orderService.index[service.id]].checked = false;
@@ -81,13 +82,17 @@ angular.module('app.home.resident.demand', ['ionic', 'app.home.resident', 'util.
     .controller('demandOrderCtrl', function($scope, orderService, order) {
         order.clear();
 
+        var types = {};
+
         for (var i in orderService.services) {
             if (orderService.services[i].checked) {
+                types[orderService.services[i].type] = true;
                 order.price += orderService.services[i].price;
                 order.time += orderService.services[i].time;
             }
         }
 
+        order.mixed = (Object.keys(types).length > 1);
         $scope.order = order;
     })
 
@@ -121,5 +126,5 @@ angular.module('app.home.resident.demand', ['ionic', 'app.home.resident', 'util.
                         shared.alert("Not Available");
                     }
                 });
-        }, 30000);
+        }, 10000);
     });
