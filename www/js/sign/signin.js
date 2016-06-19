@@ -1,6 +1,6 @@
 angular.module('app.sign.in', ['ionic', 'util.shared', 'util.url'])
 
-    .controller('signInCtrl', function($scope, $state, $http, shared, url) {
+    .controller('signInCtrl', function($scope, $state, $ionicModal, $http, shared, url) {
         $scope.signInForm = {
             username: "",
             password: ""
@@ -33,6 +33,17 @@ angular.module('app.sign.in', ['ionic', 'util.shared', 'util.url'])
                     shared.hideLoading();
                     shared.alert(data);
                 });
+        };
+
+        $scope.showResetPassword = function() {
+            (function() {
+                $ionicModal.fromTemplateUrl('templates/sign/reset/reset.html', {
+                    scope: $scope
+                }).then(function(modal) {
+                    $scope.resetPasswordModal = modal;
+                    $scope.resetPasswordModal.show();
+                });
+            })();
         };
 
         function validateUser(username, password) {

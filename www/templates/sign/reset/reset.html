@@ -1,0 +1,66 @@
+<ion-modal-view hide-nav-bar="true"
+                ng-app="app.sign.reset"
+                ng-controller="resetPasswordCtrl">
+    <ion-header-bar class="egobie-header-bar">
+        <h1 class="title">RESET PASSWORD</h1>
+        <button class="button button-icon icon ion-android-close"
+                ng-click="hideResetPassword()"></button>
+    </ion-header-bar>
+    <div class="egobie-bg-mask">
+        <div class="egobie-bg-mask-1"></div>
+        <div class="egobie-bg-mask-2"></div>
+    </div>
+    <ion-scroll padding="true" class="has-header egobie-user-form-bg"
+                ng-show="reset.step === 1">
+        <div class="note">We will send a temporary token to your email address</div>
+        <ion-list class="egobie-user-form">
+            <ion-item>
+                <i class="icon-mask"></i>
+                <i class="icon ion-person"></i>
+                <input type="text" placeholder="Your username"
+                       ng-model="reset.username"/>
+            </ion-item>
+        </ion-list>
+        <button class="button button-block egobie-user-form-button"
+                ng-click="gotoStep2()">Next</button>
+    </ion-scroll>
+
+    <ion-scroll padding="true" class="has-header egobie-user-form-bg"
+                ng-show="reset.step === 2">
+        <ion-list class="egobie-user-form">
+            <ion-item>
+                <i class="icon-mask"></i>
+                <i class="icon ion-person"></i>
+                <input type="text" placeholder="Please input yout token"
+                       ng-model="reset.token"/>
+            </ion-item>
+        </ion-list>
+        <button class="button button-block egobie-user-form-button"
+                ng-click="gotoStep3()">Next</button>
+        <button class="button button-block egobie-user-form-button"
+                ng-click="resendResetEmail()"
+                ng-class="isDisabled()">
+            Re-send Email<span ng-show="reset.countdown > 0"> ({{reset.countdown}})</span>
+        </button>
+    </ion-scroll>
+
+    <ion-scroll padding="true" class="has-header egobie-user-form-bg">
+        <ion-list class="egobie-user-form"
+                  ng-show="reset.step === 3">
+            <ion-item>
+                <i class="icon-mask"></i>
+                <i class="icon ion-locked"></i>
+                <input type="password" placeholder="New Password"
+                       ng-model="reset.password1"/>
+            </ion-item>
+            <ion-item>
+                <i class="icon-mask"></i>
+                <i class="icon"></i>
+                <input type="password" placeholder="Confirm"
+                       ng-model="reset.password2"/>
+            </ion-item>
+        </ion-list>
+        <button class="button button-block egobie-user-form-button"
+                ng-click="resetPassword()">Submit</button>
+    </ion-scroll>
+</ion-modal-view>

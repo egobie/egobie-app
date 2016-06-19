@@ -10,6 +10,7 @@ angular
         'app.sign',
         'app.sign.in',
         'app.sign.up',
+        'app.sign.reset',
 
         'app.tutorial',
         'app.menu',
