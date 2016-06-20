@@ -118,7 +118,6 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
                 }
 
                 if (this.mixed) {
-                    console.log("mixed service");
                     _temp = _temp * 0.9;
                 }
 

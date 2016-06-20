@@ -468,7 +468,6 @@ angular.module("util.shared", ["util.url"])
             },
 
             testPhone: function(phone) {
-                console.log(phone);
                 return regPhone.test(phone);
             },
 
