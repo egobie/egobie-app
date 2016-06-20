@@ -85,6 +85,80 @@ $History-Reserved: #F0AD4E;
         }
     }
 
+    &-fleet-task-detail-list {
+        width: 95%;
+        padding: 0px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.26);
+
+        .top {
+            display: flex;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            .services, .addons {
+                display: inline-block;
+
+                .items {
+                    .title {
+                        font-size: 12px;
+                        font-weight: 900;
+                    }
+
+                    .value {
+                        font-size: 10px;
+                        color: #000000;
+                        overflow: visible;
+
+                        span {
+                            display: block;
+                            padding-left: 5px;
+                            color: #1BB3EC;
+                        }
+
+                        &:before {
+                            content: "- ";
+                        }
+                    }
+                }
+            }
+
+            .services {
+                width: 45%;
+                margin-left: 10px;
+            }
+
+            .addons {
+                margin-left: 5px;
+            }
+        }
+
+        .bottom {
+            width: 95%;
+            height: 30px;
+            line-height: 30px;
+            font-weight: 900;
+            text-align: right;
+            padding-right: 10px;
+            margin: 10px auto;
+            font-size: 18px;
+            border-top: 1px solid rgba(0, 0, 0, 0.31);
+            
+            &:before {
+                content: "Vehicles:";
+                padding-right: 5px;
+                font-size: 15px;
+                height: 30px;
+                line-height: 30px;
+                font-weight: normal;
+            }
+        }
+    }
+
     &-task-border-done {
         border-left: 5px solid $History-Done;
     }

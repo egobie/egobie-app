@@ -1,81 +1,14 @@
-<ion-view hide-nav-bar="true" cache-view="false"
+<ion-tabs cache-view="false" class="tabs-striped tabs-icon-top"
           ng-app="app.task"
           ng-controller="taskCtrl">
-    <ion-header-bar class="egobie-header-bar">
-        <button class="button button-icon icon ion-navicon egobie-display-inherit" menu-toggle="left"></button>
-        <h1 class="title">MY TASKS</h1>
-        <button class="button button-icon icon ion-android-refresh egobie-display-inherit"
-                ng-click="loadTasks(true)"></button>
-    </ion-header-bar>
-    <div class="egobie-bg-mask">
-        <div class="egobie-bg-mask-1"></div>
-        <div class="egobie-bg-mask-2"></div>
-    </div>
-    <ion-content padding="true">
-        <ion-list>
-            <ion-item class="item-divider item-icon-right egobie-reservation-title">TASKS LIST</ion-item>
-            <ion-item class="egobie-empty-reservation"
-                      ng-show="noTask()">
-                <i class="icon ion-android-checkmark-circle icon-1"></i>
-                <p class="no">No Task</p>
-            </ion-item>
 
-            <ion-item class="egobie-task-list"
-                      ng-repeat="task in tasks"
-                      ng-class="taskBorderStyle(task.status)"
-                      ng-click="showStatusSheet(task)">
-                <div class="top">
-                    <div class="status-time-services">
-                        <div class="status">
-                            <p class="title">Status</p>
-                            <p class="value">{{task.status}}</p>
-                        </div>
-                        <div class="time">
-                            <p class="title">Estimated Start</p>
-                            <p class="value">{{task.start}}</p>
-                        </div>
-                        <div class="services">
-                            <p class="title">Services</p>
-                            <p class="value"
-                               ng-repeat="service in task.services">
-                                {{service.name}} ({{getServiceType(service.type)}})
-                                <span ng-show="service.note !== ''">{{service.note}}</span>
-                            </p>
-                        </div>
-                        <div class="services">
-                            <p class="title">Extra Services</p>
-                            <p class="value"
-                               ng-repeat="addon in task.addons">
-                                {{addon.name}}
-                                <span ng-show="service.note !== ''">{{service.note}}</span>
-                            </p>
-                        </div>
-                    </div>
+    <ion-tab title="Residential" icon="ion-ios-home" ui-sref="menu.task.residential"
+             badge="userTasks.length" badge-style="badge-assertive">
+        <ion-nav-view name="residential-task-view"></ion-nav-view>
+    </ion-tab>
 
-                    <div class="customer-phone-plate-reserve">
-                        <div class="customer">
-                            <p class="title">Customer</p>
-                            <p class="value">{{task.first}} {{task.middle}} {{task.last}}</p>
-                        </div>
-                        <div class="phone">
-                            <p class="title">Phone Number</p>
-                            <p class="value">{{task.phone}}</p>
-                        </div>
-                        <div class="plate">
-                            <p class="title">Plate No.</p>
-                            <p class="value">{{task.plate}}</p>
-                        </div>
-                        <div class="reserve">
-                            <p class="title">Color</p>
-                            <p class="value">{{task.color}}</p>
-                        </div>
-                    </div>
-                </div>
-                <p class="bottom">
-                    <span>{{task.street}}</span>
-                    <span>{{task.city}}, {{task.zip}}</span>
-                </p>
-            </ion-item>
-        </ion-list>
-    </ion-content>
-</ion-view>
+    <ion-tab title="Fleet" icon="ion-ios-briefcase" ui-sref="menu.task.fleet"
+             badge="fleetTasks.length" badge-style="badge-assertive">
+        <ion-nav-view name="fleet-task-view"></ion-nav-view>
+    </ion-tab>
+</ion-tabs>

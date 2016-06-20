@@ -45,10 +45,8 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
                 note: "test",
                 opening: orderOpening.id,
                 services: [],
-                addons: [],
-                types: ""
+                addons: []
             };
-            var types = {};
 
             if (!(shared.getUser().home_street || "")) {
                 shared.alert("Please provide address");
@@ -58,7 +56,6 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
             for (var _i = 0; _i < orderService.services.length; _i++) {
                 if (orderService.services[_i].checked) {
                     request.services.push(orderService.services[_i].id);
-                    types[orderService.services[_i].type] = 1;
                 }
             }
 
@@ -74,8 +71,6 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
             if (!$scope.validateRequest(request)) {
                 return;
             }
-
-            request.types = Object.keys(types).length > 1 ? "BOTH" : Object.keys(types)[0];
 
             $scope.hideReservationSheet = $ionicActionSheet.show({
                 titleText: 'We process payment only after the service is done. We require you to cancel the reservation 24 hours ahead, otherwise we will charge 50% of the appointment cost.',
@@ -126,7 +121,6 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
 
         var services = [];
         var addons = [];
-        var types = {};
 
         $scope.hideOpeningModal = function() {
             $scope.openingModal.hide();
@@ -135,7 +129,6 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
         for (var _i = 0; _i < orderService.services.length; _i++) {
             if (orderService.services[_i].checked) {
                 services.push(orderService.services[_i].id);
-                types[orderService.services[_i].type] = 1;
             }
         }
 
@@ -163,8 +156,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
             $http
                 .post(url.openings, shared.getRequestBody({
                     services: services,
-                    addons: addons,
-                    types: Object.keys(types).length > 1 ? "BOTH" : Object.keys(types)[0]
+                    addons: addons
                 }))
                 .success(function(data, status, headers, config) {
                     shared.hideLoading();
@@ -307,14 +299,17 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
 
         $scope.pickService = function() {
             var ids = [];
+            var types = {};
 
             for (var _i = 0; _i < $scope.services.length; _i++) {
                 if ($scope.services[_i].checked) {
+                    types[$scope.services[_i].type] = true;
                     ids.push($scope.services[_i].id);
                 }
             }
 
             shared.demandService(ids);
+            order.mixed = (Object.keys(types).length > 1);
             orderOpening.clear();
             $scope.$ionicGoBack();
         };
@@ -364,6 +359,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
 
             order.price -= service.price;
             order.time -= service.time;
+            order.mixed = false;
 
             if (order.price <= 0 || order.time <= 0) {
                 order.price = 0;
@@ -461,7 +457,6 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
 
             for (var key in $scope.addons) {
                 if ($scope.addons[key].checked) {
-                    console.log($scope.addons[key]);
                     ids.push($scope.addons[key].addon.id);
                 }
             }

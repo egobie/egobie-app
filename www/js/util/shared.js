@@ -1,6 +1,6 @@
 angular.module("util.shared", ["util.url"])
 
-    .service("shared", function($rootScope, $window, $ionicPopup, $ionicLoading, $ionicHistory, $http, $state, url) {
+    .service("shared", function($rootScope, $window, $ionicPopup, $ionicLoading, $ionicHistory, $interval, $http, $state, url) {
 
         var user = {
             id: "",
@@ -78,6 +78,8 @@ angular.module("util.shared", ["util.url"])
         var carModels = {};
         var services = {};
 
+        var menuScope = null;
+
         var carWash = [];
         var oilChange = [];
         var detailing = [];
@@ -88,6 +90,10 @@ angular.module("util.shared", ["util.url"])
             "DETAILING": "Detailing"
         };
 
+        var userTasks = [];
+        var fleetTasks = [];
+        var taskInterval = null;
+
         var regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         var regCoupon = /^([A-Z0-9]{5})$/;
         var regPhone = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
@@ -96,7 +102,7 @@ angular.module("util.shared", ["util.url"])
         var _current_year = new Date().getFullYear();
 
         // 1980 - 2016
-        for (var i = 1980; i <= _current_year; i++) {
+        for (var i = _current_year; i >= 1980; i--) {
             years.push(i);
         }
 
@@ -386,6 +392,73 @@ angular.module("util.shared", ["util.url"])
                 return this.unratedHistory;
             },
 
+            loadTasks: function(animation) {
+                if (this.isResidential()) {
+                    return;
+                }
+
+                var self = this;
+
+                if (animation) {
+                    this.showLoading();
+
+                    if (taskInterval) {
+                        $interval.cancel(taskInterval);
+                    }
+
+                    taskInterval = $interval(function() {
+                        self.loadTasks(false);
+                    }, 600000);
+                }
+
+                $http
+                    .post(url.tasks, this.getRequestBody({}))
+                    .success(function(data, status, headers, config) {
+                        self.hideLoading();
+                        var user = 0;
+                        var fleet = 0;
+
+                        userTasks = data.user_tasks || [];
+                        fleetTasks = data.fleet_tasks || [];
+
+                        if (userTasks) {
+                            Array.prototype.forEach.call(userTasks, function(task) {
+                                if (task.status === "RESERVED") {
+                                    user++;
+                                }
+                            });
+                        }
+
+                        if (fleetTasks) {
+                            Array.prototype.forEach.call(fleetTasks, function(task) {
+                                if (task.status === "RESERVED") {
+                                    fleet++;
+                                }
+                            });
+                        }
+
+                        if (user * fleet !== 0) {
+                            self.notify("New Tasks", user + " tasks for residential. " + fleet + 
+                                    "tasks for fleet");
+                        }
+
+                        window.cordova.plugins.notification.badge.set(user + fleet);
+                        menuScope.badge.task = user + fleet;
+                    })
+                    .error(function(data, status, headers, config) {
+                        self.hideLoading();
+                        self.alert(data);
+                    });
+            },
+
+            getUserTasks: function() {
+                return userTasks;
+            },
+            
+            getFleetTasks: function() {
+                return fleetTasks;
+            },
+
             testEmail: function(email) {
                 return regEmail.test(email);
             },
@@ -395,7 +468,6 @@ angular.module("util.shared", ["util.url"])
             },
 
             testPhone: function(phone) {
-                console.log(phone);
                 return regPhone.test(phone);
             },
 
@@ -465,6 +537,23 @@ angular.module("util.shared", ["util.url"])
                     title: data
                 });
 //                console.log(data);
+            },
+
+            notify: function(title, message) {
+                // Vibrate 1s
+                //$cordovaVibration.vibrate(1000);
+                cordova.plugins.notification.local.schedule({
+                    id: 1,
+                    title: title,
+                    text: message,
+                    sound: "res://platform_default"
+                }).then(function (result) {
+                    
+                });
+            },
+            
+            setMenuScope: function(scope) {
+                menuScope = scope;
             },
 
             goHome: function() {

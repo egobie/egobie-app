@@ -119,8 +119,6 @@ angular.module('app.myservice.reservation', ['ionic', 'util.shared', 'util.url']
                     return;
                 }
 
-                console.log(url.forceCancelOrder);
-
                 shared.showLoading();
                 $http
                     .post(url.forceCancelOrder, shared.getRequestBody({

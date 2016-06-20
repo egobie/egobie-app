@@ -70,10 +70,14 @@
                     <div class="egobie-menu-profile-name">{{user.name}}</div>
                 </ion-item>
 
-                <ion-item ui-sref="menu.task" menu-close="" class="item item-icon-left egobie-menu-item">
+                <ion-item ui-sref="menu.task" menu-close="" class="item item-icon-left egobie-menu-item-last">
                     <i class="icon egobie-history-off"></i><span>MY TASKS</span>
+                    <span class="badge badge-assertive"
+                          ng-show="badge.task > 0">{{badge.task}}</span>
                 </ion-item>
             </ion-list>
+            <a class="sign-out"
+               ng-click="signOut()">Sign Out</a>
         </ion-content>
     </ion-side-menu>
 </ion-side-menus>

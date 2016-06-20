@@ -41,7 +41,7 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
             });
     })
 
-    .controller('menuCtrl', function($scope, shared) {
+    .controller('menuCtrl', function($scope, $state, $timeout, $window, $ionicHistory, shared) {
         $scope.user = {
             name: shared.getUser().first || "Welcome",
             isResidential: shared.isResidential()
@@ -49,7 +49,8 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
 
         $scope.badge = {
             history: 0,
-            notification: 0
+            notification: 0,
+            task: 0
         };
 
         $scope.$watch(function() {
@@ -64,7 +65,28 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
             $scope.badge.history = newValue;
         });
 
+        if (!shared.isResidential()) {
+            shared.loadTasks(true);
+        }
+
+        shared.setMenuScope($scope);
+
         $scope.signOut = function() {
-            shared.signOut();
+            shared.showLoading();
+
+            $timeout(function() {
+                shared.hideLoading();
+                $state.go('sign.in');
+
+                $timeout(function () {
+                    $ionicHistory.clearCache();
+                    $ionicHistory.clearHistory();
+                    $ionicHistory.nextViewOptions({
+                        disableBack: true,
+                        historyRoot: true
+                    });
+                    $window.location.reload();
+                }, 100);
+            }, 300);
         };
     });

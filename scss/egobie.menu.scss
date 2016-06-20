@@ -13,6 +13,13 @@
     &-menu-bg {
         background: image($Sign-Bg) no-repeat center center;
         background-size: cover;
+
+        .sign-out {
+            display: block;
+            width: 80px;
+            margin-left: 20px;
+            margin-top: 5px;
+        }
     }
 
     &-menu-bg * {
