@@ -78,6 +78,8 @@ angular.module("util.shared", ["util.url"])
         var carModels = {};
         var services = {};
 
+        var menuScope = null;
+
         var carWash = [];
         var oilChange = [];
         var detailing = [];
@@ -413,9 +415,35 @@ angular.module("util.shared", ["util.url"])
                     .post(url.tasks, this.getRequestBody({}))
                     .success(function(data, status, headers, config) {
                         self.hideLoading();
+                        var user = 0;
+                        var fleet = 0;
 
                         userTasks = data.user_tasks || [];
                         fleetTasks = data.fleet_tasks || [];
+
+                        if (userTasks) {
+                            Array.prototype.forEach.call(userTasks, function(task) {
+                                if (task.status === "RESERVED") {
+                                    user++;
+                                }
+                            });
+                        }
+
+                        if (fleetTasks) {
+                            Array.prototype.forEach.call(fleetTasks, function(task) {
+                                if (task.status === "RESERVED") {
+                                    fleet++;
+                                }
+                            });
+                        }
+
+                        if (user * fleet !== 0) {
+                            self.notify("New Tasks", user + " tasks for residential. " + fleet + 
+                                    "tasks for fleet");
+                        }
+
+                        window.cordova.plugins.notification.badge.set(user + fleet);
+                        menuScope.badge.task = user + fleet;
                     })
                     .error(function(data, status, headers, config) {
                         self.hideLoading();
@@ -510,6 +538,23 @@ angular.module("util.shared", ["util.url"])
                     title: data
                 });
 //                console.log(data);
+            },
+
+            notify: function(title, message) {
+                // Vibrate 1s
+                //$cordovaVibration.vibrate(1000);
+                cordova.plugins.notification.local.schedule({
+                    id: 1,
+                    title: title,
+                    text: message,
+                    sound: "res://platform_default"
+                }).then(function (result) {
+                    
+                });
+            },
+            
+            setMenuScope: function(scope) {
+                menuScope = scope;
             },
 
             goHome: function() {

@@ -49,7 +49,8 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
 
         $scope.badge = {
             history: 0,
-            notification: 0
+            notification: 0,
+            task: 0
         };
 
         $scope.$watch(function() {
@@ -67,6 +68,8 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
         if (!shared.isResidential()) {
             shared.loadTasks(true);
         }
+
+        shared.setMenuScope($scope);
 
         $scope.signOut = function() {
             shared.showLoading();

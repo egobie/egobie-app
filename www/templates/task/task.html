@@ -2,11 +2,13 @@
           ng-app="app.task"
           ng-controller="taskCtrl">
 
-    <ion-tab title="Residential" icon="ion-ios-home" ui-sref="menu.task.residential">
+    <ion-tab title="Residential" icon="ion-ios-home" ui-sref="menu.task.residential"
+             badge="userTasks.length" badge-style="badge-assertive">
         <ion-nav-view name="residential-task-view"></ion-nav-view>
     </ion-tab>
 
-    <ion-tab title="Fleet" icon="ion-ios-briefcase" ui-sref="menu.task.fleet">
+    <ion-tab title="Fleet" icon="ion-ios-briefcase" ui-sref="menu.task.fleet"
+             badge="fleetTasks.length" badge-style="badge-assertive">
         <ion-nav-view name="fleet-task-view"></ion-nav-view>
     </ion-tab>
 </ion-tabs>
