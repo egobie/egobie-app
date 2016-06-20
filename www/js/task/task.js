@@ -9,117 +9,46 @@ angular.module('app.task', ['ionic', 'util.shared', 'util.url'])
                         templateUrl: 'templates/task/task.html'
                     }
                 }
+            })
+
+            .state('menu.task.residential', {
+                url: '/task/residential',
+                views: {
+                    'residential-task-view': {
+                        templateUrl: 'templates/task/residential/residential.html'
+                    }
+                }
+            })
+
+            .state('menu.task.fleet', {
+                url: '/task/fleet',
+                views: {
+                    'fleet-task-view': {
+                        templateUrl: 'templates/task/fleet/fleet.html'
+                    }
+                }
             });
     })
 
-    .controller('taskCtrl', function($scope, $http, $interval, $ionicActionSheet, $ionicPopup, shared, url) {
-        $scope.tasks = [];
-        $scope.selectedTask = null;
-        $scope.taskModel = null;
-        $scope.interval = null;
+    .controller('taskCtrl', function($scope, shared) {
+        $scope.userTasks = shared.getUserTasks();
+        $scope.fleetTasks = shared.getFleetTasks();
+        $scope.getServiceType = shared.getServiceType;
 
-        $scope.$on('$destroy', function(event) {
-            if ($scope.interval) {
-                $interval.cancel($scope.interval);
-            }
+        $scope.$watch(function() {
+            return shared.getUserTasks();
+        }, function(newValue) {
+            $scope.userTasks = shared.getUserTasks();
         });
 
-        $scope.showStatusSheet = function(task) {
-            if (task.status === "RESERVED") {
-                $scope.hideStatusSheet = $ionicActionSheet.show({
-                    titleText: 'Start Task (CANNOT MAKE THIS TASK "RESERVED" AGAIN)',
-                    destructiveText: "Start",
-                    destructiveButtonClicked: function() {
-                        $ionicPopup.confirm({
-                            title: "Start this task?"
-                        }).then(function(sure) {
-                            if (sure) {
-                                shared.showLoading();
-                                $http
-                                    .post(url.startTask, shared.getRequestBody({
-                                        service_id: task.id
-                                    }))
-                                    .success(function(data, status, headers, config) {
-                                        shared.hideLoading();
-
-                                        $scope.hideStatusSheet();
-                                        $scope.loadTasks();
-                                    })
-                                    .error(function(data, status, headers, config) {
-                                        $scope.hideStatusSheet();
-                                        shared.hideLoading();
-                                        shared.alert(data);
-                                    });
-                            }
-                        });
-                    },
-                    cancelText: 'Close',
-                    cancel: function() {
-
-                    }
-                });
-            } else if (task.status === "IN_PROGRESS") {
-                $scope.hideStatusSheet = $ionicActionSheet.show({
-                    titleText: 'Finish Task CANNOT MAKE THIS TASK "RESERVED" OR "IN_PROGRESS" AGAIN',
-                    destructiveText: "DONE",
-                    destructiveButtonClicked: function() {
-                        $ionicPopup.confirm({
-                            title: "Finish this task?"
-                        }).then(function(sure) {
-                            if (sure) {
-                                shared.showLoading();
-                                $http
-                                    .post(url.finishTask, shared.getRequestBody({
-                                        service_id: task.id
-                                    }))
-                                    .success(function(data, status, headers, config) {
-                                        shared.hideLoading();
-                                        $scope.hideStatusSheet();
-                                        $scope.loadTasks();
-                                    })
-                                    .error(function(data, status, headers, config) {
-                                        $scope.hideStatusSheet();
-                                        shared.hideLoading();
-                                        shared.alert(data);
-                                    });
-                            }
-                        });
-
-                        return false;
-                    },
-                    cancelText: 'Close',
-                    cancel: function() {
-
-                    }
-                });
-            }
-        };
+        $scope.$watch(function() {
+            return shared.getFleetTasks();
+        }, function(newValue) {
+            $scope.fleetTasks = shared.getFleetTasks();
+        });
 
         $scope.loadTasks = function(animation) {
-            if ($scope.interval) {
-                $interval.cancel($scope.interval);
-            }
-
-            $scope.interval = $interval(function() {
-                $scope.loadTasks(false);
-            }, 60000);
-
-            if (animation) {
-                shared.showLoading();
-            }
-
-            $http
-                .post(url.tasks, shared.getRequestBody({}))
-                .success(function(data, status, headers, config) {
-                    shared.hideLoading();
-
-                    $scope.tasks = [];
-                    $scope.tasks = data;
-                })
-                .error(function(data, status, headers, config) {
-                    shared.hideLoading();
-                    shared.alert(data);
-                });
+            shared.loadTasks(animation);
         };
 
         $scope.taskBorderStyle = function(status) {
@@ -137,12 +66,4 @@ angular.module('app.task', ['ionic', 'util.shared', 'util.url'])
                 };
             }
         };
-
-        $scope.noTask = function() {
-            return !$scope.tasks || $scope.tasks.length === 0;
-        };
-
-        $scope.getServiceType = shared.getServiceType;
-
-        $scope.loadTasks(true);
     });

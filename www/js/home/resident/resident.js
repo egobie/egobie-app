@@ -102,18 +102,26 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
         return {
             price: 0,
             time: 0,
+            mixed: false,
             getRealPrice: function() {
                 if (this.price <= 0) {
                     return "";
                 }
 
                 var discount = shared.getUser().discount;
+                var _temp = 0;
 
                 if (discount > 0) {
-                    return (this.price * 1.07 * 0.9).toFixed(2);
+                    _temp = this.price * 1.07 * 0.9;
                 } else {
-                    return (this.price * 1.07).toFixed(2);
+                    _temp = this.price * 1.07;
                 }
+
+                if (this.mixed) {
+                    _temp = _temp * 0.9;
+                }
+
+                return _temp.toFixed(2);
             },
             getRealTime: function() {
                 var hour = Math.floor(this.time / 60);
@@ -132,6 +140,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
             clear: function() {
                 this.price = 0;
                 this.time = 0;
+                this.mixed = false;
             }
         };
     })

@@ -13,6 +13,10 @@ angular.module('util.url', [])
 
             signIn: host + "/signin",
             signUp: host + "/signup",
+            resetPassword1: host + "/reset/step1",
+            resetPassword2: host + "/reset/step2",
+            resetPassword3: host + "/reset/step3",
+            resetResend: host + "/reset/resend",
 
             carMaker: host + "/car/maker",
             carModel: host + "/car/model",
@@ -51,8 +55,11 @@ angular.module('util.url', [])
             ratingHistory: host + "/history/rating",
 
             tasks: host + "/egobie/service/task",
-            startTask: host + "/egobie/service/progress",
-            finishTask: host + "/egobie/service/done",
+            details: host + "/egobie/service/task/detail",
+            startUserTask: host + "/egobie/service/user/progress",
+            finishUserTask: host + "/egobie/service/user/done",
+            startFleetTask: host + "/egobie/service/fleet/progress",
+            finishFleetTask: host + "/egobie/service/fleet/done",
 
             goHome: host + "/action/go/home",
             goNotification: host + "/action/go/notification",

@@ -9730,6 +9730,9 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+.egobie-button-disabled {
+  opacity: 0.6; }
+
 .egobie-full-height {
   height: 100vh; }
 
@@ -9860,6 +9863,9 @@ a.button {
   .egobie-feedback button {
     border-radius: 5px; }
 
+.egobie-button-disabled {
+  opacity: 0.6; }
+
 .egobie-full-height {
   height: 100vh; }
 
@@ -9954,6 +9960,9 @@ a.button {
 
 * {
   font-family: eGobieFont !important; }
+
+.egobie-button-disabled {
+  opacity: 0.6; }
 
 .egobie-full-height {
   height: 100vh; }
@@ -10178,6 +10187,9 @@ a.button {
         font-weight: 800;
         font-size: 12px; }
 
+.egobie-button-disabled {
+  opacity: 0.6; }
+
 .egobie-full-height {
   height: 100vh; }
 
@@ -10343,6 +10355,9 @@ a.button {
 
 .egobie-car-add .item input, .egobie-car-edit .item input {
   padding-left: 14px; }
+
+.egobie-button-disabled {
+  opacity: 0.6; }
 
 .egobie-full-height {
   height: 100vh; }
@@ -10529,6 +10544,9 @@ a.button {
   .egobie-coupon .share .share-des {
     font-size: 13px;
     text-align: center; }
+
+.egobie-button-disabled {
+  opacity: 0.6; }
 
 .egobie-full-height {
   height: 100vh; }
@@ -10786,6 +10804,9 @@ a.button {
         font-weight: 700;
         font-size: 13px; }
 
+.egobie-button-disabled {
+  opacity: 0.6; }
+
 .egobie-full-height {
   height: 100vh; }
 
@@ -10902,6 +10923,11 @@ a.button {
   .egobie-menu-bg {
     background: url("../img/bg.jpg") no-repeat center center;
     background-size: cover; }
+    .egobie-menu-bg .sign-out {
+      display: block;
+      width: 80px;
+      margin-left: 20px;
+      margin-top: 5px; }
   .egobie-menu-bg * {
     color: #FFFFFF; }
   .egobie-menu-item, .egobie-menu-item-last {
@@ -10982,6 +11008,9 @@ a.button {
     content: url("../img/icon/about_on.png"); }
   .egobie-about-off {
     content: url("../img/icon/about_off.png"); }
+
+.egobie-button-disabled {
+  opacity: 0.6; }
 
 .egobie-full-height {
   height: 100vh; }
@@ -11077,6 +11106,9 @@ a.button {
 
 * {
   font-family: eGobieFont !important; }
+
+.egobie-button-disabled {
+  opacity: 0.6; }
 
 .egobie-full-height {
   height: 100vh; }
@@ -11709,6 +11741,9 @@ a.button {
   color: #FFFFFF;
   background-color: rgba(0, 0, 0, 0.7); }
 
+.egobie-button-disabled {
+  opacity: 0.6; }
+
 .egobie-full-height {
   height: 100vh; }
 
@@ -11803,6 +11838,9 @@ a.button {
 
 * {
   font-family: eGobieFont !important; }
+
+.egobie-button-disabled {
+  opacity: 0.6; }
 
 .egobie-full-height {
   height: 100vh; }
@@ -11919,6 +11957,9 @@ a.button {
     height: 30px;
     line-height: 30px;
     margin-top: 50px; }
+
+.egobie-button-disabled {
+  opacity: 0.6; }
 
 .egobie-full-height {
   height: 100vh; }
@@ -12085,6 +12126,9 @@ a.button {
           height: 105%;
           top: -1px; }
 
+.egobie-button-disabled {
+  opacity: 0.6; }
+
 .egobie-full-height {
   height: 100vh; }
 
@@ -12179,6 +12223,9 @@ a.button {
 
 * {
   font-family: eGobieFont !important; }
+
+.egobie-button-disabled {
+  opacity: 0.6; }
 
 .egobie-full-height {
   height: 100vh; }
@@ -12422,6 +12469,9 @@ a.button {
 .egobie-payment-discover {
   background: linear-gradient(100deg, #FD8854 20%, #FD6929 50%, #F26223 85%); }
 
+.egobie-button-disabled {
+  opacity: 0.6; }
+
 .egobie-full-height {
   height: 100vh; }
 
@@ -12588,6 +12638,9 @@ a.button {
 .egobie-payment-add .item input, .egobie-payment-edit .item input {
   padding-left: 14px; }
 
+.egobie-button-disabled {
+  opacity: 0.6; }
+
 .egobie-full-height {
   height: 100vh; }
 
@@ -12682,6 +12735,9 @@ a.button {
 
 * {
   font-family: eGobieFont !important; }
+
+.egobie-button-disabled {
+  opacity: 0.6; }
 
 .egobie-full-height {
   height: 100vh; }
@@ -12991,6 +13047,9 @@ a.button {
 .egobie-service-advance * .detail-section p {
   color: #567CC0 !important; }
 
+.egobie-button-disabled {
+  opacity: 0.6; }
+
 .egobie-full-height {
   height: 100vh; }
 
@@ -13085,6 +13144,9 @@ a.button {
 
 * {
   font-family: eGobieFont !important; }
+
+.egobie-button-disabled {
+  opacity: 0.6; }
 
 .egobie-full-height {
   height: 100vh; }
@@ -13256,6 +13318,16 @@ a.button {
     font-size: 20px;
     margin-top: 15px;
     padding-bottom: 15px; }
+
+.egobie-user-form-bg div.note {
+  width: 90%;
+  margin: 10px auto 5px auto;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.7);
+  text-align: center; }
+
+.egobie-button-disabled {
+  opacity: 0.6; }
 
 .egobie-full-height {
   height: 100vh; }
@@ -13492,6 +13564,9 @@ a.button {
   padding: 5px 10px 10px 20px;
   color: rgba(255, 255, 255, 0.6); }
 
+.egobie-button-disabled {
+  opacity: 0.6; }
+
 .egobie-full-height {
   height: 100vh; }
 
@@ -13638,6 +13713,57 @@ a.button {
     .egobie-task-list .bottom span {
       display: block; }
 
+.egobie-fleet-task-detail-list {
+  width: 95%;
+  padding: 0px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.26); }
+  .egobie-fleet-task-detail-list .top {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+    .egobie-fleet-task-detail-list .top .services, .egobie-fleet-task-detail-list .top .addons {
+      display: inline-block; }
+      .egobie-fleet-task-detail-list .top .services .items .title, .egobie-fleet-task-detail-list .top .addons .items .title {
+        font-size: 12px;
+        font-weight: 900; }
+      .egobie-fleet-task-detail-list .top .services .items .value, .egobie-fleet-task-detail-list .top .addons .items .value {
+        font-size: 10px;
+        color: #000000;
+        overflow: visible; }
+        .egobie-fleet-task-detail-list .top .services .items .value span, .egobie-fleet-task-detail-list .top .addons .items .value span {
+          display: block;
+          padding-left: 5px;
+          color: #1BB3EC; }
+        .egobie-fleet-task-detail-list .top .services .items .value:before, .egobie-fleet-task-detail-list .top .addons .items .value:before {
+          content: "- "; }
+    .egobie-fleet-task-detail-list .top .services {
+      width: 45%;
+      margin-left: 10px; }
+    .egobie-fleet-task-detail-list .top .addons {
+      margin-left: 5px; }
+  .egobie-fleet-task-detail-list .bottom {
+    width: 95%;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 900;
+    text-align: right;
+    padding-right: 10px;
+    margin: 10px auto;
+    font-size: 18px;
+    border-top: 1px solid rgba(0, 0, 0, 0.31); }
+    .egobie-fleet-task-detail-list .bottom:before {
+      content: "Vehicles:";
+      padding-right: 5px;
+      font-size: 15px;
+      height: 30px;
+      line-height: 30px;
+      font-weight: normal; }
+
 .egobie-task-border-done {
   border-left: 5px solid #5CB85C; }
 
@@ -13646,6 +13772,9 @@ a.button {
 
 .egobie-task-border-reserved {
   border-left: 5px solid #F0AD4E; }
+
+.egobie-button-disabled {
+  opacity: 0.6; }
 
 .egobie-full-height {
   height: 100vh; }

@@ -10,6 +10,7 @@ angular
         'app.sign',
         'app.sign.in',
         'app.sign.up',
+        'app.sign.reset',
 
         'app.tutorial',
         'app.menu',
@@ -50,6 +51,8 @@ angular
         'app.about.feedback',
 
         'app.task',
+        'app.task.fleet',
+        'app.task.residential',
 
         'util.shared',
         'util.url',
@@ -62,8 +65,6 @@ angular
             // for form inputs)
             if(window.cordova && window.cordova.plugins.Keyboard) {
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-                // Enable background mode
-                cordova.plugins.backgroundMode.enable();
                 // Open link
                 window.open = cordova.InAppBrowser.open;
             }
@@ -72,5 +73,14 @@ angular
                 // org.apache.cordova.statusbar required
                 StatusBar.styleDefault();
             }
+
+            // Enable background mode
+            cordova.plugins.backgroundMode.enable();
+
+            window.cordova.plugins.notification.local.registerPermission(function (granted) {
+                
+            });
+
+            window.cordova.plugins.notification.badge.set(0);
         });
     })
