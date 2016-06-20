@@ -408,7 +408,7 @@ angular.module("util.shared", ["util.url"])
 
                     taskInterval = $interval(function() {
                         self.loadTasks(false);
-                    }, 15000);
+                    }, 600000);
                 }
 
                 $http
