@@ -13,6 +13,10 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
         $ionicConfigProvider.backButton.text('');                  // default is 'Back'
         $ionicConfigProvider.backButton.previousTitleText(false);  // hides the 'Back' text
         // $ionicConfigProvider.templates.maxPrefetch(20);
+        // Make tabs bottom (for android)
+        $ionicConfigProvider.tabs.position('bottom');
+        // Make Header center (for android)
+        $ionicConfigProvider.navBar.alignTitle('center');
 
         $stateProvider
 

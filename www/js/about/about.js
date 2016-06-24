@@ -12,8 +12,16 @@ angular.module('app.about', ['ionic', 'util.url', 'util.shared'])
             });
     })
 
-    .controller('aboutCtrl', function($scope, $ionicModal, shared, url) {
+    .controller('aboutCtrl', function($scope, $ionicModal, $ionicPlatform, shared, url) {
         shared.goAbout();
+
+        $scope.rateUs = function() {
+            if ($ionicPlatform.is("ios")) {
+                window.open(url.ios, "_blank", "location=no");
+            } else if ($ionicPlatform.is('android')) {
+                window.open(url.android, "_blank", "location=no");
+            }
+        };
 
         $scope.openWebsite = function() {
             window.open(url.website, "_blank", "location=no");
