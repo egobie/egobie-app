@@ -10,6 +10,8 @@ cordova plugin add https://github.com/katzer/cordova-plugin-local-notifications
 cordova plugin add cordova-plugin-device
 cordova plugin add https://github.com/katzer/cordova-plugin-badge.git
 cordova plugin add cordova-plugin-vibration
+cordova plugin add cordova-plugin-geolocation
+
 
 # Run emulator
 cordova emulate ios --target="iPhone-6s"
