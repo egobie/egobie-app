@@ -27,15 +27,6 @@ angular.module('app.home', ['ionic', 'ionic.rating'])
                 }
             })
 
-            .state('menu.home.map', {
-                url: '/map',
-                views: {
-                    'resident-view': {
-                        templateUrl: 'templates/home/map/map.html'
-                    }
-                }
-            })
-
             .state('menu.home.mall', {
                 url: '/mall',
                 views: {

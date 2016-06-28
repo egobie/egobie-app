@@ -10902,13 +10902,11 @@ a.button {
 * {
   font-family: eGobieFont !important; }
 
-.egobie-map {
-  border: 1px solid red; }
-  .egobie-map div.scroll {
-    height: 100%; }
-    .egobie-map div.scroll div#map {
-      height: 100%;
-      width: 100%; }
+.egobie-map div.scroll {
+  height: 100%; }
+  .egobie-map div.scroll div#map {
+    height: 100%;
+    width: 100%; }
 
 .egobie-button-disabled {
   opacity: 0.6; }

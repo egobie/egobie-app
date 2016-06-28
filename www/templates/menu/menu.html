@@ -1,5 +1,5 @@
 <ion-side-menus enable-menu-with-back-views="false">
-    <ion-side-menu-content>
+    <ion-side-menu-content drag-content="true">
         <ion-nav-bar class="bar-stable">
             <ion-nav-back-button></ion-nav-back-button>
             <ion-nav-buttons side="left">
@@ -16,6 +16,10 @@
                 <ion-item class="item-avatar egobie-menu-profile">
                     <div class="egobie-menu-profile-logo"></div>
                     <div class="egobie-menu-profile-name">{{user.name}}</div>
+                </ion-item>
+
+                <ion-item ui-sref="menu.map" menu-close="" class="item item-icon-left egobie-menu-item">
+                    <i class="icon egobie-home-off"></i><span>MAP</span>
                 </ion-item>
 
                 <ion-item ui-sref="menu.home.resident" menu-close="" class="item item-icon-left egobie-menu-item">

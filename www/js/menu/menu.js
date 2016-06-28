@@ -26,6 +26,9 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
                 templateUrl: 'templates/menu/menu.html',
                 abstract: true,
                 resolve: {
+                    resolveUserPosition: function(requestUserPosition) {
+                        return requestUserPosition.promise;
+                    },
                     resolveUserCars: function(requestUserCars) {
                         return requestUserCars.promise;
                     },

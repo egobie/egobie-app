@@ -1,5 +1,31 @@
 angular.module('util.request', ['util.shared', 'util.url'])
 
+    .service('requestUserPosition', function($cordovaGeolocation, shared) {
+        var element = document.createElement("div");
+        var options = {
+            timeout: 10000,
+            enableHighAccuracy: true
+        };
+
+        element.setAttribute("id", "map");
+        element.setAttribute("data-tap-disabled", "true");
+
+        var promise = $cordovaGeolocation.getCurrentPosition(options).then(function(position){
+            shared.createMap(element, {
+                center: new window.google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+                zoom: 15,
+                mapTypeId: window.google.maps.MapTypeId.ROADMAP
+            });
+ 
+        }, function(error){
+          shared.alert("Error when getting user current location " + error);
+        });
+
+        return {
+            promise: promise
+        };
+    })
+
     .service('requestUserCars', function($http, shared, url) {
         var userCars = null;
         var promise = null;

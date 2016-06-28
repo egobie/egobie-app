@@ -31,7 +31,7 @@ angular.module('app.sign.in', ['ionic', 'util.shared', 'util.url'])
 
                     if (shared.isResidential()) {
 //                        $state.go('menu.home.resident');
-                        $state.go('menu.home.map');
+                        $state.go('menu.map');
                     } else {
                         $state.go('menu.task.residential');
                     }

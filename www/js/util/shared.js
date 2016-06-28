@@ -72,6 +72,8 @@ angular.module("util.shared", ["util.url"])
             valid_length: [16]
         }];
 
+        var map = null;
+
         var userCars = {};
         var userPayments = {};
         var carMakers = [];
@@ -551,9 +553,19 @@ angular.module("util.shared", ["util.url"])
                     
                 });
             },
-            
+
             setMenuScope: function(scope) {
                 menuScope = scope;
+            },
+
+            createMap: function(element, mapOptions) {
+                if (!map) {
+                    map = new window.google.maps.Map(element, mapOptions);
+                }
+            },
+
+            getMap: function() {
+                return map;
             },
 
             goHome: function() {
