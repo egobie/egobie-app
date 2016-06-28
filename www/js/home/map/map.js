@@ -7,8 +7,6 @@ angular.module('app.map', ['ionic'])
         };
 
         $cordovaGeolocation.getCurrentPosition(options).then(function(position){
-            console.log(position.coords);
-
             var latLng = new window.google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             var mapOptions = {
                 center: latLng,

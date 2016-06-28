@@ -1,0 +1,17 @@
+@import 'egobie';
+
+.egobie {
+
+    &-map {
+        border: 1px solid red;
+
+        div.scroll {
+            height: 100%;
+
+            div#map {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,7 +1,11 @@
 <ion-view hide-nav-bar="true" cache-view="false"
           ng-app="app.map"
           ng-controller="mapCtrl">
-    <ion-content>
+    <ion-header-bar class="egobie-header-bar">
+        <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+        <h1 class="title">MAP</h1>
+    </ion-header-bar>
+    <ion-content overflow-scroll="false" class="has-header egobie-map">
         <div id="map" data-tap-disabled="true"></div>
     </ion-content>
 </ion-view>
