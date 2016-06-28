@@ -1,4 +1,4 @@
-angular.module('app.map', ['ionic', 'util.shared'])
+angular.module('app.map', ['ionic', 'util.shared', 'util.map'])
 
     .config(function($stateProvider) {
         $stateProvider
@@ -12,7 +12,7 @@ angular.module('app.map', ['ionic', 'util.shared'])
             });
     })
 
-    .controller('mapCtrl', function($scope, $ionicSideMenuDelegate, shared) {
+    .controller('mapCtrl', function($scope, $ionicSideMenuDelegate, shared, map) {
         console.log("create");
         $ionicSideMenuDelegate.canDragContent(false);
 
@@ -21,5 +21,5 @@ angular.module('app.map', ['ionic', 'util.shared'])
             $ionicSideMenuDelegate.canDragContent(true);
         });
 
-        document.querySelector("#egobie-map .scroll").appendChild(shared.getMap().getDiv());
+        document.querySelector("#egobie-map .scroll").appendChild(map.getMap().getDiv());
     });

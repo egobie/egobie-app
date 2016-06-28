@@ -1,6 +1,6 @@
-angular.module('util.request', ['util.shared', 'util.url'])
+angular.module('util.request', ['util.shared', 'util.url', 'util.map'])
 
-    .service('requestUserPosition', function($cordovaGeolocation, shared) {
+    .service('requestUserPosition', function($cordovaGeolocation, shared, map) {
         var element = document.createElement("div");
         var options = {
             timeout: 10000,
@@ -11,7 +11,7 @@ angular.module('util.request', ['util.shared', 'util.url'])
         element.setAttribute("data-tap-disabled", "true");
 
         var promise = $cordovaGeolocation.getCurrentPosition(options).then(function(position){
-            shared.createMap(element, {
+            map.createMap(element, {
                 center: new window.google.maps.LatLng(position.coords.latitude, position.coords.longitude),
                 zoom: 15,
                 mapTypeId: window.google.maps.MapTypeId.ROADMAP

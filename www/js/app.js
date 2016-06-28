@@ -58,7 +58,8 @@ angular
 
         'util.shared',
         'util.url',
-        'util.request'
+        'util.request',
+        'util.map'
     ])
 
     .run(function($ionicPlatform) {

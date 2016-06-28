@@ -10908,6 +10908,25 @@ a.button {
     height: 100%;
     width: 100%; }
 
+.egobie-map-control-location button {
+  background-color: #FFFFFF;
+  border: none;
+  outline: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  margin-right: 10px;
+  padding: 0px; }
+  .egobie-map-control-location button div {
+    margin: 5px;
+    width: 18px;
+    height: 18px;
+    background-image: url("../img/map/location.png");
+    background-size: 180px 18px;
+    background-position: 0px 0px;
+    background-repeat: no-repeat; }
+
 .egobie-button-disabled {
   opacity: 0.6; }
 
