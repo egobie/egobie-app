@@ -93,4 +93,12 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
                 }, 100);
             }, 300);
         };
+
+        console.log("geolocation");
+
+        navigator.geolocation.getCurrentPosition(function(position) {
+            console.log(position.coords);
+        }, function(error) {
+            console.log(error);
+        });
     });

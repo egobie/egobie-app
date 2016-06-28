@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://maps.googleapis.com/">
         <title></title>
 
         <link href="lib/custom/css/eGobie.css" rel="stylesheet"/>
@@ -83,6 +83,9 @@
         <!-- Only required for Tab projects w/ pages in multiple tabs 
         <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
         -->
+
+        <!-- Google Maps -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9-41y9xfChy85sXz-Zjct7fix3nWPcaI"></script>
     </head>
     <body ng-app="app" animation="slide-left-right-ios7">
         <ion-nav-view></ion-nav-view>

@@ -13463,7 +13463,7 @@ a.button {
       background: rgba(12, 10, 12, 0.4); }
 
 .egobie-signin-logo {
-  content: url("../img/logo/white.png");
+  /*content: logo($Logo-White);*/
   margin-top: 50px; }
 
 .egobie-signup-logo {

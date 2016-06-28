@@ -75,7 +75,7 @@ angular
             }
 
             // Enable background mode
-            cordova.plugins.backgroundMode.enable();
+            window.cordova.plugins.backgroundMode.enable();
 
             window.cordova.plugins.notification.local.registerPermission(function (granted) {
                 
@@ -83,4 +83,4 @@ angular
 
             window.cordova.plugins.notification.badge.set(0);
         });
-    })
+    });
