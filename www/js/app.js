@@ -20,6 +20,8 @@ angular
         'app.home.resident.demand',
         'app.home.resident.reservation',
 
+        'app.map',
+
         'app.home.mall',
         'app.home.business',
 
