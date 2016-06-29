@@ -17,25 +17,17 @@
     &-map-control-location {
 
         button {
-            background-color: #FFFFFF;
+            background-color: rgba(255, 255, 255, 0.60);;
             border: none;
             outline: none;
-            width: 28px;
-            height: 28px;
+            width: 40px;
+            height: 40px;
+            font-size: 25px;
             border-radius: 2px;
             box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
             margin-right: 10px;
+            margin-bottom: 10px;
             padding: 0px;
-   
-            div {
-                margin: 5px;
-                width: 18px;
-                height: 18px;
-                background-image: image($Map-Location);
-                background-size: 180px 18px;
-                background-position: 0px 0px;
-                background-repeat: no-repeat;
-            }
         }
     }
 }

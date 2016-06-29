@@ -36,15 +36,14 @@ angular.module("util.map", ["util.url"])
 
             addLocationButton: function(map) {
                 var control = document.createElement('div');
-                var first = document.createElement('button');
-                var second = document.createElement('div');
+                var button = document.createElement('button');
 
-                first.appendChild(second);
-                control.appendChild(first);
                 control.index = 1;
                 control.className = "egobie-map-control-location";
+                button.className = "button-icon ion-navigate"; //ion-android-locate
+                control.appendChild(button);
 
-                first.addEventListener('click', function() {
+                button.addEventListener('click', function() {
                     if (navigator.geolocation) {
                         shared.showLoading();
 

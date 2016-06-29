@@ -12,12 +12,10 @@ angular.module('app.map', ['ionic', 'util.shared', 'util.map'])
             });
     })
 
-    .controller('mapCtrl', function($scope, $ionicSideMenuDelegate, shared, map) {
-        console.log("create");
+    .controller('mapCtrl', function($scope, $ionicSideMenuDelegate, map) {
         $ionicSideMenuDelegate.canDragContent(false);
 
         $scope.$on('$destroy', function() {
-            console.log("destroy");
             $ionicSideMenuDelegate.canDragContent(true);
         });
 
