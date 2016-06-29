@@ -14,6 +14,7 @@ angular.module('app.map', ['ionic', 'util.shared', 'util.map'])
 
     .controller('mapCtrl', function($scope, $ionicSideMenuDelegate, map) {
         $ionicSideMenuDelegate.canDragContent(false);
+        console.log("can drag false");
 
         $scope.$on('$destroy', function() {
             $ionicSideMenuDelegate.canDragContent(true);

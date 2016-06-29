@@ -22,11 +22,16 @@ angular.module("util.map", ["util.url"])
                     map = new window.google.maps.Map(element, mapOptions);
                     // Add Location Control
                     this.addLocationButton(map);
-                    // Create marker
-                    new window.google.maps.Marker({
-                        position: mapOptions.center,
-                        map: map
+                    // Add Dragend Listener
+                    map.addListener('dragend', function() {
+//                        var center = map.getCenter();
+//                        console.log("center - lat = ", center.lat(), ", lng = ", center.lng());
                     });
+                    // Create marker
+//                    new window.google.maps.Marker({
+//                        position: mapOptions.center,
+//                        map: map
+//                    });
                 }
             },
 
@@ -56,7 +61,6 @@ angular.module("util.map", ["util.url"])
                     }
                 });
 
-                console.log(control);
                 map.controls[window.google.maps.ControlPosition.RIGHT_BOTTOM].push(control);
             }
         };
