@@ -30,7 +30,7 @@ angular.module('util.request', ['util.shared', 'util.url'])
         var promise = null;
         
         if (shared.isResidential()) {
-            $http
+            promise = $http
                 .post(url.services, shared.getRequestBody({}))
                 .success(function(data, status, headers, config) {
                     services = data;
@@ -54,7 +54,7 @@ angular.module('util.request', ['util.shared', 'util.url'])
         var promise = null;
 
         if (shared.isResidential()) {
-            $http
+            promise = $http
                 .post(url.carMaker, shared.getRequestBody({}))
                 .success(function(data, status, headers, config) {
                     carMakers = data;
@@ -78,7 +78,7 @@ angular.module('util.request', ['util.shared', 'util.url'])
         var promise = null;
 
         if (shared.isResidential()) {
-            $http
+            promise = $http
                 .post(url.carModel, shared.getRequestBody({}))
                 .success(function(data, status, headers, config) {
                     carModels = data;
@@ -102,7 +102,7 @@ angular.module('util.request', ['util.shared', 'util.url'])
         var promise = null;
 
         if (shared.isResidential()) {
-            $http
+            promise = $http
                 .post(url.payments, shared.getRequestBody({}))
                 .success(function(data, status, headers, config) {
                     userPayments = data;
@@ -119,5 +119,24 @@ angular.module('util.request', ['util.shared', 'util.url'])
             getData: function() {
                 return userPayments;
             }
+        };
+    })
+
+    .service('requestDiscount', function($http, shared, url) {
+        var promise = null;
+
+        if (shared.isResidential()) {
+            promise = $http
+                .post(url.discount, shared.getRequestBody({}))
+                .success(function(data, status, headers, config) {
+                    
+                })
+                .error(function(data, status, headers, config) {
+                    shared.alert(data);
+                });
+        }
+        
+        return {
+            promise: promise
         };
     });
