@@ -51,11 +51,13 @@ angular.module('app.home.resident.demand', ['ionic', 'app.home.resident', 'util.
                 })
                 .error(function(data, status, headers, config) {
                     shared.hideLoading();
+                    shared.alert(data);
 
                     if (data === "NO") {
+                        //Not Available (WE SUPPORT ON-DEMAND REQUEST BETWEEN 8:00 A.M. to 8:00 P.M. ONLY)
                         shared.alert("Not Available (WE SUPPORT ON-DEMAND REQUEST BETWEEN 8:00 A.M. to 8:00 P.M. ONLY)");
                     } else {
-                        shared.alert(data);
+                        
                     }
                 });
         };
