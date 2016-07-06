@@ -10725,10 +10725,10 @@ a.button {
     line-height: 40px;
     height: 40px;
     width: 95%;
-    padding-left: 8px; }
+    padding-left: 10px; }
     .egobie-resident-order div.service .name p {
       padding: 0px;
-      font-size: 12px;
+      font-size: 11px;
       width: 85%;
       overflow: visible; }
     .egobie-resident-order div.service .name input {
