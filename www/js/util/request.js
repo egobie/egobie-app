@@ -129,7 +129,7 @@ angular.module('util.request', ['util.shared', 'util.url'])
             promise = $http
                 .post(url.discount, shared.getRequestBody({}))
                 .success(function(data, status, headers, config) {
-                    
+                    shared.addDiscount(data);
                 })
                 .error(function(data, status, headers, config) {
                     shared.alert(data);

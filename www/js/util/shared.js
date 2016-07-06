@@ -168,7 +168,9 @@ angular.module("util.shared", ["util.url"])
             },
 
             useDiscount: function() {
-                if (user.discount > 0) {
+                if (user.first_time > 0) {
+                    user.first_time--;
+                } else if (user.discount > 0) {
                     user.discount--;
                 }
 
