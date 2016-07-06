@@ -108,17 +108,16 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
                     return "";
                 }
 
-                var discount = shared.getUser().discount;
-                var _temp = 0;
+                var _temp = this.price * 1.07;
 
-                if (discount > 0) {
-                    _temp = this.price * 1.07 * 0.9;
-                } else {
-                    _temp = this.price * 1.07;
+                if (shared.getUser().first_time > 0) {
+                    _temp *= shared.calculateDiscount("RESIDENTIAL_FIRST");
+                } else if (shared.getUser().discount > 0) {
+                    _temp *= shared.calculateDiscount("RESIDENTIAL");
                 }
 
                 if (this.mixed) {
-                    _temp = _temp * 0.9;
+                    _temp *= shared.calculateDiscount("OIL_WASH");;
                 }
 
                 return _temp.toFixed(2);

@@ -33,6 +33,7 @@ angular.module('util.url', [])
             deletePayment: host + "/payment/delete",
             pay: host + "/payment/pay",
 
+            discount: host + "/user/discount",
             updateUser: host + "/user/update/user",
             updateHome: host + "/user/update/home",
             updateWork: host + "/user/update/work",

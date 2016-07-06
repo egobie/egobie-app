@@ -9,6 +9,7 @@ angular.module("util.shared", ["util.url"])
             email: "",
             coupon: "",
             discount: 0,
+            first_time: 0,
             phone: "",
             first: "",
             last: "",
@@ -77,6 +78,7 @@ angular.module("util.shared", ["util.url"])
         var carMakers = [];
         var carModels = {};
         var services = {};
+        var discount = {};
 
         var menuScope = null;
 
@@ -136,6 +138,7 @@ angular.module("util.shared", ["util.url"])
                 user.phone = u.phone_number;
                 user.coupon = u.coupon;
                 user.discount = u.discount;
+                user.first_time = u.first_time;
 
                 user.home_state = u.home_address_state;
                 user.home_city = u.home_address_city;
@@ -165,7 +168,9 @@ angular.module("util.shared", ["util.url"])
             },
 
             useDiscount: function() {
-                if (user.discount > 0) {
+                if (user.first_time > 0) {
+                    user.first_time--;
+                } else if (user.discount > 0) {
                     user.discount--;
                 }
 
@@ -386,6 +391,18 @@ angular.module("util.shared", ["util.url"])
                     .error(function(data, status, headers, config) {
                         this.alert("send demand for opening - " + data);
                     });
+            },
+
+            addDiscount: function(d) {
+                discount = d;
+            },
+
+            getDiscount: function(type) {
+                return discount[type] || 10;
+            },
+
+            calculateDiscount: function(type) {
+                return 1 - this.getDiscount(type) / 100;
             },
 
             getUnratedHistory: function() {
