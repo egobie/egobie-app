@@ -40,6 +40,9 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
                     },
                     resolveUserPayments: function(requestUserPayments) {
                         return requestUserPayments.promise;
+                    },
+                    resolveDiscount: function(requestDiscount) {
+                        return requestDiscount.promise;
                     }
                 }
             });
