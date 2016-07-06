@@ -10725,7 +10725,7 @@ a.button {
     line-height: 40px;
     height: 40px;
     width: 95%;
-    padding-left: 18px; }
+    padding-left: 8px; }
     .egobie-resident-order div.service .name p {
       padding: 0px;
       font-size: 12px;
@@ -12901,6 +12901,7 @@ a.button {
           padding-left: 5px;
           color: #1BB3EC !important; }
       .egobie-service-item div.middle p.note, .egobie-service-item-select div.middle p.note {
+        overflow: visible;
         font-size: 13px;
         color: #1BB3EC !important; }
       .egobie-service-item div.middle p.time, .egobie-service-item-select div.middle p.time {
