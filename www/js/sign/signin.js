@@ -16,29 +16,7 @@ angular.module('app.sign.in', ['ionic', 'util.shared', 'util.url'])
                 return;
             }
 
-            shared.showLoading();
-
-            $http
-                .post(url.signIn, body)
-                .success(function(data, status, headers, config) {
-                    if (data.type !== 'RESIDENTIAL' && data.type !== 'EGOBIE') {
-                        shared.hideLoading();
-                        shared.alert("Invalid User");
-                        return;
-                    }
-
-                    shared.refreshUser(data);
-
-                    if (shared.isResidential()) {
-                        $state.go('menu.home.resident');
-                    } else {
-                        $state.go('menu.task.residential');
-                    }
-                })
-                .error(function(data, status, headers, config) {
-                    shared.hideLoading();
-                    shared.alert(data);
-                });
+            signIn(body);
         };
 
         $scope.showResetPassword = function() {
@@ -52,6 +30,33 @@ angular.module('app.sign.in', ['ionic', 'util.shared', 'util.url'])
             })();
         };
 
+        function signIn(body) {
+            shared.showLoading();
+
+            $http
+                .post(url.signIn, body)
+                .success(function(data, status, headers, config) {
+                    if (data.type !== 'RESIDENTIAL' && data.type !== 'EGOBIE') {
+                        shared.hideLoading();
+                        shared.alert("Invalid User");
+                        return;
+                    }
+
+                    shared.setUserSignIn(body.username, body.password);
+                    shared.refreshUser(data);
+
+                    if (shared.isResidential()) {
+                        $state.go('menu.home.resident');
+                    } else {
+                        $state.go('menu.task.residential');
+                    }
+                })
+                .error(function(data, status, headers, config) {
+                    shared.hideLoading();
+                    shared.alert(data);
+                });
+        }
+
         function validateUser(username, password) {
             if (!username) {
                 shared.alert("Username should not be empty");
@@ -64,5 +69,11 @@ angular.module('app.sign.in', ['ionic', 'util.shared', 'util.url'])
             }
 
             return true;
+        }
+
+        var userSignIn = shared.getUserSignIn();
+
+        if (userSignIn.username && userSignIn.password) {
+            signIn(userSignIn);
         }
     });

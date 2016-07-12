@@ -671,7 +671,26 @@ angular.module("util.shared", ["util.url"])
                 }));
             },
 
+            getUserSignIn: function() {
+                return {
+                    username: window.localStorage.setItem("username", ""),
+                    password: window.localStorage.setItem("password", "")
+                };
+            },
+
+            setUserSignIn: function(username, password) {
+                window.localStorage.setItem("username", username);
+                window.localStorage.setItem("password", password);
+            },
+
+            clearUserSignIn: function() {
+                window.localStorage.removeItem("username");
+                window.localStorage.removeItem("password");
+            },
+
             signOut: function() {
+                this.clearUserSignIn();
+
                 $ionicHistory.clearHistory();
                 $ionicHistory.clearCache().then(function() {
                     user = {
