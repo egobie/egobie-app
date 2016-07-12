@@ -68,7 +68,7 @@ angular
             }
 
             // Open link
-            window.open = cordova.InAppBrowser.open;
+            window.open = window.cordova.InAppBrowser.open;
 
             if (window.StatusBar) {
                 // org.apache.cordova.statusbar required
