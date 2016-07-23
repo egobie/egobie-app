@@ -1,6 +1,7 @@
-angular.module("util.shared", ["util.url"])
+angular.module("util.shared", ["util.url", "util.localStorage"])
 
-    .service("shared", function($rootScope, $window, $ionicPopup, $ionicLoading, $ionicHistory, $interval, $http, $state, url) {
+    .service("shared", function($rootScope, $window, $ionicPopup, $ionicLoading, 
+        $ionicHistory, $interval, $http, $state, url, egobieLocalStorage) {
 
         var user = {
             id: "",
@@ -673,19 +674,19 @@ angular.module("util.shared", ["util.url"])
 
             getUserSignIn: function() {
                 return {
-                    username: window.localStorage.setItem("username", ""),
-                    password: window.localStorage.setItem("password", "")
+                    username: egobieLocalStorage.get("username"),
+                    password: egobieLocalStorage.get("password")
                 };
             },
 
             setUserSignIn: function(username, password) {
-                window.localStorage.setItem("username", username);
-                window.localStorage.setItem("password", password);
+                egobieLocalStorage.set("username", username);
+                egobieLocalStorage.set("password", password);
             },
 
             clearUserSignIn: function() {
-                window.localStorage.removeItem("username");
-                window.localStorage.removeItem("password");
+                egobieLocalStorage.remove("username");
+                egobieLocalStorage.remove("password");
             },
 
             signOut: function() {

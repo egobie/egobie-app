@@ -72,6 +72,7 @@ angular.module('app.sign.in', ['ionic', 'util.shared', 'util.url'])
         }
 
         var userSignIn = shared.getUserSignIn();
+        console.log("userSignIn - ", userSignIn);
 
         if (userSignIn.username && userSignIn.password) {
             signIn(userSignIn);

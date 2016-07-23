@@ -3,8 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/bohuang/work_folder/egobie-app/www/js/util/request.js</file>
+            <file>file:/Users/bohuang/work_folder/egobie-app/www/js/sign/signin.js</file>
+            <file>file:/Users/bohuang/work_folder/egobie-app/www/js/util/db.js</file>
+            <file>file:/Users/bohuang/work_folder/egobie-app/www/js/sign/signup.js</file>
             <file>file:/Users/bohuang/work_folder/egobie-app/www/js/util/shared.js</file>
+            <file>file:/Users/bohuang/work_folder/egobie-app/www/js/app.js</file>
         </group>
     </open-files>
 </project-private>

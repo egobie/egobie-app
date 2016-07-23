@@ -56,7 +56,8 @@ angular
 
         'util.shared',
         'util.url',
-        'util.request'
+        'util.request',
+        'util.localStorage'
     ])
 
     .run(function($ionicPlatform) {
