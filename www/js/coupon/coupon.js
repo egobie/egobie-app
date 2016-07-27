@@ -12,46 +12,26 @@ angular.module('app.coupon', ['ionic', 'ngCordova', 'util.shared'])
             });
     })
 
-    .controller('couponCtrl', function($scope, $cordovaSocialSharing, shared) {
+    .controller('couponCtrl', function($scope, $ionicModal, shared) {
         shared.goCoupon();
 
-        $scope.discount = {
-            residential: shared.getDiscount("RESIDENTIAL")
-        };
-        $scope.coupon = shared.getUser().coupon;
-        $scope._body = 'Enjoy eGobie car service now! Use my coupon code "' + $scope.coupon + '" to sign up and get ' + 
-                $scope.discount.residential + '% off your first booking!';
+        $scope._showInput = false;
 
-        $scope.shareByMessage = function() {
-            $cordovaSocialSharing
-                .shareViaSMS($scope._body, '')
-                .then(function() {
-                }, function(err) {
-                    
-                });
+        $ionicModal.fromTemplateUrl('templates/coupon/invite.html', {
+            scope: $scope
+        }).then(function(modal) {
+            $scope.addCouponInviteModal = modal;
+        });
+
+        $scope.showCouponInvite = function() {
+            $scope.addCouponInviteModal.show();
         };
 
-        $scope.shareByEmail = function() {
-            $cordovaSocialSharing
-                .shareViaEmail($scope._body, "eGobie Invitation Code", [], [], [], null)
-                .then(function() {
-                }, function(err) {
-                });
+        $scope.showCouponInput = function () {
+            return $scope._showInput;
         };
 
-        $scope.shareByFacebook = function() {
-            $cordovaSocialSharing
-                .shareViaFacebook($scope._body)
-                .then(function() {
-                }, function(err) {
-                });
-        };
-
-        $scope.shareByTwitter = function() {
-            $cordovaSocialSharing
-                .shareViaTwitter($scope._body)
-                .then(function() {
-                }, function(err) {
-                });
+        $scope.toggleCouponInput = function() {
+            $scope._showInput = !$scope._showInput;
         };
     });

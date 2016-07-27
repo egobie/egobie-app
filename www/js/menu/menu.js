@@ -83,6 +83,8 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
 
             $timeout(function() {
                 shared.hideLoading();
+                shared.clearUserSignIn();
+
                 $state.go('sign.in');
 
                 $timeout(function () {

@@ -41,7 +41,9 @@ angular
         'app.myservice.reservation',
 
         'app.notification',
+
         'app.coupon',
+        'app.coupon.invite',
 
         'app.payment',
         'app.payment.add',
