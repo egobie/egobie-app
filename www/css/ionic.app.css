@@ -10573,7 +10573,8 @@ a.button {
 .egobie-more-coupon {
   text-align: center;
   padding: 0px;
-  border-radius: 5px; }
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2); }
   .egobie-more-coupon p.p1 {
     margin-top: 10px;
     font-size: 18px; }
