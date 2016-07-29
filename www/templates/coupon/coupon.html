@@ -12,16 +12,36 @@
     <ion-content padding="true">
         <button class="button button-block button-dark"
                 ng-click="toggleCouponInput()"
-                ng-show="!showCouponInput()">
+                ng-show="!coupon.showInput">
             ADD COUPON CODE
         </button>
 
         <div class="egobie-add-coupon"
-             ng-show="showCouponInput()">
+             ng-show="coupon.showInput">
             <i class="icon ion-close-round close"
                ng-click="toggleCouponInput()"></i>
-            <input type="text" placeholder="enter coupon code" minlength="6" maxlength="6" />
-            <button class="button button-small button-dark egobie-center">APPLY</button>
+            <input type="text" placeholder="enter coupon code" minlength="6" maxlength="6"
+                   ng-model="coupon.code"/>
+            <button class="button button-small button-dark egobie-center"
+                    ng-click="applyCoupon()">APPLY</button>
+        </div>
+
+        <div class="egobie-coupon-item"
+             ng-show="coupon.fistTime">
+            <p class="title">{{coupon.firstDiscount}}% OFF</p>
+            <p class="content">You have {{coupon.firstDiscount}}% off your first order.</p>
+        </div>
+
+        <div class="egobie-coupon-item"
+             ng-show="!coupon.fistTime && coupon.couponDiscount > 0">
+            <p class="title">{{coupon.couponDiscount}}% OFF</p>
+            <p class="content">You have {{coupon.couponDiscount}}% off your next order.</p>
+        </div>
+
+        <div class="egobie-coupon-item"
+             ng-show="!coupon.fistTime && coupon.inviteTime > 0">
+            <p class="title">{{coupon.inviteDiscount}}% OFF</p>
+            <p class="content">You have additional {{coupon.inviteDiscount}}% off your next order</p>
         </div>
 
         <ion-item class="egobie-more-coupon"

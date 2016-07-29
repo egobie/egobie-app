@@ -44,6 +44,7 @@ angular.module('app.sign.in', ['ionic', 'util.shared', 'util.url'])
 
                     shared.setUserSignIn(body.username, body.password);
                     shared.refreshUser(data);
+                    shared.getCoupon();
 
                     if (shared.isResidential()) {
                         $state.go('menu.home.resident');

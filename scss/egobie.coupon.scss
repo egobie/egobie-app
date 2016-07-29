@@ -170,4 +170,29 @@
             color: #1BB3EC;
         }
     }
+
+    &-coupon-item {
+        padding: 15px;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+        background-color: #FFFFFF;
+
+        p.title {
+            color: #1BB3EC;
+            height: 30px;
+            line-height: 30px;
+            font-size: 25px;
+
+            span {
+                font-size: 15px;
+            }
+        }
+
+        p.content {
+            font-size: 13px;
+            height: 15px;
+            line-height: 15px;
+            margin-bottom: 15px;
+        }
+    }
 }

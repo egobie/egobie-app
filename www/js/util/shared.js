@@ -10,6 +10,7 @@ angular.module("util.shared", ["util.url", "util.localStorage"])
             email: "",
             coupon: "",
             discount: 0,
+            coupon_discount: 0,
             first_time: 0,
             phone: "",
             first: "",
@@ -213,6 +214,19 @@ angular.module("util.shared", ["util.url", "util.localStorage"])
 
             getColors: function() {
                 return colors;
+            },
+
+            getCoupon: function() {
+                $http
+                    .post(url.getCoupon, this.getRequestBody({}))
+                    .success(function(data, status, headers, config) {
+                        user.coupon_discount = data - 0;
+                        refreshScope();
+                    })
+                    .error(function(data, status, headers, config) {
+                        user.coupon_discount = 0;
+                        refreshScope();
+                    });
             },
 
             addServices: function(data) {

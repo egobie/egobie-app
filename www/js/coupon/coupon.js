@@ -1,4 +1,4 @@
-angular.module('app.coupon', ['ionic', 'ngCordova', 'util.shared'])
+angular.module('app.coupon', ['ionic', 'ngCordova', 'util.shared', 'util.url'])
 
     .config(function($stateProvider) {
         $stateProvider
@@ -12,10 +12,24 @@ angular.module('app.coupon', ['ionic', 'ngCordova', 'util.shared'])
             });
     })
 
-    .controller('couponCtrl', function($scope, $ionicModal, shared) {
+    .controller('couponCtrl', function($scope, $http, $ionicModal, shared, url) {
         shared.goCoupon();
 
-        $scope._showInput = false;
+        $scope.coupon = {
+            code: "",
+            firstDiscount: shared.getDiscount("RESIDENTIAL_FIRST"),
+            fistTime: shared.getUser().first_time > 0,
+            inviteDiscount: shared.getDiscount("RESIDENTIAL"),
+            inviteTime: shared.getUser().discount,
+            couponDiscount: 0,
+            showInput: false
+        };
+
+        $scope.$watch(function() {
+            return shared.getUser().coupon_discount;
+        }, function (newValue, oldValue) {
+            $scope.coupon.couponDiscount = newValue;
+        });
 
         $ionicModal.fromTemplateUrl('templates/coupon/invite.html', {
             scope: $scope
@@ -27,11 +41,30 @@ angular.module('app.coupon', ['ionic', 'ngCordova', 'util.shared'])
             $scope.addCouponInviteModal.show();
         };
 
-        $scope.showCouponInput = function () {
-            return $scope._showInput;
+        $scope.applyCoupon = function() {
+            if (!$scope.coupon.code) {
+                shared.alert("Invalid Coupon Code");
+                return;
+            }
+
+            shared.showLoading();
+            $http
+                .post(url.applyCoupon, shared.getRequestBody({
+                    code: $scope.coupon.code.toUpperCase()
+                }))
+                .success(function(data, status, headers, config) {
+                    shared.hideLoading();
+                    shared.getCoupon();
+                    $scope.toggleCouponInput();
+                })
+                .error(function(data, status, headers, config) {
+                    shared.hideLoading();
+                    shared.alert(data);
+                });
         };
 
         $scope.toggleCouponInput = function() {
-            $scope._showInput = !$scope._showInput;
+            $scope.coupon.code = "";
+            $scope.coupon.showInput = !$scope.coupon.showInput;
         };
     });
