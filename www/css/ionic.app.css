@@ -13748,12 +13748,12 @@ a.button {
     .egobie-task-list .top .customer-phone-plate-reserve {
       display: inline-block;
       margin-left: 10px; }
-      .egobie-task-list .top .customer-phone-plate-reserve .customer, .egobie-task-list .top .customer-phone-plate-reserve .phone, .egobie-task-list .top .customer-phone-plate-reserve .plate, .egobie-task-list .top .customer-phone-plate-reserve .reserve {
+      .egobie-task-list .top .customer-phone-plate-reserve .customer, .egobie-task-list .top .customer-phone-plate-reserve .phone, .egobie-task-list .top .customer-phone-plate-reserve .make, .egobie-task-list .top .customer-phone-plate-reserve .model, .egobie-task-list .top .customer-phone-plate-reserve .plate, .egobie-task-list .top .customer-phone-plate-reserve .color {
         padding-left: 11px; }
-        .egobie-task-list .top .customer-phone-plate-reserve .customer .title, .egobie-task-list .top .customer-phone-plate-reserve .phone .title, .egobie-task-list .top .customer-phone-plate-reserve .plate .title, .egobie-task-list .top .customer-phone-plate-reserve .reserve .title {
+        .egobie-task-list .top .customer-phone-plate-reserve .customer .title, .egobie-task-list .top .customer-phone-plate-reserve .phone .title, .egobie-task-list .top .customer-phone-plate-reserve .make .title, .egobie-task-list .top .customer-phone-plate-reserve .model .title, .egobie-task-list .top .customer-phone-plate-reserve .plate .title, .egobie-task-list .top .customer-phone-plate-reserve .color .title {
           display: block;
           font-size: 12px; }
-        .egobie-task-list .top .customer-phone-plate-reserve .customer .value, .egobie-task-list .top .customer-phone-plate-reserve .phone .value, .egobie-task-list .top .customer-phone-plate-reserve .plate .value, .egobie-task-list .top .customer-phone-plate-reserve .reserve .value {
+        .egobie-task-list .top .customer-phone-plate-reserve .customer .value, .egobie-task-list .top .customer-phone-plate-reserve .phone .value, .egobie-task-list .top .customer-phone-plate-reserve .make .value, .egobie-task-list .top .customer-phone-plate-reserve .model .value, .egobie-task-list .top .customer-phone-plate-reserve .plate .value, .egobie-task-list .top .customer-phone-plate-reserve .color .value {
           color: #000000;
           font-size: 11px;
           font-weight: 900;

@@ -22,12 +22,6 @@
                     <i class="icon egobie-home-off"></i><span>HOME</span>
                 </ion-item>
 
-                <ion-item ui-sref="menu.notification" menu-close="" class="item item-icon-left egobie-menu-item">
-                    <i class="icon egobie-notification-off"></i><span>NOTIFICATIONS</span>
-                    <span class="badge badge-assertive"
-                          ng-show="badge.notification > 0">{{badge.notification}}</span>
-                </ion-item>
-
                 <ion-item ui-sref="menu.service" menu-close="" class="item item-icon-left egobie-menu-item">
                     <i class="icon egobie-service-off"></i><span>EGOBIE SERVICES</span>
                 </ion-item>
@@ -48,6 +42,12 @@
 
                 <ion-item ui-sref="menu.payment" menu-close="" class="item item-icon-left egobie-menu-item">
                     <i class="icon egobie-payment-off"></i><span>PAYMENTS</span>
+                </ion-item>
+
+                <ion-item ui-sref="menu.notification" menu-close="" class="item item-icon-left egobie-menu-item">
+                    <i class="icon egobie-notification-off"></i><span>NOTIFICATIONS</span>
+                    <span class="badge badge-assertive"
+                          ng-show="badge.notification > 0">{{badge.notification}}</span>
                 </ion-item>
 
                 <ion-item ui-sref="menu.setting" menu-close="" class="item item-icon-left egobie-menu-item">
