@@ -112,8 +112,14 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
 
                 if (shared.getUser().first_time > 0) {
                     _temp *= shared.calculateDiscount("RESIDENTIAL_FIRST");
-                } else if (shared.getUser().discount > 0) {
-                    _temp *= shared.calculateDiscount("RESIDENTIAL");
+                } else {
+                    if (shared.getUser().coupon_discount > 0) {
+                        _temp *= (1 - shared.getUser().coupon_discount / 100);
+                    }
+
+                    if (shared.getUser().discount > 0) {
+                        _temp *= shared.calculateDiscount("RESIDENTIAL");
+                    }
                 }
 
                 if (this.mixed) {
