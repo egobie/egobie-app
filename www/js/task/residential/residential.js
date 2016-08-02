@@ -6,6 +6,10 @@ angular.module('app.task.residential', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.showUserTaskSheet = function(task) {
+            if (!task.isToday) {
+                return;
+            }
+
             if (task.status === "RESERVED") {
                 $scope.hideUserTaskSheet = $ionicActionSheet.show({
                     titleText: 'Start Task (CANNOT MAKE THIS TASK "RESERVED" AGAIN)',
@@ -77,6 +81,16 @@ angular.module('app.task.residential', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.noUserTask = function() {
-            return !$scope.userTasks || $scope.userTasks.length === 0;
+            if (!$scope.userTasks || $scope.userTasks.length === 0) {
+                return true;
+            }
+
+            for (var i in $scope.userTasks) {
+                if ($scope.userTasks[i].isToday === shared.showTodayTask()) {
+                    return false;
+                }
+            }
+
+            return true;
         };
     });
