@@ -78,6 +78,10 @@ angular.module('app.menu', ['ionic', 'util.request', 'util.shared'])
 
         shared.setMenuScope($scope);
 
+        $scope.showTodayTask = function(stt) {
+            shared.showTodayTask(stt);
+        };
+
         $scope.signOut = function() {
             shared.showLoading();
 

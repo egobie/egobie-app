@@ -10,6 +10,10 @@ angular.module('app.task.fleet', ['ionic', 'util.shared', 'util.url'])
             $scope.fleetModel = modal;
         });
 
+        $scope.fleetTaskFilter = function(task) {
+            return task.isToday === shared.showTodayTask();
+        };
+
         $scope.showOrderDetail = function(id) {
             $scope.fleetModel.show();
             $scope.loadDetails(id);

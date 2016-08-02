@@ -97,6 +97,7 @@ angular.module("util.shared", ["util.url", "util.localStorage"])
         var userTasks = [];
         var fleetTasks = [];
         var taskInterval = null;
+        var showTodayOnly = true;
 
         var regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         var regCoupon = /^([A-Z0-9]{5})$/;
@@ -449,13 +450,16 @@ angular.module("util.shared", ["util.url", "util.localStorage"])
                         self.hideLoading();
                         var user = 0;
                         var fleet = 0;
+                        var today = self.formatDate(new Date());
 
                         userTasks = data.user_tasks || [];
                         fleetTasks = data.fleet_tasks || [];
 
                         if (userTasks) {
                             Array.prototype.forEach.call(userTasks, function(task) {
-                                if (task.status === "RESERVED") {
+                                task.isToday = self.isToday(today, task.start);
+
+                                if (task.isToday && task.status === "RESERVED") {
                                     user++;
                                 }
                             });
@@ -463,9 +467,11 @@ angular.module("util.shared", ["util.url", "util.localStorage"])
 
                         if (fleetTasks) {
                             Array.prototype.forEach.call(fleetTasks, function(task) {
-                                if (task.status === "RESERVED") {
+                                task.isToday = self.isToday(today, task.start);
+
+                                if (task.isToday && task.status === "RESERVED") {
                                     fleet++;
-                                }
+                                }                                
                             });
                         }
 
@@ -489,6 +495,14 @@ angular.module("util.shared", ["util.url", "util.localStorage"])
             
             getFleetTasks: function() {
                 return fleetTasks;
+            },
+
+            showTodayTask: function(stt) {
+                if (stt === true || stt === false) {
+                    showTodayOnly = stt;
+                }
+
+                return showTodayOnly;
             },
 
             testEmail: function(email) {
@@ -550,6 +564,19 @@ angular.module("util.shared", ["util.url", "util.localStorage"])
                 } else {
                     return t + sufix + " P.M";
                 }
+            },
+
+            // today = YYYY-MM-DD
+            isToday: function(today, ts) {
+                return today === ts.split(' ')[0];
+            },
+
+            // YYYY-MM-DD
+            formatDate: function(dt) {
+                var mon = dt.getMonth() + 1;
+                var day = dt.getDay();
+                
+                return dt.getFullYear() + "-" + (mon < 10 ? ("0" + mon) : mon) + "-" + (day < 10 ? ("0" + day) : day);
             },
 
             showLoading: function () {

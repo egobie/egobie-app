@@ -20,7 +20,7 @@
             </ion-item>
 
             <ion-item class="egobie-task-list"
-                      ng-repeat="task in fleetTasks"
+                      ng-repeat="task in fleetTasks | filter: fleetTaskFilter"
                       ng-class="taskBorderStyle(task.status)"
                       ng-click="showFleetTaskSheet(task)">
                 <div class="top">

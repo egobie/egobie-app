@@ -1,0 +1,12 @@
+<ion-tabs cache-view="false" class="tabs-striped tabs-icon-top"
+          ng-app="app.task"
+          ng-controller="taskCtrl">
+
+    <ion-tab title="Residential" icon="ion-ios-home" ui-sref="menu.upcoming.residential">
+        <ion-nav-view name="residential-task-view"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="Fleet" icon="ion-ios-briefcase" ui-sref="menu.upcoming.fleet">
+        <ion-nav-view name="fleet-task-view"></ion-nav-view>
+    </ion-tab>
+</ion-tabs>

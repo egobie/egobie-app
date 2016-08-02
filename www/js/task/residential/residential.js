@@ -1,6 +1,10 @@
 angular.module('app.task.residential', ['ionic', 'util.shared', 'util.url'])
 
     .controller('taskResidentialCtrl', function($scope, $http, $ionicActionSheet, $ionicPopup, shared, url) {
+        $scope.userTaskFilter = function(task) {
+            return task.isToday === shared.showTodayTask();
+        };
+
         $scope.showUserTaskSheet = function(task) {
             if (task.status === "RESERVED") {
                 $scope.hideUserTaskSheet = $ionicActionSheet.show({

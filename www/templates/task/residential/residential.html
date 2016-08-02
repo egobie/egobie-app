@@ -20,7 +20,7 @@
             </ion-item>
 
             <ion-item class="egobie-task-list"
-                      ng-repeat="task in userTasks"
+                      ng-repeat="task in userTasks | filter: userTaskFilter"
                       ng-class="taskBorderStyle(task.status)"
                       ng-click="showUserTaskSheet(task)">
                 <div class="top">

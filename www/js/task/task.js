@@ -27,6 +27,33 @@ angular.module('app.task', ['ionic', 'util.shared', 'util.url'])
                         templateUrl: 'templates/task/fleet/fleet.html'
                     }
                 }
+            })
+
+            .state('menu.upcoming', {
+                url: '/upcoming',
+                views: {
+                    'side-menu': {
+                        templateUrl: 'templates/task/upcoming.html'
+                    }
+                }
+            })
+
+            .state('menu.upcoming.residential', {
+                url: '/upcoming/residential',
+                views: {
+                    'residential-task-view': {
+                        templateUrl: 'templates/task/residential/residential.html'
+                    }
+                }
+            })
+
+            .state('menu.upcoming.fleet', {
+                url: '/upcoming/fleet',
+                views: {
+                    'fleet-task-view': {
+                        templateUrl: 'templates/task/fleet/fleet.html'
+                    }
+                }
             });
     })
 
@@ -34,6 +61,8 @@ angular.module('app.task', ['ionic', 'util.shared', 'util.url'])
         $scope.userTasks = shared.getUserTasks();
         $scope.fleetTasks = shared.getFleetTasks();
         $scope.getServiceType = shared.getServiceType;
+
+        console.log(shared.showTodayTask());
 
         $scope.$watch(function() {
             return shared.getUserTasks();
