@@ -13,6 +13,24 @@
         height: 50%;
     }
 
+    &-reservation-describe {
+        border: 0px;
+
+        .title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            text-align: center;
+            word-break:break-word;
+            display: inline-block;
+            white-space: normal;
+        }
+    }
+
     &-on-demand {
         height: 51%;
     }
@@ -80,7 +98,8 @@
     }
 
     &-reservation {
-        background: image($Home-Reserve) no-repeat center center;
+        background: image($Home-Reserve-Temp) no-repeat center center;
+        /*background: image($Home-Reserve) no-repeat center center;*/
         background-size: cover;
     }
 

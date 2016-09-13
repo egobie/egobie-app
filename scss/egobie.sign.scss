@@ -33,7 +33,7 @@
     }
 
     &-sign-bg {
-        /*background: image($Sign-Bg) no-repeat center center;*/
+        background: image($Sign-Bg) no-repeat center center;
         background-size: cover;
         padding: 0px;
 
@@ -57,14 +57,14 @@
     &-signin-logo {
         @extend .egobie-sign-logo;
 
-        /*content: logo($Logo-White);*/
+        content: logo($Logo-White);
         margin-top: 50px;
     }
 
     &-signup-logo {
         @extend .egobie-sign-logo;
 
-        /*content: logo($Logo-White);*/
+        content: logo($Logo-White);
     }
 
     &-company {
