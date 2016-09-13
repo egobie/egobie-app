@@ -12,7 +12,7 @@ angular.module('app.task', ['ionic', 'util.shared', 'util.url'])
             })
 
             .state('menu.task.residential', {
-                url: '/task/residential',
+                url: '/residential',
                 views: {
                     'residential-task-view': {
                         templateUrl: 'templates/task/residential/residential.html'
@@ -21,7 +21,34 @@ angular.module('app.task', ['ionic', 'util.shared', 'util.url'])
             })
 
             .state('menu.task.fleet', {
-                url: '/task/fleet',
+                url: '/fleet',
+                views: {
+                    'fleet-task-view': {
+                        templateUrl: 'templates/task/fleet/fleet.html'
+                    }
+                }
+            })
+
+            .state('menu.upcoming', {
+                url: '/upcoming',
+                views: {
+                    'side-menu': {
+                        templateUrl: 'templates/task/upcoming.html'
+                    }
+                }
+            })
+
+            .state('menu.upcoming.residential', {
+                url: '/residential',
+                views: {
+                    'residential-task-view': {
+                        templateUrl: 'templates/task/residential/residential.html'
+                    }
+                }
+            })
+
+            .state('menu.upcoming.fleet', {
+                url: '/fleet',
                 views: {
                     'fleet-task-view': {
                         templateUrl: 'templates/task/fleet/fleet.html'

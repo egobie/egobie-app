@@ -1,4 +1,4 @@
-angular.module('app.coupon', ['ionic', 'ngCordova', 'util.shared'])
+angular.module('app.coupon', ['ionic', 'ngCordova', 'util.shared', 'util.url'])
 
     .config(function($stateProvider) {
         $stateProvider
@@ -12,46 +12,59 @@ angular.module('app.coupon', ['ionic', 'ngCordova', 'util.shared'])
             });
     })
 
-    .controller('couponCtrl', function($scope, $cordovaSocialSharing, shared) {
+    .controller('couponCtrl', function($scope, $http, $ionicModal, shared, url) {
         shared.goCoupon();
 
-        $scope.discount = {
-            residential: shared.getDiscount("RESIDENTIAL")
+        $scope.coupon = {
+            code: "",
+            firstDiscount: shared.getDiscount("RESIDENTIAL_FIRST"),
+            fistTime: shared.getUser().first_time > 0,
+            inviteDiscount: shared.getDiscount("RESIDENTIAL"),
+            inviteTime: shared.getUser().discount,
+            couponDiscount: 0,
+            showInput: false
         };
-        $scope.coupon = shared.getUser().coupon;
-        $scope._body = 'Enjoy eGobie car service now! Use my coupon code "' + $scope.coupon + '" to sign up and get ' + 
-                $scope.discount.residential + '% off your first booking!';
 
-        $scope.shareByMessage = function() {
-            $cordovaSocialSharing
-                .shareViaSMS($scope._body, '')
-                .then(function() {
-                }, function(err) {
-                    
+        $scope.$watch(function() {
+            return shared.getUser().coupon_discount;
+        }, function (newValue, oldValue) {
+            $scope.coupon.couponDiscount = newValue;
+        });
+
+        $ionicModal.fromTemplateUrl('templates/coupon/invite.html', {
+            scope: $scope
+        }).then(function(modal) {
+            $scope.addCouponInviteModal = modal;
+        });
+
+        $scope.showCouponInvite = function() {
+            $scope.addCouponInviteModal.show();
+        };
+
+        $scope.applyCoupon = function() {
+            if (!$scope.coupon.code) {
+                shared.alert("Invalid Coupon Code");
+                return;
+            }
+
+            shared.showLoading();
+            $http
+                .post(url.applyCoupon, shared.getRequestBody({
+                    code: $scope.coupon.code.toUpperCase()
+                }))
+                .success(function(data, status, headers, config) {
+                    shared.hideLoading();
+                    shared.getCoupon();
+                    $scope.toggleCouponInput();
+                })
+                .error(function(data, status, headers, config) {
+                    shared.hideLoading();
+                    shared.alert(data);
                 });
         };
 
-        $scope.shareByEmail = function() {
-            $cordovaSocialSharing
-                .shareViaEmail($scope._body, "eGobie Invitation Code", [], [], [], null)
-                .then(function() {
-                }, function(err) {
-                });
-        };
-
-        $scope.shareByFacebook = function() {
-            $cordovaSocialSharing
-                .shareViaFacebook($scope._body)
-                .then(function() {
-                }, function(err) {
-                });
-        };
-
-        $scope.shareByTwitter = function() {
-            $cordovaSocialSharing
-                .shareViaTwitter($scope._body)
-                .then(function() {
-                }, function(err) {
-                });
+        $scope.toggleCouponInput = function() {
+            $scope.coupon.code = "";
+            $scope.coupon.showInput = !$scope.coupon.showInput;
         };
     });

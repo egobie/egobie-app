@@ -10,6 +10,10 @@ angular.module('app.task.fleet', ['ionic', 'util.shared', 'util.url'])
             $scope.fleetModel = modal;
         });
 
+        $scope.fleetTaskFilter = function(task) {
+            return task.isToday === shared.showTodayTask();
+        };
+
         $scope.showOrderDetail = function(id) {
             $scope.fleetModel.show();
             $scope.loadDetails(id);
@@ -21,7 +25,7 @@ angular.module('app.task.fleet', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.showFleetTaskSheet = function(task) {
-            if (task.status === "RESERVED") {
+            if (task.isToday && task.status === "RESERVED") {
                 $scope.hideFleetTaskSheet = $ionicActionSheet.show({
                     titleText: 'Start Task (CANNOT MAKE THIS TASK "RESERVED" AGAIN)',
                     buttons: [
@@ -64,7 +68,7 @@ angular.module('app.task.fleet', ['ionic', 'util.shared', 'util.url'])
 
                     }
                 });
-            } else if (task.status === "IN_PROGRESS") {
+            } else if (task.isToday && task.status === "IN_PROGRESS") {
                 $scope.hideFleetTaskSheet = $ionicActionSheet.show({
                     titleText: 'Finish Task CANNOT MAKE THIS TASK "RESERVED" OR "IN_PROGRESS" AGAIN',
                     buttons: [
@@ -147,6 +151,16 @@ angular.module('app.task.fleet', ['ionic', 'util.shared', 'util.url'])
         };
 
         $scope.noFleetTask = function() {
-            return !$scope.fleetTasks || $scope.fleetTasks.length === 0;
+            if (!$scope.fleetTasks || $scope.fleetTasks.length === 0) {
+                return true;
+            }
+
+            for (var i in $scope.fleetTasks) {
+                if ($scope.fleetTasks[i].isToday === shared.showTodayTask()) {
+                    return false;
+                }
+            }
+
+            return true;
         };
     });

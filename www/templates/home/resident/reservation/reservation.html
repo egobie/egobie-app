@@ -15,7 +15,7 @@
                   ng-controller="serviceSelectCtl">
             <ion-item class="item-divider item-icon-right"
                       ng-click="selectService()">
-                Choose Services<i class="icon ion-android-add"></i>
+                1. Choose Services<i class="icon ion-android-add"></i>
             </ion-item>
             <div class="service"
                       ng-repeat="service in services | filter: {checked: true}">
@@ -29,7 +29,7 @@
                   ng-controller="addonSelectCtl">
             <ion-item class="item-divider item-icon-right"
                       ng-click="selectAddon()">
-                Extra Services<i class="icon ion-android-add"></i>
+                2. Extra Services<i class="icon ion-android-add"></i>
             </ion-item>
             <div class="service"
                       ng-repeat="(name, addon) in addons"
@@ -53,7 +53,7 @@
                   ng-controller="openingSelectCtl">
             <ion-item class="item-divider item-icon-right"
                       ng-click="showOpeningModal()">
-                Choose Datetime<i class="icon ion-android-add"></i>
+                3. Choose Datetime<i class="icon ion-android-add"></i>
             </ion-item>
             <ion-item class="item-icon-left" style="opacity: 0.50;">
                 <i class="icon ion-calendar"></i>{{opening.day}}

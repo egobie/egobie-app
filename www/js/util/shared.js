@@ -1,6 +1,7 @@
-angular.module("util.shared", ["util.url"])
+angular.module("util.shared", ["util.url", "util.localStorage"])
 
-    .service("shared", function($rootScope, $window, $ionicPopup, $ionicLoading, $ionicHistory, $interval, $http, $state, url) {
+    .service("shared", function($rootScope, $window, $ionicPopup, $ionicLoading, 
+        $ionicHistory, $interval, $http, $state, url, egobieLocalStorage) {
 
         var user = {
             id: "",
@@ -9,6 +10,7 @@ angular.module("util.shared", ["util.url"])
             email: "",
             coupon: "",
             discount: 0,
+            coupon_discount: 0,
             first_time: 0,
             phone: "",
             first: "",
@@ -95,6 +97,7 @@ angular.module("util.shared", ["util.url"])
         var userTasks = [];
         var fleetTasks = [];
         var taskInterval = null;
+        var showTodayOnly = true;
 
         var regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         var regCoupon = /^([A-Z0-9]{5})$/;
@@ -212,6 +215,19 @@ angular.module("util.shared", ["util.url"])
 
             getColors: function() {
                 return colors;
+            },
+
+            getCoupon: function() {
+                $http
+                    .post(url.getCoupon, this.getRequestBody({}))
+                    .success(function(data, status, headers, config) {
+                        user.coupon_discount = data - 0;
+                        refreshScope();
+                    })
+                    .error(function(data, status, headers, config) {
+                        user.coupon_discount = 0;
+                        refreshScope();
+                    });
             },
 
             addServices: function(data) {
@@ -434,13 +450,16 @@ angular.module("util.shared", ["util.url"])
                         self.hideLoading();
                         var user = 0;
                         var fleet = 0;
+                        var today = self.formatDate(new Date());
 
                         userTasks = data.user_tasks || [];
                         fleetTasks = data.fleet_tasks || [];
 
                         if (userTasks) {
                             Array.prototype.forEach.call(userTasks, function(task) {
-                                if (task.status === "RESERVED") {
+                                task.isToday = self.isToday(today, task.start);
+
+                                if (task.isToday && task.status === "RESERVED") {
                                     user++;
                                 }
                             });
@@ -448,9 +467,11 @@ angular.module("util.shared", ["util.url"])
 
                         if (fleetTasks) {
                             Array.prototype.forEach.call(fleetTasks, function(task) {
-                                if (task.status === "RESERVED") {
+                                task.isToday = self.isToday(today, task.start);
+
+                                if (task.isToday && task.status === "RESERVED") {
                                     fleet++;
-                                }
+                                }                                
                             });
                         }
 
@@ -474,6 +495,14 @@ angular.module("util.shared", ["util.url"])
             
             getFleetTasks: function() {
                 return fleetTasks;
+            },
+
+            showTodayTask: function(stt) {
+                if (stt === true || stt === false) {
+                    showTodayOnly = stt;
+                }
+
+                return showTodayOnly;
             },
 
             testEmail: function(email) {
@@ -535,6 +564,19 @@ angular.module("util.shared", ["util.url"])
                 } else {
                     return t + sufix + " P.M";
                 }
+            },
+
+            // today = YYYY-MM-DD
+            isToday: function(today, ts) {
+                return today === ts.split(' ')[0];
+            },
+
+            // YYYY-MM-DD
+            formatDate: function(dt) {
+                var mon = dt.getMonth() + 1;
+                var day = dt.getDay();
+                
+                return dt.getFullYear() + "-" + (mon < 10 ? ("0" + mon) : mon) + "-" + (day < 10 ? ("0" + day) : day);
             },
 
             showLoading: function () {
@@ -671,7 +713,26 @@ angular.module("util.shared", ["util.url"])
                 }));
             },
 
+            getUserSignIn: function() {
+                return {
+                    username: egobieLocalStorage.get("username"),
+                    password: egobieLocalStorage.get("password")
+                };
+            },
+
+            setUserSignIn: function(username, password) {
+                egobieLocalStorage.set("username", username);
+                egobieLocalStorage.set("password", password);
+            },
+
+            clearUserSignIn: function() {
+                egobieLocalStorage.remove("username");
+                egobieLocalStorage.remove("password");
+            },
+
             signOut: function() {
+                this.clearUserSignIn();
+
                 $ionicHistory.clearHistory();
                 $ionicHistory.clearCache().then(function() {
                     user = {

@@ -3,48 +3,51 @@
           ng-controller="couponCtrl">
     <ion-header-bar class="egobie-header-bar">
         <button class="button button-icon icon ion-navicon egobie-display-inherit" menu-toggle="left"></button>
-        <h1 class="title">GET YOUR GIFT</h1>
+        <h1 class="title">COUPONS</h1>
     </ion-header-bar>
+    <div class="egobie-bg-mask">
+        <div class="egobie-bg-mask-1"></div>
+        <div class="egobie-bg-mask-2"></div>
+    </div>
     <ion-content padding="true">
-        <ion-list class="egobie-coupon">
-            <ion-item class="coupon">
-                <div class="gift">
-                    <img class="image" alt=""/>
-                </div>
-                <p class="content">GIVE AND GET</p>
-                <p class="content">{{discount.residential}}% OFF</p>
-                <div class="code">
-                    <img alt=""/>
-                    <p>{{coupon}}</p>
-                </div>
-            </ion-item>
-            <ion-item class="share">
-                <div class="social-list">
-                    <div class="social" ng-click="shareByMessage()">
-                        <i class="circle"></i>
-                        <i class="icon ion-chatbox placeholder-icon message"></i>
-                    </div>
-                    <div class="social" ng-click="shareByEmail()">
-                        <i class="circle"></i>
-                        <i class="icon ion-email placeholder-icon email"></i>
-                    </div>
-                    <div class="social" ng-click="shareByFacebook()">
-                        <i class="circle"></i>
-                        <i class="icon ion-social-facebook placeholder-icon facebook"></i>
-                    </div>
-                    <div class="social" ng-click="shareByTwitter()">
-                        <i class="circle"></i>
-                        <i class="icon ion-social-twitter placeholder-icon twitter"></i>
-                    </div>
-                </div>
-                <!--<p>Share It!</p>-->
-                <div class="share-des">
-                    Click icons and share with friends, they<br/>
-                    will get {{discount.residential}}% discount credit. We will also<br/>
-                    apply {{discount.residential}}% discount to your next reservation
-                </div>
-            </ion-item>
-        </ion-list>
+        <button class="button button-block button-dark" style="background-color: #1BB3EC; font-weight: 600;"
+                ng-click="toggleCouponInput()"
+                ng-show="!coupon.showInput">
+            ADD COUPON CODE
+        </button>
 
+        <div class="egobie-add-coupon"
+             ng-show="coupon.showInput">
+            <i class="icon ion-close-round close"
+               ng-click="toggleCouponInput()"></i>
+            <input type="text" placeholder="enter coupon code" minlength="6" maxlength="6"
+                   ng-model="coupon.code"/>
+            <button class="button button-small button-dark egobie-center" style="background-color: #1BB3EC; font-weight: 600;"
+                    ng-click="applyCoupon()">APPLY</button>
+        </div>
+
+        <div class="egobie-coupon-item"
+             ng-show="coupon.fistTime">
+            <p class="title">{{coupon.firstDiscount}}% OFF</p>
+            <p class="content">You have {{coupon.firstDiscount}}% off your first order.</p>
+        </div>
+
+        <div class="egobie-coupon-item"
+             ng-show="!coupon.fistTime && coupon.couponDiscount > 0">
+            <p class="title">{{coupon.couponDiscount}}% OFF</p>
+            <p class="content">You have {{coupon.couponDiscount}}% off your next order.</p>
+        </div>
+
+        <div class="egobie-coupon-item"
+             ng-show="!coupon.fistTime && coupon.inviteTime > 0">
+            <p class="title">{{coupon.inviteDiscount}}% OFF</p>
+            <p class="content">You have additional {{coupon.inviteDiscount}}% off your next order</p>
+        </div>
+
+        <ion-item class="egobie-more-coupon"
+                  ng-click="showCouponInvite()">
+            <p class="p1">Want More Discounts?</p>
+            <p class="p2">CLICK & INVITE YOUR FRIENDS</p>
+        </ion-item>
     </ion-content>
 </ion-view>

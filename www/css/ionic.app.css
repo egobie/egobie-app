@@ -10545,6 +10545,63 @@ a.button {
     font-size: 13px;
     text-align: center; }
 
+.egobie-add-coupon {
+  position: relative;
+  text-align: center;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px; }
+  .egobie-add-coupon i.close {
+    display: block;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    right: 1px; }
+  .egobie-add-coupon input {
+    width: 90%;
+    margin: 25px auto 10px;
+    padding-left: 10px;
+    text-transform: uppercase;
+    border: 1px solid #ddd;
+    border-radius: 2px; }
+  .egobie-add-coupon button {
+    width: 90%;
+    margin-bottom: 10px;
+    border-radius: 2px; }
+
+.egobie-more-coupon {
+  text-align: center;
+  padding: 0px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2); }
+  .egobie-more-coupon p.p1 {
+    margin-top: 10px;
+    font-size: 18px; }
+  .egobie-more-coupon p.p2 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #1BB3EC; }
+
+.egobie-coupon-item {
+  padding: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  background-color: #FFFFFF; }
+  .egobie-coupon-item p.title {
+    color: #1BB3EC;
+    height: 30px;
+    line-height: 30px;
+    font-size: 25px; }
+    .egobie-coupon-item p.title span {
+      font-size: 15px; }
+  .egobie-coupon-item p.content {
+    font-size: 13px;
+    height: 15px;
+    line-height: 15px;
+    margin-bottom: 15px; }
+
 .egobie-button-disabled {
   opacity: 0.6; }
 
@@ -10651,6 +10708,19 @@ a.button {
 .egobie-reservation {
   height: 50%; }
 
+.egobie-reservation-describe {
+  border: 0px; }
+  .egobie-reservation-describe .title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 10px; }
+  .egobie-reservation-describe .content {
+    text-align: center;
+    word-break: break-word;
+    display: inline-block;
+    white-space: normal; }
+
 .egobie-on-demand {
   height: 51%; }
 
@@ -10701,7 +10771,8 @@ a.button {
   background-size: cover; }
 
 .egobie-reservation {
-  background: url("../img/reserve.jpg") no-repeat center center;
+  background: url("../img/reserve-temp.jpg") no-repeat center center;
+  /*background: image($Home-Reserve) no-repeat center center;*/
   background-size: cover; }
 
 .egobie-resident-order div.note {
@@ -13691,12 +13762,12 @@ a.button {
     .egobie-task-list .top .customer-phone-plate-reserve {
       display: inline-block;
       margin-left: 10px; }
-      .egobie-task-list .top .customer-phone-plate-reserve .customer, .egobie-task-list .top .customer-phone-plate-reserve .phone, .egobie-task-list .top .customer-phone-plate-reserve .plate, .egobie-task-list .top .customer-phone-plate-reserve .reserve {
+      .egobie-task-list .top .customer-phone-plate-reserve .customer, .egobie-task-list .top .customer-phone-plate-reserve .phone, .egobie-task-list .top .customer-phone-plate-reserve .make, .egobie-task-list .top .customer-phone-plate-reserve .model, .egobie-task-list .top .customer-phone-plate-reserve .plate, .egobie-task-list .top .customer-phone-plate-reserve .color, .egobie-task-list .top .customer-phone-plate-reserve .year {
         padding-left: 11px; }
-        .egobie-task-list .top .customer-phone-plate-reserve .customer .title, .egobie-task-list .top .customer-phone-plate-reserve .phone .title, .egobie-task-list .top .customer-phone-plate-reserve .plate .title, .egobie-task-list .top .customer-phone-plate-reserve .reserve .title {
+        .egobie-task-list .top .customer-phone-plate-reserve .customer .title, .egobie-task-list .top .customer-phone-plate-reserve .phone .title, .egobie-task-list .top .customer-phone-plate-reserve .make .title, .egobie-task-list .top .customer-phone-plate-reserve .model .title, .egobie-task-list .top .customer-phone-plate-reserve .plate .title, .egobie-task-list .top .customer-phone-plate-reserve .color .title, .egobie-task-list .top .customer-phone-plate-reserve .year .title {
           display: block;
           font-size: 12px; }
-        .egobie-task-list .top .customer-phone-plate-reserve .customer .value, .egobie-task-list .top .customer-phone-plate-reserve .phone .value, .egobie-task-list .top .customer-phone-plate-reserve .plate .value, .egobie-task-list .top .customer-phone-plate-reserve .reserve .value {
+        .egobie-task-list .top .customer-phone-plate-reserve .customer .value, .egobie-task-list .top .customer-phone-plate-reserve .phone .value, .egobie-task-list .top .customer-phone-plate-reserve .make .value, .egobie-task-list .top .customer-phone-plate-reserve .model .value, .egobie-task-list .top .customer-phone-plate-reserve .plate .value, .egobie-task-list .top .customer-phone-plate-reserve .color .value, .egobie-task-list .top .customer-phone-plate-reserve .year .value {
           color: #000000;
           font-size: 11px;
           font-weight: 900;
