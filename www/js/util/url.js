@@ -39,6 +39,8 @@ angular.module('util.url', [])
             updateWork: host + "/user/update/work",
             updatePassword: host + "/user/update/password",
             feedback: host + "/user/feedback",
+            getCoupon: host + "/user/coupon",
+            applyCoupon: host + "/user/coupon/apply",
 
             services: host + "/service",
             userReservations: host + "/service/reservation",

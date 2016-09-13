@@ -66,7 +66,9 @@ angular.module('app.sign.up', ['ionic', 'util.shared', 'util.url'])
                     }
                 })
                 .success(function(data, status, headers, config) {
+                    shared.setUserSignIn(body.username, body.password);
                     shared.refreshUser(data);
+                    shared.getCoupon();
                     $state.go('tutorial');
                 })
                 .error(function(data, status, headers, config) {

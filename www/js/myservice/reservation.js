@@ -31,9 +31,11 @@ angular.module('app.myservice.reservation', ['ionic', 'util.shared', 'util.url']
                 titleText: 'Cancel Order',
                 destructiveText: 'Cancel Reservation',
                 destructiveButtonClicked: $scope.cancel,
+                /**
                 buttons: [
                     {text: 'Add Service'}
                 ],
+                **/
                 buttonClicked: function(index) {
                     if (index === 0) {
                         var chargeIds = [];

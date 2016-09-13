@@ -81,6 +81,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
                         .post(url.placeOrder, shared.getRequestBody(request))
                         .success(function(data, status, headers, config) {
                             shared.useDiscount();
+                            shared.getCoupon();
                             shared.hideLoading();
 
                             $scope.hideReservationSheet();

@@ -1,0 +1,51 @@
+<ion-modal-view hide-nav-bar="true" cache-view="false"
+          ng-app="app.coupon.invite"
+          ng-controller="couponInviteCtrl">
+    <ion-header-bar class="egobie-header-bar">
+        <h1 class="title">INVITE YOUR FRIENDS</h1>
+        <button class="button button-icon icon ion-android-close"
+                ng-click="hideCouponInvite()"></button>
+    </ion-header-bar>
+    <ion-content padding="true">
+        <ion-list class="egobie-coupon">
+            <ion-item class="coupon">
+                <div class="gift">
+                    <img class="image" alt=""/>
+                </div>
+                <p class="content">GIVE AND GET</p>
+                <p class="content">{{discount.residential}}% OFF</p>
+                <div class="code">
+                    <img alt=""/>
+                    <p>{{coupon}}</p>
+                </div>
+            </ion-item>
+            <ion-item class="share">
+                <div class="social-list">
+                    <div class="social" ng-click="shareByMessage()">
+                        <i class="circle"></i>
+                        <i class="icon ion-chatbox placeholder-icon message"></i>
+                    </div>
+                    <div class="social" ng-click="shareByEmail()">
+                        <i class="circle"></i>
+                        <i class="icon ion-email placeholder-icon email"></i>
+                    </div>
+                    <div class="social" ng-click="shareByFacebook()">
+                        <i class="circle"></i>
+                        <i class="icon ion-social-facebook placeholder-icon facebook"></i>
+                    </div>
+                    <div class="social" ng-click="shareByTwitter()">
+                        <i class="circle"></i>
+                        <i class="icon ion-social-twitter placeholder-icon twitter"></i>
+                    </div>
+                </div>
+                <!--<p>Share It!</p>-->
+                <div class="share-des">
+                    Click icons and share with friends, they<br/>
+                    will get {{discount.residential}}% discount credit. We will also<br/>
+                    apply {{discount.residential}}% discount to your future reservations
+                </div>
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
+</ion-modal-view>
