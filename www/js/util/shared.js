@@ -10,7 +10,7 @@ angular.module("util.shared", ["util.url", "util.localStorage"])
             email: "",
             coupon: "",
             discount: 0,
-            coupon_discount: 0,
+            coupon_discount: null,
             first_time: 0,
             phone: "",
             first: "",
@@ -221,11 +221,11 @@ angular.module("util.shared", ["util.url", "util.localStorage"])
                 $http
                     .post(url.getCoupon, this.getRequestBody({}))
                     .success(function(data, status, headers, config) {
-                        user.coupon_discount = data - 0;
+                        user.coupon_discount = data;
                         refreshScope();
                     })
                     .error(function(data, status, headers, config) {
-                        user.coupon_discount = 0;
+                        user.coupon_discount = null;
                         refreshScope();
                     });
             },

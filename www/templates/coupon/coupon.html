@@ -27,21 +27,21 @@
         </div>
 
         <div class="egobie-coupon-item"
-             ng-show="coupon.fistTime">
-            <p class="title">{{coupon.firstDiscount}}% OFF</p>
-            <p class="content">You have {{coupon.firstDiscount}}% off your first order.</p>
+             ng-show="coupon.couponDiscount.id > 0">
+            <p class="title">{{getCouponDiscountInfo()}} OFF </p>
+            <p class="content">You have {{getCouponDiscountInfo()}} off your next order.</p>
         </div>
 
         <div class="egobie-coupon-item"
-             ng-show="!coupon.fistTime && coupon.couponDiscount > 0">
-            <p class="title">{{coupon.couponDiscount}}% OFF</p>
-            <p class="content">You have {{coupon.couponDiscount}}% off your next order.</p>
+             ng-show="coupon.fistTime">
+            <p class="title">{{coupon.firstDiscount}}% OFF</p>
+            <p class="content">You have {{coupon.firstDiscount}}% off your first order. (CAN NOT BE USES WITH OTHER COUPONS)</p>
         </div>
 
         <div class="egobie-coupon-item"
              ng-show="!coupon.fistTime && coupon.inviteTime > 0">
             <p class="title">{{coupon.inviteDiscount}}% OFF</p>
-            <p class="content">You have additional {{coupon.inviteDiscount}}% off your next order</p>
+            <p class="content">You have additional {{coupon.inviteDiscount}}% off your next order (CAN NOT BE USES WITH OTHER COUPONS)</p>
         </div>
 
         <ion-item class="egobie-more-coupon"

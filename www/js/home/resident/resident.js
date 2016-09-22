@@ -113,11 +113,18 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
                 if (shared.getUser().first_time > 0) {
                     _temp *= shared.calculateDiscount("RESIDENTIAL_FIRST");
                 } else {
-                    if (shared.getUser().coupon_discount > 0) {
-                        _temp *= (1 - shared.getUser().coupon_discount / 100);
-                    }
+                    if (shared.getUser().coupon_discount) {
+                        var coupon_discount = shared.getUser().coupon_discount;
 
-                    if (shared.getUser().discount > 0) {
+                        if (coupon_discount.percent === 1) {
+                            _temp *= (1 - coupon_discount.discount / 100);
+                        } else {
+                            _temp -= coupon_discount.discount;
+                            _temp = _temp <= 0 ? 0 : _temp;
+                        }
+
+                        _temp *= (1 - shared.getUser().coupon_discount / 100);
+                    } else if (shared.getUser().discount > 0) {
                         _temp *= shared.calculateDiscount("RESIDENTIAL");
                     }
                 }
