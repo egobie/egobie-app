@@ -41,6 +41,10 @@ angular.module('app.coupon', ['ionic', 'ngCordova', 'util.shared', 'util.url'])
             $scope.addCouponInviteModal.show();
         };
 
+        $scope.refreshUserCoupon = function() {
+            shared.getCoupon();
+        };
+
         $scope.getCouponDiscountInfo = function() {
             var temp = $scope.coupon.couponDiscount;
 

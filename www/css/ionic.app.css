@@ -10599,7 +10599,11 @@ a.button {
   .egobie-coupon-item p.content {
     font-size: 13px;
     height: 15px;
-    line-height: 15px;
+    line-height: 15px; }
+  .egobie-coupon-item p.tip {
+    font-size: 10px;
+    color: red;
+    line-height: 12px;
     margin-bottom: 15px; }
 
 .egobie-button-disabled {

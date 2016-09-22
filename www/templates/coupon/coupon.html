@@ -4,6 +4,8 @@
     <ion-header-bar class="egobie-header-bar">
         <button class="button button-icon icon ion-navicon egobie-display-inherit" menu-toggle="left"></button>
         <h1 class="title">COUPONS</h1>
+        <button class="button button-icon icon ion-android-refresh egobie-display-inherit"
+                ng-click="refreshUserCoupon()"></button>
     </ion-header-bar>
     <div class="egobie-bg-mask">
         <div class="egobie-bg-mask-1"></div>
@@ -29,19 +31,22 @@
         <div class="egobie-coupon-item"
              ng-show="coupon.couponDiscount.id > 0">
             <p class="title">{{getCouponDiscountInfo()}} OFF </p>
-            <p class="content">You have {{getCouponDiscountInfo()}} off your next order.</p>
+            <p class="content">You have {{getCouponDiscountInfo()}} off your next order</p>
+            <p class="tip">CAN NOT BE USED WITH OTHER COUPONS</p>
         </div>
 
         <div class="egobie-coupon-item"
              ng-show="coupon.fistTime">
             <p class="title">{{coupon.firstDiscount}}% OFF</p>
-            <p class="content">You have {{coupon.firstDiscount}}% off your first order. (CAN NOT BE USES WITH OTHER COUPONS)</p>
+            <p class="content">You have {{coupon.firstDiscount}}% off your first order.</p>
+            <p class="tip">CAN NOT BE USED WITH OTHER COUPONS</p>
         </div>
 
         <div class="egobie-coupon-item"
              ng-show="!coupon.fistTime && coupon.inviteTime > 0">
             <p class="title">{{coupon.inviteDiscount}}% OFF</p>
-            <p class="content">You have additional {{coupon.inviteDiscount}}% off your next order (CAN NOT BE USES WITH OTHER COUPONS)</p>
+            <p class="content">You have additional {{coupon.inviteDiscount}}% off your next order</p>
+            <p class="tip">CAN NOT BE USED WITH OTHER COUPONS</p>
         </div>
 
         <ion-item class="egobie-more-coupon"
