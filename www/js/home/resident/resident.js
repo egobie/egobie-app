@@ -123,7 +123,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
                     _temp *= shared.calculateDiscount("RESIDENTIAL_FIRST");
                 } else if (shared.getUser().discount > 0) {
                     _temp *= shared.calculateDiscount("RESIDENTIAL");
-                } 
+                }
 
                 if (this.mixed) {
                     _temp *= shared.calculateDiscount("OIL_WASH");;
