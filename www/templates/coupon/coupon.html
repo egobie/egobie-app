@@ -30,7 +30,7 @@
 
         <div class="egobie-coupon-item"
              ng-show="coupon.couponDiscount.id > 0">
-            <p class="title">{{getCouponDiscountInfo()}} OFF </p>
+            <p class="title">{{getCouponDiscountInfo()}} OFF <span class="times">({{coupon.couponDiscount.count}} times left)</span></p>
             <p class="content">You have {{getCouponDiscountInfo()}} off your next order</p>
             <p class="tip">CAN NOT BE USED WITH OTHER COUPONS</p>
         </div>

@@ -10594,7 +10594,7 @@ a.button {
     height: 30px;
     line-height: 30px;
     font-size: 25px; }
-    .egobie-coupon-item p.title span {
+    .egobie-coupon-item p.title span.times {
       font-size: 15px; }
   .egobie-coupon-item p.content {
     font-size: 13px;
