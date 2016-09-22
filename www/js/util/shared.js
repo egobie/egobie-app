@@ -574,8 +574,8 @@ angular.module("util.shared", ["util.url", "util.localStorage"])
             // YYYY-MM-DD
             formatDate: function(dt) {
                 var mon = dt.getMonth() + 1;
-                var day = dt.getDay();
-                
+                var day = dt.getDate();
+
                 return dt.getFullYear() + "-" + (mon < 10 ? ("0" + mon) : mon) + "-" + (day < 10 ? ("0" + day) : day);
             },
 
