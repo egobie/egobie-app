@@ -4,6 +4,8 @@
     <ion-header-bar class="egobie-header-bar">
         <button class="button button-icon icon ion-navicon egobie-display-inherit" menu-toggle="left"></button>
         <h1 class="title">COUPONS</h1>
+        <button class="button button-icon icon ion-android-refresh egobie-display-inherit"
+                ng-click="refreshUserCoupon()"></button>
     </ion-header-bar>
     <div class="egobie-bg-mask">
         <div class="egobie-bg-mask-1"></div>
@@ -20,28 +22,43 @@
              ng-show="coupon.showInput">
             <i class="icon ion-close-round close"
                ng-click="toggleCouponInput()"></i>
-            <input type="text" placeholder="enter coupon code" minlength="6" maxlength="6"
+            <input type="text" placeholder="enter coupon code" minlength="5" maxlength="10"
                    ng-model="coupon.code"/>
             <button class="button button-small button-dark egobie-center" style="background-color: #1BB3EC; font-weight: 600;"
                     ng-click="applyCoupon()">APPLY</button>
         </div>
 
         <div class="egobie-coupon-item"
-             ng-show="coupon.fistTime">
-            <p class="title">{{coupon.firstDiscount}}% OFF</p>
-            <p class="content">You have {{coupon.firstDiscount}}% off your first order.</p>
+             ng-show="coupon.couponDiscount.id > 0">
+            <p class="title">{{getCouponDiscountInfo()}} OFF <span class="times">(times: {{coupon.couponDiscount.count}} left)</span></p>
+            <p class="service">{{coupon.couponDiscount.service_name}}</p>
+            <p class="content">
+                {{getCouponDiscountInfo()}} discount will be automatically applied to your next order if you choose
+                {{coupon.couponDiscount.service_name}}
+            </p>
+            <p class="tip">CAN NOT BE USED WITH OTHER COUPONS</p>
         </div>
 
         <div class="egobie-coupon-item"
-             ng-show="!coupon.fistTime && coupon.couponDiscount > 0">
-            <p class="title">{{coupon.couponDiscount}}% OFF</p>
-            <p class="content">You have {{coupon.couponDiscount}}% off your next order.</p>
+             ng-show="coupon.fistTime">
+            <p class="title">{{coupon.firstDiscount}}% OFF</p>
+            <p class="content">You have {{coupon.firstDiscount}}% off your first order.</p>
+            <p class="tip">CAN NOT BE USED WITH OTHER COUPONS</p>
         </div>
 
         <div class="egobie-coupon-item"
              ng-show="!coupon.fistTime && coupon.inviteTime > 0">
             <p class="title">{{coupon.inviteDiscount}}% OFF</p>
             <p class="content">You have additional {{coupon.inviteDiscount}}% off your next order</p>
+            <p class="tip">CAN NOT BE USED WITH OTHER COUPONS</p>
+        </div>
+
+        <div class="egobie-coupon-item">
+            <p class="title">10% OFF <span class="times">(times: unlimited)</span></p>
+            <p class="content">
+                A 10% additional discount will always be automatically applied to your next order
+                if you choose both car wash and oil change
+            </p>
         </div>
 
         <ion-item class="egobie-more-coupon"

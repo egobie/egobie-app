@@ -98,7 +98,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
         };
     })
 
-    .service('order', function(shared) {
+    .service('order', function(orderService, shared) {
         return {
             price: 0,
             time: 0,
@@ -108,25 +108,34 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
                     return "";
                 }
 
-                var _temp = this.price * 1.07;
+                var _temp = this.price;
+                var _services = [];
+                var coupon_discount = shared.getUser().coupon_discount;
 
-                if (shared.getUser().first_time > 0) {
+                for (var _i = 0; _i < orderService.services.length; _i++) {
+                    if (orderService.services[_i].checked) {
+                        _services.push(orderService.services[_i].id);
+                    }
+                }
+
+                if (coupon_discount.id > 0 && _services.indexOf(coupon_discount.service_id) >= 0) {
+                    if (coupon_discount.percent === 1) {
+                        _temp *= (1 - coupon_discount.discount / 100);
+                    } else {
+                        _temp -= coupon_discount.discount;
+                        _temp = _temp <= 0 ? 0 : _temp;
+                    }
+                } else if (shared.getUser().first_time > 0) {
                     _temp *= shared.calculateDiscount("RESIDENTIAL_FIRST");
-                } else {
-                    if (shared.getUser().coupon_discount > 0) {
-                        _temp *= (1 - shared.getUser().coupon_discount / 100);
-                    }
-
-                    if (shared.getUser().discount > 0) {
-                        _temp *= shared.calculateDiscount("RESIDENTIAL");
-                    }
+                } else if (shared.getUser().discount > 0) {
+                    _temp *= shared.calculateDiscount("RESIDENTIAL");
                 }
 
                 if (this.mixed) {
                     _temp *= shared.calculateDiscount("OIL_WASH");;
                 }
 
-                return _temp.toFixed(2);
+                return (_temp * 1.07).toFixed(2);
             },
             getRealTime: function() {
                 var hour = Math.floor(this.time / 60);

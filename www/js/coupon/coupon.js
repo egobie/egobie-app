@@ -21,7 +21,7 @@ angular.module('app.coupon', ['ionic', 'ngCordova', 'util.shared', 'util.url'])
             fistTime: shared.getUser().first_time > 0,
             inviteDiscount: shared.getDiscount("RESIDENTIAL"),
             inviteTime: shared.getUser().discount,
-            couponDiscount: 0,
+            couponDiscount: null,
             showInput: false
         };
 
@@ -39,6 +39,20 @@ angular.module('app.coupon', ['ionic', 'ngCordova', 'util.shared', 'util.url'])
 
         $scope.showCouponInvite = function() {
             $scope.addCouponInviteModal.show();
+        };
+
+        $scope.refreshUserCoupon = function() {
+            shared.getCoupon();
+        };
+
+        $scope.getCouponDiscountInfo = function() {
+            var temp = $scope.coupon.couponDiscount;
+
+            if (temp.percent === 1) {
+                return temp.discount + "%";
+            } else {
+                return "$" + temp.discount;
+            }
         };
 
         $scope.applyCoupon = function() {

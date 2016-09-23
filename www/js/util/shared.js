@@ -10,7 +10,7 @@ angular.module("util.shared", ["util.url", "util.localStorage"])
             email: "",
             coupon: "",
             discount: 0,
-            coupon_discount: 0,
+            coupon_discount: null,
             first_time: 0,
             phone: "",
             first: "",
@@ -221,11 +221,11 @@ angular.module("util.shared", ["util.url", "util.localStorage"])
                 $http
                     .post(url.getCoupon, this.getRequestBody({}))
                     .success(function(data, status, headers, config) {
-                        user.coupon_discount = data - 0;
+                        user.coupon_discount = data;
                         refreshScope();
                     })
                     .error(function(data, status, headers, config) {
-                        user.coupon_discount = 0;
+                        user.coupon_discount = {};
                         refreshScope();
                     });
             },
@@ -574,8 +574,8 @@ angular.module("util.shared", ["util.url", "util.localStorage"])
             // YYYY-MM-DD
             formatDate: function(dt) {
                 var mon = dt.getMonth() + 1;
-                var day = dt.getDay();
-                
+                var day = dt.getDate();
+
                 return dt.getFullYear() + "-" + (mon < 10 ? ("0" + mon) : mon) + "-" + (day < 10 ? ("0" + day) : day);
             },
 
