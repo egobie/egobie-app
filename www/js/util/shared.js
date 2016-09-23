@@ -225,7 +225,7 @@ angular.module("util.shared", ["util.url", "util.localStorage"])
                         refreshScope();
                     })
                     .error(function(data, status, headers, config) {
-                        user.coupon_discount = null;
+                        user.coupon_discount = {};
                         refreshScope();
                     });
             },

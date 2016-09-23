@@ -98,7 +98,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
         };
     })
 
-    .service('order', function(shared) {
+    .service('order', function(orderService, shared) {
         return {
             price: 0,
             time: 0,
@@ -108,11 +108,17 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
                     return "";
                 }
 
-                var _temp = this.price * 1.07;
+                var _temp = this.price;
+                var _services = [];
+                var coupon_discount = shared.getUser().coupon_discount;
 
-                if (shared.getUser().coupon_discount.id > 0) {
-                    var coupon_discount = shared.getUser().coupon_discount;
+                for (var _i = 0; _i < orderService.services.length; _i++) {
+                    if (orderService.services[_i].checked) {
+                        _services.push(orderService.services[_i].id);
+                    }
+                }
 
+                if (coupon_discount.id > 0 && _services.indexOf(coupon_discount.service_id) >= 0) {
                     if (coupon_discount.percent === 1) {
                         _temp *= (1 - coupon_discount.discount / 100);
                     } else {
@@ -129,7 +135,7 @@ angular.module('app.home.resident', ['ionic', 'util.shared'])
                     _temp *= shared.calculateDiscount("OIL_WASH");;
                 }
 
-                return _temp.toFixed(2);
+                return (_temp * 1.07).toFixed(2);
             },
             getRealTime: function() {
                 var hour = Math.floor(this.time / 60);
