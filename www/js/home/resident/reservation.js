@@ -73,7 +73,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
             }
 
             $scope.hideReservationSheet = $ionicActionSheet.show({
-                titleText: 'We process payment only after the service is done. We require you to cancel the reservation 24 hours ahead, otherwise we will charge 50% of the appointment cost.',
+                titleText: 'We process payment only after the service is done. We require you to cancel the reservation 24 hours ahead, otherwise we will charge 50% of the appointment cost. (Discount or coupons are not refunded if you cancel the reservation)',
                 destructiveText: 'Place Order',
                 destructiveButtonClicked: function() {
                     shared.showLoading();
