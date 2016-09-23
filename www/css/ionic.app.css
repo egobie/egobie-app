@@ -10589,17 +10589,19 @@ a.button {
   margin-bottom: 10px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
   background-color: #FFFFFF; }
-  .egobie-coupon-item p.title {
+  .egobie-coupon-item p.title, .egobie-coupon-item p.service {
     color: #1BB3EC;
     height: 30px;
-    line-height: 30px;
-    font-size: 25px; }
-    .egobie-coupon-item p.title span.times {
+    line-height: 30px; }
+    .egobie-coupon-item p.title span.times, .egobie-coupon-item p.service span.times {
       font-size: 15px; }
+  .egobie-coupon-item p.title {
+    font-size: 25px; }
+  .egobie-coupon-item p.service {
+    font-size: 18px; }
   .egobie-coupon-item p.content {
     font-size: 13px;
-    height: 15px;
-    line-height: 15px; }
+    text-align: justify; }
   .egobie-coupon-item p.tip {
     font-size: 10px;
     color: red;

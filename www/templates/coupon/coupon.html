@@ -30,8 +30,12 @@
 
         <div class="egobie-coupon-item"
              ng-show="coupon.couponDiscount.id > 0">
-            <p class="title">{{getCouponDiscountInfo()}} OFF <span class="times">({{coupon.couponDiscount.count}} times left)</span></p>
-            <p class="content">You have {{getCouponDiscountInfo()}} off your next order</p>
+            <p class="title">{{getCouponDiscountInfo()}} OFF <span class="times">(times: {{coupon.couponDiscount.count}} left)</span></p>
+            <p class="service">{{coupon.couponDiscount.service_name}}</p>
+            <p class="content">
+                {{getCouponDiscountInfo()}} discount will be automatically applied to your next order if you choose
+                {{coupon.couponDiscount.service_name}}
+            </p>
             <p class="tip">CAN NOT BE USED WITH OTHER COUPONS</p>
         </div>
 
@@ -47,6 +51,14 @@
             <p class="title">{{coupon.inviteDiscount}}% OFF</p>
             <p class="content">You have additional {{coupon.inviteDiscount}}% off your next order</p>
             <p class="tip">CAN NOT BE USED WITH OTHER COUPONS</p>
+        </div>
+
+        <div class="egobie-coupon-item">
+            <p class="title">10% OFF <span class="times">(times: unlimited)</span></p>
+            <p class="content">
+                A 10% additional discount will always be automatically applied to your next order
+                if you choose both car wash and oil change
+            </p>
         </div>
 
         <ion-item class="egobie-more-coupon"

@@ -177,21 +177,27 @@
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
         background-color: #FFFFFF;
 
-        p.title {
+        p.title, p.service {
             color: #1BB3EC;
             height: 30px;
             line-height: 30px;
-            font-size: 25px;
 
             span.times {
                 font-size: 15px;
             }
         }
 
+        p.title {
+            font-size: 25px;
+        }
+
+        p.service {
+            font-size: 18px;
+        }
+
         p.content {
             font-size: 13px;
-            height: 15px;
-            line-height: 15px;
+            text-align: justify;
         }
 
         p.tip {
