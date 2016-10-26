@@ -48,7 +48,7 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
 
                 cancelText: 'Cancel',
                 cancel: function() {
-                    
+
                 }
             });
         };
@@ -87,8 +87,8 @@ angular.module('app.car', ['ionic', 'util.shared', 'util.url'])
             $ionicPopup.confirm({
                 title: "Are you sure to delete this car?"
             }).then(function(sure) {
-                shared.showLoading();
                 if (sure) {
+                    shared.showLoading();
                     $http
                         .post(url.deleteCar, shared.getRequestBody({
                             id: id

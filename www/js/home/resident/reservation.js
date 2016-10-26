@@ -1,6 +1,7 @@
 angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', 'util.shared', 'util.url'])
 
-    .controller('reservationOrderCtrl', function($scope, shared, order) {
+    .controller('reservationOrderCtrl', function($scope, shared, order, orderOpening, orderCar,
+            orderService, orderAddon, orderPayment, demandOrder) {
         shared.goReservation();
 
         $scope.order = order;
@@ -10,6 +11,18 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
         }, function (newValue, oldValue) {
             $scope.order = newValue;
         });
+
+        $scope.goBack = function() {
+            orderOpening.clear();
+            orderCar.clear();
+            orderService.clear();
+            orderAddon.clear();
+            orderPayment.clear();
+            order.clear();
+            demandOrder.clear();
+
+            $scope.$ionicGoBack();
+        };
     })
 
     .controller('orderCtrl', function($scope, $state, $ionicActionSheet, $http,
@@ -98,7 +111,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
                 },
                 cancelText: 'Cancel',
                 cancel: function() {
-                    
+
                 }
             });
         };
@@ -283,7 +296,7 @@ angular.module('app.home.resident.reservation', ['ionic', 'app.home.resident', '
         };
     })
 
-    .controller('serviceSelectCtl', function($scope, $state, $ionicModal, shared, 
+    .controller('serviceSelectCtl', function($scope, $state, $ionicModal, shared,
             orderService, orderAddon, order, orderOpening) {
         $scope.services = orderService.services;
         $scope.serviceNames = shared.getServiceNames();
